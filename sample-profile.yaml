@@ -1,4 +1,4 @@
-# Vxn 测试订阅配置
+# Flux 测试订阅配置
 proxies:
   - name: "香港 01"
     type: ss

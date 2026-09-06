@@ -1,8 +1,8 @@
-# Vxn
+# Flux
 
 [简体中文](README.zh-CN.md)
 
-Vxn is a lightweight proxy client for Windows powered by the [mihomo](https://github.com/MetaCubeX/mihomo) core, built with WinUI 3.
+Flux is a lightweight proxy client for Windows powered by the [mihomo](https://github.com/MetaCubeX/mihomo) core, built with WinUI 3.
 
 ## Features
 
@@ -29,14 +29,14 @@ Vxn is a lightweight proxy client for Windows powered by the [mihomo](https://gi
 2. Build and run:
 
    ```bash
-   dotnet build Vxn/Vxn.csproj -c Release
+   dotnet build Flux.csproj -c Release
    ```
 
-   Or open `Vxn.slnx` in Visual Studio 2022 and press <kbd>F5</kbd>.
+   Or open `Flux.slnx` in Visual Studio 2022 and press <kbd>F5</kbd>.
 
 ## Configuration
 
-Vxn uses standard Clash-compatible YAML profiles. See [`sample-profile.yaml`](sample-profile.yaml) for a minimal example covering proxies, proxy groups, and rules.
+Flux uses standard Clash-compatible YAML profiles. See [`sample-profile.yaml`](sample-profile.yaml) for a minimal example covering proxies, proxy groups, and rules.
 
 ## License
 

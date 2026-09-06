@@ -29,7 +29,7 @@ x86/
 *.binlog
 
 # EXCEPTION: bundled mihomo core is required by the build
-!Vxn/Assets/core/mihomo.exe
+!Assets/core/mihomo.exe
 
 # NuGet
 *.nupkg
@@ -60,3 +60,5 @@ $RECYCLE.BIN/
 # User-specific files
 *.rsuser
 *.sln.iml
+
+sample-profile.yaml
