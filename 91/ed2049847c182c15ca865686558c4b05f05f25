@@ -1,0 +1,57 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "91ed2049847c182c15ca865686558c4b05f05f25",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 55,
+    "git_diff_deleted_lines": 12,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 53,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "ViewModels/ProxiesViewModel.cs": {
+        "BYMC": [
+          "29",
+          "34",
+          "59-60",
+          "173",
+          "185-187"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml.cs": {
+        "BYMC": [
+          "11",
+          "16-20",
+          "32-33",
+          "35-36",
+          "38-42",
+          "45-47",
+          "77"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml.cs": {
+        "BYMC": [
+          "13",
+          "28-29",
+          "37",
+          "57-77",
+          "80"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788687125,
+  "requirement_id": ""
+}
