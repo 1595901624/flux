@@ -141,7 +141,7 @@
                     <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
                         <StackPanel Spacing="10">
                             <TextBlock Text="运行模式" Style="{StaticResource CardTitleStyle}" />
-                            <RadioButtons SelectionChanged="Mode_SelectionChanged" x:Name="ModeRadios">
+                            <RadioButtons x:Name="ModeRadios">
                                 <RadioButton Content="规则" Tag="rule" />
                                 <RadioButton Content="全局" Tag="global" />
                                 <RadioButton Content="直连" Tag="direct" />

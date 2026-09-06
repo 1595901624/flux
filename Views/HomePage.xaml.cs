@@ -9,6 +9,7 @@ public sealed partial class HomePage : Page
 {
     public HomeViewModel Vm { get; } = new();
     private bool _syncingMode;
+    private bool _selectionHooked;
 
     public HomePage()
     {
@@ -21,7 +22,13 @@ public sealed partial class HomePage : Page
         Loaded += async (_, _) =>
         {
             Vm.StartTimer();
+            // 先同步选中，再订阅用户点击，避免程序化选中反向触发 PATCH
             SyncModeRadios();
+            if (!_selectionHooked)
+            {
+                _selectionHooked = true;
+                ModeRadios.SelectionChanged += Mode_SelectionChanged;
+            }
             await Task.CompletedTask;
         };
         Unloaded += (_, _) => Vm.StopTimer();

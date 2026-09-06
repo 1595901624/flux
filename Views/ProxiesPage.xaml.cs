@@ -11,6 +11,7 @@ public sealed partial class ProxiesPage : Page
     public ProxiesViewModel Vm { get; } = new();
     private readonly CollectionViewSource _groupedView = new();
     private bool _syncingMode;
+    private bool _selectionHooked;
 
     public ProxiesPage()
     {
@@ -34,7 +35,14 @@ public sealed partial class ProxiesPage : Page
         Loaded += async (_, _) =>
         {
             UpdateCardColumns();
+            // 先同步选中，再订阅用户点击；Segmented 初始化时会自动选中首项并触发
+            // SelectionChanged，若提前订阅会把内核 PATCH 回 rule
             SyncModeSegment();
+            if (!_selectionHooked)
+            {
+                _selectionHooked = true;
+                ModeSegment.SelectionChanged += ModeSegment_SelectionChanged;
+            }
             Vm.StartPolling();
             await Task.CompletedTask;
         };

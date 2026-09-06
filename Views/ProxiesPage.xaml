@@ -27,8 +27,7 @@
                 <TextBlock Text="代理" FontSize="26" FontWeight="SemiBold" />
                 <ctk:Segmented
                     x:Name="ModeSegment"
-                    VerticalAlignment="Center"
-                    SelectionChanged="ModeSegment_SelectionChanged">
+                    VerticalAlignment="Center">
                     <ctk:SegmentedItem Tag="rule" Content="规则" />
                     <ctk:SegmentedItem Tag="global" Content="全局" />
                     <ctk:SegmentedItem Tag="direct" Content="直连" />

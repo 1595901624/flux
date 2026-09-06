@@ -91,14 +91,16 @@ public partial class ProxiesViewModel : ObservableObject
             }
         }
 
-        if (Mode == "global" && proxies.TryGetProperty("GLOBAL", out var globalElem))
+        // 对齐 verge：非规则模式下只显示 GLOBAL 组（全局/直连的实际走向由 GLOBAL 决定）
+        if (Mode != "rule" && proxies.TryGetProperty("GLOBAL", out var globalElem))
         {
             var g = new ProxyInfo { Name = "GLOBAL", Type = "Selector" };
             if (globalElem.TryGetProperty("now", out var nowEl)) g.Now = nowEl.GetString() ?? "";
             if (globalElem.TryGetProperty("all", out var allEl) && allEl.ValueKind == JsonValueKind.Array)
                 foreach (var a in allEl.EnumerateArray())
                     if (a.GetString() is { } s) g.All.Add(s);
-            groups.Insert(0, g);
+            groups.Clear();
+            groups.Add(g);
         }
 
         var filter = FilterText?.Trim() ?? "";
