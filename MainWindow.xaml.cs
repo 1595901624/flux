@@ -52,11 +52,11 @@ public sealed partial class MainWindow : Window
             }
         };
 
-        // 默认窗口 1280x860 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
+        // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
         var scale = GetDpiForWindow(WinRT.Interop.WindowNative.GetWindowHandle(this)) / 96.0;
         if (scale <= 0) scale = 1.0;
         AppWindow.Resize(new Windows.Graphics.SizeInt32(
-            (int)(1280 * scale), (int)(860 * scale)));
+            (int)(1080 * scale), (int)(720 * scale)));
         AppWindow.SetIcon(System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "app.ico"));
 
         // 实时流量订阅
