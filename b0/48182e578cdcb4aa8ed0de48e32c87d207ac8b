@@ -1,0 +1,54 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "b048182e578cdcb4aa8ed0de48e32c87d207ac8b",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 21,
+    "git_diff_deleted_lines": 3,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 19,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "56-58"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LogService.cs": {
+        "BYMC": [
+          "8",
+          "21-24",
+          "34-35",
+          "46-47"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "60-62"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "33",
+          "170-172"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788692391,
+  "requirement_id": ""
+}
