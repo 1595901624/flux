@@ -73,7 +73,7 @@
             </GridView.ItemContainerStyle>
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <ItemsWrapGrid Orientation="Horizontal" ItemWidth="360" ItemHeight="148" />
+                    <ItemsWrapGrid Orientation="Horizontal" ItemWidth="360" ItemHeight="172" />
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
             <GridView.ItemTemplate>
@@ -114,7 +114,8 @@
                                 <StackPanel Orientation="Horizontal" Spacing="6">
                                     <TextBlock Text="{x:Bind DisplayName}" FontWeight="SemiBold" FontSize="14"
                                                TextTrimming="CharacterEllipsis" MaxWidth="200" />
-                                    <Border Background="{ThemeResource AccentFillColorSecondaryBrush}" CornerRadius="4" Padding="5,1"
+                                    <Border Background="{ThemeResource AccentFillColorSecondaryBrush}" CornerRadius="4"
+                                            Padding="6,2" VerticalAlignment="Center"
                                             Visibility="{x:Bind CurrentVisibility}">
                                         <TextBlock Text="当前" FontSize="10" Foreground="White" />
                                     </Border>
