@@ -1,0 +1,69 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "cb46768de4ae0559e0689647ca19cdef1dd74ec8",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 101,
+    "git_diff_deleted_lines": 5,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 98,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "MainWindow.xaml.cs": {
+        "BYMC": [
+          "16",
+          "63-65",
+          "128-131",
+          "133-171"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "24-26"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [
+          "41-44"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [
+          "38",
+          "125-143",
+          "233-235"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SysProxyService.cs": {
+        "BYMC": [
+          "56-73"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/TrayService.cs": {
+        "BYMC": [
+          "190-192"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788701970,
+  "requirement_id": ""
+}
