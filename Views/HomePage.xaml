@@ -22,8 +22,6 @@
             <Setter Property="Opacity" Value="0.75" />
             <Setter Property="Margin" Value="0,0,0,10" />
         </Style>
-        <x:Double x:Key="CardWidth">300</x:Double>
-        <x:Double x:Key="CardHeight">230</x:Double>
     </Page.Resources>
 
     <ScrollViewer Padding="28,16,28,20" HorizontalScrollMode="Disabled">
@@ -40,134 +38,126 @@
                 </Button>
             </StackPanel>
 
-            <GridView SelectionMode="None" IsRightTapEnabled="False">
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsWrapGrid Orientation="Horizontal" ItemWidth="316" ItemHeight="246" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
+            <Grid ColumnSpacing="16" RowSpacing="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
                 <!-- 系统代理 / TUN -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="网络控制" Style="{StaticResource CardTitleStyle}" />
-                            <ToggleSwitch Header="系统代理" IsOn="{x:Bind Vm.SystemProxyOn, Mode=TwoWay}"
-                                          Toggled="SysProxy_Toggled" />
-                            <ToggleSwitch Header="TUN 模式" IsOn="{x:Bind Vm.TunOn, Mode=TwoWay}"
-                                          Toggled="Tun_Toggled"
-                                          IsEnabled="{x:Bind Vm.TunAvailable, Mode=OneWay}" />
-                            <TextBlock FontSize="11" Opacity="0.55"
-                                       Visibility="{x:Bind Vm.AdminHintVisibility, Mode=OneWay}"
-                                       Text="TUN 需要管理员权限运行" />
-                        </StackPanel>
-                    </Border>
-                </GridViewItem>
+                <Border Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="网络控制" Style="{StaticResource CardTitleStyle}" />
+                        <ToggleSwitch Header="系统代理" IsOn="{x:Bind Vm.SystemProxyOn, Mode=TwoWay}"
+                                      Toggled="SysProxy_Toggled" />
+                        <ToggleSwitch Header="TUN 模式" IsOn="{x:Bind Vm.TunOn, Mode=TwoWay}"
+                                      Toggled="Tun_Toggled"
+                                      IsEnabled="{x:Bind Vm.TunAvailable, Mode=OneWay}" />
+                        <TextBlock FontSize="11" Opacity="0.55"
+                                   Visibility="{x:Bind Vm.AdminHintVisibility, Mode=OneWay}"
+                                   Text="TUN 需要管理员权限运行" />
+                    </StackPanel>
+                </Border>
 
                 <!-- 当前订阅 -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}"
-                            Tapped="NavProfiles_Tapped">
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="当前订阅" Style="{StaticResource CardTitleStyle}" />
-                            <TextBlock Text="{x:Bind Vm.ProfileName, Mode=OneWay}" FontSize="16" FontWeight="SemiBold"
-                                       TextTrimming="CharacterEllipsis" />
-                            <TextBlock Text="{x:Bind Vm.ProfileUsage, Mode=OneWay}" FontSize="12" Opacity="0.65" />
-                            <ProgressBar Value="{x:Bind Vm.ProfileRatio, Mode=OneWay}" Maximum="1" Margin="0,8,0,0"
-                                         Visibility="{x:Bind Vm.UsageVisibility, Mode=OneWay}" />
-                            <TextBlock Text="{x:Bind Vm.SubscriptionStatusText, Mode=OneWay}" FontSize="12" Opacity="0.65" />
-                        </StackPanel>
-                    </Border>
-                </GridViewItem>
+                <Border Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch"
+                        Tapped="NavProfiles_Tapped">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="当前订阅" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock Text="{x:Bind Vm.ProfileName, Mode=OneWay}" FontSize="16" FontWeight="SemiBold"
+                                   TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{x:Bind Vm.ProfileUsage, Mode=OneWay}" FontSize="12" Opacity="0.65" />
+                        <ProgressBar Value="{x:Bind Vm.ProfileRatio, Mode=OneWay}" Maximum="1" Margin="0,8,0,0"
+                                     Visibility="{x:Bind Vm.UsageVisibility, Mode=OneWay}" />
+                        <TextBlock Text="{x:Bind Vm.SubscriptionStatusText, Mode=OneWay}" FontSize="12" Opacity="0.65" />
+                    </StackPanel>
+                </Border>
 
                 <!-- 当前节点 -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="当前节点" Style="{StaticResource CardTitleStyle}" />
-                            <ItemsControl ItemsSource="{x:Bind Vm.CurrentNodes, Mode=OneWay}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate x:DataType="vm:CurrentNodeItem">
-                                        <Grid Margin="0,3" ColumnSpacing="8">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="90" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Text="{x:Bind Group}" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
-                                            <TextBlock Text="{x:Bind Node}" Grid.Column="1" FontSize="12" FontWeight="SemiBold"
-                                                       TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
-                                        </Grid>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </StackPanel>
-                    </Border>
-                </GridViewItem>
+                <Border Grid.Row="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="当前节点" Style="{StaticResource CardTitleStyle}" />
+                        <ItemsControl ItemsSource="{x:Bind Vm.CurrentNodes, Mode=OneWay}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="vm:CurrentNodeItem">
+                                    <Grid Margin="0,3" ColumnSpacing="8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="90" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{x:Bind Group}" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                                        <TextBlock Text="{x:Bind Node}" Grid.Column="1" FontSize="12" FontWeight="SemiBold"
+                                                   TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
 
                 <!-- 流量统计 -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
-                        <StackPanel Spacing="6">
-                            <TextBlock Text="流量统计" Style="{StaticResource CardTitleStyle}" />
-                            <Grid ColumnSpacing="8">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="↑" FontSize="18" Foreground="{ThemeResource AccentFillColorSecondaryBrush}" />
-                                <StackPanel Grid.Column="1">
-                                    <TextBlock Text="{x:Bind Vm.UpSpeed, Mode=OneWay}" FontSize="14" FontWeight="SemiBold" />
-                                    <TextBlock Text="{x:Bind Vm.UpTotal, Mode=OneWay}" FontSize="11" Opacity="0.6" />
-                                </StackPanel>
-                            </Grid>
-                            <Grid ColumnSpacing="8" Margin="0,6,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="↓" FontSize="18" Foreground="IndianRed" />
-                                <StackPanel Grid.Column="1">
-                                    <TextBlock Text="{x:Bind Vm.DownSpeed, Mode=OneWay}" FontSize="14" FontWeight="SemiBold" />
-                                    <TextBlock Text="{x:Bind Vm.DownTotal, Mode=OneWay}" FontSize="11" Opacity="0.6" />
-                                </StackPanel>
-                            </Grid>
-                            <TextBlock Text="{x:Bind Vm.MemoryText, Mode=OneWay}" FontSize="11" Opacity="0.6" Margin="0,6,0,0" />
-                        </StackPanel>
-                    </Border>
-                </GridViewItem>
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="流量统计" Style="{StaticResource CardTitleStyle}" />
+                        <Grid ColumnSpacing="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="↑" FontSize="18" Foreground="{ThemeResource AccentFillColorSecondaryBrush}" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{x:Bind Vm.UpSpeed, Mode=OneWay}" FontSize="14" FontWeight="SemiBold" />
+                                <TextBlock Text="{x:Bind Vm.UpTotal, Mode=OneWay}" FontSize="11" Opacity="0.6" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid ColumnSpacing="8" Margin="0,6,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="↓" FontSize="18" Foreground="IndianRed" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{x:Bind Vm.DownSpeed, Mode=OneWay}" FontSize="14" FontWeight="SemiBold" />
+                                <TextBlock Text="{x:Bind Vm.DownTotal, Mode=OneWay}" FontSize="11" Opacity="0.6" />
+                            </StackPanel>
+                        </Grid>
+                        <TextBlock Text="{x:Bind Vm.MemoryText, Mode=OneWay}" FontSize="11" Opacity="0.6" Margin="0,6,0,0" />
+                    </StackPanel>
+                </Border>
 
                 <!-- 运行模式 -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
-                        <StackPanel Spacing="10">
-                            <TextBlock Text="运行模式" Style="{StaticResource CardTitleStyle}" />
-                            <RadioButtons x:Name="ModeRadios">
-                                <RadioButton Content="规则" Tag="rule" />
-                                <RadioButton Content="全局" Tag="global" />
-                                <RadioButton Content="直连" Tag="direct" />
-                            </RadioButtons>
-                        </StackPanel>
-                    </Border>
-                </GridViewItem>
+                <Border Grid.Row="2" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="运行模式" Style="{StaticResource CardTitleStyle}" />
+                        <RadioButtons x:Name="ModeRadios">
+                            <RadioButton Content="规则" Tag="rule" />
+                            <RadioButton Content="全局" Tag="global" />
+                            <RadioButton Content="直连" Tag="direct" />
+                        </RadioButtons>
+                    </StackPanel>
+                </Border>
 
                 <!-- 内核信息 -->
-                <GridViewItem Margin="0,0,16,16">
-                    <Border Style="{StaticResource CardStyle}" Width="{StaticResource CardWidth}" Height="{StaticResource CardHeight}">
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="内核信息" Style="{StaticResource CardTitleStyle}" />
-                            <TextBlock Text="{x:Bind Vm.CoreVersion, Mode=OneWay}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
-                            <TextBlock FontSize="12" Opacity="0.7">
-                                <Run Text="混合端口: " /><Run Text="{x:Bind Vm.MixedPort, Mode=OneWay}" />
-                            </TextBlock>
-                            <TextBlock Text="{x:Bind Vm.CoreStatusText, Mode=OneWay}" FontSize="12" Opacity="0.7" />
-                            <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
-                                <Button Content="重启内核" Style="{StaticResource SubtleButtonStyle}" Click="RestartCore_Click" />
-                                <Button Content="打开日志目录" Style="{StaticResource SubtleButtonStyle}" Click="OpenLogs_Click" />
-                            </StackPanel>
+                <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
+                    <StackPanel Spacing="8">
+                        <TextBlock Text="内核信息" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock Text="{x:Bind Vm.CoreVersion, Mode=OneWay}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                        <TextBlock FontSize="12" Opacity="0.7">
+                            <Run Text="混合端口: " /><Run Text="{x:Bind Vm.MixedPort, Mode=OneWay}" />
+                        </TextBlock>
+                        <TextBlock Text="{x:Bind Vm.CoreStatusText, Mode=OneWay}" FontSize="12" Opacity="0.7" />
+                        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                            <Button Content="重启内核" Style="{StaticResource SubtleButtonStyle}" Click="RestartCore_Click" />
+                            <Button Content="打开日志目录" Style="{StaticResource SubtleButtonStyle}" Click="OpenLogs_Click" />
                         </StackPanel>
-                    </Border>
-                </GridViewItem>
-            </GridView>
+                    </StackPanel>
+                </Border>
+            </Grid>
         </StackPanel>
     </ScrollViewer>
 </Page>
