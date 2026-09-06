@@ -21,6 +21,9 @@ public static class AppBootstrapper
         {
             AppServices.Initialize();
 
+            // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
+            AppServices.SysProxy.ClearStaleProxy();
+
             // 深链 / 二次实例转发参数
             AppServices.DeepLink.Initialize();
             SingleInstance.ForwardedArgsReceived += (_, args) =>

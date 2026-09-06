@@ -187,8 +187,9 @@ public class TrayService
     {
         _ = Task.Run(async () =>
         {
-            await AppServices.ShutdownAsync();
-            Environment.Exit(0);
+            try { await AppServices.ShutdownAsync().WaitAsync(TimeSpan.FromSeconds(8)); }
+            catch (Exception ex) { LogService.App("退出清理未完成: " + ex.Message, "warn"); }
+            finally { Environment.Exit(0); }
         });
     }
 }

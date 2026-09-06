@@ -13,6 +13,7 @@ namespace Flux;
 public sealed partial class MainWindow : Window
 {
     private bool _allowClose;
+    private readonly EndSessionHook _endSessionHook;
 
     [DllImport("user32.dll")]
     private static extern uint GetDpiForWindow(IntPtr hwnd);
@@ -58,6 +59,10 @@ public sealed partial class MainWindow : Window
         AppWindow.Resize(new Windows.Graphics.SizeInt32(
             (int)(1080 * scale), (int)(720 * scale)));
         AppWindow.SetIcon(System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "app.ico"));
+
+        // 关机/注销时 Windows 直接结束进程，不走 AppWindow.Closing；
+        // 在 WM_ENDSESSION 里同步恢复系统代理（内核由 Job Object 随进程终止一并回收）
+        _endSessionHook = new EndSessionHook(WinRT.Interop.WindowNative.GetWindowHandle(this));
 
         // 实时流量订阅
         AppServices.Streams.Traffic += (up, down) =>
@@ -120,8 +125,50 @@ public sealed partial class MainWindow : Window
         area.Points = [.. areaPoints];
     }
 
-    public void NavigateTo(string tag)
+    /// <summary>
+    /// 主窗口 WndProc 子类化，监听 WM_ENDSESSION：系统关机/注销时把系统代理恢复为关闭。
+    /// </summary>
+    private sealed class EndSessionHook : IDisposable
     {
+        private const int GWL_WNDPROC = -4;
+        private const uint WM_ENDSESSION = 0x0016;
+
+        private delegate IntPtr WndProcDelegate(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetWindowLongPtrW(IntPtr hWnd, int nIndex);
+        [DllImport("user32.dll")]
+        private static extern IntPtr SetWindowLongPtrW(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+        [DllImport("user32.dll")]
+        private static extern IntPtr CallWindowProcW(IntPtr lpPrevWndFunc, IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+
+        private readonly IntPtr _hwnd;
+        private readonly IntPtr _oldProc;
+        // 委托必须保活，否则原生回调指向已回收的委托
+        private readonly WndProcDelegate _newProc;
+
+        public EndSessionHook(IntPtr hwnd)
+        {
+            _hwnd = hwnd;
+            _newProc = WndProc;
+            _oldProc = GetWindowLongPtrW(hwnd, GWL_WNDPROC);
+            SetWindowLongPtrW(hwnd, GWL_WNDPROC, Marshal.GetFunctionPointerForDelegate(_newProc));
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam)
+        {
+            if (msg == WM_ENDSESSION && wParam != IntPtr.Zero)
+            {
+                try { AppServices.SysProxy.Reset(); }
+                catch { }
+            }
+            return CallWindowProcW(_oldProc, hwnd, msg, wParam, lParam);
+        }
+
+        public void Dispose() => SetWindowLongPtrW(_hwnd, GWL_WNDPROC, _oldProc);
+    }
+
+    public void NavigateTo(string tag)    {
         foreach (NavigationViewItem item in NavView.MenuItems)
         {
             if (item.Tag as string == tag)

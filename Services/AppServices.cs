@@ -38,6 +38,9 @@ public static class AppServices
             Streams.Stop();
             await Core.StopAsync();
         }
-        catch { }
+        catch (Exception ex)
+        {
+            LogService.App("退出清理失败: " + ex.Message, "warn");
+        }
     }
 }

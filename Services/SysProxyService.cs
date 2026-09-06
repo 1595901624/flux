@@ -53,6 +53,24 @@ public class SysProxyService
         _lastApplied = null;
     }
 
+    /// <summary>
+    /// 清理上次异常退出（崩溃 / 强杀 / 关机）遗留的系统代理：仅当代理指向本应用的混合端口时才清除，
+    /// 此时内核必然已不监听，保留只会导致用户断网；用户指向其他代理工具的设置不受影响。
+    /// </summary>
+    public void ClearStaleProxy()
+    {
+        try
+        {
+            var (enable, server) = GetSystemState();
+            if (enable && server == $"127.0.0.1:{AppServices.Config.MixedPort}")
+            {
+                SetProxy(false, "", "");
+                LogService.App("检测到上次未恢复的系统代理，已自动关闭", "warn");
+            }
+        }
+        catch { }
+    }
+
     /// <summary>当前系统状态（供首页/设置显示）。</summary>
     public static (bool Enable, string Server) GetSystemState()
     {

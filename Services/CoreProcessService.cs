@@ -35,6 +35,7 @@ public class CoreProcessService : IDisposable
         try
         {
             if (IsRunning) return;
+            KillLeftoverCores();
             Paths.EnsureCoreExecutable();
 
             Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
@@ -119,6 +120,27 @@ public class CoreProcessService : IDisposable
             Mode = RunningMode.NotRunning;
             CoreStopped?.Invoke();
         }
+    }
+
+    // ---------- 残留清理 ----------
+
+    /// <summary>结束上次异常退出遗留的内核进程（残留会占用端口导致新内核启动失败）。</summary>
+    private static void KillLeftoverCores()
+    {
+        try
+        {
+            foreach (var leftover in Process.GetProcessesByName("FluxCore"))
+            {
+                try
+                {
+                    leftover.Kill(entireProcessTree: true);
+                    LogService.App($"已清理残留内核进程 PID {leftover.Id}", "warn");
+                }
+                catch { }
+                finally { leftover.Dispose(); }
+            }
+        }
+        catch { }
     }
 
     // ---------- 配置校验与应用 ----------
@@ -208,7 +230,9 @@ public class CoreProcessService : IDisposable
             ref info,
             (uint)Marshal.SizeOf<NativeMethods.JOBOBJECT_EXTENDED_LIMIT_INFORMATION>());
 
-        NativeMethods.AssignProcessToJobObject(_jobHandle, processHandle);
+        // 关联失败时（如进程已属于其他 Job）KILL_ON_JOB_CLOSE 兜底失效，内核会残留
+        if (!NativeMethods.AssignProcessToJobObject(_jobHandle, processHandle))
+            LogService.App("Job Object 关联失败，主进程异常退出时内核可能残留", "warn");
     }
 
     private void ReleaseJobObject()
