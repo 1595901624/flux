@@ -35,11 +35,7 @@ public class CoreProcessService : IDisposable
         try
         {
             if (IsRunning) return;
-            if (!File.Exists(Paths.CoreExePath))
-            {
-                LogService.App("未找到 mihomo 内核: " + Paths.CoreExePath, "error");
-                throw new FileNotFoundException("未找到 mihomo 内核（core\\mihomo.exe）");
-            }
+            Paths.EnsureCoreExecutable();
 
             Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
             await ValidateConfigAsync(Paths.RuntimeConfigFile);
@@ -127,7 +123,7 @@ public class CoreProcessService : IDisposable
 
     // ---------- 配置校验与应用 ----------
 
-    /// <summary>用 `mihomo -t` 校验配置文件，失败抛异常。</summary>
+    /// <summary>用内核 `-t` 参数校验配置文件，失败抛异常。</summary>
     private async Task ValidateConfigAsync(string configFile)
     {
         var psi = new ProcessStartInfo
