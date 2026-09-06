@@ -1,0 +1,78 @@
+# Vxn 测试订阅配置
+proxies:
+  - name: "香港 01"
+    type: ss
+    server: 192.0.2.11
+    port: 8388
+    cipher: aes-256-gcm
+    password: "pass-hk1"
+    udp: true
+  - name: "香港 02"
+    type: ss
+    server: 192.0.2.12
+    port: 8388
+    cipher: aes-256-gcm
+    password: "pass-hk2"
+    udp: true
+  - name: "新加坡 01"
+    type: ss
+    server: 192.0.2.21
+    port: 8388
+    cipher: aes-256-gcm
+    password: "pass-sg1"
+  - name: "日本 01"
+    type: ss
+    server: 192.0.2.31
+    port: 8388
+    cipher: aes-256-gcm
+    password: "pass-jp1"
+    udp: true
+  - name: "美国 01"
+    type: trojan
+    server: 192.0.2.41
+    port: 443
+    password: "pass-us1"
+    sni: us1.example.com
+    udp: true
+  - name: "台湾 01"
+    type: ss
+    server: 192.0.2.51
+    port: 8388
+    cipher: aes-256-gcm
+    password: "pass-tw1"
+
+proxy-groups:
+  - name: "代理"
+    type: select
+    proxies:
+      - 自动选择
+      - 香港 01
+      - 香港 02
+      - 新加坡 01
+      - 日本 01
+      - 美国 01
+      - 台湾 01
+      - DIRECT
+  - name: "自动选择"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 香港 01
+      - 香港 02
+      - 新加坡 01
+      - 日本 01
+  - name: "流媒体"
+    type: select
+    proxies:
+      - 代理
+      - 美国 01
+      - 日本 01
+
+rules:
+  - DOMAIN-SUFFIX,google.com,代理
+  - DOMAIN-KEYWORD,github,代理
+  - DOMAIN-SUFFIX,openai.com,流媒体
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,代理
