@@ -1,0 +1,38 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "aad0a52e83432bd454bc0f4398b9d66354d388d5",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 37,
+    "git_diff_deleted_lines": 7,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 36,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Services/CoreProcessService.cs": {
+        "BYMC": [
+          "38",
+          "126"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [
+          "16-19",
+          "52-81"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788696289,
+  "requirement_id": ""
+}
