@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="规则" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" FontSize="12" Opacity="0.6" VerticalAlignment="Center" />
+            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" Grid.Column="1" FontSize="12" Opacity="0.6" VerticalAlignment="Center" />
             <TextBox x:Name="SearchBox" Grid.Column="2" Width="260" VerticalAlignment="Center"
                      PlaceholderText="搜索规则内容" TextChanged="SearchBox_TextChanged" />
             <Button Grid.Column="3" VerticalAlignment="Center" Click="Refresh_Click" Style="{StaticResource SubtleButtonStyle}">
@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{x:Bind IndexText}" FontSize="11" Opacity="0.45" VerticalAlignment="Center" FontFamily="Consolas" />
-                        <TextBlock Text="{x:Bind TypeText}" FontSize="11" Opacity="0.7" VerticalAlignment="Center" FontFamily="Consolas" />
+                        <TextBlock Text="{x:Bind TypeText}" Grid.Column="1" FontSize="11" Opacity="0.7" VerticalAlignment="Center" FontFamily="Consolas" />
                         <TextBlock Text="{x:Bind Payload}" Grid.Column="2" FontSize="12" TextTrimming="CharacterEllipsis"
                                    VerticalAlignment="Center" FontFamily="Consolas" IsTextSelectionEnabled="True" />
                         <Border Grid.Column="3" Background="{x:Bind ProxyBrush}" CornerRadius="4" Padding="8,2" VerticalAlignment="Center">
