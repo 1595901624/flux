@@ -2,7 +2,7 @@ name: Build MSIX
 
 on:
   workflow_dispatch:
-  push:
+  # push:
     # branches: [main]
     # tags: ['v*']
 
