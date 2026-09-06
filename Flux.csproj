@@ -35,4 +35,15 @@
     <Content Include="Assets\core\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <!-- 仅在 CI / 命令行传入 WindowsPackageType=MSIX 打包时使用 -->
+  <ItemGroup Condition="'$(WindowsPackageType)' == 'MSIX'">
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="Assets\Square44x44Logo.png" />
+    <Content Include="Assets\Square150x150Logo.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+  </ItemGroup>
+
 </Project>

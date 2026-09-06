@@ -1,0 +1,44 @@
+name: Build MSIX
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore Flux.csproj -r win-x64
+
+      - name: Build MSIX package
+        run: >
+          dotnet publish Flux.csproj
+          -c Release
+          -r win-x64
+          -p:Platform=x64
+          -p:WindowsPackageType=MSIX
+          -p:EnableMsixTooling=true
+          -p:UapAppxPackageBuildMode=SideloadOnly
+          -p:AppxPackageSigningEnabled=false
+          -p:GenerateAppxPackageOnBuild=true
+          -p:AppxBundle=Never
+          -p:AppxPackageDir="${{ github.workspace }}\msix\"
+
+      - name: Upload MSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Flux-msix
+          path: msix/**/*.msix
+          if-no-files-found: error
