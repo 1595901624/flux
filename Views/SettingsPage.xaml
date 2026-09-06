@@ -39,7 +39,7 @@
             <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <sc:SettingsCard Header="混合代理端口" Description="HTTP/SOCKS5 混合监听端口（1024-65535）">
-                    <NumberBox x:Name="MixedPortBox" Width="140" Minimum="1024" Maximum="65535" SpinButtonPlacementMode="Compact"
+                    <NumberBox x:Name="MixedPortBox" Width="140" Minimum="1024" Maximum="65535" SpinButtonPlacementMode="Hidden"
                                ValueChanged="MixedPort_Changed" />
                 </sc:SettingsCard>
                 <sc:SettingsCard Header="允许局域网连接" Description="允许局域网内其他设备使用本机代理">
