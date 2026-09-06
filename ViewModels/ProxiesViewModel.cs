@@ -26,10 +26,12 @@ public partial class ProxiesViewModel : ObservableObject
 
     private DispatcherQueueTimer? _pollTimer;
     private volatile bool _testing;
+    private bool _switchingMode;
 
     public ProxiesViewModel()
     {
         TestUrl = AppServices.Config.Verge.DefaultLatencyTest;
+        Mode = AppServices.Config.Mode;
     }
 
     public void StartPolling()
@@ -54,6 +56,8 @@ public partial class ProxiesViewModel : ObservableObject
     public async Task RefreshAsync()
     {
         if (_testing) return;
+        // 模式以持久化配置为准（对齐 verge：UI 状态跟随配置而非页面本地状态）
+        if (!_switchingMode) Mode = AppServices.Config.Mode;
         try
         {
             var json = await AppServices.Api.GetProxiesAsync();
@@ -166,7 +170,7 @@ public partial class ProxiesViewModel : ObservableObject
     public async Task SetModeAsync(string mode)
     {
         if (Mode == mode) return;
-        Mode = mode;
+        _switchingMode = true;
         try
         {
             await AppServices.Api.PatchConfigsAsync(new() { ["mode"] = mode });
@@ -177,6 +181,10 @@ public partial class ProxiesViewModel : ObservableObject
         catch (Exception ex)
         {
             LogService.App("模式切换失败: " + ex.Message, "warn");
+        }
+        finally
+        {
+            _switchingMode = false;
         }
         await RefreshAsync();
     }

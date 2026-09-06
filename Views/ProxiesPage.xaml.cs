@@ -10,6 +10,7 @@ public sealed partial class ProxiesPage : Page
 {
     public ProxiesViewModel Vm { get; } = new();
     private readonly CollectionViewSource _groupedView = new();
+    private bool _syncingMode;
 
     public ProxiesPage()
     {
@@ -24,6 +25,8 @@ public sealed partial class ProxiesPage : Page
         {
             if (e.PropertyName == nameof(Vm.IsEmpty))
                 EmptyPanel.Visibility = Vm.IsEmpty ? Visibility.Visible : Visibility.Collapsed;
+            else if (e.PropertyName == nameof(Vm.Mode))
+                SyncModeSegment();
         };
 
         GroupList.SizeChanged += (_, _) => UpdateCardColumns();
@@ -31,12 +34,7 @@ public sealed partial class ProxiesPage : Page
         Loaded += async (_, _) =>
         {
             UpdateCardColumns();
-            // 同步当前模式到分段控件
-            var mode = Vm.Mode;
-            foreach (SegmentedItem item in ModeSegment.Items)
-            {
-                if ((string?)item.Tag == mode) ModeSegment.SelectedItem = item;
-            }
+            SyncModeSegment();
             Vm.StartPolling();
             await Task.CompletedTask;
         };
@@ -56,8 +54,30 @@ public sealed partial class ProxiesPage : Page
         panel.ItemWidth = Math.Floor(w / cols);
     }
 
+    /// <summary>把 VM 的当前模式同步到分段控件；程序化选中需抑制事件，避免反向触发切换。</summary>
+    private void SyncModeSegment()
+    {
+        _syncingMode = true;
+        try
+        {
+            foreach (SegmentedItem item in ModeSegment.Items)
+            {
+                if ((string?)item.Tag == Vm.Mode)
+                {
+                    ModeSegment.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+        finally
+        {
+            _syncingMode = false;
+        }
+    }
+
     private async void ModeSegment_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if (_syncingMode) return;
         if (ModeSegment.SelectedItem is SegmentedItem item && item.Tag is string mode)
         {
             await Vm.SetModeAsync(mode);

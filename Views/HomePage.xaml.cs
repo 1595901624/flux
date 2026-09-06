@@ -8,10 +8,16 @@ namespace Flux.Views;
 public sealed partial class HomePage : Page
 {
     public HomeViewModel Vm { get; } = new();
+    private bool _syncingMode;
 
     public HomePage()
     {
         InitializeComponent();
+        Vm.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(HomeViewModel.Mode))
+                SyncModeRadios();
+        };
         Loaded += async (_, _) =>
         {
             Vm.StartTimer();
@@ -23,14 +29,22 @@ public sealed partial class HomePage : Page
 
     private void SyncModeRadios()
     {
-        var mode = Vm.Mode;
-        for (var i = 0; i < ModeRadios.Items.Count; i++)
+        _syncingMode = true;
+        try
         {
-            if (ModeRadios.Items[i] is RadioButton rb && (string?)rb.Tag == mode)
+            var mode = Vm.Mode;
+            for (var i = 0; i < ModeRadios.Items.Count; i++)
             {
-                ModeRadios.SelectedIndex = i;
-                break;
+                if (ModeRadios.Items[i] is RadioButton rb && (string?)rb.Tag == mode)
+                {
+                    ModeRadios.SelectedIndex = i;
+                    break;
+                }
             }
+        }
+        finally
+        {
+            _syncingMode = false;
         }
     }
 
@@ -60,6 +74,7 @@ public sealed partial class HomePage : Page
 
     private async void Mode_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
+        if (_syncingMode) return;
         if (ModeRadios.SelectedItem is RadioButton rb && rb.Tag is string mode)
         {
             try
