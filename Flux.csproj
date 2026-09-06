@@ -33,6 +33,8 @@
 
   <ItemGroup>
     <Content Include="Assets\core\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest" />
+    <!-- AppWindow.SetIcon / 托盘图标运行时从输出目录读取 app.ico -->
+    <Content Include="Assets\app.ico" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <!-- 仅在 CI / 命令行传入 WindowsPackageType=MSIX 打包时使用 -->
