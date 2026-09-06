@@ -1,0 +1,36 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "c1a172513f64412691ee025af4111ef0c05072ad",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 107,
+    "git_diff_deleted_lines": 117,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 107,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Views/HomePage.xaml": {
+        "BYMC": [
+          "41-50",
+          "53-65",
+          "68-79",
+          "82-101",
+          "104-131",
+          "134-143",
+          "146-156",
+          "158-160"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788691622,
+  "requirement_id": ""
+}
