@@ -53,6 +53,9 @@ public class VergeConfig
     [YamlMember(Alias = "log-level")]
     public string LogLevel { get; set; } = "info"; // debug|info|warning|error|silent
 
+    [YamlMember(Alias = "enable-log")]
+    public bool EnableLog { get; set; } = false;
+
     [YamlMember(Alias = "enable-memory-usage")]
     public bool EnableMemoryUsage { get; set; } = true;
 

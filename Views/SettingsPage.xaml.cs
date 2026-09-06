@@ -30,6 +30,7 @@ public sealed partial class SettingsPage : Page
         Ipv6Switch.IsOn = AppServices.Config.GetBool("ipv6", true);
         TunSwitch.IsOn = verge.EnableTunMode && TrayService.IsElevated();
         AutoCloseConnSwitch.IsOn = verge.AutoCloseConnection;
+        EnableLogSwitch.IsOn = verge.EnableLog;
 
         SelectByTag(LogLevelBox, verge.LogLevel);
         SelectByTag(ThemeBox, verge.ThemeMode);
@@ -164,6 +165,11 @@ public sealed partial class SettingsPage : Page
     private void AutoCloseConn_Toggled(object sender, RoutedEventArgs e)
     {
         SaveVerge(v => v.AutoCloseConnection = AutoCloseConnSwitch.IsOn);
+    }
+
+    private void EnableLog_Toggled(object sender, RoutedEventArgs e)
+    {
+        SaveVerge(v => v.EnableLog = EnableLogSwitch.IsOn);
     }
 
     // ---------- 应用 ----------

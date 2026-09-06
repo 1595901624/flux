@@ -57,6 +57,9 @@
                         <ComboBoxItem Content="silent" Tag="silent" />
                     </ComboBox>
                 </sc:SettingsCard>
+                <sc:SettingsCard Header="应用日志" Description="将运行日志写入日志目录（默认关闭）">
+                    <ToggleSwitch x:Name="EnableLogSwitch" Toggled="EnableLog_Toggled" />
+                </sc:SettingsCard>
                 <sc:SettingsCard Header="TUN 模式" Description="接管全部系统流量（需要管理员权限）">
                     <ToggleSwitch x:Name="TunSwitch" Toggled="Tun_Toggled" />
                 </sc:SettingsCard>

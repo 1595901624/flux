@@ -5,7 +5,7 @@ namespace Flux.Services;
 public record LogLine(DateTime Time, string Type, string Payload);
 
 /// <summary>
-/// 日志：应用日志写文件；内核 stdout 环形缓冲 + 写文件，供日志页展示启动错误。
+/// 日志：内核 stdout 环形缓冲供日志页展示；文件写入默认关闭，由 verge.yaml 的 enable-log 控制。
 /// </summary>
 public static class LogService
 {
@@ -18,6 +18,10 @@ public static class LogService
 
     private static DateTime _lastCoreLogWriteTime = DateTime.MinValue;
 
+    /// <summary>文件日志默认关闭，需在设置页开启 enable-log 才写入文件。</summary>
+    private static bool IsFileLoggingEnabled =>
+        AppServices.Initialized && AppServices.Config.Verge.EnableLog;
+
     public static void Core(string line)
     {
         if (string.IsNullOrWhiteSpace(line)) return;
@@ -27,7 +31,8 @@ public static class LogService
             CoreBuffer.Enqueue(entry);
             if (CoreBuffer.Count > CoreBufferSize) CoreBuffer.Dequeue();
         }
-        AppendToFile(Paths.CoreLogFile, $"[{entry.Time:HH:mm:ss}] {entry.Payload}");
+        if (IsFileLoggingEnabled)
+            AppendToFile(Paths.CoreLogFile, $"[{entry.Time:HH:mm:ss}] {entry.Payload}");
     }
 
     public static List<LogLine> GetCoreLogs()
@@ -38,7 +43,8 @@ public static class LogService
     public static void App(string message, string level = "info")
     {
         var entry = new LogLine(DateTime.Now, level, message);
-        AppendToFile(Paths.AppLogFile, $"[{entry.Time:yyyy-MM-dd HH:mm:ss}] [{level}] {message}");
+        if (IsFileLoggingEnabled)
+            AppendToFile(Paths.AppLogFile, $"[{entry.Time:yyyy-MM-dd HH:mm:ss}] [{level}] {message}");
     }
 
     private static void AppendToFile(string file, string line)
