@@ -37,6 +37,11 @@ public sealed partial class MainWindow : Window
         NavView.SelectedItem = NavView.MenuItems[0];
         ContentFrame.Navigate(typeof(HomePage));
 
+        // 侧边栏收起时隐藏左下角流量图
+        TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed;
+        NavView.RegisterPropertyChangedCallback(NavigationView.IsPaneOpenProperty, (_, _) =>
+            TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed);
+
         // 关闭窗口 = 隐藏到托盘（托盘菜单“退出”才真正关闭）
         AppWindow.Closing += (_, e) =>
         {
