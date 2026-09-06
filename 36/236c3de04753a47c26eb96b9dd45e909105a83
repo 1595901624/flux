@@ -1,0 +1,43 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "36236c3de04753a47c26eb96b9dd45e909105a83",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 102,
+    "git_diff_deleted_lines": 0,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 102,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [
+          "1-44"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [
+          "38-48"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [
+          "1-47"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788696296,
+  "requirement_id": ""
+}
