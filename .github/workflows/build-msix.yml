@@ -103,6 +103,20 @@ jobs:
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
 
+      - name: Package signed sideload ZIP
+        if: ${{ inputs.sign_msix }}
+        shell: pwsh
+        run: |
+          foreach ($rid in 'win-x86', 'win-x64', 'win-arm64') {
+            $stagingDirectory = Join-Path $env:RUNNER_TEMP "flux-sideload-$rid"
+            $zipPath = "artifacts\Flux-sideload-$rid-v${{ steps.version.outputs.version }}.zip"
+            New-Item -ItemType Directory -Force "$stagingDirectory\packages" | Out-Null
+            Copy-Item -Path "msix\$rid" -Destination "$stagingDirectory\packages\$rid" -Recurse
+            Copy-Item -Path 'scripts\Install-FluxSideload.ps1' -Destination "$stagingDirectory\Install-FluxSideload.ps1"
+            Export-Certificate -Cert "Cert:\CurrentUser\My\$env:certificate_thumbprint" -FilePath "$stagingDirectory\Flux.cer" -Force | Out-Null
+            Compress-Archive -Path "$stagingDirectory\*" -DestinationPath $zipPath -Force
+          }
+
       - name: Remove MSIX signing certificate
         if: ${{ always() && inputs.sign_msix }}
         shell: pwsh
@@ -118,7 +132,15 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Flux-portable-v${{ steps.version.outputs.version }}
-          path: artifacts/*.zip
+          path: artifacts/Flux-win-*.zip
+          if-no-files-found: error
+
+      - name: Upload signed sideload ZIP
+        if: ${{ inputs.sign_msix }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Flux-sideload-v${{ steps.version.outputs.version }}
+          path: artifacts/Flux-sideload-*.zip
           if-no-files-found: error
 
       - name: Upload MSIX artifact
@@ -135,7 +157,10 @@ jobs:
           tag_name: v${{ steps.version.outputs.version }}
           name: Flux v${{ steps.version.outputs.version }}
           body: |
-            下载与 Windows 架构匹配的已签名 MSIX 安装包（x86、x64 或 ARM64）。
-          files: msix/**/*.msix
+            下载与 Windows 架构匹配的已签名 MSIX 安装包（x86、x64 或 ARM64），或下载侧载 ZIP。
+            侧载 ZIP 内含证书和 `Install-FluxSideload.ps1`；以管理员身份运行该脚本即可安装匹配当前系统架构的包。
+          files: |
+            msix/**/*.msix
+            artifacts/Flux-sideload-*.zip
           draft: false
           prerelease: false
