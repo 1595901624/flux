@@ -45,6 +45,16 @@ Package.StoreAssociation.xml
 _pkginfo.txt
 *.appxupload
 
+# Signing material — private keys must never enter source control.
+*.pfx
+*.p12
+*.cer
+signing/
+msix/
+msix-verify/
+msix-signed-local/
+msix-signature-inspect/
+
 # Test results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

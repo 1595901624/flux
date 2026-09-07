@@ -11,6 +11,10 @@ on:
         description: '构建完成后发布便携 ZIP'
         type: boolean
         default: false
+      sign_msix:
+        description: '使用 GitHub Secrets 中的 MSIX 证书签名'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -47,16 +51,57 @@ jobs:
           New-Item -ItemType Directory -Force artifacts | Out-Null
           Compress-Archive -Path portable\* -DestinationPath "artifacts\Flux-win-x64-v${{ steps.version.outputs.version }}.zip"
 
-      # 此 MSIX 未签名，只作为开发测试产物，不上传到公开 Release。
-      - name: Build unsigned MSIX for testing
-        run: >
-          dotnet publish Flux.csproj
-          -c Release -r win-x64 -p:Platform=x64
-          -p:WindowsPackageType=MSIX -p:EnableMsixTooling=true
-          -p:UapAppxPackageBuildMode=SideloadOnly
-          -p:AppxPackageSigningEnabled=false
-          -p:GenerateAppxPackageOnBuild=true -p:AppxBundle=Never
-          -p:AppxPackageDir="${{ github.workspace }}\msix\"
+      - name: Import MSIX signing certificate
+        if: ${{ inputs.sign_msix }}
+        shell: pwsh
+        env:
+          MSIX_CERTIFICATE_BASE64: ${{ secrets.MSIX_CERTIFICATE_BASE64 }}
+          MSIX_CERTIFICATE_PASSWORD: ${{ secrets.MSIX_CERTIFICATE_PASSWORD }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:MSIX_CERTIFICATE_BASE64) -or [string]::IsNullOrWhiteSpace($env:MSIX_CERTIFICATE_PASSWORD)) {
+            throw 'sign_msix=true 时必须配置 MSIX_CERTIFICATE_BASE64 和 MSIX_CERTIFICATE_PASSWORD 两个 GitHub Actions secrets。'
+          }
+          $certificatePath = Join-Path $env:RUNNER_TEMP 'msix-signing-certificate.pfx'
+          [IO.File]::WriteAllBytes($certificatePath, [Convert]::FromBase64String($env:MSIX_CERTIFICATE_BASE64))
+          $password = ConvertTo-SecureString $env:MSIX_CERTIFICATE_PASSWORD -AsPlainText -Force
+          $certificate = Import-PfxCertificate -FilePath $certificatePath -CertStoreLocation 'Cert:\CurrentUser\My' -Password $password
+          if ($certificate.Subject -ne 'CN=98115004-601A-4933-A2AC-7F81FB1DAD0A') {
+            throw '签名证书的 Subject 与 Microsoft Store 分配的 Package/Identity/Publisher 不匹配。'
+          }
+          "certificate_path=$certificatePath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "certificate_thumbprint=$($certificate.Thumbprint)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      - name: Build MSIX
+        shell: pwsh
+        env:
+          MSIX_CERTIFICATE_PASSWORD: ${{ secrets.MSIX_CERTIFICATE_PASSWORD }}
+        run: |
+          $publishArguments = @(
+            'publish', 'Flux.csproj', '-c', 'Release', '-r', 'win-x64', '-p:Platform=x64',
+            '-p:WindowsPackageType=MSIX', '-p:EnableMsixTooling=true',
+            '-p:UapAppxPackageBuildMode=SideloadOnly', '-p:GenerateAppxPackageOnBuild=true',
+            '-p:AppxBundle=Never', "-p:AppxPackageDir=$env:GITHUB_WORKSPACE\msix\"
+          )
+          if ('${{ inputs.sign_msix }}' -eq 'true') {
+            $publishArguments += '-p:AppxPackageSigningEnabled=true'
+            $publishArguments += "-p:PackageCertificateThumbprint=$env:certificate_thumbprint"
+          }
+          else {
+            $publishArguments += '-p:AppxPackageSigningEnabled=false'
+          }
+          & dotnet @publishArguments
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Remove MSIX signing certificate
+        if: ${{ always() && inputs.sign_msix }}
+        shell: pwsh
+        run: |
+          if ($env:certificate_path -and (Test-Path -LiteralPath $env:certificate_path)) {
+            Remove-Item -LiteralPath $env:certificate_path -Force
+          }
+          if ($env:certificate_thumbprint) {
+            Remove-Item -LiteralPath "Cert:\CurrentUser\My\$env:certificate_thumbprint" -Force -ErrorAction SilentlyContinue
+          }
 
       - name: Upload portable application
         uses: actions/upload-artifact@v4
@@ -65,10 +110,10 @@ jobs:
           path: artifacts/*.zip
           if-no-files-found: error
 
-      - name: Upload unsigned MSIX test artifact
+      - name: Upload MSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Flux-unsigned-msix-v${{ steps.version.outputs.version }}
+          name: Flux-msix-v${{ steps.version.outputs.version }}
           path: msix/**/*.msix
           if-no-files-found: error
 
