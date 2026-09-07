@@ -90,7 +90,7 @@
                 <sc:SettingsCard Header="GitHub" Description="查看 Flux 的源代码和最新动态">
                     <Button Content="打开 GitHub" Click="OpenGitHub_Click" />
                 </sc:SettingsCard>
-                <sc:SettingsCard Header="关于 Flux" Description="{x:Bind AppVersion, Mode=OneWay}">
+                <sc:SettingsCard Header="关于 Flux" Description="{x:Bind AppVersion, Mode=OneTime}">
                     <Button Content="退出应用" Click="ExitApp_Click" />
                 </sc:SettingsCard>
             </StackPanel>

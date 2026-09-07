@@ -19,12 +19,26 @@ public sealed partial class SettingsPage : Page
 
     private static string GetAppVersion()
     {
-        var version = typeof(SettingsPage).Assembly
+        // MSIX 安装包的版本由 Package.appxmanifest 提供；CI 发布时会更新它。
+        // 未打包的开发/便携版没有包身份，因此回退到 csproj 写入的程序集版本。
+        try
+        {
+            var packageVersion = Windows.ApplicationModel.Package.Current.Id.Version;
+            return packageVersion.Revision == 0
+                ? $"{packageVersion.Major}.{packageVersion.Minor}.{packageVersion.Build}"
+                : $"{packageVersion.Major}.{packageVersion.Minor}.{packageVersion.Build}.{packageVersion.Revision}";
+        }
+        catch (InvalidOperationException)
+        {
+            // 未打包运行时没有 Package.Current。
+        }
+
+        var assemblyVersion = typeof(SettingsPage).Assembly
             .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
             .OfType<System.Reflection.AssemblyInformationalVersionAttribute>()
             .FirstOrDefault()?.InformationalVersion;
 
-        return version?.Split('+')[0]
+        return assemblyVersion?.Split('+')[0]
             ?? typeof(SettingsPage).Assembly.GetName().Version?.ToString(3)
             ?? "未知";
     }

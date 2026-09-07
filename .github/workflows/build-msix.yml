@@ -128,14 +128,14 @@ jobs:
           path: msix/**/*.msix
           if-no-files-found: error
 
-      - name: Release portable application
-        if: ${{ inputs.create_release }}
+      - name: Release signed MSIX application
+        if: ${{ inputs.create_release && inputs.sign_msix }}
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.version }}
           name: Flux v${{ steps.version.outputs.version }}
           body: |
-            下载与 Windows 架构匹配的便携 ZIP（x86、x64 或 ARM64），解压后运行 Flux.exe。MSIX 测试产物未签名，不作为公开安装包发布。
-          files: artifacts/*.zip
+            下载与 Windows 架构匹配的已签名 MSIX 安装包（x86、x64 或 ARM64）。
+          files: msix/**/*.msix
           draft: false
           prerelease: false
