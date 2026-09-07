@@ -14,7 +14,7 @@ Flux is a lightweight proxy client for Windows powered by the [mihomo](https://g
 
 ## Requirements
 
-- Windows 10 version 19041 (2004) or later (x64)
+- Windows 10 version 19041 (2004) or later (x86, x64, or ARM64)
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) with the Windows workload for building
 
 ## Getting Started

@@ -30,6 +30,9 @@ x86/
 
 # EXCEPTION: bundled mihomo core is required by the build
 !Assets/core/mihomo.exe
+!Assets/core/win-x86/mihomo.exe
+!Assets/core/win-x64/mihomo.exe
+!Assets/core/win-arm64/mihomo.exe
 
 # NuGet
 *.nupkg
@@ -75,3 +78,5 @@ sample-profile.yaml
 
 # ZCode session config
 .zcode/
+
+.mihomo-staging/

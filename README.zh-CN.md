@@ -14,7 +14,7 @@ Flux 是一款基于 [mihomo](https://github.com/MetaCubeX/mihomo) 内核的轻�
 
 ## 环境要求
 
-- Windows 10 版本 19041（2004）或更高（x64）
+- Windows 10 版本 19041（2004）或更高（x86、x64 或 ARM64）
 - 构建（编译）需要安装 [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ## 快速开始

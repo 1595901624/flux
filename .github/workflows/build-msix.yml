@@ -47,9 +47,13 @@ jobs:
       - name: Publish portable application
         shell: pwsh
         run: |
-          dotnet publish Flux.csproj -c Release -r win-x64 --self-contained true -p:WindowsPackageType=None -o portable
           New-Item -ItemType Directory -Force artifacts | Out-Null
-          Compress-Archive -Path portable\* -DestinationPath "artifacts\Flux-win-x64-v${{ steps.version.outputs.version }}.zip"
+          foreach ($rid in 'win-x86', 'win-x64', 'win-arm64') {
+            $output = "portable\$rid"
+            dotnet publish Flux.csproj -c Release -r $rid --self-contained true -p:WindowsPackageType=None -o $output
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            Compress-Archive -Path "$output\*" -DestinationPath "artifacts\Flux-$rid-v${{ steps.version.outputs.version }}.zip"
+          }
 
       - name: Import MSIX signing certificate
         if: ${{ inputs.sign_msix }}
@@ -76,21 +80,28 @@ jobs:
         env:
           MSIX_CERTIFICATE_PASSWORD: ${{ secrets.MSIX_CERTIFICATE_PASSWORD }}
         run: |
-          $publishArguments = @(
-            'publish', 'Flux.csproj', '-c', 'Release', '-r', 'win-x64', '-p:Platform=x64',
-            '-p:WindowsPackageType=MSIX', '-p:EnableMsixTooling=true',
-            '-p:UapAppxPackageBuildMode=SideloadOnly', '-p:GenerateAppxPackageOnBuild=true',
-            '-p:AppxBundle=Never', "-p:AppxPackageDir=$env:GITHUB_WORKSPACE\msix\"
+          $architectures = @(
+            @{ Rid = 'win-x86'; Platform = 'x86' },
+            @{ Rid = 'win-x64'; Platform = 'x64' },
+            @{ Rid = 'win-arm64'; Platform = 'ARM64' }
           )
-          if ('${{ inputs.sign_msix }}' -eq 'true') {
-            $publishArguments += '-p:AppxPackageSigningEnabled=true'
-            $publishArguments += "-p:PackageCertificateThumbprint=$env:certificate_thumbprint"
+          foreach ($architecture in $architectures) {
+            $publishArguments = @(
+              'publish', 'Flux.csproj', '-c', 'Release', '-r', $architecture.Rid, "-p:Platform=$($architecture.Platform)",
+              '-p:WindowsPackageType=MSIX', '-p:EnableMsixTooling=true',
+              '-p:UapAppxPackageBuildMode=SideloadOnly', '-p:GenerateAppxPackageOnBuild=true',
+              '-p:AppxBundle=Never', "-p:AppxPackageDir=$env:GITHUB_WORKSPACE\msix\$($architecture.Rid)\"
+            )
+            if ('${{ inputs.sign_msix }}' -eq 'true') {
+              $publishArguments += '-p:AppxPackageSigningEnabled=true'
+              $publishArguments += "-p:PackageCertificateThumbprint=$env:certificate_thumbprint"
+            }
+            else {
+              $publishArguments += '-p:AppxPackageSigningEnabled=false'
+            }
+            & dotnet @publishArguments
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
-          else {
-            $publishArguments += '-p:AppxPackageSigningEnabled=false'
-          }
-          & dotnet @publishArguments
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Remove MSIX signing certificate
         if: ${{ always() && inputs.sign_msix }}
@@ -106,7 +117,7 @@ jobs:
       - name: Upload portable application
         uses: actions/upload-artifact@v4
         with:
-          name: Flux-win-x64-v${{ steps.version.outputs.version }}
+          name: Flux-portable-v${{ steps.version.outputs.version }}
           path: artifacts/*.zip
           if-no-files-found: error
 
@@ -124,7 +135,7 @@ jobs:
           tag_name: v${{ steps.version.outputs.version }}
           name: Flux v${{ steps.version.outputs.version }}
           body: |
-            下载便携 ZIP，解压后运行 Flux.exe。MSIX 测试产物未签名，不作为公开安装包发布。
+            下载与 Windows 架构匹配的便携 ZIP（x86、x64 或 ARM64），解压后运行 Flux.exe。MSIX 测试产物未签名，不作为公开安装包发布。
           files: artifacts/*.zip
           draft: false
           prerelease: false
