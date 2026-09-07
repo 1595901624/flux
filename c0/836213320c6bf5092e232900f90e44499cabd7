@@ -1,0 +1,88 @@
+Flux.csproj
+  4324508eaca1fd9d 12,14,26-31,50-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "c0836213320c6bf5092e232900f90e44499cabd7",
+  "prompts": {
+    "4324508eaca1fd9d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a71-d435-77d3-9cff-adca17177bf3",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 18,
+      "total_deletions": 3,
+      "accepted_lines": 17,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 57,
+    "git_diff_deleted_lines": 24,
+    "ai_additions": 15,
+    "ai_accepted": 15,
+    "BYMC": 35,
+    "mixed_additions": 0,
+    "BYAC": 15,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [
+          "51-56",
+          "83-86",
+          "88-98",
+          "120",
+          "138"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      ".gitignore": {
+        "BYMC": [
+          "33-35",
+          "81-82"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "12",
+          "14",
+          "26-31",
+          "50-56"
+        ],
+        "BYRC": []
+      },
+      "README.md": {
+        "BYMC": [
+          "17"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "README.zh-CN.md": {
+        "BYMC": [
+          "17"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "THIRD_PARTY_NOTICES.md": {
+        "BYMC": [
+          "5-9"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788762766,
+  "requirement_id": ""
+}
