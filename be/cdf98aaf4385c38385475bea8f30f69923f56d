@@ -1,0 +1,72 @@
+Flux.csproj
+  12ea834a5d4cd452 44
+Assets/app.svg
+  12ea834a5d4cd452 1-13
+scripts/generate-icons.py
+  12ea834a5d4cd452 1-45
+MainWindow.xaml
+  12ea834a5d4cd452 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "becdf98aaf4385c38385475bea8f30f69923f56d",
+  "prompts": {
+    "12ea834a5d4cd452": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a6a-4456-7940-b14f-678101c0a0e1",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 60,
+      "total_deletions": 3,
+      "accepted_lines": 60,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 60,
+    "git_diff_deleted_lines": 3,
+    "ai_additions": 60,
+    "ai_accepted": 60,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 60,
+    "BYRC": 0,
+    "per_file": {
+      "Assets/app.svg": {
+        "BYMC": [],
+        "BYAC": [
+          "1-13"
+        ],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "44"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "19"
+        ],
+        "BYRC": []
+      },
+      "scripts/generate-icons.py": {
+        "BYMC": [],
+        "BYAC": [
+          "1-45"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788760611,
+  "requirement_id": ""
+}
