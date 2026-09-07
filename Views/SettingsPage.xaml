@@ -87,7 +87,10 @@
                         <Button Content="日志目录" Click="OpenLogs_Click" />
                     </StackPanel>
                 </sc:SettingsCard>
-                <sc:SettingsCard Header="关于 Flux" Description="基于 WinUI 3 的 Clash/Mihomo 客户端 · v0.1.0">
+                <sc:SettingsCard Header="GitHub" Description="查看 Flux 的源代码和最新动态">
+                    <Button Content="打开 GitHub" Click="OpenGitHub_Click" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="关于 Flux" Description="{x:Bind AppVersion, Mode=OneWay}">
                     <Button Content="退出应用" Click="ExitApp_Click" />
                 </sc:SettingsCard>
             </StackPanel>

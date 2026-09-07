@@ -9,10 +9,24 @@ public sealed partial class SettingsPage : Page
 {
     private bool _loading = true;
 
+    public string AppVersion => $"基于 WinUI 3 的 Clash/Mihomo 客户端 · v{GetAppVersion()}";
+
     public SettingsPage()
     {
         InitializeComponent();
         Loaded += (_, _) => LoadFromConfig();
+    }
+
+    private static string GetAppVersion()
+    {
+        var version = typeof(SettingsPage).Assembly
+            .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
+            .OfType<System.Reflection.AssemblyInformationalVersionAttribute>()
+            .FirstOrDefault()?.InformationalVersion;
+
+        return version?.Split('+')[0]
+            ?? typeof(SettingsPage).Assembly.GetName().Version?.ToString(3)
+            ?? "未知";
     }
 
     private void LoadFromConfig()
@@ -258,6 +272,19 @@ public sealed partial class SettingsPage : Page
     private void OpenLogs_Click(object sender, RoutedEventArgs e)
     {
         try { System.Diagnostics.Process.Start("explorer.exe", Paths.LogsDir); } catch { }
+    }
+
+    private void OpenGitHub_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://github.com/1595901624/flux",
+                UseShellExecute = true,
+            });
+        }
+        catch { }
     }
 
     private void ExitApp_Click(object sender, RoutedEventArgs e)
