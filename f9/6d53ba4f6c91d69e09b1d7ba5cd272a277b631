@@ -1,0 +1,73 @@
+.gitignore
+  e22ab6f40555912d 48-57
+.github/workflows/build-msix.yml
+  e22ab6f40555912d 14-17,54-104,113,116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "f96d53ba4f6c91d69e09b1d7ba5cd272a277b631",
+  "prompts": {
+    "e22ab6f40555912d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a3a-03ca-7760-9729-c5fb8b27c9e8",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 73,
+      "total_deletions": 18,
+      "accepted_lines": 69,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 122,
+    "git_diff_deleted_lines": 20,
+    "ai_additions": 67,
+    "ai_accepted": 67,
+    "BYMC": 55,
+    "mixed_additions": 0,
+    "BYAC": 67,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "14-17",
+          "54-104",
+          "113",
+          "116"
+        ],
+        "BYRC": []
+      },
+      ".gitignore": {
+        "BYMC": [],
+        "BYAC": [
+          "48-57"
+        ],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [
+          "8-9",
+          "13-14",
+          "29"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/New-MsixSigningCertificate.ps1": {
+        "BYMC": [
+          "1-50"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788760111,
+  "requirement_id": ""
+}
