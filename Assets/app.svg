@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Flux</title>
+  <desc>A white, forward-leaning F on a rounded blue-to-teal tile.</desc>
+  <defs>
+    <linearGradient id="tile" x1="48" y1="464" x2="464" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2449D8"/>
+      <stop offset="0.52" stop-color="#147CE5"/>
+      <stop offset="1" stop-color="#22C9CB"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#tile)"/>
+  <path d="M172 128H386L372 196H230L220 244H340L326 310H206L190 384H118Z" fill="#FFF"/>
+</svg>
