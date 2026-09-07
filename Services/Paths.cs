@@ -22,6 +22,7 @@ public static class Paths
     public static string ProfilesConfigFile => Path.Combine(AppDataDir, "profiles.yaml");
     public static string RuntimeConfigFile => Path.Combine(AppDataDir, "runtime.yaml");
     public static string CheckConfigFile => Path.Combine(AppDataDir, "check.yaml");
+    public static string ProxyStateFile => Path.Combine(AppDataDir, "system-proxy-state.json");
     public static string AppLogFile => Path.Combine(LogsDir, "app.log");
     public static string CoreLogFile => Path.Combine(LogsDir, "core.log");
 

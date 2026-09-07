@@ -96,15 +96,16 @@ public class ProfileItemVm : ObservableObject
 public partial class ProfilesViewModel : ObservableObject
 {
     public ObservableCollection<ProfileItemVm> Items { get; } = new();
+    private bool _subscribed;
 
     [ObservableProperty]
-    private string _importUrl = "";
+    public partial string ImportUrl { get; set; } = "";
 
     [ObservableProperty]
-    private bool _busy;
+    public partial bool Busy { get; set; }
 
     [ObservableProperty]
-    private string _statusText = "";
+    public partial string StatusText { get; set; } = "";
 
     partial void OnBusyChanged(bool value) => OnPropertyChanged(nameof(StatusVisibility));
     partial void OnStatusTextChanged(string value) => OnPropertyChanged(nameof(StatusVisibility));
@@ -113,10 +114,24 @@ public partial class ProfilesViewModel : ObservableObject
 
     public ProfilesViewModel()
     {
-        AppServices.Subscription.ProfilesChanged += () =>
-            App.UiDispatcher.TryEnqueue(Load);
         Load();
     }
+
+    public void Start()
+    {
+        if (_subscribed) return;
+        AppServices.Subscription.ProfilesChanged += OnProfilesChanged;
+        _subscribed = true;
+    }
+
+    public void Stop()
+    {
+        if (!_subscribed) return;
+        AppServices.Subscription.ProfilesChanged -= OnProfilesChanged;
+        _subscribed = false;
+    }
+
+    private void OnProfilesChanged() => App.UiDispatcher.TryEnqueue(Load);
 
     public void Load()
     {

@@ -30,6 +30,7 @@ public class TrayService
             _tray.Create();
             RebuildMenu();
             AppServices.Config.RuntimeInvalidated += RebuildMenuOnUiThread;
+            AppServices.Subscription.ProfilesChanged += RebuildMenuOnUiThread;
         }
         catch (Exception ex)
         {
@@ -109,7 +110,7 @@ public class TrayService
         }
         if (profiles.Items.Count == 0)
         {
-            sub.Items.Add(new PopupMenuItem("(暂无订阅)", null) { Enabled = false });
+            sub.Items.Add(new PopupMenuItem("(暂无订阅)", (_, _) => { }) { Enabled = false });
         }
         return sub;
     }
@@ -149,11 +150,21 @@ public class TrayService
     private async Task ToggleSystemProxyAsync()
     {
         var verge = AppServices.Config.Verge;
+        var previous = verge.EnableSystemProxy;
         verge.EnableSystemProxy = !verge.EnableSystemProxy;
         AppServices.Config.SaveVerge();
-        AppServices.SysProxy.Apply(verge);
-        RebuildMenu();
-        await Task.CompletedTask;
+        try
+        {
+            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+        }
+        catch (Exception ex)
+        {
+            verge.EnableSystemProxy = previous;
+            AppServices.Config.SaveVerge();
+            LogService.App("系统代理切换失败: " + ex.Message, "error");
+            ShowNotification("系统代理切换失败: " + ex.Message);
+        }
+        finally { RebuildMenu(); }
     }
 
     private async Task ToggleTunAsync()
@@ -164,9 +175,15 @@ public class TrayService
             return;
         }
         var verge = AppServices.Config.Verge;
+        var previous = verge.EnableTunMode;
         verge.EnableTunMode = !verge.EnableTunMode;
         AppServices.Config.SaveVerge();
-        await AppServices.Core.ApplyConfigAsync();
+        if (!await AppServices.Core.ApplyConfigAsync())
+        {
+            verge.EnableTunMode = previous;
+            AppServices.Config.SaveVerge();
+            ShowNotification("内核未运行或拒绝了 TUN 配置");
+        }
         RebuildMenu();
     }
 

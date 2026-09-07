@@ -6,6 +6,7 @@
     <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
     <RootNamespace>Flux</RootNamespace>
     <AssemblyName>Flux</AssemblyName>
+    <Version>0.1.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
     <Platforms>x64</Platforms>
@@ -32,6 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="tests\**\*.cs" />
+    <None Remove="tests\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Assets\core\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest" />
     <!-- AppWindow.SetIcon / 托盘图标运行时从输出目录读取 app.ico -->
     <Content Include="Assets\app.ico" CopyToOutputDirectory="PreserveNewest" />
@@ -47,5 +53,9 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(WindowsPackageType)' == 'MSIX'">
+    <AppxSymbolPackageEnabled>false</AppxSymbolPackageEnabled>
+  </PropertyGroup>
 
 </Project>

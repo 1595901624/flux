@@ -13,15 +13,7 @@ namespace Flux.Services;
 /// </summary>
 public class SubscriptionService
 {
-    private static readonly HttpClient Http = new()
-    {
-        Timeout = TimeSpan.FromSeconds(30),
-    };
-
-    static SubscriptionService()
-    {
-        ServicePointManager.DefaultConnectionLimit = 32;
-    }
+    private const int MaxProfileBytes = 20 * 1024 * 1024;
 
     public event Action? ProfilesChanged;
 
@@ -32,7 +24,8 @@ public class SubscriptionService
     /// <summary>从 URL 导入订阅。失败抛异常。</summary>
     public async Task<ProfileItem> ImportAsync(string url, string? name = null)
     {
-        var (content, info) = await DownloadAsync(url, new ProfileOption()).ConfigureAwait(false);
+        var (content, info) = await DownloadWithFallbackAsync(url, new ProfileOption()).ConfigureAwait(false);
+        ValidateClashContent(content);
         var item = new ProfileItem
         {
             Uid = NewUid(),
@@ -86,137 +79,128 @@ public class SubscriptionService
         if (item.Type != "remote" || string.IsNullOrEmpty(item.Url))
             throw new InvalidOperationException("仅远程订阅可更新");
 
-        Exception? last = null;
-        foreach (var useProxy in new[] { false, true })
+        try
         {
-            try
-            {
-                var option = new ProfileOption
-                {
-                    UserAgent = item.Option.UserAgent,
-                    TimeoutSeconds = item.Option.TimeoutSeconds,
-                    SelfProxy = useProxy && !item.Option.WithProxy,
-                    WithProxy = useProxy && item.Option.WithProxy,
-                };
-                var (content, info) = await DownloadAsync(item.Url, option).ConfigureAwait(false);
-                ValidateClashContent(content);
+            var (content, info) = await DownloadWithFallbackAsync(item.Url, item.Option).ConfigureAwait(false);
+            ValidateClashContent(content);
 
-                SaveProfileFile(item, content);
-                item.Updated = DateTime.Now;
-                if (info.Extra is not null) item.Extra = info.Extra;
-                if (info.UpdateIntervalMinutes > 0) item.Option.UpdateInterval = info.UpdateIntervalMinutes;
-                Config.SaveProfiles();
-                ProfilesChanged?.Invoke();
+            SaveProfileFile(item, content);
+            item.Updated = DateTime.Now;
+            if (info.Extra is not null) item.Extra = info.Extra;
+            if (info.UpdateIntervalMinutes > 0) item.Option.UpdateInterval = info.UpdateIntervalMinutes;
+            Config.SaveProfiles();
+            ProfilesChanged?.Invoke();
 
-                if (item.Uid == Config.Profiles.Current)
-                    await AppServices.Core.ApplyConfigAsync();
-                return;
-            }
-            catch (Exception ex)
-            {
-                last = ex;
-            }
+            if (item.Uid == Config.Profiles.Current)
+                await AppServices.Core.ApplyConfigAsync();
         }
-        throw new InvalidOperationException("订阅更新失败: " + last?.Message);
+        catch (Exception ex)
+        {
+            throw new InvalidOperationException("订阅更新失败: " + ex.Message, ex);
+        }
     }
 
     // ---------- 下载实现 ----------
 
-    private async Task<(string Content, DownloadInfo Info)> DownloadAsync(string url, ProfileOption option)
+    private async Task<(string Content, DownloadInfo Info)> DownloadWithFallbackAsync(string url, ProfileOption option)
     {
-        using var request = new HttpRequestMessage(HttpMethod.Get, FixDirtyUrl(url));
+        Exception? last = null;
+        var transports = new List<DownloadTransport> { DownloadTransport.Direct };
+        if (AppServices.Core.IsRunning) transports.Add(DownloadTransport.FluxCore);
+        transports.Add(DownloadTransport.SystemProxy);
+
+        foreach (var transport in transports)
+        {
+            try { return await DownloadAsync(url, option, transport).ConfigureAwait(false); }
+            catch (Exception ex) { last = ex; }
+        }
+        throw new InvalidOperationException("下载失败: " + last?.Message, last);
+    }
+
+    private async Task<(string Content, DownloadInfo Info)> DownloadAsync(
+        string url, ProfileOption option, DownloadTransport transport)
+    {
+        var fixedUrl = FixDirtyUrl(url);
+        if (!Uri.TryCreate(fixedUrl, UriKind.Absolute, out var uri) || uri.Scheme is not ("http" or "https"))
+            throw new InvalidOperationException("订阅地址必须是有效的 HTTP/HTTPS URL");
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, RemoveUserInfo(uri));
         var ua = string.IsNullOrWhiteSpace(option.UserAgent)
             ? "clash-verge/v2.5.2" : option.UserAgent;
         request.Headers.UserAgent.ParseAdd(ua);
         // URL 携带 userinfo 时转换为 Basic 认证
-        if (Uri.TryCreate(url, UriKind.Absolute, out var uri) && !string.IsNullOrEmpty(uri.UserInfo))
+        if (!string.IsNullOrEmpty(uri.UserInfo))
         {
-            var authBytes = System.Text.Encoding.UTF8.GetBytes(uri.UserInfo);
+            var authBytes = System.Text.Encoding.UTF8.GetBytes(Uri.UnescapeDataString(uri.UserInfo));
             request.Headers.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(authBytes));
         }
 
-        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(Math.Max(5, option.TimeoutSeconds)));
+        using var handler = BuildHandler(transport);
+        using var client = new HttpClient(handler) { Timeout = Timeout.InfiniteTimeSpan };
+        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(Math.Clamp(option.TimeoutSeconds, 5, 300)));
+        using var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cts.Token)
+            .ConfigureAwait(false);
+        response.EnsureSuccessStatusCode();
+        if (response.Content.Headers.ContentLength is > MaxProfileBytes)
+            throw new InvalidOperationException("订阅内容超过 20 MiB 限制");
 
-        HttpResponseMessage? response = null;
-        Exception? last = null;
-        foreach (var handler in new[] { (HttpMessageHandler?)null, BuildProxyHandler(option) })
+        var bytes = await ReadLimitedAsync(response.Content, cts.Token).ConfigureAwait(false);
+        var content = System.Text.Encoding.UTF8.GetString(bytes);
+        if (content.Length > 0 && content[0] == '\uFEFF') content = content[1..];
+
+        var info = new DownloadInfo();
+        if (response.Headers.TryGetValues("subscription-userinfo", out var uiValues))
+            info.Extra = ParseUserinfo(string.Join(";", uiValues));
+        if (response.Headers.TryGetValues("profile-update-interval", out var ivValues) &&
+            double.TryParse(ivValues.FirstOrDefault(), System.Globalization.NumberStyles.Float,
+                System.Globalization.CultureInfo.InvariantCulture, out var hours))
+            info.UpdateIntervalMinutes = (int)Math.Round(hours * 60);
+        if (response.Content.Headers.ContentDisposition?.FileNameStar is { } fnStar)
+            info.Name = fnStar;
+        else if (response.Content.Headers.ContentDisposition?.FileName is { } fn)
+            info.Name = fn.Trim('"');
+        if (string.IsNullOrWhiteSpace(info.Name))
         {
-            if (handler == null && option.SelfProxy) continue; // 首次直连尝试
-            try
-            {
-                using var client = handler is null ? Http : new HttpClient(handler) { Timeout = TimeSpan.FromSeconds(Math.Max(5, option.TimeoutSeconds)) };
-                response = await client.SendAsync(request.Clone(), cts.Token).ConfigureAwait(false);
-                if (response.IsSuccessStatusCode) break;
-                last = new HttpRequestException($"HTTP {(int)response.StatusCode}");
-                response.Dispose();
-                response = null;
-            }
-            catch (Exception ex)
-            {
-                last = ex;
-            }
+            info.Name = uri.Segments.Length > 0
+                ? Uri.UnescapeDataString(uri.Segments[^1].TrimEnd('/'))
+                : "subscription";
         }
-
-        if (response is null) throw new InvalidOperationException("下载失败: " + last?.Message);
-
-        using (response)
-        {
-            response.EnsureSuccessStatusCode();
-            var bytes = await response.Content.ReadAsByteArrayAsync(cts.Token).ConfigureAwait(false);
-            var content = System.Text.Encoding.UTF8.GetString(bytes);
-            if (content.Length > 0 && content[0] == '\uFEFF')
-                content = content[1..];
-
-            var info = new DownloadInfo();
-            // subscription-userinfo
-            if (response.Headers.TryGetValues("subscription-userinfo", out var uiValues))
-            {
-                var ui = string.Join(";", uiValues);
-                info.Extra = ParseUserinfo(ui);
-            }
-            // profile-update-interval（小时）
-            if (response.Headers.TryGetValues("profile-update-interval", out var ivValues) &&
-                double.TryParse(ivValues.FirstOrDefault(), out var hours))
-            {
-                info.UpdateIntervalMinutes = (int)Math.Round(hours * 60);
-            }
-            // 文件名
-            if (response.Content.Headers.ContentDisposition?.FileNameStar is { } fnStar)
-                info.Name = fnStar;
-            else if (response.Content.Headers.ContentDisposition?.FileName is { } fn)
-                info.Name = fn.Trim('"');
-            if (string.IsNullOrWhiteSpace(info.Name))
-                info.Name = Uri.TryCreate(url, UriKind.Absolute, out var u2) && u2.Segments.Length > 0
-                    ? Uri.UnescapeDataString(u2.Segments[^1].TrimEnd('/'))
-                    : "subscription";
-            info.Name = Path.GetFileNameWithoutExtension(info.Name);
-            return (content, info);
-        }
+        info.Name = Path.GetFileNameWithoutExtension(info.Name);
+        return (content, info);
     }
 
-    private static HttpClientHandler? BuildProxyHandler(ProfileOption option)
+    private static HttpClientHandler BuildHandler(DownloadTransport transport)
     {
-        try
+        return transport switch
         {
-            if (option.SelfProxy)
+            DownloadTransport.Direct => new HttpClientHandler { UseProxy = false },
+            DownloadTransport.FluxCore => new HttpClientHandler
             {
-                return new HttpClientHandler
-                {
-                    Proxy = new WebProxy($"http://127.0.0.1:{AppServices.Config.MixedPort}"),
-                    UseProxy = true,
-                };
-            }
-            if (option.WithProxy)
-            {
-                return new HttpClientHandler
-                {
-                    Proxy = HttpClient.DefaultProxy,
-                    UseProxy = true,
-                };
-            }
+                Proxy = new WebProxy($"http://127.0.0.1:{AppServices.Config.MixedPort}"),
+                UseProxy = true,
+            },
+            _ => new HttpClientHandler { Proxy = HttpClient.DefaultProxy, UseProxy = true },
+        };
+    }
+
+    private static Uri RemoveUserInfo(Uri uri) => string.IsNullOrEmpty(uri.UserInfo)
+        ? uri
+        : new UriBuilder(uri) { UserName = "", Password = "" }.Uri;
+
+    private static async Task<byte[]> ReadLimitedAsync(HttpContent content, CancellationToken ct)
+    {
+        await using var input = await content.ReadAsStreamAsync(ct).ConfigureAwait(false);
+        using var output = new MemoryStream();
+        var buffer = new byte[81920];
+        while (true)
+        {
+            var read = await input.ReadAsync(buffer, ct).ConfigureAwait(false);
+            if (read == 0) break;
+            if (output.Length + read > MaxProfileBytes)
+                throw new InvalidOperationException("订阅内容超过 20 MiB 限制");
+            output.Write(buffer, 0, read);
         }
-        catch { }
-        return null;
+        return output.ToArray();
     }
 
     /// <summary>修复误把查询参数接在路径里的 URL。</summary>
@@ -242,15 +226,8 @@ public class SubscriptionService
         return extra;
     }
 
-    private static void ValidateClashContent(string content)
-    {
-        var mapping = YamlHelper.ParseMapping(content)
-            ?? throw new InvalidOperationException("内容不是有效的 YAML");
-        var hasProxies = mapping.Children.ContainsKey(new YamlScalarNode("proxies"));
-        var hasProviders = mapping.Children.ContainsKey(new YamlScalarNode("proxy-providers"));
-        if (!hasProxies && !hasProviders)
-            throw new InvalidOperationException("配置中缺少 proxies / proxy-providers，不是有效的 Clash 订阅");
-    }
+    internal static void ValidateClashContent(string content)
+        => ProfileContentValidator.Validate(content);
 
     // ---------- 文件 / 列表操作 ----------
 
@@ -260,7 +237,7 @@ public class SubscriptionService
         {
             item.File = $"{(item.Type == "remote" ? "R" : "L")}{item.Uid}.yaml";
         }
-        File.WriteAllText(Path.Combine(Paths.ProfilesDir, item.File), content);
+        ConfigService.WriteAllTextAtomic(item.FilePath, content);
     }
 
     public static string NewUid() => Guid.NewGuid().ToString("N")[..12];
@@ -306,6 +283,7 @@ public class SubscriptionService
     // ---------- 自动更新定时 ----------
 
     private DispatcherQueueTimer? _timer;
+    private readonly SemaphoreSlim _autoUpdateLock = new(1, 1);
 
     public void StartAutoUpdateTimer()
     {
@@ -318,20 +296,25 @@ public class SubscriptionService
 
     private async Task UpdateDueAsync()
     {
-        foreach (var item in Config.Profiles.Items.ToList())
+        if (!await _autoUpdateLock.WaitAsync(0)) return;
+        try
         {
-            if (item.Type != "remote" || item.Option.UpdateInterval <= 0) continue;
-            if ((DateTime.Now - item.Updated).TotalMinutes < item.Option.UpdateInterval) continue;
-            try
+            foreach (var item in Config.Profiles.Items.ToList())
             {
-                await UpdateAsync(item);
-                LogService.App($"订阅自动更新成功: {item.Name}");
-            }
-            catch (Exception ex)
-            {
-                LogService.App($"订阅自动更新失败: {item.Name}: {ex.Message}", "warn");
+                if (item.Type != "remote" || item.Option.UpdateInterval <= 0) continue;
+                if ((DateTime.Now - item.Updated).TotalMinutes < item.Option.UpdateInterval) continue;
+                try
+                {
+                    await UpdateAsync(item);
+                    LogService.App($"订阅自动更新成功: {item.Name}");
+                }
+                catch (Exception ex)
+                {
+                    LogService.App($"订阅自动更新失败: {item.Name}: {ex.Message}", "warn");
+                }
             }
         }
+        finally { _autoUpdateLock.Release(); }
     }
 
     private class DownloadInfo
@@ -340,19 +323,6 @@ public class SubscriptionService
         public ProfileExtra? Extra { get; set; }
         public int UpdateIntervalMinutes { get; set; }
     }
-}
 
-/// <summary>HttpRequestMessage 不支持直接克隆，这里手动复制必要部分。</summary>
-internal static class HttpRequestMessageExtensions
-{
-    public static HttpRequestMessage Clone(this HttpRequestMessage req)
-    {
-        var clone = new HttpRequestMessage(req.Method, req.RequestUri)
-        {
-            Version = req.Version,
-        };
-        foreach (var h in req.Headers)
-            clone.Headers.TryAddWithoutValidation(h.Key, h.Value);
-        return clone;
-    }
+    private enum DownloadTransport { Direct, FluxCore, SystemProxy }
 }

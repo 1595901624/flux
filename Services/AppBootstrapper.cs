@@ -24,12 +24,24 @@ public static class AppBootstrapper
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
             AppServices.SysProxy.ClearStaleProxy();
 
+            // 已保存的 TUN 状态不能在非管理员进程中悄悄继续生效。
+            if (AppServices.Config.Verge.EnableTunMode && !TrayService.IsElevated())
+            {
+                AppServices.Config.Verge.EnableTunMode = false;
+                AppServices.Config.SaveVerge();
+                LogService.App("当前进程没有管理员权限，已安全关闭 TUN 模式", "warn");
+            }
+
             // 深链 / 二次实例转发参数
             AppServices.DeepLink.Initialize();
             SingleInstance.ForwardedArgsReceived += (_, args) =>
-                dispatcher.TryEnqueue(() => AppServices.DeepLink.HandleArgs(args));
+                dispatcher.TryEnqueue(() =>
+                {
+                    App.ShowMainWindow();
+                    AppServices.DeepLink.HandleArgs(args);
+                });
 
-            await CoreServiceStartupAsync();
+            var coreReady = await CoreServiceStartupAsync();
 
             AppServices.Tray.Initialize();
             App.ShowMainWindow();
@@ -37,10 +49,12 @@ public static class AppBootstrapper
 
             // 静默启动：--silent 参数或设置开启时隐藏窗口
             var silentByArg = Program.Args.Any(a => a.Equals("--silent", StringComparison.OrdinalIgnoreCase));
-            if (AppServices.Config.Verge.EnableSilentStart || silentByArg)
+            var hasDeepLink = Program.Args.Any(DeepLinkService.IsSupportedUri);
+            if ((AppServices.Config.Verge.EnableSilentStart || silentByArg) && !hasDeepLink)
                 App.MainWindow?.AppWindow.Hide();
 
-            await ApplyStartupStateAsync();
+            AppServices.DeepLink.HandleArgs(Program.Args);
+            await ApplyStartupStateAsync(coreReady);
 
             Started = true;
         }
@@ -54,31 +68,33 @@ public static class AppBootstrapper
     }
 
     /// <summary>启动内核并订阅实时数据流。</summary>
-    private static async Task CoreServiceStartupAsync()
+    private static async Task<bool> CoreServiceStartupAsync()
     {
-        AppServices.Config.RuntimeInvalidated += async () => await AppServices.Core.ApplyConfigAsync();
-
+        AppServices.Core.CoreStarted += AppServices.Streams.Start;
         try
         {
             await AppServices.Core.StartAsync();
+            return true;
         }
         catch (Exception ex)
         {
             LogService.App("内核启动失败: " + ex.Message, "error");
             StartFailed = true;
             StartError = ex.Message;
+            try { await AppServices.Core.StopAsync(); } catch { }
+            return false;
         }
-
-        AppServices.Streams.Start();
     }
 
     /// <summary>应用启动时状态：系统代理、自动更新订阅定时器。</summary>
-    private static async Task ApplyStartupStateAsync()
+    private static async Task ApplyStartupStateAsync(bool coreReady)
     {
         try
         {
-            if (AppServices.Config.Verge.EnableSystemProxy)
+            if (AppServices.Config.Verge.EnableSystemProxy && coreReady)
                 AppServices.SysProxy.Apply(AppServices.Config.Verge);
+            else if (AppServices.Config.Verge.EnableSystemProxy)
+                LogService.App("内核未就绪，已跳过系统代理以避免网络中断", "warn");
         }
         catch (Exception ex)
         {

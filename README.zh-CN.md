@@ -34,10 +34,18 @@ Flux 是一款基于 [mihomo](https://github.com/MetaCubeX/mihomo) 内核的轻�
 
    或使用 Visual Studio 2022 打开 `Flux.slnx`，按 <kbd>F5</kbd> 调试运行。
 
+运行测试：
+
+```bash
+dotnet test Flux.slnx -c Release
+```
+
+发布页提供的便携 ZIP 解压后可直接运行。CI 生成的未签名 MSIX 仅用于开发测试，不作为公开安装包。
+
 ## 配置说明
 
 Flux 使用标准的 Clash 兼容 YAML 配置文件。可参考 [`sample-profile.yaml`](sample-profile.yaml) 了解节点、策略组和规则的最小配置示例。
 
 ## 许可证
 
-本项目仅供学习与个人使用。内置的 mihomo 内核遵循其自身的开源许可协议，详见 [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo)。
+Flux 使用 [GNU GPL v3.0](LICENSE) 发布。内置 mihomo 的版本、校验值、源码与许可信息见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

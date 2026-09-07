@@ -8,7 +8,7 @@
   <Identity
       Name="Flux.Proxy"
       Publisher="CN=Flux"
-      Version="1.0.0.0" />
+      Version="0.1.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="5f9d1a2c-3b7e-4c6d-9a10-f2e3b4c5d6e7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
 

@@ -29,7 +29,8 @@ public sealed partial class LogsPage : Page
             if (!_filterTimer.IsRunning) _filterTimer.Start();
         };
 
-        Loaded += (_, _) => ApplyFilter();
+        Loaded += (_, _) => { Vm.Start(); ApplyFilter(); };
+        Unloaded += (_, _) => { Vm.Stop(); _filterTimer.Stop(); };
     }
 
     private void ApplyFilter()

@@ -20,7 +20,8 @@ public sealed partial class ProfilesPage : Page
             if (e.PropertyName == nameof(Vm.Busy) || e.PropertyName == nameof(Vm.StatusText))
                 UpdateEmptyState();
         };
-        Loaded += (_, _) => { Vm.Load(); UpdateEmptyState(); UpdateCardColumns(); };
+        Loaded += (_, _) => { Vm.Start(); Vm.Load(); UpdateEmptyState(); UpdateCardColumns(); };
+        Unloaded += (_, _) => Vm.Stop();
     }
 
     private double _lastCardsWidth;

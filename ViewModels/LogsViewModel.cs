@@ -35,26 +35,26 @@ public partial class LogsViewModel : ObservableObject
     public ObservableCollection<LogItemVm> Items { get; } = new();
 
     [ObservableProperty]
-    private string _level = "info"; // all|debug|info|warning|error|silent
+    public partial string Level { get; set; } = "info"; // all|debug|info|warning|error|silent
 
     [ObservableProperty]
-    private string _searchText = "";
+    public partial string SearchText { get; set; } = "";
 
     [ObservableProperty]
-    private bool _paused;
+    public partial bool Paused { get; set; }
 
     [ObservableProperty]
-    private string _countText = "";
+    public partial string CountText { get; set; } = "";
 
     private readonly Queue<LogItemVm> _buffer = new();
     private DispatcherQueueTimer? _flushTimer;
+    private bool _subscribed;
 
     partial void OnLevelChanged(string value) { }
     partial void OnPausedChanged(bool value) { }
 
     public LogsViewModel()
     {
-        AppServices.Streams.Log += OnLog;
         // 已缓冲的内核启动日志
         foreach (var line in LogService.GetCoreLogs().TakeLast(200))
         {
@@ -62,9 +62,29 @@ public partial class LogsViewModel : ObservableObject
         }
     }
 
+    public void Start()
+    {
+        if (_subscribed) return;
+        AppServices.Streams.Log += OnLog;
+        _subscribed = true;
+    }
+
+    public void Stop()
+    {
+        if (!_subscribed) return;
+        AppServices.Streams.Log -= OnLog;
+        _subscribed = false;
+        _flushTimer?.Stop();
+    }
+
     private void OnLog(LogLine line)
     {
         if (Paused) return;
+        App.UiDispatcher.TryEnqueue(() => QueueLog(line));
+    }
+
+    private void QueueLog(LogLine line)
+    {
         _flushTimer ??= App.UiDispatcher.CreateTimer();
         _pending.Enqueue(line);
         if (!_flushTimer.IsRunning)

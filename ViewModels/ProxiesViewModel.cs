@@ -13,16 +13,16 @@ public partial class ProxiesViewModel : ObservableObject
     public ObservableCollection<ProxiesGroupHeader> Groups { get; } = new();
 
     [ObservableProperty]
-    private string _mode = "rule";
+    public partial string Mode { get; set; } = "rule";
 
     [ObservableProperty]
-    private string _filterText = "";
+    public partial string FilterText { get; set; } = "";
 
     [ObservableProperty]
-    private string _testUrl = "";
+    public partial string TestUrl { get; set; } = "";
 
     [ObservableProperty]
-    private bool _isEmpty = true;
+    public partial bool IsEmpty { get; set; } = true;
 
     private DispatcherQueueTimer? _pollTimer;
     private volatile bool _testing;
@@ -37,9 +37,12 @@ public partial class ProxiesViewModel : ObservableObject
     public void StartPolling()
     {
         var queue = DispatcherQueue.GetForCurrentThread();
-        _pollTimer ??= queue.CreateTimer();
-        _pollTimer.Interval = TimeSpan.FromSeconds(3);
-        _pollTimer.Tick += async (_, _) => await RefreshAsync();
+        if (_pollTimer is null)
+        {
+            _pollTimer = queue.CreateTimer();
+            _pollTimer.Interval = TimeSpan.FromSeconds(3);
+            _pollTimer.Tick += async (_, _) => await RefreshAsync();
+        }
         _pollTimer.Start();
         _ = RefreshAsync();
     }

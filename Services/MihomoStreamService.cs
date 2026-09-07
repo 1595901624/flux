@@ -25,13 +25,16 @@ public class MihomoStreamService
     public void Configure(string controller, string secret)
     {
         var host = controller.StartsWith(':') ? "127.0.0.1" + controller : controller;
-        host = host.Replace("http://", "").Replace("https://", "").TrimEnd('/');
-        _wsBase = "ws://" + host;
+        var secure = host.StartsWith("https://", StringComparison.OrdinalIgnoreCase);
+        host = host.Replace("http://", "", StringComparison.OrdinalIgnoreCase)
+            .Replace("https://", "", StringComparison.OrdinalIgnoreCase).TrimEnd('/');
+        _wsBase = (secure ? "wss://" : "ws://") + host;
         _secret = secret;
     }
 
     public void Start()
     {
+        if (_running) return;
         _running = true;
         StartChannel("traffic", HandleTraffic);
         StartChannel("memory", HandleMemory);
@@ -159,6 +162,8 @@ public class MihomoStreamService
                 finally
                 {
                     try { _ws?.Abort(); _ws?.Dispose(); } catch { }
+                    _cts?.Dispose();
+                    _cts = null;
                 }
 
                 if (_running()) await Task.Delay(2000);

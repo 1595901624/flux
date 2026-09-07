@@ -35,13 +35,13 @@ public partial class RulesViewModel : ObservableObject
     public ObservableCollection<RuleItemVm> Items { get; } = new();
 
     [ObservableProperty]
-    private string _searchText = "";
+    public partial string SearchText { get; set; } = "";
 
     [ObservableProperty]
-    private string _countText = "";
+    public partial string CountText { get; set; } = "";
 
     [ObservableProperty]
-    private bool _loading;
+    public partial bool Loading { get; set; }
 
     partial void OnSearchTextChanged(string value) => ApplyFilter();
 

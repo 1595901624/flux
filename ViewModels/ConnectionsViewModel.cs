@@ -74,34 +74,49 @@ public partial class ConnectionsViewModel : ObservableObject
     public ObservableCollection<ConnectionVm> Closed { get; } = new();
 
     [ObservableProperty]
-    private bool _showClosed;
+    public partial bool ShowClosed { get; set; }
 
     [ObservableProperty]
-    private string _searchText = "";
+    public partial string SearchText { get; set; } = "";
 
     [ObservableProperty]
-    private string _totalsText = "";
+    public partial string TotalsText { get; set; } = "";
 
     [ObservableProperty]
-    private string _countText = "";
+    public partial string CountText { get; set; } = "";
 
     private readonly Dictionary<string, (long Up, long Down)> _last = new();
     private DateTime _lastTick = DateTime.UtcNow;
     private DispatcherQueueTimer? _flushTimer;
-    private List<ConnectionsSnapshot>? _pending;
+    private readonly List<ConnectionsSnapshot> _pending = [];
+    private bool _subscribed;
 
     partial void OnShowClosedChanged(bool value) => RefreshView();
     partial void OnSearchTextChanged(string value) => RefreshView();
 
-    public ConnectionsViewModel()
+    public void Start()
     {
+        if (_subscribed) return;
         AppServices.Streams.Connections += OnSnapshot;
+        _subscribed = true;
+    }
+
+    public void Stop()
+    {
+        if (!_subscribed) return;
+        AppServices.Streams.Connections -= OnSnapshot;
+        _subscribed = false;
+        _flushTimer?.Stop();
     }
 
     private void OnSnapshot(ConnectionsSnapshot snapshot)
     {
-        _pending ??= new List<ConnectionsSnapshot>();
-        lock (_pending) _pending.Add(snapshot);
+        App.UiDispatcher.TryEnqueue(() => QueueSnapshot(snapshot));
+    }
+
+    private void QueueSnapshot(ConnectionsSnapshot snapshot)
+    {
+        _pending.Add(snapshot);
         _flushTimer ??= App.UiDispatcher.CreateTimer();
         if (!_flushTimer.IsRunning)
         {
@@ -114,12 +129,9 @@ public partial class ConnectionsViewModel : ObservableObject
     private Task FlushAsync()
     {
         ConnectionsSnapshot merged;
-        lock (_pending!)
-        {
-            if (_pending.Count == 0) return Task.CompletedTask;
-            merged = _pending[^1];
-            _pending.Clear();
-        }
+        if (_pending.Count == 0) return Task.CompletedTask;
+        merged = _pending[^1];
+        _pending.Clear();
 
         var now = DateTime.UtcNow;
         var dt = Math.Max(0.2, (now - _lastTick).TotalSeconds);

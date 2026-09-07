@@ -16,6 +16,8 @@ public sealed partial class ConnectionsPage : Page
         ConnList.ItemsSource = _filtered;
         Vm.Active.CollectionChanged += (_, _) => ApplyFilter();
         Vm.Closed.CollectionChanged += (_, _) => ApplyFilter();
+        Loaded += (_, _) => Vm.Start();
+        Unloaded += (_, _) => Vm.Stop();
     }
 
     private void ApplyFilter()

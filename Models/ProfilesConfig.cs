@@ -71,7 +71,7 @@ public class ProfileItem
     public ProfileExtra? Extra { get; set; }
 
     [YamlIgnore]
-    public string FilePath => Path.Combine(Models.ProfilesConfig.Dir, File);
+    public string FilePath => Path.Combine(Models.ProfilesConfig.Dir, Path.GetFileName(File));
 }
 
 public class ProfilesConfig

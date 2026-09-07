@@ -1,15 +1,16 @@
-name: Build MSIX
+name: Build distributions
 
 on:
   workflow_dispatch:
     inputs:
+      version:
+        description: '版本号（例如 0.1.0）'
+        required: true
+        default: '0.1.0'
       create_release:
-        description: '构建完成后自动发布 Release'
+        description: '构建完成后发布便携 ZIP'
         type: boolean
-        default: true
-  # push:
-    # branches: [main]
-    # tags: ['v*']
+        default: false
 
 permissions:
   contents: write
@@ -17,59 +18,68 @@ permissions:
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 10.0.x
 
-      - name: Read version from Package.appxmanifest
+      - name: Validate and apply version
         id: version
         shell: pwsh
         run: |
-          [xml]$manifest = Get-Content "Package.appxmanifest"
-          $version = $manifest.Package.Identity.Version
-          Write-Host "Package version: $version"
+          $version = '${{ inputs.version }}'
+          if ($version -notmatch '^\d+\.\d+\.\d+$') { throw '版本号必须使用 major.minor.patch 格式' }
+          [xml]$manifest = Get-Content 'Package.appxmanifest'
+          $manifest.Package.Identity.Version = "$version.0"
+          $manifest.Save((Resolve-Path 'Package.appxmanifest'))
           "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
-      - name: Restore
-        run: dotnet restore Flux.csproj -r win-x64
+      - name: Restore and test
+        run: |
+          dotnet restore Flux.slnx
+          dotnet test tests/Flux.Tests/Flux.Tests.csproj -c Release
 
-      - name: Build MSIX package
+      - name: Publish portable application
+        shell: pwsh
+        run: |
+          dotnet publish Flux.csproj -c Release -r win-x64 --self-contained true -p:WindowsPackageType=None -o portable
+          New-Item -ItemType Directory -Force artifacts | Out-Null
+          Compress-Archive -Path portable\* -DestinationPath "artifacts\Flux-win-x64-v${{ steps.version.outputs.version }}.zip"
+
+      # 此 MSIX 未签名，只作为开发测试产物，不上传到公开 Release。
+      - name: Build unsigned MSIX for testing
         run: >
           dotnet publish Flux.csproj
-          -c Release
-          -r win-x64
-          -p:Platform=x64
-          -p:WindowsPackageType=MSIX
-          -p:EnableMsixTooling=true
+          -c Release -r win-x64 -p:Platform=x64
+          -p:WindowsPackageType=MSIX -p:EnableMsixTooling=true
           -p:UapAppxPackageBuildMode=SideloadOnly
           -p:AppxPackageSigningEnabled=false
-          -p:GenerateAppxPackageOnBuild=true
-          -p:AppxBundle=Never
+          -p:GenerateAppxPackageOnBuild=true -p:AppxBundle=Never
           -p:AppxPackageDir="${{ github.workspace }}\msix\"
 
-      - name: Upload MSIX artifact
+      - name: Upload portable application
         uses: actions/upload-artifact@v4
         with:
-          name: Flux-msix-v${{ steps.version.outputs.version }}
+          name: Flux-win-x64-v${{ steps.version.outputs.version }}
+          path: artifacts/*.zip
+          if-no-files-found: error
+
+      - name: Upload unsigned MSIX test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Flux-unsigned-msix-v${{ steps.version.outputs.version }}
           path: msix/**/*.msix
           if-no-files-found: error
 
-      - name: Release
+      - name: Release portable application
         if: ${{ inputs.create_release }}
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.version }}
           name: Flux v${{ steps.version.outputs.version }}
           body: |
-            Flux v${{ steps.version.outputs.version }}
-
-            安装方式：下载 MSIX 包后双击安装（未签名包需开启开发者模式或信任证书）。
-          files: msix/**/*.msix
+            下载便携 ZIP，解压后运行 Flux.exe。MSIX 测试产物未签名，不作为公开安装包发布。
+          files: artifacts/*.zip
           draft: false
           prerelease: false

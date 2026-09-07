@@ -24,19 +24,17 @@ public static class SingleInstance
             return true;
         }
 
-        if (args.Length > 0)
+        var forwardedArgs = args.Length > 0 ? args : ["--show"];
+        try
         {
-            try
-            {
-                using var client = new NamedPipeClientStream(".", PipeName, PipeDirection.Out);
-                client.Connect(1000);
-                using var writer = new StreamWriter(client) { AutoFlush = true };
-                writer.WriteLine(string.Join('\0', args));
-            }
-            catch
-            {
-                // 主实例可能正在退出，忽略
-            }
+            using var client = new NamedPipeClientStream(".", PipeName, PipeDirection.Out);
+            client.Connect(1000);
+            using var writer = new StreamWriter(client) { AutoFlush = true };
+            writer.WriteLine(string.Join('\0', forwardedArgs));
+        }
+        catch
+        {
+            // 主实例可能正在退出，忽略
         }
 
         return false;

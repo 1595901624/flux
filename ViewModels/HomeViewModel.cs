@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Dispatching;
+using Flux.Models;
 using Flux.Services;
 using Flux.Utils;
 
@@ -19,55 +20,55 @@ public partial class HomeViewModel : ObservableObject
     public ObservableCollection<CurrentNodeItem> CurrentNodes { get; } = new();
 
     [ObservableProperty]
-    private string _profileName = "（未启用）";
+    public partial string ProfileName { get; set; } = "（未启用）";
 
     [ObservableProperty]
-    private string _profileUsage = "";
+    public partial string ProfileUsage { get; set; } = "";
 
     [ObservableProperty]
-    private bool _systemProxyOn;
+    public partial bool SystemProxyOn { get; set; }
 
     [ObservableProperty]
-    private bool _tunOn;
+    public partial bool TunOn { get; set; }
 
     [ObservableProperty]
-    private bool _isAdmin;
+    public partial bool IsAdmin { get; set; }
 
     [ObservableProperty]
-    private string _mode = "rule";
+    public partial string Mode { get; set; } = "rule";
 
     [ObservableProperty]
-    private string _modeText = "规则";
+    public partial string ModeText { get; set; } = "规则";
 
     [ObservableProperty]
-    private string _coreVersion = "";
+    public partial string CoreVersion { get; set; } = "";
 
     [ObservableProperty]
-    private string _mixedPort = "";
+    public partial string MixedPort { get; set; } = "";
 
     [ObservableProperty]
-    private string _upSpeed = "0 B/s";
+    public partial string UpSpeed { get; set; } = "0 B/s";
 
     [ObservableProperty]
-    private string _downSpeed = "0 B/s";
+    public partial string DownSpeed { get; set; } = "0 B/s";
 
     [ObservableProperty]
-    private string _upTotal = "0 B";
+    public partial string UpTotal { get; set; } = "0 B";
 
     [ObservableProperty]
-    private string _downTotal = "0 B";
+    public partial string DownTotal { get; set; } = "0 B";
 
     [ObservableProperty]
-    private string _memoryText = "";
+    public partial string MemoryText { get; set; } = "";
 
     private double _profileRatio;
     public double ProfileRatio => _profileRatio;
 
     [ObservableProperty]
-    private string _subscriptionStatusText = "点击卡片管理订阅";
+    public partial string SubscriptionStatusText { get; set; } = "点击卡片管理订阅";
 
     [ObservableProperty]
-    private string _coreStatusText = "检查中…";
+    public partial string CoreStatusText { get; set; } = "检查中…";
 
     public bool TunAvailable => IsAdmin;
     public string AdminHintVisibility => IsAdmin ? "Collapsed" : "Visible";
@@ -80,6 +81,7 @@ public partial class HomeViewModel : ObservableObject
     }
 
     private DispatcherQueueTimer? _timer;
+    private bool _subscribed;
 
     public HomeViewModel()
     {
@@ -90,34 +92,52 @@ public partial class HomeViewModel : ObservableObject
         ModeText = Format.ModeText(Mode);
         MixedPort = AppServices.Config.MixedPort.ToString();
 
-        AppServices.Streams.Traffic += (up, down) =>
-            App.UiDispatcher.TryEnqueue(() =>
-            {
-                UpSpeed = Format.Bytes(up) + "/s";
-                DownSpeed = Format.Bytes(down) + "/s";
-            });
-        AppServices.Streams.Connections += s =>
-            App.UiDispatcher.TryEnqueue(() =>
-            {
-                UpTotal = Format.Bytes(s.UploadTotal);
-                DownTotal = Format.Bytes(s.DownloadTotal);
-            });
-        AppServices.Streams.Memory += mem =>
-            App.UiDispatcher.TryEnqueue(() =>
-                MemoryText = Format.Bytes(mem));
     }
 
     public void StartTimer()
     {
+        if (!_subscribed)
+        {
+            AppServices.Streams.Traffic += OnTraffic;
+            AppServices.Streams.Connections += OnConnections;
+            AppServices.Streams.Memory += OnMemory;
+            _subscribed = true;
+        }
         var queue = DispatcherQueue.GetForCurrentThread();
-        _timer ??= queue.CreateTimer();
-        _timer.Interval = TimeSpan.FromSeconds(3);
-        _timer.Tick += async (_, _) => await RefreshAsync();
+        if (_timer is null)
+        {
+            _timer = queue.CreateTimer();
+            _timer.Interval = TimeSpan.FromSeconds(3);
+            _timer.Tick += async (_, _) => await RefreshAsync();
+        }
         _timer.Start();
         _ = RefreshAsync();
     }
 
-    public void StopTimer() => _timer?.Stop();
+    public void StopTimer()
+    {
+        _timer?.Stop();
+        if (!_subscribed) return;
+        AppServices.Streams.Traffic -= OnTraffic;
+        AppServices.Streams.Connections -= OnConnections;
+        AppServices.Streams.Memory -= OnMemory;
+        _subscribed = false;
+    }
+
+    private void OnTraffic(double up, double down) => App.UiDispatcher.TryEnqueue(() =>
+    {
+        UpSpeed = Format.Bytes(up) + "/s";
+        DownSpeed = Format.Bytes(down) + "/s";
+    });
+
+    private void OnConnections(ConnectionsSnapshot snapshot) => App.UiDispatcher.TryEnqueue(() =>
+    {
+        UpTotal = Format.Bytes(snapshot.UploadTotal);
+        DownTotal = Format.Bytes(snapshot.DownloadTotal);
+    });
+
+    private void OnMemory(long memory) =>
+        App.UiDispatcher.TryEnqueue(() => MemoryText = Format.Bytes(memory));
 
     public async Task RefreshAsync()
     {
@@ -199,10 +219,21 @@ public partial class HomeViewModel : ObservableObject
     public async Task ToggleSystemProxyAsync(bool on)
     {
         var verge = AppServices.Config.Verge;
+        var previous = verge.EnableSystemProxy;
         verge.EnableSystemProxy = on;
         AppServices.Config.SaveVerge();
         SystemProxyOn = on;
-        await Task.Run(() => AppServices.SysProxy.Apply(verge));
+        try
+        {
+            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+        }
+        catch
+        {
+            verge.EnableSystemProxy = previous;
+            AppServices.Config.SaveVerge();
+            SystemProxyOn = previous;
+            throw;
+        }
     }
 
     public async Task ToggleTunAsync(bool on)
@@ -213,9 +244,14 @@ public partial class HomeViewModel : ObservableObject
             throw new InvalidOperationException("TUN 模式需要以管理员身份运行应用");
         }
         var verge = AppServices.Config.Verge;
+        var previous = verge.EnableTunMode;
         verge.EnableTunMode = on;
         AppServices.Config.SaveVerge();
         TunOn = on;
-        await AppServices.Core.ApplyConfigAsync();
+        if (await AppServices.Core.ApplyConfigAsync()) return;
+        verge.EnableTunMode = previous;
+        AppServices.Config.SaveVerge();
+        TunOn = previous;
+        throw new InvalidOperationException("内核未运行或拒绝了 TUN 配置");
     }
 }

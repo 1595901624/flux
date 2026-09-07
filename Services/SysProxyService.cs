@@ -1,139 +1,237 @@
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using Flux.Models;
 
 namespace Flux.Services;
 
 /// <summary>
-/// Windows 系统代理（WinINET）：注册表写入 + InternetSetOption 刷新生效；含代理守护。
+/// Windows 系统代理（WinINET）。开启前持久化原始状态，正常退出和异常退出后的下次启动
+/// 都只在当前代理仍由 Flux 管理时恢复，避免覆盖用户或其他代理软件的设置。
 /// </summary>
 public class SysProxyService
 {
     private const string InternetSettingsKey = @"Software\Microsoft\Windows\CurrentVersion\Internet Settings";
-
-    private (bool Enable, string Server, string Bypass)? _lastApplied;
+    private readonly object _sync = new();
+    private AppliedProxy? _lastApplied;
+    private System.Threading.Timer? _guardTimer;
 
     [DllImport("wininet.dll", SetLastError = true)]
     private static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int dwBufferLength);
 
-    private const int INTERNET_OPTION_REFRESH = 37;
-    private const int INTERNET_OPTION_SETTINGS_CHANGED = 39;
+    private const int InternetOptionRefresh = 37;
+    private const int InternetOptionSettingsChanged = 39;
 
     public static string DefaultBypass => "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;<local>";
 
-    /// <summary>按 verge 设置应用或清除系统代理。</summary>
     public void Apply(VergeConfig verge)
     {
-        var port = AppServices.Config.MixedPort;
-        if (verge.EnableSystemProxy)
+        lock (_sync)
         {
+            StopGuardUnsafe();
+            if (!verge.EnableSystemProxy)
+            {
+                RestoreOriginalUnsafe();
+                LogService.App("系统代理已恢复");
+                return;
+            }
+
             var bypass = verge.UseDefaultBypass
                 ? (string.IsNullOrEmpty(verge.SystemProxyBypass)
                     ? DefaultBypass
                     : DefaultBypass + ";" + verge.SystemProxyBypass)
                 : verge.SystemProxyBypass;
-            var server = $"127.0.0.1:{port}";
-            SetProxy(true, server, bypass);
-            _lastApplied = (true, server, bypass);
+            var server = $"127.0.0.1:{AppServices.Config.MixedPort}";
+
+            var snapshot = LoadSnapshot();
+            if (snapshot is null)
+            {
+                var original = ReadState();
+                snapshot = new ProxySnapshot(original.Enable, original.Server, original.Bypass, server);
+            }
+            else
+            {
+                snapshot.FluxServer = server;
+            }
+            SaveSnapshot(snapshot);
+
+            SetProxy(new ProxyState(true, server, bypass));
+            _lastApplied = new AppliedProxy(server, bypass);
+            StartGuardUnsafe(verge);
             LogService.App($"系统代理已开启: {server}");
         }
-        else
-        {
-            SetProxy(false, "", "");
-            _lastApplied = null;
-            LogService.App("系统代理已关闭");
-        }
-        StartGuard(verge);
     }
 
     public void Reset()
     {
-        StopGuard();
-        SetProxy(false, "", "");
-        _lastApplied = null;
+        lock (_sync)
+        {
+            StopGuardUnsafe();
+            RestoreOriginalUnsafe();
+        }
     }
 
-    /// <summary>
-    /// 清理上次异常退出（崩溃 / 强杀 / 关机）遗留的系统代理：仅当代理指向本应用的混合端口时才清除，
-    /// 此时内核必然已不监听，保留只会导致用户断网；用户指向其他代理工具的设置不受影响。
-    /// </summary>
+    /// <summary>恢复上次异常退出前保存的代理；兼容旧版本只记录当前端口的残留状态。</summary>
     public void ClearStaleProxy()
     {
-        try
-        {
-            var (enable, server) = GetSystemState();
-            if (enable && server == $"127.0.0.1:{AppServices.Config.MixedPort}")
-            {
-                SetProxy(false, "", "");
-                LogService.App("检测到上次未恢复的系统代理，已自动关闭", "warn");
-            }
-        }
-        catch { }
-    }
-
-    /// <summary>当前系统状态（供首页/设置显示）。</summary>
-    public static (bool Enable, string Server) GetSystemState()
-    {
-        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey);
-        var enable = (key?.GetValue("ProxyEnable") as int?) == 1;
-        var server = key?.GetValue("ProxyServer") as string ?? "";
-        return (enable, server);
-    }
-
-    private static void SetProxy(bool enable, string server, string bypass)
-    {
-        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey, writable: true)
-            ?? throw new InvalidOperationException("无法打开 Internet Settings 注册表");
-        key.SetValue("ProxyEnable", enable ? 1 : 0, RegistryValueKind.DWord);
-        if (enable)
-        {
-            key.SetValue("ProxyServer", server, RegistryValueKind.String);
-            key.SetValue("ProxyOverride", bypass, RegistryValueKind.String);
-        }
-        Refresh();
-    }
-
-    private static void Refresh()
-    {
-        InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0);
-        InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0);
-    }
-
-    // ---------- 代理守护 ----------
-
-    private System.Threading.Timer? _guardTimer;
-
-    public void StartGuard(VergeConfig verge)
-    {
-        StopGuard();
-        if (!verge.EnableSystemProxy || !verge.EnableProxyGuard) return;
-
-        // 守护只操作注册表，无 UI 依赖；可能在后台线程调用，不能用 DispatcherQueueTimer
-        _lastApplied ??= (true, $"127.0.0.1:{AppServices.Config.MixedPort}", DefaultBypass);
-        _guardTimer = new System.Threading.Timer(_ =>
+        lock (_sync)
         {
             try
             {
-                if (_lastApplied is { } last)
+                if (LoadSnapshot() is { } snapshot)
                 {
-                    var (enable, server) = GetSystemState();
-                    if (!enable || server != last.Server)
+                    var current = ReadState();
+                    if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer))
                     {
-                        LogService.App("检测到系统代理被修改，正在恢复", "warn");
-                        SetProxy(true, last.Server, last.Bypass);
+                        SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
+                        LogService.App("检测到上次未恢复的系统代理，已恢复原始设置", "warn");
                     }
+                    DeleteSnapshot();
+                    _lastApplied = null;
+                    return;
+                }
+
+                var state = ReadState();
+                if (AppServices.Config.Verge.EnableSystemProxy &&
+                    SystemProxyOwnership.IsOwned(state.Enable, state.Server, $"127.0.0.1:{AppServices.Config.MixedPort}"))
+                {
+                    SetProxy(new ProxyState(false, "", ""));
+                    LogService.App("检测到旧版本遗留的系统代理，已自动关闭", "warn");
                 }
             }
             catch (Exception ex)
             {
-                LogService.App("代理守护异常: " + ex.Message, "warn");
+                LogService.App("恢复遗留系统代理失败: " + ex.Message, "warn");
+            }
+        }
+    }
+
+    public static (bool Enable, string Server) GetSystemState()
+    {
+        var state = ReadState();
+        return (state.Enable, state.Server);
+    }
+
+    private void RestoreOriginalUnsafe()
+    {
+        var snapshot = LoadSnapshot();
+        if (snapshot is not null)
+        {
+            var current = ReadState();
+            if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer))
+                SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
+            else
+                LogService.App("系统代理已被其他程序修改，Flux 不再覆盖该设置", "warn");
+            DeleteSnapshot();
+        }
+        _lastApplied = null;
+    }
+
+    private static ProxyState ReadState()
+    {
+        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey);
+        var enable = Convert.ToInt32(key?.GetValue("ProxyEnable") ?? 0) == 1;
+        var server = key?.GetValue("ProxyServer") as string ?? "";
+        var bypass = key?.GetValue("ProxyOverride") as string ?? "";
+        return new ProxyState(enable, server, bypass);
+    }
+
+    private static void SetProxy(ProxyState state)
+    {
+        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey, writable: true)
+            ?? throw new InvalidOperationException("无法打开 Internet Settings 注册表");
+        key.SetValue("ProxyEnable", state.Enable ? 1 : 0, RegistryValueKind.DWord);
+        key.SetValue("ProxyServer", state.Server, RegistryValueKind.String);
+        key.SetValue("ProxyOverride", state.Bypass, RegistryValueKind.String);
+        InternetSetOption(IntPtr.Zero, InternetOptionSettingsChanged, IntPtr.Zero, 0);
+        InternetSetOption(IntPtr.Zero, InternetOptionRefresh, IntPtr.Zero, 0);
+    }
+
+    private static ProxySnapshot? LoadSnapshot()
+    {
+        try
+        {
+            return File.Exists(Paths.ProxyStateFile)
+                ? JsonSerializer.Deserialize<ProxySnapshot>(File.ReadAllText(Paths.ProxyStateFile))
+                : null;
+        }
+        catch (Exception ex)
+        {
+            LogService.App("系统代理快照读取失败: " + ex.Message, "warn");
+            return null;
+        }
+    }
+
+    private static void SaveSnapshot(ProxySnapshot snapshot) =>
+        ConfigService.WriteAllTextAtomic(Paths.ProxyStateFile, JsonSerializer.Serialize(snapshot));
+
+    private static void DeleteSnapshot()
+    {
+        try { if (File.Exists(Paths.ProxyStateFile)) File.Delete(Paths.ProxyStateFile); } catch { }
+    }
+
+    private void StartGuardUnsafe(VergeConfig verge)
+    {
+        if (!verge.EnableProxyGuard || _lastApplied is null) return;
+        _guardTimer = new System.Threading.Timer(_ =>
+        {
+            lock (_sync)
+            {
+                try
+                {
+                    if (_lastApplied is not { } last) return;
+                    var current = ReadState();
+                    if (!SystemProxyOwnership.IsOwned(current.Enable, current.Server, last.Server) ||
+                        current.Bypass != last.Bypass)
+                    {
+                        LogService.App("检测到系统代理被修改，正在恢复", "warn");
+                        SetProxy(new ProxyState(true, last.Server, last.Bypass));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LogService.App("代理守护异常: " + ex.Message, "warn");
+                }
             }
         }, null, TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30));
     }
 
+    public void StartGuard(VergeConfig verge)
+    {
+        lock (_sync)
+        {
+            StopGuardUnsafe();
+            StartGuardUnsafe(verge);
+        }
+    }
+
     public void StopGuard()
+    {
+        lock (_sync) StopGuardUnsafe();
+    }
+
+    private void StopGuardUnsafe()
     {
         _guardTimer?.Dispose();
         _guardTimer = null;
+    }
+
+    private sealed record ProxyState(bool Enable, string Server, string Bypass);
+    private sealed record AppliedProxy(string Server, string Bypass);
+    private sealed class ProxySnapshot
+    {
+        public ProxySnapshot() { }
+        public ProxySnapshot(bool originalEnable, string originalServer, string originalBypass, string fluxServer)
+        {
+            OriginalEnable = originalEnable;
+            OriginalServer = originalServer;
+            OriginalBypass = originalBypass;
+            FluxServer = fluxServer;
+        }
+
+        public bool OriginalEnable { get; set; }
+        public string OriginalServer { get; set; } = "";
+        public string OriginalBypass { get; set; } = "";
+        public string FluxServer { get; set; } = "";
     }
 }

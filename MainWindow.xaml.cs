@@ -12,7 +12,6 @@ namespace Flux;
 
 public sealed partial class MainWindow : Window
 {
-    private bool _allowClose;
     private readonly EndSessionHook _endSessionHook;
 
     [DllImport("user32.dll")]
@@ -46,11 +45,8 @@ public sealed partial class MainWindow : Window
         // 关闭窗口 = 隐藏到托盘（托盘菜单“退出”才真正关闭）
         AppWindow.Closing += (_, e) =>
         {
-            if (!_allowClose)
-            {
-                e.Cancel = true;
-                AppWindow.Hide();
-            }
+            e.Cancel = true;
+            AppWindow.Hide();
         };
 
         // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）

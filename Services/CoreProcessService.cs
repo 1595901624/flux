@@ -19,6 +19,7 @@ public class CoreProcessService : IDisposable
     private Process? _process;
     private IntPtr _jobHandle = IntPtr.Zero;
     private readonly SemaphoreSlim _lifecycleLock = new(1, 1);
+    private readonly SemaphoreSlim _applyLock = new(1, 1);
 
     /// <summary>内核启动成功且 External Controller 就绪。</summary>
     public event Action? CoreStarted;
@@ -41,11 +42,19 @@ public class CoreProcessService : IDisposable
             Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
             await ValidateConfigAsync(Paths.RuntimeConfigFile);
 
-            StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
-            await WaitForControllerAsync(15000);
-            Mode = RunningMode.Sidecar;
-            LogService.App("mihomo 内核已启动");
-            CoreStarted?.Invoke();
+            try
+            {
+                StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
+                await WaitForControllerAsync(15000);
+                Mode = RunningMode.Sidecar;
+                LogService.App("mihomo 内核已启动");
+                CoreStarted?.Invoke();
+            }
+            catch
+            {
+                await StopCoreUnsafeAsync();
+                throw;
+            }
         }
         finally
         {
@@ -133,6 +142,10 @@ public class CoreProcessService : IDisposable
             {
                 try
                 {
+                    var executable = leftover.MainModule?.FileName;
+                    if (!string.Equals(Path.GetFullPath(executable ?? ""), Path.GetFullPath(Paths.CoreExePath),
+                            StringComparison.OrdinalIgnoreCase))
+                        continue;
                     leftover.Kill(entireProcessTree: true);
                     LogService.App($"已清理残留内核进程 PID {leftover.Id}", "warn");
                 }
@@ -158,8 +171,11 @@ public class CoreProcessService : IDisposable
             RedirectStandardError = true,
         };
         using var p = Process.Start(psi)!;
-        var output = await p.StandardOutput.ReadToEndAsync() + await p.StandardError.ReadToEndAsync();
-        await p.WaitForExitAsync(new CancellationTokenSource(15000).Token);
+        var stdoutTask = p.StandardOutput.ReadToEndAsync();
+        var stderrTask = p.StandardError.ReadToEndAsync();
+        using var timeout = new CancellationTokenSource(15000);
+        await p.WaitForExitAsync(timeout.Token);
+        var output = await stdoutTask + await stderrTask;
         if (!string.IsNullOrWhiteSpace(output)) LogService.Core(output.TrimEnd());
         if (p.ExitCode != 0 || output.Contains("FATA", StringComparison.OrdinalIgnoreCase))
         {
@@ -170,28 +186,36 @@ public class CoreProcessService : IDisposable
     /// <summary>重新生成运行时配置并应用到运行中的内核（热重载，失败则重启内核）。</summary>
     public async Task<bool> ApplyConfigAsync()
     {
-        if (!IsRunning) return false;
+        await _applyLock.WaitAsync();
         try
         {
-            Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
-            await ValidateConfigAsync(Paths.RuntimeConfigFile);
+            if (!IsRunning) return false;
+            try
+            {
+                Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
+                await ValidateConfigAsync(Paths.RuntimeConfigFile);
+            }
+            catch (Exception ex)
+            {
+                LogService.App("配置应用被拒绝: " + ex.Message, "error");
+                return false;
+            }
+            try
+            {
+                await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
+                LogService.App("运行时配置已热重载");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                LogService.App("热重载失败，重启内核: " + ex.Message, "warn");
+                await RestartAsync();
+                return true;
+            }
         }
-        catch (Exception ex)
+        finally
         {
-            LogService.App("配置应用被拒绝: " + ex.Message, "error");
-            return false;
-        }
-        try
-        {
-            await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
-            LogService.App("运行时配置已热重载");
-            return true;
-        }
-        catch (Exception ex)
-        {
-            LogService.App("热重载失败，重启内核: " + ex.Message, "warn");
-            await RestartAsync();
-            return true;
+            _applyLock.Release();
         }
     }
 

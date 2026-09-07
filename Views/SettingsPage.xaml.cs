@@ -81,25 +81,37 @@ public sealed partial class SettingsPage : Page
             AutoStartService.SetEnabled(AutoLaunchSwitch.IsOn, SilentStartSwitch.IsOn);
     }
 
-    private void SysProxy_Toggled(object sender, RoutedEventArgs e)
+    private async void SysProxy_Toggled(object sender, RoutedEventArgs e)
     {
-        if (!SaveVerge(v => v.EnableSystemProxy = SysProxySwitch.IsOn)) return;
         var verge = AppServices.Config.Verge;
-        _ = Task.Run(() => AppServices.SysProxy.Apply(verge));
+        var previous = verge.EnableSystemProxy;
+        if (!SaveVerge(v => v.EnableSystemProxy = SysProxySwitch.IsOn)) return;
+        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        catch (Exception ex)
+        {
+            verge.EnableSystemProxy = previous;
+            AppServices.Config.SaveVerge();
+            _loading = true;
+            SysProxySwitch.IsOn = previous;
+            _loading = false;
+            LogService.App("系统代理设置失败: " + ex.Message, "error");
+        }
     }
 
-    private void ProxyGuard_Toggled(object sender, RoutedEventArgs e)
+    private async void ProxyGuard_Toggled(object sender, RoutedEventArgs e)
     {
         if (!SaveVerge(v => v.EnableProxyGuard = ProxyGuardSwitch.IsOn)) return;
         var verge = AppServices.Config.Verge;
-        _ = Task.Run(() => AppServices.SysProxy.Apply(verge));
+        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        catch (Exception ex) { LogService.App("代理守护设置失败: " + ex.Message, "error"); }
     }
 
-    private void Bypass_LostFocus(object sender, RoutedEventArgs e)
+    private async void Bypass_LostFocus(object sender, RoutedEventArgs e)
     {
         if (!SaveVerge(v => v.SystemProxyBypass = BypassBox.Text)) return;
         var verge = AppServices.Config.Verge;
-        _ = Task.Run(() => AppServices.SysProxy.Apply(verge));
+        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        catch (Exception ex) { LogService.App("代理绕过设置失败: " + ex.Message, "error"); }
     }
 
     // ---------- Clash 设置 ----------
@@ -109,24 +121,46 @@ public sealed partial class SettingsPage : Page
         if (_loading) return;
         var port = (int)MixedPortBox.Value;
         if (port < 1024 || port > 65535) return;
+        var previous = AppServices.Config.MixedPort;
+        if (port == previous) return;
         AppServices.Config.PatchClashBase("mixed-port", port);
-        await AppServices.Core.ApplyConfigAsync();
-        var verge = AppServices.Config.Verge;
-        await Task.Run(() => AppServices.SysProxy.Apply(verge));
+        if (await AppServices.Core.ApplyConfigAsync())
+        {
+            var verge = AppServices.Config.Verge;
+            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+            return;
+        }
+        AppServices.Config.PatchClashBase("mixed-port", previous);
+        _loading = true;
+        MixedPortBox.Value = previous;
+        _loading = false;
+        await ShowApplyFailureAsync();
     }
 
     private async void AllowLan_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
+        var previous = AppServices.Config.GetBool("allow-lan", false);
         AppServices.Config.PatchClashBase("allow-lan", AllowLanSwitch.IsOn);
-        await AppServices.Core.ApplyConfigAsync();
+        if (!await AppServices.Core.ApplyConfigAsync())
+        {
+            AppServices.Config.PatchClashBase("allow-lan", previous);
+            _loading = true; AllowLanSwitch.IsOn = previous; _loading = false;
+            await ShowApplyFailureAsync();
+        }
     }
 
     private async void Ipv6_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
+        var previous = AppServices.Config.GetBool("ipv6", true);
         AppServices.Config.PatchClashBase("ipv6", Ipv6Switch.IsOn);
-        await AppServices.Core.ApplyConfigAsync();
+        if (!await AppServices.Core.ApplyConfigAsync())
+        {
+            AppServices.Config.PatchClashBase("ipv6", previous);
+            _loading = true; Ipv6Switch.IsOn = previous; _loading = false;
+            await ShowApplyFailureAsync();
+        }
     }
 
     private async void LogLevel_Changed(object sender, SelectionChangedEventArgs e)
@@ -134,9 +168,17 @@ public sealed partial class SettingsPage : Page
         if (_loading) return;
         var level = SelectedTag(LogLevelBox);
         if (level is null) return;
+        var previous = AppServices.Config.GetScalar("log-level", "info");
+        var previousVerge = AppServices.Config.Verge.LogLevel;
         SaveVerge(v => v.LogLevel = level);
         AppServices.Config.PatchClashBase("log-level", level);
-        await AppServices.Core.ApplyConfigAsync();
+        if (!await AppServices.Core.ApplyConfigAsync())
+        {
+            SaveVerge(v => v.LogLevel = previousVerge);
+            AppServices.Config.PatchClashBase("log-level", previous);
+            _loading = true; SelectByTag(LogLevelBox, previousVerge); _loading = false;
+            await ShowApplyFailureAsync();
+        }
     }
 
     private async void Tun_Toggled(object sender, RoutedEventArgs e)
@@ -158,8 +200,14 @@ public sealed partial class SettingsPage : Page
             await dialog.ShowAsync();
             return;
         }
+        var previous = AppServices.Config.Verge.EnableTunMode;
         SaveVerge(v => v.EnableTunMode = TunSwitch.IsOn);
-        await AppServices.Core.ApplyConfigAsync();
+        if (!await AppServices.Core.ApplyConfigAsync())
+        {
+            SaveVerge(v => v.EnableTunMode = previous);
+            _loading = true; TunSwitch.IsOn = previous; _loading = false;
+            await ShowApplyFailureAsync();
+        }
     }
 
     private void AutoCloseConn_Toggled(object sender, RoutedEventArgs e)
@@ -215,5 +263,17 @@ public sealed partial class SettingsPage : Page
     private void ExitApp_Click(object sender, RoutedEventArgs e)
     {
         AppServices.Tray.ExitApp();
+    }
+
+    private async Task ShowApplyFailureAsync()
+    {
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = "配置未应用",
+            Content = "内核未运行或拒绝了新配置，设置已恢复。请查看日志后重试。",
+            CloseButtonText = "确定",
+        };
+        await dialog.ShowAsync();
     }
 }

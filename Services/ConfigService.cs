@@ -21,6 +21,7 @@ public class ConfigService
     public ProfilesConfig Profiles { get; private set; } = new();
     public YamlMappingNode ClashBase { get; private set; } = new();
 
+    /// <summary>持久化运行配置发生变化，供 UI 刷新显示；应用配置由调用方显式等待。</summary>
     public event Action? RuntimeInvalidated;
 
     // ---------- 加载 / 保存 ----------
@@ -51,7 +52,7 @@ public class ConfigService
 
     public void SaveVerge()
     {
-        File.WriteAllText(Paths.VergeConfigFile, Verge.Serialize());
+        WriteAllTextAtomic(Paths.VergeConfigFile, Verge.Serialize());
     }
 
     private void LoadClashBase()
@@ -82,7 +83,7 @@ public class ConfigService
 
     public void SaveClashBase()
     {
-        File.WriteAllText(Paths.ClashConfigFile, new Serializer().Serialize(ClashBase));
+        WriteAllTextAtomic(Paths.ClashConfigFile, new Serializer().Serialize(ClashBase));
     }
 
     private void LoadProfiles()
@@ -101,7 +102,7 @@ public class ConfigService
 
     public void SaveProfiles()
     {
-        File.WriteAllText(Paths.ProfilesConfigFile, Profiles.Serialize());
+        WriteAllTextAtomic(Paths.ProfilesConfigFile, Profiles.Serialize());
     }
 
     // ---------- 基础配置模板 ----------
@@ -271,7 +272,25 @@ public class ConfigService
     {
         var node = GenerateRuntimeNode();
         var yaml = new Serializer().Serialize(node);
-        File.WriteAllText(path, yaml);
+        WriteAllTextAtomic(path, yaml);
+    }
+
+    /// <summary>在同一目录写临时文件后替换，避免断电或崩溃留下半个 YAML 文件。</summary>
+    internal static void WriteAllTextAtomic(string path, string content)
+    {
+        var directory = Path.GetDirectoryName(path)
+            ?? throw new InvalidOperationException("目标文件缺少目录");
+        Directory.CreateDirectory(directory);
+        var temp = Path.Combine(directory, $".{Path.GetFileName(path)}.{Guid.NewGuid():N}.tmp");
+        try
+        {
+            File.WriteAllText(temp, content);
+            File.Move(temp, path, overwrite: true);
+        }
+        finally
+        {
+            try { if (File.Exists(temp)) File.Delete(temp); } catch { }
+        }
     }
 
     /// <summary>通知核心服务重新生成并应用运行时配置。</summary>
