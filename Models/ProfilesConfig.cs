@@ -64,6 +64,10 @@ public class ProfileItem
     [YamlMember(Alias = "updated")]
     public DateTime Updated { get; set; }
 
+    /// <summary>首页“当前节点”在该订阅下优先展示的代理组。</summary>
+    [YamlMember(Alias = "selected-proxy-group")]
+    public string SelectedProxyGroup { get; set; } = "";
+
     [YamlMember(Alias = "option")]
     public ProfileOption Option { get; set; } = new();
 

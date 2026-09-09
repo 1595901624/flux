@@ -27,6 +27,7 @@ public partial class ProxiesViewModel : ObservableObject
     private DispatcherQueueTimer? _pollTimer;
     private volatile bool _testing;
     private bool _switchingMode;
+    private bool _subscribed;
 
     public ProxiesViewModel()
     {
@@ -36,6 +37,13 @@ public partial class ProxiesViewModel : ObservableObject
 
     public void StartPolling()
     {
+        if (!_subscribed)
+        {
+            AppServices.Core.CoreStarted += RequestRefresh;
+            AppServices.Subscription.ProfilesChanged += RequestRefresh;
+            _subscribed = true;
+        }
+
         var queue = DispatcherQueue.GetForCurrentThread();
         if (_pollTimer is null)
         {
@@ -47,11 +55,23 @@ public partial class ProxiesViewModel : ObservableObject
         _ = RefreshAsync();
     }
 
-    public void StopPolling() => _pollTimer?.Stop();
+    public void StopPolling()
+    {
+        _pollTimer?.Stop();
+        if (!_subscribed) return;
+        AppServices.Core.CoreStarted -= RequestRefresh;
+        AppServices.Subscription.ProfilesChanged -= RequestRefresh;
+        _subscribed = false;
+    }
 
     public void ApplyFilter()
     {
         _ = RefreshAsync();
+    }
+
+    private void RequestRefresh()
+    {
+        App.UiDispatcher.TryEnqueue(() => _ = RefreshAsync());
     }
 
     // ---------- 数据加载 ----------
@@ -106,6 +126,18 @@ public partial class ProxiesViewModel : ObservableObject
             groups.Add(g);
         }
 
+        // /proxies 是 JSON 对象，mihomo/Go 的序列化可能按名称排列；展示应遵循订阅文件顺序。
+        var declaredOrder = AppServices.Config.GetCurrentProxyGroupOrder();
+        if (declaredOrder.Count > 0)
+        {
+            var orderByName = new Dictionary<string, int>(StringComparer.Ordinal);
+            for (var index = 0; index < declaredOrder.Count; index++)
+                orderByName.TryAdd(declaredOrder[index], index);
+            groups = groups
+                .OrderBy(group => orderByName.TryGetValue(group.Name, out var index) ? index : int.MaxValue)
+                .ToList();
+        }
+
         var filter = FilterText?.Trim() ?? "";
 
         // 移除已消失的组
@@ -116,8 +148,9 @@ public partial class ProxiesViewModel : ObservableObject
         }
 
         var seenKeys = new HashSet<string>();
-        foreach (var g in groups)
+        for (var groupIndex = 0; groupIndex < groups.Count; groupIndex++)
         {
+            var g = groups[groupIndex];
             var header = Groups.FirstOrDefault(x => x.Name == g.Name);
             if (header is null)
             {
@@ -127,7 +160,12 @@ public partial class ProxiesViewModel : ObservableObject
                     Type = g.Type,
                     TestDelayCommand = new AsyncRelayCommand(() => TestGroupDelayAsync(g.Name)),
                 };
-                Groups.Add(header);
+                Groups.Insert(groupIndex, header);
+            }
+            else
+            {
+                var currentIndex = Groups.IndexOf(header);
+                if (currentIndex != groupIndex) Groups.Move(currentIndex, groupIndex);
             }
             header.Now = g.Now;
 
@@ -199,6 +237,12 @@ public partial class ProxiesViewModel : ObservableObject
         try
         {
             await AppServices.Api.SelectProxyAsync(group, name);
+            var profile = AppServices.Config.Profiles.GetCurrent();
+            if (profile is not null && !string.Equals(profile.SelectedProxyGroup, group, StringComparison.Ordinal))
+            {
+                profile.SelectedProxyGroup = group;
+                AppServices.Config.SaveProfiles();
+            }
             var header = Groups.FirstOrDefault(g => g.Name == group);
             if (header is not null)
             {

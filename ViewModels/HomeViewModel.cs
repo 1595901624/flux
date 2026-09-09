@@ -187,30 +187,54 @@ public partial class HomeViewModel : ObservableObject
             CoreStatusText = "内核未运行";
         }
 
-        // 主选择组当前节点
+        // 与 Clash Verge Rev 一致：规则模式优先恢复该订阅上次选择的代理组；
+        // 无保存值时依次选择常见主组名称、MATCH 兜底组和配置中的第一个可选组。
         try
         {
             var json = await AppServices.Api.GetProxiesAsync();
-            if (json.TryGetProperty("proxies", out var proxies))
+            if (json.TryGetProperty("proxies", out var proxies) && proxies.ValueKind == JsonValueKind.Object)
             {
-                var groups = new List<(string Name, string Now, List<string> All)>();
+                var groups = new Dictionary<string, (string Now, string Type)>(StringComparer.Ordinal);
                 foreach (var p in proxies.EnumerateObject())
                 {
                     if (p.Value.ValueKind != JsonValueKind.Object) continue;
-                    var type = p.Value.TryGetProperty("type", out var t) ? t.GetString() : null;
-                    if (type != "Selector" || p.Name == "GLOBAL") continue;
+                    if (!p.Value.TryGetProperty("all", out var all) || all.ValueKind != JsonValueKind.Array)
+                        continue;
                     var now = p.Value.TryGetProperty("now", out var n) ? n.GetString() ?? "" : "";
-                    var all = new List<string>();
-                    if (p.Value.TryGetProperty("all", out var a) && a.ValueKind == JsonValueKind.Array)
-                        foreach (var x in a.EnumerateArray())
-                            if (x.GetString() is { } s) all.Add(s);
-                    groups.Add((p.Name, now, all));
+                    var type = p.Value.TryGetProperty("type", out var t) ? t.GetString() ?? "" : "";
+                    groups[p.Name] = (now, type);
                 }
 
-                var top = groups.OrderByDescending(g => g.All.Count).Take(3).ToList();
                 CurrentNodes.Clear();
-                foreach (var g in top)
-                    CurrentNodes.Add(new CurrentNodeItem { Group = g.Name, Node = string.IsNullOrEmpty(g.Now) ? "—" : g.Now });
+                if (Mode == "direct")
+                {
+                    CurrentNodes.Add(new CurrentNodeItem { Group = "DIRECT", Node = "DIRECT" });
+                    return;
+                }
+
+                if (Mode == "global")
+                {
+                    if (groups.TryGetValue("GLOBAL", out var global))
+                        CurrentNodes.Add(new CurrentNodeItem { Group = "GLOBAL", Node = string.IsNullOrEmpty(global.Now) ? "—" : global.Now });
+                    return;
+                }
+
+                var selectableGroups = groups
+                    .Where(x => x.Value.Type is "Selector" or "URLTest")
+                    .Select(x => x.Key)
+                    .ToList();
+                var savedGroup = AppServices.Config.Profiles.GetCurrent()?.SelectedProxyGroup;
+                var primaryKeywords = new[] { "auto", "select", "proxy", "节点选择", "自动选择" };
+                var preferredGroup = !string.IsNullOrWhiteSpace(savedGroup) && selectableGroups.Contains(savedGroup)
+                    ? savedGroup
+                    : selectableGroups.FirstOrDefault(name => primaryKeywords.Any(keyword =>
+                        name.Contains(keyword, StringComparison.OrdinalIgnoreCase)))
+                        ?? AppServices.Config.GetCurrentRuleDefaultProxyGroup()
+                        ?? AppServices.Config.GetCurrentProxyGroupOrder().FirstOrDefault(name => selectableGroups.Contains(name))
+                        ?? selectableGroups.FirstOrDefault();
+
+                if (preferredGroup is not null && groups.TryGetValue(preferredGroup, out var selected))
+                    CurrentNodes.Add(new CurrentNodeItem { Group = preferredGroup, Node = string.IsNullOrEmpty(selected.Now) ? "—" : selected.Now });
             }
         }
         catch { }

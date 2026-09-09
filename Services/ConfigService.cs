@@ -204,6 +204,48 @@ public class ConfigService
         return text is null ? null : YamlHelper.ParseMapping(text);
     }
 
+    /// <summary>
+    /// 返回当前订阅中 <c>proxy-groups</c> 的声明顺序。
+    /// mihomo 的 <c>/proxies</c> 响应是对象，序列化后不能依赖其字段顺序。
+    /// </summary>
+    public IReadOnlyList<string> GetCurrentProxyGroupOrder()
+    {
+        var profile = GetCurrentProfileNode();
+        if (profile is null ||
+            !profile.Children.TryGetValue(new YamlScalarNode("proxy-groups"), out var node) ||
+            node is not YamlSequenceNode groups)
+            return [];
+
+        var names = new List<string>();
+        foreach (var group in groups.Children.OfType<YamlMappingNode>())
+        {
+            var name = YamlHelper.GetScalar(group, "name");
+            if (!string.IsNullOrWhiteSpace(name)) names.Add(name);
+        }
+        return names;
+    }
+
+    /// <summary>
+    /// 读取规则模式的兜底 <c>MATCH</c> 规则所指向的代理组。该组通常代表未命中
+    /// 其他规则时的主路由，适合作为首页“当前节点”的展示对象。
+    /// </summary>
+    public string? GetCurrentRuleDefaultProxyGroup()
+    {
+        var profile = GetCurrentProfileNode();
+        if (profile is null ||
+            !profile.Children.TryGetValue(new YamlScalarNode("rules"), out var node) ||
+            node is not YamlSequenceNode rules)
+            return null;
+
+        foreach (var rule in rules.Children.OfType<YamlScalarNode>().Reverse())
+        {
+            var parts = (rule.Value ?? "").Split(',', StringSplitOptions.TrimEntries);
+            if (parts.Length >= 2 && parts[0].Equals("MATCH", StringComparison.OrdinalIgnoreCase))
+                return parts[1];
+        }
+        return null;
+    }
+
     // ---------- 运行时配置生成 ----------
 
     /// <summary>

@@ -155,7 +155,6 @@ public partial class ProfilesViewModel : ObservableObject
             var item = await AppServices.Subscription.ImportAsync(url);
             ImportUrl = "";
             StatusText = $"导入成功: {item.Name}";
-            await AppServices.Core.ApplyConfigAsync();
         }
         catch (Exception ex)
         {
@@ -184,7 +183,6 @@ public partial class ProfilesViewModel : ObservableObject
             StatusText = "正在导入本地配置…";
             var item = await AppServices.Subscription.ImportLocalAsync(file.Path);
             StatusText = $"导入成功: {item.Name}";
-            await AppServices.Core.ApplyConfigAsync();
         }
         catch (Exception ex)
         {

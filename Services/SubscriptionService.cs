@@ -45,6 +45,7 @@ public class SubscriptionService
             Config.Profiles.Current = item.Uid;
         Config.SaveProfiles();
         ProfilesChanged?.Invoke();
+        await ApplyCurrentProfileIfRunningAsync(item).ConfigureAwait(false);
         return item;
     }
 
@@ -70,6 +71,7 @@ public class SubscriptionService
             Config.Profiles.Current = item.Uid;
         Config.SaveProfiles();
         ProfilesChanged?.Invoke();
+        await ApplyCurrentProfileIfRunningAsync(item).ConfigureAwait(false);
         return item;
     }
 
@@ -229,6 +231,18 @@ public class SubscriptionService
     internal static void ValidateClashContent(string content)
         => ProfileContentValidator.Validate(content);
 
+    /// <summary>
+    /// 首次导入会把该项设为当前订阅。内核可能已经用空配置启动，必须立即重载，
+    /// 否则导入虽显示成功，<c>/proxies</c> 仍不会出现新订阅的代理组。
+    /// </summary>
+    private async Task ApplyCurrentProfileIfRunningAsync(ProfileItem item)
+    {
+        if (item.Uid != Config.Profiles.Current || !AppServices.Core.IsRunning) return;
+
+        if (!await AppServices.Core.ApplyConfigAsync().ConfigureAwait(false))
+            LogService.App($"导入后应用订阅失败: {item.Name}", "warn");
+    }
+
     // ---------- 文件 / 列表操作 ----------
 
     private void SaveProfileFile(ProfileItem item, string content)
@@ -261,10 +275,14 @@ public class SubscriptionService
     /// <summary>切换当前订阅并应用。</summary>
     public async Task SelectAsync(string uid)
     {
-        if (Config.Profiles.Current == uid) return;
-        Config.Profiles.Current = uid;
-        Config.SaveProfiles();
-        ProfilesChanged?.Invoke();
+        if (Config.Profiles.Current != uid)
+        {
+            Config.Profiles.Current = uid;
+            Config.SaveProfiles();
+            ProfilesChanged?.Invoke();
+        }
+
+        // 重复选择当前项也应重新应用，便于恢复首次导入或上次热重载失败后的空内核。
         await AppServices.Core.ApplyConfigAsync();
     }
 
