@@ -9,7 +9,7 @@
   <Identity
       Name="194272F5631C5.FluxProxy"
       Publisher="CN=98115004-601A-4933-A2AC-7F81FB1DAD0A"
-      Version="0.1.0.0" />
+      Version="0.2.0.0" />
 
   <Properties>
     <DisplayName>Flux Proxy</DisplayName>
