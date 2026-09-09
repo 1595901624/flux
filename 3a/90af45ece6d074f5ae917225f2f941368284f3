@@ -1,0 +1,58 @@
+Services/CoreProcessService.cs
+  edc05967bf437928 141,143-154,156-165
+Services/Paths.cs
+  edc05967bf437928 16,18-24,60-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "3a90af45ece6d074f5ae917225f2f941368284f3",
+  "prompts": {
+    "edc05967bf437928": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07fa8-9a2e-7dd1-8835-a665e329242a",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 33,
+      "total_deletions": 35,
+      "accepted_lines": 33,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 33,
+    "git_diff_deleted_lines": 35,
+    "ai_additions": 33,
+    "ai_accepted": 33,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 33,
+    "BYRC": 0,
+    "per_file": {
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "141",
+          "143-154",
+          "156-165"
+        ],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "16",
+          "18-24",
+          "60-61"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788939473,
+  "requirement_id": ""
+}
