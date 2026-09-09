@@ -138,19 +138,32 @@ public class CoreProcessService : IDisposable
     {
         try
         {
-            foreach (var leftover in Process.GetProcessesByName("FluxCore"))
+            var knownCorePaths = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
-                try
+                Path.GetFullPath(Paths.CoreExePath),
+                Path.GetFullPath(Paths.LegacyCoreExePath),
+            };
+            var processNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                Path.GetFileNameWithoutExtension(Paths.CoreExePath),
+                Path.GetFileNameWithoutExtension(Paths.LegacyCoreExePath),
+            };
+
+            foreach (var processName in processNames)
+            {
+                foreach (var leftover in Process.GetProcessesByName(processName))
                 {
-                    var executable = leftover.MainModule?.FileName;
-                    if (!string.Equals(Path.GetFullPath(executable ?? ""), Path.GetFullPath(Paths.CoreExePath),
-                            StringComparison.OrdinalIgnoreCase))
-                        continue;
-                    leftover.Kill(entireProcessTree: true);
-                    LogService.App($"已清理残留内核进程 PID {leftover.Id}", "warn");
+                    try
+                    {
+                        var executable = leftover.MainModule?.FileName;
+                        if (!knownCorePaths.Contains(Path.GetFullPath(executable ?? "")))
+                            continue;
+                        leftover.Kill(entireProcessTree: true);
+                        LogService.App($"已清理残留内核进程 PID {leftover.Id}", "warn");
+                    }
+                    catch { }
+                    finally { leftover.Dispose(); }
                 }
-                catch { }
-                finally { leftover.Dispose(); }
             }
         }
         catch { }
