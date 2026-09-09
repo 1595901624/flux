@@ -19,5 +19,6 @@
     <Compile Include="..\..\Services\DeepLinkParser.cs" Link="DeepLinkParser.cs" />
     <Compile Include="..\..\Services\ProfileContentValidator.cs" Link="ProfileContentValidator.cs" />
     <Compile Include="..\..\Services\SystemProxyOwnership.cs" Link="SystemProxyOwnership.cs" />
+    <Compile Include="..\..\Services\MihomoApiService.cs" Link="MihomoApiService.cs" />
   </ItemGroup>
 </Project>

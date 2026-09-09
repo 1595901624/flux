@@ -39,6 +39,16 @@ public class ProfileExtra
     public long Expire { get; set; }
 }
 
+/// <summary>订阅内代理组的已选节点，用于内核重载或重启后恢复。</summary>
+public class ProfileSelected
+{
+    [YamlMember(Alias = "name")]
+    public string Name { get; set; } = "";
+
+    [YamlMember(Alias = "now")]
+    public string Now { get; set; } = "";
+}
+
 public class ProfileItem
 {
     [YamlMember(Alias = "uid")]
@@ -67,6 +77,9 @@ public class ProfileItem
     /// <summary>首页“当前节点”在该订阅下优先展示的代理组。</summary>
     [YamlMember(Alias = "selected-proxy-group")]
     public string SelectedProxyGroup { get; set; } = "";
+
+    [YamlMember(Alias = "selected")]
+    public List<ProfileSelected> Selected { get; set; } = new();
 
     [YamlMember(Alias = "option")]
     public ProfileOption Option { get; set; } = new();

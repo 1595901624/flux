@@ -234,14 +234,17 @@ public partial class ProxiesViewModel : ObservableObject
 
     public async Task SelectNodeAsync(string group, string name)
     {
+        var previous = Groups.FirstOrDefault(item => item.Name == group)?.Now ?? "";
         try
         {
             await AppServices.Api.SelectProxyAsync(group, name);
-            var profile = AppServices.Config.Profiles.GetCurrent();
-            if (profile is not null && !string.Equals(profile.SelectedProxyGroup, group, StringComparison.Ordinal))
+            AppServices.Config.SaveCurrentProxySelection(group, name);
+            if (AppServices.Config.Verge.AutoCloseConnection &&
+                !string.IsNullOrWhiteSpace(previous) &&
+                !string.Equals(previous, name, StringComparison.Ordinal))
             {
-                profile.SelectedProxyGroup = group;
-                AppServices.Config.SaveProfiles();
+                var closed = await AppServices.Api.CloseConnectionsUsingProxyAsync(previous);
+                if (closed > 0) LogService.App($"切换节点后已关闭 {closed} 个旧连接");
             }
             var header = Groups.FirstOrDefault(g => g.Name == group);
             if (header is not null)
@@ -250,6 +253,7 @@ public partial class ProxiesViewModel : ObservableObject
                 foreach (var n in header.Nodes)
                     n.IsSelected = n.Name == name;
             }
+            await RefreshAsync();
         }
         catch (Exception ex)
         {

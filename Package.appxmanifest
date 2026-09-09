@@ -2,7 +2,9 @@
 <Package
     xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
     xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+    IgnorableNamespaces="desktop6">
 
   <Identity
       Name="194272F5631C5.FluxProxy"
@@ -13,6 +15,12 @@
     <DisplayName>Flux Proxy</DisplayName>
     <PublisherDisplayName>卢浩宇</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
+    <!--
+      SysProxyService 必须修改真实的 HKCU Internet Settings。MSIX 默认的注册表
+      写入虚拟化会把这些值留在包的私有视图中，导致 UI 显示已开启但系统流量
+      仍未进入 mihomo。桌面全信任进程需要显式关闭该虚拟化。
+    -->
+    <desktop6:RegistryWriteVirtualization>disabled</desktop6:RegistryWriteVirtualization>
   </Properties>
 
   <Dependencies>
@@ -40,5 +48,6 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="unvirtualizedResources" />
   </Capabilities>
 </Package>

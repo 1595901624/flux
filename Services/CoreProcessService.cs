@@ -46,6 +46,7 @@ public class CoreProcessService : IDisposable
             {
                 StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
                 await WaitForControllerAsync(15000);
+                await RestoreProfileSelectionsAsync();
                 Mode = RunningMode.Sidecar;
                 LogService.App("mihomo 内核已启动");
                 CoreStarted?.Invoke();
@@ -216,6 +217,7 @@ public class CoreProcessService : IDisposable
             try
             {
                 await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
+                await RestoreProfileSelectionsAsync();
                 LogService.App("运行时配置已热重载");
                 return true;
             }
@@ -249,6 +251,61 @@ public class CoreProcessService : IDisposable
             await Task.Delay(250);
         }
         throw new TimeoutException("等待 External Controller 就绪超时");
+    }
+
+    /// <summary>
+    /// 对齐 Clash Verge Rev：节点切换记录属于订阅状态，而非一次性的 API 调用。
+    /// 配置重载可能重置内核的选择，因此在控制器就绪后恢复仍存在于对应组内的节点。
+    /// </summary>
+    private async Task RestoreProfileSelectionsAsync()
+    {
+        var pending = Config.GetCurrentProxySelections().ToList();
+        if (pending.Count == 0) return;
+
+        try
+        {
+            // /version 会早于所有代理组完成初始化。参考 Clash Verge Rev 的激活逻辑，
+            // 对尚未出现在首个 /proxies 快照中的组做短暂重试，避免启动后静默丢失选择。
+            const int maxAttempts = 5;
+            for (var attempt = 1; attempt <= maxAttempts && pending.Count > 0; attempt++)
+            {
+                var snapshot = await AppServices.Api.GetProxiesAsync();
+                if (!snapshot.TryGetProperty("proxies", out var proxies) ||
+                    proxies.ValueKind != System.Text.Json.JsonValueKind.Object)
+                {
+                    if (attempt < maxAttempts) await Task.Delay(300);
+                    continue;
+                }
+
+                foreach (var item in pending.ToArray())
+                {
+                    if (!proxies.TryGetProperty(item.Name, out var group) ||
+                        group.ValueKind != System.Text.Json.JsonValueKind.Object ||
+                        !group.TryGetProperty("all", out var members) ||
+                        members.ValueKind != System.Text.Json.JsonValueKind.Array ||
+                        !members.EnumerateArray().Any(member => member.GetString() == item.Now))
+                        continue;
+
+                    var current = group.TryGetProperty("now", out var now) ? now.GetString() : null;
+                    if (!string.Equals(current, item.Now, StringComparison.Ordinal))
+                    {
+                        await AppServices.Api.SelectProxyAsync(item.Name, item.Now);
+                        LogService.App($"已恢复节点选择: {item.Name} → {item.Now}");
+                    }
+                    pending.Remove(item);
+                }
+
+                if (pending.Count > 0 && attempt < maxAttempts)
+                    await Task.Delay(300);
+            }
+
+            if (pending.Count > 0)
+                LogService.App($"有 {pending.Count} 个已保存节点在当前配置中不存在，已跳过恢复", "warn");
+        }
+        catch (Exception ex)
+        {
+            LogService.App("恢复节点选择失败: " + ex.Message, "warn");
+        }
     }
 
     // ---------- Job Object ----------

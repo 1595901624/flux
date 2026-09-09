@@ -121,6 +121,46 @@ public class MihomoApiService
     public Task<JsonElement> CloseAllConnectionsAsync() =>
         SendAsync(HttpMethod.Delete, "connections");
 
+    /// <summary>
+    /// 关闭仍使用指定节点的已有连接。切换节点不会迁移已经建立的 TCP 连接；
+    /// 此操作与 Clash Verge Rev 的 auto-close-connection 行为一致。
+    /// </summary>
+    public async Task<int> CloseConnectionsUsingProxyAsync(string proxyName)
+    {
+        var snapshot = await GetConnectionsAsync().ConfigureAwait(false);
+        var ids = FindConnectionIdsUsingProxy(snapshot, proxyName);
+
+        await Task.WhenAll(ids.Select(async id =>
+        {
+            try { await CloseConnectionAsync(id).ConfigureAwait(false); }
+            catch { /* 连接可能已自然结束 */ }
+        })).ConfigureAwait(false);
+        return ids.Count;
+    }
+
+    internal static IReadOnlyList<string> FindConnectionIdsUsingProxy(
+        JsonElement snapshot, string proxyName)
+    {
+        if (!snapshot.TryGetProperty("connections", out var connections) ||
+            connections.ValueKind != JsonValueKind.Array)
+            return [];
+
+        var ids = new List<string>();
+        foreach (var connection in connections.EnumerateArray())
+        {
+            if (connection.ValueKind != JsonValueKind.Object ||
+                !connection.TryGetProperty("id", out var id) ||
+                string.IsNullOrEmpty(id.GetString()) ||
+                !connection.TryGetProperty("chains", out var chains) ||
+                chains.ValueKind != JsonValueKind.Array)
+                continue;
+
+            if (chains.EnumerateArray().Any(chain => chain.GetString() == proxyName))
+                ids.Add(id.GetString()!);
+        }
+        return ids;
+    }
+
     // ---------- 规则 / Provider ----------
 
     public Task<JsonElement> GetRulesAsync() =>

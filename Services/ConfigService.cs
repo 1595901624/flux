@@ -246,6 +246,29 @@ public class ConfigService
         return null;
     }
 
+    /// <summary>保存当前订阅的节点选择，供配置重载与内核重启后恢复。</summary>
+    public void SaveCurrentProxySelection(string group, string node)
+    {
+        var profile = Profiles.GetCurrent();
+        if (profile is null) return;
+
+        profile.SelectedProxyGroup = group;
+        var selected = profile.Selected.FirstOrDefault(item =>
+            string.Equals(item.Name, group, StringComparison.Ordinal));
+        if (selected is null)
+            profile.Selected.Add(new ProfileSelected { Name = group, Now = node });
+        else
+            selected.Now = node;
+        SaveProfiles();
+    }
+
+    /// <summary>读取当前订阅需要恢复的代理组选择。</summary>
+    public IReadOnlyList<ProfileSelected> GetCurrentProxySelections() =>
+        Profiles.GetCurrent()?.Selected
+            .Where(item => !string.IsNullOrWhiteSpace(item.Name) && !string.IsNullOrWhiteSpace(item.Now))
+            .ToList()
+        ?? [];
+
     // ---------- 运行时配置生成 ----------
 
     /// <summary>
