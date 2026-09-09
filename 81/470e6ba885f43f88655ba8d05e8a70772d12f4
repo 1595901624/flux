@@ -1,0 +1,122 @@
+Models/ProfilesConfig.cs
+  edc05967bf437928 42-51,81-82
+Services/CoreProcessService.cs
+  edc05967bf437928 49,220,256-261,264-266,271,277,279,288,300,304-308
+  7c5cc5a187b688a0 262-263,267-270,272-276,278,280-287,289-299,301-303
+ViewModels/ProxiesViewModel.cs
+  edc05967bf437928 237,241-244,246-247,256
+Services/ConfigService.cs
+  edc05967bf437928 249-271
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "81470e6ba885f43f88655ba8d05e8a70772d12f4",
+  "prompts": {
+    "7c5cc5a187b688a0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08554-c7c9-7941-b98e-fe8d25192c6d",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 16,
+      "accepted_lines": 34,
+      "overriden_lines": 0
+    },
+    "edc05967bf437928": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07fa8-9a2e-7dd1-8835-a665e329242a",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 85,
+      "total_deletions": 6,
+      "accepted_lines": 70,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 192,
+    "git_diff_deleted_lines": 5,
+    "ai_additions": 98,
+    "ai_accepted": 98,
+    "BYMC": 91,
+    "mixed_additions": 0,
+    "BYAC": 98,
+    "BYRC": 0,
+    "per_file": {
+      "Models/ProfilesConfig.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "42-51",
+          "81-82"
+        ],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [
+          "5-7",
+          "18-23",
+          "51"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "249-271"
+        ],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "49",
+          "220",
+          "256-308"
+        ],
+        "BYRC": []
+      },
+      "Services/MihomoApiService.cs": {
+        "BYMC": [
+          "124-163"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesViewModel.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "237",
+          "241-244",
+          "246-247",
+          "256"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [
+          "22"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/MihomoApiServiceTests.cs": {
+        "BYMC": [
+          "1-40"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788947789,
+  "requirement_id": ""
+}
