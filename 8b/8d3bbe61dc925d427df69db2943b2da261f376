@@ -1,0 +1,91 @@
+Services/SubscriptionService.cs
+  edc05967bf437928 48,74,234-244,278-285
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "8b8d3bbe61dc925d427df69db2943b2da261f376",
+  "prompts": {
+    "edc05967bf437928": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07fa8-9a2e-7dd1-8835-a665e329242a",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 22,
+      "total_deletions": 4,
+      "accepted_lines": 22,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 152,
+    "git_diff_deleted_lines": 22,
+    "ai_additions": 21,
+    "ai_accepted": 21,
+    "BYMC": 129,
+    "mixed_additions": 0,
+    "BYAC": 21,
+    "BYRC": 0,
+    "per_file": {
+      "Models/ProfilesConfig.cs": {
+        "BYMC": [
+          "67-70"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "207-248"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SubscriptionService.cs": {
+        "BYMC": [
+          "245"
+        ],
+        "BYAC": [
+          "48",
+          "74",
+          "234-244",
+          "278-285"
+        ],
+        "BYRC": []
+      },
+      "ViewModels/HomeViewModel.cs": {
+        "BYMC": [
+          "190-191",
+          "195",
+          "197",
+          "201-202",
+          "204-205",
+          "209-237"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesViewModel.cs": {
+        "BYMC": [
+          "30",
+          "40-46",
+          "58-65",
+          "72-74",
+          "129-140",
+          "151",
+          "153",
+          "163-168",
+          "240-245"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1788941315,
+  "requirement_id": ""
+}
