@@ -2,25 +2,19 @@
 <Package
     xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
     xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+    xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
     xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
-    IgnorableNamespaces="desktop6">
+    IgnorableNamespaces="desktop">
 
   <Identity
       Name="194272F5631C5.FluxProxy"
       Publisher="CN=98115004-601A-4933-A2AC-7F81FB1DAD0A"
-      Version="0.2.0.0" />
+      Version="0.3.0.0" />
 
   <Properties>
     <DisplayName>Flux Proxy</DisplayName>
     <PublisherDisplayName>卢浩宇</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
-    <!--
-      SysProxyService 必须修改真实的 HKCU Internet Settings。MSIX 默认的注册表
-      写入虚拟化会把这些值留在包的私有视图中，导致 UI 显示已开启但系统流量
-      仍未进入 mihomo。桌面全信任进程需要显式关闭该虚拟化。
-    -->
-    <desktop6:RegistryWriteVirtualization>disabled</desktop6:RegistryWriteVirtualization>
   </Properties>
 
   <Dependencies>
@@ -43,11 +37,26 @@
           Square44x44Logo="Assets\Square44x44Logo.png">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="clash">
+            <uap:DisplayName>Flux Proxy</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+        <desktop:Extension
+            Category="windows.startupTask"
+            Executable="Flux.exe"
+            EntryPoint="Windows.FullTrustApplication">
+          <desktop:StartupTask
+              TaskId="FluxStartup"
+              Enabled="false"
+              DisplayName="Flux Proxy" />
+        </desktop:Extension>
+      </Extensions>
     </Application>
   </Applications>
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
-    <rescap:Capability Name="unvirtualizedResources" />
   </Capabilities>
 </Package>

@@ -15,6 +15,9 @@ public class DeepLinkService
 
     public void Initialize()
     {
+        // MSIX 版本由 Package.appxmanifest 注册协议；仅便携/开发版写入 HKCU。
+        if (PackageIdentity.IsPackaged) return;
+
         try
         {
             RegisterScheme();

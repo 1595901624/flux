@@ -1,5 +1,3 @@
-using Microsoft.Win32;
-using System.Runtime.InteropServices;
 using System.Text.Json;
 using Flux.Models;
 
@@ -11,16 +9,9 @@ namespace Flux.Services;
 /// </summary>
 public class SysProxyService
 {
-    private const string InternetSettingsKey = @"Software\Microsoft\Windows\CurrentVersion\Internet Settings";
     private readonly object _sync = new();
     private AppliedProxy? _lastApplied;
     private System.Threading.Timer? _guardTimer;
-
-    [DllImport("wininet.dll", SetLastError = true)]
-    private static extern bool InternetSetOption(IntPtr hInternet, int dwOption, IntPtr lpBuffer, int dwBufferLength);
-
-    private const int InternetOptionRefresh = 37;
-    private const int InternetOptionSettingsChanged = 39;
 
     public static string DefaultBypass => "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;<local>";
 
@@ -129,23 +120,12 @@ public class SysProxyService
 
     private static ProxyState ReadState()
     {
-        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey);
-        var enable = Convert.ToInt32(key?.GetValue("ProxyEnable") ?? 0) == 1;
-        var server = key?.GetValue("ProxyServer") as string ?? "";
-        var bypass = key?.GetValue("ProxyOverride") as string ?? "";
-        return new ProxyState(enable, server, bypass);
+        var state = WinInetProxySettings.Read();
+        return new ProxyState(state.Enable, state.Server, state.Bypass);
     }
 
-    private static void SetProxy(ProxyState state)
-    {
-        using var key = Registry.CurrentUser.OpenSubKey(InternetSettingsKey, writable: true)
-            ?? throw new InvalidOperationException("无法打开 Internet Settings 注册表");
-        key.SetValue("ProxyEnable", state.Enable ? 1 : 0, RegistryValueKind.DWord);
-        key.SetValue("ProxyServer", state.Server, RegistryValueKind.String);
-        key.SetValue("ProxyOverride", state.Bypass, RegistryValueKind.String);
-        InternetSetOption(IntPtr.Zero, InternetOptionSettingsChanged, IntPtr.Zero, 0);
-        InternetSetOption(IntPtr.Zero, InternetOptionRefresh, IntPtr.Zero, 0);
-    }
+    private static void SetProxy(ProxyState state) =>
+        WinInetProxySettings.Write(state.Enable, state.Server, state.Bypass);
 
     private static ProxySnapshot? LoadSnapshot()
     {

@@ -14,7 +14,7 @@ public sealed partial class SettingsPage : Page
     public SettingsPage()
     {
         InitializeComponent();
-        Loaded += (_, _) => LoadFromConfig();
+        Loaded += async (_, _) => await LoadFromConfigAsync();
     }
 
     private static string GetAppVersion()
@@ -43,12 +43,20 @@ public sealed partial class SettingsPage : Page
             ?? "未知";
     }
 
-    private void LoadFromConfig()
+    private async Task LoadFromConfigAsync()
     {
         _loading = true;
         var verge = AppServices.Config.Verge;
 
-        AutoLaunchSwitch.IsOn = AutoStartService.IsEnabled();
+        try
+        {
+            AutoLaunchSwitch.IsOn = await AutoStartService.IsEnabledAsync();
+        }
+        catch (Exception ex)
+        {
+            AutoLaunchSwitch.IsOn = false;
+            LogService.App("读取自启动状态失败: " + ex.Message, "warn");
+        }
         SilentStartSwitch.IsOn = verge.EnableSilentStart;
         SysProxySwitch.IsOn = verge.EnableSystemProxy;
         ProxyGuardSwitch.IsOn = verge.EnableProxyGuard;
@@ -91,22 +99,33 @@ public sealed partial class SettingsPage : Page
 
     // ---------- 系统设置 ----------
 
-    private void AutoLaunch_Toggled(object sender, RoutedEventArgs e)
+    private async void AutoLaunch_Toggled(object sender, RoutedEventArgs e)
     {
+        if (_loading) return;
         try
         {
-            AutoStartService.SetEnabled(AutoLaunchSwitch.IsOn, AppServices.Config.Verge.EnableSilentStart);
+            await AutoStartService.SetEnabledAsync(AutoLaunchSwitch.IsOn, AppServices.Config.Verge.EnableSilentStart);
         }
         catch (Exception ex)
         {
             LogService.App("自启动设置失败: " + ex.Message, "warn");
+            _loading = true;
+            try { AutoLaunchSwitch.IsOn = await AutoStartService.IsEnabledAsync(); }
+            finally { _loading = false; }
         }
     }
 
-    private void SilentStart_Toggled(object sender, RoutedEventArgs e)
+    private async void SilentStart_Toggled(object sender, RoutedEventArgs e)
     {
-        if (SaveVerge(v => v.EnableSilentStart = SilentStartSwitch.IsOn))
-            AutoStartService.SetEnabled(AutoLaunchSwitch.IsOn, SilentStartSwitch.IsOn);
+        if (!SaveVerge(v => v.EnableSilentStart = SilentStartSwitch.IsOn)) return;
+        try
+        {
+            await AutoStartService.SetEnabledAsync(AutoLaunchSwitch.IsOn, SilentStartSwitch.IsOn);
+        }
+        catch (Exception ex)
+        {
+            LogService.App("更新自启动设置失败: " + ex.Message, "warn");
+        }
     }
 
     private async void SysProxy_Toggled(object sender, RoutedEventArgs e)
