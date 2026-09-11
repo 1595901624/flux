@@ -81,3 +81,5 @@ sample-profile.yaml
 .zcode/
 
 .mihomo-staging/
+
+/docs
