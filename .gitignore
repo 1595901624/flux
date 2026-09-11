@@ -62,7 +62,6 @@ msix-signature-inspect/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 TestResults/
-tests/
 
 # OS files
 Thumbs.db
