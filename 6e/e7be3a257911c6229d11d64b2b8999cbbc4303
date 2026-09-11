@@ -1,0 +1,47 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "6ee7be3a257911c6229d11d64b2b8999cbbc4303",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 133,
+    "git_diff_deleted_lines": 6,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 131,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Utils/PortUtils.cs": {
+        "BYMC": [
+          "1-41"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "84-92"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "173-188",
+          "250",
+          "258-264",
+          "266-267",
+          "280-334"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789145209,
+  "requirement_id": ""
+}
