@@ -170,6 +170,22 @@ public sealed partial class SettingsPage : Page
         if (port < 1024 || port > 65535) return;
         var previous = AppServices.Config.MixedPort;
         if (port == previous) return;
+        // 保存前检测端口占用（无效输入不写入配置）
+        if (!Flux.Core.Utils.PortUtils.IsPortFree(port))
+        {
+            _loading = true;
+            MixedPortBox.Value = previous;
+            _loading = false;
+            var dialog = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "端口已被占用",
+                Content = $"端口 {port} 已被其他进程或本应用监听，请更换端口。",
+                CloseButtonText = "确定",
+            };
+            await dialog.ShowAsync();
+            return;
+        }
         AppServices.Config.PatchClashBase("mixed-port", port);
         if (await AppServices.Core.ApplyConfigAsync())
         {
@@ -231,7 +247,7 @@ public sealed partial class SettingsPage : Page
     private async void Tun_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
-        if (TunSwitch.IsOn && !TrayService.IsElevated())
+        if (TunSwitch.IsOn && !TrayService.IsElevated() && !AppServices.Privilege.IsServiceReady())
         {
             _loading = true;
             TunSwitch.IsOn = false;
@@ -239,12 +255,16 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "需要管理员权限",
-                Content = "TUN 模式需要以管理员身份运行 Flux。请右键应用选择「以管理员身份运行」后再开启。",
-                CloseButtonText = "知道了",
-                DefaultButton = ContentDialogButton.Close,
+                Title = "TUN 需要特权",
+                Content = "TUN 模式需要特权运行内核。可以选择：\n\n" +
+                          "1. 以管理员身份运行 Flux；\n" +
+                          "2. 安装 Flux 服务（推荐，普通用户即可使用 TUN）。",
+                PrimaryButtonText = "安装服务",
+                CloseButtonText = "取消",
+                DefaultButton = ContentDialogButton.Primary,
             };
-            await dialog.ShowAsync();
+            if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+                await InstallServiceAsync();
             return;
         }
         var previous = AppServices.Config.Verge.EnableTunMode;
@@ -255,6 +275,63 @@ public sealed partial class SettingsPage : Page
             _loading = true; TunSwitch.IsOn = previous; _loading = false;
             await ShowApplyFailureAsync();
         }
+    }
+
+    /// <summary>通过 UAC 安装 Flux 服务（普通用户即可 TUN 的前提）。</summary>
+    private async Task InstallServiceAsync()
+    {
+        var result = await AppServices.Privilege.InstallServiceAsync();
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = result.Success ? "服务已安装" : "服务安装失败",
+            Content = result.Success
+                ? "Flux 服务已安装并启动，普通用户模式下即可开启 TUN。"
+                : result.Error?.ToString() ?? "未知错误",
+            CloseButtonText = "确定",
+        };
+        await dialog.ShowAsync();
+    }
+
+    private async void InstallService_Click(object sender, RoutedEventArgs e)
+        => await InstallServiceAsync();
+
+    private async void CopyEnvPowerShell_Click(object sender, RoutedEventArgs e)
+        => await CopyEnvAsync("powershell");
+
+    private async void CopyEnvCmd_Click(object sender, RoutedEventArgs e)
+        => await CopyEnvAsync("cmd");
+
+    /// <summary>复制 CMD/PowerShell 环境变量设置命令（对齐参考项目 copy_clash_env）。</summary>
+    private async Task CopyEnvAsync(string format)
+    {
+        var port = AppServices.Config.MixedPort;
+        var text = format switch
+        {
+            "powershell" => $"""
+                $env:HTTP_PROXY = 'http://127.0.0.1:{port}'
+                $env:HTTPS_PROXY = 'http://127.0.0.1:{port}'
+                $env:ALL_PROXY = 'socks5://127.0.0.1:{port}'
+                """,
+            _ => $"""
+                set HTTP_PROXY=http://127.0.0.1:{port}
+                set HTTPS_PROXY=http://127.0.0.1:{port}
+                set ALL_PROXY=socks5://127.0.0.1:{port}
+                """,
+        };
+
+        var pack = new Windows.ApplicationModel.DataTransfer.DataPackage();
+        pack.SetText(text);
+        Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(pack);
+
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = "已复制",
+            Content = $"{(format == "powershell" ? "PowerShell" : "CMD")} 环境变量已复制到剪贴板。",
+            CloseButtonText = "确定",
+        };
+        await dialog.ShowAsync();
     }
 
     private void AutoCloseConn_Toggled(object sender, RoutedEventArgs e)

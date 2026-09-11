@@ -81,6 +81,15 @@
                 <sc:SettingsCard Header="重启内核" Description="重新加载运行时配置并重启 mihomo">
                     <Button Content="重启" Click="RestartCore_Click" />
                 </sc:SettingsCard>
+                <sc:SettingsCard Header="Flux 服务" Description="以 LocalSystem 运行，普通用户无需管理员即可使用 TUN">
+                    <Button Content="安装 / 修复服务" Click="InstallService_Click" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="复制环境变量" Description="在终端中让命令行程序走代理">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="PowerShell" Click="CopyEnvPowerShell_Click" />
+                        <Button Content="CMD" Click="CopyEnvCmd_Click" />
+                    </StackPanel>
+                </sc:SettingsCard>
                 <sc:SettingsCard Header="打开目录" Description="数据目录 / 日志目录">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <Button Content="数据目录" Click="OpenData_Click" />
