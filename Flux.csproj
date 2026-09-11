@@ -75,6 +75,15 @@
     <Content Include="Assets\app.svg" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <!-- 修复：dotnet publish 不会复制应用自身的 Flux.pri，未打包 WinUI
+       启动时因缺少该文件而立即崩溃（combase 80004005） -->
+  <Target Name="EnsurePriInPublish" AfterTargets="Publish">
+    <Copy SourceFiles="$(OutDir)$(AssemblyName).pri"
+          DestinationFolder="$(PublishDir)"
+          SkipUnchangedFiles="true"
+          Condition="Exists('$(OutDir)$(AssemblyName).pri')" />
+  </Target>
+
   <!-- 仅在 CI / 命令行传入 WindowsPackageType=MSIX 打包时使用 -->
   <ItemGroup Condition="'$(WindowsPackageType)' == 'MSIX'">
     <AppxManifest Include="Package.appxmanifest">

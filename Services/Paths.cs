@@ -39,6 +39,7 @@ public static class Paths
 
     public static void Initialize()
     {
+        global::Flux.Program.Trace("paths enter");
         ExeDir = AppContext.BaseDirectory;
         CoreDir = Path.Combine(ExeDir, "core");
 
@@ -58,9 +59,11 @@ public static class Paths
         ProfilesDir = Path.Combine(AppDataDir, "profiles");
         DataBackupDir = Path.Combine(AppDataDir, "backup");
 
+        global::Flux.Program.Trace("paths dirs computed");
         Directory.CreateDirectory(AppDataDir);
         Directory.CreateDirectory(LogsDir);
         Directory.CreateDirectory(ProfilesDir);
+        global::Flux.Program.Trace("paths dirs created");
     }
 
     /// <summary>

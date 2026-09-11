@@ -37,7 +37,9 @@ public partial class App : Application
 
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
+        Program.Trace("onlaunched enter");
         _ = Services.AppBootstrapper.StartAsync();
+        Program.Trace("onlaunched started-async");
     }
 
     /// <summary>轻量模式真实关闭窗口时由 LightweightManager 置位（否则关闭仅隐藏到托盘）。</summary>
@@ -46,11 +48,22 @@ public partial class App : Application
     public static void ShowMainWindow()
     {
         Services.LightweightManager.OnWindowShown();
-        if (MainWindow is null)
+        try
         {
-            MainWindow = new MainWindow();
+            if (MainWindow is null)
+            {
+                Program.Trace("mainwindow creating");
+                MainWindow = new MainWindow();
+                Program.Trace("mainwindow created");
+            }
+            MainWindow.Activate();
+            Program.Trace("mainwindow activated");
         }
-        MainWindow.Activate();
+        catch (Exception ex)
+        {
+            Program.Trace("mainwindow FAILED: " + ex);
+            throw;
+        }
     }
 
     /// <summary>应用主题模式（system | light | dark）。</summary>

@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <data name="Nav_Home.Text" xml:space="preserve">
-    <value>首页</value>
-  </data>
   <data name="Nav_Home.Content" xml:space="preserve">
     <value>首页</value>
-  </data>
-  <data name="Nav_Proxies.Text" xml:space="preserve">
-    <value>代理</value>
   </data>
   <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>代理</value>
   </data>
-  <data name="Nav_Profiles.Text" xml:space="preserve">
-    <value>订阅</value>
-  </data>
   <data name="Nav_Profiles.Content" xml:space="preserve">
     <value>订阅</value>
-  </data>
-  <data name="Nav_Connections.Text" xml:space="preserve">
-    <value>连接</value>
   </data>
   <data name="Nav_Connections.Content" xml:space="preserve">
     <value>连接</value>
   </data>
-  <data name="Nav_Rules.Text" xml:space="preserve">
-    <value>规则</value>
-  </data>
   <data name="Nav_Rules.Content" xml:space="preserve">
     <value>规则</value>
-  </data>
-  <data name="Nav_Logs.Text" xml:space="preserve">
-    <value>日志</value>
   </data>
   <data name="Nav_Logs.Content" xml:space="preserve">
     <value>日志</value>
   </data>
-  <data name="Nav_Unlock.Text" xml:space="preserve">
-    <value>解锁测试</value>
-  </data>
   <data name="Nav_Unlock.Content" xml:space="preserve">
     <value>解锁测试</value>
-  </data>
-  <data name="Nav_Settings.Text" xml:space="preserve">
-    <value>设置</value>
   </data>
   <data name="Nav_Settings.Content" xml:space="preserve">
     <value>设置</value>
@@ -51,35 +27,17 @@
   <data name="Common_OK.Text" xml:space="preserve">
     <value>确定</value>
   </data>
-  <data name="Common_OK.Content" xml:space="preserve">
-    <value>确定</value>
-  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>保存</value>
   </data>
-  <data name="Common_Save.Content" xml:space="preserve">
-    <value>保存</value>
-  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="Common_Delete.Content" xml:space="preserve">
     <value>删除</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>关闭</value>
-  </data>
-  <data name="Common_Close.Content" xml:space="preserve">
-    <value>关闭</value>
-  </data>
-  <data name="Common_Apply.Text" xml:space="preserve">
-    <value>应用</value>
   </data>
   <data name="Common_Apply.Content" xml:space="preserve">
     <value>应用</value>
@@ -87,119 +45,59 @@
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>刷新</value>
   </data>
-  <data name="Common_Refresh.Content" xml:space="preserve">
-    <value>刷新</value>
-  </data>
   <data name="Home_Title.Text" xml:space="preserve">
-    <value>首页</value>
-  </data>
-  <data name="Home_Title.Content" xml:space="preserve">
     <value>首页</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>进入代理设置</value>
   </data>
-  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
-    <value>进入代理设置</value>
-  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
-    <value>网络控制</value>
-  </data>
-  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>网络控制</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN 需要管理员权限运行</value>
   </data>
-  <data name="Home_TunAdminHint.Content" xml:space="preserve">
-    <value>TUN 需要管理员权限运行</value>
-  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
-    <value>当前订阅</value>
-  </data>
-  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>当前订阅</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>当前节点</value>
   </data>
-  <data name="Home_CardNodes.Content" xml:space="preserve">
-    <value>当前节点</value>
-  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
-    <value>流量统计</value>
-  </data>
-  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>流量统计</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>运行模式</value>
   </data>
-  <data name="Home_CardMode.Content" xml:space="preserve">
-    <value>运行模式</value>
-  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
-    <value>内核信息</value>
-  </data>
-  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>内核信息</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>代理</value>
   </data>
-  <data name="Proxies_Title.Content" xml:space="preserve">
-    <value>代理</value>
-  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
-    <value>筛选节点名称/类型</value>
-  </data>
-  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>筛选节点名称/类型</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>暂无代理组</value>
   </data>
-  <data name="Proxies_Empty.Content" xml:space="preserve">
-    <value>暂无代理组</value>
-  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
-    <value>请先在「订阅」页导入订阅配置</value>
-  </data>
-  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>请先在「订阅」页导入订阅配置</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>订阅</value>
   </data>
-  <data name="Profiles_Title.Content" xml:space="preserve">
-    <value>订阅</value>
-  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
-    <value>输入订阅链接（https://...），支持 clash:// 安装链接</value>
-  </data>
-  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>输入订阅链接（https://...），支持 clash:// 安装链接</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>本地文件</value>
   </data>
-  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
-    <value>本地文件</value>
-  </data>
-  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
-    <value>新建空配置</value>
-  </data>
   <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>新建空配置</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
-    <value>全部更新</value>
-  </data>
   <data name="Profiles_UpdateAll.Content" xml:space="preserve">
     <value>全部更新</value>
-  </data>
-  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
-    <value>全局增强</value>
   </data>
   <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>全局增强</value>
@@ -207,143 +105,71 @@
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>暂无订阅</value>
   </data>
-  <data name="Profiles_Empty.Content" xml:space="preserve">
-    <value>暂无订阅</value>
-  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
-    <value>粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件</value>
-  </data>
-  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>选择此订阅</value>
   </data>
-  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
-    <value>选择此订阅</value>
-  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
-    <value>更新</value>
-  </data>
-  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>更新</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>编辑信息</value>
   </data>
-  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
-    <value>编辑信息</value>
-  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
-    <value>编辑增强配置</value>
-  </data>
-  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>编辑增强配置</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>上移</value>
   </data>
-  <data name="Profiles_MenuUp.Content" xml:space="preserve">
-    <value>上移</value>
-  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
-    <value>下移</value>
-  </data>
-  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>下移</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>删除</value>
   </data>
-  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
-    <value>删除</value>
-  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
-    <value>连接</value>
-  </data>
-  <data name="Connections_Title.Content" xml:space="preserve">
     <value>连接</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>搜索主机 / 规则 / 进程</value>
   </data>
-  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
-    <value>搜索主机 / 规则 / 进程</value>
-  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>关闭全部</value>
-  </data>
-  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>关闭全部</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>已关闭</value>
   </data>
-  <data name="Connections_Closed.Content" xml:space="preserve">
-    <value>已关闭</value>
-  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
-    <value>主机</value>
-  </data>
-  <data name="Connections_Host.Content" xml:space="preserve">
     <value>主机</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>网络</value>
   </data>
-  <data name="Connections_Network.Content" xml:space="preserve">
-    <value>网络</value>
-  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
-    <value>下载</value>
-  </data>
-  <data name="Connections_Download.Content" xml:space="preserve">
     <value>下载</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>上传</value>
   </data>
-  <data name="Connections_Upload.Content" xml:space="preserve">
-    <value>上传</value>
-  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
-    <value>规则</value>
-  </data>
-  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>规则</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>链路</value>
   </data>
-  <data name="Connections_Chains.Content" xml:space="preserve">
-    <value>链路</value>
-  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
-    <value>进程</value>
-  </data>
-  <data name="Connections_Process.Content" xml:space="preserve">
     <value>进程</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>时间</value>
   </data>
-  <data name="Connections_Time.Content" xml:space="preserve">
-    <value>时间</value>
-  </data>
-  <data name="Connections_SortDefault.Text" xml:space="preserve">
-    <value>默认排序</value>
-  </data>
   <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>默认排序</value>
   </data>
-  <data name="Connections_SortUpload.Text" xml:space="preserve">
-    <value>按上传</value>
-  </data>
   <data name="Connections_SortUpload.Content" xml:space="preserve">
     <value>按上传</value>
-  </data>
-  <data name="Connections_SortDownload.Text" xml:space="preserve">
-    <value>按下载</value>
   </data>
   <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>按下载</value>
@@ -351,115 +177,58 @@
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>规则</value>
   </data>
-  <data name="Rules_Title.Content" xml:space="preserve">
-    <value>规则</value>
-  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
-    <value>搜索规则内容</value>
-  </data>
-  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>搜索规则内容</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>规则 Provider</value>
   </data>
-  <data name="Rules_Providers.Content" xml:space="preserve">
-    <value>规则 Provider</value>
-  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
-    <value>暂无规则</value>
-  </data>
-  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>暂无规则</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>日志</value>
   </data>
-  <data name="Logs_Title.Content" xml:space="preserve">
-    <value>日志</value>
-  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
-    <value>全部级别</value>
-  </data>
-  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>全部级别</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info 及以上</value>
   </data>
-  <data name="Logs_LevelInfo.Content" xml:space="preserve">
-    <value>Info 及以上</value>
-  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
-    <value>Warning 及以上</value>
-  </data>
-  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning 及以上</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Logs_LevelError.Content" xml:space="preserve">
-    <value>Error</value>
-  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>搜索日志内容</value>
   </data>
-  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
-    <value>搜索日志内容</value>
-  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
-    <value>暂停</value>
-  </data>
-  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>暂停</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>清空</value>
   </data>
-  <data name="Logs_Clear.Content" xml:space="preserve">
-    <value>清空</value>
-  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
-    <value>倒序</value>
-  </data>
-  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>倒序</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>暂无日志</value>
   </data>
-  <data name="Logs_Empty.Content" xml:space="preserve">
-    <value>暂无日志</value>
-  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
-    <value>解锁测试</value>
-  </data>
-  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>解锁测试</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）</value>
   </data>
-  <data name="Unlock_Subtitle.Content" xml:space="preserve">
-    <value>检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）</value>
-  </data>
-  <data name="Unlock_RunAll.Text" xml:space="preserve">
-    <value>全部测试</value>
-  </data>
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>全部测试</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
-    <value>重测</value>
-  </data>
-  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>重测</value>
   </data>
   <data name="Settings_Title.Header" xml:space="preserve">
@@ -576,28 +345,16 @@
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>主题模式</value>
   </data>
-  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
-    <value>跟随系统</value>
-  </data>
   <data name="Settings_ThemeSystem.Content" xml:space="preserve">
     <value>跟随系统</value>
   </data>
-  <data name="Settings_ThemeLight.Text" xml:space="preserve">
-    <value>浅色</value>
-  </data>
   <data name="Settings_ThemeLight.Content" xml:space="preserve">
     <value>浅色</value>
-  </data>
-  <data name="Settings_ThemeDark.Text" xml:space="preserve">
-    <value>深色</value>
   </data>
   <data name="Settings_ThemeDark.Content" xml:space="preserve">
     <value>深色</value>
   </data>
   <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
-    <value>重启</value>
-  </data>
-  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
     <value>重启</value>
   </data>
   <data name="Settings_CardRestartCore.Description" xml:space="preserve">
@@ -609,9 +366,6 @@
   <data name="Settings_CardService.Description" xml:space="preserve">
     <value>以 LocalSystem 运行，普通用户无需管理员即可使用 TUN</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
-    <value>安装 / 修复服务</value>
-  </data>
   <data name="Settings_InstallService.Content" xml:space="preserve">
     <value>安装 / 修复服务</value>
   </data>
@@ -621,10 +375,7 @@
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
     <value>关闭窗口后释放主界面，仅保留托盘与内核</value>
   </data>
-  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
-    <value>分钟</value>
-  </data>
-  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+  <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>分钟</value>
   </data>
   <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
@@ -645,9 +396,6 @@
   <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
     <value>保存时注册；冲突的组合会被拒绝并显示原因</value>
   </data>
-  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
-    <value>保存热键</value>
-  </data>
   <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
     <value>保存热键</value>
   </data>
@@ -663,20 +411,11 @@
   <data name="Settings_CardBackup.Description" xml:space="preserve">
     <value>ZIP 备份应用配置、订阅与增强文件（不含日志与凭据明文）</value>
   </data>
-  <data name="Settings_CreateBackup.Text" xml:space="preserve">
-    <value>创建备份</value>
-  </data>
   <data name="Settings_CreateBackup.Content" xml:space="preserve">
     <value>创建备份</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
-    <value>恢复备份</value>
-  </data>
   <data name="Settings_RestoreBackup.Content" xml:space="preserve">
     <value>恢复备份</value>
-  </data>
-  <data name="Settings_BackupDir.Text" xml:space="preserve">
-    <value>备份目录</value>
   </data>
   <data name="Settings_BackupDir.Content" xml:space="preserve">
     <value>备份目录</value>
@@ -687,20 +426,11 @@
   <data name="Settings_CardWebDav.Description" xml:space="preserve">
     <value>云端备份；密码经 DPAPI 加密存储，界面不回显</value>
   </data>
-  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
-    <value>设置服务器</value>
-  </data>
   <data name="Settings_WebDavConfig.Content" xml:space="preserve">
     <value>设置服务器</value>
   </data>
-  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
-    <value>上传</value>
-  </data>
   <data name="Settings_WebDavUpload.Content" xml:space="preserve">
     <value>上传</value>
-  </data>
-  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
-    <value>恢复</value>
   </data>
   <data name="Settings_WebDavRestore.Content" xml:space="preserve">
     <value>恢复</value>
@@ -711,14 +441,8 @@
   <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
     <value>导出本地诊断包；检查 GitHub 最新版本</value>
   </data>
-  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
-    <value>导出诊断包</value>
-  </data>
   <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
     <value>导出诊断包</value>
-  </data>
-  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
-    <value>检查更新</value>
   </data>
   <data name="Settings_CheckUpdate.Content" xml:space="preserve">
     <value>检查更新</value>
@@ -726,20 +450,11 @@
   <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
     <value>打开目录</value>
   </data>
-  <data name="Settings_OpenData.Text" xml:space="preserve">
-    <value>数据目录</value>
-  </data>
   <data name="Settings_OpenData.Content" xml:space="preserve">
     <value>数据目录</value>
   </data>
-  <data name="Settings_OpenLogs.Text" xml:space="preserve">
-    <value>日志目录</value>
-  </data>
   <data name="Settings_OpenLogs.Content" xml:space="preserve">
     <value>日志目录</value>
-  </data>
-  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
-    <value>打开 GitHub</value>
   </data>
   <data name="Settings_OpenGitHub.Content" xml:space="preserve">
     <value>打开 GitHub</value>
@@ -750,22 +465,13 @@
   <data name="Settings_CardAbout.Header" xml:space="preserve">
     <value>关于 Flux</value>
   </data>
-  <data name="Settings_ExitApp.Text" xml:space="preserve">
-    <value>退出应用</value>
-  </data>
   <data name="Settings_ExitApp.Content" xml:space="preserve">
     <value>退出应用</value>
-  </data>
-  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
-    <value>重启</value>
   </data>
   <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
     <value>重启</value>
   </data>
   <data name="Settings_FollowSystem.Text" xml:space="preserve">
-    <value>跟随系统</value>
-  </data>
-  <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>跟随系统</value>
   </data>
   <data name="Settings_CardLoopback.Header" xml:space="preserve">
@@ -774,52 +480,28 @@
   <data name="Settings_CardLoopback.Description" xml:space="preserve">
     <value>允许 UWP 应用通过本机代理联网（需要管理员授权）</value>
   </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>打开工具</value>
-  </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>打开工具</value>
   </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>已应用</value>
   </data>
-  <data name="Msg_Applied.Content" xml:space="preserve">
-    <value>已应用</value>
-  </data>
   <data name="Msg_SaveFailed.Text" xml:space="preserve">
-    <value>保存失败</value>
-  </data>
-  <data name="Msg_SaveFailed.Content" xml:space="preserve">
     <value>保存失败</value>
   </data>
   <data name="Msg_RestartNow.Text" xml:space="preserve">
     <value>立即重启</value>
   </data>
-  <data name="Msg_RestartNow.Content" xml:space="preserve">
-    <value>立即重启</value>
-  </data>
   <data name="Msg_RestartLater.Text" xml:space="preserve">
-    <value>稍后</value>
-  </data>
-  <data name="Msg_RestartLater.Content" xml:space="preserve">
     <value>稍后</value>
   </data>
   <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
     <value>端口已被占用</value>
   </data>
-  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
-    <value>端口已被占用</value>
-  </data>
   <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
     <value>端口 {0} 已被其他进程或本应用监听，请更换端口。</value>
   </data>
-  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
-    <value>端口 {0} 已被其他进程或本应用监听，请更换端口。</value>
-  </data>
   <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
-    <value>TUN 需要特权</value>
-  </data>
-  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
     <value>TUN 需要特权</value>
   </data>
   <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
@@ -827,1153 +509,575 @@
 1. 以管理员身份运行 Flux；
 2. 安装 Flux 服务（推荐，普通用户即可使用 TUN）。</value>
   </data>
-  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
-    <value>TUN 模式需要特权运行内核。可以选择：
-1. 以管理员身份运行 Flux；
-2. 安装 Flux 服务（推荐，普通用户即可使用 TUN）。</value>
-  </data>
   <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
-    <value>服务已安装</value>
-  </data>
-  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
     <value>服务已安装</value>
   </data>
   <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
     <value>Flux 服务已安装并启动，普通用户模式下即可开启 TUN。</value>
   </data>
-  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
-    <value>Flux 服务已安装并启动，普通用户模式下即可开启 TUN。</value>
-  </data>
   <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
-    <value>服务安装失败</value>
-  </data>
-  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
     <value>服务安装失败</value>
   </data>
   <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
     <value>热键保存被拒绝</value>
   </data>
-  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
-    <value>热键保存被拒绝</value>
-  </data>
   <data name="Msg_HotkeySaved.Text" xml:space="preserve">
-    <value>热键已保存</value>
-  </data>
-  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
     <value>热键已保存</value>
   </data>
   <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
     <value>全局热键已注册生效。</value>
   </data>
-  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
-    <value>全局热键已注册生效。</value>
-  </data>
   <data name="Msg_LangChanged.Text" xml:space="preserve">
-    <value>语言已更改</value>
-  </data>
-  <data name="Msg_LangChanged.Content" xml:space="preserve">
     <value>语言已更改</value>
   </data>
   <data name="Msg_LangChangedBody.Text" xml:space="preserve">
     <value>请重启应用以完整应用新语言设置。</value>
   </data>
-  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
-    <value>请重启应用以完整应用新语言设置。</value>
-  </data>
   <data name="Msg_Copied.Text" xml:space="preserve">
-    <value>已复制</value>
-  </data>
-  <data name="Msg_Copied.Content" xml:space="preserve">
     <value>已复制</value>
   </data>
   <data name="Msg_CopiedBody.Text" xml:space="preserve">
     <value>{0} 环境变量已复制到剪贴板。</value>
   </data>
-  <data name="Msg_CopiedBody.Content" xml:space="preserve">
-    <value>{0} 环境变量已复制到剪贴板。</value>
-  </data>
   <data name="Msg_BackupDone.Text" xml:space="preserve">
-    <value>备份完成</value>
-  </data>
-  <data name="Msg_BackupDone.Content" xml:space="preserve">
     <value>备份完成</value>
   </data>
   <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
     <value>已创建备份 {0}</value>
   </data>
-  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
-    <value>已创建备份 {0}</value>
-  </data>
   <data name="Msg_BackupFailed.Text" xml:space="preserve">
-    <value>备份失败</value>
-  </data>
-  <data name="Msg_BackupFailed.Content" xml:space="preserve">
     <value>备份失败</value>
   </data>
   <data name="Msg_ListFailed.Text" xml:space="preserve">
     <value>读取备份失败</value>
   </data>
-  <data name="Msg_ListFailed.Content" xml:space="preserve">
-    <value>读取备份失败</value>
-  </data>
   <data name="Msg_NoBackups.Text" xml:space="preserve">
-    <value>没有备份</value>
-  </data>
-  <data name="Msg_NoBackups.Content" xml:space="preserve">
     <value>没有备份</value>
   </data>
   <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
     <value>尚未创建任何备份。</value>
   </data>
-  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
-    <value>尚未创建任何备份。</value>
-  </data>
   <data name="Msg_RestorePick.Text" xml:space="preserve">
-    <value>选择要恢复的备份（恢复后需要重启内核生效）：</value>
-  </data>
-  <data name="Msg_RestorePick.Content" xml:space="preserve">
     <value>选择要恢复的备份（恢复后需要重启内核生效）：</value>
   </data>
   <data name="Msg_RestoreDone.Text" xml:space="preserve">
     <value>恢复完成</value>
   </data>
-  <data name="Msg_RestoreDone.Content" xml:space="preserve">
-    <value>恢复完成</value>
-  </data>
   <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
-    <value>已从 {0} 恢复并重启内核。</value>
-  </data>
-  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
     <value>已从 {0} 恢复并重启内核。</value>
   </data>
   <data name="Msg_RestoreFailed.Text" xml:space="preserve">
     <value>恢复失败</value>
   </data>
-  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
-    <value>恢复失败</value>
-  </data>
   <data name="Msg_WebDavTitle.Text" xml:space="preserve">
-    <value>WebDAV 服务器设置</value>
-  </data>
-  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
     <value>WebDAV 服务器设置</value>
   </data>
   <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
     <value>地址无效</value>
   </data>
-  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
-    <value>地址无效</value>
-  </data>
   <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
-    <value>WebDAV 地址必须是有效的 HTTP/HTTPS URL。</value>
-  </data>
-  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
     <value>WebDAV 地址必须是有效的 HTTP/HTTPS URL。</value>
   </data>
   <data name="Msg_WebDavSaved.Text" xml:space="preserve">
     <value>已保存</value>
   </data>
-  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
-    <value>已保存</value>
-  </data>
   <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
-    <value>WebDAV 配置已保存（密码经 DPAPI 加密，明文不落盘）。</value>
-  </data>
-  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
     <value>WebDAV 配置已保存（密码经 DPAPI 加密，明文不落盘）。</value>
   </data>
   <data name="Msg_NotConfigured.Text" xml:space="preserve">
     <value>未配置</value>
   </data>
-  <data name="Msg_NotConfigured.Content" xml:space="preserve">
-    <value>未配置</value>
-  </data>
   <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
-    <value>请先设置 WebDAV 服务器。</value>
-  </data>
-  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
     <value>请先设置 WebDAV 服务器。</value>
   </data>
   <data name="Msg_UploadDone.Text" xml:space="preserve">
     <value>上传完成</value>
   </data>
-  <data name="Msg_UploadDone.Content" xml:space="preserve">
-    <value>上传完成</value>
-  </data>
   <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
-    <value>{0} 已上传到 WebDAV。</value>
-  </data>
-  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
     <value>{0} 已上传到 WebDAV。</value>
   </data>
   <data name="Msg_UploadFailed.Text" xml:space="preserve">
     <value>上传失败</value>
   </data>
-  <data name="Msg_UploadFailed.Content" xml:space="preserve">
-    <value>上传失败</value>
-  </data>
   <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
-    <value>无备份</value>
-  </data>
-  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
     <value>无备份</value>
   </data>
   <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
     <value>WebDAV 上没有备份文件。</value>
   </data>
-  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
-    <value>WebDAV 上没有备份文件。</value>
-  </data>
   <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
-    <value>从 WebDAV 恢复</value>
-  </data>
-  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
     <value>从 WebDAV 恢复</value>
   </data>
   <data name="Msg_DownloadRestore.Text" xml:space="preserve">
     <value>下载并恢复</value>
   </data>
-  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
-    <value>下载并恢复</value>
-  </data>
   <data name="Msg_DiagDone.Text" xml:space="preserve">
-    <value>诊断包已导出</value>
-  </data>
-  <data name="Msg_DiagDone.Content" xml:space="preserve">
     <value>诊断包已导出</value>
   </data>
   <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
     <value>内容仅保存在本地，可自行决定是否分享。</value>
   </data>
-  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
-    <value>内容仅保存在本地，可自行决定是否分享。</value>
-  </data>
   <data name="Msg_ExportFailed.Text" xml:space="preserve">
-    <value>导出失败</value>
-  </data>
-  <data name="Msg_ExportFailed.Content" xml:space="preserve">
     <value>导出失败</value>
   </data>
   <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
     <value>检查更新</value>
   </data>
-  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
-    <value>检查更新</value>
-  </data>
   <data name="Msg_UpToDate.Text" xml:space="preserve">
-    <value>当前已是最新版本（{0}）。</value>
-  </data>
-  <data name="Msg_UpToDate.Content" xml:space="preserve">
     <value>当前已是最新版本（{0}）。</value>
   </data>
   <data name="Msg_NewVersion.Text" xml:space="preserve">
     <value>发现新版本 {0}</value>
   </data>
-  <data name="Msg_NewVersion.Content" xml:space="preserve">
-    <value>发现新版本 {0}</value>
-  </data>
   <data name="Msg_UpdateHint.Text" xml:space="preserve">
-    <value>将打开 GitHub 发布页手动下载（MSIX/便携包）。</value>
-  </data>
-  <data name="Msg_UpdateHint.Content" xml:space="preserve">
     <value>将打开 GitHub 发布页手动下载（MSIX/便携包）。</value>
   </data>
   <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
     <value>打开发布页</value>
   </data>
-  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
-    <value>打开发布页</value>
-  </data>
   <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
-    <value>检查更新失败</value>
-  </data>
-  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
     <value>检查更新失败</value>
   </data>
   <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
     <value>应用失败</value>
   </data>
-  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
-    <value>应用失败</value>
-  </data>
   <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
-    <value>{0}（已回滚）</value>
-  </data>
-  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
     <value>{0}（已回滚）</value>
   </data>
   <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
     <value>TUN 高级设置已重载。</value>
   </data>
-  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
-    <value>TUN 高级设置已重载。</value>
-  </data>
   <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
-    <value>DNS 设置已重载。</value>
-  </data>
-  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
     <value>DNS 设置已重载。</value>
   </data>
   <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
     <value>外部控制器已更新并重启内核。</value>
   </data>
-  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
-    <value>外部控制器已更新并重启内核。</value>
-  </data>
   <data name="Msg_RolledBack.Text" xml:space="preserve">
-    <value>（已回滚）</value>
-  </data>
-  <data name="Msg_RolledBack.Content" xml:space="preserve">
     <value>（已回滚）</value>
   </data>
   <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
     <value>删除订阅</value>
   </data>
-  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
-    <value>删除订阅</value>
-  </data>
   <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
-    <value>确定删除「{0}」吗？</value>
-  </data>
-  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
     <value>确定删除「{0}」吗？</value>
   </data>
   <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
     <value>编辑订阅：{0}</value>
   </data>
-  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
-    <value>编辑订阅：{0}</value>
-  </data>
   <data name="Msg_NameRequired.Text" xml:space="preserve">
-    <value>名称不能为空</value>
-  </data>
-  <data name="Msg_NameRequired.Content" xml:space="preserve">
     <value>名称不能为空</value>
   </data>
   <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
     <value>下载超时必须是 5-300 秒</value>
   </data>
-  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
-    <value>下载超时必须是 5-300 秒</value>
-  </data>
   <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
-    <value>更新间隔必须是非负整数</value>
-  </data>
-  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
     <value>更新间隔必须是非负整数</value>
   </data>
   <data name="Msg_ChooseChannel.Text" xml:space="preserve">
     <value>请选择更新通道</value>
   </data>
-  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
-    <value>请选择更新通道</value>
-  </data>
   <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
-    <value>编辑全局增强配置</value>
-  </data>
-  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
     <value>编辑全局增强配置</value>
   </data>
   <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
     <value>编辑增强配置：{0}</value>
   </data>
-  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
-    <value>编辑增强配置：{0}</value>
-  </data>
   <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
-    <value>应用顺序：全局 Merge → 全局 Script → 订阅 Merge → 订阅 Script → Rules → Proxies → Groups</value>
-  </data>
-  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
     <value>应用顺序：全局 Merge → 全局 Script → 订阅 Merge → 订阅 Script → Rules → Proxies → Groups</value>
   </data>
   <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
     <value>✓ 已保存</value>
   </data>
-  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
-    <value>✓ 已保存</value>
-  </data>
   <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
-    <value>(未命名)</value>
-  </data>
-  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
     <value>(未命名)</value>
   </data>
   <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
     <value>本地文件</value>
   </data>
-  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
-    <value>本地文件</value>
-  </data>
   <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
-    <value>远程订阅</value>
-  </data>
-  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
     <value>远程订阅</value>
   </data>
   <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
     <value>本地配置</value>
   </data>
-  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
-    <value>本地配置</value>
-  </data>
   <data name="VM_NeverUpdated.Text" xml:space="preserve">
-    <value>从未更新</value>
-  </data>
-  <data name="VM_NeverUpdated.Content" xml:space="preserve">
     <value>从未更新</value>
   </data>
   <data name="VM_UpdatedAt.Text" xml:space="preserve">
     <value>更新于 {0}</value>
   </data>
-  <data name="VM_UpdatedAt.Content" xml:space="preserve">
-    <value>更新于 {0}</value>
-  </data>
   <data name="VM_ExpireIn.Text" xml:space="preserve">
-    <value>{0} 到期（剩 {1} 天）</value>
-  </data>
-  <data name="VM_ExpireIn.Content" xml:space="preserve">
     <value>{0} 到期（剩 {1} 天）</value>
   </data>
   <data name="VM_Expired.Text" xml:space="preserve">
     <value>已到期</value>
   </data>
-  <data name="VM_Expired.Content" xml:space="preserve">
-    <value>已到期</value>
-  </data>
   <data name="VM_Importing.Text" xml:space="preserve">
-    <value>正在导入订阅…</value>
-  </data>
-  <data name="VM_Importing.Content" xml:space="preserve">
     <value>正在导入订阅…</value>
   </data>
   <data name="VM_Imported.Text" xml:space="preserve">
     <value>导入成功: {0}</value>
   </data>
-  <data name="VM_Imported.Content" xml:space="preserve">
-    <value>导入成功: {0}</value>
-  </data>
   <data name="VM_ImportFailed.Text" xml:space="preserve">
-    <value>导入失败: {0}</value>
-  </data>
-  <data name="VM_ImportFailed.Content" xml:space="preserve">
     <value>导入失败: {0}</value>
   </data>
   <data name="VM_ImportingLocal.Text" xml:space="preserve">
     <value>正在导入本地配置…</value>
   </data>
-  <data name="VM_ImportingLocal.Content" xml:space="preserve">
-    <value>正在导入本地配置…</value>
-  </data>
   <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
-    <value>本地导入失败: {0}</value>
-  </data>
-  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
     <value>本地导入失败: {0}</value>
   </data>
   <data name="VM_Switched.Text" xml:space="preserve">
     <value>已切换: {0}</value>
   </data>
-  <data name="VM_Switched.Content" xml:space="preserve">
-    <value>已切换: {0}</value>
-  </data>
   <data name="VM_SwitchFailed.Text" xml:space="preserve">
-    <value>切换失败: {0}</value>
-  </data>
-  <data name="VM_SwitchFailed.Content" xml:space="preserve">
     <value>切换失败: {0}</value>
   </data>
   <data name="VM_DefaultNewName.Text" xml:space="preserve">
     <value>新配置</value>
   </data>
-  <data name="VM_DefaultNewName.Content" xml:space="preserve">
-    <value>新配置</value>
-  </data>
   <data name="VM_Created.Text" xml:space="preserve">
-    <value>已创建: {0}</value>
-  </data>
-  <data name="VM_Created.Content" xml:space="preserve">
     <value>已创建: {0}</value>
   </data>
   <data name="VM_CreateFailed.Text" xml:space="preserve">
     <value>创建失败: {0}</value>
   </data>
-  <data name="VM_CreateFailed.Content" xml:space="preserve">
-    <value>创建失败: {0}</value>
-  </data>
   <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
-    <value>没有可更新的远程订阅</value>
-  </data>
-  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
     <value>没有可更新的远程订阅</value>
   </data>
   <data name="VM_Updating.Text" xml:space="preserve">
     <value>正在更新: {0}…</value>
   </data>
-  <data name="VM_Updating.Content" xml:space="preserve">
-    <value>正在更新: {0}…</value>
-  </data>
   <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
-    <value>订阅更新失败: {0}: {1}</value>
-  </data>
-  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
     <value>订阅更新失败: {0}: {1}</value>
   </data>
   <data name="VM_UpdateAllDone.Text" xml:space="preserve">
     <value>全部更新完成：成功 {0}/{1}</value>
   </data>
-  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
-    <value>全部更新完成：成功 {0}/{1}</value>
-  </data>
   <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
-    <value>更新成功: {0}</value>
-  </data>
-  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
     <value>更新成功: {0}</value>
   </data>
   <data name="VM_UpdateFailed.Text" xml:space="preserve">
     <value>更新失败: {0}</value>
   </data>
-  <data name="VM_UpdateFailed.Content" xml:space="preserve">
-    <value>更新失败: {0}</value>
-  </data>
   <data name="VM_Deleted.Text" xml:space="preserve">
-    <value>已删除</value>
-  </data>
-  <data name="VM_Deleted.Content" xml:space="preserve">
     <value>已删除</value>
   </data>
   <data name="VM_ProfileDisabled.Text" xml:space="preserve">
     <value>（未启用）</value>
   </data>
-  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
-    <value>（未启用）</value>
-  </data>
   <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
-    <value>（未启用订阅）</value>
-  </data>
-  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
     <value>（未启用订阅）</value>
   </data>
   <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
     <value>点击卡片管理订阅</value>
   </data>
-  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
-    <value>点击卡片管理订阅</value>
-  </data>
   <data name="VM_CoreChecking.Text" xml:space="preserve">
-    <value>检查中…</value>
-  </data>
-  <data name="VM_CoreChecking.Content" xml:space="preserve">
     <value>检查中…</value>
   </data>
   <data name="VM_CoreRunning.Text" xml:space="preserve">
     <value>内核运行中</value>
   </data>
-  <data name="VM_CoreRunning.Content" xml:space="preserve">
-    <value>内核运行中</value>
-  </data>
   <data name="VM_CoreNotRunning.Text" xml:space="preserve">
-    <value>内核未运行</value>
-  </data>
-  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
     <value>内核未运行</value>
   </data>
   <data name="VM_UptimeHours.Text" xml:space="preserve">
     <value>{0} 小时 {1} 分</value>
   </data>
-  <data name="VM_UptimeHours.Content" xml:space="preserve">
-    <value>{0} 小时 {1} 分</value>
-  </data>
   <data name="VM_UptimeMinutes.Text" xml:space="preserve">
-    <value>{0} 分 {1} 秒</value>
-  </data>
-  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
     <value>{0} 分 {1} 秒</value>
   </data>
   <data name="VM_NotRunning.Text" xml:space="preserve">
     <value>未运行</value>
   </data>
-  <data name="VM_NotRunning.Content" xml:space="preserve">
-    <value>未运行</value>
-  </data>
   <data name="VM_RulesCount.Text" xml:space="preserve">
-    <value>{0} 条</value>
-  </data>
-  <data name="VM_RulesCount.Content" xml:space="preserve">
     <value>{0} 条</value>
   </data>
   <data name="VM_SubNoProfile.Text" xml:space="preserve">
     <value>尚未导入订阅，点击前往</value>
   </data>
-  <data name="VM_SubNoProfile.Content" xml:space="preserve">
-    <value>尚未导入订阅，点击前往</value>
-  </data>
   <data name="VM_SubRemoteHint.Text" xml:space="preserve">
-    <value>远程订阅 · 点击卡片管理</value>
-  </data>
-  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
     <value>远程订阅 · 点击卡片管理</value>
   </data>
   <data name="VM_SubLocalHint.Text" xml:space="preserve">
     <value>本地配置 · 点击卡片管理</value>
   </data>
-  <data name="VM_SubLocalHint.Content" xml:space="preserve">
-    <value>本地配置 · 点击卡片管理</value>
-  </data>
   <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
-    <value>TUN 模式需要以管理员身份运行应用</value>
-  </data>
-  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
     <value>TUN 模式需要以管理员身份运行应用</value>
   </data>
   <data name="VM_TunRejected.Text" xml:space="preserve">
     <value>内核未运行或拒绝了 TUN 配置</value>
   </data>
-  <data name="VM_TunRejected.Content" xml:space="preserve">
-    <value>内核未运行或拒绝了 TUN 配置</value>
-  </data>
   <data name="VM_ConnCount.Text" xml:space="preserve">
-    <value>活跃 {0} · 已关闭 {1}</value>
-  </data>
-  <data name="VM_ConnCount.Content" xml:space="preserve">
     <value>活跃 {0} · 已关闭 {1}</value>
   </data>
   <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
     <value>关闭连接失败: {0}</value>
   </data>
-  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
-    <value>关闭连接失败: {0}</value>
-  </data>
   <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
-    <value>关闭全部连接失败: {0}</value>
-  </data>
-  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
     <value>关闭全部连接失败: {0}</value>
   </data>
   <data name="VM_LogsCount.Text" xml:space="preserve">
     <value>{0} 条</value>
   </data>
-  <data name="VM_LogsCount.Content" xml:space="preserve">
-    <value>{0} 条</value>
-  </data>
   <data name="SVC_InvalidYaml.Text" xml:space="preserve">
-    <value>文件不是有效的 YAML 配置</value>
-  </data>
-  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
     <value>文件不是有效的 YAML 配置</value>
   </data>
   <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
     <value>仅远程订阅可更新</value>
   </data>
-  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
-    <value>仅远程订阅可更新</value>
-  </data>
   <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
-    <value>订阅未变化（304）: {0}</value>
-  </data>
-  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
     <value>订阅未变化（304）: {0}</value>
   </data>
   <data name="SVC_UpdateFailed.Text" xml:space="preserve">
     <value>订阅更新失败: {0}</value>
   </data>
-  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
-    <value>订阅更新失败: {0}</value>
-  </data>
   <data name="SVC_DownloadFailed.Text" xml:space="preserve">
-    <value>下载失败: {0}</value>
-  </data>
-  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
     <value>下载失败: {0}</value>
   </data>
   <data name="SVC_InvalidUrl.Text" xml:space="preserve">
     <value>订阅地址必须是有效的 HTTP/HTTPS URL</value>
   </data>
-  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
-    <value>订阅地址必须是有效的 HTTP/HTTPS URL</value>
-  </data>
   <data name="SVC_TooLarge.Text" xml:space="preserve">
-    <value>订阅内容超过 20 MiB 限制</value>
-  </data>
-  <data name="SVC_TooLarge.Content" xml:space="preserve">
     <value>订阅内容超过 20 MiB 限制</value>
   </data>
   <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
     <value>导入后应用订阅失败: {0}</value>
   </data>
-  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
-    <value>导入后应用订阅失败: {0}</value>
-  </data>
   <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
-    <value>订阅自动更新成功: {0}</value>
-  </data>
-  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
     <value>订阅自动更新成功: {0}</value>
   </data>
   <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
     <value>订阅自动更新失败: {0}: {1}</value>
   </data>
-  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
-    <value>订阅自动更新失败: {0}: {1}</value>
-  </data>
   <data name="Tray_InitFailed.Text" xml:space="preserve">
-    <value>托盘初始化失败: {0}</value>
-  </data>
-  <data name="Tray_InitFailed.Content" xml:space="preserve">
     <value>托盘初始化失败: {0}</value>
   </data>
   <data name="Tray_ShowWindow.Text" xml:space="preserve">
     <value>显示主窗口</value>
   </data>
-  <data name="Tray_ShowWindow.Content" xml:space="preserve">
-    <value>显示主窗口</value>
-  </data>
   <data name="Tray_ModeRule.Text" xml:space="preserve">
-    <value>规则模式</value>
-  </data>
-  <data name="Tray_ModeRule.Content" xml:space="preserve">
     <value>规则模式</value>
   </data>
   <data name="Tray_ModeGlobal.Text" xml:space="preserve">
     <value>全局模式</value>
   </data>
-  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
-    <value>全局模式</value>
-  </data>
   <data name="Tray_ModeDirect.Text" xml:space="preserve">
-    <value>直连模式</value>
-  </data>
-  <data name="Tray_ModeDirect.Content" xml:space="preserve">
     <value>直连模式</value>
   </data>
   <data name="Tray_SystemProxy.Text" xml:space="preserve">
     <value>系统代理</value>
   </data>
-  <data name="Tray_SystemProxy.Content" xml:space="preserve">
-    <value>系统代理</value>
-  </data>
   <data name="Tray_TunMode.Text" xml:space="preserve">
-    <value>TUN 模式</value>
-  </data>
-  <data name="Tray_TunMode.Content" xml:space="preserve">
     <value>TUN 模式</value>
   </data>
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>轻量模式</value>
   </data>
-  <data name="Tray_Lightweight.Content" xml:space="preserve">
-    <value>轻量模式</value>
-  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
-    <value>重启内核</value>
-  </data>
-  <data name="Tray_RestartCore.Content" xml:space="preserve">
     <value>重启内核</value>
   </data>
   <data name="Tray_Exit.Text" xml:space="preserve">
     <value>退出</value>
   </data>
-  <data name="Tray_Exit.Content" xml:space="preserve">
-    <value>退出</value>
-  </data>
   <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
-    <value>托盘菜单刷新失败: {0}</value>
-  </data>
-  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
     <value>托盘菜单刷新失败: {0}</value>
   </data>
   <data name="Tray_ProxyGroups.Text" xml:space="preserve">
     <value>代理组</value>
   </data>
-  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
-    <value>代理组</value>
-  </data>
   <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
-    <value>(内核未运行)</value>
-  </data>
-  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
     <value>(内核未运行)</value>
   </data>
   <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
     <value>托盘切换节点失败: {0}</value>
   </data>
-  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
-    <value>托盘切换节点失败: {0}</value>
-  </data>
   <data name="Tray_Profiles.Text" xml:space="preserve">
-    <value>订阅</value>
-  </data>
-  <data name="Tray_Profiles.Content" xml:space="preserve">
     <value>订阅</value>
   </data>
   <data name="Tray_NoProfiles.Text" xml:space="preserve">
     <value>(暂无订阅)</value>
   </data>
-  <data name="Tray_NoProfiles.Content" xml:space="preserve">
-    <value>(暂无订阅)</value>
-  </data>
   <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
-    <value>订阅切换失败: {0}</value>
-  </data>
-  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
     <value>订阅切换失败: {0}</value>
   </data>
   <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
     <value>模式切换失败: {0}</value>
   </data>
-  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
-    <value>模式切换失败: {0}</value>
-  </data>
   <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
-    <value>系统代理切换失败: {0}</value>
-  </data>
-  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
     <value>系统代理切换失败: {0}</value>
   </data>
   <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
     <value>退出清理未完成: {0}</value>
   </data>
-  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
-    <value>退出清理未完成: {0}</value>
-  </data>
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
-    <value>规则</value>
-  </data>
-  <data name="Fmt_ModeRule.Content" xml:space="preserve">
     <value>规则</value>
   </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>全局</value>
   </data>
-  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
-    <value>全局</value>
-  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
-    <value>直连</value>
-  </data>
-  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>直连</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
     <value>代理 Provider</value>
   </data>
-  <data name="Msg_ProviderTitleProxy.Content" xml:space="preserve">
-    <value>代理 Provider</value>
-  </data>
   <data name="Msg_ProviderTitleRules.Text" xml:space="preserve">
-    <value>规则 Provider</value>
-  </data>
-  <data name="Msg_ProviderTitleRules.Content" xml:space="preserve">
     <value>规则 Provider</value>
   </data>
   <data name="Msg_RefreshList.Text" xml:space="preserve">
     <value>刷新列表</value>
   </data>
-  <data name="Msg_RefreshList.Content" xml:space="preserve">
-    <value>刷新列表</value>
-  </data>
   <data name="Msg_HealthCheck.Text" xml:space="preserve">
-    <value>健康检查</value>
-  </data>
-  <data name="Msg_HealthCheck.Content" xml:space="preserve">
     <value>健康检查</value>
   </data>
   <data name="Msg_Loading.Text" xml:space="preserve">
     <value>正在加载…</value>
   </data>
-  <data name="Msg_Loading.Content" xml:space="preserve">
-    <value>正在加载…</value>
-  </data>
   <data name="Msg_NoProxyProviders.Text" xml:space="preserve">
-    <value>当前订阅没有代理 Provider</value>
-  </data>
-  <data name="Msg_NoProxyProviders.Content" xml:space="preserve">
     <value>当前订阅没有代理 Provider</value>
   </data>
   <data name="Msg_NoRuleProviders.Text" xml:space="preserve">
     <value>当前订阅没有规则 Provider</value>
   </data>
-  <data name="Msg_NoRuleProviders.Content" xml:space="preserve">
-    <value>当前订阅没有规则 Provider</value>
-  </data>
   <data name="Msg_ProviderCount.Text" xml:space="preserve">
-    <value>共 {0} 个 Provider</value>
-  </data>
-  <data name="Msg_ProviderCount.Content" xml:space="preserve">
     <value>共 {0} 个 Provider</value>
   </data>
   <data name="Msg_ProxyNodeCount.Text" xml:space="preserve">
     <value>{0} 个节点</value>
   </data>
-  <data name="Msg_ProxyNodeCount.Content" xml:space="preserve">
-    <value>{0} 个节点</value>
-  </data>
   <data name="Msg_RulesMeta.Text" xml:space="preserve">
-    <value>{0} · {1} · {2} 条</value>
-  </data>
-  <data name="Msg_RulesMeta.Content" xml:space="preserve">
     <value>{0} · {1} · {2} 条</value>
   </data>
   <data name="Msg_Update.Text" xml:space="preserve">
     <value>更新</value>
   </data>
-  <data name="Msg_Update.Content" xml:space="preserve">
-    <value>更新</value>
-  </data>
   <data name="Msg_Updating.Text" xml:space="preserve">
-    <value>正在更新 {0}…</value>
-  </data>
-  <data name="Msg_Updating.Content" xml:space="preserve">
     <value>正在更新 {0}…</value>
   </data>
   <data name="Msg_UpdatedOne.Text" xml:space="preserve">
     <value>已更新 {0}</value>
   </data>
-  <data name="Msg_UpdatedOne.Content" xml:space="preserve">
-    <value>已更新 {0}</value>
-  </data>
   <data name="Msg_UpdateFailedNamed.Text" xml:space="preserve">
-    <value>更新失败 {0}: {1}</value>
-  </data>
-  <data name="Msg_UpdateFailedNamed.Content" xml:space="preserve">
     <value>更新失败 {0}: {1}</value>
   </data>
   <data name="Msg_UpdatingAll.Text" xml:space="preserve">
     <value>正在全部更新…</value>
   </data>
-  <data name="Msg_UpdatingAll.Content" xml:space="preserve">
-    <value>正在全部更新…</value>
-  </data>
   <data name="Msg_UpdateAllDoneCount.Text" xml:space="preserve">
-    <value>全部更新完成：{0}/{1}</value>
-  </data>
-  <data name="Msg_UpdateAllDoneCount.Content" xml:space="preserve">
     <value>全部更新完成：{0}/{1}</value>
   </data>
   <data name="Msg_HealthChecking.Text" xml:space="preserve">
     <value>正在健康检查…</value>
   </data>
-  <data name="Msg_HealthChecking.Content" xml:space="preserve">
-    <value>正在健康检查…</value>
-  </data>
   <data name="Msg_HealthCheckDone.Text" xml:space="preserve">
-    <value>健康检查完成</value>
-  </data>
-  <data name="Msg_HealthCheckDone.Content" xml:space="preserve">
     <value>健康检查完成</value>
   </data>
   <data name="Msg_NeverUpdatedShort.Text" xml:space="preserve">
     <value>未更新</value>
   </data>
-  <data name="Msg_NeverUpdatedShort.Content" xml:space="preserve">
-    <value>未更新</value>
-  </data>
   <data name="Msg_UnlockUntested.Text" xml:space="preserve">
-    <value>未测试</value>
-  </data>
-  <data name="Msg_UnlockUntested.Content" xml:space="preserve">
     <value>未测试</value>
   </data>
   <data name="Msg_UnlockTesting.Text" xml:space="preserve">
     <value>测试中</value>
   </data>
-  <data name="Msg_UnlockTesting.Content" xml:space="preserve">
-    <value>测试中</value>
-  </data>
   <data name="Msg_UnlockSupported.Text" xml:space="preserve">
-    <value>支持</value>
-  </data>
-  <data name="Msg_UnlockSupported.Content" xml:space="preserve">
     <value>支持</value>
   </data>
   <data name="Msg_UnlockUnsupported.Text" xml:space="preserve">
     <value>不支持</value>
   </data>
-  <data name="Msg_UnlockUnsupported.Content" xml:space="preserve">
-    <value>不支持</value>
-  </data>
   <data name="Msg_UnlockUnknown.Text" xml:space="preserve">
-    <value>未知</value>
-  </data>
-  <data name="Msg_UnlockUnknown.Content" xml:space="preserve">
     <value>未知</value>
   </data>
   <data name="Msg_UnlockFailed.Text" xml:space="preserve">
     <value>失败</value>
   </data>
-  <data name="Msg_UnlockFailed.Content" xml:space="preserve">
-    <value>失败</value>
-  </data>
   <data name="Msg_SysProxyToggleFailedTitle.Text" xml:space="preserve">
-    <value>系统代理切换失败</value>
-  </data>
-  <data name="Msg_SysProxyToggleFailedTitle.Content" xml:space="preserve">
     <value>系统代理切换失败</value>
   </data>
   <data name="Msg_TunToggleFailedTitle.Text" xml:space="preserve">
     <value>TUN 切换失败</value>
   </data>
-  <data name="Msg_TunToggleFailedTitle.Content" xml:space="preserve">
-    <value>TUN 切换失败</value>
-  </data>
   <data name="Msg_CoreRestartFailedTitle.Text" xml:space="preserve">
-    <value>内核重启失败</value>
-  </data>
-  <data name="Msg_CoreRestartFailedTitle.Content" xml:space="preserve">
     <value>内核重启失败</value>
   </data>
   <data name="Msg_CloseThisConn.Text" xml:space="preserve">
     <value>关闭此连接</value>
   </data>
-  <data name="Msg_CloseThisConn.Content" xml:space="preserve">
-    <value>关闭此连接</value>
-  </data>
   <data name="Msg_Back.Text" xml:space="preserve">
-    <value>返回</value>
-  </data>
-  <data name="Msg_Back.Content" xml:space="preserve">
     <value>返回</value>
   </data>
   <data name="Msg_DetailNetwork.Text" xml:space="preserve">
     <value>网络: {0} ({1})</value>
   </data>
-  <data name="Msg_DetailNetwork.Content" xml:space="preserve">
-    <value>网络: {0} ({1})</value>
-  </data>
   <data name="Msg_DetailHost.Text" xml:space="preserve">
-    <value>主机: {0}</value>
-  </data>
-  <data name="Msg_DetailHost.Content" xml:space="preserve">
     <value>主机: {0}</value>
   </data>
   <data name="Msg_DetailDestination.Text" xml:space="preserve">
     <value>目标: {0}</value>
   </data>
-  <data name="Msg_DetailDestination.Content" xml:space="preserve">
-    <value>目标: {0}</value>
-  </data>
   <data name="Msg_DetailSource.Text" xml:space="preserve">
-    <value>来源: {0}</value>
-  </data>
-  <data name="Msg_DetailSource.Content" xml:space="preserve">
     <value>来源: {0}</value>
   </data>
   <data name="Msg_DetailRule.Text" xml:space="preserve">
     <value>规则: {0}</value>
   </data>
-  <data name="Msg_DetailRule.Content" xml:space="preserve">
-    <value>规则: {0}</value>
-  </data>
   <data name="Msg_DetailChains.Text" xml:space="preserve">
-    <value>链路: {0}</value>
-  </data>
-  <data name="Msg_DetailChains.Content" xml:space="preserve">
     <value>链路: {0}</value>
   </data>
   <data name="Msg_DetailProcess.Text" xml:space="preserve">
     <value>进程: {0}</value>
   </data>
-  <data name="Msg_DetailProcess.Content" xml:space="preserve">
-    <value>进程: {0}</value>
-  </data>
   <data name="Msg_DetailTraffic.Text" xml:space="preserve">
-    <value>下载: {0}   上传: {1}</value>
-  </data>
-  <data name="Msg_DetailTraffic.Content" xml:space="preserve">
     <value>下载: {0}   上传: {1}</value>
   </data>
   <data name="Msg_DetailTime.Text" xml:space="preserve">
     <value>时间: {0}</value>
   </data>
-  <data name="Msg_DetailTime.Content" xml:space="preserve">
-    <value>时间: {0}</value>
-  </data>
   <data name="Msg_QrTitle.Text" xml:space="preserve">
-    <value>二维码：{0}</value>
-  </data>
-  <data name="Msg_QrTitle.Content" xml:space="preserve">
     <value>二维码：{0}</value>
   </data>
   <data name="Msg_QrFailed.Text" xml:space="preserve">
     <value>二维码生成失败: {0}</value>
   </data>
-  <data name="Msg_QrFailed.Content" xml:space="preserve">
-    <value>二维码生成失败: {0}</value>
-  </data>
   <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
-    <value>UWP Loopback 工具</value>
-  </data>
-  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
     <value>UWP Loopback 工具</value>
   </data>
   <data name="Msg_LoopbackHint.Text" xml:space="preserve">
     <value>勾选需要允许本地回环联网的 UWP 应用，应用更改时会请求管理员授权。</value>
   </data>
-  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
-    <value>勾选需要允许本地回环联网的 UWP 应用，应用更改时会请求管理员授权。</value>
-  </data>
   <data name="Msg_LoopbackApply.Text" xml:space="preserve">
-    <value>应用更改</value>
-  </data>
-  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
     <value>应用更改</value>
   </data>
   <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
     <value>正在应用…</value>
   </data>
-  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
-    <value>正在应用…</value>
-  </data>
   <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
-    <value>已应用 Loopback 更改。</value>
-  </data>
-  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
     <value>已应用 Loopback 更改。</value>
   </data>
   <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
     <value>应用失败: {0}</value>
   </data>
-  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
-    <value>应用失败: {0}</value>
-  </data>
   <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
-    <value>读取 UWP 应用列表失败: {0}</value>
-  </data>
-  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
     <value>读取 UWP 应用列表失败: {0}</value>
   </data>
   <data name="Msg_ColumnSettings.Text" xml:space="preserve">
     <value>列设置</value>
   </data>
-  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
-    <value>列设置</value>
-  </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>表格</value>
-  </data>
-  <data name="Msg_LayoutTable.Content" xml:space="preserve">
     <value>表格</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
     <value>列表</value>
   </data>
-  <data name="Msg_LayoutList.Content" xml:space="preserve">
-    <value>列表</value>
-  </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
-    <value>至少保留一列可见。</value>
-  </data>
-  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
     <value>至少保留一列可见。</value>
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>用户取消了 UAC 授权</value>
-  </data>
-  <data name="Msg_UacCancelled.Content" xml:space="preserve">
-    <value>用户取消了 UAC 授权</value>
-  </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>打开工具</value>
   </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>打开工具</value>
@@ -1981,325 +1085,163 @@
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>二维码</value>
   </data>
-  <data name="Profiles_MenuQr.Content" xml:space="preserve">
-    <value>二维码</value>
-  </data>
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
-    <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
-  </data>
-  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
   </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomo 内核已由服务以特权模式启动</value>
   </data>
-  <data name="Core_StartedService.Content" xml:space="preserve">
-    <value>mihomo 内核已由服务以特权模式启动</value>
-  </data>
   <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
-    <value>服务模式启动失败，回退应用内模式: {0}</value>
-  </data>
-  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
     <value>服务模式启动失败，回退应用内模式: {0}</value>
   </data>
   <data name="Core_Started.Text" xml:space="preserve">
     <value>mihomo 内核已启动</value>
   </data>
-  <data name="Core_Started.Content" xml:space="preserve">
-    <value>mihomo 内核已启动</value>
-  </data>
   <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
-    <value>服务停止内核失败: {0}</value>
-  </data>
-  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
     <value>服务停止内核失败: {0}</value>
   </data>
   <data name="Core_KillLeftover.Text" xml:space="preserve">
     <value>已清理残留内核进程 PID {0}</value>
   </data>
-  <data name="Core_KillLeftover.Content" xml:space="preserve">
-    <value>已清理残留内核进程 PID {0}</value>
-  </data>
   <data name="Core_ApplyRejected.Text" xml:space="preserve">
-    <value>配置应用被拒绝: {0}</value>
-  </data>
-  <data name="Core_ApplyRejected.Content" xml:space="preserve">
     <value>配置应用被拒绝: {0}</value>
   </data>
   <data name="Core_HotReloaded.Text" xml:space="preserve">
     <value>运行时配置已热重载</value>
   </data>
-  <data name="Core_HotReloaded.Content" xml:space="preserve">
-    <value>运行时配置已热重载</value>
-  </data>
   <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
-    <value>热重载失败，重启内核: {0}</value>
-  </data>
-  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
     <value>热重载失败，重启内核: {0}</value>
   </data>
   <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
     <value>恢复节点选择失败: {0}</value>
   </data>
-  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
-    <value>恢复节点选择失败: {0}</value>
-  </data>
   <data name="Core_RestoredSelection.Text" xml:space="preserve">
-    <value>已恢复节点选择: {0} → {1}</value>
-  </data>
-  <data name="Core_RestoredSelection.Content" xml:space="preserve">
     <value>已恢复节点选择: {0} → {1}</value>
   </data>
   <data name="Core_SelectionMissing.Text" xml:space="preserve">
     <value>有 {0} 个已保存节点在当前配置中不存在，已跳过恢复</value>
   </data>
-  <data name="Core_SelectionMissing.Content" xml:space="preserve">
-    <value>有 {0} 个已保存节点在当前配置中不存在，已跳过恢复</value>
-  </data>
   <data name="Core_JobAssignFailed.Text" xml:space="preserve">
-    <value>Job Object 关联失败，主进程异常退出时内核可能残留</value>
-  </data>
-  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
     <value>Job Object 关联失败，主进程异常退出时内核可能残留</value>
   </data>
   <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
     <value>mihomo 进程启动失败</value>
   </data>
-  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
-    <value>mihomo 进程启动失败</value>
-  </data>
   <data name="Core_ValidateFailed.Text" xml:space="preserve">
-    <value>配置校验失败: {0}</value>
-  </data>
-  <data name="Core_ValidateFailed.Content" xml:space="preserve">
     <value>配置校验失败: {0}</value>
   </data>
   <data name="Core_ProcessExited.Text" xml:space="preserve">
     <value>mihomo 进程异常退出，请查看日志</value>
   </data>
-  <data name="Core_ProcessExited.Content" xml:space="preserve">
-    <value>mihomo 进程异常退出，请查看日志</value>
-  </data>
   <data name="Core_ControllerTimeout.Text" xml:space="preserve">
-    <value>等待 External Controller 就绪超时</value>
-  </data>
-  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
     <value>等待 External Controller 就绪超时</value>
   </data>
   <data name="Core_Pid.Text" xml:space="preserve">
     <value>mihomo PID: {0}</value>
   </data>
-  <data name="Core_Pid.Content" xml:space="preserve">
-    <value>mihomo PID: {0}</value>
-  </data>
   <data name="Proxy_Restored.Text" xml:space="preserve">
-    <value>系统代理已恢复</value>
-  </data>
-  <data name="Proxy_Restored.Content" xml:space="preserve">
     <value>系统代理已恢复</value>
   </data>
   <data name="Proxy_Enabled.Text" xml:space="preserve">
     <value>系统代理已开启: {0}</value>
   </data>
-  <data name="Proxy_Enabled.Content" xml:space="preserve">
-    <value>系统代理已开启: {0}</value>
-  </data>
   <data name="Proxy_EnabledPac.Text" xml:space="preserve">
-    <value>系统代理已开启（PAC 模式）: {0}</value>
-  </data>
-  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
     <value>系统代理已开启（PAC 模式）: {0}</value>
   </data>
   <data name="Proxy_StaleRestored.Text" xml:space="preserve">
     <value>检测到上次未恢复的系统代理，已恢复原始设置</value>
   </data>
-  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
-    <value>检测到上次未恢复的系统代理，已恢复原始设置</value>
-  </data>
   <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
-    <value>检测到旧版本遗留的系统代理，已自动关闭</value>
-  </data>
-  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
     <value>检测到旧版本遗留的系统代理，已自动关闭</value>
   </data>
   <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
     <value>恢复遗留系统代理失败: {0}</value>
   </data>
-  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
-    <value>恢复遗留系统代理失败: {0}</value>
-  </data>
   <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
-    <value>系统代理已被其他程序修改，Flux 不再覆盖该设置</value>
-  </data>
-  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
     <value>系统代理已被其他程序修改，Flux 不再覆盖该设置</value>
   </data>
   <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
     <value>系统代理快照读取失败: {0}</value>
   </data>
-  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
-    <value>系统代理快照读取失败: {0}</value>
-  </data>
   <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
-    <value>检测到系统代理被修改，正在恢复</value>
-  </data>
-  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
     <value>检测到系统代理被修改，正在恢复</value>
   </data>
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>代理守护异常: {0}</value>
   </data>
-  <data name="Proxy_GuardError.Content" xml:space="preserve">
-    <value>代理守护异常: {0}</value>
-  </data>
   <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>verge.yaml 加载失败: {0}</value>
-  </data>
-  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
     <value>verge.yaml 加载失败: {0}</value>
   </data>
   <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
     <value>verge.yaml 迁移备份失败: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
-    <value>verge.yaml 迁移备份失败: {0}</value>
-  </data>
   <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml 已迁移至 schema v{0}，备份: {1}</value>
-  </data>
-  <data name="Config_VergeMigrated.Content" xml:space="preserve">
     <value>verge.yaml 已迁移至 schema v{0}，备份: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>config.yaml 加载失败: {0}</value>
   </data>
-  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
-    <value>config.yaml 加载失败: {0}</value>
-  </data>
   <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
-    <value>profiles.yaml 加载失败: {0}</value>
-  </data>
-  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
     <value>profiles.yaml 加载失败: {0}</value>
   </data>
   <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
     <value>协议注册失败: {0}</value>
   </data>
-  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
-    <value>协议注册失败: {0}</value>
-  </data>
   <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
-    <value>深链导入失败: {0}</value>
-  </data>
-  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
     <value>深链导入失败: {0}</value>
   </data>
   <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
     <value>开机自启动已被用户禁用，请在任务管理器的「启动应用」中重新启用 Flux Proxy</value>
   </data>
-  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
-    <value>开机自启动已被用户禁用，请在任务管理器的「启动应用」中重新启用 Flux Proxy</value>
-  </data>
   <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
-    <value>开机自启动已被系统策略禁用</value>
-  </data>
-  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
     <value>开机自启动已被系统策略禁用</value>
   </data>
   <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
     <value>用户未允许开机自启动</value>
   </data>
-  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
-    <value>用户未允许开机自启动</value>
-  </data>
   <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
-    <value>无法打开 Run 注册表键</value>
-  </data>
-  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
     <value>无法打开 Run 注册表键</value>
   </data>
   <data name="Boot_LanguageFailed.Text" xml:space="preserve">
     <value>语言设置失败: {0}</value>
   </data>
-  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
-    <value>语言设置失败: {0}</value>
-  </data>
   <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
-    <value>内核未就绪，已跳过系统代理以避免网络中断</value>
-  </data>
-  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
     <value>内核未就绪，已跳过系统代理以避免网络中断</value>
   </data>
   <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
     <value>热键初始化失败: {0}</value>
   </data>
-  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
-    <value>热键初始化失败: {0}</value>
-  </data>
   <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
-    <value>热键注册失败: {0}</value>
-  </data>
-  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
     <value>热键注册失败: {0}</value>
   </data>
   <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
     <value>热键执行失败 ({0}): {1}</value>
   </data>
-  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
-    <value>热键执行失败 ({0}): {1}</value>
-  </data>
   <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
-    <value>热键动作未实现: {0}</value>
-  </data>
-  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
     <value>热键动作未实现: {0}</value>
   </data>
   <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
     <value>当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式</value>
   </data>
-  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
-    <value>当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式</value>
-  </data>
   <data name="Boot_LightweightAuto.Text" xml:space="preserve">
-    <value>窗口已关闭 {0} 分钟，自动进入轻量模式</value>
-  </data>
-  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
     <value>窗口已关闭 {0} 分钟，自动进入轻量模式</value>
   </data>
   <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
     <value>自动轻量模式失败: {0}</value>
   </data>
-  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
-    <value>自动轻量模式失败: {0}</value>
-  </data>
   <data name="Lightweight_Entered.Text" xml:space="preserve">
-    <value>已进入轻量模式（主窗口已释放，内核保持运行）</value>
-  </data>
-  <data name="Lightweight_Entered.Content" xml:space="preserve">
     <value>已进入轻量模式（主窗口已释放，内核保持运行）</value>
   </data>
   <data name="Lightweight_Exited.Text" xml:space="preserve">
     <value>已退出轻量模式</value>
   </data>
-  <data name="Lightweight_Exited.Content" xml:space="preserve">
-    <value>已退出轻量模式</value>
-  </data>
   <data name="Boot_StartFailed.Text" xml:space="preserve">
-    <value>启动失败: {0}</value>
-  </data>
-  <data name="Boot_StartFailed.Content" xml:space="preserve">
     <value>启动失败: {0}</value>
   </data>
   <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
     <value>内核启动失败: {0}</value>
   </data>
-  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
-    <value>内核启动失败: {0}</value>
-  </data>
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
-    <value>系统代理应用失败: {0}</value>
-  </data>
-  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
     <value>系统代理应用失败: {0}</value>
   </data>
 </root>

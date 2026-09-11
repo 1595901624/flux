@@ -24,6 +24,23 @@ public static class SingleInstance
             return true;
         }
 
+        // 互斥体已存在但可能是前任实例崩溃后遗留的（abandoned）：
+        // 尝试接管所有权，接管成功则本实例作为主实例继续。
+        try
+        {
+            if (_mutex.WaitOne(0))
+            {
+                _ = Task.Run(ListenPipeAsync);
+                return true;
+            }
+        }
+        catch (AbandonedMutexException)
+        {
+            // 等待被放弃的互斥体时所有权已转移给本实例
+            _ = Task.Run(ListenPipeAsync);
+            return true;
+        }
+
         var forwardedArgs = args.Length > 0 ? args : ["--show"];
         try
         {

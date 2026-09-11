@@ -126,14 +126,41 @@ LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "f
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
+# 挂在 Button/ToggleButton/ComboBoxItem/NavigationViewItem 上的键 → .Content
+CONTENT_KEYS = {
+    "Nav_Home", "Nav_Proxies", "Nav_Profiles", "Nav_Connections", "Nav_Rules",
+    "Nav_Logs", "Nav_Unlock", "Nav_Settings",
+    "Common_Apply",
+    "Profiles_CreateEmpty", "Profiles_UpdateAll", "Profiles_GlobalEnhance",
+    "Connections_ClosedToggle", "Connections_SortDefault", "Connections_SortUpload", "Connections_SortDownload",
+    "Unlock_RunAll",
+    "Settings_ThemeSystem", "Settings_ThemeLight", "Settings_ThemeDark",
+    "Settings_RestartCoreButton2", "Settings_InstallService", "Settings_SaveHotkeys",
+    "Settings_CreateBackup", "Settings_RestoreBackup", "Settings_BackupDir",
+    "Settings_WebDavConfig", "Settings_WebDavUpload", "Settings_WebDavRestore",
+    "Settings_ExportDiagnostics", "Settings_CheckUpdate",
+    "Settings_OpenData", "Settings_OpenLogs", "Settings_OpenGitHub", "Settings_ExitApp",
+    "Settings_OpenLoopback",
+}
+
+# 挂在 TextBox 上的键 → .PlaceholderText
+PLACEHOLDER_KEYS = {
+    "Proxies_FilterBox", "Profiles_UrlBox", "Connections_SearchBox",
+    "Rules_SearchBox", "Logs_SearchBox", "Settings_LightweightMinutes",
+}
+
 def names_for(key):
-    # 同一值同时提供 .Text 与 .Content（TextBlock 与 Button/ComboBoxItem 各取所需）；
-    # 卡片另有 .Header/.Description。目标元素不支持的性质会被 MRT 忽略。
+    # x:Uid 只应用目标元素存在的属性；不存在的属性（如 NavigationViewItem.Text）
+    # 会直接抛 XamlParseException 使窗口创建崩溃，因此必须精确输出。
     if key.endswith(".Desc"):
         return [key[:-5] + ".Description"]
     if key.startswith("Settings_Card") or key.startswith("Settings_Section") or key == "Settings_Title":
         return [key + ".Header"]
-    return [key + ".Text", key + ".Content"]
+    if key in CONTENT_KEYS:
+        return [key + ".Content"]
+    if key in PLACEHOLDER_KEYS:
+        return [key + ".PlaceholderText"]
+    return [key + ".Text"]
 
 NL = chr(10)
 def emit(lang, index):

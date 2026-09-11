@@ -20,15 +20,20 @@ public class TrayService
         try
         {
             var iconPath = Path.Combine(AppContext.BaseDirectory, "Assets", "app.ico");
+            Program.Trace("tray: icon load begin");
             _icon = new System.Drawing.Icon(iconPath);
+            Program.Trace("tray: icon loaded");
             _tray = new TrayIconWithContextMenu
             {
                 Icon = _icon.Handle,
                 ToolTip = "Flux",
             };
             _tray.MessageWindow.MouseEventReceived += OnMouseEvent;
+            Program.Trace("tray: create begin");
             _tray.Create();
+            Program.Trace("tray: created");
             RebuildMenu();
+            Program.Trace("tray: menu rebuilt");
             AppServices.Config.RuntimeInvalidated += RebuildMenuOnUiThread;
             AppServices.Subscription.ProfilesChanged += RebuildMenuOnUiThread;
         }

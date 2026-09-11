@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <data name="Nav_Home.Text" xml:space="preserve">
-    <value>Inicio</value>
-  </data>
   <data name="Nav_Home.Content" xml:space="preserve">
     <value>Inicio</value>
-  </data>
-  <data name="Nav_Proxies.Text" xml:space="preserve">
-    <value>Proxies</value>
   </data>
   <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>Proxies</value>
   </data>
-  <data name="Nav_Profiles.Text" xml:space="preserve">
-    <value>Perfiles</value>
-  </data>
   <data name="Nav_Profiles.Content" xml:space="preserve">
     <value>Perfiles</value>
-  </data>
-  <data name="Nav_Connections.Text" xml:space="preserve">
-    <value>Conexiones</value>
   </data>
   <data name="Nav_Connections.Content" xml:space="preserve">
     <value>Conexiones</value>
   </data>
-  <data name="Nav_Rules.Text" xml:space="preserve">
-    <value>Reglas</value>
-  </data>
   <data name="Nav_Rules.Content" xml:space="preserve">
     <value>Reglas</value>
-  </data>
-  <data name="Nav_Logs.Text" xml:space="preserve">
-    <value>Registros</value>
   </data>
   <data name="Nav_Logs.Content" xml:space="preserve">
     <value>Registros</value>
   </data>
-  <data name="Nav_Unlock.Text" xml:space="preserve">
-    <value>Prueba de desbloqueo</value>
-  </data>
   <data name="Nav_Unlock.Content" xml:space="preserve">
     <value>Prueba de desbloqueo</value>
-  </data>
-  <data name="Nav_Settings.Text" xml:space="preserve">
-    <value>Ajustes</value>
   </data>
   <data name="Nav_Settings.Content" xml:space="preserve">
     <value>Ajustes</value>
@@ -51,35 +27,17 @@
   <data name="Common_OK.Text" xml:space="preserve">
     <value>Aceptar</value>
   </data>
-  <data name="Common_OK.Content" xml:space="preserve">
-    <value>Aceptar</value>
-  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>Guardar</value>
   </data>
-  <data name="Common_Save.Content" xml:space="preserve">
-    <value>Guardar</value>
-  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="Common_Delete.Content" xml:space="preserve">
     <value>Eliminar</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>Cerrar</value>
-  </data>
-  <data name="Common_Close.Content" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
-  <data name="Common_Apply.Text" xml:space="preserve">
-    <value>Aplicar</value>
   </data>
   <data name="Common_Apply.Content" xml:space="preserve">
     <value>Aplicar</value>
@@ -87,119 +45,59 @@
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
-  <data name="Common_Refresh.Content" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
   <data name="Home_Title.Text" xml:space="preserve">
-    <value>Inicio</value>
-  </data>
-  <data name="Home_Title.Content" xml:space="preserve">
     <value>Inicio</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>Ajustes de proxy</value>
   </data>
-  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
-    <value>Ajustes de proxy</value>
-  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
-    <value>Red</value>
-  </data>
-  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>Red</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN requiere permisos de administrador</value>
   </data>
-  <data name="Home_TunAdminHint.Content" xml:space="preserve">
-    <value>TUN requiere permisos de administrador</value>
-  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
-    <value>Perfil actual</value>
-  </data>
-  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>Perfil actual</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>Nodo actual</value>
   </data>
-  <data name="Home_CardNodes.Content" xml:space="preserve">
-    <value>Nodo actual</value>
-  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
-    <value>Tráfico</value>
-  </data>
-  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>Tráfico</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>Modo</value>
   </data>
-  <data name="Home_CardMode.Content" xml:space="preserve">
-    <value>Modo</value>
-  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
-    <value>Info del núcleo</value>
-  </data>
-  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>Info del núcleo</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>Proxies</value>
   </data>
-  <data name="Proxies_Title.Content" xml:space="preserve">
-    <value>Proxies</value>
-  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
-    <value>Filtrar por nombre/tipo</value>
-  </data>
-  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>Filtrar por nombre/tipo</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>Sin grupos de proxy</value>
   </data>
-  <data name="Proxies_Empty.Content" xml:space="preserve">
-    <value>Sin grupos de proxy</value>
-  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
-    <value>Importa primero un perfil</value>
-  </data>
-  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>Importa primero un perfil</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>Perfiles</value>
   </data>
-  <data name="Profiles_Title.Content" xml:space="preserve">
-    <value>Perfiles</value>
-  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
-    <value>URL de suscripción (admite clash://)</value>
-  </data>
-  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>URL de suscripción (admite clash://)</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>Archivo local</value>
   </data>
-  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
-    <value>Archivo local</value>
-  </data>
-  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
-    <value>Nuevo perfil vacío</value>
-  </data>
   <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>Nuevo perfil vacío</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
-    <value>Actualizar todo</value>
-  </data>
   <data name="Profiles_UpdateAll.Content" xml:space="preserve">
     <value>Actualizar todo</value>
-  </data>
-  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
-    <value>Mejora global</value>
   </data>
   <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>Mejora global</value>
@@ -207,143 +105,71 @@
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>Sin perfiles</value>
   </data>
-  <data name="Profiles_Empty.Content" xml:space="preserve">
-    <value>Sin perfiles</value>
-  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
-    <value>Pega una URL e importa, o elige un YAML local</value>
-  </data>
-  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>Pega una URL e importa, o elige un YAML local</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>Usar este perfil</value>
   </data>
-  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
-    <value>Usar este perfil</value>
-  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
-  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>Actualizar</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>Editar info</value>
   </data>
-  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
-    <value>Editar info</value>
-  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
-    <value>Editar mejora</value>
-  </data>
-  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>Editar mejora</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
-  <data name="Profiles_MenuUp.Content" xml:space="preserve">
-    <value>Subir</value>
-  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
-    <value>Bajar</value>
-  </data>
-  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>Bajar</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
-  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
-    <value>Conexiones</value>
-  </data>
-  <data name="Connections_Title.Content" xml:space="preserve">
     <value>Conexiones</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>Buscar host/regla/proceso</value>
   </data>
-  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
-    <value>Buscar host/regla/proceso</value>
-  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Cerrar todo</value>
-  </data>
-  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>Cerrar todo</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Cerradas</value>
   </data>
-  <data name="Connections_Closed.Content" xml:space="preserve">
-    <value>Cerradas</value>
-  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
-    <value>Host</value>
-  </data>
-  <data name="Connections_Host.Content" xml:space="preserve">
     <value>Host</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>Red</value>
   </data>
-  <data name="Connections_Network.Content" xml:space="preserve">
-    <value>Red</value>
-  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
-    <value>Bajada</value>
-  </data>
-  <data name="Connections_Download.Content" xml:space="preserve">
     <value>Bajada</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>Subida</value>
   </data>
-  <data name="Connections_Upload.Content" xml:space="preserve">
-    <value>Subida</value>
-  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
-    <value>Regla</value>
-  </data>
-  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>Regla</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>Cadena</value>
   </data>
-  <data name="Connections_Chains.Content" xml:space="preserve">
-    <value>Cadena</value>
-  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
-    <value>Proceso</value>
-  </data>
-  <data name="Connections_Process.Content" xml:space="preserve">
     <value>Proceso</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>Hora</value>
   </data>
-  <data name="Connections_Time.Content" xml:space="preserve">
-    <value>Hora</value>
-  </data>
-  <data name="Connections_SortDefault.Text" xml:space="preserve">
-    <value>Orden predeterminado</value>
-  </data>
   <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>Orden predeterminado</value>
   </data>
-  <data name="Connections_SortUpload.Text" xml:space="preserve">
-    <value>Por subida</value>
-  </data>
   <data name="Connections_SortUpload.Content" xml:space="preserve">
     <value>Por subida</value>
-  </data>
-  <data name="Connections_SortDownload.Text" xml:space="preserve">
-    <value>Por bajada</value>
   </data>
   <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>Por bajada</value>
@@ -351,115 +177,58 @@
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>Reglas</value>
   </data>
-  <data name="Rules_Title.Content" xml:space="preserve">
-    <value>Reglas</value>
-  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
-    <value>Buscar reglas</value>
-  </data>
-  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>Buscar reglas</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>Proveedores de reglas</value>
   </data>
-  <data name="Rules_Providers.Content" xml:space="preserve">
-    <value>Proveedores de reglas</value>
-  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
-    <value>Sin reglas</value>
-  </data>
-  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>Sin reglas</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Registros</value>
   </data>
-  <data name="Logs_Title.Content" xml:space="preserve">
-    <value>Registros</value>
-  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
-    <value>Todos los niveles</value>
-  </data>
-  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Todos los niveles</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info y superior</value>
   </data>
-  <data name="Logs_LevelInfo.Content" xml:space="preserve">
-    <value>Info y superior</value>
-  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
-    <value>Warning y superior</value>
-  </data>
-  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning y superior</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Logs_LevelError.Content" xml:space="preserve">
-    <value>Error</value>
-  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>Buscar registros</value>
   </data>
-  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
-    <value>Buscar registros</value>
-  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
-    <value>Pausa</value>
-  </data>
-  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>Pausa</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>Limpiar</value>
   </data>
-  <data name="Logs_Clear.Content" xml:space="preserve">
-    <value>Limpiar</value>
-  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
-    <value>Más recientes</value>
-  </data>
-  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>Más recientes</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>Sin registros</value>
   </data>
-  <data name="Logs_Empty.Content" xml:space="preserve">
-    <value>Sin registros</value>
-  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
-    <value>Prueba de desbloqueo</value>
-  </data>
-  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>Prueba de desbloqueo</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>Comprueba la disponibilidad de servicios de streaming/IA vía el nodo actual</value>
   </data>
-  <data name="Unlock_Subtitle.Content" xml:space="preserve">
-    <value>Comprueba la disponibilidad de servicios de streaming/IA vía el nodo actual</value>
-  </data>
-  <data name="Unlock_RunAll.Text" xml:space="preserve">
-    <value>Probar todo</value>
-  </data>
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Probar todo</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
-    <value>Reprobar</value>
-  </data>
-  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Reprobar</value>
   </data>
   <data name="Settings_Title.Header" xml:space="preserve">
@@ -576,28 +345,16 @@
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Tema</value>
   </data>
-  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
-    <value>Según el sistema</value>
-  </data>
   <data name="Settings_ThemeSystem.Content" xml:space="preserve">
     <value>Según el sistema</value>
   </data>
-  <data name="Settings_ThemeLight.Text" xml:space="preserve">
-    <value>Claro</value>
-  </data>
   <data name="Settings_ThemeLight.Content" xml:space="preserve">
     <value>Claro</value>
-  </data>
-  <data name="Settings_ThemeDark.Text" xml:space="preserve">
-    <value>Oscuro</value>
   </data>
   <data name="Settings_ThemeDark.Content" xml:space="preserve">
     <value>Oscuro</value>
   </data>
   <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
-    <value>Reiniciar</value>
-  </data>
-  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
   <data name="Settings_CardRestartCore.Description" xml:space="preserve">
@@ -609,9 +366,6 @@
   <data name="Settings_CardService.Description" xml:space="preserve">
     <value>Ejecuta como LocalSystem; TUN sin admin</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
-    <value>Instalar/reparar servicio</value>
-  </data>
   <data name="Settings_InstallService.Content" xml:space="preserve">
     <value>Instalar/reparar servicio</value>
   </data>
@@ -621,10 +375,7 @@
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
     <value>Libera la UI al cerrar; mantiene bandeja y núcleo</value>
   </data>
-  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
-    <value>minutos</value>
-  </data>
-  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+  <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>minutos</value>
   </data>
   <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
@@ -645,9 +396,6 @@
   <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
     <value>Se registran al guardar; los conflictos se rechazan</value>
   </data>
-  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
-    <value>Guardar atajos</value>
-  </data>
   <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
     <value>Guardar atajos</value>
   </data>
@@ -663,20 +411,11 @@
   <data name="Settings_CardBackup.Description" xml:space="preserve">
     <value>Copia ZIP de configs, perfiles y mejoras</value>
   </data>
-  <data name="Settings_CreateBackup.Text" xml:space="preserve">
-    <value>Crear copia</value>
-  </data>
   <data name="Settings_CreateBackup.Content" xml:space="preserve">
     <value>Crear copia</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
-    <value>Restaurar copia</value>
-  </data>
   <data name="Settings_RestoreBackup.Content" xml:space="preserve">
     <value>Restaurar copia</value>
-  </data>
-  <data name="Settings_BackupDir.Text" xml:space="preserve">
-    <value>Carpeta de copias</value>
   </data>
   <data name="Settings_BackupDir.Content" xml:space="preserve">
     <value>Carpeta de copias</value>
@@ -687,20 +426,11 @@
   <data name="Settings_CardWebDav.Description" xml:space="preserve">
     <value>Copia en la nube; contraseña cifrada con DPAPI</value>
   </data>
-  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
-    <value>Configurar servidor</value>
-  </data>
   <data name="Settings_WebDavConfig.Content" xml:space="preserve">
     <value>Configurar servidor</value>
   </data>
-  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
-    <value>Subir</value>
-  </data>
   <data name="Settings_WebDavUpload.Content" xml:space="preserve">
     <value>Subir</value>
-  </data>
-  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
-    <value>Restaurar</value>
   </data>
   <data name="Settings_WebDavRestore.Content" xml:space="preserve">
     <value>Restaurar</value>
@@ -711,14 +441,8 @@
   <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
     <value>Exporta diagnóstico local; busca la última versión</value>
   </data>
-  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
-    <value>Exportar diagnóstico</value>
-  </data>
   <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
     <value>Exportar diagnóstico</value>
-  </data>
-  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
-    <value>Buscar actualizaciones</value>
   </data>
   <data name="Settings_CheckUpdate.Content" xml:space="preserve">
     <value>Buscar actualizaciones</value>
@@ -726,20 +450,11 @@
   <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
     <value>Abrir carpetas</value>
   </data>
-  <data name="Settings_OpenData.Text" xml:space="preserve">
-    <value>Carpeta de datos</value>
-  </data>
   <data name="Settings_OpenData.Content" xml:space="preserve">
     <value>Carpeta de datos</value>
   </data>
-  <data name="Settings_OpenLogs.Text" xml:space="preserve">
-    <value>Carpeta de logs</value>
-  </data>
   <data name="Settings_OpenLogs.Content" xml:space="preserve">
     <value>Carpeta de logs</value>
-  </data>
-  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
-    <value>Abrir GitHub</value>
   </data>
   <data name="Settings_OpenGitHub.Content" xml:space="preserve">
     <value>Abrir GitHub</value>
@@ -750,22 +465,13 @@
   <data name="Settings_CardAbout.Header" xml:space="preserve">
     <value>Acerca de Flux</value>
   </data>
-  <data name="Settings_ExitApp.Text" xml:space="preserve">
-    <value>Salir de la app</value>
-  </data>
   <data name="Settings_ExitApp.Content" xml:space="preserve">
     <value>Salir de la app</value>
-  </data>
-  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
-    <value>Reiniciar</value>
   </data>
   <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
     <value>Reiniciar</value>
   </data>
   <data name="Settings_FollowSystem.Text" xml:space="preserve">
-    <value>Según el sistema</value>
-  </data>
-  <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Según el sistema</value>
   </data>
   <data name="Settings_CardLoopback.Header" xml:space="preserve">
@@ -774,52 +480,28 @@
   <data name="Settings_CardLoopback.Description" xml:space="preserve">
     <value>Permite que apps UWP usen el proxy (requiere admin)</value>
   </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>Abrir herramienta</value>
-  </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>Abrir herramienta</value>
   </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Aplicado</value>
   </data>
-  <data name="Msg_Applied.Content" xml:space="preserve">
-    <value>Aplicado</value>
-  </data>
   <data name="Msg_SaveFailed.Text" xml:space="preserve">
-    <value>Error al guardar</value>
-  </data>
-  <data name="Msg_SaveFailed.Content" xml:space="preserve">
     <value>Error al guardar</value>
   </data>
   <data name="Msg_RestartNow.Text" xml:space="preserve">
     <value>Reiniciar ahora</value>
   </data>
-  <data name="Msg_RestartNow.Content" xml:space="preserve">
-    <value>Reiniciar ahora</value>
-  </data>
   <data name="Msg_RestartLater.Text" xml:space="preserve">
-    <value>Después</value>
-  </data>
-  <data name="Msg_RestartLater.Content" xml:space="preserve">
     <value>Después</value>
   </data>
   <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
     <value>Puerto ya en uso</value>
   </data>
-  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
-    <value>Puerto ya en uso</value>
-  </data>
   <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
     <value>El puerto {0} ya está en uso. Elija otro.</value>
   </data>
-  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
-    <value>El puerto {0} ya está en uso. Elija otro.</value>
-  </data>
   <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
-    <value>TUN requiere privilegios</value>
-  </data>
-  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
     <value>TUN requiere privilegios</value>
   </data>
   <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
@@ -827,1153 +509,575 @@
 1. Ejecutar como admin
 2. Instalar el servicio Flux (recomendado)</value>
   </data>
-  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
-    <value>TUN necesita un núcleo privilegiado:
-1. Ejecutar como admin
-2. Instalar el servicio Flux (recomendado)</value>
-  </data>
   <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
-    <value>Servicio instalado</value>
-  </data>
-  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
     <value>Servicio instalado</value>
   </data>
   <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
     <value>El servicio Flux está en ejecución; TUN sin admin</value>
   </data>
-  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
-    <value>El servicio Flux está en ejecución; TUN sin admin</value>
-  </data>
   <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
-    <value>Error al instalar el servicio</value>
-  </data>
-  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
     <value>Error al instalar el servicio</value>
   </data>
   <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
     <value>Guardado de atajos rechazado</value>
   </data>
-  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
-    <value>Guardado de atajos rechazado</value>
-  </data>
   <data name="Msg_HotkeySaved.Text" xml:space="preserve">
-    <value>Atajos guardados</value>
-  </data>
-  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
     <value>Atajos guardados</value>
   </data>
   <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
     <value>Los atajos globales están activos</value>
   </data>
-  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
-    <value>Los atajos globales están activos</value>
-  </data>
   <data name="Msg_LangChanged.Text" xml:space="preserve">
-    <value>Idioma cambiado</value>
-  </data>
-  <data name="Msg_LangChanged.Content" xml:space="preserve">
     <value>Idioma cambiado</value>
   </data>
   <data name="Msg_LangChangedBody.Text" xml:space="preserve">
     <value>Reinicie para aplicar el idioma por completo</value>
   </data>
-  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
-    <value>Reinicie para aplicar el idioma por completo</value>
-  </data>
   <data name="Msg_Copied.Text" xml:space="preserve">
-    <value>Copiado</value>
-  </data>
-  <data name="Msg_Copied.Content" xml:space="preserve">
     <value>Copiado</value>
   </data>
   <data name="Msg_CopiedBody.Text" xml:space="preserve">
     <value>Variables de {0} copiadas al portapapeles</value>
   </data>
-  <data name="Msg_CopiedBody.Content" xml:space="preserve">
-    <value>Variables de {0} copiadas al portapapeles</value>
-  </data>
   <data name="Msg_BackupDone.Text" xml:space="preserve">
-    <value>Copia completada</value>
-  </data>
-  <data name="Msg_BackupDone.Content" xml:space="preserve">
     <value>Copia completada</value>
   </data>
   <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
     <value>Copia creada: {0}</value>
   </data>
-  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
-    <value>Copia creada: {0}</value>
-  </data>
   <data name="Msg_BackupFailed.Text" xml:space="preserve">
-    <value>Error de copia</value>
-  </data>
-  <data name="Msg_BackupFailed.Content" xml:space="preserve">
     <value>Error de copia</value>
   </data>
   <data name="Msg_ListFailed.Text" xml:space="preserve">
     <value>Error al listar copias</value>
   </data>
-  <data name="Msg_ListFailed.Content" xml:space="preserve">
-    <value>Error al listar copias</value>
-  </data>
   <data name="Msg_NoBackups.Text" xml:space="preserve">
-    <value>Sin copias</value>
-  </data>
-  <data name="Msg_NoBackups.Content" xml:space="preserve">
     <value>Sin copias</value>
   </data>
   <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
     <value>Aún no hay copias de seguridad</value>
   </data>
-  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
-    <value>Aún no hay copias de seguridad</value>
-  </data>
   <data name="Msg_RestorePick.Text" xml:space="preserve">
-    <value>Elija una copia (reinicie el núcleo después):</value>
-  </data>
-  <data name="Msg_RestorePick.Content" xml:space="preserve">
     <value>Elija una copia (reinicie el núcleo después):</value>
   </data>
   <data name="Msg_RestoreDone.Text" xml:space="preserve">
     <value>Restauración completa</value>
   </data>
-  <data name="Msg_RestoreDone.Content" xml:space="preserve">
-    <value>Restauración completa</value>
-  </data>
   <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
-    <value>Restaurado desde {0} y núcleo reiniciado</value>
-  </data>
-  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
     <value>Restaurado desde {0} y núcleo reiniciado</value>
   </data>
   <data name="Msg_RestoreFailed.Text" xml:space="preserve">
     <value>Error al restaurar</value>
   </data>
-  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
-    <value>Error al restaurar</value>
-  </data>
   <data name="Msg_WebDavTitle.Text" xml:space="preserve">
-    <value>Ajustes del servidor WebDAV</value>
-  </data>
-  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
     <value>Ajustes del servidor WebDAV</value>
   </data>
   <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
     <value>URL no válida</value>
   </data>
-  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
-    <value>URL no válida</value>
-  </data>
   <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
-    <value>La URL de WebDAV debe ser HTTP/HTTPS válida</value>
-  </data>
-  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
     <value>La URL de WebDAV debe ser HTTP/HTTPS válida</value>
   </data>
   <data name="Msg_WebDavSaved.Text" xml:space="preserve">
     <value>Guardado</value>
   </data>
-  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
-    <value>Guardado</value>
-  </data>
   <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
-    <value>Ajustes WebDAV guardados (contraseña cifrada con DPAPI)</value>
-  </data>
-  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
     <value>Ajustes WebDAV guardados (contraseña cifrada con DPAPI)</value>
   </data>
   <data name="Msg_NotConfigured.Text" xml:space="preserve">
     <value>Sin configurar</value>
   </data>
-  <data name="Msg_NotConfigured.Content" xml:space="preserve">
-    <value>Sin configurar</value>
-  </data>
   <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
-    <value>Configure primero el servidor WebDAV</value>
-  </data>
-  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
     <value>Configure primero el servidor WebDAV</value>
   </data>
   <data name="Msg_UploadDone.Text" xml:space="preserve">
     <value>Subida completa</value>
   </data>
-  <data name="Msg_UploadDone.Content" xml:space="preserve">
-    <value>Subida completa</value>
-  </data>
   <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
-    <value>{0} subido a WebDAV</value>
-  </data>
-  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
     <value>{0} subido a WebDAV</value>
   </data>
   <data name="Msg_UploadFailed.Text" xml:space="preserve">
     <value>Error al subir</value>
   </data>
-  <data name="Msg_UploadFailed.Content" xml:space="preserve">
-    <value>Error al subir</value>
-  </data>
   <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
-    <value>Sin copias</value>
-  </data>
-  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
     <value>Sin copias</value>
   </data>
   <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
     <value>No hay copias en WebDAV</value>
   </data>
-  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
-    <value>No hay copias en WebDAV</value>
-  </data>
   <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
-    <value>Restaurar desde WebDAV</value>
-  </data>
-  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
     <value>Restaurar desde WebDAV</value>
   </data>
   <data name="Msg_DownloadRestore.Text" xml:space="preserve">
     <value>Descargar y restaurar</value>
   </data>
-  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
-    <value>Descargar y restaurar</value>
-  </data>
   <data name="Msg_DiagDone.Text" xml:space="preserve">
-    <value>Diagnóstico exportado</value>
-  </data>
-  <data name="Msg_DiagDone.Content" xml:space="preserve">
     <value>Diagnóstico exportado</value>
   </data>
   <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
     <value>Guardado solo localmente; comparta bajo su criterio</value>
   </data>
-  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
-    <value>Guardado solo localmente; comparta bajo su criterio</value>
-  </data>
   <data name="Msg_ExportFailed.Text" xml:space="preserve">
-    <value>Error al exportar</value>
-  </data>
-  <data name="Msg_ExportFailed.Content" xml:space="preserve">
     <value>Error al exportar</value>
   </data>
   <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
     <value>Buscar actualizaciones</value>
   </data>
-  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
-    <value>Buscar actualizaciones</value>
-  </data>
   <data name="Msg_UpToDate.Text" xml:space="preserve">
-    <value>Ya está actualizado ({0})</value>
-  </data>
-  <data name="Msg_UpToDate.Content" xml:space="preserve">
     <value>Ya está actualizado ({0})</value>
   </data>
   <data name="Msg_NewVersion.Text" xml:space="preserve">
     <value>Nueva versión: {0}</value>
   </data>
-  <data name="Msg_NewVersion.Content" xml:space="preserve">
-    <value>Nueva versión: {0}</value>
-  </data>
   <data name="Msg_UpdateHint.Text" xml:space="preserve">
-    <value>Abre la página de GitHub para descargar (MSIX/portable)</value>
-  </data>
-  <data name="Msg_UpdateHint.Content" xml:space="preserve">
     <value>Abre la página de GitHub para descargar (MSIX/portable)</value>
   </data>
   <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
     <value>Abrir página de lanzamientos</value>
   </data>
-  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
-    <value>Abrir página de lanzamientos</value>
-  </data>
   <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
-    <value>Error al buscar actualizaciones</value>
-  </data>
-  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
     <value>Error al buscar actualizaciones</value>
   </data>
   <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
     <value>Error al aplicar</value>
   </data>
-  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
-    <value>Error al aplicar</value>
-  </data>
   <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
-    <value>{0} (revertido)</value>
-  </data>
-  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
     <value>{0} (revertido)</value>
   </data>
   <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
     <value>Ajustes avanzados de TUN recargados</value>
   </data>
-  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
-    <value>Ajustes avanzados de TUN recargados</value>
-  </data>
   <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
-    <value>Ajustes de DNS recargados</value>
-  </data>
-  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
     <value>Ajustes de DNS recargados</value>
   </data>
   <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
     <value>Controlador externo actualizado y núcleo reiniciado</value>
   </data>
-  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
-    <value>Controlador externo actualizado y núcleo reiniciado</value>
-  </data>
   <data name="Msg_RolledBack.Text" xml:space="preserve">
-    <value> (revertido)</value>
-  </data>
-  <data name="Msg_RolledBack.Content" xml:space="preserve">
     <value> (revertido)</value>
   </data>
   <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
     <value>Eliminar perfil</value>
   </data>
-  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
-    <value>Eliminar perfil</value>
-  </data>
   <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
-    <value>¿Eliminar &quot;{0}&quot;?</value>
-  </data>
-  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
     <value>¿Eliminar &quot;{0}&quot;?</value>
   </data>
   <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
     <value>Editar perfil: {0}</value>
   </data>
-  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
-    <value>Editar perfil: {0}</value>
-  </data>
   <data name="Msg_NameRequired.Text" xml:space="preserve">
-    <value>El nombre no puede estar vacío</value>
-  </data>
-  <data name="Msg_NameRequired.Content" xml:space="preserve">
     <value>El nombre no puede estar vacío</value>
   </data>
   <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
     <value>El tiempo de espera debe ser 5-300 s</value>
   </data>
-  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
-    <value>El tiempo de espera debe ser 5-300 s</value>
-  </data>
   <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
-    <value>El intervalo debe ser un entero no negativo</value>
-  </data>
-  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
     <value>El intervalo debe ser un entero no negativo</value>
   </data>
   <data name="Msg_ChooseChannel.Text" xml:space="preserve">
     <value>Elija un canal de actualización</value>
   </data>
-  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
-    <value>Elija un canal de actualización</value>
-  </data>
   <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
-    <value>Editar mejoras globales</value>
-  </data>
-  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
     <value>Editar mejoras globales</value>
   </data>
   <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
     <value>Editar mejoras: {0}</value>
   </data>
-  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
-    <value>Editar mejoras: {0}</value>
-  </data>
   <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
-    <value>Orden: Merge global → Script global → Merge de perfil → Script de perfil → Rules → Proxies → Groups</value>
-  </data>
-  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
     <value>Orden: Merge global → Script global → Merge de perfil → Script de perfil → Rules → Proxies → Groups</value>
   </data>
   <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
     <value>✓ Guardado</value>
   </data>
-  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
-    <value>✓ Guardado</value>
-  </data>
   <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
-    <value>(Sin nombre)</value>
-  </data>
-  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
     <value>(Sin nombre)</value>
   </data>
   <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
     <value>Archivo local</value>
   </data>
-  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
-    <value>Archivo local</value>
-  </data>
   <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
-    <value>Perfil remoto</value>
-  </data>
-  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
     <value>Perfil remoto</value>
   </data>
   <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
     <value>Perfil local</value>
   </data>
-  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
-    <value>Perfil local</value>
-  </data>
   <data name="VM_NeverUpdated.Text" xml:space="preserve">
-    <value>Nunca actualizado</value>
-  </data>
-  <data name="VM_NeverUpdated.Content" xml:space="preserve">
     <value>Nunca actualizado</value>
   </data>
   <data name="VM_UpdatedAt.Text" xml:space="preserve">
     <value>Actualizado {0}</value>
   </data>
-  <data name="VM_UpdatedAt.Content" xml:space="preserve">
-    <value>Actualizado {0}</value>
-  </data>
   <data name="VM_ExpireIn.Text" xml:space="preserve">
-    <value>{0} vence ({1} días)</value>
-  </data>
-  <data name="VM_ExpireIn.Content" xml:space="preserve">
     <value>{0} vence ({1} días)</value>
   </data>
   <data name="VM_Expired.Text" xml:space="preserve">
     <value>Expirado</value>
   </data>
-  <data name="VM_Expired.Content" xml:space="preserve">
-    <value>Expirado</value>
-  </data>
   <data name="VM_Importing.Text" xml:space="preserve">
-    <value>Importando perfil…</value>
-  </data>
-  <data name="VM_Importing.Content" xml:space="preserve">
     <value>Importando perfil…</value>
   </data>
   <data name="VM_Imported.Text" xml:space="preserve">
     <value>Importado: {0}</value>
   </data>
-  <data name="VM_Imported.Content" xml:space="preserve">
-    <value>Importado: {0}</value>
-  </data>
   <data name="VM_ImportFailed.Text" xml:space="preserve">
-    <value>Error al importar: {0}</value>
-  </data>
-  <data name="VM_ImportFailed.Content" xml:space="preserve">
     <value>Error al importar: {0}</value>
   </data>
   <data name="VM_ImportingLocal.Text" xml:space="preserve">
     <value>Importando perfil local…</value>
   </data>
-  <data name="VM_ImportingLocal.Content" xml:space="preserve">
-    <value>Importando perfil local…</value>
-  </data>
   <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
-    <value>Error al importar local: {0}</value>
-  </data>
-  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
     <value>Error al importar local: {0}</value>
   </data>
   <data name="VM_Switched.Text" xml:space="preserve">
     <value>Cambiado: {0}</value>
   </data>
-  <data name="VM_Switched.Content" xml:space="preserve">
-    <value>Cambiado: {0}</value>
-  </data>
   <data name="VM_SwitchFailed.Text" xml:space="preserve">
-    <value>Error al cambiar: {0}</value>
-  </data>
-  <data name="VM_SwitchFailed.Content" xml:space="preserve">
     <value>Error al cambiar: {0}</value>
   </data>
   <data name="VM_DefaultNewName.Text" xml:space="preserve">
     <value>Nuevo perfil</value>
   </data>
-  <data name="VM_DefaultNewName.Content" xml:space="preserve">
-    <value>Nuevo perfil</value>
-  </data>
   <data name="VM_Created.Text" xml:space="preserve">
-    <value>Creado: {0}</value>
-  </data>
-  <data name="VM_Created.Content" xml:space="preserve">
     <value>Creado: {0}</value>
   </data>
   <data name="VM_CreateFailed.Text" xml:space="preserve">
     <value>Error al crear: {0}</value>
   </data>
-  <data name="VM_CreateFailed.Content" xml:space="preserve">
-    <value>Error al crear: {0}</value>
-  </data>
   <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
-    <value>Sin perfiles remotos</value>
-  </data>
-  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
     <value>Sin perfiles remotos</value>
   </data>
   <data name="VM_Updating.Text" xml:space="preserve">
     <value>Actualizando: {0}…</value>
   </data>
-  <data name="VM_Updating.Content" xml:space="preserve">
-    <value>Actualizando: {0}…</value>
-  </data>
   <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
-    <value>Error al actualizar perfil: {0}: {1}</value>
-  </data>
-  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
     <value>Error al actualizar perfil: {0}: {1}</value>
   </data>
   <data name="VM_UpdateAllDone.Text" xml:space="preserve">
     <value>Terminado: {0}/{1} con éxito</value>
   </data>
-  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
-    <value>Terminado: {0}/{1} con éxito</value>
-  </data>
   <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
-    <value>Actualizado: {0}</value>
-  </data>
-  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
     <value>Actualizado: {0}</value>
   </data>
   <data name="VM_UpdateFailed.Text" xml:space="preserve">
     <value>Error al actualizar: {0}</value>
   </data>
-  <data name="VM_UpdateFailed.Content" xml:space="preserve">
-    <value>Error al actualizar: {0}</value>
-  </data>
   <data name="VM_Deleted.Text" xml:space="preserve">
-    <value>Eliminado</value>
-  </data>
-  <data name="VM_Deleted.Content" xml:space="preserve">
     <value>Eliminado</value>
   </data>
   <data name="VM_ProfileDisabled.Text" xml:space="preserve">
     <value>(Deshabilitado)</value>
   </data>
-  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
-    <value>(Deshabilitado)</value>
-  </data>
   <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
-    <value>(Sin perfil)</value>
-  </data>
-  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
     <value>(Sin perfil)</value>
   </data>
   <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
     <value>Haga clic en la tarjeta para gestionar</value>
   </data>
-  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
-    <value>Haga clic en la tarjeta para gestionar</value>
-  </data>
   <data name="VM_CoreChecking.Text" xml:space="preserve">
-    <value>Comprobando…</value>
-  </data>
-  <data name="VM_CoreChecking.Content" xml:space="preserve">
     <value>Comprobando…</value>
   </data>
   <data name="VM_CoreRunning.Text" xml:space="preserve">
     <value>Núcleo en ejecución</value>
   </data>
-  <data name="VM_CoreRunning.Content" xml:space="preserve">
-    <value>Núcleo en ejecución</value>
-  </data>
   <data name="VM_CoreNotRunning.Text" xml:space="preserve">
-    <value>Núcleo detenido</value>
-  </data>
-  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
     <value>Núcleo detenido</value>
   </data>
   <data name="VM_UptimeHours.Text" xml:space="preserve">
     <value>{0} h {1} min</value>
   </data>
-  <data name="VM_UptimeHours.Content" xml:space="preserve">
-    <value>{0} h {1} min</value>
-  </data>
   <data name="VM_UptimeMinutes.Text" xml:space="preserve">
-    <value>{0} min {1} s</value>
-  </data>
-  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
     <value>{0} min {1} s</value>
   </data>
   <data name="VM_NotRunning.Text" xml:space="preserve">
     <value>No se ejecuta</value>
   </data>
-  <data name="VM_NotRunning.Content" xml:space="preserve">
-    <value>No se ejecuta</value>
-  </data>
   <data name="VM_RulesCount.Text" xml:space="preserve">
-    <value>{0} reglas</value>
-  </data>
-  <data name="VM_RulesCount.Content" xml:space="preserve">
     <value>{0} reglas</value>
   </data>
   <data name="VM_SubNoProfile.Text" xml:space="preserve">
     <value>Aún no hay perfil; haga clic</value>
   </data>
-  <data name="VM_SubNoProfile.Content" xml:space="preserve">
-    <value>Aún no hay perfil; haga clic</value>
-  </data>
   <data name="VM_SubRemoteHint.Text" xml:space="preserve">
-    <value>Perfil remoto · clic para gestionar</value>
-  </data>
-  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
     <value>Perfil remoto · clic para gestionar</value>
   </data>
   <data name="VM_SubLocalHint.Text" xml:space="preserve">
     <value>Perfil local · clic para gestionar</value>
   </data>
-  <data name="VM_SubLocalHint.Content" xml:space="preserve">
-    <value>Perfil local · clic para gestionar</value>
-  </data>
   <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
-    <value>TUN requiere ejecutar como administrador</value>
-  </data>
-  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
     <value>TUN requiere ejecutar como administrador</value>
   </data>
   <data name="VM_TunRejected.Text" xml:space="preserve">
     <value>Núcleo detenido o rechazó la config TUN</value>
   </data>
-  <data name="VM_TunRejected.Content" xml:space="preserve">
-    <value>Núcleo detenido o rechazó la config TUN</value>
-  </data>
   <data name="VM_ConnCount.Text" xml:space="preserve">
-    <value>Activas {0} · Cerradas {1}</value>
-  </data>
-  <data name="VM_ConnCount.Content" xml:space="preserve">
     <value>Activas {0} · Cerradas {1}</value>
   </data>
   <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
     <value>Error al cerrar conexión: {0}</value>
   </data>
-  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
-    <value>Error al cerrar conexión: {0}</value>
-  </data>
   <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
-    <value>Error al cerrar todas: {0}</value>
-  </data>
-  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
     <value>Error al cerrar todas: {0}</value>
   </data>
   <data name="VM_LogsCount.Text" xml:space="preserve">
     <value>{0} entradas</value>
   </data>
-  <data name="VM_LogsCount.Content" xml:space="preserve">
-    <value>{0} entradas</value>
-  </data>
   <data name="SVC_InvalidYaml.Text" xml:space="preserve">
-    <value>El archivo no es YAML válido</value>
-  </data>
-  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
     <value>El archivo no es YAML válido</value>
   </data>
   <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
     <value>Solo se actualizan perfiles remotos</value>
   </data>
-  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
-    <value>Solo se actualizan perfiles remotos</value>
-  </data>
   <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
-    <value>Perfil sin cambios (304): {0}</value>
-  </data>
-  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
     <value>Perfil sin cambios (304): {0}</value>
   </data>
   <data name="SVC_UpdateFailed.Text" xml:space="preserve">
     <value>Error al actualizar perfil: {0}</value>
   </data>
-  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
-    <value>Error al actualizar perfil: {0}</value>
-  </data>
   <data name="SVC_DownloadFailed.Text" xml:space="preserve">
-    <value>Error al descargar: {0}</value>
-  </data>
-  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
     <value>Error al descargar: {0}</value>
   </data>
   <data name="SVC_InvalidUrl.Text" xml:space="preserve">
     <value>La URL debe ser HTTP/HTTPS válida</value>
   </data>
-  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
-    <value>La URL debe ser HTTP/HTTPS válida</value>
-  </data>
   <data name="SVC_TooLarge.Text" xml:space="preserve">
-    <value>La suscripción supera 20 MiB</value>
-  </data>
-  <data name="SVC_TooLarge.Content" xml:space="preserve">
     <value>La suscripción supera 20 MiB</value>
   </data>
   <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
     <value>Error al aplicar tras importar: {0}</value>
   </data>
-  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
-    <value>Error al aplicar tras importar: {0}</value>
-  </data>
   <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
-    <value>Actualización automática exitosa: {0}</value>
-  </data>
-  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
     <value>Actualización automática exitosa: {0}</value>
   </data>
   <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
     <value>Actualización automática fallida: {0}: {1}</value>
   </data>
-  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
-    <value>Actualización automática fallida: {0}: {1}</value>
-  </data>
   <data name="Tray_InitFailed.Text" xml:space="preserve">
-    <value>Error al iniciar bandeja: {0}</value>
-  </data>
-  <data name="Tray_InitFailed.Content" xml:space="preserve">
     <value>Error al iniciar bandeja: {0}</value>
   </data>
   <data name="Tray_ShowWindow.Text" xml:space="preserve">
     <value>Mostrar ventana principal</value>
   </data>
-  <data name="Tray_ShowWindow.Content" xml:space="preserve">
-    <value>Mostrar ventana principal</value>
-  </data>
   <data name="Tray_ModeRule.Text" xml:space="preserve">
-    <value>Modo de reglas</value>
-  </data>
-  <data name="Tray_ModeRule.Content" xml:space="preserve">
     <value>Modo de reglas</value>
   </data>
   <data name="Tray_ModeGlobal.Text" xml:space="preserve">
     <value>Modo global</value>
   </data>
-  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
-    <value>Modo global</value>
-  </data>
   <data name="Tray_ModeDirect.Text" xml:space="preserve">
-    <value>Modo directo</value>
-  </data>
-  <data name="Tray_ModeDirect.Content" xml:space="preserve">
     <value>Modo directo</value>
   </data>
   <data name="Tray_SystemProxy.Text" xml:space="preserve">
     <value>Proxy del sistema</value>
   </data>
-  <data name="Tray_SystemProxy.Content" xml:space="preserve">
-    <value>Proxy del sistema</value>
-  </data>
   <data name="Tray_TunMode.Text" xml:space="preserve">
-    <value>Modo TUN</value>
-  </data>
-  <data name="Tray_TunMode.Content" xml:space="preserve">
     <value>Modo TUN</value>
   </data>
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Modo ligero</value>
   </data>
-  <data name="Tray_Lightweight.Content" xml:space="preserve">
-    <value>Modo ligero</value>
-  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
-    <value>Reiniciar núcleo</value>
-  </data>
-  <data name="Tray_RestartCore.Content" xml:space="preserve">
     <value>Reiniciar núcleo</value>
   </data>
   <data name="Tray_Exit.Text" xml:space="preserve">
     <value>Salir</value>
   </data>
-  <data name="Tray_Exit.Content" xml:space="preserve">
-    <value>Salir</value>
-  </data>
   <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
-    <value>Error al refrescar menú de bandeja: {0}</value>
-  </data>
-  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
     <value>Error al refrescar menú de bandeja: {0}</value>
   </data>
   <data name="Tray_ProxyGroups.Text" xml:space="preserve">
     <value>Grupos de proxy</value>
   </data>
-  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
-    <value>Grupos de proxy</value>
-  </data>
   <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
-    <value>(Núcleo detenido)</value>
-  </data>
-  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
     <value>(Núcleo detenido)</value>
   </data>
   <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
     <value>Error al cambiar nodo desde bandeja: {0}</value>
   </data>
-  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
-    <value>Error al cambiar nodo desde bandeja: {0}</value>
-  </data>
   <data name="Tray_Profiles.Text" xml:space="preserve">
-    <value>Perfiles</value>
-  </data>
-  <data name="Tray_Profiles.Content" xml:space="preserve">
     <value>Perfiles</value>
   </data>
   <data name="Tray_NoProfiles.Text" xml:space="preserve">
     <value>(Sin perfiles)</value>
   </data>
-  <data name="Tray_NoProfiles.Content" xml:space="preserve">
-    <value>(Sin perfiles)</value>
-  </data>
   <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
-    <value>Error al cambiar perfil: {0}</value>
-  </data>
-  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
     <value>Error al cambiar perfil: {0}</value>
   </data>
   <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
     <value>Error al cambiar modo: {0}</value>
   </data>
-  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
-    <value>Error al cambiar modo: {0}</value>
-  </data>
   <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
-    <value>Error al alternar proxy del sistema: {0}</value>
-  </data>
-  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
     <value>Error al alternar proxy del sistema: {0}</value>
   </data>
   <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
     <value>Limpieza de salida incompleta: {0}</value>
   </data>
-  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
-    <value>Limpieza de salida incompleta: {0}</value>
-  </data>
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
-    <value>Reglas</value>
-  </data>
-  <data name="Fmt_ModeRule.Content" xml:space="preserve">
     <value>Reglas</value>
   </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Global</value>
   </data>
-  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
-    <value>Global</value>
-  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
-    <value>Directo</value>
-  </data>
-  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Directo</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
     <value>Proveedores de proxy</value>
   </data>
-  <data name="Msg_ProviderTitleProxy.Content" xml:space="preserve">
-    <value>Proveedores de proxy</value>
-  </data>
   <data name="Msg_ProviderTitleRules.Text" xml:space="preserve">
-    <value>Proveedores de reglas</value>
-  </data>
-  <data name="Msg_ProviderTitleRules.Content" xml:space="preserve">
     <value>Proveedores de reglas</value>
   </data>
   <data name="Msg_RefreshList.Text" xml:space="preserve">
     <value>Actualizar lista</value>
   </data>
-  <data name="Msg_RefreshList.Content" xml:space="preserve">
-    <value>Actualizar lista</value>
-  </data>
   <data name="Msg_HealthCheck.Text" xml:space="preserve">
-    <value>Comprobación de estado</value>
-  </data>
-  <data name="Msg_HealthCheck.Content" xml:space="preserve">
     <value>Comprobación de estado</value>
   </data>
   <data name="Msg_Loading.Text" xml:space="preserve">
     <value>Cargando…</value>
   </data>
-  <data name="Msg_Loading.Content" xml:space="preserve">
-    <value>Cargando…</value>
-  </data>
   <data name="Msg_NoProxyProviders.Text" xml:space="preserve">
-    <value>Sin proveedores de proxy</value>
-  </data>
-  <data name="Msg_NoProxyProviders.Content" xml:space="preserve">
     <value>Sin proveedores de proxy</value>
   </data>
   <data name="Msg_NoRuleProviders.Text" xml:space="preserve">
     <value>Sin proveedores de reglas</value>
   </data>
-  <data name="Msg_NoRuleProviders.Content" xml:space="preserve">
-    <value>Sin proveedores de reglas</value>
-  </data>
   <data name="Msg_ProviderCount.Text" xml:space="preserve">
-    <value>{0} proveedores</value>
-  </data>
-  <data name="Msg_ProviderCount.Content" xml:space="preserve">
     <value>{0} proveedores</value>
   </data>
   <data name="Msg_ProxyNodeCount.Text" xml:space="preserve">
     <value>{0} nodos</value>
   </data>
-  <data name="Msg_ProxyNodeCount.Content" xml:space="preserve">
-    <value>{0} nodos</value>
-  </data>
   <data name="Msg_RulesMeta.Text" xml:space="preserve">
-    <value>{0} · {1} · {2} reglas</value>
-  </data>
-  <data name="Msg_RulesMeta.Content" xml:space="preserve">
     <value>{0} · {1} · {2} reglas</value>
   </data>
   <data name="Msg_Update.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
-  <data name="Msg_Update.Content" xml:space="preserve">
-    <value>Actualizar</value>
-  </data>
   <data name="Msg_Updating.Text" xml:space="preserve">
-    <value>Actualizando {0}…</value>
-  </data>
-  <data name="Msg_Updating.Content" xml:space="preserve">
     <value>Actualizando {0}…</value>
   </data>
   <data name="Msg_UpdatedOne.Text" xml:space="preserve">
     <value>{0} actualizado</value>
   </data>
-  <data name="Msg_UpdatedOne.Content" xml:space="preserve">
-    <value>{0} actualizado</value>
-  </data>
   <data name="Msg_UpdateFailedNamed.Text" xml:space="preserve">
-    <value>Error al actualizar {0}: {1}</value>
-  </data>
-  <data name="Msg_UpdateFailedNamed.Content" xml:space="preserve">
     <value>Error al actualizar {0}: {1}</value>
   </data>
   <data name="Msg_UpdatingAll.Text" xml:space="preserve">
     <value>Actualizando todo…</value>
   </data>
-  <data name="Msg_UpdatingAll.Content" xml:space="preserve">
-    <value>Actualizando todo…</value>
-  </data>
   <data name="Msg_UpdateAllDoneCount.Text" xml:space="preserve">
-    <value>Terminado: {0}/{1}</value>
-  </data>
-  <data name="Msg_UpdateAllDoneCount.Content" xml:space="preserve">
     <value>Terminado: {0}/{1}</value>
   </data>
   <data name="Msg_HealthChecking.Text" xml:space="preserve">
     <value>Comprobando estado…</value>
   </data>
-  <data name="Msg_HealthChecking.Content" xml:space="preserve">
-    <value>Comprobando estado…</value>
-  </data>
   <data name="Msg_HealthCheckDone.Text" xml:space="preserve">
-    <value>Comprobación completada</value>
-  </data>
-  <data name="Msg_HealthCheckDone.Content" xml:space="preserve">
     <value>Comprobación completada</value>
   </data>
   <data name="Msg_NeverUpdatedShort.Text" xml:space="preserve">
     <value>Nunca actualizado</value>
   </data>
-  <data name="Msg_NeverUpdatedShort.Content" xml:space="preserve">
-    <value>Nunca actualizado</value>
-  </data>
   <data name="Msg_UnlockUntested.Text" xml:space="preserve">
-    <value>Sin probar</value>
-  </data>
-  <data name="Msg_UnlockUntested.Content" xml:space="preserve">
     <value>Sin probar</value>
   </data>
   <data name="Msg_UnlockTesting.Text" xml:space="preserve">
     <value>Probando</value>
   </data>
-  <data name="Msg_UnlockTesting.Content" xml:space="preserve">
-    <value>Probando</value>
-  </data>
   <data name="Msg_UnlockSupported.Text" xml:space="preserve">
-    <value>Soportado</value>
-  </data>
-  <data name="Msg_UnlockSupported.Content" xml:space="preserve">
     <value>Soportado</value>
   </data>
   <data name="Msg_UnlockUnsupported.Text" xml:space="preserve">
     <value>No soportado</value>
   </data>
-  <data name="Msg_UnlockUnsupported.Content" xml:space="preserve">
-    <value>No soportado</value>
-  </data>
   <data name="Msg_UnlockUnknown.Text" xml:space="preserve">
-    <value>Desconocido</value>
-  </data>
-  <data name="Msg_UnlockUnknown.Content" xml:space="preserve">
     <value>Desconocido</value>
   </data>
   <data name="Msg_UnlockFailed.Text" xml:space="preserve">
     <value>Falló</value>
   </data>
-  <data name="Msg_UnlockFailed.Content" xml:space="preserve">
-    <value>Falló</value>
-  </data>
   <data name="Msg_SysProxyToggleFailedTitle.Text" xml:space="preserve">
-    <value>Error al alternar proxy del sistema</value>
-  </data>
-  <data name="Msg_SysProxyToggleFailedTitle.Content" xml:space="preserve">
     <value>Error al alternar proxy del sistema</value>
   </data>
   <data name="Msg_TunToggleFailedTitle.Text" xml:space="preserve">
     <value>Error al alternar TUN</value>
   </data>
-  <data name="Msg_TunToggleFailedTitle.Content" xml:space="preserve">
-    <value>Error al alternar TUN</value>
-  </data>
   <data name="Msg_CoreRestartFailedTitle.Text" xml:space="preserve">
-    <value>Error al reiniciar el núcleo</value>
-  </data>
-  <data name="Msg_CoreRestartFailedTitle.Content" xml:space="preserve">
     <value>Error al reiniciar el núcleo</value>
   </data>
   <data name="Msg_CloseThisConn.Text" xml:space="preserve">
     <value>Cerrar esta conexión</value>
   </data>
-  <data name="Msg_CloseThisConn.Content" xml:space="preserve">
-    <value>Cerrar esta conexión</value>
-  </data>
   <data name="Msg_Back.Text" xml:space="preserve">
-    <value>Volver</value>
-  </data>
-  <data name="Msg_Back.Content" xml:space="preserve">
     <value>Volver</value>
   </data>
   <data name="Msg_DetailNetwork.Text" xml:space="preserve">
     <value>Red: {0} ({1})</value>
   </data>
-  <data name="Msg_DetailNetwork.Content" xml:space="preserve">
-    <value>Red: {0} ({1})</value>
-  </data>
   <data name="Msg_DetailHost.Text" xml:space="preserve">
-    <value>Host: {0}</value>
-  </data>
-  <data name="Msg_DetailHost.Content" xml:space="preserve">
     <value>Host: {0}</value>
   </data>
   <data name="Msg_DetailDestination.Text" xml:space="preserve">
     <value>Destino: {0}</value>
   </data>
-  <data name="Msg_DetailDestination.Content" xml:space="preserve">
-    <value>Destino: {0}</value>
-  </data>
   <data name="Msg_DetailSource.Text" xml:space="preserve">
-    <value>Origen: {0}</value>
-  </data>
-  <data name="Msg_DetailSource.Content" xml:space="preserve">
     <value>Origen: {0}</value>
   </data>
   <data name="Msg_DetailRule.Text" xml:space="preserve">
     <value>Regla: {0}</value>
   </data>
-  <data name="Msg_DetailRule.Content" xml:space="preserve">
-    <value>Regla: {0}</value>
-  </data>
   <data name="Msg_DetailChains.Text" xml:space="preserve">
-    <value>Cadena: {0}</value>
-  </data>
-  <data name="Msg_DetailChains.Content" xml:space="preserve">
     <value>Cadena: {0}</value>
   </data>
   <data name="Msg_DetailProcess.Text" xml:space="preserve">
     <value>Proceso: {0}</value>
   </data>
-  <data name="Msg_DetailProcess.Content" xml:space="preserve">
-    <value>Proceso: {0}</value>
-  </data>
   <data name="Msg_DetailTraffic.Text" xml:space="preserve">
-    <value>Bajada: {0}   Subida: {1}</value>
-  </data>
-  <data name="Msg_DetailTraffic.Content" xml:space="preserve">
     <value>Bajada: {0}   Subida: {1}</value>
   </data>
   <data name="Msg_DetailTime.Text" xml:space="preserve">
     <value>Hora: {0}</value>
   </data>
-  <data name="Msg_DetailTime.Content" xml:space="preserve">
-    <value>Hora: {0}</value>
-  </data>
   <data name="Msg_QrTitle.Text" xml:space="preserve">
-    <value>Código QR: {0}</value>
-  </data>
-  <data name="Msg_QrTitle.Content" xml:space="preserve">
     <value>Código QR: {0}</value>
   </data>
   <data name="Msg_QrFailed.Text" xml:space="preserve">
     <value>Error al generar QR: {0}</value>
   </data>
-  <data name="Msg_QrFailed.Content" xml:space="preserve">
-    <value>Error al generar QR: {0}</value>
-  </data>
   <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
-    <value>Herramienta UWP Loopback</value>
-  </data>
-  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
     <value>Herramienta UWP Loopback</value>
   </data>
   <data name="Msg_LoopbackHint.Text" xml:space="preserve">
     <value>Marque las apps UWP que permitan loopback; se pedirán permisos de admin</value>
   </data>
-  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
-    <value>Marque las apps UWP que permitan loopback; se pedirán permisos de admin</value>
-  </data>
   <data name="Msg_LoopbackApply.Text" xml:space="preserve">
-    <value>Aplicar cambios</value>
-  </data>
-  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
     <value>Aplicar cambios</value>
   </data>
   <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
     <value>Aplicando…</value>
   </data>
-  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
-    <value>Aplicando…</value>
-  </data>
   <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
-    <value>Cambios de loopback aplicados</value>
-  </data>
-  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
     <value>Cambios de loopback aplicados</value>
   </data>
   <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
     <value>Error al aplicar: {0}</value>
   </data>
-  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
-    <value>Error al aplicar: {0}</value>
-  </data>
   <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
-    <value>Error al listar apps UWP: {0}</value>
-  </data>
-  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
     <value>Error al listar apps UWP: {0}</value>
   </data>
   <data name="Msg_ColumnSettings.Text" xml:space="preserve">
     <value>Ajustes de columnas</value>
   </data>
-  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
-    <value>Ajustes de columnas</value>
-  </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Tabla</value>
-  </data>
-  <data name="Msg_LayoutTable.Content" xml:space="preserve">
     <value>Tabla</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
     <value>Lista</value>
   </data>
-  <data name="Msg_LayoutList.Content" xml:space="preserve">
-    <value>Lista</value>
-  </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
-    <value>Deja al menos una columna visible</value>
-  </data>
-  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
     <value>Deja al menos una columna visible</value>
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Consentimiento UAC cancelado</value>
-  </data>
-  <data name="Msg_UacCancelled.Content" xml:space="preserve">
-    <value>Consentimiento UAC cancelado</value>
-  </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>Abrir herramienta</value>
   </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>Abrir herramienta</value>
@@ -1981,325 +1085,163 @@
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>Código QR</value>
   </data>
-  <data name="Profiles_MenuQr.Content" xml:space="preserve">
-    <value>Código QR</value>
-  </data>
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
-    <value>El QR solo está disponible para perfiles remotos</value>
-  </data>
-  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>El QR solo está disponible para perfiles remotos</value>
   </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>Núcleo mihomo iniciado en modo servicio privilegiado</value>
   </data>
-  <data name="Core_StartedService.Content" xml:space="preserve">
-    <value>Núcleo mihomo iniciado en modo servicio privilegiado</value>
-  </data>
   <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
-    <value>Fallo del modo servicio, retroceso a sidecar: {0}</value>
-  </data>
-  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
     <value>Fallo del modo servicio, retroceso a sidecar: {0}</value>
   </data>
   <data name="Core_Started.Text" xml:space="preserve">
     <value>Núcleo mihomo iniciado</value>
   </data>
-  <data name="Core_Started.Content" xml:space="preserve">
-    <value>Núcleo mihomo iniciado</value>
-  </data>
   <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
-    <value>El servicio no pudo detener el núcleo: {0}</value>
-  </data>
-  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
     <value>El servicio no pudo detener el núcleo: {0}</value>
   </data>
   <data name="Core_KillLeftover.Text" xml:space="preserve">
     <value>Proceso residual limpiado PID {0}</value>
   </data>
-  <data name="Core_KillLeftover.Content" xml:space="preserve">
-    <value>Proceso residual limpiado PID {0}</value>
-  </data>
   <data name="Core_ApplyRejected.Text" xml:space="preserve">
-    <value>Configuración rechazada: {0}</value>
-  </data>
-  <data name="Core_ApplyRejected.Content" xml:space="preserve">
     <value>Configuración rechazada: {0}</value>
   </data>
   <data name="Core_HotReloaded.Text" xml:space="preserve">
     <value>Configuración recargada en caliente</value>
   </data>
-  <data name="Core_HotReloaded.Content" xml:space="preserve">
-    <value>Configuración recargada en caliente</value>
-  </data>
   <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
-    <value>Recarga fallida, reiniciando núcleo: {0}</value>
-  </data>
-  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
     <value>Recarga fallida, reiniciando núcleo: {0}</value>
   </data>
   <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
     <value>Error al restaurar nodos: {0}</value>
   </data>
-  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
-    <value>Error al restaurar nodos: {0}</value>
-  </data>
   <data name="Core_RestoredSelection.Text" xml:space="preserve">
-    <value>Selección restaurada: {0} → {1}</value>
-  </data>
-  <data name="Core_RestoredSelection.Content" xml:space="preserve">
     <value>Selección restaurada: {0} → {1}</value>
   </data>
   <data name="Core_SelectionMissing.Text" xml:space="preserve">
     <value>{0} nodos guardados no existen; se omitió la restauración</value>
   </data>
-  <data name="Core_SelectionMissing.Content" xml:space="preserve">
-    <value>{0} nodos guardados no existen; se omitió la restauración</value>
-  </data>
   <data name="Core_JobAssignFailed.Text" xml:space="preserve">
-    <value>Fallo al asignar Job Object; el núcleo podría quedar residual</value>
-  </data>
-  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
     <value>Fallo al asignar Job Object; el núcleo podría quedar residual</value>
   </data>
   <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
     <value>Error al iniciar proceso mihomo</value>
   </data>
-  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
-    <value>Error al iniciar proceso mihomo</value>
-  </data>
   <data name="Core_ValidateFailed.Text" xml:space="preserve">
-    <value>Validación de configuración fallida: {0}</value>
-  </data>
-  <data name="Core_ValidateFailed.Content" xml:space="preserve">
     <value>Validación de configuración fallida: {0}</value>
   </data>
   <data name="Core_ProcessExited.Text" xml:space="preserve">
     <value>mihomo terminó inesperadamente; revise los registros</value>
   </data>
-  <data name="Core_ProcessExited.Content" xml:space="preserve">
-    <value>mihomo terminó inesperadamente; revise los registros</value>
-  </data>
   <data name="Core_ControllerTimeout.Text" xml:space="preserve">
-    <value>Tiempo de espera agotado para el External Controller</value>
-  </data>
-  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
     <value>Tiempo de espera agotado para el External Controller</value>
   </data>
   <data name="Core_Pid.Text" xml:space="preserve">
     <value>PID de mihomo: {0}</value>
   </data>
-  <data name="Core_Pid.Content" xml:space="preserve">
-    <value>PID de mihomo: {0}</value>
-  </data>
   <data name="Proxy_Restored.Text" xml:space="preserve">
-    <value>Proxy del sistema restaurado</value>
-  </data>
-  <data name="Proxy_Restored.Content" xml:space="preserve">
     <value>Proxy del sistema restaurado</value>
   </data>
   <data name="Proxy_Enabled.Text" xml:space="preserve">
     <value>Proxy del sistema activado: {0}</value>
   </data>
-  <data name="Proxy_Enabled.Content" xml:space="preserve">
-    <value>Proxy del sistema activado: {0}</value>
-  </data>
   <data name="Proxy_EnabledPac.Text" xml:space="preserve">
-    <value>Proxy activado (modo PAC): {0}</value>
-  </data>
-  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
     <value>Proxy activado (modo PAC): {0}</value>
   </data>
   <data name="Proxy_StaleRestored.Text" xml:space="preserve">
     <value>Detectado proxy sin restaurar; se restauró la configuración original</value>
   </data>
-  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
-    <value>Detectado proxy sin restaurar; se restauró la configuración original</value>
-  </data>
   <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
-    <value>Proxy de versión anterior detectado; desactivado</value>
-  </data>
-  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
     <value>Proxy de versión anterior detectado; desactivado</value>
   </data>
   <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
     <value>Error al restaurar proxy residual: {0}</value>
   </data>
-  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
-    <value>Error al restaurar proxy residual: {0}</value>
-  </data>
   <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
-    <value>El proxy fue modificado por otro programa; Flux no lo sobrescribirá</value>
-  </data>
-  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
     <value>El proxy fue modificado por otro programa; Flux no lo sobrescribirá</value>
   </data>
   <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
     <value>Error al leer la instantánea del proxy: {0}</value>
   </data>
-  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
-    <value>Error al leer la instantánea del proxy: {0}</value>
-  </data>
   <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
-    <value>Cambio externo del proxy detectado; restaurando</value>
-  </data>
-  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
     <value>Cambio externo del proxy detectado; restaurando</value>
   </data>
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>Error del guardián del proxy: {0}</value>
   </data>
-  <data name="Proxy_GuardError.Content" xml:space="preserve">
-    <value>Error del guardián del proxy: {0}</value>
-  </data>
   <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>Error al cargar verge.yaml: {0}</value>
-  </data>
-  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
     <value>Error al cargar verge.yaml: {0}</value>
   </data>
   <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
     <value>Error de respaldo de migración de verge.yaml: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
-    <value>Error de respaldo de migración de verge.yaml: {0}</value>
-  </data>
   <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml migrado a esquema v{0}; copia: {1}</value>
-  </data>
-  <data name="Config_VergeMigrated.Content" xml:space="preserve">
     <value>verge.yaml migrado a esquema v{0}; copia: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>Error al cargar config.yaml: {0}</value>
   </data>
-  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
-    <value>Error al cargar config.yaml: {0}</value>
-  </data>
   <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
-    <value>Error al cargar profiles.yaml: {0}</value>
-  </data>
-  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
     <value>Error al cargar profiles.yaml: {0}</value>
   </data>
   <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
     <value>Error al registrar el protocolo: {0}</value>
   </data>
-  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
-    <value>Error al registrar el protocolo: {0}</value>
-  </data>
   <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
-    <value>Error al importar enlace: {0}</value>
-  </data>
-  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
     <value>Error al importar enlace: {0}</value>
   </data>
   <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
     <value>El inicio automático fue deshabilitado por el usuario; rehabilítelo en el Administrador de tareas</value>
   </data>
-  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
-    <value>El inicio automático fue deshabilitado por el usuario; rehabilítelo en el Administrador de tareas</value>
-  </data>
   <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
-    <value>El inicio automático está deshabilitado por directiva</value>
-  </data>
-  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
     <value>El inicio automático está deshabilitado por directiva</value>
   </data>
   <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
     <value>El usuario no permitió el inicio automático</value>
   </data>
-  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
-    <value>El usuario no permitió el inicio automático</value>
-  </data>
   <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
-    <value>No se pudo abrir la clave del Registro Run</value>
-  </data>
-  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
     <value>No se pudo abrir la clave del Registro Run</value>
   </data>
   <data name="Boot_LanguageFailed.Text" xml:space="preserve">
     <value>Error al establecer idioma: {0}</value>
   </data>
-  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
-    <value>Error al establecer idioma: {0}</value>
-  </data>
   <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
-    <value>Núcleo no listo; se omitió el proxy del sistema</value>
-  </data>
-  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
     <value>Núcleo no listo; se omitió el proxy del sistema</value>
   </data>
   <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
     <value>Error al inicializar atajos: {0}</value>
   </data>
-  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
-    <value>Error al inicializar atajos: {0}</value>
-  </data>
   <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
-    <value>Error al registrar atajo: {0}</value>
-  </data>
-  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
     <value>Error al registrar atajo: {0}</value>
   </data>
   <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
     <value>Error al ejecutar atajo ({0}): {1}</value>
   </data>
-  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
-    <value>Error al ejecutar atajo ({0}): {1}</value>
-  </data>
   <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
-    <value>Acción de atajo no implementada: {0}</value>
-  </data>
-  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
     <value>Acción de atajo no implementada: {0}</value>
   </data>
   <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
     <value>Sin permisos de admin y servicio no disponible; TUN desactivado</value>
   </data>
-  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
-    <value>Sin permisos de admin y servicio no disponible; TUN desactivado</value>
-  </data>
   <data name="Boot_LightweightAuto.Text" xml:space="preserve">
-    <value>Ventana cerrada {0} minutos; entrando en modo ligero</value>
-  </data>
-  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
     <value>Ventana cerrada {0} minutos; entrando en modo ligero</value>
   </data>
   <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
     <value>Error en modo ligero automático: {0}</value>
   </data>
-  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
-    <value>Error en modo ligero automático: {0}</value>
-  </data>
   <data name="Lightweight_Entered.Text" xml:space="preserve">
-    <value>Modo ligero activado (ventana liberada; el núcleo sigue)</value>
-  </data>
-  <data name="Lightweight_Entered.Content" xml:space="preserve">
     <value>Modo ligero activado (ventana liberada; el núcleo sigue)</value>
   </data>
   <data name="Lightweight_Exited.Text" xml:space="preserve">
     <value>Salió del modo ligero</value>
   </data>
-  <data name="Lightweight_Exited.Content" xml:space="preserve">
-    <value>Salió del modo ligero</value>
-  </data>
   <data name="Boot_StartFailed.Text" xml:space="preserve">
-    <value>Error al iniciar: {0}</value>
-  </data>
-  <data name="Boot_StartFailed.Content" xml:space="preserve">
     <value>Error al iniciar: {0}</value>
   </data>
   <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
     <value>Error al iniciar el núcleo: {0}</value>
   </data>
-  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
-    <value>Error al iniciar el núcleo: {0}</value>
-  </data>
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
-    <value>Error al aplicar proxy del sistema: {0}</value>
-  </data>
-  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
     <value>Error al aplicar proxy del sistema: {0}</value>
   </data>
 </root>

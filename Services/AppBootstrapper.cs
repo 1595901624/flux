@@ -20,9 +20,11 @@ public static class AppBootstrapper
         var dispatcher = DispatcherQueue.GetForCurrentThread();
         _uiDispatcher = dispatcher;
 
+        Program.Trace("bootstrapper enter");
         try
         {
             AppServices.Initialize();
+            Program.Trace("initialize ok");
 
             // 语言覆盖必须在窗口创建前生效（x:Uid 解析依赖）
             var lang = AppServices.Config.Verge.Language;
@@ -32,8 +34,10 @@ public static class AppBootstrapper
                 catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
             }
 
+            Program.Trace("lang ok");
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
             AppServices.SysProxy.ClearStaleProxy();
+            Program.Trace("stale-proxy ok");
 
             // 已保存的 TUN 状态只在有能力特权运行内核时生效：
             // 管理员进程或 Flux 服务可用（普通用户经服务模式 TUN），否则安全关闭避免断网。
@@ -54,8 +58,11 @@ public static class AppBootstrapper
                     AppServices.DeepLink.HandleArgs(args);
                 });
 
+            Program.Trace("pre-core");
             var coreReady = await CoreServiceStartupAsync();
+            Program.Trace("core started: " + coreReady);
 
+            Program.Trace("tray init");
             AppServices.Tray.Initialize();
             App.ShowMainWindow();
             App.ApplyTheme(AppServices.Config.Verge.ThemeMode);

@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <data name="Nav_Home.Text" xml:space="preserve">
-    <value>Главная</value>
-  </data>
   <data name="Nav_Home.Content" xml:space="preserve">
     <value>Главная</value>
-  </data>
-  <data name="Nav_Proxies.Text" xml:space="preserve">
-    <value>Прокси</value>
   </data>
   <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>Прокси</value>
   </data>
-  <data name="Nav_Profiles.Text" xml:space="preserve">
-    <value>Подписки</value>
-  </data>
   <data name="Nav_Profiles.Content" xml:space="preserve">
     <value>Подписки</value>
-  </data>
-  <data name="Nav_Connections.Text" xml:space="preserve">
-    <value>Соединения</value>
   </data>
   <data name="Nav_Connections.Content" xml:space="preserve">
     <value>Соединения</value>
   </data>
-  <data name="Nav_Rules.Text" xml:space="preserve">
-    <value>Правила</value>
-  </data>
   <data name="Nav_Rules.Content" xml:space="preserve">
     <value>Правила</value>
-  </data>
-  <data name="Nav_Logs.Text" xml:space="preserve">
-    <value>Журналы</value>
   </data>
   <data name="Nav_Logs.Content" xml:space="preserve">
     <value>Журналы</value>
   </data>
-  <data name="Nav_Unlock.Text" xml:space="preserve">
-    <value>Тест разблокировки</value>
-  </data>
   <data name="Nav_Unlock.Content" xml:space="preserve">
     <value>Тест разблокировки</value>
-  </data>
-  <data name="Nav_Settings.Text" xml:space="preserve">
-    <value>Настройки</value>
   </data>
   <data name="Nav_Settings.Content" xml:space="preserve">
     <value>Настройки</value>
@@ -51,35 +27,17 @@
   <data name="Common_OK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Common_OK.Content" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
-  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>Отмена</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="Common_Save.Content" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="Common_Delete.Content" xml:space="preserve">
     <value>Удалить</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>Закрыть</value>
-  </data>
-  <data name="Common_Close.Content" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="Common_Apply.Text" xml:space="preserve">
-    <value>Применить</value>
   </data>
   <data name="Common_Apply.Content" xml:space="preserve">
     <value>Применить</value>
@@ -87,119 +45,59 @@
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>Обновить</value>
   </data>
-  <data name="Common_Refresh.Content" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
   <data name="Home_Title.Text" xml:space="preserve">
-    <value>Главная</value>
-  </data>
-  <data name="Home_Title.Content" xml:space="preserve">
     <value>Главная</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>Настройки прокси</value>
   </data>
-  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
-    <value>Настройки прокси</value>
-  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
-    <value>Сеть</value>
-  </data>
-  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>Сеть</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN требует прав администратора</value>
   </data>
-  <data name="Home_TunAdminHint.Content" xml:space="preserve">
-    <value>TUN требует прав администратора</value>
-  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
-    <value>Текущая подписка</value>
-  </data>
-  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>Текущая подписка</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>Текущий узел</value>
   </data>
-  <data name="Home_CardNodes.Content" xml:space="preserve">
-    <value>Текущий узел</value>
-  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
-    <value>Трафик</value>
-  </data>
-  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>Трафик</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>Режим</value>
   </data>
-  <data name="Home_CardMode.Content" xml:space="preserve">
-    <value>Режим</value>
-  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
-    <value>О ядре</value>
-  </data>
-  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>О ядре</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>Прокси</value>
   </data>
-  <data name="Proxies_Title.Content" xml:space="preserve">
-    <value>Прокси</value>
-  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
-    <value>Фильтр по имени/типу</value>
-  </data>
-  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>Фильтр по имени/типу</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>Нет групп прокси</value>
   </data>
-  <data name="Proxies_Empty.Content" xml:space="preserve">
-    <value>Нет групп прокси</value>
-  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
-    <value>Сначала импортируйте подписку</value>
-  </data>
-  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>Сначала импортируйте подписку</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>Подписки</value>
   </data>
-  <data name="Profiles_Title.Content" xml:space="preserve">
-    <value>Подписки</value>
-  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
-    <value>URL подписки (поддерживается clash://)</value>
-  </data>
-  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>URL подписки (поддерживается clash://)</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>Локальный файл</value>
   </data>
-  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
-    <value>Локальный файл</value>
-  </data>
-  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
-    <value>Новый пустой профиль</value>
-  </data>
   <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>Новый пустой профиль</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
-    <value>Обновить все</value>
-  </data>
   <data name="Profiles_UpdateAll.Content" xml:space="preserve">
     <value>Обновить все</value>
-  </data>
-  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
-    <value>Глобальные улучшения</value>
   </data>
   <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>Глобальные улучшения</value>
@@ -207,143 +105,71 @@
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>Нет подписок</value>
   </data>
-  <data name="Profiles_Empty.Content" xml:space="preserve">
-    <value>Нет подписок</value>
-  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
-    <value>Вставьте URL и импортируйте или выберите локальный YAML</value>
-  </data>
-  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>Вставьте URL и импортируйте или выберите локальный YAML</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>Использовать эту подписку</value>
   </data>
-  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
-    <value>Использовать эту подписку</value>
-  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
-  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>Обновить</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>Изменить info</value>
   </data>
-  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
-    <value>Изменить info</value>
-  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
-    <value>Изменить улучшения</value>
-  </data>
-  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>Изменить улучшения</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>Вверх</value>
   </data>
-  <data name="Profiles_MenuUp.Content" xml:space="preserve">
-    <value>Вверх</value>
-  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
-    <value>Вниз</value>
-  </data>
-  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>Вниз</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>Удалить</value>
   </data>
-  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
-    <value>Соединения</value>
-  </data>
-  <data name="Connections_Title.Content" xml:space="preserve">
     <value>Соединения</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>Поиск: хост/правило/процесс</value>
   </data>
-  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
-    <value>Поиск: хост/правило/процесс</value>
-  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Закрыть все</value>
-  </data>
-  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>Закрыть все</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Закрытые</value>
   </data>
-  <data name="Connections_Closed.Content" xml:space="preserve">
-    <value>Закрытые</value>
-  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
-    <value>Хост</value>
-  </data>
-  <data name="Connections_Host.Content" xml:space="preserve">
     <value>Хост</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>Сеть</value>
   </data>
-  <data name="Connections_Network.Content" xml:space="preserve">
-    <value>Сеть</value>
-  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
-    <value>Загрузка</value>
-  </data>
-  <data name="Connections_Download.Content" xml:space="preserve">
     <value>Загрузка</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>Отдача</value>
   </data>
-  <data name="Connections_Upload.Content" xml:space="preserve">
-    <value>Отдача</value>
-  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
-    <value>Правило</value>
-  </data>
-  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>Правило</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>Цепочка</value>
   </data>
-  <data name="Connections_Chains.Content" xml:space="preserve">
-    <value>Цепочка</value>
-  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
-    <value>Процесс</value>
-  </data>
-  <data name="Connections_Process.Content" xml:space="preserve">
     <value>Процесс</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>Время</value>
   </data>
-  <data name="Connections_Time.Content" xml:space="preserve">
-    <value>Время</value>
-  </data>
-  <data name="Connections_SortDefault.Text" xml:space="preserve">
-    <value>По умолчанию</value>
-  </data>
   <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>По умолчанию</value>
   </data>
-  <data name="Connections_SortUpload.Text" xml:space="preserve">
-    <value>По отдаче</value>
-  </data>
   <data name="Connections_SortUpload.Content" xml:space="preserve">
     <value>По отдаче</value>
-  </data>
-  <data name="Connections_SortDownload.Text" xml:space="preserve">
-    <value>По загрузке</value>
   </data>
   <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>По загрузке</value>
@@ -351,115 +177,58 @@
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>Правила</value>
   </data>
-  <data name="Rules_Title.Content" xml:space="preserve">
-    <value>Правила</value>
-  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
-    <value>Поиск правил</value>
-  </data>
-  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>Поиск правил</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>Поставщики правил</value>
   </data>
-  <data name="Rules_Providers.Content" xml:space="preserve">
-    <value>Поставщики правил</value>
-  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
-    <value>Нет правил</value>
-  </data>
-  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>Нет правил</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Журналы</value>
   </data>
-  <data name="Logs_Title.Content" xml:space="preserve">
-    <value>Журналы</value>
-  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
-    <value>Все уровни</value>
-  </data>
-  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Все уровни</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info и выше</value>
   </data>
-  <data name="Logs_LevelInfo.Content" xml:space="preserve">
-    <value>Info и выше</value>
-  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
-    <value>Warning и выше</value>
-  </data>
-  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning и выше</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>Ошибки</value>
   </data>
-  <data name="Logs_LevelError.Content" xml:space="preserve">
-    <value>Ошибки</value>
-  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
-    <value>Отладка</value>
-  </data>
-  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Отладка</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>Поиск по журналам</value>
   </data>
-  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
-    <value>Поиск по журналам</value>
-  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
-    <value>Пауза</value>
-  </data>
-  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>Пауза</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>Очистить</value>
   </data>
-  <data name="Logs_Clear.Content" xml:space="preserve">
-    <value>Очистить</value>
-  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
-    <value>Сначала новые</value>
-  </data>
-  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>Сначала новые</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>Нет журналов</value>
   </data>
-  <data name="Logs_Empty.Content" xml:space="preserve">
-    <value>Нет журналов</value>
-  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
-    <value>Тест разблокировки</value>
-  </data>
-  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>Тест разблокировки</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>Проверка доступности стриминговых/AI-сервисов через текущий узел</value>
   </data>
-  <data name="Unlock_Subtitle.Content" xml:space="preserve">
-    <value>Проверка доступности стриминговых/AI-сервисов через текущий узел</value>
-  </data>
-  <data name="Unlock_RunAll.Text" xml:space="preserve">
-    <value>Запустить все</value>
-  </data>
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Запустить все</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
-    <value>Повторить</value>
-  </data>
-  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Повторить</value>
   </data>
   <data name="Settings_Title.Header" xml:space="preserve">
@@ -576,28 +345,16 @@
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Тема</value>
   </data>
-  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
-    <value>Как в системе</value>
-  </data>
   <data name="Settings_ThemeSystem.Content" xml:space="preserve">
     <value>Как в системе</value>
   </data>
-  <data name="Settings_ThemeLight.Text" xml:space="preserve">
-    <value>Светлая</value>
-  </data>
   <data name="Settings_ThemeLight.Content" xml:space="preserve">
     <value>Светлая</value>
-  </data>
-  <data name="Settings_ThemeDark.Text" xml:space="preserve">
-    <value>Тёмная</value>
   </data>
   <data name="Settings_ThemeDark.Content" xml:space="preserve">
     <value>Тёмная</value>
   </data>
   <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
-    <value>Перезапуск</value>
-  </data>
-  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
     <value>Перезапуск</value>
   </data>
   <data name="Settings_CardRestartCore.Description" xml:space="preserve">
@@ -609,9 +366,6 @@
   <data name="Settings_CardService.Description" xml:space="preserve">
     <value>Работает как LocalSystem; TUN без админа</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
-    <value>Установить/восстановить службу</value>
-  </data>
   <data name="Settings_InstallService.Content" xml:space="preserve">
     <value>Установить/восстановить службу</value>
   </data>
@@ -621,10 +375,7 @@
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
     <value>При закрытии освобождает UI, оставляя трей и ядро</value>
   </data>
-  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
-    <value>минут</value>
-  </data>
-  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+  <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>минут</value>
   </data>
   <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
@@ -645,9 +396,6 @@
   <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
     <value>Регистрируются при сохранении; конфликты отклоняются</value>
   </data>
-  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
-    <value>Сохранить горячие клавиши</value>
-  </data>
   <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
     <value>Сохранить горячие клавиши</value>
   </data>
@@ -663,20 +411,11 @@
   <data name="Settings_CardBackup.Description" xml:space="preserve">
     <value>ZIP-копия конфигов, подписок и улучшений</value>
   </data>
-  <data name="Settings_CreateBackup.Text" xml:space="preserve">
-    <value>Создать копию</value>
-  </data>
   <data name="Settings_CreateBackup.Content" xml:space="preserve">
     <value>Создать копию</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
-    <value>Восстановить копию</value>
-  </data>
   <data name="Settings_RestoreBackup.Content" xml:space="preserve">
     <value>Восстановить копию</value>
-  </data>
-  <data name="Settings_BackupDir.Text" xml:space="preserve">
-    <value>Папка копий</value>
   </data>
   <data name="Settings_BackupDir.Content" xml:space="preserve">
     <value>Папка копий</value>
@@ -687,20 +426,11 @@
   <data name="Settings_CardWebDav.Description" xml:space="preserve">
     <value>Облачный резерв; пароль шифруется DPAPI</value>
   </data>
-  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
-    <value>Настроить сервер</value>
-  </data>
   <data name="Settings_WebDavConfig.Content" xml:space="preserve">
     <value>Настроить сервер</value>
   </data>
-  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
-    <value>Загрузить</value>
-  </data>
   <data name="Settings_WebDavUpload.Content" xml:space="preserve">
     <value>Загрузить</value>
-  </data>
-  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
-    <value>Восстановить</value>
   </data>
   <data name="Settings_WebDavRestore.Content" xml:space="preserve">
     <value>Восстановить</value>
@@ -711,14 +441,8 @@
   <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
     <value>Экспорт диагностики; проверка последней версии</value>
   </data>
-  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
-    <value>Экспортировать диагностику</value>
-  </data>
   <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
     <value>Экспортировать диагностику</value>
-  </data>
-  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
-    <value>Проверить обновления</value>
   </data>
   <data name="Settings_CheckUpdate.Content" xml:space="preserve">
     <value>Проверить обновления</value>
@@ -726,20 +450,11 @@
   <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
     <value>Открыть папки</value>
   </data>
-  <data name="Settings_OpenData.Text" xml:space="preserve">
-    <value>Папка данных</value>
-  </data>
   <data name="Settings_OpenData.Content" xml:space="preserve">
     <value>Папка данных</value>
   </data>
-  <data name="Settings_OpenLogs.Text" xml:space="preserve">
-    <value>Папка логов</value>
-  </data>
   <data name="Settings_OpenLogs.Content" xml:space="preserve">
     <value>Папка логов</value>
-  </data>
-  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
-    <value>Открыть GitHub</value>
   </data>
   <data name="Settings_OpenGitHub.Content" xml:space="preserve">
     <value>Открыть GitHub</value>
@@ -750,22 +465,13 @@
   <data name="Settings_CardAbout.Header" xml:space="preserve">
     <value>О Flux</value>
   </data>
-  <data name="Settings_ExitApp.Text" xml:space="preserve">
-    <value>Выйти из приложения</value>
-  </data>
   <data name="Settings_ExitApp.Content" xml:space="preserve">
     <value>Выйти из приложения</value>
-  </data>
-  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
-    <value>Перезапуск</value>
   </data>
   <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
     <value>Перезапуск</value>
   </data>
   <data name="Settings_FollowSystem.Text" xml:space="preserve">
-    <value>Как в системе</value>
-  </data>
-  <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Как в системе</value>
   </data>
   <data name="Settings_CardLoopback.Header" xml:space="preserve">
@@ -774,52 +480,28 @@
   <data name="Settings_CardLoopback.Description" xml:space="preserve">
     <value>Разрешить UWP-приложениям использовать прокси (нужен админ)</value>
   </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>Открыть инструмент</value>
-  </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>Открыть инструмент</value>
   </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Применено</value>
   </data>
-  <data name="Msg_Applied.Content" xml:space="preserve">
-    <value>Применено</value>
-  </data>
   <data name="Msg_SaveFailed.Text" xml:space="preserve">
-    <value>Ошибка сохранения</value>
-  </data>
-  <data name="Msg_SaveFailed.Content" xml:space="preserve">
     <value>Ошибка сохранения</value>
   </data>
   <data name="Msg_RestartNow.Text" xml:space="preserve">
     <value>Перезапустить сейчас</value>
   </data>
-  <data name="Msg_RestartNow.Content" xml:space="preserve">
-    <value>Перезапустить сейчас</value>
-  </data>
   <data name="Msg_RestartLater.Text" xml:space="preserve">
-    <value>Позже</value>
-  </data>
-  <data name="Msg_RestartLater.Content" xml:space="preserve">
     <value>Позже</value>
   </data>
   <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
     <value>Порт уже занят</value>
   </data>
-  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
-    <value>Порт уже занят</value>
-  </data>
   <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
     <value>Порт {0} уже занят. Выберите другой.</value>
   </data>
-  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
-    <value>Порт {0} уже занят. Выберите другой.</value>
-  </data>
   <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
-    <value>TUN требует прав</value>
-  </data>
-  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
     <value>TUN требует прав</value>
   </data>
   <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
@@ -827,1153 +509,575 @@
 1. Запустить от админа
 2. Установить службу Flux (рекомендуется)</value>
   </data>
-  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
-    <value>TUN нужен привилегированный запуск:
-1. Запустить от админа
-2. Установить службу Flux (рекомендуется)</value>
-  </data>
   <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
-    <value>Служба установлена</value>
-  </data>
-  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
     <value>Служба установлена</value>
   </data>
   <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
     <value>Служба Flux запущена; TUN без админа</value>
   </data>
-  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
-    <value>Служба Flux запущена; TUN без админа</value>
-  </data>
   <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
-    <value>Не удалось установить службу</value>
-  </data>
-  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
     <value>Не удалось установить службу</value>
   </data>
   <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
     <value>Сохранение горячих клавиш отклонено</value>
   </data>
-  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
-    <value>Сохранение горячих клавиш отклонено</value>
-  </data>
   <data name="Msg_HotkeySaved.Text" xml:space="preserve">
-    <value>Горячие клавиши сохранены</value>
-  </data>
-  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
     <value>Горячие клавиши сохранены</value>
   </data>
   <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
     <value>Глобальные клавиши зарегистрированы</value>
   </data>
-  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
-    <value>Глобальные клавиши зарегистрированы</value>
-  </data>
   <data name="Msg_LangChanged.Text" xml:space="preserve">
-    <value>Язык изменён</value>
-  </data>
-  <data name="Msg_LangChanged.Content" xml:space="preserve">
     <value>Язык изменён</value>
   </data>
   <data name="Msg_LangChangedBody.Text" xml:space="preserve">
     <value>Перезапустите приложение для полного применения</value>
   </data>
-  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
-    <value>Перезапустите приложение для полного применения</value>
-  </data>
   <data name="Msg_Copied.Text" xml:space="preserve">
-    <value>Скопировано</value>
-  </data>
-  <data name="Msg_Copied.Content" xml:space="preserve">
     <value>Скопировано</value>
   </data>
   <data name="Msg_CopiedBody.Text" xml:space="preserve">
     <value>Переменные {0} скопированы в буфер</value>
   </data>
-  <data name="Msg_CopiedBody.Content" xml:space="preserve">
-    <value>Переменные {0} скопированы в буфер</value>
-  </data>
   <data name="Msg_BackupDone.Text" xml:space="preserve">
-    <value>Резервная копия создана</value>
-  </data>
-  <data name="Msg_BackupDone.Content" xml:space="preserve">
     <value>Резервная копия создана</value>
   </data>
   <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
     <value>Копия создана: {0}</value>
   </data>
-  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
-    <value>Копия создана: {0}</value>
-  </data>
   <data name="Msg_BackupFailed.Text" xml:space="preserve">
-    <value>Ошибка резервного копирования</value>
-  </data>
-  <data name="Msg_BackupFailed.Content" xml:space="preserve">
     <value>Ошибка резервного копирования</value>
   </data>
   <data name="Msg_ListFailed.Text" xml:space="preserve">
     <value>Не удалось получить список</value>
   </data>
-  <data name="Msg_ListFailed.Content" xml:space="preserve">
-    <value>Не удалось получить список</value>
-  </data>
   <data name="Msg_NoBackups.Text" xml:space="preserve">
-    <value>Нет резервных копий</value>
-  </data>
-  <data name="Msg_NoBackups.Content" xml:space="preserve">
     <value>Нет резервных копий</value>
   </data>
   <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
     <value>Резервных копий ещё нет</value>
   </data>
-  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
-    <value>Резервных копий ещё нет</value>
-  </data>
   <data name="Msg_RestorePick.Text" xml:space="preserve">
-    <value>Выберите копию (затем перезапустите ядро):</value>
-  </data>
-  <data name="Msg_RestorePick.Content" xml:space="preserve">
     <value>Выберите копию (затем перезапустите ядро):</value>
   </data>
   <data name="Msg_RestoreDone.Text" xml:space="preserve">
     <value>Восстановление завершено</value>
   </data>
-  <data name="Msg_RestoreDone.Content" xml:space="preserve">
-    <value>Восстановление завершено</value>
-  </data>
   <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
-    <value>Восстановлено из {0}, ядро перезапущено</value>
-  </data>
-  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
     <value>Восстановлено из {0}, ядро перезапущено</value>
   </data>
   <data name="Msg_RestoreFailed.Text" xml:space="preserve">
     <value>Ошибка восстановления</value>
   </data>
-  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
-    <value>Ошибка восстановления</value>
-  </data>
   <data name="Msg_WebDavTitle.Text" xml:space="preserve">
-    <value>Настройки сервера WebDAV</value>
-  </data>
-  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
     <value>Настройки сервера WebDAV</value>
   </data>
   <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
     <value>Неверный адрес</value>
   </data>
-  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
-    <value>Неверный адрес</value>
-  </data>
   <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
-    <value>Адрес WebDAV должен быть HTTP/HTTPS URL</value>
-  </data>
-  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
     <value>Адрес WebDAV должен быть HTTP/HTTPS URL</value>
   </data>
   <data name="Msg_WebDavSaved.Text" xml:space="preserve">
     <value>Сохранено</value>
   </data>
-  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
-    <value>Сохранено</value>
-  </data>
   <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
-    <value>Настройки WebDAV сохранены (пароль зашифрован DPAPI)</value>
-  </data>
-  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
     <value>Настройки WebDAV сохранены (пароль зашифрован DPAPI)</value>
   </data>
   <data name="Msg_NotConfigured.Text" xml:space="preserve">
     <value>Не настроено</value>
   </data>
-  <data name="Msg_NotConfigured.Content" xml:space="preserve">
-    <value>Не настроено</value>
-  </data>
   <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
-    <value>Сначала настройте сервер WebDAV</value>
-  </data>
-  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
     <value>Сначала настройте сервер WebDAV</value>
   </data>
   <data name="Msg_UploadDone.Text" xml:space="preserve">
     <value>Загрузка завершена</value>
   </data>
-  <data name="Msg_UploadDone.Content" xml:space="preserve">
-    <value>Загрузка завершена</value>
-  </data>
   <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
-    <value>{0} загружено в WebDAV</value>
-  </data>
-  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
     <value>{0} загружено в WebDAV</value>
   </data>
   <data name="Msg_UploadFailed.Text" xml:space="preserve">
     <value>Ошибка загрузки</value>
   </data>
-  <data name="Msg_UploadFailed.Content" xml:space="preserve">
-    <value>Ошибка загрузки</value>
-  </data>
   <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
-    <value>Нет копий</value>
-  </data>
-  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
     <value>Нет копий</value>
   </data>
   <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
     <value>На WebDAV нет файлов копий</value>
   </data>
-  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
-    <value>На WebDAV нет файлов копий</value>
-  </data>
   <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
-    <value>Восстановить из WebDAV</value>
-  </data>
-  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
     <value>Восстановить из WebDAV</value>
   </data>
   <data name="Msg_DownloadRestore.Text" xml:space="preserve">
     <value>Скачать и восстановить</value>
   </data>
-  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
-    <value>Скачать и восстановить</value>
-  </data>
   <data name="Msg_DiagDone.Text" xml:space="preserve">
-    <value>Диагностика экспортирована</value>
-  </data>
-  <data name="Msg_DiagDone.Content" xml:space="preserve">
     <value>Диагностика экспортирована</value>
   </data>
   <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
     <value>Сохранено только локально; делитесь по желанию</value>
   </data>
-  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
-    <value>Сохранено только локально; делитесь по желанию</value>
-  </data>
   <data name="Msg_ExportFailed.Text" xml:space="preserve">
-    <value>Ошибка экспорта</value>
-  </data>
-  <data name="Msg_ExportFailed.Content" xml:space="preserve">
     <value>Ошибка экспорта</value>
   </data>
   <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
     <value>Проверить обновления</value>
   </data>
-  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
-    <value>Проверить обновления</value>
-  </data>
   <data name="Msg_UpToDate.Text" xml:space="preserve">
-    <value>Уже последняя версия ({0})</value>
-  </data>
-  <data name="Msg_UpToDate.Content" xml:space="preserve">
     <value>Уже последняя версия ({0})</value>
   </data>
   <data name="Msg_NewVersion.Text" xml:space="preserve">
     <value>Доступна новая версия: {0}</value>
   </data>
-  <data name="Msg_NewVersion.Content" xml:space="preserve">
-    <value>Доступна новая версия: {0}</value>
-  </data>
   <data name="Msg_UpdateHint.Text" xml:space="preserve">
-    <value>Откроется страница релизов GitHub (MSIX/портативная)</value>
-  </data>
-  <data name="Msg_UpdateHint.Content" xml:space="preserve">
     <value>Откроется страница релизов GitHub (MSIX/портативная)</value>
   </data>
   <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
     <value>Открыть страницу релизов</value>
   </data>
-  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
-    <value>Открыть страницу релизов</value>
-  </data>
   <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
-    <value>Ошибка проверки обновлений</value>
-  </data>
-  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
     <value>Ошибка проверки обновлений</value>
   </data>
   <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
     <value>Ошибка применения</value>
   </data>
-  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
-    <value>Ошибка применения</value>
-  </data>
   <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
-    <value>{0} (откат выполнен)</value>
-  </data>
-  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
     <value>{0} (откат выполнен)</value>
   </data>
   <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
     <value>Доп. настройки TUN перезагружены</value>
   </data>
-  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
-    <value>Доп. настройки TUN перезагружены</value>
-  </data>
   <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
-    <value>Настройки DNS перезагружены</value>
-  </data>
-  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
     <value>Настройки DNS перезагружены</value>
   </data>
   <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
     <value>Внешний контроллер обновлён, ядро перезапущено</value>
   </data>
-  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
-    <value>Внешний контроллер обновлён, ядро перезапущено</value>
-  </data>
   <data name="Msg_RolledBack.Text" xml:space="preserve">
-    <value> (откат выполнен)</value>
-  </data>
-  <data name="Msg_RolledBack.Content" xml:space="preserve">
     <value> (откат выполнен)</value>
   </data>
   <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
     <value>Удалить подписку</value>
   </data>
-  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
-    <value>Удалить подписку</value>
-  </data>
   <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
-    <value>Удалить &quot;{0}&quot;?</value>
-  </data>
-  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
     <value>Удалить &quot;{0}&quot;?</value>
   </data>
   <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
     <value>Изменить подписку: {0}</value>
   </data>
-  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
-    <value>Изменить подписку: {0}</value>
-  </data>
   <data name="Msg_NameRequired.Text" xml:space="preserve">
-    <value>Имя не может быть пустым</value>
-  </data>
-  <data name="Msg_NameRequired.Content" xml:space="preserve">
     <value>Имя не может быть пустым</value>
   </data>
   <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
     <value>Таймаут: 5-300 секунд</value>
   </data>
-  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
-    <value>Таймаут: 5-300 секунд</value>
-  </data>
   <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
-    <value>Интервал — неотрицательное целое</value>
-  </data>
-  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
     <value>Интервал — неотрицательное целое</value>
   </data>
   <data name="Msg_ChooseChannel.Text" xml:space="preserve">
     <value>Выберите канал обновления</value>
   </data>
-  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
-    <value>Выберите канал обновления</value>
-  </data>
   <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
-    <value>Изменить глобальные улучшения</value>
-  </data>
-  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
     <value>Изменить глобальные улучшения</value>
   </data>
   <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
     <value>Изменить улучшения: {0}</value>
   </data>
-  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
-    <value>Изменить улучшения: {0}</value>
-  </data>
   <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
-    <value>Порядок: глобальный Merge → глобальный Script → Merge профиля → Script профиля → Rules → Proxies → Groups</value>
-  </data>
-  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
     <value>Порядок: глобальный Merge → глобальный Script → Merge профиля → Script профиля → Rules → Proxies → Groups</value>
   </data>
   <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
     <value>✓ Сохранено</value>
   </data>
-  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
-    <value>✓ Сохранено</value>
-  </data>
   <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
-    <value>(Без имени)</value>
-  </data>
-  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
     <value>(Без имени)</value>
   </data>
   <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
     <value>Локальный файл</value>
   </data>
-  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
-    <value>Локальный файл</value>
-  </data>
   <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
-    <value>Удалённая подписка</value>
-  </data>
-  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
     <value>Удалённая подписка</value>
   </data>
   <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
     <value>Локальный профиль</value>
   </data>
-  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
-    <value>Локальный профиль</value>
-  </data>
   <data name="VM_NeverUpdated.Text" xml:space="preserve">
-    <value>Не обновлялась</value>
-  </data>
-  <data name="VM_NeverUpdated.Content" xml:space="preserve">
     <value>Не обновлялась</value>
   </data>
   <data name="VM_UpdatedAt.Text" xml:space="preserve">
     <value>Обновлено {0}</value>
   </data>
-  <data name="VM_UpdatedAt.Content" xml:space="preserve">
-    <value>Обновлено {0}</value>
-  </data>
   <data name="VM_ExpireIn.Text" xml:space="preserve">
-    <value>{0} истекает ({1} дн.)</value>
-  </data>
-  <data name="VM_ExpireIn.Content" xml:space="preserve">
     <value>{0} истекает ({1} дн.)</value>
   </data>
   <data name="VM_Expired.Text" xml:space="preserve">
     <value>Истекла</value>
   </data>
-  <data name="VM_Expired.Content" xml:space="preserve">
-    <value>Истекла</value>
-  </data>
   <data name="VM_Importing.Text" xml:space="preserve">
-    <value>Импорт подписки…</value>
-  </data>
-  <data name="VM_Importing.Content" xml:space="preserve">
     <value>Импорт подписки…</value>
   </data>
   <data name="VM_Imported.Text" xml:space="preserve">
     <value>Импортировано: {0}</value>
   </data>
-  <data name="VM_Imported.Content" xml:space="preserve">
-    <value>Импортировано: {0}</value>
-  </data>
   <data name="VM_ImportFailed.Text" xml:space="preserve">
-    <value>Ошибка импорта: {0}</value>
-  </data>
-  <data name="VM_ImportFailed.Content" xml:space="preserve">
     <value>Ошибка импорта: {0}</value>
   </data>
   <data name="VM_ImportingLocal.Text" xml:space="preserve">
     <value>Импорт локального профиля…</value>
   </data>
-  <data name="VM_ImportingLocal.Content" xml:space="preserve">
-    <value>Импорт локального профиля…</value>
-  </data>
   <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
-    <value>Ошибка локального импорта: {0}</value>
-  </data>
-  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
     <value>Ошибка локального импорта: {0}</value>
   </data>
   <data name="VM_Switched.Text" xml:space="preserve">
     <value>Переключено: {0}</value>
   </data>
-  <data name="VM_Switched.Content" xml:space="preserve">
-    <value>Переключено: {0}</value>
-  </data>
   <data name="VM_SwitchFailed.Text" xml:space="preserve">
-    <value>Ошибка переключения: {0}</value>
-  </data>
-  <data name="VM_SwitchFailed.Content" xml:space="preserve">
     <value>Ошибка переключения: {0}</value>
   </data>
   <data name="VM_DefaultNewName.Text" xml:space="preserve">
     <value>Новый профиль</value>
   </data>
-  <data name="VM_DefaultNewName.Content" xml:space="preserve">
-    <value>Новый профиль</value>
-  </data>
   <data name="VM_Created.Text" xml:space="preserve">
-    <value>Создано: {0}</value>
-  </data>
-  <data name="VM_Created.Content" xml:space="preserve">
     <value>Создано: {0}</value>
   </data>
   <data name="VM_CreateFailed.Text" xml:space="preserve">
     <value>Ошибка создания: {0}</value>
   </data>
-  <data name="VM_CreateFailed.Content" xml:space="preserve">
-    <value>Ошибка создания: {0}</value>
-  </data>
   <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
-    <value>Нет удалённых подписок</value>
-  </data>
-  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
     <value>Нет удалённых подписок</value>
   </data>
   <data name="VM_Updating.Text" xml:space="preserve">
     <value>Обновление: {0}…</value>
   </data>
-  <data name="VM_Updating.Content" xml:space="preserve">
-    <value>Обновление: {0}…</value>
-  </data>
   <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
-    <value>Ошибка обновления подписки: {0}: {1}</value>
-  </data>
-  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
     <value>Ошибка обновления подписки: {0}: {1}</value>
   </data>
   <data name="VM_UpdateAllDone.Text" xml:space="preserve">
     <value>Готово: успешно {0}/{1}</value>
   </data>
-  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
-    <value>Готово: успешно {0}/{1}</value>
-  </data>
   <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
-    <value>Обновлено: {0}</value>
-  </data>
-  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
     <value>Обновлено: {0}</value>
   </data>
   <data name="VM_UpdateFailed.Text" xml:space="preserve">
     <value>Ошибка обновления: {0}</value>
   </data>
-  <data name="VM_UpdateFailed.Content" xml:space="preserve">
-    <value>Ошибка обновления: {0}</value>
-  </data>
   <data name="VM_Deleted.Text" xml:space="preserve">
-    <value>Удалено</value>
-  </data>
-  <data name="VM_Deleted.Content" xml:space="preserve">
     <value>Удалено</value>
   </data>
   <data name="VM_ProfileDisabled.Text" xml:space="preserve">
     <value>(Не включено)</value>
   </data>
-  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
-    <value>(Не включено)</value>
-  </data>
   <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
-    <value>(Нет подписки)</value>
-  </data>
-  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
     <value>(Нет подписки)</value>
   </data>
   <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
     <value>Нажмите карточку для управления</value>
   </data>
-  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
-    <value>Нажмите карточку для управления</value>
-  </data>
   <data name="VM_CoreChecking.Text" xml:space="preserve">
-    <value>Проверка…</value>
-  </data>
-  <data name="VM_CoreChecking.Content" xml:space="preserve">
     <value>Проверка…</value>
   </data>
   <data name="VM_CoreRunning.Text" xml:space="preserve">
     <value>Ядро работает</value>
   </data>
-  <data name="VM_CoreRunning.Content" xml:space="preserve">
-    <value>Ядро работает</value>
-  </data>
   <data name="VM_CoreNotRunning.Text" xml:space="preserve">
-    <value>Ядро не запущено</value>
-  </data>
-  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
     <value>Ядро не запущено</value>
   </data>
   <data name="VM_UptimeHours.Text" xml:space="preserve">
     <value>{0} ч {1} мин</value>
   </data>
-  <data name="VM_UptimeHours.Content" xml:space="preserve">
-    <value>{0} ч {1} мин</value>
-  </data>
   <data name="VM_UptimeMinutes.Text" xml:space="preserve">
-    <value>{0} мин {1} с</value>
-  </data>
-  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
     <value>{0} мин {1} с</value>
   </data>
   <data name="VM_NotRunning.Text" xml:space="preserve">
     <value>Не запущено</value>
   </data>
-  <data name="VM_NotRunning.Content" xml:space="preserve">
-    <value>Не запущено</value>
-  </data>
   <data name="VM_RulesCount.Text" xml:space="preserve">
-    <value>{0} правил</value>
-  </data>
-  <data name="VM_RulesCount.Content" xml:space="preserve">
     <value>{0} правил</value>
   </data>
   <data name="VM_SubNoProfile.Text" xml:space="preserve">
     <value>Подписки ещё нет — нажмите</value>
   </data>
-  <data name="VM_SubNoProfile.Content" xml:space="preserve">
-    <value>Подписки ещё нет — нажмите</value>
-  </data>
   <data name="VM_SubRemoteHint.Text" xml:space="preserve">
-    <value>Удалённая подписка · нажмите карточку</value>
-  </data>
-  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
     <value>Удалённая подписка · нажмите карточку</value>
   </data>
   <data name="VM_SubLocalHint.Text" xml:space="preserve">
     <value>Локальный профиль · нажмите карточку</value>
   </data>
-  <data name="VM_SubLocalHint.Content" xml:space="preserve">
-    <value>Локальный профиль · нажмите карточку</value>
-  </data>
   <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
-    <value>TUN требует запуска от администратора</value>
-  </data>
-  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
     <value>TUN требует запуска от администратора</value>
   </data>
   <data name="VM_TunRejected.Text" xml:space="preserve">
     <value>Ядро не работает или отклонило TUN</value>
   </data>
-  <data name="VM_TunRejected.Content" xml:space="preserve">
-    <value>Ядро не работает или отклонило TUN</value>
-  </data>
   <data name="VM_ConnCount.Text" xml:space="preserve">
-    <value>Активных {0} · Закрытых {1}</value>
-  </data>
-  <data name="VM_ConnCount.Content" xml:space="preserve">
     <value>Активных {0} · Закрытых {1}</value>
   </data>
   <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
     <value>Ошибка закрытия соединения: {0}</value>
   </data>
-  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
-    <value>Ошибка закрытия соединения: {0}</value>
-  </data>
   <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
-    <value>Ошибка закрытия всех: {0}</value>
-  </data>
-  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
     <value>Ошибка закрытия всех: {0}</value>
   </data>
   <data name="VM_LogsCount.Text" xml:space="preserve">
     <value>{0} записей</value>
   </data>
-  <data name="VM_LogsCount.Content" xml:space="preserve">
-    <value>{0} записей</value>
-  </data>
   <data name="SVC_InvalidYaml.Text" xml:space="preserve">
-    <value>Файл не является корректным YAML</value>
-  </data>
-  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
     <value>Файл не является корректным YAML</value>
   </data>
   <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
     <value>Обновлять можно только удалённые подписки</value>
   </data>
-  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
-    <value>Обновлять можно только удалённые подписки</value>
-  </data>
   <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
-    <value>Подписка не изменилась (304): {0}</value>
-  </data>
-  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
     <value>Подписка не изменилась (304): {0}</value>
   </data>
   <data name="SVC_UpdateFailed.Text" xml:space="preserve">
     <value>Ошибка обновления подписки: {0}</value>
   </data>
-  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
-    <value>Ошибка обновления подписки: {0}</value>
-  </data>
   <data name="SVC_DownloadFailed.Text" xml:space="preserve">
-    <value>Ошибка загрузки: {0}</value>
-  </data>
-  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
     <value>Ошибка загрузки: {0}</value>
   </data>
   <data name="SVC_InvalidUrl.Text" xml:space="preserve">
     <value>Адрес подписки должен быть HTTP/HTTPS URL</value>
   </data>
-  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
-    <value>Адрес подписки должен быть HTTP/HTTPS URL</value>
-  </data>
   <data name="SVC_TooLarge.Text" xml:space="preserve">
-    <value>Подписка больше 20 МиБ</value>
-  </data>
-  <data name="SVC_TooLarge.Content" xml:space="preserve">
     <value>Подписка больше 20 МиБ</value>
   </data>
   <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
     <value>Ошибка применения после импорта: {0}</value>
   </data>
-  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
-    <value>Ошибка применения после импорта: {0}</value>
-  </data>
   <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
-    <value>Автообновление успешно: {0}</value>
-  </data>
-  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
     <value>Автообновление успешно: {0}</value>
   </data>
   <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
     <value>Автообновление не удалось: {0}: {1}</value>
   </data>
-  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
-    <value>Автообновление не удалось: {0}: {1}</value>
-  </data>
   <data name="Tray_InitFailed.Text" xml:space="preserve">
-    <value>Ошибка инициализации трея: {0}</value>
-  </data>
-  <data name="Tray_InitFailed.Content" xml:space="preserve">
     <value>Ошибка инициализации трея: {0}</value>
   </data>
   <data name="Tray_ShowWindow.Text" xml:space="preserve">
     <value>Показать главное окно</value>
   </data>
-  <data name="Tray_ShowWindow.Content" xml:space="preserve">
-    <value>Показать главное окно</value>
-  </data>
   <data name="Tray_ModeRule.Text" xml:space="preserve">
-    <value>Режим правил</value>
-  </data>
-  <data name="Tray_ModeRule.Content" xml:space="preserve">
     <value>Режим правил</value>
   </data>
   <data name="Tray_ModeGlobal.Text" xml:space="preserve">
     <value>Глобальный режим</value>
   </data>
-  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
-    <value>Глобальный режим</value>
-  </data>
   <data name="Tray_ModeDirect.Text" xml:space="preserve">
-    <value>Прямой режим</value>
-  </data>
-  <data name="Tray_ModeDirect.Content" xml:space="preserve">
     <value>Прямой режим</value>
   </data>
   <data name="Tray_SystemProxy.Text" xml:space="preserve">
     <value>Системный прокси</value>
   </data>
-  <data name="Tray_SystemProxy.Content" xml:space="preserve">
-    <value>Системный прокси</value>
-  </data>
   <data name="Tray_TunMode.Text" xml:space="preserve">
-    <value>Режим TUN</value>
-  </data>
-  <data name="Tray_TunMode.Content" xml:space="preserve">
     <value>Режим TUN</value>
   </data>
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Облегчённый режим</value>
   </data>
-  <data name="Tray_Lightweight.Content" xml:space="preserve">
-    <value>Облегчённый режим</value>
-  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
-    <value>Перезапустить ядро</value>
-  </data>
-  <data name="Tray_RestartCore.Content" xml:space="preserve">
     <value>Перезапустить ядро</value>
   </data>
   <data name="Tray_Exit.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="Tray_Exit.Content" xml:space="preserve">
-    <value>Выход</value>
-  </data>
   <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
-    <value>Ошибка обновления меню трея: {0}</value>
-  </data>
-  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
     <value>Ошибка обновления меню трея: {0}</value>
   </data>
   <data name="Tray_ProxyGroups.Text" xml:space="preserve">
     <value>Группы прокси</value>
   </data>
-  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
-    <value>Группы прокси</value>
-  </data>
   <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
-    <value>(Ядро не запущено)</value>
-  </data>
-  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
     <value>(Ядро не запущено)</value>
   </data>
   <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
     <value>Ошибка смены узла из трея: {0}</value>
   </data>
-  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
-    <value>Ошибка смены узла из трея: {0}</value>
-  </data>
   <data name="Tray_Profiles.Text" xml:space="preserve">
-    <value>Подписки</value>
-  </data>
-  <data name="Tray_Profiles.Content" xml:space="preserve">
     <value>Подписки</value>
   </data>
   <data name="Tray_NoProfiles.Text" xml:space="preserve">
     <value>(Нет подписок)</value>
   </data>
-  <data name="Tray_NoProfiles.Content" xml:space="preserve">
-    <value>(Нет подписок)</value>
-  </data>
   <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
-    <value>Ошибка переключения подписки: {0}</value>
-  </data>
-  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
     <value>Ошибка переключения подписки: {0}</value>
   </data>
   <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
     <value>Ошибка смены режима: {0}</value>
   </data>
-  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
-    <value>Ошибка смены режима: {0}</value>
-  </data>
   <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
-    <value>Ошибка переключения системного прокси: {0}</value>
-  </data>
-  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
     <value>Ошибка переключения системного прокси: {0}</value>
   </data>
   <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
     <value>Очистка при выходе не завершена: {0}</value>
   </data>
-  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
-    <value>Очистка при выходе не завершена: {0}</value>
-  </data>
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
-    <value>Правила</value>
-  </data>
-  <data name="Fmt_ModeRule.Content" xml:space="preserve">
     <value>Правила</value>
   </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Глобальный</value>
   </data>
-  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
-    <value>Глобальный</value>
-  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
-    <value>Прямой</value>
-  </data>
-  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Прямой</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
     <value>Поставщики прокси</value>
   </data>
-  <data name="Msg_ProviderTitleProxy.Content" xml:space="preserve">
-    <value>Поставщики прокси</value>
-  </data>
   <data name="Msg_ProviderTitleRules.Text" xml:space="preserve">
-    <value>Поставщики правил</value>
-  </data>
-  <data name="Msg_ProviderTitleRules.Content" xml:space="preserve">
     <value>Поставщики правил</value>
   </data>
   <data name="Msg_RefreshList.Text" xml:space="preserve">
     <value>Обновить список</value>
   </data>
-  <data name="Msg_RefreshList.Content" xml:space="preserve">
-    <value>Обновить список</value>
-  </data>
   <data name="Msg_HealthCheck.Text" xml:space="preserve">
-    <value>Проверка состояния</value>
-  </data>
-  <data name="Msg_HealthCheck.Content" xml:space="preserve">
     <value>Проверка состояния</value>
   </data>
   <data name="Msg_Loading.Text" xml:space="preserve">
     <value>Загрузка…</value>
   </data>
-  <data name="Msg_Loading.Content" xml:space="preserve">
-    <value>Загрузка…</value>
-  </data>
   <data name="Msg_NoProxyProviders.Text" xml:space="preserve">
-    <value>Нет поставщиков прокси</value>
-  </data>
-  <data name="Msg_NoProxyProviders.Content" xml:space="preserve">
     <value>Нет поставщиков прокси</value>
   </data>
   <data name="Msg_NoRuleProviders.Text" xml:space="preserve">
     <value>Нет поставщиков правил</value>
   </data>
-  <data name="Msg_NoRuleProviders.Content" xml:space="preserve">
-    <value>Нет поставщиков правил</value>
-  </data>
   <data name="Msg_ProviderCount.Text" xml:space="preserve">
-    <value>{0} поставщиков</value>
-  </data>
-  <data name="Msg_ProviderCount.Content" xml:space="preserve">
     <value>{0} поставщиков</value>
   </data>
   <data name="Msg_ProxyNodeCount.Text" xml:space="preserve">
     <value>{0} узлов</value>
   </data>
-  <data name="Msg_ProxyNodeCount.Content" xml:space="preserve">
-    <value>{0} узлов</value>
-  </data>
   <data name="Msg_RulesMeta.Text" xml:space="preserve">
-    <value>{0} · {1} · {2} правил</value>
-  </data>
-  <data name="Msg_RulesMeta.Content" xml:space="preserve">
     <value>{0} · {1} · {2} правил</value>
   </data>
   <data name="Msg_Update.Text" xml:space="preserve">
     <value>Обновить</value>
   </data>
-  <data name="Msg_Update.Content" xml:space="preserve">
-    <value>Обновить</value>
-  </data>
   <data name="Msg_Updating.Text" xml:space="preserve">
-    <value>Обновление {0}…</value>
-  </data>
-  <data name="Msg_Updating.Content" xml:space="preserve">
     <value>Обновление {0}…</value>
   </data>
   <data name="Msg_UpdatedOne.Text" xml:space="preserve">
     <value>{0} обновлено</value>
   </data>
-  <data name="Msg_UpdatedOne.Content" xml:space="preserve">
-    <value>{0} обновлено</value>
-  </data>
   <data name="Msg_UpdateFailedNamed.Text" xml:space="preserve">
-    <value>Ошибка обновления {0}: {1}</value>
-  </data>
-  <data name="Msg_UpdateFailedNamed.Content" xml:space="preserve">
     <value>Ошибка обновления {0}: {1}</value>
   </data>
   <data name="Msg_UpdatingAll.Text" xml:space="preserve">
     <value>Обновление всех…</value>
   </data>
-  <data name="Msg_UpdatingAll.Content" xml:space="preserve">
-    <value>Обновление всех…</value>
-  </data>
   <data name="Msg_UpdateAllDoneCount.Text" xml:space="preserve">
-    <value>Готово: {0}/{1}</value>
-  </data>
-  <data name="Msg_UpdateAllDoneCount.Content" xml:space="preserve">
     <value>Готово: {0}/{1}</value>
   </data>
   <data name="Msg_HealthChecking.Text" xml:space="preserve">
     <value>Проверка состояния…</value>
   </data>
-  <data name="Msg_HealthChecking.Content" xml:space="preserve">
-    <value>Проверка состояния…</value>
-  </data>
   <data name="Msg_HealthCheckDone.Text" xml:space="preserve">
-    <value>Проверка завершена</value>
-  </data>
-  <data name="Msg_HealthCheckDone.Content" xml:space="preserve">
     <value>Проверка завершена</value>
   </data>
   <data name="Msg_NeverUpdatedShort.Text" xml:space="preserve">
     <value>Не обновлялось</value>
   </data>
-  <data name="Msg_NeverUpdatedShort.Content" xml:space="preserve">
-    <value>Не обновлялось</value>
-  </data>
   <data name="Msg_UnlockUntested.Text" xml:space="preserve">
-    <value>Не тестировалось</value>
-  </data>
-  <data name="Msg_UnlockUntested.Content" xml:space="preserve">
     <value>Не тестировалось</value>
   </data>
   <data name="Msg_UnlockTesting.Text" xml:space="preserve">
     <value>Тестирование</value>
   </data>
-  <data name="Msg_UnlockTesting.Content" xml:space="preserve">
-    <value>Тестирование</value>
-  </data>
   <data name="Msg_UnlockSupported.Text" xml:space="preserve">
-    <value>Поддерживается</value>
-  </data>
-  <data name="Msg_UnlockSupported.Content" xml:space="preserve">
     <value>Поддерживается</value>
   </data>
   <data name="Msg_UnlockUnsupported.Text" xml:space="preserve">
     <value>Не поддерживается</value>
   </data>
-  <data name="Msg_UnlockUnsupported.Content" xml:space="preserve">
-    <value>Не поддерживается</value>
-  </data>
   <data name="Msg_UnlockUnknown.Text" xml:space="preserve">
-    <value>Неизвестно</value>
-  </data>
-  <data name="Msg_UnlockUnknown.Content" xml:space="preserve">
     <value>Неизвестно</value>
   </data>
   <data name="Msg_UnlockFailed.Text" xml:space="preserve">
     <value>Ошибка</value>
   </data>
-  <data name="Msg_UnlockFailed.Content" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
   <data name="Msg_SysProxyToggleFailedTitle.Text" xml:space="preserve">
-    <value>Ошибка переключения системного прокси</value>
-  </data>
-  <data name="Msg_SysProxyToggleFailedTitle.Content" xml:space="preserve">
     <value>Ошибка переключения системного прокси</value>
   </data>
   <data name="Msg_TunToggleFailedTitle.Text" xml:space="preserve">
     <value>Ошибка переключения TUN</value>
   </data>
-  <data name="Msg_TunToggleFailedTitle.Content" xml:space="preserve">
-    <value>Ошибка переключения TUN</value>
-  </data>
   <data name="Msg_CoreRestartFailedTitle.Text" xml:space="preserve">
-    <value>Ошибка перезапуска ядра</value>
-  </data>
-  <data name="Msg_CoreRestartFailedTitle.Content" xml:space="preserve">
     <value>Ошибка перезапуска ядра</value>
   </data>
   <data name="Msg_CloseThisConn.Text" xml:space="preserve">
     <value>Закрыть это соединение</value>
   </data>
-  <data name="Msg_CloseThisConn.Content" xml:space="preserve">
-    <value>Закрыть это соединение</value>
-  </data>
   <data name="Msg_Back.Text" xml:space="preserve">
-    <value>Назад</value>
-  </data>
-  <data name="Msg_Back.Content" xml:space="preserve">
     <value>Назад</value>
   </data>
   <data name="Msg_DetailNetwork.Text" xml:space="preserve">
     <value>Сеть: {0} ({1})</value>
   </data>
-  <data name="Msg_DetailNetwork.Content" xml:space="preserve">
-    <value>Сеть: {0} ({1})</value>
-  </data>
   <data name="Msg_DetailHost.Text" xml:space="preserve">
-    <value>Хост: {0}</value>
-  </data>
-  <data name="Msg_DetailHost.Content" xml:space="preserve">
     <value>Хост: {0}</value>
   </data>
   <data name="Msg_DetailDestination.Text" xml:space="preserve">
     <value>Цель: {0}</value>
   </data>
-  <data name="Msg_DetailDestination.Content" xml:space="preserve">
-    <value>Цель: {0}</value>
-  </data>
   <data name="Msg_DetailSource.Text" xml:space="preserve">
-    <value>Источник: {0}</value>
-  </data>
-  <data name="Msg_DetailSource.Content" xml:space="preserve">
     <value>Источник: {0}</value>
   </data>
   <data name="Msg_DetailRule.Text" xml:space="preserve">
     <value>Правило: {0}</value>
   </data>
-  <data name="Msg_DetailRule.Content" xml:space="preserve">
-    <value>Правило: {0}</value>
-  </data>
   <data name="Msg_DetailChains.Text" xml:space="preserve">
-    <value>Цепочка: {0}</value>
-  </data>
-  <data name="Msg_DetailChains.Content" xml:space="preserve">
     <value>Цепочка: {0}</value>
   </data>
   <data name="Msg_DetailProcess.Text" xml:space="preserve">
     <value>Процесс: {0}</value>
   </data>
-  <data name="Msg_DetailProcess.Content" xml:space="preserve">
-    <value>Процесс: {0}</value>
-  </data>
   <data name="Msg_DetailTraffic.Text" xml:space="preserve">
-    <value>Загрузка: {0}   Отдача: {1}</value>
-  </data>
-  <data name="Msg_DetailTraffic.Content" xml:space="preserve">
     <value>Загрузка: {0}   Отдача: {1}</value>
   </data>
   <data name="Msg_DetailTime.Text" xml:space="preserve">
     <value>Время: {0}</value>
   </data>
-  <data name="Msg_DetailTime.Content" xml:space="preserve">
-    <value>Время: {0}</value>
-  </data>
   <data name="Msg_QrTitle.Text" xml:space="preserve">
-    <value>QR-код: {0}</value>
-  </data>
-  <data name="Msg_QrTitle.Content" xml:space="preserve">
     <value>QR-код: {0}</value>
   </data>
   <data name="Msg_QrFailed.Text" xml:space="preserve">
     <value>Ошибка генерации QR: {0}</value>
   </data>
-  <data name="Msg_QrFailed.Content" xml:space="preserve">
-    <value>Ошибка генерации QR: {0}</value>
-  </data>
   <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
-    <value>Инструмент UWP Loopback</value>
-  </data>
-  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
     <value>Инструмент UWP Loopback</value>
   </data>
   <data name="Msg_LoopbackHint.Text" xml:space="preserve">
     <value>Отметьте UWP-приложения для loopback (нужны права админа)</value>
   </data>
-  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
-    <value>Отметьте UWP-приложения для loopback (нужны права админа)</value>
-  </data>
   <data name="Msg_LoopbackApply.Text" xml:space="preserve">
-    <value>Применить изменения</value>
-  </data>
-  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
     <value>Применить изменения</value>
   </data>
   <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
     <value>Применение…</value>
   </data>
-  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
-    <value>Применение…</value>
-  </data>
   <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
-    <value>Изменения loopback применены</value>
-  </data>
-  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
     <value>Изменения loopback применены</value>
   </data>
   <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
     <value>Ошибка применения: {0}</value>
   </data>
-  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
-    <value>Ошибка применения: {0}</value>
-  </data>
   <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
-    <value>Ошибка списка UWP-приложений: {0}</value>
-  </data>
-  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
     <value>Ошибка списка UWP-приложений: {0}</value>
   </data>
   <data name="Msg_ColumnSettings.Text" xml:space="preserve">
     <value>Настройки столбцов</value>
   </data>
-  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
-    <value>Настройки столбцов</value>
-  </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Таблица</value>
-  </data>
-  <data name="Msg_LayoutTable.Content" xml:space="preserve">
     <value>Таблица</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
     <value>Список</value>
   </data>
-  <data name="Msg_LayoutList.Content" xml:space="preserve">
-    <value>Список</value>
-  </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
-    <value>Минимум один столбец должен быть видим</value>
-  </data>
-  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
     <value>Минимум один столбец должен быть видим</value>
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Пользователь отменил UAC</value>
-  </data>
-  <data name="Msg_UacCancelled.Content" xml:space="preserve">
-    <value>Пользователь отменил UAC</value>
-  </data>
-  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
-    <value>Открыть инструмент</value>
   </data>
   <data name="Settings_OpenLoopback.Content" xml:space="preserve">
     <value>Открыть инструмент</value>
@@ -1981,325 +1085,163 @@
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>QR-код</value>
   </data>
-  <data name="Profiles_MenuQr.Content" xml:space="preserve">
-    <value>QR-код</value>
-  </data>
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
-    <value>QR-код только для удалённых подписок</value>
-  </data>
-  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR-код только для удалённых подписок</value>
   </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>Ядро mihomo запущено в привилегированном режиме службы</value>
   </data>
-  <data name="Core_StartedService.Content" xml:space="preserve">
-    <value>Ядро mihomo запущено в привилегированном режиме службы</value>
-  </data>
   <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
-    <value>Не удалось запустить службу, возврат к sidecar: {0}</value>
-  </data>
-  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
     <value>Не удалось запустить службу, возврат к sidecar: {0}</value>
   </data>
   <data name="Core_Started.Text" xml:space="preserve">
     <value>Ядро mihomo запущено</value>
   </data>
-  <data name="Core_Started.Content" xml:space="preserve">
-    <value>Ядро mihomo запущено</value>
-  </data>
   <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
-    <value>Служба не смогла остановить ядро: {0}</value>
-  </data>
-  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
     <value>Служба не смогла остановить ядро: {0}</value>
   </data>
   <data name="Core_KillLeftover.Text" xml:space="preserve">
     <value>Остановлен остаточный процесс ядра PID {0}</value>
   </data>
-  <data name="Core_KillLeftover.Content" xml:space="preserve">
-    <value>Остановлен остаточный процесс ядра PID {0}</value>
-  </data>
   <data name="Core_ApplyRejected.Text" xml:space="preserve">
-    <value>Применение конфигурации отклонено: {0}</value>
-  </data>
-  <data name="Core_ApplyRejected.Content" xml:space="preserve">
     <value>Применение конфигурации отклонено: {0}</value>
   </data>
   <data name="Core_HotReloaded.Text" xml:space="preserve">
     <value>Конфигурация горячо перезагружена</value>
   </data>
-  <data name="Core_HotReloaded.Content" xml:space="preserve">
-    <value>Конфигурация горячо перезагружена</value>
-  </data>
   <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
-    <value>Горячая перезагрузка не удалась, перезапуск: {0}</value>
-  </data>
-  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
     <value>Горячая перезагрузка не удалась, перезапуск: {0}</value>
   </data>
   <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
     <value>Ошибка восстановления выборов узлов: {0}</value>
   </data>
-  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
-    <value>Ошибка восстановления выборов узлов: {0}</value>
-  </data>
   <data name="Core_RestoredSelection.Text" xml:space="preserve">
-    <value>Выбор узла восстановлен: {0} → {1}</value>
-  </data>
-  <data name="Core_RestoredSelection.Content" xml:space="preserve">
     <value>Выбор узла восстановлен: {0} → {1}</value>
   </data>
   <data name="Core_SelectionMissing.Text" xml:space="preserve">
     <value>{0} сохранённых узлов отсутствуют; восстановление пропущено</value>
   </data>
-  <data name="Core_SelectionMissing.Content" xml:space="preserve">
-    <value>{0} сохранённых узлов отсутствуют; восстановление пропущено</value>
-  </data>
   <data name="Core_JobAssignFailed.Text" xml:space="preserve">
-    <value>Не удалось привязать Job Object; ядро может остаться</value>
-  </data>
-  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
     <value>Не удалось привязать Job Object; ядро может остаться</value>
   </data>
   <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
     <value>Не удалось запустить процесс mihomo</value>
   </data>
-  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
-    <value>Не удалось запустить процесс mihomo</value>
-  </data>
   <data name="Core_ValidateFailed.Text" xml:space="preserve">
-    <value>Ошибка проверки конфигурации: {0}</value>
-  </data>
-  <data name="Core_ValidateFailed.Content" xml:space="preserve">
     <value>Ошибка проверки конфигурации: {0}</value>
   </data>
   <data name="Core_ProcessExited.Text" xml:space="preserve">
     <value>mihomo аварийно завершился; проверьте журналы</value>
   </data>
-  <data name="Core_ProcessExited.Content" xml:space="preserve">
-    <value>mihomo аварийно завершился; проверьте журналы</value>
-  </data>
   <data name="Core_ControllerTimeout.Text" xml:space="preserve">
-    <value>Таймаут ожидания External Controller</value>
-  </data>
-  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
     <value>Таймаут ожидания External Controller</value>
   </data>
   <data name="Core_Pid.Text" xml:space="preserve">
     <value>mihomo PID: {0}</value>
   </data>
-  <data name="Core_Pid.Content" xml:space="preserve">
-    <value>mihomo PID: {0}</value>
-  </data>
   <data name="Proxy_Restored.Text" xml:space="preserve">
-    <value>Системный прокси восстановлен</value>
-  </data>
-  <data name="Proxy_Restored.Content" xml:space="preserve">
     <value>Системный прокси восстановлен</value>
   </data>
   <data name="Proxy_Enabled.Text" xml:space="preserve">
     <value>Системный прокси включён: {0}</value>
   </data>
-  <data name="Proxy_Enabled.Content" xml:space="preserve">
-    <value>Системный прокси включён: {0}</value>
-  </data>
   <data name="Proxy_EnabledPac.Text" xml:space="preserve">
-    <value>Системный прокси включён (PAC): {0}</value>
-  </data>
-  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
     <value>Системный прокси включён (PAC): {0}</value>
   </data>
   <data name="Proxy_StaleRestored.Text" xml:space="preserve">
     <value>Обнаружен не восстановленный прокси; настройки восстановлены</value>
   </data>
-  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
-    <value>Обнаружен не восстановленный прокси; настройки восстановлены</value>
-  </data>
   <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
-    <value>Обнаружен прокси от старой версии; отключён</value>
-  </data>
-  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
     <value>Обнаружен прокси от старой версии; отключён</value>
   </data>
   <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
     <value>Не удалось восстановить остаточный прокси: {0}</value>
   </data>
-  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
-    <value>Не удалось восстановить остаточный прокси: {0}</value>
-  </data>
   <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
-    <value>Системный прокси изменён другой программой; Flux не перезапишет</value>
-  </data>
-  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
     <value>Системный прокси изменён другой программой; Flux не перезапишет</value>
   </data>
   <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
     <value>Ошибка чтения снимка прокси: {0}</value>
   </data>
-  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
-    <value>Ошибка чтения снимка прокси: {0}</value>
-  </data>
   <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
-    <value>Обнаружено внешнее изменение прокси; восстановление</value>
-  </data>
-  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
     <value>Обнаружено внешнее изменение прокси; восстановление</value>
   </data>
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>Ошибка защиты прокси: {0}</value>
   </data>
-  <data name="Proxy_GuardError.Content" xml:space="preserve">
-    <value>Ошибка защиты прокси: {0}</value>
-  </data>
   <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>Ошибка загрузки verge.yaml: {0}</value>
-  </data>
-  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
     <value>Ошибка загрузки verge.yaml: {0}</value>
   </data>
   <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
     <value>Ошибка резервной копии миграции verge.yaml: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
-    <value>Ошибка резервной копии миграции verge.yaml: {0}</value>
-  </data>
   <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml мигрирован на схему v{0}; копия: {1}</value>
-  </data>
-  <data name="Config_VergeMigrated.Content" xml:space="preserve">
     <value>verge.yaml мигрирован на схему v{0}; копия: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>Ошибка загрузки config.yaml: {0}</value>
   </data>
-  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
-    <value>Ошибка загрузки config.yaml: {0}</value>
-  </data>
   <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
-    <value>Ошибка загрузки profiles.yaml: {0}</value>
-  </data>
-  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
     <value>Ошибка загрузки profiles.yaml: {0}</value>
   </data>
   <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
     <value>Ошибка регистрации протокола: {0}</value>
   </data>
-  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
-    <value>Ошибка регистрации протокола: {0}</value>
-  </data>
   <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
-    <value>Ошибка импорта по глубокой ссылке: {0}</value>
-  </data>
-  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
     <value>Ошибка импорта по глубокой ссылке: {0}</value>
   </data>
   <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
     <value>Автозапуск отключён пользователем; включите в диспетчере задач</value>
   </data>
-  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
-    <value>Автозапуск отключён пользователем; включите в диспетчере задач</value>
-  </data>
   <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
-    <value>Автозапуск отключён системной политикой</value>
-  </data>
-  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
     <value>Автозапуск отключён системной политикой</value>
   </data>
   <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
     <value>Пользователь не разрешил автозапуск</value>
   </data>
-  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
-    <value>Пользователь не разрешил автозапуск</value>
-  </data>
   <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
-    <value>Не удалось открыть раздел реестра Run</value>
-  </data>
-  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
     <value>Не удалось открыть раздел реестра Run</value>
   </data>
   <data name="Boot_LanguageFailed.Text" xml:space="preserve">
     <value>Ошибка установки языка: {0}</value>
   </data>
-  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
-    <value>Ошибка установки языка: {0}</value>
-  </data>
   <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
-    <value>Ядро не готово; системный прокси пропущен</value>
-  </data>
-  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
     <value>Ядро не готово; системный прокси пропущен</value>
   </data>
   <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
     <value>Ошибка инициализации горячих клавиш: {0}</value>
   </data>
-  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
-    <value>Ошибка инициализации горячих клавиш: {0}</value>
-  </data>
   <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
-    <value>Ошибка регистрации горячей клавиши: {0}</value>
-  </data>
-  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
     <value>Ошибка регистрации горячей клавиши: {0}</value>
   </data>
   <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
     <value>Ошибка выполнения горячей клавиши ({0}): {1}</value>
   </data>
-  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
-    <value>Ошибка выполнения горячей клавиши ({0}): {1}</value>
-  </data>
   <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
-    <value>Действие горячей клавиши не реализовано: {0}</value>
-  </data>
-  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
     <value>Действие горячей клавиши не реализовано: {0}</value>
   </data>
   <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
     <value>Нет прав админа и службы; TUN безопасно отключён</value>
   </data>
-  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
-    <value>Нет прав админа и службы; TUN безопасно отключён</value>
-  </data>
   <data name="Boot_LightweightAuto.Text" xml:space="preserve">
-    <value>Окно закрыто {0} мин; переход в облегчённый режим</value>
-  </data>
-  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
     <value>Окно закрыто {0} мин; переход в облегчённый режим</value>
   </data>
   <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
     <value>Ошибка авто-облегчённого режима: {0}</value>
   </data>
-  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
-    <value>Ошибка авто-облегчённого режима: {0}</value>
-  </data>
   <data name="Lightweight_Entered.Text" xml:space="preserve">
-    <value>Включён облегчённый режим (окно освобождено, ядро работает)</value>
-  </data>
-  <data name="Lightweight_Entered.Content" xml:space="preserve">
     <value>Включён облегчённый режим (окно освобождено, ядро работает)</value>
   </data>
   <data name="Lightweight_Exited.Text" xml:space="preserve">
     <value>Вышел из облегчённого режима</value>
   </data>
-  <data name="Lightweight_Exited.Content" xml:space="preserve">
-    <value>Вышел из облегчённого режима</value>
-  </data>
   <data name="Boot_StartFailed.Text" xml:space="preserve">
-    <value>Ошибка запуска: {0}</value>
-  </data>
-  <data name="Boot_StartFailed.Content" xml:space="preserve">
     <value>Ошибка запуска: {0}</value>
   </data>
   <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
     <value>Ошибка запуска ядра: {0}</value>
   </data>
-  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
-    <value>Ошибка запуска ядра: {0}</value>
-  </data>
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
-    <value>Ошибка применения системного прокси: {0}</value>
-  </data>
-  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
     <value>Ошибка применения системного прокси: {0}</value>
   </data>
 </root>
