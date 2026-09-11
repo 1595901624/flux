@@ -1,0 +1,158 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "e7c5b8ff9273130f3de1529be260f0554229cc7b",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 1078,
+    "git_diff_deleted_lines": 12,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 1078,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Service/ServicePathValidator.cs": {
+        "BYMC": [
+          "1-63"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Service/ServiceProtocol.cs": {
+        "BYMC": [
+          "1-104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Flux.Service.Installer.csproj": {
+        "BYMC": [
+          "1-19"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Program.cs": {
+        "BYMC": [
+          "1-89"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/ScmNative.cs": {
+        "BYMC": [
+          "1-199"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/app.manifest": {
+        "BYMC": [
+          "1-11"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/Flux.Service.csproj": {
+        "BYMC": [
+          "1-27"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/FluxServiceWorker.cs": {
+        "BYMC": [
+          "1-56"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/PipeServer.cs": {
+        "BYMC": [
+          "1-93"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/PrivilegedCoreManager.cs": {
+        "BYMC": [
+          "1-129"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/Program.cs": {
+        "BYMC": [
+          "1-16"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service/RequestHandler.cs": {
+        "BYMC": [
+          "1-61"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [
+          "51",
+          "54-57"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.slnx": {
+        "BYMC": [
+          "4-5"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "27-30",
+          "34"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [
+          "15"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [
+          "6",
+          "9-11",
+          "17-23",
+          "26",
+          "54-71",
+          "143-150",
+          "162",
+          "272",
+          "277"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/PrivilegeBroker.cs": {
+        "BYMC": [
+          "1-157"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789143527,
+  "requirement_id": ""
+}
