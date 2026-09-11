@@ -1,0 +1,239 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "52cc6139220fe7e22b5e019614348a5c2abae081",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 4426,
+    "git_diff_deleted_lines": 52,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 4413,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "32",
+          "45",
+          "78",
+          "94",
+          "110",
+          "114",
+          "133",
+          "137",
+          "184",
+          "190"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AutoStartService.cs": {
+        "BYMC": [
+          "41-43",
+          "49"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "46",
+          "62",
+          "66",
+          "91",
+          "118"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [
+          "65",
+          "69",
+          "76",
+          "131",
+          "136",
+          "147",
+          "196",
+          "229",
+          "247",
+          "254",
+          "259",
+          "278",
+          "286",
+          "326",
+          "336",
+          "340",
+          "362"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DeepLinkService.cs": {
+        "BYMC": [
+          "27",
+          "65"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LightweightManager.cs": {
+        "BYMC": [
+          "37",
+          "51",
+          "82",
+          "88"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SysProxyService.cs": {
+        "BYMC": [
+          "26",
+          "55",
+          "61",
+          "98",
+          "110",
+          "115",
+          "137",
+          "162",
+          "192",
+          "201"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "771-782",
+          "1993-2303"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "121-122"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_core_table.py": {
+        "BYMC": [
+          "1-68"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_l10n_core.py": {
+        "BYMC": [
+          "1-92"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789152879,
+  "requirement_id": ""
+}
