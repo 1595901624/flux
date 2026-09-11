@@ -1,0 +1,156 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "8b41cacd2b84e271f3f4276d409e92245e47bb03",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 1991,
+    "git_diff_deleted_lines": 59,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 1985,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Config/RuntimeConfigBuilder.cs": {
+        "BYMC": [
+          "1-520"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Config/ScriptSandbox.cs": {
+        "BYMC": [
+          "1-194"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Config/YamlOps.cs": {
+        "BYMC": [
+          "1-283"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Contracts/CoreContracts.cs": {
+        "BYMC": [
+          "1-198"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Contracts/OperationResult.cs": {
+        "BYMC": [
+          "1-51"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Contracts/ServiceContracts.cs": {
+        "BYMC": [
+          "1-180"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Flux.Core.csproj": {
+        "BYMC": [
+          "1-20"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Settings/FluxSettings.cs": {
+        "BYMC": [
+          "1-194"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Settings/SettingsStore.cs": {
+        "BYMC": [
+          "1-189"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Utils/DataProtector.cs": {
+        "BYMC": [
+          "1-39"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Utils/SensitiveMasker.cs": {
+        "BYMC": [
+          "1-57"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [
+          "45-47",
+          "51-53"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.slnx": {
+        "BYMC": [
+          "3"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "11-14"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "1-2",
+          "11",
+          "15",
+          "42",
+          "51-68",
+          "294-296",
+          "298",
+          "300",
+          "302-308",
+          "310-311",
+          "313-314",
+          "317",
+          "320-321"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [
+          "14-15",
+          "55"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [
+          "3-4",
+          "19-20"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789142922,
+  "requirement_id": ""
+}
