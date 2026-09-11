@@ -598,6 +598,199 @@ public sealed partial class SettingsPage : Page
         }
     }
 
+    // ---------- WebDAV 备份 ----------
+
+    private Flux.Core.Backup.WebDavClient? CreateWebDavClient()
+    {
+        var verge = AppServices.Config.Verge;
+        if (string.IsNullOrWhiteSpace(verge.WebDavUrl)) return null;
+        return new Flux.Core.Backup.WebDavClient(
+            verge.WebDavUrl,
+            verge.WebDavUsername,
+            Flux.Core.Utils.DataProtector.Unprotect(verge.WebDavPasswordEncrypted));
+    }
+
+    private async void WebDavConfig_Click(object sender, RoutedEventArgs e)
+    {
+        var verge = AppServices.Config.Verge;
+        var urlBox = new TextBox { PlaceholderText = "https://dav.example.com/dav/", Text = verge.WebDavUrl, MinWidth = 360 };
+        var userBox = new TextBox { PlaceholderText = "用户名", Text = verge.WebDavUsername, MinWidth = 360 };
+        var passBox = new PasswordBox { PlaceholderText = "密码（保存后加密存储）", MinWidth = 360 };
+        var dirBox = new TextBox { PlaceholderText = "flux-backups", Text = verge.WebDavDir, MinWidth = 360 };
+
+        var form = new StackPanel { Spacing = 10, MinWidth = 380 };
+        form.Children.Add(urlBox);
+        form.Children.Add(userBox);
+        form.Children.Add(passBox);
+        form.Children.Add(dirBox);
+
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = "WebDAV 服务器设置",
+            Content = form,
+            PrimaryButtonText = "保存",
+            CloseButtonText = "取消",
+            DefaultButton = ContentDialogButton.Primary,
+        };
+        if (await dialog.ShowAsync() != ContentDialogResult.Primary) return;
+
+        if (!Uri.TryCreate(urlBox.Text.Trim(), UriKind.Absolute, out var uri) ||
+            uri.Scheme is not ("http" or "https"))
+        {
+            await ShowInfoAsync("地址无效", "WebDAV 地址必须是有效的 HTTP/HTTPS URL。");
+            return;
+        }
+
+        verge.WebDavUrl = urlBox.Text.Trim();
+        verge.WebDavUsername = userBox.Text.Trim();
+        verge.WebDavDir = string.IsNullOrWhiteSpace(dirBox.Text) ? "flux-backups" : dirBox.Text.Trim();
+        verge.WebDavPasswordEncrypted = Flux.Core.Utils.DataProtector.Protect(passBox.Password);
+        AppServices.Config.SaveVerge();
+        await ShowInfoAsync("已保存", "WebDAV 配置已保存（密码经 DPAPI 加密，明文不落盘）。");
+    }
+
+    private async void WebDavUpload_Click(object sender, RoutedEventArgs e)
+    {
+        var client = CreateWebDavClient();
+        if (client is null)
+        {
+            await ShowInfoAsync("未配置", "请先设置 WebDAV 服务器。");
+            return;
+        }
+        try
+        {
+            var name = await AppServices.Backup.CreateAsync("webdav upload");
+            var bytes = await File.ReadAllBytesAsync(Path.Combine(Paths.DataBackupDir, name));
+            var dir = AppServices.Config.Verge.WebDavDir;
+            await client.UploadAsync(dir, name, bytes);
+            await ShowInfoAsync("上传完成", name + " 已上传到 WebDAV。");
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("上传失败", ex.Message);
+        }
+    }
+
+    private async void WebDavRestore_Click(object sender, RoutedEventArgs e)
+    {
+        var client = CreateWebDavClient();
+        if (client is null)
+        {
+            await ShowInfoAsync("未配置", "请先设置 WebDAV 服务器。");
+            return;
+        }
+        try
+        {
+            var dir = AppServices.Config.Verge.WebDavDir;
+            var remote = await client.ListAsync(dir);
+            if (remote.Count == 0)
+            {
+                await ShowInfoAsync("无备份", "WebDAV 上没有备份文件。");
+                return;
+            }
+
+            var listBox = new ListView { Height = 240, SelectionMode = ListViewSelectionMode.Single };
+            foreach (var (name, size, modified) in remote.OrderByDescending(r => r.Modified))
+                listBox.Items.Add(new TextBlock { Text = name + "　(" + Format.Bytes(size) + ")", FontSize = 12 });
+            listBox.SelectedIndex = 0;
+
+            var dialog = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "从 WebDAV 恢复",
+                Content = listBox,
+                PrimaryButtonText = "下载并恢复",
+                CloseButtonText = "取消",
+                DefaultButton = ContentDialogButton.Primary,
+            };
+            if (await dialog.ShowAsync() != ContentDialogResult.Primary || listBox.SelectedIndex < 0) return;
+
+            var selected = remote.OrderByDescending(r => r.Modified).ToList()[listBox.SelectedIndex].Name;
+            var bytes = await client.DownloadAsync(dir, selected);
+            var localPath = Path.Combine(Paths.DataBackupDir, Path.GetFileName(selected));
+            await File.WriteAllBytesAsync(localPath, bytes);
+            await Task.Run(() => AppServices.Backup.RestoreAsync(Path.GetFileName(selected)).GetAwaiter().GetResult());
+            await AppServices.Core.RestartAsync();
+            await ShowInfoAsync("恢复完成", "已从 " + selected + " 恢复并重启内核。");
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("恢复失败", ex.Message);
+        }
+    }
+
+    // ---------- 诊断与更新 ----------
+
+    private async void ExportDiagnostics_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var service = new DiagnosticsService(Paths.AppDataDir, (level, msg) => LogService.App(msg, level));
+            var path = await service.ExportAsync();
+            var dialog = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "诊断包已导出",
+                Content = path + "（内容仅保存在本地，可自行决定是否分享）",
+                CloseButtonText = "确定",
+            };
+            await dialog.ShowAsync();
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("导出失败", ex.Message);
+        }
+    }
+
+    private async void CheckUpdate_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            using var client = new System.Net.Http.HttpClient();
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("Flux-Update-Check");
+            client.Timeout = TimeSpan.FromSeconds(15);
+            var json = await client.GetStringAsync("https://api.github.com/repos/1595901624/flux/releases/latest");
+            var current = typeof(App).Assembly.GetName().Version?.ToString(3) ?? "0.0.0";
+            var result = Flux.Core.Update.UpdateManifestParser.ParseLatest(
+                json, current, System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture.ToString());
+
+            if (result is null || !result.HasUpdate)
+            {
+                await ShowInfoAsync("检查更新", "当前已是最新版本（" + current + "）。");
+                return;
+            }
+
+            var notes = result.ReleaseNotes ?? "";
+            if (notes.Length > 600) notes = notes[..600] + "…";
+            var dialog = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "发现新版本 " + result.LatestVersion,
+                Content = new StackPanel { Spacing = 8, Children =
+                {
+                    new TextBlock { Text = notes, TextWrapping = TextWrapping.Wrap, MaxHeight = 240 },
+                    new TextBlock { Text = "将打开 GitHub 发布页手动下载（MSIX/便携包）。", FontSize = 12, Opacity = 0.7, TextWrapping = TextWrapping.Wrap },
+                } },
+                PrimaryButtonText = "打开发布页",
+                CloseButtonText = "关闭",
+                DefaultButton = ContentDialogButton.Primary,
+            };
+            if (await dialog.ShowAsync() == ContentDialogResult.Primary && result.ReleaseUrl is not null)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = result.ReleaseUrl,
+                    UseShellExecute = true,
+                });
+            }
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("检查更新失败", ex.Message);
+        }
+    }
+
     private void OpenBackupDir_Click(object sender, RoutedEventArgs e)
     {
         try { System.Diagnostics.Process.Start("explorer.exe", Paths.DataBackupDir); } catch { }

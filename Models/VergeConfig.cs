@@ -78,6 +78,21 @@ public class VergeConfig
     [YamlMember(Alias = "auto-lightweight-minutes")]
     public int AutoLightweightMinutes { get; set; } = 10;
 
+    /// <summary>WebDAV 备份服务器地址。</summary>
+    [YamlMember(Alias = "webdav-url")]
+    public string WebDavUrl { get; set; } = "";
+
+    [YamlMember(Alias = "webdav-username")]
+    public string WebDavUsername { get; set; } = "";
+
+    /// <summary>WebDAV 目录（服务器上的相对目录）。</summary>
+    [YamlMember(Alias = "webdav-dir")]
+    public string WebDavDir { get; set; } = "flux-backups";
+
+    /// <summary>DPAPI 加密后的 WebDAV 密码（Base64），明文不落盘。</summary>
+    [YamlMember(Alias = "webdav-password-encrypted")]
+    public string WebDavPasswordEncrypted { get; set; } = "";
+
     /// <summary>全局热键：action → 组合键文本（如 "Ctrl+Shift+F"）。空串表示未设置。</summary>
     [YamlMember(Alias = "hotkeys")]
     public Dictionary<string, string> Hotkeys { get; set; } = new();
