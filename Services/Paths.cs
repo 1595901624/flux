@@ -30,6 +30,10 @@ public static class Paths
     public static string RuntimeConfigFile => Path.Combine(AppDataDir, "runtime.yaml");
     public static string CheckConfigFile => Path.Combine(AppDataDir, "check.yaml");
     public static string ProxyStateFile => Path.Combine(AppDataDir, "system-proxy-state.json");
+    /// <summary>PAC 自动配置脚本文件路径。</summary>
+    public static string PacFile => Path.Combine(AppDataDir, "proxy.pac");
+    /// <summary>PAC 文件的 file:// URL（WinINET AUTOCONFIG_URL 使用）。</summary>
+    public static string PacFileUrl => new Uri(PacFile).AbsoluteUri;
     public static string AppLogFile => Path.Combine(LogsDir, "app.log");
     public static string CoreLogFile => Path.Combine(LogsDir, "core.log");
 

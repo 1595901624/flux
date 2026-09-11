@@ -44,6 +44,10 @@ public sealed class RuntimeConfigBuilder : IRuntimeConfigBuilder
         var config = input.Profile is null ? new YamlMappingNode() : (YamlMappingNode)YamlOps.Clone(input.Profile);
         YamlOps.LowercaseKeys(config);
 
+        // 1b. 应用基础配置整体合并（tun/dns/profile/tcp-concurrent 等默认值来源；
+        //     控制面键由步骤 11 强制恢复，因此此处合并不会泄漏订阅/脚本的修改）
+        YamlOps.DeepMerge(config, input.ClashBase);
+
         // 2. 控制面快照（来自应用基础配置，步骤 11 强制恢复）
         var snapshot = CaptureControlPlane(input.ClashBase);
 

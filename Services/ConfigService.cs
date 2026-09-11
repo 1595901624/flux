@@ -188,6 +188,34 @@ public class ConfigService
         RuntimeInvalidated?.Invoke();
     }
 
+    /// <summary>按路径（支持 a.b.c）写入字符串序列（如 dns.nameserver，每行一项）。</summary>
+    public void PatchClashList(string key, IReadOnlyList<string> items)
+    {
+        var parts = key.Split('.');
+        var current = ClashBase;
+        for (var i = 0; i < parts.Length - 1; i++)
+        {
+            var k = new YamlScalarNode(parts[i]);
+            if (current.Children.TryGetValue(k, out var next) && next is YamlMappingNode nextMap)
+            {
+                current = nextMap;
+            }
+            else
+            {
+                var newMap = new YamlMappingNode();
+                current.Children[k] = newMap;
+                current = newMap;
+            }
+        }
+
+        var seq = new YamlSequenceNode();
+        foreach (var item in items.Where(s => !string.IsNullOrWhiteSpace(s)))
+            seq.Children.Add(new YamlScalarNode(item.Trim()));
+        current.Children[new YamlScalarNode(parts[^1])] = seq;
+        SaveClashBase();
+        RuntimeInvalidated?.Invoke();
+    }
+
     public string Mode
     {
         get => GetScalar("mode", "rule");

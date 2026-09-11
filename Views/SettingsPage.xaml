@@ -26,6 +26,9 @@
                 <sc:SettingsCard Header="系统代理" Description="将 Flux 设为系统 HTTP/HTTPS 代理">
                     <ToggleSwitch x:Name="SysProxySwitch" Toggled="SysProxy_Toggled" />
                 </sc:SettingsCard>
+                <sc:SettingsCard Header="PAC 模式" Description="系统代理经由自动配置脚本（绕过规则生效）">
+                    <ToggleSwitch x:Name="PacSwitch" Toggled="Pac_Toggled" />
+                </sc:SettingsCard>
                 <sc:SettingsCard Header="代理守护" Description="定期检查并恢复被其他程序修改的系统代理">
                     <ToggleSwitch x:Name="ProxyGuardSwitch" Toggled="ProxyGuard_Toggled" />
                 </sc:SettingsCard>
@@ -63,6 +66,34 @@
                 <sc:SettingsCard Header="TUN 模式" Description="接管全部系统流量（需要管理员权限）">
                     <ToggleSwitch x:Name="TunSwitch" Toggled="Tun_Toggled" />
                 </sc:SettingsCard>
+                <sc:SettingsCard Header="TUN 高级设置" Description="堆栈 / DNS 劫持；应用后重载配置">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <ComboBox x:Name="TunStackBox" Width="110" SelectedIndex="0">
+                            <ComboBoxItem Tag="gvisor" Content="gvisor" />
+                            <ComboBoxItem Tag="system" Content="system" />
+                            <ComboBoxItem Tag="mixed" Content="mixed" />
+                        </ComboBox>
+                        <TextBox x:Name="TunDnsHijackBox" Width="110" PlaceholderText="any:53" />
+                        <Button Content="应用" Click="ApplyTunAdvanced_Click" />
+                    </StackPanel>
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="DNS 设置" Description="enhanced-mode / fake-ip 范围；应用后重载配置">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <ComboBox x:Name="DnsModeBox" Width="120" SelectedIndex="0">
+                            <ComboBoxItem Tag="fake-ip" Content="fake-ip" />
+                            <ComboBoxItem Tag="redir-host" Content="redir-host" />
+                        </ComboBox>
+                        <TextBox x:Name="DnsFakeIpRangeBox" Width="140" PlaceholderText="198.18.0.1/16" />
+                        <Button Content="应用" Click="ApplyDns_Click" />
+                    </StackPanel>
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="外部控制器" Description="RESTful API 地址与 Secret；应用后重启内核">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBox x:Name="ControllerBox" Width="160" PlaceholderText="127.0.0.1:9097" />
+                        <PasswordBox x:Name="ControllerSecretBox" Width="140" PlaceholderText="Secret" />
+                        <Button Content="应用" Click="ApplyController_Click" />
+                    </StackPanel>
+                </sc:SettingsCard>
                 <sc:SettingsCard Header="断开连接于模式切换" Description="切换代理模式时关闭全部现有连接">
                     <ToggleSwitch x:Name="AutoCloseConnSwitch" Toggled="AutoCloseConn_Toggled" />
                 </sc:SettingsCard>
@@ -83,6 +114,21 @@
                 </sc:SettingsCard>
                 <sc:SettingsCard Header="Flux 服务" Description="以 LocalSystem 运行，普通用户无需管理员即可使用 TUN">
                     <Button Content="安装 / 修复服务" Click="InstallService_Click" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="全局热键 · 显示 / 隐藏窗口" Description="如 Ctrl+Shift+F1；留空禁用">
+                    <TextBox x:Name="HotkeyWindowBox" MinWidth="180" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="全局热键 · 切换系统代理">
+                    <TextBox x:Name="HotkeySysproxyBox" MinWidth="180" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="全局热键 · 切换 TUN">
+                    <TextBox x:Name="HotkeyTunBox" MinWidth="180" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="全局热键 · 重新激活订阅">
+                    <TextBox x:Name="HotkeyReactivateBox" MinWidth="180" />
+                </sc:SettingsCard>
+                <sc:SettingsCard Header="全局热键" Description="保存时注册；冲突的组合会被拒绝并显示原因">
+                    <Button Content="保存热键" Click="SaveHotkeys_Click" />
                 </sc:SettingsCard>
                 <sc:SettingsCard Header="复制环境变量" Description="在终端中让命令行程序走代理">
                     <StackPanel Orientation="Horizontal" Spacing="8">

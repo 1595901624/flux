@@ -59,6 +59,22 @@ public sealed partial class SettingsPage : Page
         }
         SilentStartSwitch.IsOn = verge.EnableSilentStart;
         SysProxySwitch.IsOn = verge.EnableSystemProxy;
+        PacSwitch.IsOn = verge.EnablePacMode;
+        HotkeyWindowBox.Text = verge.Hotkeys.GetValueOrDefault("show_hide_window", "");
+        HotkeySysproxyBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
+        HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
+        HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
+
+        // TUN / DNS / 外部控制器 初始值（来自基础配置）
+        var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
+        SelectTag(TunStackBox, string.IsNullOrEmpty(tunStack) ? "gvisor" : tunStack);
+        TunDnsHijackBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "dns-hijack") is { } hijack && hijack.Length > 0 ? hijack : "any:53";
+        var dnsMode = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "enhanced-mode");
+        SelectTag(DnsModeBox, string.IsNullOrEmpty(dnsMode) ? "fake-ip" : dnsMode);
+        DnsFakeIpRangeBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "fake-ip-range") ?? "";
+        var (controllerInfo, secretInfo) = AppServices.Config.GetControllerInfo();
+        ControllerBox.Text = controllerInfo;
+        ControllerSecretBox.Password = secretInfo;
         ProxyGuardSwitch.IsOn = verge.EnableProxyGuard;
         BypassBox.Text = verge.SystemProxyBypass;
         MixedPortBox.Value = AppServices.Config.MixedPort;
@@ -142,6 +158,25 @@ public sealed partial class SettingsPage : Page
             SysProxySwitch.IsOn = previous;
             _loading = false;
             LogService.App("系统代理设置失败: " + ex.Message, "error");
+        }
+    }
+
+    private async void Pac_Toggled(object sender, RoutedEventArgs e)
+    {
+        if (_loading) return;
+        var verge = AppServices.Config.Verge;
+        var previous = verge.EnablePacMode;
+        if (!SaveVerge(v => v.EnablePacMode = PacSwitch.IsOn)) return;
+        if (!verge.EnableSystemProxy) return; // PAC 仅在系统代理开启时生效，切换开关下次开启时应用
+        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        catch (Exception ex)
+        {
+            verge.EnablePacMode = previous;
+            AppServices.Config.SaveVerge();
+            _loading = true;
+            PacSwitch.IsOn = previous;
+            _loading = false;
+            LogService.App("PAC 模式设置失败: " + ex.Message, "error");
         }
     }
 
@@ -291,6 +326,102 @@ public sealed partial class SettingsPage : Page
             CloseButtonText = "确定",
         };
         await dialog.ShowAsync();
+    }
+
+    private async void SaveHotkeys_Click(object sender, RoutedEventArgs e)
+    {
+        var hotkeys = new Dictionary<string, string>
+        {
+            ["show_hide_window"] = HotkeyWindowBox.Text.Trim(),
+            ["toggle_system_proxy"] = HotkeySysproxyBox.Text.Trim(),
+            ["toggle_tun"] = HotkeyTunBox.Text.Trim(),
+            ["reactivate_profile"] = HotkeyReactivateBox.Text.Trim(),
+        };
+
+        var result = AppServices.Hotkey.ApplyHotkeys(hotkeys);
+        var conflicts = result.Value ?? [];
+        if (conflicts.Count > 0)
+        {
+            // 冲突：拒绝保存并显示冲突组合
+            await ShowInfoAsync("热键保存被拒绝", string.Join(Environment.NewLine, conflicts));
+            return;
+        }
+
+        AppServices.Config.Verge.Hotkeys = hotkeys;
+        AppServices.Config.SaveVerge();
+        await ShowInfoAsync("热键已保存", "全局热键已注册生效。");
+    }
+
+    private static void SelectTag(ComboBox box, string tag)
+    {
+        foreach (var item in box.Items.OfType<ComboBoxItem>())
+            if ((string)item.Tag == tag) { box.SelectedItem = item; return; }
+    }
+
+    private async void ApplyTunAdvanced_Click(object sender, RoutedEventArgs e)
+    {
+        var stack = TunStackBox.SelectedItem is ComboBoxItem si ? (string)si.Tag : "gvisor";
+        var hijack = TunDnsHijackBox.Text.Trim();
+        if (hijack.Length == 0) hijack = "any:53";
+        AppServices.Config.PatchClashBase("tun.stack", stack);
+        AppServices.Config.PatchClashBase("tun.dns-hijack", hijack);
+        if (await AppServices.Core.ApplyConfigAsync())
+            await ShowInfoAsync("已应用", "TUN 高级设置已重载。");
+        else
+            await ShowApplyFailureAsync();
+    }
+
+    private async void ApplyDns_Click(object sender, RoutedEventArgs e)
+    {
+        var mode = DnsModeBox.SelectedItem is ComboBoxItem mi ? (string)mi.Tag : "fake-ip";
+        var fakeRange = DnsFakeIpRangeBox.Text.Trim();
+        AppServices.Config.PatchClashBase("dns.enhanced-mode", mode);
+        if (fakeRange.Length > 0)
+            AppServices.Config.PatchClashBase("dns.fake-ip-range", fakeRange);
+        if (await AppServices.Core.ApplyConfigAsync())
+            await ShowInfoAsync("已应用", "DNS 设置已重载。");
+        else
+            await ShowApplyFailureAsync();
+    }
+
+    private async void ApplyController_Click(object sender, RoutedEventArgs e)
+    {
+        var address = ControllerBox.Text.Trim();
+        var secret = ControllerSecretBox.Password;
+        if (address.Length == 0)
+        {
+            await ShowInfoAsync("地址无效", "外部控制器地址不能为空。");
+            return;
+        }
+
+        var (previousAddress, previousSecret) = AppServices.Config.GetControllerInfo();
+        AppServices.Config.PatchClashBase("external-controller", address);
+        AppServices.Config.PatchClashBase("secret", secret);
+        // 先切换 API 客户端到新地址（内核启动等待依赖它），失败再回滚
+        AppServices.Api.Configure(address, secret);
+        AppServices.Streams.Configure(address, secret);
+        try
+        {
+            await AppServices.Core.RestartAsync();
+            var (newAddress, newSecret) = AppServices.Config.GetControllerInfo();
+            AppServices.Api.Configure(newAddress, newSecret);
+            AppServices.Streams.Configure(newAddress, newSecret);
+            await ShowInfoAsync("已应用", "外部控制器已更新并重启内核。");
+        }
+        catch (Exception ex)
+        {
+            // 回滚
+            AppServices.Config.PatchClashBase("external-controller", previousAddress);
+            AppServices.Config.PatchClashBase("secret", previousSecret);
+            try
+            {
+                await AppServices.Core.RestartAsync();
+                AppServices.Api.Configure(previousAddress, previousSecret);
+                AppServices.Streams.Configure(previousAddress, previousSecret);
+            }
+            catch { }
+            await ShowInfoAsync("应用失败", ex.Message + "（已回滚）");
+        }
     }
 
     private async void InstallService_Click(object sender, RoutedEventArgs e)

@@ -16,30 +16,51 @@ internal static class WinInetProxySettings
     private const int InternetPerConnFlags = 1;
     private const int InternetPerConnProxyServer = 2;
     private const int InternetPerConnProxyBypass = 3;
+    private const int InternetPerConnAutoConfigUrl = 4;
     private const int InternetPerConnFlagsUi = 10;
 
     private const int ProxyTypeDirect = 0x00000001;
     private const int ProxyTypeProxy = 0x00000002;
+    private const int ProxyTypeAutoProxyUrl = 0x00000004;
+    private const int ProxyTypeAutoDetect = 0x00000008;
 
     public static State Read()
     {
         var options = QueryOptions();
         return new State(
             (options.Flags & ProxyTypeProxy) != 0,
+            (options.Flags & ProxyTypeAutoProxyUrl) != 0,
             options.Server,
-            options.Bypass);
+            options.Bypass,
+            options.AutoConfigUrl);
     }
 
+    /// <summary>设置/关闭手动代理。关闭时同时清除 PAC URL，避免指向已失效的脚本。</summary>
     public static void Write(bool enable, string server, string bypass)
     {
-        // 只切换手动代理位，保留用户原有的自动检测/PAC 等标志。
         var current = QueryOptions();
         var flags = enable
-            ? current.Flags | ProxyTypeDirect | ProxyTypeProxy
-            : (current.Flags & ~ProxyTypeProxy) | ProxyTypeDirect;
+            ? (current.Flags | ProxyTypeDirect | ProxyTypeProxy) & ~ProxyTypeAutoProxyUrl
+            : (current.Flags & ~(ProxyTypeProxy | ProxyTypeAutoProxyUrl)) | ProxyTypeDirect;
 
-        SetOptions(flags, server, bypass);
+        SetOptions(flags, server, bypass, autoConfigUrl: enable ? null : "");
+        NotifyChanged();
+    }
 
+    /// <summary>设置/关闭 PAC（自动配置脚本 URL）。开启时关闭手动代理位。</summary>
+    public static void WritePac(bool enable, string autoConfigUrl)
+    {
+        var current = QueryOptions();
+        var flags = enable
+            ? (current.Flags | ProxyTypeDirect | ProxyTypeAutoProxyUrl) & ~ProxyTypeProxy
+            : (current.Flags & ~ProxyTypeAutoProxyUrl) | ProxyTypeDirect;
+
+        SetOptions(flags, server: "", bypass: "", autoConfigUrl: enable ? autoConfigUrl : "");
+        NotifyChanged();
+    }
+
+    private static void NotifyChanged()
+    {
         if (!InternetSetOption(IntPtr.Zero, InternetOptionSettingsChanged, IntPtr.Zero, 0))
             throw CreateWin32Exception("无法通知 Windows 系统代理设置已更改");
         if (!InternetSetOption(IntPtr.Zero, InternetOptionRefresh, IntPtr.Zero, 0))
@@ -49,7 +70,7 @@ internal static class WinInetProxySettings
     private static QueryResult QueryOptions()
     {
         var optionSize = Marshal.SizeOf<InternetPerConnOption>();
-        var optionBuffer = Marshal.AllocHGlobal(optionSize * 3);
+        var optionBuffer = Marshal.AllocHGlobal(optionSize * 4);
         try
         {
             WriteOption(optionBuffer, optionSize, 0, new InternetPerConnOption
@@ -64,11 +85,15 @@ internal static class WinInetProxySettings
             {
                 Option = InternetPerConnProxyBypass,
             });
+            WriteOption(optionBuffer, optionSize, 3, new InternetPerConnOption
+            {
+                Option = InternetPerConnAutoConfigUrl,
+            });
 
             var list = new InternetPerConnOptionList
             {
                 Size = Marshal.SizeOf<InternetPerConnOptionList>(),
-                OptionCount = 3,
+                OptionCount = 4,
                 Options = optionBuffer,
             };
             var listSize = list.Size;
@@ -78,17 +103,20 @@ internal static class WinInetProxySettings
             var flags = ReadOption(optionBuffer, optionSize, 0).Value.IntValue;
             var serverOption = ReadOption(optionBuffer, optionSize, 1);
             var bypassOption = ReadOption(optionBuffer, optionSize, 2);
+            var autoConfigOption = ReadOption(optionBuffer, optionSize, 3);
             try
             {
                 return new QueryResult(
                     flags,
                     Marshal.PtrToStringUni(serverOption.Value.StringValue) ?? "",
-                    Marshal.PtrToStringUni(bypassOption.Value.StringValue) ?? "");
+                    Marshal.PtrToStringUni(bypassOption.Value.StringValue) ?? "",
+                    Marshal.PtrToStringUni(autoConfigOption.Value.StringValue) ?? "");
             }
             finally
             {
                 FreeWinInetString(serverOption.Value.StringValue);
                 FreeWinInetString(bypassOption.Value.StringValue);
+                FreeWinInetString(autoConfigOption.Value.StringValue);
             }
         }
         finally
@@ -97,12 +125,14 @@ internal static class WinInetProxySettings
         }
     }
 
-    private static void SetOptions(int flags, string server, string bypass)
+    private static void SetOptions(int flags, string server, string bypass, string? autoConfigUrl)
     {
+        var optionCount = autoConfigUrl is null ? 3 : 4;
         var optionSize = Marshal.SizeOf<InternetPerConnOption>();
-        var optionBuffer = Marshal.AllocHGlobal(optionSize * 3);
+        var optionBuffer = Marshal.AllocHGlobal(optionSize * optionCount);
         var serverPtr = Marshal.StringToHGlobalUni(server ?? "");
         var bypassPtr = Marshal.StringToHGlobalUni(bypass ?? "");
+        var autoConfigPtr = autoConfigUrl is null ? IntPtr.Zero : Marshal.StringToHGlobalUni(autoConfigUrl);
         try
         {
             WriteOption(optionBuffer, optionSize, 0, new InternetPerConnOption
@@ -120,11 +150,19 @@ internal static class WinInetProxySettings
                 Option = InternetPerConnProxyBypass,
                 Value = new InternetPerConnOptionValue { StringValue = bypassPtr },
             });
+            if (autoConfigUrl is not null)
+            {
+                WriteOption(optionBuffer, optionSize, 3, new InternetPerConnOption
+                {
+                    Option = InternetPerConnAutoConfigUrl,
+                    Value = new InternetPerConnOptionValue { StringValue = autoConfigPtr },
+                });
+            }
 
             var list = new InternetPerConnOptionList
             {
                 Size = Marshal.SizeOf<InternetPerConnOptionList>(),
-                OptionCount = 3,
+                OptionCount = optionCount,
                 Options = optionBuffer,
             };
             if (!InternetSetOption(
@@ -140,6 +178,7 @@ internal static class WinInetProxySettings
         {
             Marshal.FreeHGlobal(serverPtr);
             Marshal.FreeHGlobal(bypassPtr);
+            if (autoConfigPtr != IntPtr.Zero) Marshal.FreeHGlobal(autoConfigPtr);
             Marshal.FreeHGlobal(optionBuffer);
         }
     }
@@ -159,8 +198,8 @@ internal static class WinInetProxySettings
     private static Win32Exception CreateWin32Exception(string message) =>
         new(Marshal.GetLastWin32Error(), message);
 
-    internal sealed record State(bool Enable, string Server, string Bypass);
-    private sealed record QueryResult(int Flags, string Server, string Bypass);
+    internal sealed record State(bool Enable, bool PacEnabled, string Server, string Bypass, string AutoConfigUrl);
+    private sealed record QueryResult(int Flags, string Server, string Bypass, string AutoConfigUrl);
 
     [StructLayout(LayoutKind.Sequential)]
     private struct InternetPerConnOptionList

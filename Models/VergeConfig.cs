@@ -24,6 +24,10 @@ public class VergeConfig
     [YamlMember(Alias = "enable-system-proxy")]
     public bool EnableSystemProxy { get; set; } = false;
 
+    /// <summary>PAC 模式：系统代理经由自动配置脚本而非手动代理服务器。</summary>
+    [YamlMember(Alias = "enable-pac-mode")]
+    public bool EnablePacMode { get; set; } = false;
+
     [YamlMember(Alias = "enable-proxy-guard")]
     public bool EnableProxyGuard { get; set; } = true;
 
@@ -65,6 +69,10 @@ public class VergeConfig
 
     [YamlMember(Alias = "traffic-graph")]
     public bool TrafficGraph { get; set; } = true;
+
+    /// <summary>全局热键：action → 组合键文本（如 "Ctrl+Shift+F"）。空串表示未设置。</summary>
+    [YamlMember(Alias = "hotkeys")]
+    public Dictionary<string, string> Hotkeys { get; set; } = new();
 
     /// <summary>保存到 verge.yaml。</summary>
     public string Serialize()

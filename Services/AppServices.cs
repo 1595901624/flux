@@ -16,6 +16,7 @@ public static class AppServices
 
     /// <summary>本地备份服务（ZIP：应用配置 + 订阅 + 增强文件，不含日志/内核缓存）。</summary>
     public static Flux.Core.Backup.LocalBackupService Backup { get; private set; } = null!;
+    public static HotkeyService Hotkey { get; } = new();
 
     public static bool Initialized { get; private set; }
 

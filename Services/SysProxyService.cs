@@ -33,6 +33,7 @@ public class SysProxyService
                     : DefaultBypass + ";" + verge.SystemProxyBypass)
                 : verge.SystemProxyBypass;
             var server = $"127.0.0.1:{AppServices.Config.MixedPort}";
+            var pacUrl = verge.EnablePacMode ? WritePacFile(verge, bypass) : null;
 
             var snapshot = LoadSnapshot();
             if (snapshot is null)
@@ -44,13 +45,32 @@ public class SysProxyService
             {
                 snapshot.FluxServer = server;
             }
+            snapshot.FluxPacUrl = pacUrl ?? "";
             SaveSnapshot(snapshot);
 
-            SetProxy(new ProxyState(true, server, bypass));
-            _lastApplied = new AppliedProxy(server, bypass);
+            if (pacUrl is not null)
+            {
+                WinInetProxySettings.WritePac(true, pacUrl);
+                _lastApplied = new AppliedProxy(server, bypass, pacUrl);
+                LogService.App($"系统代理已开启（PAC 模式）: {pacUrl}");
+            }
+            else
+            {
+                SetProxy(new ProxyState(true, server, bypass));
+                _lastApplied = new AppliedProxy(server, bypass, null);
+                LogService.App($"系统代理已开启: {server}");
+            }
             StartGuardUnsafe(verge);
-            LogService.App($"系统代理已开启: {server}");
         }
+    }
+
+    /// <summary>生成 PAC 文件并返回其 file:// URL。</summary>
+    private static string WritePacFile(VergeConfig verge, string bypass)
+    {
+        var port = AppServices.Config.MixedPort;
+        var content = Flux.Core.Proxy.PacScriptGenerator.Generate(port, bypass.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries));
+        ConfigService.WriteAllTextAtomic(Paths.PacFile, content);
+        return Paths.PacFileUrl;
     }
 
     public void Reset()
@@ -109,7 +129,9 @@ public class SysProxyService
         if (snapshot is not null)
         {
             var current = ReadState();
-            if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer))
+            var ownedManual = SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer);
+            var ownedPac = SystemProxyOwnership.IsOwnedPac(current.PacEnabled, current.AutoConfigUrl, snapshot.FluxPacUrl);
+            if (ownedManual || ownedPac)
                 SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
             else
                 LogService.App("系统代理已被其他程序修改，Flux 不再覆盖该设置", "warn");
@@ -121,7 +143,7 @@ public class SysProxyService
     private static ProxyState ReadState()
     {
         var state = WinInetProxySettings.Read();
-        return new ProxyState(state.Enable, state.Server, state.Bypass);
+        return new ProxyState(state.Enable, state.Server, state.Bypass, state.PacEnabled, state.AutoConfigUrl);
     }
 
     private static void SetProxy(ProxyState state) =>
@@ -161,11 +183,17 @@ public class SysProxyService
                 {
                     if (_lastApplied is not { } last) return;
                     var current = ReadState();
-                    if (!SystemProxyOwnership.IsOwned(current.Enable, current.Server, last.Server) ||
-                        current.Bypass != last.Bypass)
+                    var intact = last.PacUrl is not null
+                        ? SystemProxyOwnership.IsOwnedPac(current.PacEnabled, current.AutoConfigUrl, last.PacUrl)
+                        : SystemProxyOwnership.IsOwned(current.Enable, current.Server, last.Server) &&
+                          current.Bypass == last.Bypass;
+                    if (!intact)
                     {
                         LogService.App("检测到系统代理被修改，正在恢复", "warn");
-                        SetProxy(new ProxyState(true, last.Server, last.Bypass));
+                        if (last.PacUrl is not null)
+                            WinInetProxySettings.WritePac(true, last.PacUrl);
+                        else
+                            SetProxy(new ProxyState(true, last.Server, last.Bypass));
                     }
                 }
                 catch (Exception ex)
@@ -196,8 +224,8 @@ public class SysProxyService
         _guardTimer = null;
     }
 
-    private sealed record ProxyState(bool Enable, string Server, string Bypass);
-    private sealed record AppliedProxy(string Server, string Bypass);
+    private sealed record ProxyState(bool Enable, string Server, string Bypass, bool PacEnabled = false, string AutoConfigUrl = "");
+    private sealed record AppliedProxy(string Server, string Bypass, string? PacUrl);
     private sealed class ProxySnapshot
     {
         public ProxySnapshot() { }
@@ -213,5 +241,6 @@ public class SysProxyService
         public string OriginalServer { get; set; } = "";
         public string OriginalBypass { get; set; } = "";
         public string FluxServer { get; set; } = "";
+        public string FluxPacUrl { get; set; } = "";
     }
 }
