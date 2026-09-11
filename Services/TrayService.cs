@@ -82,6 +82,12 @@ public class TrayService
                         { Checked = verge.EnableSystemProxy },
                     new PopupMenuItem("TUN 模式", (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
                         { Checked = verge.EnableTunMode },
+                    new PopupMenuItem("轻量模式", (_, _) => _dispatcher?.TryEnqueue(() =>
+                    {
+                        if (LightweightManager.IsLightweight) LightweightManager.Exit();
+                        else LightweightManager.Enter();
+                    }))
+                        { Checked = LightweightManager.IsLightweight, Enabled = true },
                     new PopupMenuSeparator(),
                     new PopupMenuItem("重启内核", (_, _) => _dispatcher?.TryEnqueue(async () =>
                         await AppServices.Core.RestartAsync())),

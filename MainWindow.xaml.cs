@@ -42,12 +42,19 @@ public sealed partial class MainWindow : Window
         NavView.RegisterPropertyChangedCallback(NavigationView.IsPaneOpenProperty, (_, _) =>
             TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed);
 
-        // 关闭窗口 = 隐藏到托盘（托盘菜单“退出”才真正关闭）
+        // 关闭窗口 = 隐藏到托盘（托盘菜单“退出”或轻量模式才真正关闭）
         AppWindow.Closing += (_, e) =>
         {
+            if (App.AllowWindowClose)
+            {
+                App.AllowWindowClose = false;
+                return; // 轻量模式：允许真实关闭，Closed 中释放引用
+            }
             e.Cancel = true;
             AppWindow.Hide();
+            Services.LightweightManager.OnWindowHidden();
         };
+        Closed += (_, _) => App.MainWindow = null;
 
         // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
         var scale = GetDpiForWindow(WinRT.Interop.WindowNative.GetWindowHandle(this)) / 96.0;
@@ -187,6 +194,7 @@ public sealed partial class MainWindow : Window
             "connections" => typeof(ConnectionsPage),
             "rules" => typeof(RulesPage),
             "logs" => typeof(LogsPage),
+            "unlock" => typeof(UnlockPage),
             "settings" => typeof(SettingsPage),
             _ => null
         };

@@ -119,6 +119,7 @@ public static class AppBootstrapper
             var hotkey = AppServices.Hotkey;
             hotkey.Dispatcher = action => _uiDispatcher?.TryEnqueue(() => action());
             hotkey.HotkeyPressed += OnHotkeyPressed;
+            LightweightManager.RunOnUiThread = action => _uiDispatcher?.TryEnqueue(() => action());
             var failures = hotkey.ApplyHotkeys(AppServices.Config.Verge.Hotkeys).Value ?? [];
             foreach (var failure in failures)
                 LogService.App("热键注册失败: " + failure, "warn");
@@ -163,6 +164,9 @@ public static class AppBootstrapper
                     break;
                 case "show_hide_window":
                     App.ShowMainWindow();
+                    break;
+                case "lightweight_mode":
+                    LightweightManager.Enter();
                     break;
                 case "reactivate_profile":
                     if (AppServices.Config.Profiles.Current is { } uid)

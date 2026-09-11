@@ -70,6 +70,14 @@ public class VergeConfig
     [YamlMember(Alias = "traffic-graph")]
     public bool TrafficGraph { get; set; } = true;
 
+    /// <summary>关闭窗口若干分钟后自动进入轻量模式（0 = 关闭自动进入）。</summary>
+    [YamlMember(Alias = "enable-lightweight-mode")]
+    public bool EnableLightweightMode { get; set; } = false;
+
+    /// <summary>自动进入轻量模式的分钟数。</summary>
+    [YamlMember(Alias = "auto-lightweight-minutes")]
+    public int AutoLightweightMinutes { get; set; } = 10;
+
     /// <summary>全局热键：action → 组合键文本（如 "Ctrl+Shift+F"）。空串表示未设置。</summary>
     [YamlMember(Alias = "hotkeys")]
     public Dictionary<string, string> Hotkeys { get; set; } = new();

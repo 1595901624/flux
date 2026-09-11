@@ -10,7 +10,7 @@ namespace Flux;
 public partial class App : Application
 {
     public static App Instance { get; private set; } = null!;
-    public static MainWindow? MainWindow { get; private set; }
+    public static MainWindow? MainWindow { get; internal set; }
 
     /// <summary>UI 线程调度器（启动时捕获，供后台线程事件回调使用）。</summary>
     public static DispatcherQueue UiDispatcher { get; private set; } = null!;
@@ -40,8 +40,12 @@ public partial class App : Application
         _ = Services.AppBootstrapper.StartAsync();
     }
 
+    /// <summary>轻量模式真实关闭窗口时由 LightweightManager 置位（否则关闭仅隐藏到托盘）。</summary>
+    public static bool AllowWindowClose { get; set; }
+
     public static void ShowMainWindow()
     {
+        Services.LightweightManager.OnWindowShown();
         if (MainWindow is null)
         {
             MainWindow = new MainWindow();

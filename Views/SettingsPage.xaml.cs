@@ -64,6 +64,8 @@ public sealed partial class SettingsPage : Page
         HotkeySysproxyBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
         HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
         HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
+        LightweightSwitch.IsOn = verge.EnableLightweightMode;
+        LightweightMinutesBox.Text = verge.AutoLightweightMinutes.ToString();
 
         // TUN / DNS / 外部控制器 初始值（来自基础配置）
         var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
@@ -350,6 +352,19 @@ public sealed partial class SettingsPage : Page
         AppServices.Config.Verge.Hotkeys = hotkeys;
         AppServices.Config.SaveVerge();
         await ShowInfoAsync("热键已保存", "全局热键已注册生效。");
+    }
+
+    private void Lightweight_Toggled(object sender, RoutedEventArgs e)
+    {
+        if (_loading) return;
+        if (!SaveVerge(v => v.EnableLightweightMode = LightweightSwitch.IsOn)) return;
+        ApplyLightweightMinutes();
+    }
+
+    private void ApplyLightweightMinutes()
+    {
+        if (!int.TryParse(LightweightMinutesBox.Text, out var minutes) || minutes < 0) minutes = 0;
+        SaveVerge(v => v.AutoLightweightMinutes = minutes);
     }
 
     private static void SelectTag(ComboBox box, string tag)
