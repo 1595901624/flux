@@ -56,7 +56,8 @@ public sealed class UwpLoopbackDialog : ContentDialog
         var families = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (var match in Regex.Matches(output, @"[A-Za-z0-9.][A-Za-z0-9.\-]*_[a-z0-9]{13}\b"))
         {
-            families.Add(match.ToString());
+            var value = match.ToString();
+            if (!string.IsNullOrEmpty(value)) families.Add(value);
         }
         return families;
     }
