@@ -1642,4 +1642,238 @@
   <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>ダイレクト</value>
   </data>
+  <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
+    <value>プロキシプロバイダー</value>
+  </data>
+  <data name="Msg_ProviderTitleProxy.Content" xml:space="preserve">
+    <value>プロキシプロバイダー</value>
+  </data>
+  <data name="Msg_ProviderTitleRules.Text" xml:space="preserve">
+    <value>ルールプロバイダー</value>
+  </data>
+  <data name="Msg_ProviderTitleRules.Content" xml:space="preserve">
+    <value>ルールプロバイダー</value>
+  </data>
+  <data name="Msg_RefreshList.Text" xml:space="preserve">
+    <value>一覧を更新</value>
+  </data>
+  <data name="Msg_RefreshList.Content" xml:space="preserve">
+    <value>一覧を更新</value>
+  </data>
+  <data name="Msg_HealthCheck.Text" xml:space="preserve">
+    <value>ヘルスチェック</value>
+  </data>
+  <data name="Msg_HealthCheck.Content" xml:space="preserve">
+    <value>ヘルスチェック</value>
+  </data>
+  <data name="Msg_Loading.Text" xml:space="preserve">
+    <value>読み込み中…</value>
+  </data>
+  <data name="Msg_Loading.Content" xml:space="preserve">
+    <value>読み込み中…</value>
+  </data>
+  <data name="Msg_NoProxyProviders.Text" xml:space="preserve">
+    <value>プロキシプロバイダーなし</value>
+  </data>
+  <data name="Msg_NoProxyProviders.Content" xml:space="preserve">
+    <value>プロキシプロバイダーなし</value>
+  </data>
+  <data name="Msg_NoRuleProviders.Text" xml:space="preserve">
+    <value>ルールプロバイダーなし</value>
+  </data>
+  <data name="Msg_NoRuleProviders.Content" xml:space="preserve">
+    <value>ルールプロバイダーなし</value>
+  </data>
+  <data name="Msg_ProviderCount.Text" xml:space="preserve">
+    <value>{0} 件のプロバイダー</value>
+  </data>
+  <data name="Msg_ProviderCount.Content" xml:space="preserve">
+    <value>{0} 件のプロバイダー</value>
+  </data>
+  <data name="Msg_ProxyNodeCount.Text" xml:space="preserve">
+    <value>{0} ノード</value>
+  </data>
+  <data name="Msg_ProxyNodeCount.Content" xml:space="preserve">
+    <value>{0} ノード</value>
+  </data>
+  <data name="Msg_RulesMeta.Text" xml:space="preserve">
+    <value>{0} · {1} · {2}件</value>
+  </data>
+  <data name="Msg_RulesMeta.Content" xml:space="preserve">
+    <value>{0} · {1} · {2}件</value>
+  </data>
+  <data name="Msg_Update.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Msg_Update.Content" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Msg_Updating.Text" xml:space="preserve">
+    <value>{0} を更新中…</value>
+  </data>
+  <data name="Msg_Updating.Content" xml:space="preserve">
+    <value>{0} を更新中…</value>
+  </data>
+  <data name="Msg_UpdatedOne.Text" xml:space="preserve">
+    <value>{0} を更新しました</value>
+  </data>
+  <data name="Msg_UpdatedOne.Content" xml:space="preserve">
+    <value>{0} を更新しました</value>
+  </data>
+  <data name="Msg_UpdateFailedNamed.Text" xml:space="preserve">
+    <value>更新失敗 {0}: {1}</value>
+  </data>
+  <data name="Msg_UpdateFailedNamed.Content" xml:space="preserve">
+    <value>更新失敗 {0}: {1}</value>
+  </data>
+  <data name="Msg_UpdatingAll.Text" xml:space="preserve">
+    <value>すべて更新中…</value>
+  </data>
+  <data name="Msg_UpdatingAll.Content" xml:space="preserve">
+    <value>すべて更新中…</value>
+  </data>
+  <data name="Msg_UpdateAllDoneCount.Text" xml:space="preserve">
+    <value>すべて更新完了: {0}/{1}</value>
+  </data>
+  <data name="Msg_UpdateAllDoneCount.Content" xml:space="preserve">
+    <value>すべて更新完了: {0}/{1}</value>
+  </data>
+  <data name="Msg_HealthChecking.Text" xml:space="preserve">
+    <value>ヘルスチェック中…</value>
+  </data>
+  <data name="Msg_HealthChecking.Content" xml:space="preserve">
+    <value>ヘルスチェック中…</value>
+  </data>
+  <data name="Msg_HealthCheckDone.Text" xml:space="preserve">
+    <value>ヘルスチェック完了</value>
+  </data>
+  <data name="Msg_HealthCheckDone.Content" xml:space="preserve">
+    <value>ヘルスチェック完了</value>
+  </data>
+  <data name="Msg_NeverUpdatedShort.Text" xml:space="preserve">
+    <value>未更新</value>
+  </data>
+  <data name="Msg_NeverUpdatedShort.Content" xml:space="preserve">
+    <value>未更新</value>
+  </data>
+  <data name="Msg_UnlockUntested.Text" xml:space="preserve">
+    <value>未テスト</value>
+  </data>
+  <data name="Msg_UnlockUntested.Content" xml:space="preserve">
+    <value>未テスト</value>
+  </data>
+  <data name="Msg_UnlockTesting.Text" xml:space="preserve">
+    <value>テスト中</value>
+  </data>
+  <data name="Msg_UnlockTesting.Content" xml:space="preserve">
+    <value>テスト中</value>
+  </data>
+  <data name="Msg_UnlockSupported.Text" xml:space="preserve">
+    <value>対応</value>
+  </data>
+  <data name="Msg_UnlockSupported.Content" xml:space="preserve">
+    <value>対応</value>
+  </data>
+  <data name="Msg_UnlockUnsupported.Text" xml:space="preserve">
+    <value>非対応</value>
+  </data>
+  <data name="Msg_UnlockUnsupported.Content" xml:space="preserve">
+    <value>非対応</value>
+  </data>
+  <data name="Msg_UnlockUnknown.Text" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="Msg_UnlockUnknown.Content" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="Msg_UnlockFailed.Text" xml:space="preserve">
+    <value>失敗</value>
+  </data>
+  <data name="Msg_UnlockFailed.Content" xml:space="preserve">
+    <value>失敗</value>
+  </data>
+  <data name="Msg_SysProxyToggleFailedTitle.Text" xml:space="preserve">
+    <value>システムプロキシ切替に失敗</value>
+  </data>
+  <data name="Msg_SysProxyToggleFailedTitle.Content" xml:space="preserve">
+    <value>システムプロキシ切替に失敗</value>
+  </data>
+  <data name="Msg_TunToggleFailedTitle.Text" xml:space="preserve">
+    <value>TUN切替に失敗</value>
+  </data>
+  <data name="Msg_TunToggleFailedTitle.Content" xml:space="preserve">
+    <value>TUN切替に失敗</value>
+  </data>
+  <data name="Msg_CoreRestartFailedTitle.Text" xml:space="preserve">
+    <value>コア再起動に失敗</value>
+  </data>
+  <data name="Msg_CoreRestartFailedTitle.Content" xml:space="preserve">
+    <value>コア再起動に失敗</value>
+  </data>
+  <data name="Msg_CloseThisConn.Text" xml:space="preserve">
+    <value>この接続を閉じる</value>
+  </data>
+  <data name="Msg_CloseThisConn.Content" xml:space="preserve">
+    <value>この接続を閉じる</value>
+  </data>
+  <data name="Msg_Back.Text" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Msg_Back.Content" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Msg_DetailNetwork.Text" xml:space="preserve">
+    <value>ネットワーク: {0} ({1})</value>
+  </data>
+  <data name="Msg_DetailNetwork.Content" xml:space="preserve">
+    <value>ネットワーク: {0} ({1})</value>
+  </data>
+  <data name="Msg_DetailHost.Text" xml:space="preserve">
+    <value>ホスト: {0}</value>
+  </data>
+  <data name="Msg_DetailHost.Content" xml:space="preserve">
+    <value>ホスト: {0}</value>
+  </data>
+  <data name="Msg_DetailDestination.Text" xml:space="preserve">
+    <value>宛先: {0}</value>
+  </data>
+  <data name="Msg_DetailDestination.Content" xml:space="preserve">
+    <value>宛先: {0}</value>
+  </data>
+  <data name="Msg_DetailSource.Text" xml:space="preserve">
+    <value>送信元: {0}</value>
+  </data>
+  <data name="Msg_DetailSource.Content" xml:space="preserve">
+    <value>送信元: {0}</value>
+  </data>
+  <data name="Msg_DetailRule.Text" xml:space="preserve">
+    <value>ルール: {0}</value>
+  </data>
+  <data name="Msg_DetailRule.Content" xml:space="preserve">
+    <value>ルール: {0}</value>
+  </data>
+  <data name="Msg_DetailChains.Text" xml:space="preserve">
+    <value>チェーン: {0}</value>
+  </data>
+  <data name="Msg_DetailChains.Content" xml:space="preserve">
+    <value>チェーン: {0}</value>
+  </data>
+  <data name="Msg_DetailProcess.Text" xml:space="preserve">
+    <value>プロセス: {0}</value>
+  </data>
+  <data name="Msg_DetailProcess.Content" xml:space="preserve">
+    <value>プロセス: {0}</value>
+  </data>
+  <data name="Msg_DetailTraffic.Text" xml:space="preserve">
+    <value>DL: {0}   UL: {1}</value>
+  </data>
+  <data name="Msg_DetailTraffic.Content" xml:space="preserve">
+    <value>DL: {0}   UL: {1}</value>
+  </data>
+  <data name="Msg_DetailTime.Text" xml:space="preserve">
+    <value>時刻: {0}</value>
+  </data>
+  <data name="Msg_DetailTime.Content" xml:space="preserve">
+    <value>時刻: {0}</value>
+  </data>
 </root>

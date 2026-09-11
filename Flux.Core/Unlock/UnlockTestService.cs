@@ -17,7 +17,7 @@ public sealed class UnlockCheck
 
     /// <summary>响应判定：body 与 status → (status, region, detail)。</summary>
     public Func<int, string, (string Status, string? Region, string? Detail)> Judge { get; init; } =
-        (_, _) => ("未知", null, null);
+        (_, _) => ("unknown", null, null);
 }
 
 /// <summary>
@@ -102,11 +102,11 @@ public sealed class UnlockTestService
                     // 标题页可访问 = 非自制内容解锁；地区从页面 JS 常量提取
                     var region = Extract(body, @"""currentCountry"":\s*""([A-Za-z]{2})""") ??
                                  Extract(body, @"requestCountry"":""([A-Za-z]{2})""");
-                    return ("支持", region, "非自制剧解锁");
+                    return ("supported", region, "original-only unlocked");
                 }
-                if (status == 403) return ("不支持", null, "403");
-                if (status == 404) return ("支持", null, "仅自制剧");
-                return ("未知", null, $"HTTP {status}");
+                if (status == 403) return ("unsupported", null, "403");
+                if (status == 404) return ("supported", null, "originals only");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -115,11 +115,11 @@ public sealed class UnlockTestService
             Url = "https://www.youtube.com/premium",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("未知", null, $"HTTP {status}");
+                if (status != 200) return ("unknown", null, $"HTTP {status}");
                 if (body.Contains("Premium is not available in your country", StringComparison.OrdinalIgnoreCase))
                     return ("不支持", null, null);
                 var region = Extract(body, @"""gl"":\s*""([A-Za-z]{2})""");
-                return ("支持", region, null);
+                return ("supported", region, null);
             },
         },
         new UnlockCheck
@@ -131,10 +131,10 @@ public sealed class UnlockTestService
                 if (status == 200 && (body.Contains("disneyplus", StringComparison.OrdinalIgnoreCase)))
                 {
                     var region = Extract(body, @"""region"":\s*""([A-Za-z]{2})""");
-                    return ("支持", region, null);
+                    return ("supported", region, null);
                 }
                 if (status == 403 || status == 404) return ("不支持", null, $"HTTP {status}");
-                return ("未知", null, $"HTTP {status}");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -145,8 +145,8 @@ public sealed class UnlockTestService
             {
                 if (status == 200 && body.Contains("display_name", StringComparison.OrdinalIgnoreCase))
                     return ("支持", null, null);
-                if (status == 403 || status == 451) return ("不支持", null, $"HTTP {status}");
-                return ("未知", null, $"HTTP {status}");
+                if (status == 403 || status == 451) return ("unsupported", null, $"HTTP {status}");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -155,9 +155,9 @@ public sealed class UnlockTestService
             Url = "https://claude.ai/login",
             Judge = (status, _) =>
             {
-                if (status == 200) return ("支持", null, null);
-                if (status == 403) return ("不支持", null, "403");
-                return ("未知", null, $"HTTP {status}");
+                if (status == 200) return ("supported", null, null);
+                if (status == 403) return ("unsupported", null, "403");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -171,9 +171,9 @@ public sealed class UnlockTestService
                     if (body.Contains("not available in your country", StringComparison.OrdinalIgnoreCase))
                         return ("不支持", null, null);
                     var region = Extract(body, @"""countryCode"":\s*""([A-Za-z]{2})""");
-                    return ("支持", region, null);
+                    return ("supported", region, null);
                 }
-                return ("未知", null, $"HTTP {status}");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -185,9 +185,9 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""country_code"":\s*""([A-Za-z]{2})""");
-                    return string.IsNullOrEmpty(region) ? ("未知", null, "无地区信息") : ("支持", region, null);
+                    return string.IsNullOrEmpty(region) ? ("unknown", null, "no region") : ("supported", region, null);
                 }
-                return ("未知", null, $"HTTP {status}");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -199,10 +199,10 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""region"":\s*""([A-Za-z]{2})""");
-                    return ("支持", region, null);
+                    return ("supported", region, null);
                 }
-                if (status == 403) return ("不支持", null, "403");
-                return ("未知", null, $"HTTP {status}");
+                if (status == 403) return ("unsupported", null, "403");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -211,10 +211,10 @@ public sealed class UnlockTestService
             Url = "https://ani.gamer.com.tw/ajax/token.php?adsn=",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("未知", null, $"HTTP {status}");
+                if (status != 200) return ("unknown", null, $"HTTP {status}");
                 if (body.Contains("\"sn\":2", StringComparison.Ordinal) || body.Contains("error", StringComparison.OrdinalIgnoreCase))
-                    return ("未知", null, body.Length > 60 ? body[..60] : body);
-                return ("支持", "TW", null);
+                    return ("unknown", null, body.Length > 60 ? body[..60] : body);
+                return ("supported", "TW", null);
             },
         },
         new UnlockCheck
@@ -223,12 +223,12 @@ public sealed class UnlockTestService
             Url = "https://api.bilibili.com/pgc/player/web/v2/playurl?ep_id=1&cid=1",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("未知", null, $"HTTP {status}");
+                if (status != 200) return ("unknown", null, $"HTTP {status}");
                 if (body.Contains("仅限港澳台", StringComparison.Ordinal) || body.Contains("area limit", StringComparison.OrdinalIgnoreCase))
-                    return ("不支持", null, null);
+                    return ("unsupported", null, null);
                 if (body.Contains("\"code\":0", StringComparison.Ordinal) || body.Contains(" dash", StringComparison.Ordinal))
-                    return ("支持", null, null);
-                return ("未知", null, null);
+                    return ("supported", null, null);
+                return ("unknown", null, null);
             },
         },
         new UnlockCheck
@@ -240,9 +240,9 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""currentTerritory"":\s*""([A-Za-z]{2})""");
-                    return ("支持", region, null);
+                    return ("supported", region, null);
                 }
-                return ("未知", null, $"HTTP {status}");
+                return ("unknown", null, $"HTTP {status}");
             },
         },
     ];

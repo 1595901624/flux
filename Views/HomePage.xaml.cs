@@ -63,7 +63,7 @@ public sealed partial class HomePage : Page
         }
         catch (Exception ex)
         {
-            await ShowErrorAsync("系统代理切换失败", ex.Message);
+            await ShowErrorAsync(L10n.T("Msg_SysProxyToggleFailedTitle"), ex.Message);
         }
     }
 
@@ -75,7 +75,7 @@ public sealed partial class HomePage : Page
         }
         catch (Exception ex)
         {
-            await ShowErrorAsync("TUN 切换失败", ex.Message);
+            await ShowErrorAsync(L10n.T("Msg_TunToggleFailedTitle"), ex.Message);
         }
     }
 
@@ -101,7 +101,7 @@ public sealed partial class HomePage : Page
         }
         catch (Exception ex)
         {
-            await ShowErrorAsync("内核重启失败", ex.Message);
+            await ShowErrorAsync(L10n.T("Msg_CoreRestartFailedTitle"), ex.Message);
         }
     }
 

@@ -1642,4 +1642,238 @@
   <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Direct</value>
   </data>
+  <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
+    <value>Proxy providers</value>
+  </data>
+  <data name="Msg_ProviderTitleProxy.Content" xml:space="preserve">
+    <value>Proxy providers</value>
+  </data>
+  <data name="Msg_ProviderTitleRules.Text" xml:space="preserve">
+    <value>Rule providers</value>
+  </data>
+  <data name="Msg_ProviderTitleRules.Content" xml:space="preserve">
+    <value>Rule providers</value>
+  </data>
+  <data name="Msg_RefreshList.Text" xml:space="preserve">
+    <value>Refresh list</value>
+  </data>
+  <data name="Msg_RefreshList.Content" xml:space="preserve">
+    <value>Refresh list</value>
+  </data>
+  <data name="Msg_HealthCheck.Text" xml:space="preserve">
+    <value>Health check</value>
+  </data>
+  <data name="Msg_HealthCheck.Content" xml:space="preserve">
+    <value>Health check</value>
+  </data>
+  <data name="Msg_Loading.Text" xml:space="preserve">
+    <value>Loading…</value>
+  </data>
+  <data name="Msg_Loading.Content" xml:space="preserve">
+    <value>Loading…</value>
+  </data>
+  <data name="Msg_NoProxyProviders.Text" xml:space="preserve">
+    <value>No proxy providers in this profile</value>
+  </data>
+  <data name="Msg_NoProxyProviders.Content" xml:space="preserve">
+    <value>No proxy providers in this profile</value>
+  </data>
+  <data name="Msg_NoRuleProviders.Text" xml:space="preserve">
+    <value>No rule providers in this profile</value>
+  </data>
+  <data name="Msg_NoRuleProviders.Content" xml:space="preserve">
+    <value>No rule providers in this profile</value>
+  </data>
+  <data name="Msg_ProviderCount.Text" xml:space="preserve">
+    <value>{0} providers</value>
+  </data>
+  <data name="Msg_ProviderCount.Content" xml:space="preserve">
+    <value>{0} providers</value>
+  </data>
+  <data name="Msg_ProxyNodeCount.Text" xml:space="preserve">
+    <value>{0} nodes</value>
+  </data>
+  <data name="Msg_ProxyNodeCount.Content" xml:space="preserve">
+    <value>{0} nodes</value>
+  </data>
+  <data name="Msg_RulesMeta.Text" xml:space="preserve">
+    <value>{0} · {1} · {2} rules</value>
+  </data>
+  <data name="Msg_RulesMeta.Content" xml:space="preserve">
+    <value>{0} · {1} · {2} rules</value>
+  </data>
+  <data name="Msg_Update.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Msg_Update.Content" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Msg_Updating.Text" xml:space="preserve">
+    <value>Updating {0}…</value>
+  </data>
+  <data name="Msg_Updating.Content" xml:space="preserve">
+    <value>Updating {0}…</value>
+  </data>
+  <data name="Msg_UpdatedOne.Text" xml:space="preserve">
+    <value>Updated {0}</value>
+  </data>
+  <data name="Msg_UpdatedOne.Content" xml:space="preserve">
+    <value>Updated {0}</value>
+  </data>
+  <data name="Msg_UpdateFailedNamed.Text" xml:space="preserve">
+    <value>Update failed {0}: {1}</value>
+  </data>
+  <data name="Msg_UpdateFailedNamed.Content" xml:space="preserve">
+    <value>Update failed {0}: {1}</value>
+  </data>
+  <data name="Msg_UpdatingAll.Text" xml:space="preserve">
+    <value>Updating all…</value>
+  </data>
+  <data name="Msg_UpdatingAll.Content" xml:space="preserve">
+    <value>Updating all…</value>
+  </data>
+  <data name="Msg_UpdateAllDoneCount.Text" xml:space="preserve">
+    <value>Update all finished: {0}/{1}</value>
+  </data>
+  <data name="Msg_UpdateAllDoneCount.Content" xml:space="preserve">
+    <value>Update all finished: {0}/{1}</value>
+  </data>
+  <data name="Msg_HealthChecking.Text" xml:space="preserve">
+    <value>Running health checks…</value>
+  </data>
+  <data name="Msg_HealthChecking.Content" xml:space="preserve">
+    <value>Running health checks…</value>
+  </data>
+  <data name="Msg_HealthCheckDone.Text" xml:space="preserve">
+    <value>Health check complete</value>
+  </data>
+  <data name="Msg_HealthCheckDone.Content" xml:space="preserve">
+    <value>Health check complete</value>
+  </data>
+  <data name="Msg_NeverUpdatedShort.Text" xml:space="preserve">
+    <value>Never updated</value>
+  </data>
+  <data name="Msg_NeverUpdatedShort.Content" xml:space="preserve">
+    <value>Never updated</value>
+  </data>
+  <data name="Msg_UnlockUntested.Text" xml:space="preserve">
+    <value>Not tested</value>
+  </data>
+  <data name="Msg_UnlockUntested.Content" xml:space="preserve">
+    <value>Not tested</value>
+  </data>
+  <data name="Msg_UnlockTesting.Text" xml:space="preserve">
+    <value>Testing</value>
+  </data>
+  <data name="Msg_UnlockTesting.Content" xml:space="preserve">
+    <value>Testing</value>
+  </data>
+  <data name="Msg_UnlockSupported.Text" xml:space="preserve">
+    <value>Supported</value>
+  </data>
+  <data name="Msg_UnlockSupported.Content" xml:space="preserve">
+    <value>Supported</value>
+  </data>
+  <data name="Msg_UnlockUnsupported.Text" xml:space="preserve">
+    <value>Unsupported</value>
+  </data>
+  <data name="Msg_UnlockUnsupported.Content" xml:space="preserve">
+    <value>Unsupported</value>
+  </data>
+  <data name="Msg_UnlockUnknown.Text" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Msg_UnlockUnknown.Content" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Msg_UnlockFailed.Text" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="Msg_UnlockFailed.Content" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="Msg_SysProxyToggleFailedTitle.Text" xml:space="preserve">
+    <value>System proxy toggle failed</value>
+  </data>
+  <data name="Msg_SysProxyToggleFailedTitle.Content" xml:space="preserve">
+    <value>System proxy toggle failed</value>
+  </data>
+  <data name="Msg_TunToggleFailedTitle.Text" xml:space="preserve">
+    <value>TUN toggle failed</value>
+  </data>
+  <data name="Msg_TunToggleFailedTitle.Content" xml:space="preserve">
+    <value>TUN toggle failed</value>
+  </data>
+  <data name="Msg_CoreRestartFailedTitle.Text" xml:space="preserve">
+    <value>Core restart failed</value>
+  </data>
+  <data name="Msg_CoreRestartFailedTitle.Content" xml:space="preserve">
+    <value>Core restart failed</value>
+  </data>
+  <data name="Msg_CloseThisConn.Text" xml:space="preserve">
+    <value>Close this connection</value>
+  </data>
+  <data name="Msg_CloseThisConn.Content" xml:space="preserve">
+    <value>Close this connection</value>
+  </data>
+  <data name="Msg_Back.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Msg_Back.Content" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Msg_DetailNetwork.Text" xml:space="preserve">
+    <value>Network: {0} ({1})</value>
+  </data>
+  <data name="Msg_DetailNetwork.Content" xml:space="preserve">
+    <value>Network: {0} ({1})</value>
+  </data>
+  <data name="Msg_DetailHost.Text" xml:space="preserve">
+    <value>Host: {0}</value>
+  </data>
+  <data name="Msg_DetailHost.Content" xml:space="preserve">
+    <value>Host: {0}</value>
+  </data>
+  <data name="Msg_DetailDestination.Text" xml:space="preserve">
+    <value>Destination: {0}</value>
+  </data>
+  <data name="Msg_DetailDestination.Content" xml:space="preserve">
+    <value>Destination: {0}</value>
+  </data>
+  <data name="Msg_DetailSource.Text" xml:space="preserve">
+    <value>Source: {0}</value>
+  </data>
+  <data name="Msg_DetailSource.Content" xml:space="preserve">
+    <value>Source: {0}</value>
+  </data>
+  <data name="Msg_DetailRule.Text" xml:space="preserve">
+    <value>Rule: {0}</value>
+  </data>
+  <data name="Msg_DetailRule.Content" xml:space="preserve">
+    <value>Rule: {0}</value>
+  </data>
+  <data name="Msg_DetailChains.Text" xml:space="preserve">
+    <value>Chains: {0}</value>
+  </data>
+  <data name="Msg_DetailChains.Content" xml:space="preserve">
+    <value>Chains: {0}</value>
+  </data>
+  <data name="Msg_DetailProcess.Text" xml:space="preserve">
+    <value>Process: {0}</value>
+  </data>
+  <data name="Msg_DetailProcess.Content" xml:space="preserve">
+    <value>Process: {0}</value>
+  </data>
+  <data name="Msg_DetailTraffic.Text" xml:space="preserve">
+    <value>Down: {0}   Up: {1}</value>
+  </data>
+  <data name="Msg_DetailTraffic.Content" xml:space="preserve">
+    <value>Down: {0}   Up: {1}</value>
+  </data>
+  <data name="Msg_DetailTime.Text" xml:space="preserve">
+    <value>Time: {0}</value>
+  </data>
+  <data name="Msg_DetailTime.Content" xml:space="preserve">
+    <value>Time: {0}</value>
+  </data>
 </root>

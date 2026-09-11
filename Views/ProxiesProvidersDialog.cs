@@ -15,16 +15,16 @@ public sealed class ProxiesProvidersDialog : ContentDialog
     public ProxiesProvidersDialog(XamlRoot root)
     {
         XamlRoot = root;
-        Title = "代理 Provider";
-        CloseButtonText = "关闭";
+        Title = L10n.T("Msg_ProviderTitleProxy");
+        CloseButtonText = L10n.T("Common_Close");
 
         var header = new StackPanel { Spacing = 10, MinWidth = 480 };
         var toolbar = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
-        var updateAll = new Button { Content = "全部更新" };
+        var updateAll = new Button { Content = L10n.T("Profiles_UpdateAll") };
         updateAll.Click += async (_, _) => await UpdateAllAsync();
-        var healthCheck = new Button { Content = "健康检查" };
+        var healthCheck = new Button { Content = L10n.T("Msg_HealthCheck") };
         healthCheck.Click += async (_, _) => await HealthCheckAllAsync();
-        var reload = new Button { Content = "刷新列表" };
+        var reload = new Button { Content = L10n.T("Msg_RefreshList") };
         reload.Click += async (_, _) => await LoadAsync();
         toolbar.Children.Add(updateAll);
         toolbar.Children.Add(healthCheck);
@@ -39,15 +39,15 @@ public sealed class ProxiesProvidersDialog : ContentDialog
 
     private async Task LoadAsync()
     {
-        _status.Text = "正在加载…";
+        _status.Text = L10n.T("Msg_Loading");
         _list.Children.Clear();
         _providers = await AppServices.Api.GetProxyProviderInfoAsync();
         if (_providers.Count == 0)
         {
-            _status.Text = "当前订阅没有代理 Provider";
+            _status.Text = L10n.T("Msg_NoProxyProviders");
             return;
         }
-        _status.Text = $"共 {_providers.Count} 个 Provider";
+        _status.Text = L10n.F("Msg_ProviderCount", _providers.Count);
         foreach (var provider in _providers)
             _list.Children.Add(BuildRow(provider));
     }
@@ -61,7 +61,7 @@ public sealed class ProxiesProvidersDialog : ContentDialog
         var name = new TextBlock { Text = provider.Name, FontWeight = Microsoft.UI.Text.FontWeights.SemiBold, VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
         var meta = new TextBlock
         {
-            Text = $"{provider.ProxyCount} 个节点",
+            Text = L10n.F("Msg_ProxyNodeCount", provider.ProxyCount),
             FontSize = 11,
             Opacity = 0.65,
             VerticalAlignment = VerticalAlignment.Center,
@@ -73,20 +73,20 @@ public sealed class ProxiesProvidersDialog : ContentDialog
             Opacity = 0.55,
             VerticalAlignment = VerticalAlignment.Center,
         };
-        var update = new Button { Content = "更新" };
+        var update = new Button { Content = L10n.T("Msg_Update") };
         update.Click += async (_, _) =>
         {
             update.IsEnabled = false;
-            _status.Text = $"正在更新 {provider.Name}…";
+            _status.Text = L10n.F("Msg_Updating", provider.Name);
             try
             {
                 await AppServices.Api.UpdateProxyProviderAsync(provider.Name);
-                _status.Text = $"已更新 {provider.Name}";
+                _status.Text = L10n.F("Msg_UpdatedOne", provider.Name);
                 await LoadAsync();
             }
             catch (Exception ex)
             {
-                _status.Text = $"更新失败 {provider.Name}: {ex.Message}";
+                _status.Text = L10n.F("Msg_UpdateFailedNamed", provider.Name, ex.Message);
                 update.IsEnabled = true;
             }
         };
@@ -104,7 +104,7 @@ public sealed class ProxiesProvidersDialog : ContentDialog
 
     private async Task UpdateAllAsync()
     {
-        _status.Text = "正在全部更新…";
+        _status.Text = L10n.T("Msg_UpdatingAll");
         var ok = 0;
         foreach (var provider in _providers)
         {
@@ -115,13 +115,13 @@ public sealed class ProxiesProvidersDialog : ContentDialog
             }
             catch { }
         }
-        _status.Text = $"全部更新完成：{ok}/{_providers.Count}";
+        _status.Text = L10n.F("Msg_UpdateAllDoneCount", ok, _providers.Count);
         await LoadAsync();
     }
 
     private async Task HealthCheckAllAsync()
     {
-        _status.Text = "正在健康检查…";
+        _status.Text = L10n.T("Msg_HealthChecking");
         foreach (var provider in _providers)
         {
             try
@@ -130,14 +130,14 @@ public sealed class ProxiesProvidersDialog : ContentDialog
             }
             catch { }
         }
-        _status.Text = "健康检查完成";
+        _status.Text = L10n.T("Msg_HealthCheckDone");
         await LoadAsync();
     }
 
     private static string FormatTime(string? iso)
     {
-        if (string.IsNullOrEmpty(iso)) return "未更新";
+        if (string.IsNullOrEmpty(iso)) return L10n.T("Msg_NeverUpdatedShort");
         if (DateTimeOffset.TryParse(iso, out var t)) return t.ToLocalTime().ToString("MM-dd HH:mm");
-        return "未更新";
+        return L10n.T("Msg_NeverUpdatedShort");
     }
 }

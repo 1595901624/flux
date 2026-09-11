@@ -1,6 +1,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Flux.Models;
+using Flux.Services;
 using Flux.ViewModels;
 
 namespace Flux.Views;
@@ -68,8 +69,8 @@ private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
                 XamlRoot = XamlRoot,
                 Title = vm.Host,
                 Content = BuildDetail(vm),
-                PrimaryButtonText = "关闭此连接",
-                CloseButtonText = "返回",
+                PrimaryButtonText = L10n.T("Msg_CloseThisConn"),
+                CloseButtonText = L10n.T("Msg_Back"),
                 DefaultButton = ContentDialogButton.Close,
             };
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
@@ -81,15 +82,15 @@ private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         var lines = new List<string>
         {
-            $"网络: {vm.Network} ({vm.Type})",
-            $"主机: {vm.Host}",
-            $"目标: {vm.Destination}",
-            $"来源: {vm.Source}",
-            $"规则: {vm.Rule}",
-            $"链路: {vm.Chains}",
-            $"进程: {vm.Process}",
-            $"下载: {vm.DownloadText}   上传: {vm.UploadText}",
-            $"时间: {vm.StartText}",
+            L10n.F("Msg_DetailNetwork", vm.Network, vm.Type),
+            L10n.F("Msg_DetailHost", vm.Host),
+            L10n.F("Msg_DetailDestination", vm.Destination),
+            L10n.F("Msg_DetailSource", vm.Source),
+            L10n.F("Msg_DetailRule", vm.Rule),
+            L10n.F("Msg_DetailChains", vm.Chains),
+            L10n.F("Msg_DetailProcess", vm.Process),
+            L10n.F("Msg_DetailTraffic", vm.DownloadText, vm.UploadText),
+            L10n.F("Msg_DetailTime", vm.StartText),
         };
         var panel = new StackPanel { Spacing = 6 };
         foreach (var line in lines)

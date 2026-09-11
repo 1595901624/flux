@@ -13,7 +13,7 @@ namespace Flux.Views;
 public sealed class UnlockItemVm : INotifyPropertyChanged
 {
     private string _name = "";
-    private string _statusText = "未测试";
+    private string _statusText = "untested";
     private string _detail = "";
     private SolidColorBrush _statusBrush = Gray();
 
@@ -34,15 +34,23 @@ public sealed class UnlockItemVm : INotifyPropertyChanged
     public void Update(UnlockResult result)
     {
         Name = result.Name;
-        StatusText = result.Status;
+        StatusText = result.Status switch
+        {
+            "supported" => L10n.T("Msg_UnlockSupported"),
+            "unsupported" => L10n.T("Msg_UnlockUnsupported"),
+            "unknown" => L10n.T("Msg_UnlockUnknown"),
+            "failed" => L10n.T("Msg_UnlockFailed"),
+            "testing" => L10n.T("Msg_UnlockTesting"),
+            _ => L10n.T("Msg_UnlockUntested"),
+        };
         Detail = string.IsNullOrEmpty(result.Region)
             ? result.Detail ?? ""
             : $"{result.Detail} · {result.Region}".Trim(' ', '·');
         StatusBrush = result.Status switch
         {
-            "支持" => Green(),
-            "不支持" => Red(),
-            "失败" => Orange(),
+            "supported" => Green(),
+            "unsupported" => Red(),
+            "failed" => Orange(),
             _ => Gray(),
         };
     }
@@ -66,7 +74,7 @@ public sealed partial class UnlockPage : Page
         foreach (var check in _service.Checks)
         {
             var vm = new UnlockItemVm();
-            vm.Update(new UnlockResult(check.Id, check.Name, "未测试"));
+            vm.Update(new UnlockResult(check.Id, check.Name, "untested"));
             _items[check.Id] = vm;
             ResultList.Items.Add(vm);
         }
@@ -101,7 +109,7 @@ public sealed partial class UnlockPage : Page
         if (sender is not FrameworkElement { DataContext: UnlockItemVm vm }) return;
         var check = _service.Checks.FirstOrDefault(c => c.Name == vm.Name);
         if (check is null) return;
-        vm.Update(new UnlockResult(check.Id, check.Name, "测试中"));
+        vm.Update(new UnlockResult(check.Id, check.Name, "testing"));
         var result = await _service.RunAsync(check, timeoutMs: 8000);
         vm.Update(result);
     }
