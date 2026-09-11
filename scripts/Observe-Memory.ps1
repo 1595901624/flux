@@ -19,7 +19,9 @@ $csv = 'artifacts\memory-observation.csv'
 New-Item -ItemType Directory -Force (Split-Path $csv) | Out-Null
 
 # If a Flux instance is already running, observe it; otherwise start one.
-$flux = Get-Process -Name Flux -ErrorAction SilentlyContinue | Select-Object -First 1
+$flux = Get-Process -Name Flux -ErrorAction SilentlyContinue |
+    Where-Object { $_.Threads.Count -gt 0 } |
+    Sort-Object WorkingSet64 -Descending | Select-Object -First 1
 if ($flux) {
     Write-Host "Flux already running (PID $($flux.Id)); observing existing instance"
 } else {
@@ -33,7 +35,9 @@ $deadline = (Get-Date).AddMinutes($Minutes)
 
 $samples = 0
 while ((Get-Date) -lt $deadline) {
-    $flux = Get-Process -Name Flux -ErrorAction SilentlyContinue | Select-Object -First 1
+    $flux = Get-Process -Name Flux -ErrorAction SilentlyContinue |
+        Where-Object { $_.Threads.Count -gt 0 } |
+        Sort-Object WorkingSet64 -Descending | Select-Object -First 1
     $core = Get-Process -Name mihomo -ErrorAction SilentlyContinue | Select-Object -First 1
     if ($flux) {
         $corePid = if ($core) { $core.Id } else { '' }
