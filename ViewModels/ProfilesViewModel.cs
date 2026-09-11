@@ -34,13 +34,13 @@ public class ProfileItemVm : ObservableObject
     }
 
     public string Uid => Item.Uid;
-    public string DisplayName => string.IsNullOrWhiteSpace(Item.Name) ? "(未命名)" : Item.Name;
+    public string DisplayName => string.IsNullOrWhiteSpace(Item.Name) ? L10n.T("VM_ProfileUnnamed") : Item.Name;
     public string Desc => Item.Desc;
     public string Host
     {
         get
         {
-            if (Item.Type == "local") return "本地文件";
+            if (Item.Type == "local") return L10n.T("VM_ProfileTypeLocalFile");
             if (string.IsNullOrEmpty(Item.Url)) return "";
             try
             {
@@ -49,10 +49,10 @@ public class ProfileItemVm : ObservableObject
             catch { return ""; }
         }
     }
-    public string TypeText => Item.Type == "remote" ? "远程订阅" : "本地配置";
+    public string TypeText => Item.Type == "remote" ? L10n.T("VM_ProfileTypeRemote") : L10n.T("VM_ProfileTypeLocalConfig");
     public string UpdatedText => Item.Updated == default
-        ? "从未更新"
-        : "更新于 " + Item.Updated.ToString("MM-dd HH:mm");
+        ? L10n.T("VM_NeverUpdated")
+        : L10n.F("VM_UpdatedAt", Item.Updated.ToString("MM-dd HH:mm"));
 
     public string UsageText
     {
@@ -85,7 +85,7 @@ public class ProfileItemVm : ObservableObject
             if (e is null || e.Expire <= 0) return "";
             var dt = DateTimeOffset.FromUnixTimeSeconds(e.Expire).LocalDateTime;
             var days = (dt - DateTime.Now).Days;
-            return days >= 0 ? $"{dt:yyyy-MM-dd} 到期（剩 {days} 天）" : "已到期";
+            return days >= 0 ? L10n.F("VM_ExpireIn", dt.ToString("yyyy-MM-dd"), days) : L10n.T("VM_Expired");
         }
     }
 
@@ -149,16 +149,16 @@ public partial class ProfilesViewModel : ObservableObject
         var url = ImportUrl?.Trim();
         if (string.IsNullOrEmpty(url)) return;
         Busy = true;
-        StatusText = "正在导入订阅…";
+        StatusText = L10n.T("VM_Importing");
         try
         {
             var item = await AppServices.Subscription.ImportAsync(url);
             ImportUrl = "";
-            StatusText = $"导入成功: {item.Name}";
+            StatusText = L10n.F("VM_Imported", item.Name);
         }
         catch (Exception ex)
         {
-            StatusText = "导入失败: " + ex.Message;
+            StatusText = L10n.F("VM_ImportFailed", ex.Message);
         }
         finally
         {
@@ -180,14 +180,14 @@ public partial class ProfilesViewModel : ObservableObject
             if (file is null) return;
 
             Busy = true;
-            StatusText = "正在导入本地配置…";
+            StatusText = L10n.T("VM_ImportingLocal");
             var item = await AppServices.Subscription.ImportLocalAsync(file.Path);
-            StatusText = $"导入成功: {item.Name}";
+            StatusText = L10n.F("VM_Imported", item.Name);
         }
         catch (Exception ex)
         {
-            LogService.App("本地导入失败: " + ex, "error");
-            StatusText = "导入失败: " + ex.Message;
+            LogService.App(L10n.F("VM_LocalImportFailedLog", ex.Message), "error");
+            StatusText = L10n.F("VM_ImportFailed", ex.Message);
         }
         finally
         {
@@ -202,11 +202,11 @@ public partial class ProfilesViewModel : ObservableObject
         {
             await AppServices.Subscription.SelectAsync(vm.Uid);
             Load();
-            StatusText = $"已切换: {vm.DisplayName}";
+            StatusText = L10n.F("VM_Switched", vm.DisplayName);
         }
         catch (Exception ex)
         {
-            StatusText = "切换失败: " + ex.Message;
+            StatusText = L10n.F("VM_SwitchFailed", ex.Message);
         }
     }
 
@@ -214,13 +214,13 @@ public partial class ProfilesViewModel : ObservableObject
     {
         try
         {
-            var item = await AppServices.Subscription.CreateEmptyAsync(name ?? "新配置");
+            var item = await AppServices.Subscription.CreateEmptyAsync(name ?? L10n.T("VM_DefaultNewName"));
             Load();
-            StatusText = $"已创建: {item.Name}";
+            StatusText = L10n.F("VM_Created", item.Name);
         }
         catch (Exception ex)
         {
-            StatusText = "创建失败: " + ex.Message;
+            StatusText = L10n.F("VM_CreateFailed", ex.Message);
         }
     }
 
@@ -229,7 +229,7 @@ public partial class ProfilesViewModel : ObservableObject
         var targets = AppServices.Config.Profiles.Items.Where(i => i.Type == "remote").ToList();
         if (targets.Count == 0)
         {
-            StatusText = "没有可更新的远程订阅";
+            StatusText = L10n.T("VM_NoRemoteToUpdate");
             return;
         }
         Busy = true;
@@ -238,7 +238,7 @@ public partial class ProfilesViewModel : ObservableObject
         {
             foreach (var item in targets)
             {
-                StatusText = $"正在更新: {item.Name}…";
+                StatusText = L10n.F("VM_Updating", item.Name);
                 try
                 {
                     await AppServices.Subscription.UpdateAsync(item);
@@ -246,10 +246,10 @@ public partial class ProfilesViewModel : ObservableObject
                 }
                 catch (Exception ex)
                 {
-                    LogService.App($"订阅更新失败: {item.Name}: {ex.Message}", "warn");
+                    LogService.App(L10n.F("VM_ProfileUpdateFailedLog", item.Name, ex.Message), "warn");
                 }
             }
-            StatusText = $"全部更新完成：成功 {ok}/{targets.Count}";
+            StatusText = L10n.F("VM_UpdateAllDone", ok, targets.Count);
         }
         finally
         {
@@ -261,15 +261,15 @@ public partial class ProfilesViewModel : ObservableObject
     public async Task UpdateAsync(ProfileItemVm vm)
     {
         Busy = true;
-        StatusText = $"正在更新: {vm.DisplayName}…";
+        StatusText = L10n.F("VM_Updating", vm.DisplayName);
         try
         {
             await AppServices.Subscription.UpdateAsync(vm.Item);
-            StatusText = $"更新成功: {vm.DisplayName}";
+            StatusText = L10n.F("VM_UpdateSucceeded", vm.DisplayName);
         }
         catch (Exception ex)
         {
-            StatusText = "更新失败: " + ex.Message;
+            StatusText = L10n.F("VM_UpdateFailed", ex.Message);
         }
         finally
         {
@@ -284,11 +284,11 @@ public partial class ProfilesViewModel : ObservableObject
         try
         {
             await AppServices.Subscription.DeleteAsync(vm.Item);
-            StatusText = "已删除";
+            StatusText = L10n.T("VM_Deleted");
         }
         catch (Exception ex)
         {
-            StatusText = "删除失败: " + ex.Message;
+            StatusText = L10n.F("VM_DeleteFailed", ex.Message);
         }
         finally
         {

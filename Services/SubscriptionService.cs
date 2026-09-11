@@ -55,7 +55,7 @@ public class SubscriptionService
     {
         var content = await File.ReadAllTextAsync(filePath).ConfigureAwait(false);
         if (YamlHelper.ParseMapping(content) is null)
-            throw new InvalidOperationException("文件不是有效的 YAML 配置");
+            throw new InvalidOperationException(L10n.T("SVC_InvalidYaml"));
         ValidateClashContent(content);
 
         var item = new ProfileItem
@@ -80,7 +80,7 @@ public class SubscriptionService
     public async Task UpdateAsync(ProfileItem item)
     {
         if (item.Type != "remote" || string.IsNullOrEmpty(item.Url))
-            throw new InvalidOperationException("仅远程订阅可更新");
+            throw new InvalidOperationException(L10n.T("SVC_OnlyRemoteUpdatable"));
 
         try
         {
@@ -96,7 +96,7 @@ public class SubscriptionService
                 item.NextUpdateAt = item.ComputeNextUpdateAt();
                 Config.SaveProfiles();
                 ProfilesChanged?.Invoke();
-                LogService.App($"订阅未变化（304）: {item.Name}");
+                LogService.App(L10n.F("SVC_NotModifiedLog", item.Name));
                 return;
             }
 
@@ -125,7 +125,7 @@ public class SubscriptionService
             item.LastError = ex.Message;
             Config.SaveProfiles();
             ProfilesChanged?.Invoke();
-            throw new InvalidOperationException("订阅更新失败: " + ex.Message, ex);
+            throw new InvalidOperationException(L10n.F("SVC_UpdateFailed", ex.Message), ex);
         }
     }
 
@@ -155,7 +155,7 @@ public class SubscriptionService
         {
             Uid = NewUid(),
             Type = "local",
-            Name = string.IsNullOrWhiteSpace(name) ? "新配置" : name,
+            Name = string.IsNullOrWhiteSpace(name) ? L10n.T("VM_DefaultNewName") : name,
             File = "",
             Updated = DateTime.Now,
         };
@@ -256,7 +256,7 @@ public class SubscriptionService
             }
             catch (Exception ex) { last = ex; }
         }
-        throw new InvalidOperationException("下载失败: " + last?.Message, last);
+        throw new InvalidOperationException(L10n.F("SVC_DownloadFailed", last?.Message ?? ""), last);
     }
 
     private class NotModifiedException : Exception
@@ -272,7 +272,7 @@ public class SubscriptionService
     {
         var fixedUrl = FixDirtyUrl(url);
         if (!Uri.TryCreate(fixedUrl, UriKind.Absolute, out var uri) || uri.Scheme is not ("http" or "https"))
-            throw new InvalidOperationException("订阅地址必须是有效的 HTTP/HTTPS URL");
+            throw new InvalidOperationException(L10n.T("SVC_InvalidUrl"));
 
         using var request = new HttpRequestMessage(HttpMethod.Get, RemoveUserInfo(uri));
         var ua = string.IsNullOrWhiteSpace(option.UserAgent)
@@ -309,7 +309,7 @@ public class SubscriptionService
         }
         response.EnsureSuccessStatusCode();
         if (response.Content.Headers.ContentLength is > MaxProfileBytes)
-            throw new InvalidOperationException("订阅内容超过 20 MiB 限制");
+            throw new InvalidOperationException(L10n.T("SVC_TooLarge"));
 
         var bytes = await ReadLimitedAsync(response.Content, cts.Token).ConfigureAwait(false);
         var content = System.Text.Encoding.UTF8.GetString(bytes);
@@ -368,7 +368,7 @@ public class SubscriptionService
             var read = await input.ReadAsync(buffer, ct).ConfigureAwait(false);
             if (read == 0) break;
             if (output.Length + read > MaxProfileBytes)
-                throw new InvalidOperationException("订阅内容超过 20 MiB 限制");
+                throw new InvalidOperationException(L10n.T("SVC_TooLarge"));
             output.Write(buffer, 0, read);
         }
         return output.ToArray();
@@ -409,7 +409,7 @@ public class SubscriptionService
         if (item.Uid != Config.Profiles.Current || !AppServices.Core.IsRunning) return;
 
         if (!await AppServices.Core.ApplyConfigAsync().ConfigureAwait(false))
-            LogService.App($"导入后应用订阅失败: {item.Name}", "warn");
+            LogService.App(L10n.F("SVC_ApplyAfterImportFailed", item.Name), "warn");
     }
 
     // ---------- 文件 / 列表操作 ----------
@@ -494,11 +494,11 @@ public class SubscriptionService
                 try
                 {
                     await UpdateAsync(item);
-                    LogService.App($"订阅自动更新成功: {item.Name}");
+                    LogService.App(L10n.F("SVC_AutoUpdateOk", item.Name));
                 }
                 catch (Exception ex)
                 {
-                    LogService.App($"订阅自动更新失败: {item.Name}: {ex.Message}", "warn");
+                    LogService.App(L10n.F("SVC_AutoUpdateFailed", item.Name, ex.Message), "warn");
                 }
             }
         }

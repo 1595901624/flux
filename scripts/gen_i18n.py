@@ -112,6 +112,8 @@ import i18n_settings_table
 i18n_settings_table.register(k)
 import i18n_messages_table
 i18n_messages_table.register(k)
+import i18n_runtime_table
+i18n_runtime_table.register(k)
 
 LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
 

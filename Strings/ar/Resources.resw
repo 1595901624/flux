@@ -1180,4 +1180,466 @@
   <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
     <value>✓ تم الحفظ</value>
   </data>
+  <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
+    <value>(بدون اسم)</value>
+  </data>
+  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
+    <value>(بدون اسم)</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
+    <value>ملف بعيد</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
+    <value>ملف بعيد</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
+  <data name="VM_NeverUpdated.Text" xml:space="preserve">
+    <value>لم يُحدَّث أبدًا</value>
+  </data>
+  <data name="VM_NeverUpdated.Content" xml:space="preserve">
+    <value>لم يُحدَّث أبدًا</value>
+  </data>
+  <data name="VM_UpdatedAt.Text" xml:space="preserve">
+    <value>حُدِّث في {0}</value>
+  </data>
+  <data name="VM_UpdatedAt.Content" xml:space="preserve">
+    <value>حُدِّث في {0}</value>
+  </data>
+  <data name="VM_ExpireIn.Text" xml:space="preserve">
+    <value>{0} ينتهي ({1} يومًا)</value>
+  </data>
+  <data name="VM_ExpireIn.Content" xml:space="preserve">
+    <value>{0} ينتهي ({1} يومًا)</value>
+  </data>
+  <data name="VM_Expired.Text" xml:space="preserve">
+    <value>منتهي</value>
+  </data>
+  <data name="VM_Expired.Content" xml:space="preserve">
+    <value>منتهي</value>
+  </data>
+  <data name="VM_Importing.Text" xml:space="preserve">
+    <value>جارٍ استيراد الملف…</value>
+  </data>
+  <data name="VM_Importing.Content" xml:space="preserve">
+    <value>جارٍ استيراد الملف…</value>
+  </data>
+  <data name="VM_Imported.Text" xml:space="preserve">
+    <value>تم الاستيراد: {0}</value>
+  </data>
+  <data name="VM_Imported.Content" xml:space="preserve">
+    <value>تم الاستيراد: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Text" xml:space="preserve">
+    <value>فشل الاستيراد: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Content" xml:space="preserve">
+    <value>فشل الاستيراد: {0}</value>
+  </data>
+  <data name="VM_ImportingLocal.Text" xml:space="preserve">
+    <value>جارٍ استيراد ملف محلي…</value>
+  </data>
+  <data name="VM_ImportingLocal.Content" xml:space="preserve">
+    <value>جارٍ استيراد ملف محلي…</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
+    <value>فشل الاستيراد المحلي: {0}</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
+    <value>فشل الاستيراد المحلي: {0}</value>
+  </data>
+  <data name="VM_Switched.Text" xml:space="preserve">
+    <value>تم التبديل: {0}</value>
+  </data>
+  <data name="VM_Switched.Content" xml:space="preserve">
+    <value>تم التبديل: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Text" xml:space="preserve">
+    <value>فشل التبديل: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Content" xml:space="preserve">
+    <value>فشل التبديل: {0}</value>
+  </data>
+  <data name="VM_DefaultNewName.Text" xml:space="preserve">
+    <value>ملف جديد</value>
+  </data>
+  <data name="VM_DefaultNewName.Content" xml:space="preserve">
+    <value>ملف جديد</value>
+  </data>
+  <data name="VM_Created.Text" xml:space="preserve">
+    <value>تم الإنشاء: {0}</value>
+  </data>
+  <data name="VM_Created.Content" xml:space="preserve">
+    <value>تم الإنشاء: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Text" xml:space="preserve">
+    <value>فشل الإنشاء: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Content" xml:space="preserve">
+    <value>فشل الإنشاء: {0}</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
+    <value>لا ملفات بعيدة للتحديث</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
+    <value>لا ملفات بعيدة للتحديث</value>
+  </data>
+  <data name="VM_Updating.Text" xml:space="preserve">
+    <value>جارٍ التحديث: {0}…</value>
+  </data>
+  <data name="VM_Updating.Content" xml:space="preserve">
+    <value>جارٍ التحديث: {0}…</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
+    <value>فشل تحديث الملف: {0}: {1}</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
+    <value>فشل تحديث الملف: {0}: {1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Text" xml:space="preserve">
+    <value>اكتمل تحديث الكل: نجح {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
+    <value>اكتمل تحديث الكل: نجح {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
+    <value>تم التحديث: {0}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
+    <value>تم التحديث: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Text" xml:space="preserve">
+    <value>فشل التحديث: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Content" xml:space="preserve">
+    <value>فشل التحديث: {0}</value>
+  </data>
+  <data name="VM_Deleted.Text" xml:space="preserve">
+    <value>تم الحذف</value>
+  </data>
+  <data name="VM_Deleted.Content" xml:space="preserve">
+    <value>تم الحذف</value>
+  </data>
+  <data name="VM_ProfileDisabled.Text" xml:space="preserve">
+    <value>(معطّل)</value>
+  </data>
+  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
+    <value>(معطّل)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
+    <value>(لا ملف)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
+    <value>(لا ملف)</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
+    <value>انقر على البطاقة للإدارة</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
+    <value>انقر على البطاقة للإدارة</value>
+  </data>
+  <data name="VM_CoreChecking.Text" xml:space="preserve">
+    <value>جارٍ الفحص…</value>
+  </data>
+  <data name="VM_CoreChecking.Content" xml:space="preserve">
+    <value>جارٍ الفحص…</value>
+  </data>
+  <data name="VM_CoreRunning.Text" xml:space="preserve">
+    <value>النواة تعمل</value>
+  </data>
+  <data name="VM_CoreRunning.Content" xml:space="preserve">
+    <value>النواة تعمل</value>
+  </data>
+  <data name="VM_CoreNotRunning.Text" xml:space="preserve">
+    <value>النواة لا تعمل</value>
+  </data>
+  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
+    <value>النواة لا تعمل</value>
+  </data>
+  <data name="VM_UptimeHours.Text" xml:space="preserve">
+    <value>{0} س {1} د</value>
+  </data>
+  <data name="VM_UptimeHours.Content" xml:space="preserve">
+    <value>{0} س {1} د</value>
+  </data>
+  <data name="VM_UptimeMinutes.Text" xml:space="preserve">
+    <value>{0} د {1} ث</value>
+  </data>
+  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
+    <value>{0} د {1} ث</value>
+  </data>
+  <data name="VM_NotRunning.Text" xml:space="preserve">
+    <value>لا تعمل</value>
+  </data>
+  <data name="VM_NotRunning.Content" xml:space="preserve">
+    <value>لا تعمل</value>
+  </data>
+  <data name="VM_RulesCount.Text" xml:space="preserve">
+    <value>{0} قواعد</value>
+  </data>
+  <data name="VM_RulesCount.Content" xml:space="preserve">
+    <value>{0} قواعد</value>
+  </data>
+  <data name="VM_SubNoProfile.Text" xml:space="preserve">
+    <value>لا ملف بعد — انقر للمتابعة</value>
+  </data>
+  <data name="VM_SubNoProfile.Content" xml:space="preserve">
+    <value>لا ملف بعد — انقر للمتابعة</value>
+  </data>
+  <data name="VM_SubRemoteHint.Text" xml:space="preserve">
+    <value>ملف بعيد · انقر للإدارة</value>
+  </data>
+  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
+    <value>ملف بعيد · انقر للإدارة</value>
+  </data>
+  <data name="VM_SubLocalHint.Text" xml:space="preserve">
+    <value>ملف محلي · انقر للإدارة</value>
+  </data>
+  <data name="VM_SubLocalHint.Content" xml:space="preserve">
+    <value>ملف محلي · انقر للإدارة</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
+    <value>TUN يتطلب تشغيل التطبيق كمسؤول</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
+    <value>TUN يتطلب تشغيل التطبيق كمسؤول</value>
+  </data>
+  <data name="VM_TunRejected.Text" xml:space="preserve">
+    <value>النواة لا تعمل أو رفضت إعدادات TUN</value>
+  </data>
+  <data name="VM_TunRejected.Content" xml:space="preserve">
+    <value>النواة لا تعمل أو رفضت إعدادات TUN</value>
+  </data>
+  <data name="VM_ConnCount.Text" xml:space="preserve">
+    <value>نشط {0} · مغلق {1}</value>
+  </data>
+  <data name="VM_ConnCount.Content" xml:space="preserve">
+    <value>نشط {0} · مغلق {1}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
+    <value>فشل إغلاق الاتصال: {0}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
+    <value>فشل إغلاق الاتصال: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
+    <value>فشل إغلاق الكل: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
+    <value>فشل إغلاق الكل: {0}</value>
+  </data>
+  <data name="VM_LogsCount.Text" xml:space="preserve">
+    <value>{0} سجلات</value>
+  </data>
+  <data name="VM_LogsCount.Content" xml:space="preserve">
+    <value>{0} سجلات</value>
+  </data>
+  <data name="SVC_InvalidYaml.Text" xml:space="preserve">
+    <value>الملف ليس تكوين YAML صالحًا</value>
+  </data>
+  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
+    <value>الملف ليس تكوين YAML صالحًا</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
+    <value>فقط الملفات البعيدة قابلة للتحديث</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
+    <value>فقط الملفات البعيدة قابلة للتحديث</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
+    <value>الملف دون تغيير (304): {0}</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
+    <value>الملف دون تغيير (304): {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Text" xml:space="preserve">
+    <value>فشل تحديث الملف: {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
+    <value>فشل تحديث الملف: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Text" xml:space="preserve">
+    <value>فشل التنزيل: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
+    <value>فشل التنزيل: {0}</value>
+  </data>
+  <data name="SVC_InvalidUrl.Text" xml:space="preserve">
+    <value>يجب أن يكون عنوان الاشتراك HTTP/HTTPS صالحًا</value>
+  </data>
+  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
+    <value>يجب أن يكون عنوان الاشتراك HTTP/HTTPS صالحًا</value>
+  </data>
+  <data name="SVC_TooLarge.Text" xml:space="preserve">
+    <value>يتجاوز الاشتراك حد 20 ميبايت</value>
+  </data>
+  <data name="SVC_TooLarge.Content" xml:space="preserve">
+    <value>يتجاوز الاشتراك حد 20 ميبايت</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
+    <value>فشل التطبيق بعد الاستيراد: {0}</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
+    <value>فشل التطبيق بعد الاستيراد: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
+    <value>نجح التحديث التلقائي: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
+    <value>نجح التحديث التلقائي: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
+    <value>فشل التحديث التلقائي: {0}: {1}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
+    <value>فشل التحديث التلقائي: {0}: {1}</value>
+  </data>
+  <data name="Tray_InitFailed.Text" xml:space="preserve">
+    <value>فشل تهيئة الصينية: {0}</value>
+  </data>
+  <data name="Tray_InitFailed.Content" xml:space="preserve">
+    <value>فشل تهيئة الصينية: {0}</value>
+  </data>
+  <data name="Tray_ShowWindow.Text" xml:space="preserve">
+    <value>إظهار النافذة الرئيسية</value>
+  </data>
+  <data name="Tray_ShowWindow.Content" xml:space="preserve">
+    <value>إظهار النافذة الرئيسية</value>
+  </data>
+  <data name="Tray_ModeRule.Text" xml:space="preserve">
+    <value>وضع القواعد</value>
+  </data>
+  <data name="Tray_ModeRule.Content" xml:space="preserve">
+    <value>وضع القواعد</value>
+  </data>
+  <data name="Tray_ModeGlobal.Text" xml:space="preserve">
+    <value>الوضع العام</value>
+  </data>
+  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
+    <value>الوضع العام</value>
+  </data>
+  <data name="Tray_ModeDirect.Text" xml:space="preserve">
+    <value>الوضع المباشر</value>
+  </data>
+  <data name="Tray_ModeDirect.Content" xml:space="preserve">
+    <value>الوضع المباشر</value>
+  </data>
+  <data name="Tray_SystemProxy.Text" xml:space="preserve">
+    <value>بروكسي النظام</value>
+  </data>
+  <data name="Tray_SystemProxy.Content" xml:space="preserve">
+    <value>بروكسي النظام</value>
+  </data>
+  <data name="Tray_TunMode.Text" xml:space="preserve">
+    <value>وضع TUN</value>
+  </data>
+  <data name="Tray_TunMode.Content" xml:space="preserve">
+    <value>وضع TUN</value>
+  </data>
+  <data name="Tray_Lightweight.Text" xml:space="preserve">
+    <value>الوضع الخفيف</value>
+  </data>
+  <data name="Tray_Lightweight.Content" xml:space="preserve">
+    <value>الوضع الخفيف</value>
+  </data>
+  <data name="Tray_RestartCore.Text" xml:space="preserve">
+    <value>إعادة تشغيل النواة</value>
+  </data>
+  <data name="Tray_RestartCore.Content" xml:space="preserve">
+    <value>إعادة تشغيل النواة</value>
+  </data>
+  <data name="Tray_Exit.Text" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Tray_Exit.Content" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
+    <value>فشل تحديث قائمة الصينية: {0}</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
+    <value>فشل تحديث قائمة الصينية: {0}</value>
+  </data>
+  <data name="Tray_ProxyGroups.Text" xml:space="preserve">
+    <value>مجموعات البروكسي</value>
+  </data>
+  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
+    <value>مجموعات البروكسي</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
+    <value>(النواة لا تعمل)</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
+    <value>(النواة لا تعمل)</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
+    <value>فشل تبديل العقدة من الصينية: {0}</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
+    <value>فشل تبديل العقدة من الصينية: {0}</value>
+  </data>
+  <data name="Tray_Profiles.Text" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
+  <data name="Tray_Profiles.Content" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
+  <data name="Tray_NoProfiles.Text" xml:space="preserve">
+    <value>(لا ملفات)</value>
+  </data>
+  <data name="Tray_NoProfiles.Content" xml:space="preserve">
+    <value>(لا ملفات)</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
+    <value>فشل تبديل الملف: {0}</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
+    <value>فشل تبديل الملف: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>فشل تبديل الوضع: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
+    <value>فشل تبديل الوضع: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
+    <value>فشل تبديل بروكسي النظام: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
+    <value>فشل تبديل بروكسي النظام: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
+    <value>لم تكتمل عملية التنظيف: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
+    <value>لم تكتمل عملية التنظيف: {0}</value>
+  </data>
+  <data name="Fmt_ModeRule.Text" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>مباشر</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
+    <value>مباشر</value>
+  </data>
 </root>

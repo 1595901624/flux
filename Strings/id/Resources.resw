@@ -1180,4 +1180,466 @@
   <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
     <value>✓ Tersimpan</value>
   </data>
+  <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
+    <value>(Tanpa nama)</value>
+  </data>
+  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
+    <value>(Tanpa nama)</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
+    <value>File lokal</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
+    <value>File lokal</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
+    <value>Profil jarak jauh</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
+    <value>Profil jarak jauh</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
+    <value>Profil lokal</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
+    <value>Profil lokal</value>
+  </data>
+  <data name="VM_NeverUpdated.Text" xml:space="preserve">
+    <value>Belum diperbarui</value>
+  </data>
+  <data name="VM_NeverUpdated.Content" xml:space="preserve">
+    <value>Belum diperbarui</value>
+  </data>
+  <data name="VM_UpdatedAt.Text" xml:space="preserve">
+    <value>Diperbarui {0}</value>
+  </data>
+  <data name="VM_UpdatedAt.Content" xml:space="preserve">
+    <value>Diperbarui {0}</value>
+  </data>
+  <data name="VM_ExpireIn.Text" xml:space="preserve">
+    <value>{0} kedaluwarsa ({1} hari)</value>
+  </data>
+  <data name="VM_ExpireIn.Content" xml:space="preserve">
+    <value>{0} kedaluwarsa ({1} hari)</value>
+  </data>
+  <data name="VM_Expired.Text" xml:space="preserve">
+    <value>Kedaluwarsa</value>
+  </data>
+  <data name="VM_Expired.Content" xml:space="preserve">
+    <value>Kedaluwarsa</value>
+  </data>
+  <data name="VM_Importing.Text" xml:space="preserve">
+    <value>Mengimpor profil…</value>
+  </data>
+  <data name="VM_Importing.Content" xml:space="preserve">
+    <value>Mengimpor profil…</value>
+  </data>
+  <data name="VM_Imported.Text" xml:space="preserve">
+    <value>Berhasil diimpor: {0}</value>
+  </data>
+  <data name="VM_Imported.Content" xml:space="preserve">
+    <value>Berhasil diimpor: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Text" xml:space="preserve">
+    <value>Impor gagal: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Content" xml:space="preserve">
+    <value>Impor gagal: {0}</value>
+  </data>
+  <data name="VM_ImportingLocal.Text" xml:space="preserve">
+    <value>Mengimpor profil lokal…</value>
+  </data>
+  <data name="VM_ImportingLocal.Content" xml:space="preserve">
+    <value>Mengimpor profil lokal…</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
+    <value>Impor lokal gagal: {0}</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
+    <value>Impor lokal gagal: {0}</value>
+  </data>
+  <data name="VM_Switched.Text" xml:space="preserve">
+    <value>Beralih ke: {0}</value>
+  </data>
+  <data name="VM_Switched.Content" xml:space="preserve">
+    <value>Beralih ke: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Text" xml:space="preserve">
+    <value>Gagal beralih: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Content" xml:space="preserve">
+    <value>Gagal beralih: {0}</value>
+  </data>
+  <data name="VM_DefaultNewName.Text" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="VM_DefaultNewName.Content" xml:space="preserve">
+    <value>Profil baru</value>
+  </data>
+  <data name="VM_Created.Text" xml:space="preserve">
+    <value>Dibuat: {0}</value>
+  </data>
+  <data name="VM_Created.Content" xml:space="preserve">
+    <value>Dibuat: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Text" xml:space="preserve">
+    <value>Gagal membuat: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Content" xml:space="preserve">
+    <value>Gagal membuat: {0}</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
+    <value>Tidak ada profil jarak jauh</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
+    <value>Tidak ada profil jarak jauh</value>
+  </data>
+  <data name="VM_Updating.Text" xml:space="preserve">
+    <value>Memperbarui: {0}…</value>
+  </data>
+  <data name="VM_Updating.Content" xml:space="preserve">
+    <value>Memperbarui: {0}…</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
+    <value>Gagal memperbarui profil: {0}: {1}</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
+    <value>Gagal memperbarui profil: {0}: {1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Text" xml:space="preserve">
+    <value>Selesai: berhasil {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
+    <value>Selesai: berhasil {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
+    <value>Diperbarui: {0}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
+    <value>Diperbarui: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Text" xml:space="preserve">
+    <value>Gagal memperbarui: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Content" xml:space="preserve">
+    <value>Gagal memperbarui: {0}</value>
+  </data>
+  <data name="VM_Deleted.Text" xml:space="preserve">
+    <value>Terhapus</value>
+  </data>
+  <data name="VM_Deleted.Content" xml:space="preserve">
+    <value>Terhapus</value>
+  </data>
+  <data name="VM_ProfileDisabled.Text" xml:space="preserve">
+    <value>(Nonaktif)</value>
+  </data>
+  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
+    <value>(Nonaktif)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
+    <value>(Tidak ada profil)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
+    <value>(Tidak ada profil)</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
+    <value>Klik kartu untuk mengelola</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
+    <value>Klik kartu untuk mengelola</value>
+  </data>
+  <data name="VM_CoreChecking.Text" xml:space="preserve">
+    <value>Memeriksa…</value>
+  </data>
+  <data name="VM_CoreChecking.Content" xml:space="preserve">
+    <value>Memeriksa…</value>
+  </data>
+  <data name="VM_CoreRunning.Text" xml:space="preserve">
+    <value>Core berjalan</value>
+  </data>
+  <data name="VM_CoreRunning.Content" xml:space="preserve">
+    <value>Core berjalan</value>
+  </data>
+  <data name="VM_CoreNotRunning.Text" xml:space="preserve">
+    <value>Core tidak berjalan</value>
+  </data>
+  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
+    <value>Core tidak berjalan</value>
+  </data>
+  <data name="VM_UptimeHours.Text" xml:space="preserve">
+    <value>{0} jam {1} menit</value>
+  </data>
+  <data name="VM_UptimeHours.Content" xml:space="preserve">
+    <value>{0} jam {1} menit</value>
+  </data>
+  <data name="VM_UptimeMinutes.Text" xml:space="preserve">
+    <value>{0} menit {1} detik</value>
+  </data>
+  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
+    <value>{0} menit {1} detik</value>
+  </data>
+  <data name="VM_NotRunning.Text" xml:space="preserve">
+    <value>Tidak berjalan</value>
+  </data>
+  <data name="VM_NotRunning.Content" xml:space="preserve">
+    <value>Tidak berjalan</value>
+  </data>
+  <data name="VM_RulesCount.Text" xml:space="preserve">
+    <value>{0} aturan</value>
+  </data>
+  <data name="VM_RulesCount.Content" xml:space="preserve">
+    <value>{0} aturan</value>
+  </data>
+  <data name="VM_SubNoProfile.Text" xml:space="preserve">
+    <value>Belum ada profil — klik untuk lanjut</value>
+  </data>
+  <data name="VM_SubNoProfile.Content" xml:space="preserve">
+    <value>Belum ada profil — klik untuk lanjut</value>
+  </data>
+  <data name="VM_SubRemoteHint.Text" xml:space="preserve">
+    <value>Profil jarak jauh · klik kartu</value>
+  </data>
+  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
+    <value>Profil jarak jauh · klik kartu</value>
+  </data>
+  <data name="VM_SubLocalHint.Text" xml:space="preserve">
+    <value>Profil lokal · klik kartu</value>
+  </data>
+  <data name="VM_SubLocalHint.Content" xml:space="preserve">
+    <value>Profil lokal · klik kartu</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
+    <value>TUN perlu dijalankan sebagai admin</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
+    <value>TUN perlu dijalankan sebagai admin</value>
+  </data>
+  <data name="VM_TunRejected.Text" xml:space="preserve">
+    <value>Core tidak berjalan atau menolak konfigurasi TUN</value>
+  </data>
+  <data name="VM_TunRejected.Content" xml:space="preserve">
+    <value>Core tidak berjalan atau menolak konfigurasi TUN</value>
+  </data>
+  <data name="VM_ConnCount.Text" xml:space="preserve">
+    <value>Aktif {0} · Tertutup {1}</value>
+  </data>
+  <data name="VM_ConnCount.Content" xml:space="preserve">
+    <value>Aktif {0} · Tertutup {1}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
+    <value>Gagal menutup koneksi: {0}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
+    <value>Gagal menutup koneksi: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
+    <value>Gagal menutup semua: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
+    <value>Gagal menutup semua: {0}</value>
+  </data>
+  <data name="VM_LogsCount.Text" xml:space="preserve">
+    <value>{0} entri</value>
+  </data>
+  <data name="VM_LogsCount.Content" xml:space="preserve">
+    <value>{0} entri</value>
+  </data>
+  <data name="SVC_InvalidYaml.Text" xml:space="preserve">
+    <value>File bukan YAML valid</value>
+  </data>
+  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
+    <value>File bukan YAML valid</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
+    <value>Hanya profil jarak jauh yang bisa diperbarui</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
+    <value>Hanya profil jarak jauh yang bisa diperbarui</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
+    <value>Profil tidak berubah (304): {0}</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
+    <value>Profil tidak berubah (304): {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Text" xml:space="preserve">
+    <value>Gagal memperbarui profil: {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
+    <value>Gagal memperbarui profil: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Text" xml:space="preserve">
+    <value>Unduh gagal: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
+    <value>Unduh gagal: {0}</value>
+  </data>
+  <data name="SVC_InvalidUrl.Text" xml:space="preserve">
+    <value>URL harus HTTP/HTTPS valid</value>
+  </data>
+  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
+    <value>URL harus HTTP/HTTPS valid</value>
+  </data>
+  <data name="SVC_TooLarge.Text" xml:space="preserve">
+    <value>Langganan melebihi 20 MiB</value>
+  </data>
+  <data name="SVC_TooLarge.Content" xml:space="preserve">
+    <value>Langganan melebihi 20 MiB</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
+    <value>Gagal menerapkan setelah impor: {0}</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
+    <value>Gagal menerapkan setelah impor: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
+    <value>Pembaruan otomatis berhasil: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
+    <value>Pembaruan otomatis berhasil: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
+    <value>Pembaruan otomatis gagal: {0}: {1}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
+    <value>Pembaruan otomatis gagal: {0}: {1}</value>
+  </data>
+  <data name="Tray_InitFailed.Text" xml:space="preserve">
+    <value>Gagal menginisialisasi tray: {0}</value>
+  </data>
+  <data name="Tray_InitFailed.Content" xml:space="preserve">
+    <value>Gagal menginisialisasi tray: {0}</value>
+  </data>
+  <data name="Tray_ShowWindow.Text" xml:space="preserve">
+    <value>Tampilkan jendela utama</value>
+  </data>
+  <data name="Tray_ShowWindow.Content" xml:space="preserve">
+    <value>Tampilkan jendela utama</value>
+  </data>
+  <data name="Tray_ModeRule.Text" xml:space="preserve">
+    <value>Mode aturan</value>
+  </data>
+  <data name="Tray_ModeRule.Content" xml:space="preserve">
+    <value>Mode aturan</value>
+  </data>
+  <data name="Tray_ModeGlobal.Text" xml:space="preserve">
+    <value>Mode global</value>
+  </data>
+  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
+    <value>Mode global</value>
+  </data>
+  <data name="Tray_ModeDirect.Text" xml:space="preserve">
+    <value>Mode langsung</value>
+  </data>
+  <data name="Tray_ModeDirect.Content" xml:space="preserve">
+    <value>Mode langsung</value>
+  </data>
+  <data name="Tray_SystemProxy.Text" xml:space="preserve">
+    <value>Proxy sistem</value>
+  </data>
+  <data name="Tray_SystemProxy.Content" xml:space="preserve">
+    <value>Proxy sistem</value>
+  </data>
+  <data name="Tray_TunMode.Text" xml:space="preserve">
+    <value>Mode TUN</value>
+  </data>
+  <data name="Tray_TunMode.Content" xml:space="preserve">
+    <value>Mode TUN</value>
+  </data>
+  <data name="Tray_Lightweight.Text" xml:space="preserve">
+    <value>Mode ringan</value>
+  </data>
+  <data name="Tray_Lightweight.Content" xml:space="preserve">
+    <value>Mode ringan</value>
+  </data>
+  <data name="Tray_RestartCore.Text" xml:space="preserve">
+    <value>Restart core</value>
+  </data>
+  <data name="Tray_RestartCore.Content" xml:space="preserve">
+    <value>Restart core</value>
+  </data>
+  <data name="Tray_Exit.Text" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="Tray_Exit.Content" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
+    <value>Gagal menyegarkan menu tray: {0}</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
+    <value>Gagal menyegarkan menu tray: {0}</value>
+  </data>
+  <data name="Tray_ProxyGroups.Text" xml:space="preserve">
+    <value>Grup proxy</value>
+  </data>
+  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
+    <value>Grup proxy</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
+    <value>(Core tidak berjalan)</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
+    <value>(Core tidak berjalan)</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
+    <value>Gagal beralih node dari tray: {0}</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
+    <value>Gagal beralih node dari tray: {0}</value>
+  </data>
+  <data name="Tray_Profiles.Text" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Tray_Profiles.Content" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Tray_NoProfiles.Text" xml:space="preserve">
+    <value>(Tidak ada profil)</value>
+  </data>
+  <data name="Tray_NoProfiles.Content" xml:space="preserve">
+    <value>(Tidak ada profil)</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
+    <value>Gagal beralih profil: {0}</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
+    <value>Gagal beralih profil: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>Gagal ganti mode: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
+    <value>Gagal ganti mode: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
+    <value>Gagal alih proxy sistem: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
+    <value>Gagal alih proxy sistem: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
+    <value>Pembersihan keluar tidak selesai: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
+    <value>Pembersihan keluar tidak selesai: {0}</value>
+  </data>
+  <data name="Fmt_ModeRule.Text" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
 </root>

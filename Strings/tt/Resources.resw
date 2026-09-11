@@ -1180,4 +1180,466 @@
   <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
     <value>✓ Сакланды</value>
   </data>
+  <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
+    <value>(Исемсез)</value>
+  </data>
+  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
+    <value>(Исемсез)</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
+    <value>Локаль файл</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
+    <value>Локаль файл</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
+    <value>Remote профиль</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
+    <value>Remote профиль</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
+    <value>Локаль профиль</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
+    <value>Локаль профиль</value>
+  </data>
+  <data name="VM_NeverUpdated.Text" xml:space="preserve">
+    <value>Беркай яңартылмады</value>
+  </data>
+  <data name="VM_NeverUpdated.Content" xml:space="preserve">
+    <value>Беркай яңартылмады</value>
+  </data>
+  <data name="VM_UpdatedAt.Text" xml:space="preserve">
+    <value>Яңартылды {0}</value>
+  </data>
+  <data name="VM_UpdatedAt.Content" xml:space="preserve">
+    <value>Яңартылды {0}</value>
+  </data>
+  <data name="VM_ExpireIn.Text" xml:space="preserve">
+    <value>{0} тәмамлана ({1} көн)</value>
+  </data>
+  <data name="VM_ExpireIn.Content" xml:space="preserve">
+    <value>{0} тәмамлана ({1} көн)</value>
+  </data>
+  <data name="VM_Expired.Text" xml:space="preserve">
+    <value>Мөддәсе тулды</value>
+  </data>
+  <data name="VM_Expired.Content" xml:space="preserve">
+    <value>Мөддәсе тулды</value>
+  </data>
+  <data name="VM_Importing.Text" xml:space="preserve">
+    <value>Профиль кертелә…</value>
+  </data>
+  <data name="VM_Importing.Content" xml:space="preserve">
+    <value>Профиль кертелә…</value>
+  </data>
+  <data name="VM_Imported.Text" xml:space="preserve">
+    <value>Кертелде: {0}</value>
+  </data>
+  <data name="VM_Imported.Content" xml:space="preserve">
+    <value>Кертелде: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Text" xml:space="preserve">
+    <value>Кертү хата: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Content" xml:space="preserve">
+    <value>Кертү хата: {0}</value>
+  </data>
+  <data name="VM_ImportingLocal.Text" xml:space="preserve">
+    <value>Локаль профиль кертелә…</value>
+  </data>
+  <data name="VM_ImportingLocal.Content" xml:space="preserve">
+    <value>Локаль профиль кертелә…</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
+    <value>Локаль кертү хата: {0}</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
+    <value>Локаль кертү хата: {0}</value>
+  </data>
+  <data name="VM_Switched.Text" xml:space="preserve">
+    <value>Алмашты: {0}</value>
+  </data>
+  <data name="VM_Switched.Content" xml:space="preserve">
+    <value>Алмашты: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Text" xml:space="preserve">
+    <value>Алмаштыру хата: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Content" xml:space="preserve">
+    <value>Алмаштыру хата: {0}</value>
+  </data>
+  <data name="VM_DefaultNewName.Text" xml:space="preserve">
+    <value>Яңа профиль</value>
+  </data>
+  <data name="VM_DefaultNewName.Content" xml:space="preserve">
+    <value>Яңа профиль</value>
+  </data>
+  <data name="VM_Created.Text" xml:space="preserve">
+    <value>Ясалды: {0}</value>
+  </data>
+  <data name="VM_Created.Content" xml:space="preserve">
+    <value>Ясалды: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Text" xml:space="preserve">
+    <value>Ясау хата: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Content" xml:space="preserve">
+    <value>Ясау хата: {0}</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
+    <value>Яңартырлык remote профиль юк</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
+    <value>Яңартырлык remote профиль юк</value>
+  </data>
+  <data name="VM_Updating.Text" xml:space="preserve">
+    <value>Яңартыла: {0}…</value>
+  </data>
+  <data name="VM_Updating.Content" xml:space="preserve">
+    <value>Яңартыла: {0}…</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
+    <value>Профиль яңарту хата: {0}: {1}</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
+    <value>Профиль яңарту хата: {0}: {1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Text" xml:space="preserve">
+    <value>Барысы тәмам: уңышлы {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
+    <value>Барысы тәмам: уңышлы {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
+    <value>Яңартылды: {0}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
+    <value>Яңартылды: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Text" xml:space="preserve">
+    <value>Яңарту хата: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Content" xml:space="preserve">
+    <value>Яңарту хата: {0}</value>
+  </data>
+  <data name="VM_Deleted.Text" xml:space="preserve">
+    <value>Бетерелде</value>
+  </data>
+  <data name="VM_Deleted.Content" xml:space="preserve">
+    <value>Бетерелде</value>
+  </data>
+  <data name="VM_ProfileDisabled.Text" xml:space="preserve">
+    <value>(Сүндерелгән)</value>
+  </data>
+  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
+    <value>(Сүндерелгән)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
+    <value>(Профиль юк)</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
+    <value>(Профиль юк)</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
+    <value>Профиль белән идарә өчен басыгыз</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
+    <value>Профиль белән идарә өчен басыгыз</value>
+  </data>
+  <data name="VM_CoreChecking.Text" xml:space="preserve">
+    <value>Тикшерелә…</value>
+  </data>
+  <data name="VM_CoreChecking.Content" xml:space="preserve">
+    <value>Тикшерелә…</value>
+  </data>
+  <data name="VM_CoreRunning.Text" xml:space="preserve">
+    <value>Йөзәк эшли</value>
+  </data>
+  <data name="VM_CoreRunning.Content" xml:space="preserve">
+    <value>Йөзәк эшли</value>
+  </data>
+  <data name="VM_CoreNotRunning.Text" xml:space="preserve">
+    <value>Йөзәк эшләми</value>
+  </data>
+  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
+    <value>Йөзәк эшләми</value>
+  </data>
+  <data name="VM_UptimeHours.Text" xml:space="preserve">
+    <value>{0} сәг {1} мин</value>
+  </data>
+  <data name="VM_UptimeHours.Content" xml:space="preserve">
+    <value>{0} сәг {1} мин</value>
+  </data>
+  <data name="VM_UptimeMinutes.Text" xml:space="preserve">
+    <value>{0} мин {1} сек</value>
+  </data>
+  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
+    <value>{0} мин {1} сек</value>
+  </data>
+  <data name="VM_NotRunning.Text" xml:space="preserve">
+    <value>Эшләми</value>
+  </data>
+  <data name="VM_NotRunning.Content" xml:space="preserve">
+    <value>Эшләми</value>
+  </data>
+  <data name="VM_RulesCount.Text" xml:space="preserve">
+    <value>{0} кагыйдә</value>
+  </data>
+  <data name="VM_RulesCount.Content" xml:space="preserve">
+    <value>{0} кагыйдә</value>
+  </data>
+  <data name="VM_SubNoProfile.Text" xml:space="preserve">
+    <value>Профиль әле юк — басыгыз</value>
+  </data>
+  <data name="VM_SubNoProfile.Content" xml:space="preserve">
+    <value>Профиль әле юк — басыгыз</value>
+  </data>
+  <data name="VM_SubRemoteHint.Text" xml:space="preserve">
+    <value>Remote профиль · басып идарә итегез</value>
+  </data>
+  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
+    <value>Remote профиль · басып идарә итегез</value>
+  </data>
+  <data name="VM_SubLocalHint.Text" xml:space="preserve">
+    <value>Локаль профиль · басып идарә итегез</value>
+  </data>
+  <data name="VM_SubLocalHint.Content" xml:space="preserve">
+    <value>Локаль профиль · басып идарә итегез</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
+    <value>TUN өчен кушакны админ буларак эшләтү кирәк</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
+    <value>TUN өчен кушакны админ буларак эшләтү кирәк</value>
+  </data>
+  <data name="VM_TunRejected.Text" xml:space="preserve">
+    <value>Йөзәк эшләми яки TUN'ны кабул итмәде</value>
+  </data>
+  <data name="VM_TunRejected.Content" xml:space="preserve">
+    <value>Йөзәк эшләми яки TUN'ны кабул итмәде</value>
+  </data>
+  <data name="VM_ConnCount.Text" xml:space="preserve">
+    <value>Актив {0} · Ябылган {1}</value>
+  </data>
+  <data name="VM_ConnCount.Content" xml:space="preserve">
+    <value>Актив {0} · Ябылган {1}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
+    <value>Тоташуны өзү хата: {0}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
+    <value>Тоташуны өзү хата: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
+    <value>Барысын өзү хата: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
+    <value>Барысын өзү хата: {0}</value>
+  </data>
+  <data name="VM_LogsCount.Text" xml:space="preserve">
+    <value>{0} язма</value>
+  </data>
+  <data name="VM_LogsCount.Content" xml:space="preserve">
+    <value>{0} язма</value>
+  </data>
+  <data name="SVC_InvalidYaml.Text" xml:space="preserve">
+    <value>Файл дөрес YAML түгел</value>
+  </data>
+  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
+    <value>Файл дөрес YAML түгел</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
+    <value>Үзенчәлекле: remote профильләр генә яңартыла</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
+    <value>Үзенчәлекле: remote профильләр генә яңартыла</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
+    <value>Профиль үзгәрмәде (304): {0}</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
+    <value>Профиль үзгәрмәде (304): {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Text" xml:space="preserve">
+    <value>Профиль яңарту хата: {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
+    <value>Профиль яңарту хата: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Text" xml:space="preserve">
+    <value>Йөкләү хата: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
+    <value>Йөкләү хата: {0}</value>
+  </data>
+  <data name="SVC_InvalidUrl.Text" xml:space="preserve">
+    <value>Абонент адресы HTTP/HTTPS булырга тиеш</value>
+  </data>
+  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
+    <value>Абонент адресы HTTP/HTTPS булырга тиеш</value>
+  </data>
+  <data name="SVC_TooLarge.Text" xml:space="preserve">
+    <value>Профиль 20 МиБ чикен узды</value>
+  </data>
+  <data name="SVC_TooLarge.Content" xml:space="preserve">
+    <value>Профиль 20 МиБ чикен узды</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
+    <value>Кертүдән соң куллану хата: {0}</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
+    <value>Кертүдән соң куллану хата: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
+    <value>Автояңарту уңышлы: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
+    <value>Автояңарту уңышлы: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
+    <value>Автояңарту хата: {0}: {1}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
+    <value>Автояңарту хата: {0}: {1}</value>
+  </data>
+  <data name="Tray_InitFailed.Text" xml:space="preserve">
+    <value>Трей башлау хата: {0}</value>
+  </data>
+  <data name="Tray_InitFailed.Content" xml:space="preserve">
+    <value>Трей башлау хата: {0}</value>
+  </data>
+  <data name="Tray_ShowWindow.Text" xml:space="preserve">
+    <value>Тәрәзәне күрсәтү</value>
+  </data>
+  <data name="Tray_ShowWindow.Content" xml:space="preserve">
+    <value>Тәрәзәне күрсәтү</value>
+  </data>
+  <data name="Tray_ModeRule.Text" xml:space="preserve">
+    <value>Кагыйдә режимы</value>
+  </data>
+  <data name="Tray_ModeRule.Content" xml:space="preserve">
+    <value>Кагыйдә режимы</value>
+  </data>
+  <data name="Tray_ModeGlobal.Text" xml:space="preserve">
+    <value>Глобаль режим</value>
+  </data>
+  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
+    <value>Глобаль режим</value>
+  </data>
+  <data name="Tray_ModeDirect.Text" xml:space="preserve">
+    <value>Туры режим</value>
+  </data>
+  <data name="Tray_ModeDirect.Content" xml:space="preserve">
+    <value>Туры режим</value>
+  </data>
+  <data name="Tray_SystemProxy.Text" xml:space="preserve">
+    <value>Систем прокси</value>
+  </data>
+  <data name="Tray_SystemProxy.Content" xml:space="preserve">
+    <value>Систем прокси</value>
+  </data>
+  <data name="Tray_TunMode.Text" xml:space="preserve">
+    <value>TUN режимы</value>
+  </data>
+  <data name="Tray_TunMode.Content" xml:space="preserve">
+    <value>TUN режимы</value>
+  </data>
+  <data name="Tray_Lightweight.Text" xml:space="preserve">
+    <value>Җиңел режим</value>
+  </data>
+  <data name="Tray_Lightweight.Content" xml:space="preserve">
+    <value>Җиңел режим</value>
+  </data>
+  <data name="Tray_RestartCore.Text" xml:space="preserve">
+    <value>Йөзәкне яңадан башлау</value>
+  </data>
+  <data name="Tray_RestartCore.Content" xml:space="preserve">
+    <value>Йөзәкне яңадан башлау</value>
+  </data>
+  <data name="Tray_Exit.Text" xml:space="preserve">
+    <value>Чыгу</value>
+  </data>
+  <data name="Tray_Exit.Content" xml:space="preserve">
+    <value>Чыгу</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
+    <value>Трей меню яңарту хата: {0}</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
+    <value>Трей меню яңарту хата: {0}</value>
+  </data>
+  <data name="Tray_ProxyGroups.Text" xml:space="preserve">
+    <value>Прокси төркемнәре</value>
+  </data>
+  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
+    <value>Прокси төркемнәре</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
+    <value>(Йөзәк эшләми)</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
+    <value>(Йөзәк эшләми)</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
+    <value>Трейдә төен алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
+    <value>Трейдә төен алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_Profiles.Text" xml:space="preserve">
+    <value>Профильләр</value>
+  </data>
+  <data name="Tray_Profiles.Content" xml:space="preserve">
+    <value>Профильләр</value>
+  </data>
+  <data name="Tray_NoProfiles.Text" xml:space="preserve">
+    <value>(Профильләр юк)</value>
+  </data>
+  <data name="Tray_NoProfiles.Content" xml:space="preserve">
+    <value>(Профильләр юк)</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
+    <value>Профиль алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
+    <value>Профиль алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>Режим алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
+    <value>Режим алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
+    <value>Систем прокси алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
+    <value>Систем прокси алмаштыру хата: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
+    <value>Чыгу чистартулары тәмамланмады: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
+    <value>Чыгу чистартулары тәмамланмады: {0}</value>
+  </data>
+  <data name="Fmt_ModeRule.Text" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
+    <value>Глобаль</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Глобаль</value>
+  </data>
+  <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Туры</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
+    <value>Туры</value>
+  </data>
 </root>

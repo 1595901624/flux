@@ -1180,4 +1180,466 @@
   <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
     <value>✓ 저장됨</value>
   </data>
+  <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
+    <value>(이름 없음)</value>
+  </data>
+  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
+    <value>(이름 없음)</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
+    <value>로컬 파일</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
+    <value>로컬 파일</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
+    <value>원격 구독</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
+    <value>원격 구독</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
+    <value>로컬 설정</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
+    <value>로컬 설정</value>
+  </data>
+  <data name="VM_NeverUpdated.Text" xml:space="preserve">
+    <value>업데이트 안 함</value>
+  </data>
+  <data name="VM_NeverUpdated.Content" xml:space="preserve">
+    <value>업데이트 안 함</value>
+  </data>
+  <data name="VM_UpdatedAt.Text" xml:space="preserve">
+    <value>{0}에 업데이트</value>
+  </data>
+  <data name="VM_UpdatedAt.Content" xml:space="preserve">
+    <value>{0}에 업데이트</value>
+  </data>
+  <data name="VM_ExpireIn.Text" xml:space="preserve">
+    <value>{0} 만료({1}일 남음)</value>
+  </data>
+  <data name="VM_ExpireIn.Content" xml:space="preserve">
+    <value>{0} 만료({1}일 남음)</value>
+  </data>
+  <data name="VM_Expired.Text" xml:space="preserve">
+    <value>만료됨</value>
+  </data>
+  <data name="VM_Expired.Content" xml:space="preserve">
+    <value>만료됨</value>
+  </data>
+  <data name="VM_Importing.Text" xml:space="preserve">
+    <value>가져오는 중…</value>
+  </data>
+  <data name="VM_Importing.Content" xml:space="preserve">
+    <value>가져오는 중…</value>
+  </data>
+  <data name="VM_Imported.Text" xml:space="preserve">
+    <value>가져오기 성공: {0}</value>
+  </data>
+  <data name="VM_Imported.Content" xml:space="preserve">
+    <value>가져오기 성공: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Text" xml:space="preserve">
+    <value>가져오기 실패: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Content" xml:space="preserve">
+    <value>가져오기 실패: {0}</value>
+  </data>
+  <data name="VM_ImportingLocal.Text" xml:space="preserve">
+    <value>로컬 설정 가져오는 중…</value>
+  </data>
+  <data name="VM_ImportingLocal.Content" xml:space="preserve">
+    <value>로컬 설정 가져오는 중…</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
+    <value>로컬 가져오기 실패: {0}</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
+    <value>로컬 가져오기 실패: {0}</value>
+  </data>
+  <data name="VM_Switched.Text" xml:space="preserve">
+    <value>전환됨: {0}</value>
+  </data>
+  <data name="VM_Switched.Content" xml:space="preserve">
+    <value>전환됨: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Text" xml:space="preserve">
+    <value>전환 실패: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Content" xml:space="preserve">
+    <value>전환 실패: {0}</value>
+  </data>
+  <data name="VM_DefaultNewName.Text" xml:space="preserve">
+    <value>새 설정</value>
+  </data>
+  <data name="VM_DefaultNewName.Content" xml:space="preserve">
+    <value>새 설정</value>
+  </data>
+  <data name="VM_Created.Text" xml:space="preserve">
+    <value>생성됨: {0}</value>
+  </data>
+  <data name="VM_Created.Content" xml:space="preserve">
+    <value>생성됨: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Text" xml:space="preserve">
+    <value>생성 실패: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Content" xml:space="preserve">
+    <value>생성 실패: {0}</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
+    <value>업데이트할 원격 구독 없음</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
+    <value>업데이트할 원격 구독 없음</value>
+  </data>
+  <data name="VM_Updating.Text" xml:space="preserve">
+    <value>업데이트 중: {0}…</value>
+  </data>
+  <data name="VM_Updating.Content" xml:space="preserve">
+    <value>업데이트 중: {0}…</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
+    <value>구독 업데이트 실패: {0}: {1}</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
+    <value>구독 업데이트 실패: {0}: {1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Text" xml:space="preserve">
+    <value>모두 완료: 성공 {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
+    <value>모두 완료: 성공 {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
+    <value>업데이트 성공: {0}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
+    <value>업데이트 성공: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Text" xml:space="preserve">
+    <value>업데이트 실패: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Content" xml:space="preserve">
+    <value>업데이트 실패: {0}</value>
+  </data>
+  <data name="VM_Deleted.Text" xml:space="preserve">
+    <value>삭제됨</value>
+  </data>
+  <data name="VM_Deleted.Content" xml:space="preserve">
+    <value>삭제됨</value>
+  </data>
+  <data name="VM_ProfileDisabled.Text" xml:space="preserve">
+    <value>（비활성）</value>
+  </data>
+  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
+    <value>（비활성）</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
+    <value>（구독 없음）</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
+    <value>（구독 없음）</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
+    <value>카드를 클릭해 구독 관리</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
+    <value>카드를 클릭해 구독 관리</value>
+  </data>
+  <data name="VM_CoreChecking.Text" xml:space="preserve">
+    <value>확인 중…</value>
+  </data>
+  <data name="VM_CoreChecking.Content" xml:space="preserve">
+    <value>확인 중…</value>
+  </data>
+  <data name="VM_CoreRunning.Text" xml:space="preserve">
+    <value>코어 실행 중</value>
+  </data>
+  <data name="VM_CoreRunning.Content" xml:space="preserve">
+    <value>코어 실행 중</value>
+  </data>
+  <data name="VM_CoreNotRunning.Text" xml:space="preserve">
+    <value>코어 미실행</value>
+  </data>
+  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
+    <value>코어 미실행</value>
+  </data>
+  <data name="VM_UptimeHours.Text" xml:space="preserve">
+    <value>{0}시간 {1}분</value>
+  </data>
+  <data name="VM_UptimeHours.Content" xml:space="preserve">
+    <value>{0}시간 {1}분</value>
+  </data>
+  <data name="VM_UptimeMinutes.Text" xml:space="preserve">
+    <value>{0}분 {1}초</value>
+  </data>
+  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
+    <value>{0}분 {1}초</value>
+  </data>
+  <data name="VM_NotRunning.Text" xml:space="preserve">
+    <value>미실행</value>
+  </data>
+  <data name="VM_NotRunning.Content" xml:space="preserve">
+    <value>미실행</value>
+  </data>
+  <data name="VM_RulesCount.Text" xml:space="preserve">
+    <value>{0}개</value>
+  </data>
+  <data name="VM_RulesCount.Content" xml:space="preserve">
+    <value>{0}개</value>
+  </data>
+  <data name="VM_SubNoProfile.Text" xml:space="preserve">
+    <value>구독이 없습니다. 클릭하여 이동</value>
+  </data>
+  <data name="VM_SubNoProfile.Content" xml:space="preserve">
+    <value>구독이 없습니다. 클릭하여 이동</value>
+  </data>
+  <data name="VM_SubRemoteHint.Text" xml:space="preserve">
+    <value>원격 구독 · 클릭해 관리</value>
+  </data>
+  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
+    <value>원격 구독 · 클릭해 관리</value>
+  </data>
+  <data name="VM_SubLocalHint.Text" xml:space="preserve">
+    <value>로컬 설정 · 클릭해 관리</value>
+  </data>
+  <data name="VM_SubLocalHint.Content" xml:space="preserve">
+    <value>로컬 설정 · 클릭해 관리</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
+    <value>TUN에는 관리자 권한이 필요합니다</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
+    <value>TUN에는 관리자 권한이 필요합니다</value>
+  </data>
+  <data name="VM_TunRejected.Text" xml:space="preserve">
+    <value>코어 미실행 또는 TUN 설정 거부</value>
+  </data>
+  <data name="VM_TunRejected.Content" xml:space="preserve">
+    <value>코어 미실행 또는 TUN 설정 거부</value>
+  </data>
+  <data name="VM_ConnCount.Text" xml:space="preserve">
+    <value>활성 {0} · 닫힘 {1}</value>
+  </data>
+  <data name="VM_ConnCount.Content" xml:space="preserve">
+    <value>활성 {0} · 닫힘 {1}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
+    <value>연결 닫기 실패: {0}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
+    <value>연결 닫기 실패: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
+    <value>모두 닫기 실패: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
+    <value>모두 닫기 실패: {0}</value>
+  </data>
+  <data name="VM_LogsCount.Text" xml:space="preserve">
+    <value>{0}개</value>
+  </data>
+  <data name="VM_LogsCount.Content" xml:space="preserve">
+    <value>{0}개</value>
+  </data>
+  <data name="SVC_InvalidYaml.Text" xml:space="preserve">
+    <value>유효한 YAML 설정이 아닙니다</value>
+  </data>
+  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
+    <value>유효한 YAML 설정이 아닙니다</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
+    <value>원격 구독만 업데이트 가능</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
+    <value>원격 구독만 업데이트 가능</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
+    <value>구독 변경 없음(304): {0}</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
+    <value>구독 변경 없음(304): {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Text" xml:space="preserve">
+    <value>구독 업데이트 실패: {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
+    <value>구독 업데이트 실패: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Text" xml:space="preserve">
+    <value>다운로드 실패: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
+    <value>다운로드 실패: {0}</value>
+  </data>
+  <data name="SVC_InvalidUrl.Text" xml:space="preserve">
+    <value>유효한 HTTP/HTTPS URL이어야 합니다</value>
+  </data>
+  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
+    <value>유효한 HTTP/HTTPS URL이어야 합니다</value>
+  </data>
+  <data name="SVC_TooLarge.Text" xml:space="preserve">
+    <value>구독이 20MiB 한도 초과</value>
+  </data>
+  <data name="SVC_TooLarge.Content" xml:space="preserve">
+    <value>구독이 20MiB 한도 초과</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
+    <value>가져오기 후 적용 실패: {0}</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
+    <value>가져오기 후 적용 실패: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
+    <value>자동 업데이트 성공: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
+    <value>자동 업데이트 성공: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
+    <value>자동 업데이트 실패: {0}: {1}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
+    <value>자동 업데이트 실패: {0}: {1}</value>
+  </data>
+  <data name="Tray_InitFailed.Text" xml:space="preserve">
+    <value>트레이 초기화 실패: {0}</value>
+  </data>
+  <data name="Tray_InitFailed.Content" xml:space="preserve">
+    <value>트레이 초기화 실패: {0}</value>
+  </data>
+  <data name="Tray_ShowWindow.Text" xml:space="preserve">
+    <value>기본 창 표시</value>
+  </data>
+  <data name="Tray_ShowWindow.Content" xml:space="preserve">
+    <value>기본 창 표시</value>
+  </data>
+  <data name="Tray_ModeRule.Text" xml:space="preserve">
+    <value>규칙 모드</value>
+  </data>
+  <data name="Tray_ModeRule.Content" xml:space="preserve">
+    <value>규칙 모드</value>
+  </data>
+  <data name="Tray_ModeGlobal.Text" xml:space="preserve">
+    <value>글로벌 모드</value>
+  </data>
+  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
+    <value>글로벌 모드</value>
+  </data>
+  <data name="Tray_ModeDirect.Text" xml:space="preserve">
+    <value>다이렉트 모드</value>
+  </data>
+  <data name="Tray_ModeDirect.Content" xml:space="preserve">
+    <value>다이렉트 모드</value>
+  </data>
+  <data name="Tray_SystemProxy.Text" xml:space="preserve">
+    <value>시스템 프록시</value>
+  </data>
+  <data name="Tray_SystemProxy.Content" xml:space="preserve">
+    <value>시스템 프록시</value>
+  </data>
+  <data name="Tray_TunMode.Text" xml:space="preserve">
+    <value>TUN 모드</value>
+  </data>
+  <data name="Tray_TunMode.Content" xml:space="preserve">
+    <value>TUN 모드</value>
+  </data>
+  <data name="Tray_Lightweight.Text" xml:space="preserve">
+    <value>경량 모드</value>
+  </data>
+  <data name="Tray_Lightweight.Content" xml:space="preserve">
+    <value>경량 모드</value>
+  </data>
+  <data name="Tray_RestartCore.Text" xml:space="preserve">
+    <value>코어 재시작</value>
+  </data>
+  <data name="Tray_RestartCore.Content" xml:space="preserve">
+    <value>코어 재시작</value>
+  </data>
+  <data name="Tray_Exit.Text" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="Tray_Exit.Content" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
+    <value>트레이 메뉴 새로고침 실패: {0}</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
+    <value>트레이 메뉴 새로고침 실패: {0}</value>
+  </data>
+  <data name="Tray_ProxyGroups.Text" xml:space="preserve">
+    <value>프록시 그룹</value>
+  </data>
+  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
+    <value>프록시 그룹</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
+    <value>(코어 미실행)</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
+    <value>(코어 미실행)</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
+    <value>트레이 노드 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
+    <value>트레이 노드 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_Profiles.Text" xml:space="preserve">
+    <value>구독</value>
+  </data>
+  <data name="Tray_Profiles.Content" xml:space="preserve">
+    <value>구독</value>
+  </data>
+  <data name="Tray_NoProfiles.Text" xml:space="preserve">
+    <value>(구독 없음)</value>
+  </data>
+  <data name="Tray_NoProfiles.Content" xml:space="preserve">
+    <value>(구독 없음)</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
+    <value>구독 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
+    <value>구독 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>모드 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
+    <value>모드 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
+    <value>시스템 프록시 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
+    <value>시스템 프록시 전환 실패: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
+    <value>종료 정리 미완료: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
+    <value>종료 정리 미완료: {0}</value>
+  </data>
+  <data name="Fmt_ModeRule.Text" xml:space="preserve">
+    <value>규칙</value>
+  </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>규칙</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
+    <value>글로벌</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>글로벌</value>
+  </data>
+  <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>다이렉트</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
+    <value>다이렉트</value>
+  </data>
 </root>

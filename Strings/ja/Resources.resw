@@ -1180,4 +1180,466 @@
   <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
     <value>✓ 保存しました</value>
   </data>
+  <data name="VM_ProfileUnnamed.Text" xml:space="preserve">
+    <value>(名前なし)</value>
+  </data>
+  <data name="VM_ProfileUnnamed.Content" xml:space="preserve">
+    <value>(名前なし)</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Text" xml:space="preserve">
+    <value>ローカルファイル</value>
+  </data>
+  <data name="VM_ProfileTypeLocalFile.Content" xml:space="preserve">
+    <value>ローカルファイル</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Text" xml:space="preserve">
+    <value>リモート購読</value>
+  </data>
+  <data name="VM_ProfileTypeRemote.Content" xml:space="preserve">
+    <value>リモート購読</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Text" xml:space="preserve">
+    <value>ローカル設定</value>
+  </data>
+  <data name="VM_ProfileTypeLocalConfig.Content" xml:space="preserve">
+    <value>ローカル設定</value>
+  </data>
+  <data name="VM_NeverUpdated.Text" xml:space="preserve">
+    <value>未更新</value>
+  </data>
+  <data name="VM_NeverUpdated.Content" xml:space="preserve">
+    <value>未更新</value>
+  </data>
+  <data name="VM_UpdatedAt.Text" xml:space="preserve">
+    <value>{0} に更新</value>
+  </data>
+  <data name="VM_UpdatedAt.Content" xml:space="preserve">
+    <value>{0} に更新</value>
+  </data>
+  <data name="VM_ExpireIn.Text" xml:space="preserve">
+    <value>{0} 期限（残り{1}日）</value>
+  </data>
+  <data name="VM_ExpireIn.Content" xml:space="preserve">
+    <value>{0} 期限（残り{1}日）</value>
+  </data>
+  <data name="VM_Expired.Text" xml:space="preserve">
+    <value>期限切れ</value>
+  </data>
+  <data name="VM_Expired.Content" xml:space="preserve">
+    <value>期限切れ</value>
+  </data>
+  <data name="VM_Importing.Text" xml:space="preserve">
+    <value>インポート中…</value>
+  </data>
+  <data name="VM_Importing.Content" xml:space="preserve">
+    <value>インポート中…</value>
+  </data>
+  <data name="VM_Imported.Text" xml:space="preserve">
+    <value>インポート成功: {0}</value>
+  </data>
+  <data name="VM_Imported.Content" xml:space="preserve">
+    <value>インポート成功: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Text" xml:space="preserve">
+    <value>インポート失敗: {0}</value>
+  </data>
+  <data name="VM_ImportFailed.Content" xml:space="preserve">
+    <value>インポート失敗: {0}</value>
+  </data>
+  <data name="VM_ImportingLocal.Text" xml:space="preserve">
+    <value>ローカル設定をインポート中…</value>
+  </data>
+  <data name="VM_ImportingLocal.Content" xml:space="preserve">
+    <value>ローカル設定をインポート中…</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Text" xml:space="preserve">
+    <value>ローカルインポート失敗: {0}</value>
+  </data>
+  <data name="VM_LocalImportFailedLog.Content" xml:space="preserve">
+    <value>ローカルインポート失敗: {0}</value>
+  </data>
+  <data name="VM_Switched.Text" xml:space="preserve">
+    <value>切り替え: {0}</value>
+  </data>
+  <data name="VM_Switched.Content" xml:space="preserve">
+    <value>切り替え: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Text" xml:space="preserve">
+    <value>切り替え失敗: {0}</value>
+  </data>
+  <data name="VM_SwitchFailed.Content" xml:space="preserve">
+    <value>切り替え失敗: {0}</value>
+  </data>
+  <data name="VM_DefaultNewName.Text" xml:space="preserve">
+    <value>新規設定</value>
+  </data>
+  <data name="VM_DefaultNewName.Content" xml:space="preserve">
+    <value>新規設定</value>
+  </data>
+  <data name="VM_Created.Text" xml:space="preserve">
+    <value>作成: {0}</value>
+  </data>
+  <data name="VM_Created.Content" xml:space="preserve">
+    <value>作成: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Text" xml:space="preserve">
+    <value>作成失敗: {0}</value>
+  </data>
+  <data name="VM_CreateFailed.Content" xml:space="preserve">
+    <value>作成失敗: {0}</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Text" xml:space="preserve">
+    <value>更新可能なリモート購読なし</value>
+  </data>
+  <data name="VM_NoRemoteToUpdate.Content" xml:space="preserve">
+    <value>更新可能なリモート購読なし</value>
+  </data>
+  <data name="VM_Updating.Text" xml:space="preserve">
+    <value>更新中: {0}…</value>
+  </data>
+  <data name="VM_Updating.Content" xml:space="preserve">
+    <value>更新中: {0}…</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Text" xml:space="preserve">
+    <value>購読更新失敗: {0}: {1}</value>
+  </data>
+  <data name="VM_ProfileUpdateFailedLog.Content" xml:space="preserve">
+    <value>購読更新失敗: {0}: {1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Text" xml:space="preserve">
+    <value>すべて更新完了: 成功 {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateAllDone.Content" xml:space="preserve">
+    <value>すべて更新完了: 成功 {0}/{1}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Text" xml:space="preserve">
+    <value>更新成功: {0}</value>
+  </data>
+  <data name="VM_UpdateSucceeded.Content" xml:space="preserve">
+    <value>更新成功: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Text" xml:space="preserve">
+    <value>更新失敗: {0}</value>
+  </data>
+  <data name="VM_UpdateFailed.Content" xml:space="preserve">
+    <value>更新失敗: {0}</value>
+  </data>
+  <data name="VM_Deleted.Text" xml:space="preserve">
+    <value>削除しました</value>
+  </data>
+  <data name="VM_Deleted.Content" xml:space="preserve">
+    <value>削除しました</value>
+  </data>
+  <data name="VM_ProfileDisabled.Text" xml:space="preserve">
+    <value>（無効）</value>
+  </data>
+  <data name="VM_ProfileDisabled.Content" xml:space="preserve">
+    <value>（無効）</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Text" xml:space="preserve">
+    <value>（購読なし）</value>
+  </data>
+  <data name="VM_ProfileNoSubscription.Content" xml:space="preserve">
+    <value>（購読なし）</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Text" xml:space="preserve">
+    <value>カードをクリックして管理</value>
+  </data>
+  <data name="VM_SubscriptionStatusDefault.Content" xml:space="preserve">
+    <value>カードをクリックして管理</value>
+  </data>
+  <data name="VM_CoreChecking.Text" xml:space="preserve">
+    <value>確認中…</value>
+  </data>
+  <data name="VM_CoreChecking.Content" xml:space="preserve">
+    <value>確認中…</value>
+  </data>
+  <data name="VM_CoreRunning.Text" xml:space="preserve">
+    <value>コア実行中</value>
+  </data>
+  <data name="VM_CoreRunning.Content" xml:space="preserve">
+    <value>コア実行中</value>
+  </data>
+  <data name="VM_CoreNotRunning.Text" xml:space="preserve">
+    <value>コア停止中</value>
+  </data>
+  <data name="VM_CoreNotRunning.Content" xml:space="preserve">
+    <value>コア停止中</value>
+  </data>
+  <data name="VM_UptimeHours.Text" xml:space="preserve">
+    <value>{0}時間{1}分</value>
+  </data>
+  <data name="VM_UptimeHours.Content" xml:space="preserve">
+    <value>{0}時間{1}分</value>
+  </data>
+  <data name="VM_UptimeMinutes.Text" xml:space="preserve">
+    <value>{0}分{1}秒</value>
+  </data>
+  <data name="VM_UptimeMinutes.Content" xml:space="preserve">
+    <value>{0}分{1}秒</value>
+  </data>
+  <data name="VM_NotRunning.Text" xml:space="preserve">
+    <value>停止中</value>
+  </data>
+  <data name="VM_NotRunning.Content" xml:space="preserve">
+    <value>停止中</value>
+  </data>
+  <data name="VM_RulesCount.Text" xml:space="preserve">
+    <value>{0} 件</value>
+  </data>
+  <data name="VM_RulesCount.Content" xml:space="preserve">
+    <value>{0} 件</value>
+  </data>
+  <data name="VM_SubNoProfile.Text" xml:space="preserve">
+    <value>まだ購読がありません。クリックして移動</value>
+  </data>
+  <data name="VM_SubNoProfile.Content" xml:space="preserve">
+    <value>まだ購読がありません。クリックして移動</value>
+  </data>
+  <data name="VM_SubRemoteHint.Text" xml:space="preserve">
+    <value>リモート購読・クリックで管理</value>
+  </data>
+  <data name="VM_SubRemoteHint.Content" xml:space="preserve">
+    <value>リモート購読・クリックで管理</value>
+  </data>
+  <data name="VM_SubLocalHint.Text" xml:space="preserve">
+    <value>ローカル設定・クリックで管理</value>
+  </data>
+  <data name="VM_SubLocalHint.Content" xml:space="preserve">
+    <value>ローカル設定・クリックで管理</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Text" xml:space="preserve">
+    <value>TUNには管理者実行が必要です</value>
+  </data>
+  <data name="VM_TunNeedAdmin.Content" xml:space="preserve">
+    <value>TUNには管理者実行が必要です</value>
+  </data>
+  <data name="VM_TunRejected.Text" xml:space="preserve">
+    <value>コアが停止中かTUN設定を拒否</value>
+  </data>
+  <data name="VM_TunRejected.Content" xml:space="preserve">
+    <value>コアが停止中かTUN設定を拒否</value>
+  </data>
+  <data name="VM_ConnCount.Text" xml:space="preserve">
+    <value>アクティブ {0}・終了 {1}</value>
+  </data>
+  <data name="VM_ConnCount.Content" xml:space="preserve">
+    <value>アクティブ {0}・終了 {1}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Text" xml:space="preserve">
+    <value>接続遮断失敗: {0}</value>
+  </data>
+  <data name="VM_ConnCloseFailed.Content" xml:space="preserve">
+    <value>接続遮断失敗: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Text" xml:space="preserve">
+    <value>全接続遮断失敗: {0}</value>
+  </data>
+  <data name="VM_ConnCloseAllFailed.Content" xml:space="preserve">
+    <value>全接続遮断失敗: {0}</value>
+  </data>
+  <data name="VM_LogsCount.Text" xml:space="preserve">
+    <value>{0} 件</value>
+  </data>
+  <data name="VM_LogsCount.Content" xml:space="preserve">
+    <value>{0} 件</value>
+  </data>
+  <data name="SVC_InvalidYaml.Text" xml:space="preserve">
+    <value>有効なYAML設定ではありません</value>
+  </data>
+  <data name="SVC_InvalidYaml.Content" xml:space="preserve">
+    <value>有効なYAML設定ではありません</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Text" xml:space="preserve">
+    <value>リモート購読のみ更新可能</value>
+  </data>
+  <data name="SVC_OnlyRemoteUpdatable.Content" xml:space="preserve">
+    <value>リモート購読のみ更新可能</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Text" xml:space="preserve">
+    <value>購読に変化なし(304): {0}</value>
+  </data>
+  <data name="SVC_NotModifiedLog.Content" xml:space="preserve">
+    <value>購読に変化なし(304): {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Text" xml:space="preserve">
+    <value>購読更新失敗: {0}</value>
+  </data>
+  <data name="SVC_UpdateFailed.Content" xml:space="preserve">
+    <value>購読更新失敗: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Text" xml:space="preserve">
+    <value>ダウンロード失敗: {0}</value>
+  </data>
+  <data name="SVC_DownloadFailed.Content" xml:space="preserve">
+    <value>ダウンロード失敗: {0}</value>
+  </data>
+  <data name="SVC_InvalidUrl.Text" xml:space="preserve">
+    <value>有効なHTTP/HTTPS URLを指定してください</value>
+  </data>
+  <data name="SVC_InvalidUrl.Content" xml:space="preserve">
+    <value>有効なHTTP/HTTPS URLを指定してください</value>
+  </data>
+  <data name="SVC_TooLarge.Text" xml:space="preserve">
+    <value>購読が20MiB上限を超過</value>
+  </data>
+  <data name="SVC_TooLarge.Content" xml:space="preserve">
+    <value>購読が20MiB上限を超過</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Text" xml:space="preserve">
+    <value>インポート後の適用に失敗: {0}</value>
+  </data>
+  <data name="SVC_ApplyAfterImportFailed.Content" xml:space="preserve">
+    <value>インポート後の適用に失敗: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Text" xml:space="preserve">
+    <value>自動更新成功: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateOk.Content" xml:space="preserve">
+    <value>自動更新成功: {0}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Text" xml:space="preserve">
+    <value>自動更新失敗: {0}: {1}</value>
+  </data>
+  <data name="SVC_AutoUpdateFailed.Content" xml:space="preserve">
+    <value>自動更新失敗: {0}: {1}</value>
+  </data>
+  <data name="Tray_InitFailed.Text" xml:space="preserve">
+    <value>トレイ初期化失敗: {0}</value>
+  </data>
+  <data name="Tray_InitFailed.Content" xml:space="preserve">
+    <value>トレイ初期化失敗: {0}</value>
+  </data>
+  <data name="Tray_ShowWindow.Text" xml:space="preserve">
+    <value>メインウィンドウを表示</value>
+  </data>
+  <data name="Tray_ShowWindow.Content" xml:space="preserve">
+    <value>メインウィンドウを表示</value>
+  </data>
+  <data name="Tray_ModeRule.Text" xml:space="preserve">
+    <value>ルールモード</value>
+  </data>
+  <data name="Tray_ModeRule.Content" xml:space="preserve">
+    <value>ルールモード</value>
+  </data>
+  <data name="Tray_ModeGlobal.Text" xml:space="preserve">
+    <value>グローバルモード</value>
+  </data>
+  <data name="Tray_ModeGlobal.Content" xml:space="preserve">
+    <value>グローバルモード</value>
+  </data>
+  <data name="Tray_ModeDirect.Text" xml:space="preserve">
+    <value>ダイレクトモード</value>
+  </data>
+  <data name="Tray_ModeDirect.Content" xml:space="preserve">
+    <value>ダイレクトモード</value>
+  </data>
+  <data name="Tray_SystemProxy.Text" xml:space="preserve">
+    <value>システムプロキシ</value>
+  </data>
+  <data name="Tray_SystemProxy.Content" xml:space="preserve">
+    <value>システムプロキシ</value>
+  </data>
+  <data name="Tray_TunMode.Text" xml:space="preserve">
+    <value>TUN モード</value>
+  </data>
+  <data name="Tray_TunMode.Content" xml:space="preserve">
+    <value>TUN モード</value>
+  </data>
+  <data name="Tray_Lightweight.Text" xml:space="preserve">
+    <value>軽量モード</value>
+  </data>
+  <data name="Tray_Lightweight.Content" xml:space="preserve">
+    <value>軽量モード</value>
+  </data>
+  <data name="Tray_RestartCore.Text" xml:space="preserve">
+    <value>コア再起動</value>
+  </data>
+  <data name="Tray_RestartCore.Content" xml:space="preserve">
+    <value>コア再起動</value>
+  </data>
+  <data name="Tray_Exit.Text" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="Tray_Exit.Content" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Text" xml:space="preserve">
+    <value>トレイメニュー更新失敗: {0}</value>
+  </data>
+  <data name="Tray_MenuRefreshFailed.Content" xml:space="preserve">
+    <value>トレイメニュー更新失敗: {0}</value>
+  </data>
+  <data name="Tray_ProxyGroups.Text" xml:space="preserve">
+    <value>プロキシグループ</value>
+  </data>
+  <data name="Tray_ProxyGroups.Content" xml:space="preserve">
+    <value>プロキシグループ</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Text" xml:space="preserve">
+    <value>(コア停止中)</value>
+  </data>
+  <data name="Tray_CoreNotRunning.Content" xml:space="preserve">
+    <value>(コア停止中)</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Text" xml:space="preserve">
+    <value>トレイでのノード切替失敗: {0}</value>
+  </data>
+  <data name="Tray_ToggleNodeFailed.Content" xml:space="preserve">
+    <value>トレイでのノード切替失敗: {0}</value>
+  </data>
+  <data name="Tray_Profiles.Text" xml:space="preserve">
+    <value>サブスクリプション</value>
+  </data>
+  <data name="Tray_Profiles.Content" xml:space="preserve">
+    <value>サブスクリプション</value>
+  </data>
+  <data name="Tray_NoProfiles.Text" xml:space="preserve">
+    <value>(購読なし)</value>
+  </data>
+  <data name="Tray_NoProfiles.Content" xml:space="preserve">
+    <value>(購読なし)</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Text" xml:space="preserve">
+    <value>購読切替失敗: {0}</value>
+  </data>
+  <data name="Tray_ProfileSwitchFailed.Content" xml:space="preserve">
+    <value>購読切替失敗: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>モード切替失敗: {0}</value>
+  </data>
+  <data name="Tray_ModeSwitchFailed.Content" xml:space="preserve">
+    <value>モード切替失敗: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Text" xml:space="preserve">
+    <value>システムプロキシ切替失敗: {0}</value>
+  </data>
+  <data name="Tray_SysProxyToggleFailed.Content" xml:space="preserve">
+    <value>システムプロキシ切替失敗: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Text" xml:space="preserve">
+    <value>終了時のクリーンアップ未完了: {0}</value>
+  </data>
+  <data name="Tray_ExitCleanupIncomplete.Content" xml:space="preserve">
+    <value>終了時のクリーンアップ未完了: {0}</value>
+  </data>
+  <data name="Fmt_ModeRule.Text" xml:space="preserve">
+    <value>ルール</value>
+  </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>ルール</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
+    <value>グローバル</value>
+  </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>グローバル</value>
+  </data>
+  <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>ダイレクト</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
+    <value>ダイレクト</value>
+  </data>
 </root>

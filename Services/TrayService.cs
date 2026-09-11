@@ -34,7 +34,7 @@ public class TrayService
         }
         catch (Exception ex)
         {
-            LogService.App("托盘初始化失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Tray_InitFailed", ex.Message), "warn");
         }
     }
 
@@ -69,29 +69,29 @@ public class TrayService
             {
                 Items =
                 {
-                    new PopupMenuItem("显示主窗口", (_, _) => _dispatcher?.TryEnqueue(() => App.ShowMainWindow())),
+                    new PopupMenuItem(L10n.T("Tray_ShowWindow"), (_, _) => _dispatcher?.TryEnqueue(() => App.ShowMainWindow())),
                     new PopupMenuSeparator(),
-                    CreateModeItem("规则模式", "rule", mode),
-                    CreateModeItem("全局模式", "global", mode),
-                    CreateModeItem("直连模式", "direct", mode),
+                    CreateModeItem(L10n.T("Tray_ModeRule"), "rule", mode),
+                    CreateModeItem(L10n.T("Tray_ModeGlobal"), "global", mode),
+                    CreateModeItem(L10n.T("Tray_ModeDirect"), "direct", mode),
                     new PopupMenuSeparator(),
                     CreateProfilesSubMenu(),
                     CreateProxiesSubMenu(),
                     new PopupMenuSeparator(),
-                    new PopupMenuItem("系统代理", (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleSystemProxyAsync()))
+                    new PopupMenuItem(L10n.T("Tray_SystemProxy"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleSystemProxyAsync()))
                         { Checked = verge.EnableSystemProxy },
-                    new PopupMenuItem("TUN 模式", (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
+                    new PopupMenuItem(L10n.T("Tray_TunMode"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
                         { Checked = verge.EnableTunMode },
-                    new PopupMenuItem("轻量模式", (_, _) => _dispatcher?.TryEnqueue(() =>
+                    new PopupMenuItem(L10n.T("Tray_Lightweight"), (_, _) => _dispatcher?.TryEnqueue(() =>
                     {
                         if (LightweightManager.IsLightweight) LightweightManager.Exit();
                         else LightweightManager.Enter();
                     }))
                         { Checked = LightweightManager.IsLightweight, Enabled = true },
                     new PopupMenuSeparator(),
-                    new PopupMenuItem("重启内核", (_, _) => _dispatcher?.TryEnqueue(async () =>
+                    new PopupMenuItem(L10n.T("Tray_RestartCore"), (_, _) => _dispatcher?.TryEnqueue(async () =>
                         await AppServices.Core.RestartAsync())),
-                    new PopupMenuItem("退出", (_, _) => _dispatcher?.TryEnqueue(ExitApp)),
+                    new PopupMenuItem(L10n.T("Tray_Exit"), (_, _) => _dispatcher?.TryEnqueue(ExitApp)),
                 }
             };
             _tray.ContextMenu = menu;
@@ -99,7 +99,7 @@ public class TrayService
         }
         catch (Exception ex)
         {
-            LogService.App("托盘菜单刷新失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Tray_MenuRefreshFailed", ex.Message), "warn");
         }
     }
 
@@ -109,10 +109,10 @@ public class TrayService
 
     private PopupSubMenu CreateProxiesSubMenu()
     {
-        var sub = new PopupSubMenu("代理组");
+        var sub = new PopupSubMenu(L10n.T("Tray_ProxyGroups"));
         if (_proxyGroupsCache.Count == 0)
         {
-            sub.Items.Add(new PopupMenuItem("(内核未运行)", (_, _) => { }) { Enabled = false });
+            sub.Items.Add(new PopupMenuItem(L10n.T("Tray_CoreNotRunning"), (_, _) => { }) { Enabled = false });
             return sub;
         }
         foreach (var (group, nodes, now) in _proxyGroupsCache)
@@ -146,7 +146,7 @@ public class TrayService
         }
         catch (Exception ex)
         {
-            LogService.App("托盘切换节点失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Tray_ToggleNodeFailed", ex.Message), "warn");
         }
     }
 
@@ -196,7 +196,7 @@ public class TrayService
 
     private PopupSubMenu CreateProfilesSubMenu()
     {
-        var sub = new PopupSubMenu("订阅");
+        var sub = new PopupSubMenu(L10n.T("Tray_Profiles"));
         var profiles = AppServices.Config.Profiles;
         foreach (var item in profiles.Items)
         {
@@ -209,7 +209,7 @@ public class TrayService
         }
         if (profiles.Items.Count == 0)
         {
-            sub.Items.Add(new PopupMenuItem("(暂无订阅)", (_, _) => { }) { Enabled = false });
+            sub.Items.Add(new PopupMenuItem(L10n.T("Tray_NoProfiles"), (_, _) => { }) { Enabled = false });
         }
         return sub;
     }
@@ -222,7 +222,7 @@ public class TrayService
         }
         catch (Exception ex)
         {
-            LogService.App("订阅切换失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Tray_ProfileSwitchFailed", ex.Message), "warn");
         }
     }
 
@@ -240,7 +240,7 @@ public class TrayService
         }
         catch (Exception ex)
         {
-            LogService.App("模式切换失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Tray_ModeSwitchFailed", ex.Message), "warn");
         }
     }
 
@@ -260,8 +260,8 @@ public class TrayService
         {
             verge.EnableSystemProxy = previous;
             AppServices.Config.SaveVerge();
-            LogService.App("系统代理切换失败: " + ex.Message, "error");
-            ShowNotification("系统代理切换失败: " + ex.Message);
+            LogService.App(L10n.F("Tray_SysProxyToggleFailed", ex.Message), "error");
+            ShowNotification(L10n.F("Tray_SysProxyToggleFailed", ex.Message));
         }
         finally { RebuildMenu(); }
     }
@@ -270,7 +270,7 @@ public class TrayService
     {
         if (!IsElevated())
         {
-            ShowNotification("TUN 模式需要以管理员身份运行应用");
+            ShowNotification(L10n.T("VM_TunNeedAdmin"));
             return;
         }
         var verge = AppServices.Config.Verge;
@@ -281,7 +281,7 @@ public class TrayService
         {
             verge.EnableTunMode = previous;
             AppServices.Config.SaveVerge();
-            ShowNotification("内核未运行或拒绝了 TUN 配置");
+            ShowNotification(L10n.T("VM_TunRejected"));
         }
         RebuildMenu();
     }
@@ -304,7 +304,7 @@ public class TrayService
         _ = Task.Run(async () =>
         {
             try { await AppServices.ShutdownAsync().WaitAsync(TimeSpan.FromSeconds(8)); }
-            catch (Exception ex) { LogService.App("退出清理未完成: " + ex.Message, "warn"); }
+            catch (Exception ex) { LogService.App(L10n.F("Tray_ExitCleanupIncomplete", ex.Message), "warn"); }
             finally { Environment.Exit(0); }
         });
     }

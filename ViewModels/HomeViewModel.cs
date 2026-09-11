@@ -20,7 +20,7 @@ public partial class HomeViewModel : ObservableObject
     public ObservableCollection<CurrentNodeItem> CurrentNodes { get; } = new();
 
     [ObservableProperty]
-    public partial string ProfileName { get; set; } = "（未启用）";
+    public partial string ProfileName { get; set; } = "";
 
     [ObservableProperty]
     public partial string ProfileUsage { get; set; } = "";
@@ -38,7 +38,7 @@ public partial class HomeViewModel : ObservableObject
     public partial string Mode { get; set; } = "rule";
 
     [ObservableProperty]
-    public partial string ModeText { get; set; } = "规则";
+    public partial string ModeText { get; set; } = "";
 
     [ObservableProperty]
     public partial string CoreVersion { get; set; } = "";
@@ -65,10 +65,10 @@ public partial class HomeViewModel : ObservableObject
     public double ProfileRatio => _profileRatio;
 
     [ObservableProperty]
-    public partial string SubscriptionStatusText { get; set; } = "点击卡片管理订阅";
+    public partial string SubscriptionStatusText { get; set; } = "";
 
     [ObservableProperty]
-    public partial string CoreStatusText { get; set; } = "检查中…";
+    public partial string CoreStatusText { get; set; } = "";
 
     [ObservableProperty]
     public partial string UptimeText { get; set; } = "";
@@ -135,13 +135,13 @@ public partial class HomeViewModel : ObservableObject
                 _coreStartedAt = DateTime.Now;
             var up = DateTime.Now - _coreStartedAt.Value;
             UptimeText = up.TotalHours >= 1
-                ? $"{(int)up.TotalHours} 小时 {up.Minutes} 分"
-                : $"{up.Minutes} 分 {up.Seconds} 秒";
+                ? L10n.F("VM_UptimeHours", (int)up.TotalHours, up.Minutes)
+                : L10n.F("VM_UptimeMinutes", up.Minutes, up.Seconds);
         }
         else
         {
             _coreStartedAt = null;
-            UptimeText = "未运行";
+            UptimeText = L10n.T("VM_NotRunning");
         }
     }
 
@@ -157,7 +157,7 @@ public partial class HomeViewModel : ObservableObject
                         rules.ValueKind == System.Text.Json.JsonValueKind.Array
                 ? rules.GetArrayLength()
                 : 0;
-            RuleCountText = count > 0 ? $"{count} 条" : "";
+            RuleCountText = count > 0 ? L10n.F("VM_RulesCount", count) : "";
         }
         catch
         {
@@ -202,7 +202,7 @@ public partial class HomeViewModel : ObservableObject
         MixedPort = AppServices.Config.MixedPort.ToString();
 
         var current = AppServices.Config.Profiles.GetCurrent();
-        ProfileName = current?.Name ?? "（未启用订阅）";
+        ProfileName = current?.Name ?? L10n.T("VM_ProfileNoSubscription");
         var e = current?.Extra;
         if (e is { Total: > 0 })
         {
@@ -217,8 +217,8 @@ public partial class HomeViewModel : ObservableObject
         OnPropertyChanged(nameof(ProfileRatio));
         OnPropertyChanged(nameof(UsageVisibility));
         SubscriptionStatusText = current is null
-            ? "尚未导入订阅，点击前往"
-            : current.Type == "remote" ? "远程订阅 · 点击卡片管理" : "本地配置 · 点击卡片管理";
+            ? L10n.T("VM_SubNoProfile")
+            : current.Type == "remote" ? L10n.T("VM_SubRemoteHint") : L10n.T("VM_SubLocalHint");
 
         try
         {
@@ -226,18 +226,18 @@ public partial class HomeViewModel : ObservableObject
             if (version is not null)
             {
                 CoreVersion = "mihomo " + version;
-                CoreStatusText = "内核运行中";
+                CoreStatusText = L10n.T("VM_CoreRunning");
             }
             else
             {
                 CoreVersion = "";
-                CoreStatusText = "内核未运行";
+                CoreStatusText = L10n.T("VM_CoreNotRunning");
             }
         }
         catch
         {
             CoreVersion = "";
-            CoreStatusText = "内核未运行";
+            CoreStatusText = L10n.T("VM_CoreNotRunning");
         }
 
         // 与 Clash Verge Rev 一致：规则模式优先恢复该订阅上次选择的代理组；
@@ -318,7 +318,7 @@ public partial class HomeViewModel : ObservableObject
         if (on && !TrayService.IsElevated())
         {
             TunOn = false;
-            throw new InvalidOperationException("TUN 模式需要以管理员身份运行应用");
+            throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));
         }
         var verge = AppServices.Config.Verge;
         var previous = verge.EnableTunMode;
@@ -329,6 +329,6 @@ public partial class HomeViewModel : ObservableObject
         verge.EnableTunMode = previous;
         AppServices.Config.SaveVerge();
         TunOn = previous;
-        throw new InvalidOperationException("内核未运行或拒绝了 TUN 配置");
+        throw new InvalidOperationException(L10n.T("VM_TunRejected"));
     }
 }

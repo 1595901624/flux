@@ -53,9 +53,9 @@ public static class Format
 
     public static string ModeText(string mode) => mode switch
     {
-        "rule" => "规则",
-        "global" => "全局",
-        "direct" => "直连",
+        "rule" => Flux.Services.L10n.T("Fmt_ModeRule"),
+        "global" => Flux.Services.L10n.T("Fmt_ModeGlobal"),
+        "direct" => Flux.Services.L10n.T("Fmt_ModeDirect"),
         _ => mode,
     };
 }

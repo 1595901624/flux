@@ -194,7 +194,7 @@ public partial class ConnectionsViewModel : ObservableObject
 
     private void RefreshView()
     {
-        CountText = $"活跃 {Active.Count} · 已关闭 {Closed.Count}";
+        CountText = L10n.F("VM_ConnCount", Active.Count, Closed.Count);
     }
 
     partial void OnSortModeChanged(string value) => ApplySort();
@@ -225,7 +225,7 @@ public partial class ConnectionsViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            LogService.App("关闭连接失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("VM_ConnCloseFailed", ex.Message), "warn");
         }
     }
 
@@ -237,7 +237,7 @@ public partial class ConnectionsViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            LogService.App("关闭全部连接失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("VM_ConnCloseAllFailed", ex.Message), "warn");
         }
     }
 

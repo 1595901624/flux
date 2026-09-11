@@ -127,7 +127,7 @@ public partial class LogsViewModel : ObservableObject
                 _buffer.Dequeue();
             }
         }
-        CountText = $"{Items.Count} 条";
+        CountText = L10n.F("VM_LogsCount", Items.Count);
     }
 
     /// <summary>切换正/倒序时按缓冲区重建显示顺序。</summary>
