@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Ikuti sistem</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>Diterapkan</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>Diterapkan</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>Gagal menyimpan</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>Gagal menyimpan</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>Mulai ulang sekarang</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>Mulai ulang sekarang</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>Nanti</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>Nanti</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>Port sudah dipakai</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>Port sudah dipakai</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>Port {0} sudah digunakan. Pilih port lain.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>Port {0} sudah digunakan. Pilih port lain.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN butuh hak istimewa</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN butuh hak istimewa</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN butuh core berhak istimewa:
+1. Jalankan sebagai admin
+2. Instal layanan Flux (disarankan)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN butuh core berhak istimewa:
+1. Jalankan sebagai admin
+2. Instal layanan Flux (disarankan)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>Layanan terpasang</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>Layanan terpasang</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Layanan Flux berjalan; TUN bisa tanpa admin</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Layanan Flux berjalan; TUN bisa tanpa admin</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>Gagal memasang layanan</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>Gagal memasang layanan</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>Penyimpanan pintasan ditolak</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>Penyimpanan pintasan ditolak</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>Pintasan disimpan</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>Pintasan disimpan</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>Pintasan global aktif</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>Pintasan global aktif</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>Bahasa diubah</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>Bahasa diubah</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>Mulai ulang aplikasi untuk menerapkan penuh</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>Mulai ulang aplikasi untuk menerapkan penuh</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>Tersalin</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>Tersalin</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>Variabel {0} disalin ke papan klip</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>Variabel {0} disalin ke papan klip</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>Cadangan selesai</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>Cadangan selesai</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>Cadangan dibuat: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>Cadangan dibuat: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>Cadangan gagal</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>Cadangan gagal</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>Gagal membaca cadangan</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>Gagal membaca cadangan</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>Tidak ada cadangan</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>Tidak ada cadangan</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>Belum ada cadangan dibuat</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>Belum ada cadangan dibuat</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>Pilih cadangan (restart core setelahnya):</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>Pilih cadangan (restart core setelahnya):</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>Pemulihan selesai</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>Pemulihan selesai</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>Dipulihkan dari {0} dan core direstart</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>Dipulihkan dari {0} dan core direstart</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>Pemulihan gagal</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>Pemulihan gagal</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>Pengaturan server WebDAV</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>Pengaturan server WebDAV</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>URL tidak valid</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>URL tidak valid</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>URL WebDAV harus HTTP/HTTPS valid</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>URL WebDAV harus HTTP/HTTPS valid</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>Tersimpan</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>Tersimpan</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>Pengaturan WebDAV disimpan (sandi terenkripsi DPAPI)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>Pengaturan WebDAV disimpan (sandi terenkripsi DPAPI)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>Belum dikonfigurasi</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>Belum dikonfigurasi</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>Atur server WebDAV dulu</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>Atur server WebDAV dulu</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>Unggah selesai</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>Unggah selesai</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} diunggah ke WebDAV</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} diunggah ke WebDAV</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>Unggah gagal</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>Unggah gagal</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>Tidak ada cadangan</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>Tidak ada cadangan</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>Tidak ada file cadangan di WebDAV</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>Tidak ada file cadangan di WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>Pulihkan dari WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>Pulihkan dari WebDAV</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>Unduh &amp; pulihkan</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>Unduh &amp; pulihkan</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>Diagnostik diekspor</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>Diagnostik diekspor</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>Disimpan lokal saja; bagikan sesuai keputusan</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>Disimpan lokal saja; bagikan sesuai keputusan</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>Ekspor gagal</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>Ekspor gagal</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>Periksa pembaruan</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>Periksa pembaruan</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>Sudah versi terbaru ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>Sudah versi terbaru ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>Versi baru: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>Versi baru: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>Membuka halaman rilis GitHub (MSIX/portable)</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>Membuka halaman rilis GitHub (MSIX/portable)</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>Buka halaman rilis</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>Buka halaman rilis</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>Gagal memeriksa pembaruan</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>Gagal memeriksa pembaruan</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>Gagal menerapkan</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>Gagal menerapkan</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (dikembalikan)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (dikembalikan)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>Pengaturan TUN lanjutan dimuat ulang</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>Pengaturan TUN lanjutan dimuat ulang</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>Pengaturan DNS dimuat ulang</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>Pengaturan DNS dimuat ulang</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>Kontroler eksternal diperbarui dan core direstart</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>Kontroler eksternal diperbarui dan core direstart</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value> (dikembalikan)</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value> (dikembalikan)</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>Hapus profil</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>Hapus profil</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>Hapus &quot;{0}&quot;?</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>Hapus &quot;{0}&quot;?</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>Edit profil: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>Edit profil: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>Nama tidak boleh kosong</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>Nama tidak boleh kosong</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>Timeout harus 5-300 detik</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>Timeout harus 5-300 detik</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>Interval harus bilangan bulat non-negatif</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>Interval harus bilangan bulat non-negatif</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>Pilih saluran pembaruan</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>Pilih saluran pembaruan</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>Edit peningkatan global</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>Edit peningkatan global</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>Edit peningkatan: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>Edit peningkatan: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>Urutan: Merge global → Script global → Merge profil → Script profil → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>Urutan: Merge global → Script global → Merge profil → Script profil → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ Tersimpan</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ Tersimpan</value>
+  </data>
 </root>

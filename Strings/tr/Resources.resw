@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Sistemi takip et</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>Uygulandı</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>Uygulandı</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>Kaydetme başarısız</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>Kaydetme başarısız</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>Şimdi yeniden başlat</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>Şimdi yeniden başlat</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>Sonra</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>Sonra</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>Port zaten kullanımda</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>Port zaten kullanımda</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>{0} bağlantı noktası kullanımda. Başka bir port seçin.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>{0} bağlantı noktası kullanımda. Başka bir port seçin.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN ayrıcalık gerektirir</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN ayrıcalık gerektirir</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN için ayrıcalıklı çekirdek gerekli:
+1. Yönetici olarak çalıştır
+2. Flux servisini kur (önerilir)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN için ayrıcalıklı çekirdek gerekli:
+1. Yönetici olarak çalıştır
+2. Flux servisini kur (önerilir)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>Servis kuruldu</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>Servis kuruldu</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Flux servisi çalışıyor; TUN artık admin olmadan açılabilir</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Flux servisi çalışıyor; TUN artık admin olmadan açılabilir</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>Servis kurulumu başarısız</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>Servis kurulumu başarısız</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>Kısayol kaydetme reddedildi</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>Kısayol kaydetme reddedildi</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>Kısayollar kaydedildi</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>Kısayollar kaydedildi</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>Kısayollar kaydedildi ve aktif</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>Kısayollar kaydedildi ve aktif</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>Dil değiştirildi</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>Dil değiştirildi</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>Tam uygulanması için uygulamayı yeniden başlatın</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>Tam uygulanması için uygulamayı yeniden başlatın</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>Kopyalandı</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>Kopyalandı</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>{0} ortam değişkenleri panoya kopyalandı</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>{0} ortam değişkenleri panoya kopyalandı</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>Yedekleme tamam</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>Yedekleme tamam</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>Yedek oluşturuldu: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>Yedek oluşturuldu: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>Yedekleme başarısız</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>Yedekleme başarısız</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>Liste alınamadı</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>Liste alınamadı</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>Yedek yok</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>Yedek yok</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>Henüz yedek oluşturulmadı</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>Henüz yedek oluşturulmadı</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>Geri yüklenecek yedeği seçin (sonra çekirdeği yeniden başlatın)</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>Geri yüklenecek yedeği seçin (sonra çekirdeği yeniden başlatın)</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>Geri yükleme tamam</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>Geri yükleme tamam</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>{0} yedeğinden geri yüklendi, çekirdek yeniden başlatıldı</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>{0} yedeğinden geri yüklendi, çekirdek yeniden başlatıldı</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>Geri yükleme başarısız</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>Geri yükleme başarısız</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>WebDAV sunucu ayarları</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>WebDAV sunucu ayarları</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>Geçersiz adres</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>Geçersiz adres</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>WebDAV adresi geçerli HTTP/HTTPS olmalı</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>WebDAV adresi geçerli HTTP/HTTPS olmalı</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>Kaydedildi</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>Kaydedildi</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>WebDAV ayarları kaydedildi (şifre DPAPI ile şifreli)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>WebDAV ayarları kaydedildi (şifre DPAPI ile şifreli)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>Yapılandırılmadı</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>Yapılandırılmadı</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>Önce WebDAV sunucusunu ayarlayın</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>Önce WebDAV sunucusunu ayarlayın</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>Yükleme tamam</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>Yükleme tamam</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} WebDAV'e yüklendi</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} WebDAV'e yüklendi</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>Yükleme başarısız</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>Yükleme başarısız</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>Yedek yok</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>Yedek yok</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>WebDAV'de yedek dosyası yok</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>WebDAV'de yedek dosyası yok</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>WebDAV'den geri yükle</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>WebDAV'den geri yükle</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>İndir ve geri yükle</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>İndir ve geri yükle</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>Teşhis dışa aktarıldı</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>Teşhis dışa aktarıldı</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>Yalnızca yerel kaydedildi; paylaşmak size bağlı</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>Yalnızca yerel kaydedildi; paylaşmak size bağlı</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>Dışa aktarma başarısız</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>Dışa aktarma başarısız</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>Güncellemeleri denetle</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>Güncellemeleri denetle</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>Zaten güncel ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>Zaten güncel ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>Yeni sürüm: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>Yeni sürüm: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>GitHub sürüm sayfası açılır (MSIX/taşınabilir)</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>GitHub sürüm sayfası açılır (MSIX/taşınabilir)</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>Sürüm sayfasını aç</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>Sürüm sayfasını aç</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>Güncelleme denetimi başarısız</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>Güncelleme denetimi başarısız</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>Uygulama başarısız</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>Uygulama başarısız</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (geri alındı)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (geri alındı)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>TUN gelişmiş ayarları yeniden yüklendi</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>TUN gelişmiş ayarları yeniden yüklendi</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>DNS ayarları yeniden yüklendi</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>DNS ayarları yeniden yüklendi</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>Harici denetleyici güncellendi, çekirdek yeniden başlatıldı</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>Harici denetleyici güncellendi, çekirdek yeniden başlatıldı</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value> (geri alındı)</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value> (geri alındı)</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>Profili sil</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>Profili sil</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>&quot;{0}&quot; silinsin mi?</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>&quot;{0}&quot; silinsin mi?</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>Profili düzenle: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>Profili düzenle: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>Ad boş olamaz</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>Ad boş olamaz</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>Zaman aşımı 5-300 saniye olmalı</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>Zaman aşımı 5-300 saniye olmalı</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>Aralık negatif olmayan tam sayı olmalı</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>Aralık negatif olmayan tam sayı olmalı</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>Güncelleme kanalı seçin</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>Güncelleme kanalı seçin</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>Küresel geliştirmeleri düzenle</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>Küresel geliştirmeleri düzenle</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>Geliştirmeleri düzenle: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>Geliştirmeleri düzenle: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>Sıra: küresel Merge → küresel Script → profil Merge → profil Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>Sıra: küresel Merge → küresel Script → profil Merge → profil Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ Kaydedildi</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ Kaydedildi</value>
+  </data>
 </root>

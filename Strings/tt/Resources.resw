@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Система буенча</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>Кулланды</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>Кулланды</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>Саклау хата</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>Саклау хата</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>Хәзер яңадан башлау</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>Хәзер яңадан башлау</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>Соңрак</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>Соңрак</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>Порт алынган</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>Порт алынган</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>{0} порт кулланылышта. Башка порт сайлагыз.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>{0} порт кулланылышта. Башка порт сайлагыз.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN өчен хоккы кирәк</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN өчен хоккы кирәк</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN өчен привилегиялы йөзәк кирәк:
+1. Админ буларак эшләтү
+2. Flux хезмәтен урнаштыру (киңәш)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN өчен привилегиялы йөзәк кирәк:
+1. Админ буларак эшләтү
+2. Flux хезмәтен урнаштыру (киңәш)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>Хезмәт урнаштырылды</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>Хезмәт урнаштырылды</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Flux хезмәте эшли; TUN админсез ачыла</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Flux хезмәте эшли; TUN админсез ачыла</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>Хезмәт урнаштыру хата</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>Хезмәт урнаштыру хата</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>Кыска юлларны саклау кабул ителмәде</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>Кыска юлларны саклау кабул ителмәде</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>Кыска юллар сакланды</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>Кыска юллар сакланды</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>Кыска юллар теркәлгән</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>Кыска юллар теркәлгән</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>Тел үзгәртелде</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>Тел үзгәртелде</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>Тулы куллану өчен кушакны яңадан башлагыз</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>Тулы куллану өчен кушакны яңадан башлагыз</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>Күчерелде</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>Күчерелде</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>{0} env тзүләре күчерелде</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>{0} env тзүләре күчерелде</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>Резерв ясалды</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>Резерв ясалды</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>Резерв ясалды: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>Резерв ясалды: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>Резерв ясау хата</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>Резерв ясау хата</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>Исемлек уку хата</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>Исемлек уку хата</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>Резерв юк</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>Резерв юк</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>Һәм резерв ясалмаган әле</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>Һәм резерв ясалмаган әле</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>Резерв сайлагыз (соң йөзәкне яңартыгыз)</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>Резерв сайлагыз (соң йөзәкне яңартыгыз)</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>Кайтару тәмам</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>Кайтару тәмам</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>{0} дан кайтарылды, йөзәк яңадан башланды</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>{0} дан кайтарылды, йөзәк яңадан башланды</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>Кайтару хата</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>Кайтару хата</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>WebDAV сервер көйләүләре</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>WebDAV сервер көйләүләре</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>Адрес яраксыз</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>Адрес яраксыз</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>WebDAV адресы HTTP/HTTPS булырга тиеш</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>WebDAV адресы HTTP/HTTPS булырга тиеш</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>Сакланды</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>Сакланды</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>WebDAV сакланды (пароль DPAPI белән шифрлана)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>WebDAV сакланды (пароль DPAPI белән шифрлана)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>Көйләнмәгән</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>Көйләнмәгән</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>Элек WebDAV серверен көйләгез</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>Элек WebDAV серверен көйләгез</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>Йөкләү тәмам</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>Йөкләү тәмам</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} WebDAV'ка йөкләнде</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} WebDAV'ка йөкләнде</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>Йөкләү хата</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>Йөкләү хата</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>Резерв юк</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>Резерв юк</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>WebDAV'да резерв файллар юк</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>WebDAV'да резерв файллар юк</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>WebDAV'дан кайтару</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>WebDAV'дан кайтару</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>Йөкләп кайтару</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>Йөкләп кайтару</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>Диагностика чыгарылды</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>Диагностика чыгарылды</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>Җирдә генә сакланган; уртаклашу үз ихтыярыгыз</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>Җирдә генә сакланган; уртаклашу үз ихтыярыгыз</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>Чыгару хата</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>Чыгару хата</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>Яңартуларны тикшерү</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>Яңартуларны тикшерү</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>Соңгы версия инде ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>Соңгы версия инде ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>Яңа версия: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>Яңа версия: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>GitHub бетен кул белән йөкләргә ачыла</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>GitHub бетен кул белән йөкләргә ачыла</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>Релиз битен ачу</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>Релиз битен ачу</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>Яңартуларны тикшерү хата</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>Яңартуларны тикшерү хата</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>Куллану хата</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>Куллану хата</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (кире алынды)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (кире алынды)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>TUN өстәмә көйләүләр яңартылды</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>TUN өстәмә көйләүләр яңартылды</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>DNS көйләүләре яңартылды</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>DNS көйләүләре яңартылды</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>Тышкы контроллер яңартылды, йөзәк яңадан башланды</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>Тышкы контроллер яңартылды, йөзәк яңадан башланды</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value>（кире алынды）</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value>（кире алынды）</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>Профильне бетерү</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>Профильне бетерү</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>&quot;{0}&quot; бетерергәме?</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>&quot;{0}&quot; бетерергәме?</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>Профильне үзгәртү: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>Профильне үзгәртү: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>Исем буш булмаска тиеш</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>Исем буш булмаска тиеш</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>Таймаут 5-300 секунд булырга тиеш</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>Таймаут 5-300 секунд булырга тиеш</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>Арал әйдәп баручы бөтен сан булырга тиеш</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>Арал әйдәп баручы бөтен сан булырга тиеш</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>Яңарту каналын сайлагыз</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>Яңарту каналын сайлагыз</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>Глобаль яхшыртуну үзгәртү</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>Глобаль яхшыртуну үзгәртү</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>Яхшыртуну үзгәртү: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>Яхшыртуну үзгәртү: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>Тәртип: глобаль Merge → глобаль Script → профиль Merge → профиль Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>Тәртип: глобаль Merge → глобаль Script → профиль Merge → профиль Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ Сакланды</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ Сакланды</value>
+  </data>
 </root>

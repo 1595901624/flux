@@ -26,9 +26,9 @@ public sealed class ProfileEditDialog : ContentDialog
     {
         _item = item;
         XamlRoot = root;
-        Title = $"编辑订阅：{item.Name}";
-        PrimaryButtonText = "保存";
-        CloseButtonText = "取消";
+        Title = L10n.F("Msg_EditProfileTitle", item.Name);
+        PrimaryButtonText = L10n.T("Common_Save");
+        CloseButtonText = L10n.T("Common_Cancel");
         DefaultButton = ContentDialogButton.Primary;
 
         _nameBox.Text = item.Name;
@@ -93,13 +93,13 @@ public sealed class ProfileEditDialog : ContentDialog
     public string? Apply()
     {
         var name = _nameBox.Text.Trim();
-        if (name.Length == 0) return "名称不能为空";
+        if (name.Length == 0) return L10n.T("Msg_NameRequired");
         if (!int.TryParse(_timeoutBox.Text, out var timeout) || timeout < 5 || timeout > 300)
-            return "下载超时必须是 5-300 秒";
+            return L10n.T("Msg_TimeoutInvalid");
         if (!int.TryParse(_intervalBox.Text, out var interval) || interval < 0)
-            return "更新间隔必须是非负整数";
+            return L10n.T("Msg_IntervalInvalid");
         if (_channelBox.SelectedItem is not ComboBoxItem { Tag: string channel })
-            return "请选择更新通道";
+            return L10n.T("Msg_ChooseChannel");
 
         AppServices.Subscription.EditInfoAsync(
             _item,

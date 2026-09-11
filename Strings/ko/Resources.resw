@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>시스템 따르기</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>적용됨</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>적용됨</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>저장 실패</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>저장 실패</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>지금 재시작</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>지금 재시작</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>나중에</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>나중에</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>포트 사용 중</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>포트 사용 중</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>포트 {0}은(는) 이미 사용 중입니다. 다른 포트를 선택하세요.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>포트 {0}은(는) 이미 사용 중입니다. 다른 포트를 선택하세요.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN에는 특권 필요</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN에는 특권 필요</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN에는 특권이 필요합니다.
+1. 관리자로 실행
+2. Flux 서비스 설치(권장)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN에는 특권이 필요합니다.
+1. 관리자로 실행
+2. Flux 서비스 설치(권장)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>서비스 설치됨</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>서비스 설치됨</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Flux 서비스가 실행 중이며 일반 사용자도 TUN 가능</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Flux 서비스가 실행 중이며 일반 사용자도 TUN 가능</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>서비스 설치 실패</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>서비스 설치 실패</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>단축키 저장 거부됨</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>단축키 저장 거부됨</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>단축키 저장됨</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>단축키 저장됨</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>전역 단축키가 등록되었습니다</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>전역 단축키가 등록되었습니다</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>언어 변경됨</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>언어 변경됨</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>완전 적용하려면 재시작하세요</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>완전 적용하려면 재시작하세요</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>복사됨</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>복사됨</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>{0} 환경 변수가 클립보드에 복사됨</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>{0} 환경 변수가 클립보드에 복사됨</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>백업 완료</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>백업 완료</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>백업 생성됨: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>백업 생성됨: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>백업 실패</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>백업 실패</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>목록 읽기 실패</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>목록 읽기 실패</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>백업 없음</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>백업 없음</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>아직 백업이 없습니다</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>아직 백업이 없습니다</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>복구할 백업 선택(이후 코어 재시작)</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>복구할 백업 선택(이후 코어 재시작)</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>복구 완료</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>복구 완료</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>{0}에서 복구하고 코어 재시작</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>{0}에서 복구하고 코어 재시작</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>복구 실패</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>복구 실패</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>WebDAV 서버 설정</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>WebDAV 서버 설정</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>URL이 잘못됨</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>URL이 잘못됨</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>유효한 HTTP/HTTPS URL이어야 합니다</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>유효한 HTTP/HTTPS URL이어야 합니다</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>저장됨</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>저장됨</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>WebDAV 설정 저장(비밀번호 DPAPI 암호화)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>WebDAV 설정 저장(비밀번호 DPAPI 암호화)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>구성 안 됨</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>구성 안 됨</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>먼저 WebDAV 서버를 설정하세요</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>먼저 WebDAV 서버를 설정하세요</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>업로드 완료</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>업로드 완료</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0}이(가) WebDAV에 업로드됨</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0}이(가) WebDAV에 업로드됨</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>업로드 실패</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>업로드 실패</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>백업 없음</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>백업 없음</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>WebDAV에 백업 파일이 없습니다</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>WebDAV에 백업 파일이 없습니다</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>WebDAV에서 복구</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>WebDAV에서 복구</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>다운로드 후 복구</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>다운로드 후 복구</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>진단 내보내기 완료</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>진단 내보내기 완료</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>로컬에만 저장됨; 공유는 선택</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>로컬에만 저장됨; 공유는 선택</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>내보내기 실패</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>내보내기 실패</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>업데이트 확인</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>업데이트 확인</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>이미 최신 버전입니다({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>이미 최신 버전입니다({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>새 버전 사용 가능: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>새 버전 사용 가능: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>GitHub 릴리스 페이지를 엽니다(MSIX/포터블)</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>GitHub 릴리스 페이지를 엽니다(MSIX/포터블)</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>릴리스 페이지 열기</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>릴리스 페이지 열기</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>업데이트 확인 실패</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>업데이트 확인 실패</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>적용 실패</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>적용 실패</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0}(롤백됨)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0}(롤백됨)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>TUN 고급 설정이 다시 로드되었습니다</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>TUN 고급 설정이 다시 로드되었습니다</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>DNS 설정이 다시 로드되었습니다</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>DNS 설정이 다시 로드되었습니다</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>외부 컨트롤러 업데이트 및 코어 재시작</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>외부 컨트롤러 업데이트 및 코어 재시작</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value>（롤백됨）</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value>（롤백됨）</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>구독 삭제</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>구독 삭제</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>&quot;{0}&quot;을(를) 삭제할까요?</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>&quot;{0}&quot;을(를) 삭제할까요?</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>구독 편집: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>구독 편집: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>이름은 필수입니다</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>이름은 필수입니다</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>시간 초과는 5-300초</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>시간 초과는 5-300초</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>간격은 음수가 아닌 정수</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>간격은 음수가 아닌 정수</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>업데이트 채널 선택</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>업데이트 채널 선택</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>글로벌 향상 편집</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>글로벌 향상 편집</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>향상 설정 편집: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>향상 설정 편집: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>적용 순서: 글로벌 Merge→글로벌 Script→구독 Merge→구독 Script→Rules→Proxies→Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>적용 순서: 글로벌 Merge→글로벌 Script→구독 Merge→구독 Script→Rules→Proxies→Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ 저장됨</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ 저장됨</value>
+  </data>
 </root>

@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>بر اساس سیستم</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>اعمال شد</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>اعمال شد</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>ذخیره نشد</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>ذخیره نشد</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>هم‌اکنون ری‌استارت</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>هم‌اکنون ری‌استارت</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>بعداً</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>بعداً</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>پورت اشغال است</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>پورت اشغال است</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>پورت {0} اشغال است؛ پورت دیگری انتخاب کنید.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>پورت {0} اشغال است؛ پورت دیگری انتخاب کنید.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN به دسترسی ویژه نیاز دارد</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN به دسترسی ویژه نیاز دارد</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN به هسته privileged نیاز دارد:
+1. اجرا به عنوان مدیر
+2. نصب سرویس Flux (توصیه‌شده)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN به هسته privileged نیاز دارد:
+1. اجرا به عنوان مدیر
+2. نصب سرویس Flux (توصیه‌شده)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>سرویس نصب شد</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>سرویس نصب شد</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>سرویس Flux در حال اجراست؛ TUN بدون مدیر</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>سرویس Flux در حال اجراست؛ TUN بدون مدیر</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>نصب سرویس ناموفق</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>نصب سرویس ناموفق</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>ذخیره میانبرها رد شد</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>ذخیره میانبرها رد شد</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>میانبرها ذخیره شد</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>میانبرها ذخیره شد</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>میانبرهای سراسری فعال شدند</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>میانبرهای سراسری فعال شدند</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>زبان تغییر کرد</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>زبان تغییر کرد</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>برای اعمال کامل برنامه را ری‌استارت کنید</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>برای اعمال کامل برنامه را ری‌استارت کنید</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>کپی شد</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>کپی شد</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>متغیرهای {0} در کلیپ‌بورد کپی شد</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>متغیرهای {0} در کلیپ‌بورد کپی شد</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>پشتیبان‌گیری کامل شد</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>پشتیبان‌گیری کامل شد</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>پشتیبان ایجاد شد: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>پشتیبان ایجاد شد: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>پشتیبان‌گیری ناموفق</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>پشتیبان‌گیری ناموفق</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>خواندن فهرست ناموفق</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>خواندن فهرست ناموفق</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>بدون پشتیبان</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>بدون پشتیبان</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>هنوز پشتیبانی ایجاد نشده</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>هنوز پشتیبانی ایجاد نشده</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>پشتیبان را انتخاب کنید (پس از آن هسته ری‌استارت شود):</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>پشتیبان را انتخاب کنید (پس از آن هسته ری‌استارت شود):</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>بازیابی کامل شد</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>بازیابی کامل شد</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>از {0} بازیابی و هسته ری‌استارت شد</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>از {0} بازیابی و هسته ری‌استارت شد</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>بازیابی ناموفق</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>بازیابی ناموفق</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>تنظیمات سرور WebDAV</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>تنظیمات سرور WebDAV</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>آدرس نامعتبر</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>آدرس نامعتبر</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>آدرس WebDAV باید HTTP/HTTPS معتبر باشد</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>آدرس WebDAV باید HTTP/HTTPS معتبر باشد</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>ذخیره شد</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>ذخیره شد</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>تنظیمات WebDAV ذخیره شد (رمز با DPAPI رمزنگاری می‌شود)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>تنظیمات WebDAV ذخیره شد (رمز با DPAPI رمزنگاری می‌شود)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>پیکربندی نشده</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>پیکربندی نشده</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>ابتدا سرور WebDAV را تنظیم کنید</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>ابتدا سرور WebDAV را تنظیم کنید</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>بارگذاری کامل شد</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>بارگذاری کامل شد</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} به WebDAV بارگذاری شد</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} به WebDAV بارگذاری شد</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>بارگذاری ناموفق</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>بارگذاری ناموفق</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>بدون پشتیبان</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>بدون پشتیبان</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>روی WebDAV فایل پشتیبانی نیست</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>روی WebDAV فایل پشتیبانی نیست</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>بازیابی از WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>بازیابی از WebDAV</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>دانلود و بازیابی</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>دانلود و بازیابی</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>عیب‌یابی صادر شد</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>عیب‌یابی صادر شد</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>فقط محلی ذخیره شد؛ اشتراک‌گذاری با شما</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>فقط محلی ذخیره شد؛ اشتراک‌گذاری با شما</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>صادر کردن ناموفق</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>صادر کردن ناموفق</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>بررسی به‌روزرسانی</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>بررسی به‌روزرسانی</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>هم‌اکنون آخرین نسخه است ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>هم‌اکنون آخرین نسخه است ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>نسخه جدید: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>نسخه جدید: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>صفحه انتشار GitHub باز می‌شود (MSIX/قابل حمل)</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>صفحه انتشار GitHub باز می‌شود (MSIX/قابل حمل)</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>باز کردن صفحه انتشار</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>باز کردن صفحه انتشار</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>بررسی به‌روزرسانی ناموفق</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>بررسی به‌روزرسانی ناموفق</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>اعمال نشد</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>اعمال نشد</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (برگشت داده شد)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (برگشت داده شد)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>تنظیمات پیشرفته TUN بارگذاری مجدد شد</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>تنظیمات پیشرفته TUN بارگذاری مجدد شد</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>تنظیمات DNS بارگذاری مجدد شد</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>تنظیمات DNS بارگذاری مجدد شد</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>کنترل‌کننده خارجی به‌روزرسانی و هسته ری‌استارت شد</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>کنترل‌کننده خارجی به‌روزرسانی و هسته ری‌استارت شد</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value>（برگشت داده شد）</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value>（برگشت داده شد）</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>حذف پروفایل</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>حذف پروفایل</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>حذف &quot;{0}&quot;؟</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>حذف &quot;{0}&quot;؟</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>ویرایش پروفایل: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>ویرایش پروفایل: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>نام نمی‌تواند خالی باشد</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>نام نمی‌تواند خالی باشد</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>زمان مهلت باید ۵ تا ۳۰۰ ثانیه باشد</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>زمان مهلت باید ۵ تا ۳۰۰ ثانیه باشد</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>بازه باید عدد صحیح نامنفی باشد</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>بازه باید عدد صحیح نامنفی باشد</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>کانال به‌روزرسانی را انتخاب کنید</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>کانال به‌روزرسانی را انتخاب کنید</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>ویرایش بهبودهای سراسری</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>ویرایش بهبودهای سراسری</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>ویرایش بهبودها: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>ویرایش بهبودها: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>ترتیب: Merge سراسری → Script سراسری → Merge اشتراک → Script اشتراک → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>ترتیب: Merge سراسری → Script سراسری → Merge اشتراک → Script اشتراک → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ ذخیره شد</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ ذخیره شد</value>
+  </data>
 </root>

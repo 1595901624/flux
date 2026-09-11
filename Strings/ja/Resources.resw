@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>システムに従う</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>適用しました</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>適用しました</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>保存に失敗</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>保存に失敗</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>今すぐ再起動</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>今すぐ再起動</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>後で</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>後で</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>ポートは使用中</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>ポートは使用中</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>ポート {0} は既に使用中です。別のポートを指定してください。</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>ポート {0} は既に使用中です。別のポートを指定してください。</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN には特権が必要</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN には特権が必要</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUNには特権が必要です。
+1. 管理者として実行
+2. Fluxサービスをインストール（推奨）</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUNには特権が必要です。
+1. 管理者として実行
+2. Fluxサービスをインストール（推奨）</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>サービスをインストール済み</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>サービスをインストール済み</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Fluxサービスが起動し、通常ユーザーでもTUN可能</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Fluxサービスが起動し、通常ユーザーでもTUN可能</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>サービスのインストールに失敗</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>サービスのインストールに失敗</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>ホットキー保存を拒否</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>ホットキー保存を拒否</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>ホットキーを保存しました</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>ホットキーを保存しました</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>グローバルホットキーが有効です</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>グローバルホットキーが有効です</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>言語を変更しました</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>言語を変更しました</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>完全適用には再起動してください</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>完全適用には再起動してください</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>コピーしました</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>コピーしました</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>{0} 環境変数をクリップボードにコピー</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>{0} 環境変数をクリップボードにコピー</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>バックアップ完了</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>バックアップ完了</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>バックアップを作成: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>バックアップを作成: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>バックアップ失敗</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>バックアップ失敗</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>一覧の取得に失敗</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>一覧の取得に失敗</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>バックアップなし</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>バックアップなし</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>まだバックアップはありません</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>まだバックアップはありません</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>復元するバックアップを選択（後でコア再起動）</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>復元するバックアップを選択（後でコア再起動）</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>復元完了</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>復元完了</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>{0} から復元しコアを再起動</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>{0} から復元しコアを再起動</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>復元に失敗</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>復元に失敗</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>WebDAVサーバー設定</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>WebDAVサーバー設定</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>URLが無効</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>URLが無効</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>有効なHTTP/HTTPS URLを指定</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>有効なHTTP/HTTPS URLを指定</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>保存しました</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>保存しました</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>WebDAV設定を保存（PWはDPAPIで暗号化）</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>WebDAV設定を保存（PWはDPAPIで暗号化）</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>先にWebDAVサーバーを設定してください</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>先にWebDAVサーバーを設定してください</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>アップロード完了</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>アップロード完了</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} をWebDAVへアップロード</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} をWebDAVへアップロード</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>アップロード失敗</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>アップロード失敗</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>バックアップなし</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>バックアップなし</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>WebDAVにバックアップはありません</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>WebDAVにバックアップはありません</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>WebDAVから復元</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>WebDAVから復元</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>ダウンロードして復元</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>ダウンロードして復元</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>診断をエクスポートしました</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>診断をエクスポートしました</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>ローカル保存のみ。共有は任意です</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>ローカル保存のみ。共有は任意です</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>エクスポート失敗</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>エクスポート失敗</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>更新を確認</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>更新を確認</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>最新版です（{0}）</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>最新版です（{0}）</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>新バージョン: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>新バージョン: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>GitHubリリースページを開きます（MSIX/ポータブル）</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>GitHubリリースページを開きます（MSIX/ポータブル）</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>リリースページを開く</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>リリースページを開く</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>更新確認に失敗</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>更新確認に失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>適用に失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>適用に失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0}（ロールバック済み）</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0}（ロールバック済み）</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>TUN詳細設定を再読込しました</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>TUN詳細設定を再読込しました</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>DNS設定を再読込しました</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>DNS設定を再読込しました</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>外部コントローラーを更新しコアを再起動</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>外部コントローラーを更新しコアを再起動</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value>（ロールバック済み）</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value>（ロールバック済み）</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>サブスクを削除</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>サブスクを削除</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>「{0}」を削除しますか？</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>「{0}」を削除しますか？</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>サブスクを編集: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>サブスクを編集: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>名前は必須です</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>名前は必須です</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>タイムアウトは5-300秒</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>タイムアウトは5-300秒</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>更新間隔は0以上の整数</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>更新間隔は0以上の整数</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>更新チャネルを選択</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>更新チャネルを選択</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>グローバル拡張を編集</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>グローバル拡張を編集</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>拡張設定を編集: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>拡張設定を編集: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>適用順: 全局Merge→全局Script→購読Merge→購読Script→Rules→Proxies→Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>適用順: 全局Merge→全局Script→購読Merge→購読Script→Rules→Proxies→Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ 保存しました</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ 保存しました</value>
+  </data>
 </root>

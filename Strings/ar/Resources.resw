@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>حسب النظام</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>تم التطبيق</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>تم التطبيق</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>فشل الحفظ</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>فشل الحفظ</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>أعد التشغيل الآن</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>أعد التشغيل الآن</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>لاحقاً</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>لاحقاً</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>المنفذ مستخدم بالفعل</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>المنفذ مستخدم بالفعل</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>المنفذ {0} مستخدم بالفعل؛ اختر منفذًا آخر.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>المنفذ {0} مستخدم بالفعل؛ اختر منفذًا آخر.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN يتطلب صلاحيات</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN يتطلب صلاحيات</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN يحتاج نواة بامتيازات:
+1. شغّل كمسؤول
+2. ثبّت خدمة Flux (موصى به)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN يحتاج نواة بامتيازات:
+1. شغّل كمسؤول
+2. ثبّت خدمة Flux (موصى به)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>تم تثبيت الخدمة</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>تم تثبيت الخدمة</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>خدمة Flux تعمل؛ TUN بدون مسؤول</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>خدمة Flux تعمل؛ TUN بدون مسؤول</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>فشل تثبيت الخدمة</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>فشل تثبيت الخدمة</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>تم رفض حفظ الاختصارات</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>تم رفض حفظ الاختصارات</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>تم حفظ الاختصارات</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>تم حفظ الاختصارات</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>الاختصارات مسجلة ونشطة</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>الاختصارات مسجلة ونشطة</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>تم تغيير اللغة</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>تم تغيير اللغة</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>أعد تشغيل التطبيق لتطبيق اللغة كاملة</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>أعد تشغيل التطبيق لتطبيق اللغة كاملة</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>تم النسخ</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>تم النسخ</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>تم نسخ متغيرات {0} إلى الحافظة</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>تم نسخ متغيرات {0} إلى الحافظة</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>اكتمل النسخ الاحتياطي</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>اكتمل النسخ الاحتياطي</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>تم إنشاء النسخة: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>تم إنشاء النسخة: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>فشل النسخ الاحتياطي</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>فشل النسخ الاحتياطي</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>فشل قراءة النسخ</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>فشل قراءة النسخ</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>لا نسخ احتياطية</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>لا نسخ احتياطية</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>لم تُنشأ أي نسخ بعد</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>لم تُنشأ أي نسخ بعد</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>اختر نسخة (أعد تشغيل النواة بعدها):</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>اختر نسخة (أعد تشغيل النواة بعدها):</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>اكتملت الاستعادة</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>اكتملت الاستعادة</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>استُعيد من {0} وأعيد تشغيل النواة</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>استُعيد من {0} وأعيد تشغيل النواة</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>فشل الاستعادة</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>فشل الاستعادة</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>إعدادات خادم WebDAV</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>إعدادات خادم WebDAV</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>عنوان غير صالح</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>عنوان غير صالح</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>يجب أن يكون عنوان WebDAV صالحًا</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>يجب أن يكون عنوان WebDAV صالحًا</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>تم الحفظ</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>تم الحفظ</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>تم حفظ إعدادات WebDAV (كلمة السر مشفرة بـ DPAPI)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>تم حفظ إعدادات WebDAV (كلمة السر مشفرة بـ DPAPI)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>غير مهيأ</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>غير مهيأ</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>هيّئ خادم WebDAV أولًا</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>هيّئ خادم WebDAV أولًا</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>اكتمل الرفع</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>اكتمل الرفع</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>تم رفع {0} إلى WebDAV</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>تم رفع {0} إلى WebDAV</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>فشل الرفع</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>فشل الرفع</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>لا نسخ</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>لا نسخ</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>لا توجد ملفات نسخ على WebDAV</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>لا توجد ملفات نسخ على WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>استعادة من WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>استعادة من WebDAV</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>تنزيل واستعادة</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>تنزيل واستعادة</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>تم تصدير التشخيص</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>تم تصدير التشخيص</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>محفوظ محليًا فقط؛ شارك حسب تقديرك</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>محفوظ محليًا فقط؛ شارك حسب تقديرك</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>فشل التصدير</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>فشل التصدير</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>البحث عن تحديثات</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>البحث عن تحديثات</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>أنت على أحدث إصدار ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>أنت على أحدث إصدار ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>إصدار جديد: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>إصدار جديد: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>يفتح صفحة إصدارات GitHub للتنزيل اليدوي</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>يفتح صفحة إصدارات GitHub للتنزيل اليدوي</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>افتح صفحة الإصدارات</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>افتح صفحة الإصدارات</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>فشل البحث عن تحديثات</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>فشل البحث عن تحديثات</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>فشل التطبيق</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>فشل التطبيق</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (تم التراجع)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (تم التراجع)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>تمت إعادة تحميل إعدادات TUN المتقدمة</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>تمت إعادة تحميل إعدادات TUN المتقدمة</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>تمت إعادة تحميل إعدادات DNS</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>تمت إعادة تحميل إعدادات DNS</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>تم تحديث وحدة التحكم وإعادة تشغيل النواة</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>تم تحديث وحدة التحكم وإعادة تشغيل النواة</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value> (تم التراجع)</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value> (تم التراجع)</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>حذف الملف الشخصي</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>حذف الملف الشخصي</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>حذف &quot;{0}&quot;؟</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>حذف &quot;{0}&quot;؟</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>تعديل الملف: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>تعديل الملف: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>لا يمكن أن يكون الاسم فارغًا</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>لا يمكن أن يكون الاسم فارغًا</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>يجب أن تكون المهلة 5-300 ثانية</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>يجب أن تكون المهلة 5-300 ثانية</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>يجب أن تكون الفاصلة عددًا صحيحًا غير سالب</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>يجب أن تكون الفاصلة عددًا صحيحًا غير سالب</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>اختر قناة التحديث</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>اختر قناة التحديث</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>تعديل التحسينات العامة</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>تعديل التحسينات العامة</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>تعديل التحسينات: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>تعديل التحسينات: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>الترتيب: Merge عام → Script عام → Merge للملف → Script للملف → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>الترتيب: Merge عام → Script عام → Merge للملف → Script للملف → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ تم الحفظ</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ تم الحفظ</value>
+  </data>
 </root>

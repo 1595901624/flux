@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Как в системе</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>Применено</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>Применено</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>Ошибка сохранения</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>Ошибка сохранения</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>Перезапустить сейчас</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>Перезапустить сейчас</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>Позже</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>Позже</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>Порт уже занят</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>Порт уже занят</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>Порт {0} уже занят. Выберите другой.</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>Порт {0} уже занят. Выберите другой.</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN требует прав</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN требует прав</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN нужен привилегированный запуск:
+1. Запустить от админа
+2. Установить службу Flux (рекомендуется)</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN нужен привилегированный запуск:
+1. Запустить от админа
+2. Установить службу Flux (рекомендуется)</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>Служба установлена</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>Служба установлена</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Служба Flux запущена; TUN без админа</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Служба Flux запущена; TUN без админа</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>Не удалось установить службу</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>Не удалось установить службу</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>Сохранение горячих клавиш отклонено</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>Сохранение горячих клавиш отклонено</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>Горячие клавиши сохранены</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>Горячие клавиши сохранены</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>Глобальные клавиши зарегистрированы</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>Глобальные клавиши зарегистрированы</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>Язык изменён</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>Язык изменён</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>Перезапустите приложение для полного применения</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>Перезапустите приложение для полного применения</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>Скопировано</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>Скопировано</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>Переменные {0} скопированы в буфер</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>Переменные {0} скопированы в буфер</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>Резервная копия создана</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>Резервная копия создана</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>Копия создана: {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>Копия создана: {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>Ошибка резервного копирования</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>Ошибка резервного копирования</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>Не удалось получить список</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>Не удалось получить список</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>Нет резервных копий</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>Нет резервных копий</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>Резервных копий ещё нет</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>Резервных копий ещё нет</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>Выберите копию (затем перезапустите ядро):</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>Выберите копию (затем перезапустите ядро):</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>Восстановление завершено</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>Восстановление завершено</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>Восстановлено из {0}, ядро перезапущено</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>Восстановлено из {0}, ядро перезапущено</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>Ошибка восстановления</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>Ошибка восстановления</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>Настройки сервера WebDAV</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>Настройки сервера WebDAV</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>Неверный адрес</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>Неверный адрес</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>Адрес WebDAV должен быть HTTP/HTTPS URL</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>Адрес WebDAV должен быть HTTP/HTTPS URL</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>Сохранено</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>Сохранено</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>Настройки WebDAV сохранены (пароль зашифрован DPAPI)</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>Настройки WebDAV сохранены (пароль зашифрован DPAPI)</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>Не настроено</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>Не настроено</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>Сначала настройте сервер WebDAV</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>Сначала настройте сервер WebDAV</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>Загрузка завершена</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>Загрузка завершена</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} загружено в WebDAV</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} загружено в WebDAV</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>Ошибка загрузки</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>Ошибка загрузки</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>Нет копий</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>Нет копий</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>На WebDAV нет файлов копий</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>На WebDAV нет файлов копий</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>Восстановить из WebDAV</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>Восстановить из WebDAV</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>Скачать и восстановить</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>Скачать и восстановить</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>Диагностика экспортирована</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>Диагностика экспортирована</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>Сохранено только локально; делитесь по желанию</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>Сохранено только локально; делитесь по желанию</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>Ошибка экспорта</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>Ошибка экспорта</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>Проверить обновления</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>Проверить обновления</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>Уже последняя версия ({0})</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>Уже последняя версия ({0})</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>Доступна новая версия: {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>Доступна новая версия: {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>Откроется страница релизов GitHub (MSIX/портативная)</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>Откроется страница релизов GitHub (MSIX/портативная)</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>Открыть страницу релизов</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>Открыть страницу релизов</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>Ошибка проверки обновлений</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>Ошибка проверки обновлений</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>Ошибка применения</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>Ошибка применения</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0} (откат выполнен)</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0} (откат выполнен)</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>Доп. настройки TUN перезагружены</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>Доп. настройки TUN перезагружены</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>Настройки DNS перезагружены</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>Настройки DNS перезагружены</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>Внешний контроллер обновлён, ядро перезапущено</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>Внешний контроллер обновлён, ядро перезапущено</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value> (откат выполнен)</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value> (откат выполнен)</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>Удалить подписку</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>Удалить подписку</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>Удалить &quot;{0}&quot;?</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>Удалить &quot;{0}&quot;?</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>Изменить подписку: {0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>Изменить подписку: {0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>Имя не может быть пустым</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>Имя не может быть пустым</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>Таймаут: 5-300 секунд</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>Таймаут: 5-300 секунд</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>Интервал — неотрицательное целое</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>Интервал — неотрицательное целое</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>Выберите канал обновления</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>Выберите канал обновления</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>Изменить глобальные улучшения</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>Изменить глобальные улучшения</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>Изменить улучшения: {0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>Изменить улучшения: {0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>Порядок: глобальный Merge → глобальный Script → Merge профиля → Script профиля → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>Порядок: глобальный Merge → глобальный Script → Merge профиля → Script профиля → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ Сохранено</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ Сохранено</value>
+  </data>
 </root>

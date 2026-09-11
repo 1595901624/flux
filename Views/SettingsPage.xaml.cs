@@ -222,8 +222,8 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "端口已被占用",
-                Content = $"端口 {port} 已被其他进程或本应用监听，请更换端口。",
+                Title = L10n.T("Msg_PortOccupiedTitle"),
+                Content = L10n.F("Msg_PortOccupiedBody", port),
                 CloseButtonText = "确定",
             };
             await dialog.ShowAsync();
@@ -298,11 +298,9 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "TUN 需要特权",
-                Content = "TUN 模式需要特权运行内核。可以选择：\n\n" +
-                          "1. 以管理员身份运行 Flux；\n" +
-                          "2. 安装 Flux 服务（推荐，普通用户即可使用 TUN）。",
-                PrimaryButtonText = "安装服务",
+                Title = L10n.T("Msg_TunPrivilegeTitle"),
+                Content = L10n.T("Msg_TunPrivilegeBody"),
+                PrimaryButtonText = L10n.T("Settings_InstallService"),
                 CloseButtonText = "取消",
                 DefaultButton = ContentDialogButton.Primary,
             };
@@ -327,7 +325,7 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = result.Success ? "服务已安装" : "服务安装失败",
+            Title = result.Success ? L10n.T("Msg_ServiceInstalledTitle") : L10n.T("Msg_ServiceFailedTitle"),
             Content = result.Success
                 ? "Flux 服务已安装并启动，普通用户模式下即可开启 TUN。"
                 : result.Error?.ToString() ?? "未知错误",
@@ -351,13 +349,13 @@ public sealed partial class SettingsPage : Page
         if (conflicts.Count > 0)
         {
             // 冲突：拒绝保存并显示冲突组合
-            await ShowInfoAsync("热键保存被拒绝", string.Join(Environment.NewLine, conflicts));
+            await ShowInfoAsync(L10n.T("Msg_HotkeyRejected"), string.Join(Environment.NewLine, conflicts.Select(L10n.T)));
             return;
         }
 
         AppServices.Config.Verge.Hotkeys = hotkeys;
         AppServices.Config.SaveVerge();
-        await ShowInfoAsync("热键已保存", "全局热键已注册生效。");
+        await ShowInfoAsync(L10n.T("Msg_HotkeySaved"), L10n.T("Msg_HotkeySavedBody"));
     }
 
     private async void Language_Changed(object sender, SelectionChangedEventArgs e)
@@ -375,10 +373,10 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = "语言已更改",
-            Content = "请重启应用以完整应用新语言设置。",
-            PrimaryButtonText = "立即重启",
-            CloseButtonText = "稍后",
+            Title = L10n.T("Msg_LangChanged"),
+            Content = L10n.T("Msg_LangChangedBody"),
+            PrimaryButtonText = L10n.T("Msg_RestartNow"),
+            CloseButtonText = L10n.T("Msg_RestartLater"),
             DefaultButton = ContentDialogButton.Primary,
         };
         if (await dialog.ShowAsync() == ContentDialogResult.Primary)
@@ -415,7 +413,7 @@ public sealed partial class SettingsPage : Page
         AppServices.Config.PatchClashBase("tun.stack", stack);
         AppServices.Config.PatchClashBase("tun.dns-hijack", hijack);
         if (await AppServices.Core.ApplyConfigAsync())
-            await ShowInfoAsync("已应用", "TUN 高级设置已重载。");
+            await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T("Msg_TunAdvancedBody"));
         else
             await ShowApplyFailureAsync();
     }
@@ -428,7 +426,7 @@ public sealed partial class SettingsPage : Page
         if (fakeRange.Length > 0)
             AppServices.Config.PatchClashBase("dns.fake-ip-range", fakeRange);
         if (await AppServices.Core.ApplyConfigAsync())
-            await ShowInfoAsync("已应用", "DNS 设置已重载。");
+            await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T("Msg_DnsAppliedBody"));
         else
             await ShowApplyFailureAsync();
     }
@@ -439,7 +437,7 @@ public sealed partial class SettingsPage : Page
         var secret = ControllerSecretBox.Password;
         if (address.Length == 0)
         {
-            await ShowInfoAsync("地址无效", "外部控制器地址不能为空。");
+            await ShowInfoAsync(L10n.T("Msg_WebDavInvalidTitle"), L10n.T("Msg_WebDavInvalidBody"));
             return;
         }
 
@@ -455,7 +453,7 @@ public sealed partial class SettingsPage : Page
             var (newAddress, newSecret) = AppServices.Config.GetControllerInfo();
             AppServices.Api.Configure(newAddress, newSecret);
             AppServices.Streams.Configure(newAddress, newSecret);
-            await ShowInfoAsync("已应用", "外部控制器已更新并重启内核。");
+            await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T("Msg_ControllerAppliedBody"));
         }
         catch (Exception ex)
         {
@@ -469,7 +467,7 @@ public sealed partial class SettingsPage : Page
                 AppServices.Streams.Configure(previousAddress, previousSecret);
             }
             catch { }
-            await ShowInfoAsync("应用失败", ex.Message + "（已回滚）");
+            await ShowInfoAsync(L10n.T("Msg_ApplyFailedTitle"), ex.Message + L10n.T("Msg_RolledBack"));
         }
     }
 
@@ -507,8 +505,8 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = "已复制",
-            Content = $"{(format == "powershell" ? "PowerShell" : "CMD")} 环境变量已复制到剪贴板。",
+            Title = L10n.T("Msg_Copied"),
+            Content = L10n.F("Msg_CopiedBody", format == "powershell" ? "PowerShell" : "CMD"),
             CloseButtonText = "确定",
         };
         await dialog.ShowAsync();
@@ -569,15 +567,15 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "备份完成",
-                Content = $"已创建备份 {name}",
+                Title = L10n.T("Msg_BackupDone"),
+                Content = L10n.F("Msg_BackupDoneBody", name),
                 CloseButtonText = "确定",
             };
             await dialog.ShowAsync();
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("备份失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_BackupFailed"), ex.Message);
         }
     }
 
@@ -585,11 +583,11 @@ public sealed partial class SettingsPage : Page
     {
         List<(string Name, long Size, DateTime Created)> backups;
         try { backups = (await AppServices.Backup.ListAsync()).ToList(); }
-        catch (Exception ex) { await ShowInfoAsync("读取备份失败", ex.Message); return; }
+        catch (Exception ex) { await ShowInfoAsync(L10n.T("Msg_ListFailed"), ex.Message); return; }
 
         if (backups.Count == 0)
         {
-            await ShowInfoAsync("没有备份", "尚未创建任何备份。");
+            await ShowInfoAsync(L10n.T("Msg_NoBackups"), L10n.T("Msg_NoBackupsBody"));
             return;
         }
 
@@ -624,11 +622,11 @@ public sealed partial class SettingsPage : Page
         {
             await Task.Run(() => AppServices.Backup.RestoreAsync(selectedName).GetAwaiter().GetResult());
             await AppServices.Core.RestartAsync();
-            await ShowInfoAsync("恢复完成", $"已从 {selectedName} 恢复并重启内核。");
+            await ShowInfoAsync(L10n.T("Msg_RestoreDone"), L10n.F("Msg_RestoreDoneBody", selectedName));
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("恢复失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_RestoreFailed"), ex.Message);
         }
     }
 
@@ -661,7 +659,7 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = "WebDAV 服务器设置",
+            Title = L10n.T("Msg_WebDavTitle"),
             Content = form,
             PrimaryButtonText = "保存",
             CloseButtonText = "取消",
@@ -672,7 +670,7 @@ public sealed partial class SettingsPage : Page
         if (!Uri.TryCreate(urlBox.Text.Trim(), UriKind.Absolute, out var uri) ||
             uri.Scheme is not ("http" or "https"))
         {
-            await ShowInfoAsync("地址无效", "WebDAV 地址必须是有效的 HTTP/HTTPS URL。");
+            await ShowInfoAsync(L10n.T("Msg_WebDavInvalidTitle"), L10n.T("Msg_WebDavInvalidBody"));
             return;
         }
 
@@ -681,7 +679,7 @@ public sealed partial class SettingsPage : Page
         verge.WebDavDir = string.IsNullOrWhiteSpace(dirBox.Text) ? "flux-backups" : dirBox.Text.Trim();
         verge.WebDavPasswordEncrypted = Flux.Core.Utils.DataProtector.Protect(passBox.Password);
         AppServices.Config.SaveVerge();
-        await ShowInfoAsync("已保存", "WebDAV 配置已保存（密码经 DPAPI 加密，明文不落盘）。");
+        await ShowInfoAsync(L10n.T("Msg_WebDavSaved"), L10n.T("Msg_WebDavSavedBody"));
     }
 
     private async void WebDavUpload_Click(object sender, RoutedEventArgs e)
@@ -689,7 +687,7 @@ public sealed partial class SettingsPage : Page
         var client = CreateWebDavClient();
         if (client is null)
         {
-            await ShowInfoAsync("未配置", "请先设置 WebDAV 服务器。");
+            await ShowInfoAsync(L10n.T("Msg_NotConfigured"), L10n.T("Msg_NotConfiguredBody"));
             return;
         }
         try
@@ -698,11 +696,11 @@ public sealed partial class SettingsPage : Page
             var bytes = await File.ReadAllBytesAsync(Path.Combine(Paths.DataBackupDir, name));
             var dir = AppServices.Config.Verge.WebDavDir;
             await client.UploadAsync(dir, name, bytes);
-            await ShowInfoAsync("上传完成", name + " 已上传到 WebDAV。");
+            await ShowInfoAsync(L10n.T("Msg_UploadDone"), L10n.F("Msg_UploadDoneBody", name));
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("上传失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_UploadFailed"), ex.Message);
         }
     }
 
@@ -711,7 +709,7 @@ public sealed partial class SettingsPage : Page
         var client = CreateWebDavClient();
         if (client is null)
         {
-            await ShowInfoAsync("未配置", "请先设置 WebDAV 服务器。");
+            await ShowInfoAsync(L10n.T("Msg_NotConfigured"), L10n.T("Msg_NotConfiguredBody"));
             return;
         }
         try
@@ -720,7 +718,7 @@ public sealed partial class SettingsPage : Page
             var remote = await client.ListAsync(dir);
             if (remote.Count == 0)
             {
-                await ShowInfoAsync("无备份", "WebDAV 上没有备份文件。");
+                await ShowInfoAsync(L10n.T("Msg_WebDavNoBackups"), L10n.T("Msg_WebDavNoBackupsBody"));
                 return;
             }
 
@@ -732,9 +730,9 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "从 WebDAV 恢复",
+                Title = L10n.T("Msg_WebDavRestoreTitle"),
                 Content = listBox,
-                PrimaryButtonText = "下载并恢复",
+                PrimaryButtonText = L10n.T("Msg_DownloadRestore"),
                 CloseButtonText = "取消",
                 DefaultButton = ContentDialogButton.Primary,
             };
@@ -746,11 +744,11 @@ public sealed partial class SettingsPage : Page
             await File.WriteAllBytesAsync(localPath, bytes);
             await Task.Run(() => AppServices.Backup.RestoreAsync(Path.GetFileName(selected)).GetAwaiter().GetResult());
             await AppServices.Core.RestartAsync();
-            await ShowInfoAsync("恢复完成", "已从 " + selected + " 恢复并重启内核。");
+            await ShowInfoAsync(L10n.T("Msg_RestoreDone"), L10n.F("Msg_RestoreDoneBody", selected));
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("恢复失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_RestoreFailed"), ex.Message);
         }
     }
 
@@ -766,14 +764,14 @@ public sealed partial class SettingsPage : Page
             {
                 XamlRoot = XamlRoot,
                 Title = "诊断包已导出",
-                Content = path + "（内容仅保存在本地，可自行决定是否分享）",
+                Content = path + " " + L10n.T("Msg_DiagLocalOnly"),
                 CloseButtonText = "确定",
             };
             await dialog.ShowAsync();
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("导出失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_ExportFailed"), ex.Message);
         }
     }
 
@@ -791,7 +789,7 @@ public sealed partial class SettingsPage : Page
 
             if (result is null || !result.HasUpdate)
             {
-                await ShowInfoAsync("检查更新", "当前已是最新版本（" + current + "）。");
+                await ShowInfoAsync(L10n.T("Msg_UpdateCheckTitle"), L10n.F("Msg_UpToDate", current));
                 return;
             }
 
@@ -800,13 +798,13 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "发现新版本 " + result.LatestVersion,
+                Title = L10n.F("Msg_NewVersion", result.LatestVersion),
                 Content = new StackPanel { Spacing = 8, Children =
                 {
                     new TextBlock { Text = notes, TextWrapping = TextWrapping.Wrap, MaxHeight = 240 },
                     new TextBlock { Text = "将打开 GitHub 发布页手动下载（MSIX/便携包）。", FontSize = 12, Opacity = 0.7, TextWrapping = TextWrapping.Wrap },
                 } },
-                PrimaryButtonText = "打开发布页",
+                PrimaryButtonText = L10n.T("Msg_OpenReleasePage"),
                 CloseButtonText = "关闭",
                 DefaultButton = ContentDialogButton.Primary,
             };
@@ -821,7 +819,7 @@ public sealed partial class SettingsPage : Page
         }
         catch (Exception ex)
         {
-            await ShowInfoAsync("检查更新失败", ex.Message);
+            await ShowInfoAsync(L10n.T("Msg_UpdateCheckFailed"), ex.Message);
         }
     }
 

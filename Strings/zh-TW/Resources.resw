@@ -768,4 +768,416 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>跟隨系統</value>
   </data>
+  <data name="Msg_Applied.Text" xml:space="preserve">
+    <value>已應用</value>
+  </data>
+  <data name="Msg_Applied.Content" xml:space="preserve">
+    <value>已應用</value>
+  </data>
+  <data name="Msg_SaveFailed.Text" xml:space="preserve">
+    <value>儲存失敗</value>
+  </data>
+  <data name="Msg_SaveFailed.Content" xml:space="preserve">
+    <value>儲存失敗</value>
+  </data>
+  <data name="Msg_RestartNow.Text" xml:space="preserve">
+    <value>立即重啟</value>
+  </data>
+  <data name="Msg_RestartNow.Content" xml:space="preserve">
+    <value>立即重啟</value>
+  </data>
+  <data name="Msg_RestartLater.Text" xml:space="preserve">
+    <value>稍後</value>
+  </data>
+  <data name="Msg_RestartLater.Content" xml:space="preserve">
+    <value>稍後</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Text" xml:space="preserve">
+    <value>連接埠已被占用</value>
+  </data>
+  <data name="Msg_PortOccupiedTitle.Content" xml:space="preserve">
+    <value>連接埠已被占用</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Text" xml:space="preserve">
+    <value>連接埠 {0} 已被其他程序或本應用監聽，請更換連接埠。</value>
+  </data>
+  <data name="Msg_PortOccupiedBody.Content" xml:space="preserve">
+    <value>連接埠 {0} 已被其他程序或本應用監聽，請更換連接埠。</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Text" xml:space="preserve">
+    <value>TUN 需要特權</value>
+  </data>
+  <data name="Msg_TunPrivilegeTitle.Content" xml:space="preserve">
+    <value>TUN 需要特權</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Text" xml:space="preserve">
+    <value>TUN 模式需要特權執行核心。可以選擇：
+1. 以管理員身份執行 Flux；
+2. 安裝 Flux 服務（建議，普通使用者即可使用 TUN）。</value>
+  </data>
+  <data name="Msg_TunPrivilegeBody.Content" xml:space="preserve">
+    <value>TUN 模式需要特權執行核心。可以選擇：
+1. 以管理員身份執行 Flux；
+2. 安裝 Flux 服務（建議，普通使用者即可使用 TUN）。</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Text" xml:space="preserve">
+    <value>服務已安裝</value>
+  </data>
+  <data name="Msg_ServiceInstalledTitle.Content" xml:space="preserve">
+    <value>服務已安裝</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Text" xml:space="preserve">
+    <value>Flux 服務已安裝並啟動，普通使用者模式下即可開啟 TUN。</value>
+  </data>
+  <data name="Msg_ServiceInstalledBody.Content" xml:space="preserve">
+    <value>Flux 服務已安裝並啟動，普通使用者模式下即可開啟 TUN。</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Text" xml:space="preserve">
+    <value>服務安裝失敗</value>
+  </data>
+  <data name="Msg_ServiceFailedTitle.Content" xml:space="preserve">
+    <value>服務安裝失敗</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Text" xml:space="preserve">
+    <value>熱鍵儲存被拒絕</value>
+  </data>
+  <data name="Msg_HotkeyRejected.Content" xml:space="preserve">
+    <value>熱鍵儲存被拒絕</value>
+  </data>
+  <data name="Msg_HotkeySaved.Text" xml:space="preserve">
+    <value>熱鍵已儲存</value>
+  </data>
+  <data name="Msg_HotkeySaved.Content" xml:space="preserve">
+    <value>熱鍵已儲存</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Text" xml:space="preserve">
+    <value>全域熱鍵已註冊生效。</value>
+  </data>
+  <data name="Msg_HotkeySavedBody.Content" xml:space="preserve">
+    <value>全域熱鍵已註冊生效。</value>
+  </data>
+  <data name="Msg_LangChanged.Text" xml:space="preserve">
+    <value>語言已變更</value>
+  </data>
+  <data name="Msg_LangChanged.Content" xml:space="preserve">
+    <value>語言已變更</value>
+  </data>
+  <data name="Msg_LangChangedBody.Text" xml:space="preserve">
+    <value>請重新啟動應用以完整套用新語言設定。</value>
+  </data>
+  <data name="Msg_LangChangedBody.Content" xml:space="preserve">
+    <value>請重新啟動應用以完整套用新語言設定。</value>
+  </data>
+  <data name="Msg_Copied.Text" xml:space="preserve">
+    <value>已複製</value>
+  </data>
+  <data name="Msg_Copied.Content" xml:space="preserve">
+    <value>已複製</value>
+  </data>
+  <data name="Msg_CopiedBody.Text" xml:space="preserve">
+    <value>{0} 環境變數已複製到剪貼簿。</value>
+  </data>
+  <data name="Msg_CopiedBody.Content" xml:space="preserve">
+    <value>{0} 環境變數已複製到剪貼簿。</value>
+  </data>
+  <data name="Msg_BackupDone.Text" xml:space="preserve">
+    <value>備份完成</value>
+  </data>
+  <data name="Msg_BackupDone.Content" xml:space="preserve">
+    <value>備份完成</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Text" xml:space="preserve">
+    <value>已建立備份 {0}</value>
+  </data>
+  <data name="Msg_BackupDoneBody.Content" xml:space="preserve">
+    <value>已建立備份 {0}</value>
+  </data>
+  <data name="Msg_BackupFailed.Text" xml:space="preserve">
+    <value>備份失敗</value>
+  </data>
+  <data name="Msg_BackupFailed.Content" xml:space="preserve">
+    <value>備份失敗</value>
+  </data>
+  <data name="Msg_ListFailed.Text" xml:space="preserve">
+    <value>讀取備份失敗</value>
+  </data>
+  <data name="Msg_ListFailed.Content" xml:space="preserve">
+    <value>讀取備份失敗</value>
+  </data>
+  <data name="Msg_NoBackups.Text" xml:space="preserve">
+    <value>沒有備份</value>
+  </data>
+  <data name="Msg_NoBackups.Content" xml:space="preserve">
+    <value>沒有備份</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Text" xml:space="preserve">
+    <value>尚未建立任何備份。</value>
+  </data>
+  <data name="Msg_NoBackupsBody.Content" xml:space="preserve">
+    <value>尚未建立任何備份。</value>
+  </data>
+  <data name="Msg_RestorePick.Text" xml:space="preserve">
+    <value>選擇要恢復的備份（恢復後需要重啟核心生效）：</value>
+  </data>
+  <data name="Msg_RestorePick.Content" xml:space="preserve">
+    <value>選擇要恢復的備份（恢復後需要重啟核心生效）：</value>
+  </data>
+  <data name="Msg_RestoreDone.Text" xml:space="preserve">
+    <value>恢復完成</value>
+  </data>
+  <data name="Msg_RestoreDone.Content" xml:space="preserve">
+    <value>恢復完成</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Text" xml:space="preserve">
+    <value>已從 {0} 恢復並重啟核心。</value>
+  </data>
+  <data name="Msg_RestoreDoneBody.Content" xml:space="preserve">
+    <value>已從 {0} 恢復並重啟核心。</value>
+  </data>
+  <data name="Msg_RestoreFailed.Text" xml:space="preserve">
+    <value>恢復失敗</value>
+  </data>
+  <data name="Msg_RestoreFailed.Content" xml:space="preserve">
+    <value>恢復失敗</value>
+  </data>
+  <data name="Msg_WebDavTitle.Text" xml:space="preserve">
+    <value>WebDAV 伺服器設定</value>
+  </data>
+  <data name="Msg_WebDavTitle.Content" xml:space="preserve">
+    <value>WebDAV 伺服器設定</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Text" xml:space="preserve">
+    <value>位址無效</value>
+  </data>
+  <data name="Msg_WebDavInvalidTitle.Content" xml:space="preserve">
+    <value>位址無效</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Text" xml:space="preserve">
+    <value>WebDAV 位址必須是有效的 HTTP/HTTPS URL。</value>
+  </data>
+  <data name="Msg_WebDavInvalidBody.Content" xml:space="preserve">
+    <value>WebDAV 位址必須是有效的 HTTP/HTTPS URL。</value>
+  </data>
+  <data name="Msg_WebDavSaved.Text" xml:space="preserve">
+    <value>已儲存</value>
+  </data>
+  <data name="Msg_WebDavSaved.Content" xml:space="preserve">
+    <value>已儲存</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Text" xml:space="preserve">
+    <value>WebDAV 設定已儲存（密碼經 DPAPI 加密，明文不落盤）。</value>
+  </data>
+  <data name="Msg_WebDavSavedBody.Content" xml:space="preserve">
+    <value>WebDAV 設定已儲存（密碼經 DPAPI 加密，明文不落盤）。</value>
+  </data>
+  <data name="Msg_NotConfigured.Text" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="Msg_NotConfigured.Content" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Text" xml:space="preserve">
+    <value>請先設定 WebDAV 伺服器。</value>
+  </data>
+  <data name="Msg_NotConfiguredBody.Content" xml:space="preserve">
+    <value>請先設定 WebDAV 伺服器。</value>
+  </data>
+  <data name="Msg_UploadDone.Text" xml:space="preserve">
+    <value>上傳完成</value>
+  </data>
+  <data name="Msg_UploadDone.Content" xml:space="preserve">
+    <value>上傳完成</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Text" xml:space="preserve">
+    <value>{0} 已上傳到 WebDAV。</value>
+  </data>
+  <data name="Msg_UploadDoneBody.Content" xml:space="preserve">
+    <value>{0} 已上傳到 WebDAV。</value>
+  </data>
+  <data name="Msg_UploadFailed.Text" xml:space="preserve">
+    <value>上傳失敗</value>
+  </data>
+  <data name="Msg_UploadFailed.Content" xml:space="preserve">
+    <value>上傳失敗</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Text" xml:space="preserve">
+    <value>無備份</value>
+  </data>
+  <data name="Msg_WebDavNoBackups.Content" xml:space="preserve">
+    <value>無備份</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Text" xml:space="preserve">
+    <value>WebDAV 上沒有備份檔案。</value>
+  </data>
+  <data name="Msg_WebDavNoBackupsBody.Content" xml:space="preserve">
+    <value>WebDAV 上沒有備份檔案。</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Text" xml:space="preserve">
+    <value>從 WebDAV 恢復</value>
+  </data>
+  <data name="Msg_WebDavRestoreTitle.Content" xml:space="preserve">
+    <value>從 WebDAV 恢復</value>
+  </data>
+  <data name="Msg_DownloadRestore.Text" xml:space="preserve">
+    <value>下載並恢復</value>
+  </data>
+  <data name="Msg_DownloadRestore.Content" xml:space="preserve">
+    <value>下載並恢復</value>
+  </data>
+  <data name="Msg_DiagDone.Text" xml:space="preserve">
+    <value>診斷套件已匯出</value>
+  </data>
+  <data name="Msg_DiagDone.Content" xml:space="preserve">
+    <value>診斷套件已匯出</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Text" xml:space="preserve">
+    <value>內容僅儲存在本地，可自行決定是否分享。</value>
+  </data>
+  <data name="Msg_DiagLocalOnly.Content" xml:space="preserve">
+    <value>內容僅儲存在本地，可自行決定是否分享。</value>
+  </data>
+  <data name="Msg_ExportFailed.Text" xml:space="preserve">
+    <value>匯出失敗</value>
+  </data>
+  <data name="Msg_ExportFailed.Content" xml:space="preserve">
+    <value>匯出失敗</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Text" xml:space="preserve">
+    <value>檢查更新</value>
+  </data>
+  <data name="Msg_UpdateCheckTitle.Content" xml:space="preserve">
+    <value>檢查更新</value>
+  </data>
+  <data name="Msg_UpToDate.Text" xml:space="preserve">
+    <value>目前已是最新版本（{0}）。</value>
+  </data>
+  <data name="Msg_UpToDate.Content" xml:space="preserve">
+    <value>目前已是最新版本（{0}）。</value>
+  </data>
+  <data name="Msg_NewVersion.Text" xml:space="preserve">
+    <value>發現新版本 {0}</value>
+  </data>
+  <data name="Msg_NewVersion.Content" xml:space="preserve">
+    <value>發現新版本 {0}</value>
+  </data>
+  <data name="Msg_UpdateHint.Text" xml:space="preserve">
+    <value>將開啟 GitHub 發佈頁手動下載（MSIX/便攜包）。</value>
+  </data>
+  <data name="Msg_UpdateHint.Content" xml:space="preserve">
+    <value>將開啟 GitHub 發佈頁手動下載（MSIX/便攜包）。</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Text" xml:space="preserve">
+    <value>開啟發佈頁</value>
+  </data>
+  <data name="Msg_OpenReleasePage.Content" xml:space="preserve">
+    <value>開啟發佈頁</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Text" xml:space="preserve">
+    <value>檢查更新失敗</value>
+  </data>
+  <data name="Msg_UpdateCheckFailed.Content" xml:space="preserve">
+    <value>檢查更新失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Text" xml:space="preserve">
+    <value>應用失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedTitle.Content" xml:space="preserve">
+    <value>應用失敗</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Text" xml:space="preserve">
+    <value>{0}（已回滾）</value>
+  </data>
+  <data name="Msg_ApplyFailedBody.Content" xml:space="preserve">
+    <value>{0}（已回滾）</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Text" xml:space="preserve">
+    <value>TUN 進階設定已重載。</value>
+  </data>
+  <data name="Msg_TunAdvancedBody.Content" xml:space="preserve">
+    <value>TUN 進階設定已重載。</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Text" xml:space="preserve">
+    <value>DNS 設定已重載。</value>
+  </data>
+  <data name="Msg_DnsAppliedBody.Content" xml:space="preserve">
+    <value>DNS 設定已重載。</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Text" xml:space="preserve">
+    <value>外部控制器已更新並重啟核心。</value>
+  </data>
+  <data name="Msg_ControllerAppliedBody.Content" xml:space="preserve">
+    <value>外部控制器已更新並重啟核心。</value>
+  </data>
+  <data name="Msg_RolledBack.Text" xml:space="preserve">
+    <value>（已回滾）</value>
+  </data>
+  <data name="Msg_RolledBack.Content" xml:space="preserve">
+    <value>（已回滾）</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Text" xml:space="preserve">
+    <value>刪除訂閱</value>
+  </data>
+  <data name="Msg_DeleteProfileTitle.Content" xml:space="preserve">
+    <value>刪除訂閱</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Text" xml:space="preserve">
+    <value>確定刪除「{0}」嗎？</value>
+  </data>
+  <data name="Msg_DeleteProfileBody.Content" xml:space="preserve">
+    <value>確定刪除「{0}」嗎？</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Text" xml:space="preserve">
+    <value>編輯訂閱：{0}</value>
+  </data>
+  <data name="Msg_EditProfileTitle.Content" xml:space="preserve">
+    <value>編輯訂閱：{0}</value>
+  </data>
+  <data name="Msg_NameRequired.Text" xml:space="preserve">
+    <value>名稱不能為空</value>
+  </data>
+  <data name="Msg_NameRequired.Content" xml:space="preserve">
+    <value>名稱不能為空</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Text" xml:space="preserve">
+    <value>下載逾時必須是 5-300 秒</value>
+  </data>
+  <data name="Msg_TimeoutInvalid.Content" xml:space="preserve">
+    <value>下載逾時必須是 5-300 秒</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Text" xml:space="preserve">
+    <value>更新間隔必須是非負整數</value>
+  </data>
+  <data name="Msg_IntervalInvalid.Content" xml:space="preserve">
+    <value>更新間隔必須是非負整數</value>
+  </data>
+  <data name="Msg_ChooseChannel.Text" xml:space="preserve">
+    <value>請選擇更新通道</value>
+  </data>
+  <data name="Msg_ChooseChannel.Content" xml:space="preserve">
+    <value>請選擇更新通道</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Text" xml:space="preserve">
+    <value>編輯全域增強設定</value>
+  </data>
+  <data name="Msg_EnhanceGlobalTitle.Content" xml:space="preserve">
+    <value>編輯全域增強設定</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Text" xml:space="preserve">
+    <value>編輯增強設定：{0}</value>
+  </data>
+  <data name="Msg_EnhanceProfileTitle.Content" xml:space="preserve">
+    <value>編輯增強設定：{0}</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Text" xml:space="preserve">
+    <value>應用順序：全域 Merge → 全域 Script → 訂閱 Merge → 訂閱 Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceOrder.Content" xml:space="preserve">
+    <value>應用順序：全域 Merge → 全域 Script → 訂閱 Merge → 訂閱 Script → Rules → Proxies → Groups</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Text" xml:space="preserve">
+    <value>✓ 已儲存</value>
+  </data>
+  <data name="Msg_EnhanceSaved.Content" xml:space="preserve">
+    <value>✓ 已儲存</value>
+  </data>
 </root>

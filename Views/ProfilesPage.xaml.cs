@@ -1,6 +1,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Flux.Services;
 using Flux.ViewModels;
 
 namespace Flux.Views;
@@ -110,9 +111,9 @@ public sealed partial class ProfilesPage : Page
             var warn = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "保存失败",
+                Title = L10n.T("Msg_SaveFailed"),
                 Content = error,
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await warn.ShowAsync();
         }
@@ -135,9 +136,9 @@ public sealed partial class ProfilesPage : Page
             var warn = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "保存失败",
+                Title = L10n.T("Msg_SaveFailed"),
                 Content = ex.Message,
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await warn.ShowAsync();
         }
@@ -158,9 +159,9 @@ public sealed partial class ProfilesPage : Page
             var warn = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "保存失败",
+                Title = L10n.T("Msg_SaveFailed"),
                 Content = ex.Message,
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await warn.ShowAsync();
         }
@@ -183,10 +184,10 @@ public sealed partial class ProfilesPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "删除订阅",
-                Content = $"确定删除「{vm.DisplayName}」吗？",
-                PrimaryButtonText = "删除",
-                CloseButtonText = "取消",
+                Title = L10n.T("Msg_DeleteProfileTitle"),
+                Content = L10n.F("Msg_DeleteProfileBody", vm.DisplayName),
+                PrimaryButtonText = L10n.T("Common_Delete"),
+                CloseButtonText = L10n.T("Common_Cancel"),
                 DefaultButton = ContentDialogButton.Close,
             };
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)

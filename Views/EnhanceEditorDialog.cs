@@ -36,7 +36,7 @@ public sealed class EnhanceEditorDialog : ContentDialog
     {
         _item = item;
         XamlRoot = root;
-        Title = item is null ? "编辑全局增强配置" : $"编辑增强配置：{item.Name}";
+        Title = item is null ? L10n.T("Msg_EnhanceGlobalTitle") : L10n.F("Msg_EnhanceProfileTitle", item.Name);
         PrimaryButtonText = "保存并应用";
         CloseButtonText = "关闭";
         DefaultButton = ContentDialogButton.Primary;
@@ -64,7 +64,7 @@ public sealed class EnhanceEditorDialog : ContentDialog
         var header = new StackPanel { Spacing = 8 };
         header.Children.Add(new TextBlock
         {
-            Text = "应用顺序：全局 Merge → 全局 Script → 订阅 Merge → 订阅 Script → Rules → Proxies → Groups",
+            Text = L10n.T("Msg_EnhanceOrder"),
             FontSize = 12,
             Opacity = 0.6,
             TextWrapping = TextWrapping.Wrap,
@@ -126,7 +126,7 @@ public sealed class EnhanceEditorDialog : ContentDialog
             ProfileEnhanceService.SetContent(_item, current.Type, content);
         }
         ConfigChanged = true;
-        _status.Text = "✓ 已保存";
+        _status.Text = L10n.T("Msg_EnhanceSaved");
     }
 
     private static void ScriptSyntaxCheck(string content)
