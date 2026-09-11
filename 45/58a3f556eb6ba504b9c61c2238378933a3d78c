@@ -1,0 +1,114 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "4558a3f556eb6ba504b9c61c2238378933a3d78c",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 586,
+    "git_diff_deleted_lines": 2,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 583,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "App.xaml.cs": {
+        "BYMC": [
+          "13",
+          "43-45",
+          "48"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Unlock/UnlockTestService.cs": {
+        "BYMC": [
+          "1-262"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "MainWindow.xaml": {
+        "BYMC": [
+          "54-56"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "MainWindow.xaml.cs": {
+        "BYMC": [
+          "45",
+          "48-52",
+          "55",
+          "57",
+          "197"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "73-80"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "122",
+          "168-169"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LightweightManager.cs": {
+        "BYMC": [
+          "1-98"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/TrayService.cs": {
+        "BYMC": [
+          "85-90"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "118-123"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "67-68",
+          "357-367"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UnlockPage.xaml": {
+        "BYMC": [
+          "1-62"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UnlockPage.xaml.cs": {
+        "BYMC": [
+          "1-108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789147677,
+  "requirement_id": ""
+}
