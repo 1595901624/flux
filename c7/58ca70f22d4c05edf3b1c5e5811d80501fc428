@@ -1,0 +1,125 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "c758ca70f22d4c05edf3b1c5e5811d80501fc428",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 452,
+    "git_diff_deleted_lines": 7,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 448,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Services/MihomoApiService.cs": {
+        "BYMC": [
+          "172-182",
+          "185-240",
+          "242-247"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ConnectionsViewModel.cs": {
+        "BYMC": [
+          "88-91",
+          "190",
+          "200-217"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/LogsViewModel.cs": {
+        "BYMC": [
+          "49-52",
+          "59",
+          "112-115",
+          "117",
+          "119-128",
+          "133-140"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [
+          "30-35"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml.cs": {
+        "BYMC": [
+          "39-45"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml": {
+        "BYMC": [
+          "26",
+          "51-58"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml.cs": {
+        "BYMC": [
+          "79-83"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml": {
+        "BYMC": [
+          "25",
+          "44-49"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml.cs": {
+        "BYMC": [
+          "52-57"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesProvidersDialog.cs": {
+        "BYMC": [
+          "1-143"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/RulesPage.xaml": {
+        "BYMC": [
+          "23",
+          "29-35"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/RulesPage.xaml.cs": {
+        "BYMC": [
+          "29-34"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/RulesProvidersDialog.cs": {
+        "BYMC": [
+          "1-127"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789144926,
+  "requirement_id": ""
+}
