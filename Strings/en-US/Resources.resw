@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Follow system</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>UWP Loopback tool</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>Allow UWP apps to reach the proxy (needs admin consent)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Open tool</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Open tool</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Applied</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>Only remote profiles have a QR code (local profiles have no URL)</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>mihomo core started in privileged service mode</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>mihomo core started in privileged service mode</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>Service mode start failed, falling back to sidecar: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>Service mode start failed, falling back to sidecar: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>mihomo core started</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>mihomo core started</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>Service failed to stop core: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>Service failed to stop core: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>Cleaned up leftover core process PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>Cleaned up leftover core process PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>Config apply rejected: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>Config apply rejected: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>Runtime config hot-reloaded</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>Runtime config hot-reloaded</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>Hot-reload failed, restarting core: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>Hot-reload failed, restarting core: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>Failed to restore node selections: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>Failed to restore node selections: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>Restored node selection: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>Restored node selection: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>{0} saved nodes missing from current config; restore skipped</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>{0} saved nodes missing from current config; restore skipped</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Job Object assignment failed; core may linger if the app crashes</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Job Object assignment failed; core may linger if the app crashes</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>Failed to start mihomo process</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>Failed to start mihomo process</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>Config validation failed: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>Config validation failed: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo process exited unexpectedly; check the logs</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo process exited unexpectedly; check the logs</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>Timed out waiting for External Controller</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>Timed out waiting for External Controller</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>System proxy restored</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>System proxy restored</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>System proxy enabled: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>System proxy enabled: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>System proxy enabled (PAC mode): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>System proxy enabled (PAC mode): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>Detected unrestored system proxy from last session; original settings restored</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>Detected unrestored system proxy from last session; original settings restored</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>Detected stale proxy from an older version; disabled automatically</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>Detected stale proxy from an older version; disabled automatically</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>Failed to restore stale proxy: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>Failed to restore stale proxy: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>System proxy was changed by another program; Flux will not overwrite it</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>System proxy was changed by another program; Flux will not overwrite it</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>Failed to read proxy snapshot: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>Failed to read proxy snapshot: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>System proxy changed externally; restoring</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>System proxy changed externally; restoring</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>Proxy guard error: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>Proxy guard error: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>Failed to load verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>Failed to load verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>verge.yaml migration backup failed: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>verge.yaml migration backup failed: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml migrated to schema v{0}; backup: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml migrated to schema v{0}; backup: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>Failed to load config.yaml: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>Failed to load config.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>Failed to load profiles.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>Failed to load profiles.yaml: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>Protocol registration failed: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>Protocol registration failed: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>Deep-link import failed: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>Deep-link import failed: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>Auto launch was disabled by the user; re-enable Flux Proxy in Task Manager's Startup apps</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>Auto launch was disabled by the user; re-enable Flux Proxy in Task Manager's Startup apps</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>Auto launch is disabled by system policy</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>Auto launch is disabled by system policy</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>The user did not allow auto launch</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>The user did not allow auto launch</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Could not open the Run registry key</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Could not open the Run registry key</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>Failed to set language: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>Failed to set language: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>Core not ready; skipped system proxy to avoid network outage</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>Core not ready; skipped system proxy to avoid network outage</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>Hotkey init failed: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>Hotkey init failed: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>Hotkey registration failed: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>Hotkey registration failed: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>Hotkey execution failed ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>Hotkey execution failed ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>Hotkey action not implemented: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>Hotkey action not implemented: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>No admin rights and service unavailable; TUN safely disabled</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>No admin rights and service unavailable; TUN safely disabled</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>Window closed for {0} minutes; entering lightweight mode</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>Window closed for {0} minutes; entering lightweight mode</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>Auto lightweight failed: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>Auto lightweight failed: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>Entered lightweight mode (main window released; core keeps running)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>Entered lightweight mode (main window released; core keeps running)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>Exited lightweight mode</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>Exited lightweight mode</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>Start failed: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>Start failed: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>Core start failed: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>Core start failed: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>Failed to apply system proxy: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>Failed to apply system proxy: {0}</value>
   </data>
 </root>

@@ -62,18 +62,18 @@ public class CoreProcessService : IDisposable
                         _serviceCoreRunning = true;
                         await WaitForControllerAsync(15000, checkSidecarProcess: false);
                         await RestoreProfileSelectionsAsync();
-                        LogService.App("mihomo 内核已由服务以特权模式启动");
+                        LogService.App(L10n.T("Core_StartedService"));
                         CoreStarted?.Invoke();
                         return;
                     }
-                    LogService.App("服务模式启动失败，回退应用内模式: " + result.Error?.Message, "warn");
+                    LogService.App(L10n.F("Core_ServiceStartFailedFallback", result.Error?.Message ?? ""), "warn");
                 }
 
                 StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
                 await WaitForControllerAsync(15000);
                 await RestoreProfileSelectionsAsync();
                 Mode = RunningMode.Sidecar;
-                LogService.App("mihomo 内核已启动");
+                LogService.App(L10n.T("Core_Started"));
                 CoreStarted?.Invoke();
             }
             catch
@@ -128,12 +128,12 @@ public class CoreProcessService : IDisposable
         _process.Exited += (_, _) => { Mode = RunningMode.NotRunning; CoreStopped?.Invoke(); };
 
         if (!_process.Start())
-            throw new InvalidOperationException("mihomo 进程启动失败");
+            throw new InvalidOperationException(L10n.T("Core_ProcessStartFailed"));
 
         _process.BeginOutputReadLine();
         _process.BeginErrorReadLine();
         AssignJobObject(_process.Handle);
-        LogService.App($"mihomo PID: {_process.Id}");
+        LogService.App(L10n.F("Core_Pid", _process.Id));
     }
 
     private async Task StopCoreUnsafeAsync()
@@ -144,7 +144,7 @@ public class CoreProcessService : IDisposable
             {
                 var result = await AppServices.Privilege?.StopCoreViaServiceAsync()!;
                 if (!result.Success)
-                    LogService.App("服务停止内核失败: " + result.Error?.Message, "warn");
+                    LogService.App(L10n.F("Core_StopViaServiceFailed", result.Error?.Message ?? ""), "warn");
                 _serviceCoreRunning = false;
             }
             else if (_process is { HasExited: false })
@@ -193,7 +193,7 @@ public class CoreProcessService : IDisposable
                         if (!knownCorePaths.Contains(Path.GetFullPath(executable ?? "")))
                             continue;
                         leftover.Kill(entireProcessTree: true);
-                        LogService.App($"已清理残留内核进程 PID {leftover.Id}", "warn");
+                        LogService.App(L10n.F("Core_KillLeftover", leftover.Id), "warn");
                     }
                     catch { }
                     finally { leftover.Dispose(); }
@@ -226,7 +226,7 @@ public class CoreProcessService : IDisposable
         if (!string.IsNullOrWhiteSpace(output)) LogService.Core(output.TrimEnd());
         if (p.ExitCode != 0 || output.Contains("FATA", StringComparison.OrdinalIgnoreCase))
         {
-            throw new InvalidOperationException("配置校验失败: " + output.Trim());
+            throw new InvalidOperationException(L10n.F("Core_ValidateFailed", output.Trim()));
         }
     }
 
@@ -244,19 +244,19 @@ public class CoreProcessService : IDisposable
             }
             catch (Exception ex)
             {
-                LogService.App("配置应用被拒绝: " + ex.Message, "error");
+                LogService.App(L10n.F("Core_ApplyRejected", ex.Message), "error");
                 return false;
             }
             try
             {
                 await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
                 await RestoreProfileSelectionsAsync();
-                LogService.App("运行时配置已热重载");
+                LogService.App(L10n.T("Core_HotReloaded"));
                 return true;
             }
             catch (Exception ex)
             {
-                LogService.App("热重载失败，重启内核: " + ex.Message, "warn");
+                LogService.App(L10n.F("Core_HotReloadFailedRestart", ex.Message), "warn");
                 await RestartAsync();
                 return true;
             }
@@ -275,7 +275,7 @@ public class CoreProcessService : IDisposable
         while (Environment.TickCount64 < deadline)
         {
             if (checkSidecarProcess && _process is { HasExited: true })
-                throw new InvalidOperationException("mihomo 进程异常退出，请查看日志");
+                throw new InvalidOperationException(L10n.T("Core_ProcessExited"));
             try
             {
                 if (await AppServices.Api.GetVersionAsync() is not null) return;
@@ -283,7 +283,7 @@ public class CoreProcessService : IDisposable
             catch { }
             await Task.Delay(250);
         }
-        throw new TimeoutException("等待 External Controller 就绪超时");
+        throw new TimeoutException(L10n.T("Core_ControllerTimeout"));
     }
 
     /// <summary>
@@ -323,7 +323,7 @@ public class CoreProcessService : IDisposable
                     if (!string.Equals(current, item.Now, StringComparison.Ordinal))
                     {
                         await AppServices.Api.SelectProxyAsync(item.Name, item.Now);
-                        LogService.App($"已恢复节点选择: {item.Name} → {item.Now}");
+                        LogService.App(L10n.F("Core_RestoredSelection", item.Name, item.Now));
                     }
                     pending.Remove(item);
                 }
@@ -333,11 +333,11 @@ public class CoreProcessService : IDisposable
             }
 
             if (pending.Count > 0)
-                LogService.App($"有 {pending.Count} 个已保存节点在当前配置中不存在，已跳过恢复", "warn");
+                LogService.App(L10n.F("Core_SelectionMissing", pending.Count), "warn");
         }
         catch (Exception ex)
         {
-            LogService.App("恢复节点选择失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Core_RestoreSelectionsFailed", ex.Message), "warn");
         }
     }
 
@@ -359,7 +359,7 @@ public class CoreProcessService : IDisposable
 
         // 关联失败时（如进程已属于其他 Job）KILL_ON_JOB_CLOSE 兜底失效，内核会残留
         if (!NativeMethods.AssignProcessToJobObject(_jobHandle, processHandle))
-            LogService.App("Job Object 关联失败，主进程异常退出时内核可能残留", "warn");
+            LogService.App(L10n.T("Core_JobAssignFailed"), "warn");
     }
 
     private void ReleaseJobObject()

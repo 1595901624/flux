@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>시스템 따르기</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>UWP Loopback 도구</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>UWP 앱이 프록시를 사용하도록 허용(관리자 필요)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>도구 열기</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>도구 열기</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>적용됨</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR 코드는 원격 구독만 지원</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>mihomo 코어가 서비스 특권 모드로 시작됨</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>mihomo 코어가 서비스 특권 모드로 시작됨</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>서비스 모드 시작 실패, 사이드카로 전환: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>서비스 모드 시작 실패, 사이드카로 전환: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>mihomo 코어 시작됨</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>mihomo 코어 시작됨</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>서비스 코어 중지 실패: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>서비스 코어 중지 실패: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>남은 코어 프로세스 정리 PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>남은 코어 프로세스 정리 PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>설정 적용 거부됨: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>설정 적용 거부됨: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>런타임 설정 핫 리로드</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>런타임 설정 핫 리로드</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>핫 리로드 실패, 재시작: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>핫 리로드 실패, 재시작: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>노드 선택 복원 실패: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>노드 선택 복원 실패: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>노드 선택 복원: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>노드 선택 복원: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>저장된 노드 {0}개가 현재 설정에 없습니다</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>저장된 노드 {0}개가 현재 설정에 없습니다</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Job Object 연결 실패, 비정상 종료 시 코어 잔류 가능</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Job Object 연결 실패, 비정상 종료 시 코어 잔류 가능</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>mihomo 프로세스 시작 실패</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>mihomo 프로세스 시작 실패</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>설정 검증 실패: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>설정 검증 실패: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo가 비정상 종료되었습니다. 로그를 확인하세요</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo가 비정상 종료되었습니다. 로그를 확인하세요</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>External Controller 대기 시간 초과</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>External Controller 대기 시간 초과</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>시스템 프록시 복원됨</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>시스템 프록시 복원됨</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>시스템 프록시 켜짐: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>시스템 프록시 켜짐: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>시스템 프록시 켜짐(PAC 모드): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>시스템 프록시 켜짐(PAC 모드): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>이전 세션의 미복원 프록시 감지, 원래 설정 복원</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>이전 세션의 미복원 프록시 감지, 원래 설정 복원</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>이전 버전의 잔여 프록시 감지, 자동으로 끔</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>이전 버전의 잔여 프록시 감지, 자동으로 끔</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>잔여 프록시 복원 실패: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>잔여 프록시 복원 실패: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>다른 프로그램이 변경하여 더 이상 덮어쓰지 않습니다</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>다른 프로그램이 변경하여 더 이상 덮어쓰지 않습니다</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>프록시 스냅샷 읽기 실패: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>프록시 스냅샷 읽기 실패: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>시스템 프록시 변경 감지, 복원 중</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>시스템 프록시 변경 감지, 복원 중</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>프록시 가드 오류: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>프록시 가드 오류: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>verge.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>verge.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>verge.yaml 마이그레이션 백업 실패: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>verge.yaml 마이그레이션 백업 실패: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml이 schema v{0}(으)로 마이그레이션, 백업: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml이 schema v{0}(으)로 마이그레이션, 백업: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>config.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>config.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>profiles.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>profiles.yaml 로드 실패: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>프로토콜 등록 실패: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>프로토콜 등록 실패: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>딥링크 가져오기 실패: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>딥링크 가져오기 실패: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>자동 실행이 사용자에 의해 비활성화되었습니다. 작업 관리자에서 다시 활성화하세요</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>자동 실행이 사용자에 의해 비활성화되었습니다. 작업 관리자에서 다시 활성화하세요</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>자동 실행이 시스템 정책으로 비활성화됨</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>자동 실행이 시스템 정책으로 비활성화됨</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>사용자가 자동 실행을 허용하지 않았습니다</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>사용자가 자동 실행을 허용하지 않았습니다</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Run 레지스트리 키를 열 수 없습니다</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Run 레지스트리 키를 열 수 없습니다</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>언어 설정 실패: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>언어 설정 실패: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>코어 미준비로 시스템 프록시를 건너뜀</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>코어 미준비로 시스템 프록시를 건너뜀</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>단축키 초기화 실패: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>단축키 초기화 실패: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>단축키 등록 실패: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>단축키 등록 실패: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>단축키 실행 실패({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>단축키 실행 실패({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>단축키 동작 미구현: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>단축키 동작 미구현: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>관리자 권한과 서비스가 없어 TUN을 안전하게 끔</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>관리자 권한과 서비스가 없어 TUN을 안전하게 끔</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>창이 {0}분 동안 닫혀 경량 모드로 전환</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>창이 {0}분 동안 닫혀 경량 모드로 전환</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>자동 경량 모드 실패: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>자동 경량 모드 실패: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>경량 모드 진입(기본 창 해제, 코어 유지)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>경량 모드 진입(기본 창 해제, 코어 유지)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>경량 모드 종료</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>경량 모드 종료</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>시작 실패: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>시작 실패: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>코어 시작 실패: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>코어 시작 실패: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>시스템 프록시 적용 실패: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>시스템 프록시 적용 실패: {0}</value>
   </data>
 </root>

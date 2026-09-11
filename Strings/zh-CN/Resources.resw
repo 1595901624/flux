@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>跟随系统</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>UWP Loopback 工具</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>允许 UWP 应用通过本机代理联网（需要管理员授权）</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>打开工具</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>打开工具</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>已应用</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>mihomo 内核已由服务以特权模式启动</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>mihomo 内核已由服务以特权模式启动</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>服务模式启动失败，回退应用内模式: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>服务模式启动失败，回退应用内模式: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>mihomo 内核已启动</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>mihomo 内核已启动</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>服务停止内核失败: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>服务停止内核失败: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>已清理残留内核进程 PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>已清理残留内核进程 PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>配置应用被拒绝: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>配置应用被拒绝: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>运行时配置已热重载</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>运行时配置已热重载</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>热重载失败，重启内核: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>热重载失败，重启内核: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>恢复节点选择失败: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>恢复节点选择失败: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>已恢复节点选择: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>已恢复节点选择: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>有 {0} 个已保存节点在当前配置中不存在，已跳过恢复</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>有 {0} 个已保存节点在当前配置中不存在，已跳过恢复</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Job Object 关联失败，主进程异常退出时内核可能残留</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Job Object 关联失败，主进程异常退出时内核可能残留</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>mihomo 进程启动失败</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>mihomo 进程启动失败</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>配置校验失败: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>配置校验失败: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo 进程异常退出，请查看日志</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo 进程异常退出，请查看日志</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>等待 External Controller 就绪超时</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>等待 External Controller 就绪超时</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>系统代理已恢复</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>系统代理已恢复</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>系统代理已开启: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>系统代理已开启: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>系统代理已开启（PAC 模式）: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>系统代理已开启（PAC 模式）: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>检测到上次未恢复的系统代理，已恢复原始设置</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>检测到上次未恢复的系统代理，已恢复原始设置</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>检测到旧版本遗留的系统代理，已自动关闭</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>检测到旧版本遗留的系统代理，已自动关闭</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>恢复遗留系统代理失败: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>恢复遗留系统代理失败: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>系统代理已被其他程序修改，Flux 不再覆盖该设置</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>系统代理已被其他程序修改，Flux 不再覆盖该设置</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>系统代理快照读取失败: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>系统代理快照读取失败: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>检测到系统代理被修改，正在恢复</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>检测到系统代理被修改，正在恢复</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>代理守护异常: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>代理守护异常: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>verge.yaml 加载失败: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>verge.yaml 加载失败: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>verge.yaml 迁移备份失败: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>verge.yaml 迁移备份失败: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml 已迁移至 schema v{0}，备份: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml 已迁移至 schema v{0}，备份: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>config.yaml 加载失败: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>config.yaml 加载失败: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>profiles.yaml 加载失败: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>profiles.yaml 加载失败: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>协议注册失败: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>协议注册失败: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>深链导入失败: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>深链导入失败: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>开机自启动已被用户禁用，请在任务管理器的「启动应用」中重新启用 Flux Proxy</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>开机自启动已被用户禁用，请在任务管理器的「启动应用」中重新启用 Flux Proxy</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>开机自启动已被系统策略禁用</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>开机自启动已被系统策略禁用</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>用户未允许开机自启动</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>用户未允许开机自启动</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>无法打开 Run 注册表键</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>无法打开 Run 注册表键</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>语言设置失败: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>语言设置失败: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>内核未就绪，已跳过系统代理以避免网络中断</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>内核未就绪，已跳过系统代理以避免网络中断</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>热键初始化失败: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>热键初始化失败: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>热键注册失败: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>热键注册失败: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>热键执行失败 ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>热键执行失败 ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>热键动作未实现: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>热键动作未实现: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>窗口已关闭 {0} 分钟，自动进入轻量模式</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>窗口已关闭 {0} 分钟，自动进入轻量模式</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>自动轻量模式失败: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>自动轻量模式失败: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>已进入轻量模式（主窗口已释放，内核保持运行）</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>已进入轻量模式（主窗口已释放，内核保持运行）</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>已退出轻量模式</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>已退出轻量模式</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>启动失败: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>启动失败: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>内核启动失败: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>内核启动失败: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>系统代理应用失败: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>系统代理应用失败: {0}</value>
   </data>
 </root>

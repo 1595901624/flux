@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Как в системе</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>Инструмент UWP Loopback</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>Разрешить UWP-приложениям использовать прокси (нужен админ)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Открыть инструмент</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Открыть инструмент</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Применено</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR-код только для удалённых подписок</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>Ядро mihomo запущено в привилегированном режиме службы</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>Ядро mihomo запущено в привилегированном режиме службы</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>Не удалось запустить службу, возврат к sidecar: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>Не удалось запустить службу, возврат к sidecar: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>Ядро mihomo запущено</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>Ядро mihomo запущено</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>Служба не смогла остановить ядро: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>Служба не смогла остановить ядро: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>Остановлен остаточный процесс ядра PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>Остановлен остаточный процесс ядра PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>Применение конфигурации отклонено: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>Применение конфигурации отклонено: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>Конфигурация горячо перезагружена</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>Конфигурация горячо перезагружена</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>Горячая перезагрузка не удалась, перезапуск: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>Горячая перезагрузка не удалась, перезапуск: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>Ошибка восстановления выборов узлов: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>Ошибка восстановления выборов узлов: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>Выбор узла восстановлен: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>Выбор узла восстановлен: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>{0} сохранённых узлов отсутствуют; восстановление пропущено</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>{0} сохранённых узлов отсутствуют; восстановление пропущено</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Не удалось привязать Job Object; ядро может остаться</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Не удалось привязать Job Object; ядро может остаться</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>Не удалось запустить процесс mihomo</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>Не удалось запустить процесс mihomo</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>Ошибка проверки конфигурации: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>Ошибка проверки конфигурации: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo аварийно завершился; проверьте журналы</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo аварийно завершился; проверьте журналы</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>Таймаут ожидания External Controller</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>Таймаут ожидания External Controller</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>Системный прокси восстановлен</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>Системный прокси восстановлен</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>Системный прокси включён: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>Системный прокси включён: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>Системный прокси включён (PAC): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>Системный прокси включён (PAC): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>Обнаружен не восстановленный прокси; настройки восстановлены</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>Обнаружен не восстановленный прокси; настройки восстановлены</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>Обнаружен прокси от старой версии; отключён</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>Обнаружен прокси от старой версии; отключён</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>Не удалось восстановить остаточный прокси: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>Не удалось восстановить остаточный прокси: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>Системный прокси изменён другой программой; Flux не перезапишет</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>Системный прокси изменён другой программой; Flux не перезапишет</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>Ошибка чтения снимка прокси: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>Ошибка чтения снимка прокси: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>Обнаружено внешнее изменение прокси; восстановление</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>Обнаружено внешнее изменение прокси; восстановление</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>Ошибка защиты прокси: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>Ошибка защиты прокси: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>Ошибка загрузки verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>Ошибка загрузки verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>Ошибка резервной копии миграции verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>Ошибка резервной копии миграции verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml мигрирован на схему v{0}; копия: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml мигрирован на схему v{0}; копия: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>Ошибка загрузки config.yaml: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>Ошибка загрузки config.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>Ошибка загрузки profiles.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>Ошибка загрузки profiles.yaml: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>Ошибка регистрации протокола: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>Ошибка регистрации протокола: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>Ошибка импорта по глубокой ссылке: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>Ошибка импорта по глубокой ссылке: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>Автозапуск отключён пользователем; включите в диспетчере задач</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>Автозапуск отключён пользователем; включите в диспетчере задач</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>Автозапуск отключён системной политикой</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>Автозапуск отключён системной политикой</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>Пользователь не разрешил автозапуск</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>Пользователь не разрешил автозапуск</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Не удалось открыть раздел реестра Run</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Не удалось открыть раздел реестра Run</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>Ошибка установки языка: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>Ошибка установки языка: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>Ядро не готово; системный прокси пропущен</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>Ядро не готово; системный прокси пропущен</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>Ошибка инициализации горячих клавиш: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>Ошибка инициализации горячих клавиш: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>Ошибка регистрации горячей клавиши: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>Ошибка регистрации горячей клавиши: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>Ошибка выполнения горячей клавиши ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>Ошибка выполнения горячей клавиши ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>Действие горячей клавиши не реализовано: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>Действие горячей клавиши не реализовано: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>Нет прав админа и службы; TUN безопасно отключён</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>Нет прав админа и службы; TUN безопасно отключён</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>Окно закрыто {0} мин; переход в облегчённый режим</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>Окно закрыто {0} мин; переход в облегчённый режим</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>Ошибка авто-облегчённого режима: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>Ошибка авто-облегчённого режима: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>Включён облегчённый режим (окно освобождено, ядро работает)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>Включён облегчённый режим (окно освобождено, ядро работает)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>Вышел из облегчённого режима</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>Вышел из облегчённого режима</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>Ошибка запуска: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>Ошибка запуска: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>Ошибка запуска ядра: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>Ошибка запуска ядра: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>Ошибка применения системного прокси: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>Ошибка применения системного прокси: {0}</value>
   </data>
 </root>

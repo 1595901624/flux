@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Ikuti sistem</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>Alat UWP Loopback</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>Izinkan aplikasi UWP memakai proxy (perlu admin)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Buka alat</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Buka alat</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Diterapkan</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR hanya untuk profil jarak jauh</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>Core mihomo dimulai dalam mode layanan istimewa</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>Core mihomo dimulai dalam mode layanan istimewa</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>Mode layanan gagal, fallback ke sidecar: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>Mode layanan gagal, fallback ke sidecar: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>Core mihomo dimulai</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>Core mihomo dimulai</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>Layanan gagal menghentikan core: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>Layanan gagal menghentikan core: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>Proses core tersisa dibersihkan PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>Proses core tersisa dibersihkan PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>Penerapan konfigurasi ditolak: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>Penerapan konfigurasi ditolak: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>Konfigurasi dimuat ulang</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>Konfigurasi dimuat ulang</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>Hot-reload gagal, merestart core: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>Hot-reload gagal, merestart core: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>Gagal memulihkan pilihan node: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>Gagal memulihkan pilihan node: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>Pilihan node dipulihkan: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>Pilihan node dipulihkan: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>{0} node tersimpan tidak ada; pemulihan dilewati</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>{0} node tersimpan tidak ada; pemulihan dilewati</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Gagal menautkan Job Object; core bisa tertinggal</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Gagal menautkan Job Object; core bisa tertinggal</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>Gagal memulai proses mihomo</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>Gagal memulai proses mihomo</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>Validasi konfigurasi gagal: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>Validasi konfigurasi gagal: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo berhenti tak terduga; periksa log</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo berhenti tak terduga; periksa log</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>Menunggu External Controller mengalami timeout</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>Menunggu External Controller mengalami timeout</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>Proxy sistem dipulihkan</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>Proxy sistem dipulihkan</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>Proxy sistem aktif: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>Proxy sistem aktif: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>Proxy sistem aktif (mode PAC): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>Proxy sistem aktif (mode PAC): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>Proxy dari sesi sebelumnya terdeteksi; pengaturan asli dipulihkan</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>Proxy dari sesi sebelumnya terdeteksi; pengaturan asli dipulihkan</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>Proxy dari versi lama terdeteksi; dimatikan otomatis</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>Proxy dari versi lama terdeteksi; dimatikan otomatis</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>Gagal memulihkan proxy tersisa: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>Gagal memulihkan proxy tersisa: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>Proxy sistem diubah program lain; Flux tidak menimpanya</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>Proxy sistem diubah program lain; Flux tidak menimpanya</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>Gagal membaca snapshot proxy: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>Gagal membaca snapshot proxy: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>Perubahan proxy eksternal terdeteksi; memulihkan</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>Perubahan proxy eksternal terdeteksi; memulihkan</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>Kesalahan penjaga proxy: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>Kesalahan penjaga proxy: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>Gagal memuat verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>Gagal memuat verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>Gagal backup migrasi verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>Gagal backup migrasi verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml dimigrasi ke skema v{0}; cadangan: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml dimigrasi ke skema v{0}; cadangan: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>Gagal memuat config.yaml: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>Gagal memuat config.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>Gagal memuat profiles.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>Gagal memuat profiles.yaml: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>Gagal mendaftarkan protokol: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>Gagal mendaftarkan protokol: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>Gagal impor deep-link: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>Gagal impor deep-link: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>Mulai otomatis dinonaktifkan oleh pengguna; aktifkan kembali di Task Manager</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>Mulai otomatis dinonaktifkan oleh pengguna; aktifkan kembali di Task Manager</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>Mulai otomatis dinonaktifkan oleh kebijakan sistem</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>Mulai otomatis dinonaktifkan oleh kebijakan sistem</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>Pengguna tidak mengizinkan mulai otomatis</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>Pengguna tidak mengizinkan mulai otomatis</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Tidak bisa membuka kunci registri Run</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Tidak bisa membuka kunci registri Run</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>Gagal mengatur bahasa: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>Gagal mengatur bahasa: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>Core belum siap; proxy sistem dilewati</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>Core belum siap; proxy sistem dilewati</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>Gagal menginisialisasi pintasan: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>Gagal menginisialisasi pintasan: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>Gagal mendaftarkan pintasan: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>Gagal mendaftarkan pintasan: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>Gagal menjalankan pintasan ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>Gagal menjalankan pintasan ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>Aksi pintasan belum diimplementasi: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>Aksi pintasan belum diimplementasi: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>Tidak ada hak admin dan layanan; TUN dimatikan dengan aman</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>Tidak ada hak admin dan layanan; TUN dimatikan dengan aman</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>Jendela tertutup {0} menit; masuk mode ringan</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>Jendela tertutup {0} menit; masuk mode ringan</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>Gagal mode ringan otomatis: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>Gagal mode ringan otomatis: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>Mode ringan aktif (jendela utama dilepas; core tetap jalan)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>Mode ringan aktif (jendela utama dilepas; core tetap jalan)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>Keluar dari mode ringan</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>Keluar dari mode ringan</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>Gagal memulai: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>Gagal memulai: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>Gagal memulai core: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>Gagal memulai core: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>Gagal menerapkan proxy sistem: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>Gagal menerapkan proxy sistem: {0}</value>
   </data>
 </root>

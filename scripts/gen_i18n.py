@@ -118,6 +118,8 @@ import i18n_dialog_table
 i18n_dialog_table.register(k)
 import i18n_dialog_table as _dt
 _dt.register_extra(k)
+import i18n_core_table
+i18n_core_table.register(k)
 
 LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
 

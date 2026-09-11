@@ -29,7 +29,7 @@ public static class AppBootstrapper
             if (!string.IsNullOrEmpty(lang) && lang != "system")
             {
                 try { Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = lang; }
-                catch (Exception ex) { LogService.App("语言设置失败: " + ex.Message, "warn"); }
+                catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
             }
 
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
@@ -42,7 +42,7 @@ public static class AppBootstrapper
             {
                 AppServices.Config.Verge.EnableTunMode = false;
                 AppServices.Config.SaveVerge();
-                LogService.App("当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式", "warn");
+                LogService.App(L10n.T("Boot_TunDisabledNoPrivilege"), "warn");
             }
 
             // 深链 / 二次实例转发参数
@@ -75,7 +75,7 @@ public static class AppBootstrapper
         {
             StartFailed = true;
             StartError = ex.Message;
-            LogService.App("启动失败: " + ex, "error");
+            LogService.App(L10n.F("Boot_StartFailed", ex.Message), "error");
             dispatcher.TryEnqueue(() => App.ShowMainWindow()); // 失败也显示窗口供查看日志
         }
     }
@@ -91,7 +91,7 @@ public static class AppBootstrapper
         }
         catch (Exception ex)
         {
-            LogService.App("内核启动失败: " + ex.Message, "error");
+            LogService.App(L10n.F("Boot_CoreStartFailed", ex.Message), "error");
             StartFailed = true;
             StartError = ex.Message;
             try { await AppServices.Core.StopAsync(); } catch { }
@@ -107,11 +107,11 @@ public static class AppBootstrapper
             if (AppServices.Config.Verge.EnableSystemProxy && coreReady)
                 AppServices.SysProxy.Apply(AppServices.Config.Verge);
             else if (AppServices.Config.Verge.EnableSystemProxy)
-                LogService.App("内核未就绪，已跳过系统代理以避免网络中断", "warn");
+                LogService.App(L10n.T("Boot_SkipProxyNoCore"), "warn");
         }
         catch (Exception ex)
         {
-            LogService.App("系统代理应用失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Boot_SysProxyApplyFailed", ex.Message), "warn");
         }
 
         AppServices.Subscription.StartAutoUpdateTimer();
@@ -130,11 +130,11 @@ public static class AppBootstrapper
             LightweightManager.RunOnUiThread = action => _uiDispatcher?.TryEnqueue(() => action());
             var failures = hotkey.ApplyHotkeys(AppServices.Config.Verge.Hotkeys).Value ?? [];
             foreach (var failure in failures)
-                LogService.App("热键注册失败: " + failure, "warn");
+                LogService.App(L10n.F("Boot_HotkeyRegisterFailed", failure), "warn");
         }
         catch (Exception ex)
         {
-            LogService.App("热键初始化失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Boot_HotkeyInitFailed", ex.Message), "warn");
         }
     }
 
@@ -181,13 +181,13 @@ public static class AppBootstrapper
                         await AppServices.Subscription.SelectAsync(uid);
                     break;
                 default:
-                    LogService.App($"热键动作未实现: {action}", "warn");
+                    LogService.App(L10n.F("Boot_HotkeyNotImplemented", action), "warn");
                     break;
             }
         }
         catch (Exception ex)
         {
-            LogService.App($"热键执行失败 ({action}): {ex.Message}", "warn");
+            LogService.App(L10n.F("Boot_HotkeyExecFailed", action, ex.Message), "warn");
         }
     }
 }

@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Sistemi takip et</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>UWP Loopback aracı</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>UWP uygulamalarının proxy kullanımına izin ver (yönetici gerekir)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Aracı aç</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Aracı aç</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Uygulandı</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR yalnızca uzak profiller için</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>mihomo çekirdeği ayrıcalıklı servis modunda başlatıldı</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>mihomo çekirdeği ayrıcalıklı servis modunda başlatıldı</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>Servis modu başlatılamadı, sidecar'a dönülüyor: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>Servis modu başlatılamadı, sidecar'a dönülüyor: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>mihomo çekirdeği başlatıldı</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>mihomo çekirdeği başlatıldı</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>Servis çekirdeği durduramadı: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>Servis çekirdeği durduramadı: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>Artık çekirdek süreci temizlendi PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>Artık çekirdek süreci temizlendi PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>Yapılandırma reddedildi: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>Yapılandırma reddedildi: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>Çalışma yapılandırması hot-reload edildi</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>Çalışma yapılandırması hot-reload edildi</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>Hot-reload başarısız, yeniden başlatılıyor: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>Hot-reload başarısız, yeniden başlatılıyor: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>Düğüm seçimi geri yükleme başarısız: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>Düğüm seçimi geri yükleme başarısız: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>Düğüm seçimi geri yüklendi: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>Düğüm seçimi geri yüklendi: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>Kayıtlı {0} düğüm mevcut yapılandırmada yok; atlandı</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>Kayıtlı {0} düğüm mevcut yapılandırmada yok; atlandı</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Job Object atanamadı; çekirdek kalabilir</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Job Object atanamadı; çekirdek kalabilir</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>mihomo süreci başlatılamadı</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>mihomo süreci başlatılamadı</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>Yapılandırma doğrulaması başarısız: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>Yapılandırma doğrulaması başarısız: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo beklenmedik şekilde çıktı; kayıtları inceleyin</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo beklenmedik şekilde çıktı; kayıtları inceleyin</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>External Controller bekleme zaman aşımı</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>External Controller bekleme zaman aşımı</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>Sistem proxy geri yüklendi</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>Sistem proxy geri yüklendi</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>Sistem proxy açıldı: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>Sistem proxy açıldı: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>Sistem proxy açıldı (PAC modu): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>Sistem proxy açıldı (PAC modu): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>Önceki oturumdan kalma proxy algılandı; orijinal ayarlar geri yüklendi</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>Önceki oturumdan kalma proxy algılandı; orijinal ayarlar geri yüklendi</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>Eski sürümden kalan proxy algılandı; otomatik kapatıldı</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>Eski sürümden kalan proxy algılandı; otomatik kapatıldı</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>Kalıntı proxy geri yükleme başarısız: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>Kalıntı proxy geri yükleme başarısız: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>Sistem proxy başka bir program tarafından değiştirildi; üzerine yazılmayacak</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>Sistem proxy başka bir program tarafından değiştirildi; üzerine yazılmayacak</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>Proxy anlık görüntüsü okunamadı: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>Proxy anlık görüntüsü okunamadı: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>Sistem proxy harici değiştirildi; geri yükleniyor</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>Sistem proxy harici değiştirildi; geri yükleniyor</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>Proxy koruma hatası: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>Proxy koruma hatası: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>verge.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>verge.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>verge.yaml geçiş yedeği başarısız: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>verge.yaml geçiş yedeği başarısız: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml şema v{0}'a taşındı; yedek: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml şema v{0}'a taşındı; yedek: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>config.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>config.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>profiles.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>profiles.yaml yüklenemedi: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>Protokol kaydı başarısız: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>Protokol kaydı başarısız: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>Derin bağlantı içe aktarma başarısız: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>Derin bağlantı içe aktarma başarısız: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>Otomatik başlatma kullanıcı tarafından devre dışı bırakıldı; Görev Yöneticisi'nden etkinleştirin</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>Otomatik başlatma kullanıcı tarafından devre dışı bırakıldı; Görev Yöneticisi'nden etkinleştirin</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>Otomatik başlatma sistem ilkesi tarafından devre dışı</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>Otomatik başlatma sistem ilkesi tarafından devre dışı</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>Kullanıcı otomatik başlatmaya izin vermedi</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>Kullanıcı otomatik başlatmaya izin vermedi</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Run kayıt defteri anahtarı açılamadı</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Run kayıt defteri anahtarı açılamadı</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>Dil ayarı başarısız: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>Dil ayarı başarısız: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>Çekirdek hazır değil; sistem proxy atlandı</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>Çekirdek hazır değil; sistem proxy atlandı</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>Kısayol başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>Kısayol başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>Kısayol kaydı başarısız: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>Kısayol kaydı başarısız: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>Kısayol yürütme başarısız ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>Kısayol yürütme başarısız ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>Kısayol eylemi uygulanmadı: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>Kısayol eylemi uygulanmadı: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>Yönetici hakkı ve servis yok; TUN güvenle kapatıldı</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>Yönetici hakkı ve servis yok; TUN güvenle kapatıldı</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>Pencere {0} dakika kapalıydı; hafif moda geçiliyor</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>Pencere {0} dakika kapalıydı; hafif moda geçiliyor</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>Otomatik hafif mod başarısız: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>Otomatik hafif mod başarısız: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>Hafif moda geçildi (ana pencere serbest, çekirdek çalışıyor)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>Hafif moda geçildi (ana pencere serbest, çekirdek çalışıyor)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>Hafif moddan çıkıldı</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>Hafif moddan çıkıldı</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>Başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>Başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>Çekirdek başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>Çekirdek başlatma başarısız: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>Sistem proxy uygulama başarısız: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>Sistem proxy uygulama başarısız: {0}</value>
   </data>
 </root>

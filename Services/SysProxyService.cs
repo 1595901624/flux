@@ -23,7 +23,7 @@ public class SysProxyService
             if (!verge.EnableSystemProxy)
             {
                 RestoreOriginalUnsafe();
-                LogService.App("系统代理已恢复");
+                LogService.App(L10n.T("Proxy_Restored"));
                 return;
             }
 
@@ -52,13 +52,13 @@ public class SysProxyService
             {
                 WinInetProxySettings.WritePac(true, pacUrl);
                 _lastApplied = new AppliedProxy(server, bypass, pacUrl);
-                LogService.App($"系统代理已开启（PAC 模式）: {pacUrl}");
+                LogService.App(L10n.F("Proxy_EnabledPac", pacUrl));
             }
             else
             {
                 SetProxy(new ProxyState(true, server, bypass));
                 _lastApplied = new AppliedProxy(server, bypass, null);
-                LogService.App($"系统代理已开启: {server}");
+                LogService.App(L10n.F("Proxy_Enabled", server));
             }
             StartGuardUnsafe(verge);
         }
@@ -95,7 +95,7 @@ public class SysProxyService
                     if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer))
                     {
                         SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
-                        LogService.App("检测到上次未恢复的系统代理，已恢复原始设置", "warn");
+                        LogService.App(L10n.T("Proxy_StaleRestored"), "warn");
                     }
                     DeleteSnapshot();
                     _lastApplied = null;
@@ -107,12 +107,12 @@ public class SysProxyService
                     SystemProxyOwnership.IsOwned(state.Enable, state.Server, $"127.0.0.1:{AppServices.Config.MixedPort}"))
                 {
                     SetProxy(new ProxyState(false, "", ""));
-                    LogService.App("检测到旧版本遗留的系统代理，已自动关闭", "warn");
+                    LogService.App(L10n.T("Proxy_LegacyDisabled"), "warn");
                 }
             }
             catch (Exception ex)
             {
-                LogService.App("恢复遗留系统代理失败: " + ex.Message, "warn");
+                LogService.App(L10n.F("Proxy_StaleRestoreFailed", ex.Message), "warn");
             }
         }
     }
@@ -134,7 +134,7 @@ public class SysProxyService
             if (ownedManual || ownedPac)
                 SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
             else
-                LogService.App("系统代理已被其他程序修改，Flux 不再覆盖该设置", "warn");
+                LogService.App(L10n.T("Proxy_ChangedByOther"), "warn");
             DeleteSnapshot();
         }
         _lastApplied = null;
@@ -159,7 +159,7 @@ public class SysProxyService
         }
         catch (Exception ex)
         {
-            LogService.App("系统代理快照读取失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Proxy_SnapshotReadFailed", ex.Message), "warn");
             return null;
         }
     }
@@ -189,7 +189,7 @@ public class SysProxyService
                           current.Bypass == last.Bypass;
                     if (!intact)
                     {
-                        LogService.App("检测到系统代理被修改，正在恢复", "warn");
+                        LogService.App(L10n.T("Proxy_ChangedRestoring"), "warn");
                         if (last.PacUrl is not null)
                             WinInetProxySettings.WritePac(true, last.PacUrl);
                         else
@@ -198,7 +198,7 @@ public class SysProxyService
                 }
                 catch (Exception ex)
                 {
-                    LogService.App("代理守护异常: " + ex.Message, "warn");
+                    LogService.App(L10n.F("Proxy_GuardError", ex.Message), "warn");
                 }
             }
         }, null, TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30));

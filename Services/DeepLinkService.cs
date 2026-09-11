@@ -24,7 +24,7 @@ public class DeepLinkService
         }
         catch (Exception ex)
         {
-            LogService.App("协议注册失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("DeepLink_RegisterFailed", ex.Message), "warn");
         }
     }
 
@@ -62,7 +62,7 @@ public class DeepLinkService
         }
         catch (Exception ex)
         {
-            LogService.App("深链导入失败: " + ex.Message, "error");
+            LogService.App(L10n.F("DeepLink_ImportFailed", ex.Message), "error");
         }
     }
 

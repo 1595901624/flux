@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>Система буенча</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>UWP Loopback коралы</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>UWP кушакларга прокси аша чыгу рөхсәте (админ кирәк)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Коралны ачу</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Коралны ачу</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>Кулланды</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>QR код тик remote профильләр өчен</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>mihomo йөзәге хезмәт привилегиялы режимында башланды</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>mihomo йөзәге хезмәт привилегиялы режимында башланды</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>Хезмәт режимы хата, sidecar'га кайту: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>Хезмәт режимы хата, sidecar'га кайту: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>mihomo йөзәге башланды</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>mihomo йөзәге башланды</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>Хезмәт йөзәкне туктата алмады: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>Хезмәт йөзәкне туктата алмады: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>Калдык процесс тәмамланды PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>Калдык процесс тәмамланды PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>Конфигурация кабул ителмәде: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>Конфигурация кабул ителмәде: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>Runtime конфигурация яңартылды</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>Runtime конфигурация яңартылды</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>Яңарту хата, йөзәкне яңадан башлау: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>Яңарту хата, йөзәкне яңадан башлау: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>Төен сайлауларын кайтару хата: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>Төен сайлауларын кайтару хата: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>Төен сайлавы кайтарылды: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>Төен сайлавы кайтарылды: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>{0} сакланган төен юк; кайтару уздырылды</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>{0} сакланган төен юк; кайтару уздырылды</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>Job Object бәйләү хата; йөзәк калып калырга мөмкин</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>Job Object бәйләү хата; йөзәк калып калырга мөмкин</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>mihomo процесын башлау хата</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>mihomo процесын башлау хата</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>Конфигурация тикшерүе хата: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>Конфигурация тикшерүе хата: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>mihomo көтелмәгәнлектән чыкты; журналларны карагыз</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>mihomo көтелмәгәнлектән чыкты; журналларны карагыз</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>External Controller көтү вакыты тулды</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>External Controller көтү вакыты тулды</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>Систем прокси кайтарылды</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>Систем прокси кайтарылды</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>Систем прокси ачылды: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>Систем прокси ачылды: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>Систем прокси ачылды (PAC режимы): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>Систем прокси ачылды (PAC режимы): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>Соңгы сеанстың проксиесе табылды; төп көйләүләр кайтарылды</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>Соңгы сеанстың проксиесе табылды; төп көйләүләр кайтарылды</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>Иске версиядән прокси табылды; автоматик рәвештә сүндерелде</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>Иске версиядән прокси табылды; автоматик рәвештә сүндерелде</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>Калдык проксины кайтару хата: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>Калдык проксины кайтару хата: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>Систем проксины башка программа үзгәртте; Flux кабат язмаячак</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>Систем проксины башка программа үзгәртте; Flux кабат язмаячак</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>Прокси снимогын уку хата: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>Прокси снимогын уку хата: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>Проксины тышкы үзгәртү табылды; кайтартыла</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>Проксины тышкы үзгәртү табылды; кайтартыла</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>Прокси саклау хата: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>Прокси саклау хата: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>verge.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>verge.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>verge.yaml миграция резервы хата: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>verge.yaml миграция резервы хата: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>verge.yaml schema v{0}'ка миграцияланды; резерв: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>verge.yaml schema v{0}'ка миграцияланды; резерв: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>config.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>config.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>profiles.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>profiles.yaml йөкләү хата: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>Протокол теркәү хата: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>Протокол теркәү хата: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>Дип-линк кертү хата: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>Дип-линк кертү хата: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>Автостарт кулланучы тарафыннан сүндерелгән; Task Manager'да кабызыгыз</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>Автостарт кулланучы тарафыннан сүндерелгән; Task Manager'да кабызыгыз</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>Автостарт системалык сәясәт тарафыннан сүндерелгән</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>Автостарт системалык сәясәт тарафыннан сүндерелгән</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>Кулланучы автостартны рөхсәт итмәде</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>Кулланучы автостартны рөхсәт итмәде</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>Run регистр ачкычы ачылмады</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>Run регистр ачкычы ачылмады</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>Тел көйләү хата: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>Тел көйләү хата: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>Йөзәк әзер түгел; систем прокси уздырылды</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>Йөзәк әзер түгел; систем прокси уздырылды</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>Кыска юлларны башлау хата: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>Кыска юлларны башлау хата: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>Кыска юл теркәү хата: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>Кыска юл теркәү хата: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>Кыска юлны үтәү хата ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>Кыска юлны үтәү хата ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>Кыска юл эше тормышка ашырылмаган: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>Кыска юл эше тормышка ашырылмаган: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>Админ хоккы һәм хезмәт юк; TUN имин сүндерелде</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>Админ хоккы һәм хезмәт юк; TUN имин сүндерелде</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>Тәрәзә {0} минут ябык иде; Җиңел режимга күчү</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>Тәрәзә {0} минут ябык иде; Җиңел режимга күчү</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>Авто-Җиңел режим хата: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>Авто-Җиңел режим хата: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>Җиңел режимга керде (тәрәзә азат, йөзәк эшли)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>Җиңел режимга керде (тәрәзә азат, йөзәк эшли)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>Җиңел режимннан чыкты</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>Җиңел режимннан чыкты</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>Башлау хата: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>Башлау хата: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>Йөзәк башлау хата: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>Йөзәк башлау хата: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>Систем прокси куллану хата: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>Систем прокси куллану хата: {0}</value>
   </data>
 </root>

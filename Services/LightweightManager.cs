@@ -34,7 +34,7 @@ public static class LightweightManager
                 App.AllowWindowClose = true;
                 window.Close();
             }
-            LogService.App("已进入轻量模式（主窗口已释放，内核保持运行）");
+            LogService.App(L10n.T("Lightweight_Entered"));
             StateChanged?.Invoke();
         });
     }
@@ -48,7 +48,7 @@ public static class LightweightManager
             IsLightweight = false;
             CancelAutoTimer();
             App.ShowMainWindow();
-            LogService.App("已退出轻量模式");
+            LogService.App(L10n.T("Lightweight_Exited"));
             StateChanged?.Invoke();
         });
     }
@@ -79,13 +79,13 @@ public static class LightweightManager
             try
             {
                 await Task.Delay(TimeSpan.FromMinutes(minutes), token);
-                LogService.App($"窗口已关闭 {minutes} 分钟，自动进入轻量模式");
+                LogService.App(L10n.F("Boot_LightweightAuto", minutes));
                 Enter();
             }
             catch (OperationCanceledException) { }
             catch (Exception ex)
             {
-                LogService.App("自动轻量模式失败: " + ex.Message, "warn");
+                LogService.App(L10n.F("Boot_LightweightAutoFailed", ex.Message), "warn");
             }
         }, token);
     }

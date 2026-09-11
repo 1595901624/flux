@@ -768,6 +768,18 @@
   <data name="Settings_FollowSystem.Content" xml:space="preserve">
     <value>حسب النظام</value>
   </data>
+  <data name="Settings_CardLoopback.Header" xml:space="preserve">
+    <value>أداة UWP Loopback</value>
+  </data>
+  <data name="Settings_CardLoopback.Description" xml:space="preserve">
+    <value>السماح لتطبيقات UWP عبر البروكسي (يحتاج مسؤول)</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>افتح الأداة</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>افتح الأداة</value>
+  </data>
   <data name="Msg_Applied.Text" xml:space="preserve">
     <value>تم التطبيق</value>
   </data>
@@ -1977,5 +1989,317 @@
   </data>
   <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
     <value>رمز QR متاح للملفات البعيدة فقط</value>
+  </data>
+  <data name="Core_StartedService.Text" xml:space="preserve">
+    <value>تم تشغيل نواة mihomo بوضع الخدمة المميز</value>
+  </data>
+  <data name="Core_StartedService.Content" xml:space="preserve">
+    <value>تم تشغيل نواة mihomo بوضع الخدمة المميز</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Text" xml:space="preserve">
+    <value>فشل تشغيل وضع الخدمة، الرجوع للوضع الداخلي: {0}</value>
+  </data>
+  <data name="Core_ServiceStartFailedFallback.Content" xml:space="preserve">
+    <value>فشل تشغيل وضع الخدمة، الرجوع للوضع الداخلي: {0}</value>
+  </data>
+  <data name="Core_Started.Text" xml:space="preserve">
+    <value>تم تشغيل نواة mihomo</value>
+  </data>
+  <data name="Core_Started.Content" xml:space="preserve">
+    <value>تم تشغيل نواة mihomo</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Text" xml:space="preserve">
+    <value>فشلت الخدمة في إيقاف النواة: {0}</value>
+  </data>
+  <data name="Core_StopViaServiceFailed.Content" xml:space="preserve">
+    <value>فشلت الخدمة في إيقاف النواة: {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Text" xml:space="preserve">
+    <value>نظّفت عملية النواة المتبقية PID {0}</value>
+  </data>
+  <data name="Core_KillLeftover.Content" xml:space="preserve">
+    <value>نظّفت عملية النواة المتبقية PID {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Text" xml:space="preserve">
+    <value>تم رفض تطبيق التكوين: {0}</value>
+  </data>
+  <data name="Core_ApplyRejected.Content" xml:space="preserve">
+    <value>تم رفض تطبيق التكوين: {0}</value>
+  </data>
+  <data name="Core_HotReloaded.Text" xml:space="preserve">
+    <value>أعيد تحميل تكوين التشغيل</value>
+  </data>
+  <data name="Core_HotReloaded.Content" xml:space="preserve">
+    <value>أعيد تحميل تكوين التشغيل</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Text" xml:space="preserve">
+    <value>فشل إعادة التحميل، إعادة تشغيل النواة: {0}</value>
+  </data>
+  <data name="Core_HotReloadFailedRestart.Content" xml:space="preserve">
+    <value>فشل إعادة التحميل، إعادة تشغيل النواة: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Text" xml:space="preserve">
+    <value>فشل استعادة اختيارات العقد: {0}</value>
+  </data>
+  <data name="Core_RestoreSelectionsFailed.Content" xml:space="preserve">
+    <value>فشل استعادة اختيارات العقد: {0}</value>
+  </data>
+  <data name="Core_RestoredSelection.Text" xml:space="preserve">
+    <value>استُعيد اختيار العقدة: {0} → {1}</value>
+  </data>
+  <data name="Core_RestoredSelection.Content" xml:space="preserve">
+    <value>استُعيد اختيار العقدة: {0} → {1}</value>
+  </data>
+  <data name="Core_SelectionMissing.Text" xml:space="preserve">
+    <value>{0} عقدة محفوظة غير موجودة؛ تم تخطي الاستعادة</value>
+  </data>
+  <data name="Core_SelectionMissing.Content" xml:space="preserve">
+    <value>{0} عقدة محفوظة غير موجودة؛ تم تخطي الاستعادة</value>
+  </data>
+  <data name="Core_JobAssignFailed.Text" xml:space="preserve">
+    <value>فشل ربط Job Object؛ قد تبقى النواة</value>
+  </data>
+  <data name="Core_JobAssignFailed.Content" xml:space="preserve">
+    <value>فشل ربط Job Object؛ قد تبقى النواة</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Text" xml:space="preserve">
+    <value>فشل بدء عملية mihomo</value>
+  </data>
+  <data name="Core_ProcessStartFailed.Content" xml:space="preserve">
+    <value>فشل بدء عملية mihomo</value>
+  </data>
+  <data name="Core_ValidateFailed.Text" xml:space="preserve">
+    <value>فشل التحقق من التكوين: {0}</value>
+  </data>
+  <data name="Core_ValidateFailed.Content" xml:space="preserve">
+    <value>فشل التحقق من التكوين: {0}</value>
+  </data>
+  <data name="Core_ProcessExited.Text" xml:space="preserve">
+    <value>خرج mihomo بشكل غير متوقع؛ راجع السجلات</value>
+  </data>
+  <data name="Core_ProcessExited.Content" xml:space="preserve">
+    <value>خرج mihomo بشكل غير متوقع؛ راجع السجلات</value>
+  </data>
+  <data name="Core_ControllerTimeout.Text" xml:space="preserve">
+    <value>انتهت مهلة انتظار External Controller</value>
+  </data>
+  <data name="Core_ControllerTimeout.Content" xml:space="preserve">
+    <value>انتهت مهلة انتظار External Controller</value>
+  </data>
+  <data name="Core_Pid.Text" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Core_Pid.Content" xml:space="preserve">
+    <value>mihomo PID: {0}</value>
+  </data>
+  <data name="Proxy_Restored.Text" xml:space="preserve">
+    <value>تمت استعادة بروكسي النظام</value>
+  </data>
+  <data name="Proxy_Restored.Content" xml:space="preserve">
+    <value>تمت استعادة بروكسي النظام</value>
+  </data>
+  <data name="Proxy_Enabled.Text" xml:space="preserve">
+    <value>تم تفعيل بروكسي النظام: {0}</value>
+  </data>
+  <data name="Proxy_Enabled.Content" xml:space="preserve">
+    <value>تم تفعيل بروكسي النظام: {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Text" xml:space="preserve">
+    <value>تم تفعيل بروكسي النظام (وضع PAC): {0}</value>
+  </data>
+  <data name="Proxy_EnabledPac.Content" xml:space="preserve">
+    <value>تم تفعيل بروكسي النظام (وضع PAC): {0}</value>
+  </data>
+  <data name="Proxy_StaleRestored.Text" xml:space="preserve">
+    <value>اكتُشف بروكسي غير مستعاد من الجلسة السابقة؛ استُعيدت الإعدادات الأصلية</value>
+  </data>
+  <data name="Proxy_StaleRestored.Content" xml:space="preserve">
+    <value>اكتُشف بروكسي غير مستعاد من الجلسة السابقة؛ استُعيدت الإعدادات الأصلية</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Text" xml:space="preserve">
+    <value>اكتُشف بروكسي من إصدار قديم؛ عُطّل تلقائيًا</value>
+  </data>
+  <data name="Proxy_LegacyDisabled.Content" xml:space="preserve">
+    <value>اكتُشف بروكسي من إصدار قديم؛ عُطّل تلقائيًا</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Text" xml:space="preserve">
+    <value>فشل استعادة البروكسي المتبقي: {0}</value>
+  </data>
+  <data name="Proxy_StaleRestoreFailed.Content" xml:space="preserve">
+    <value>فشل استعادة البروكسي المتبقي: {0}</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Text" xml:space="preserve">
+    <value>تم تعديل بروكسي النظام بواسطة برنامج آخر؛ لن يستبدله Flux</value>
+  </data>
+  <data name="Proxy_ChangedByOther.Content" xml:space="preserve">
+    <value>تم تعديل بروكسي النظام بواسطة برنامج آخر؛ لن يستبدله Flux</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Text" xml:space="preserve">
+    <value>فشل قراءة لقطة البروكسي: {0}</value>
+  </data>
+  <data name="Proxy_SnapshotReadFailed.Content" xml:space="preserve">
+    <value>فشل قراءة لقطة البروكسي: {0}</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Text" xml:space="preserve">
+    <value>اكتُشف تعديل خارجي للبروكسي؛ جارٍ الاستعادة</value>
+  </data>
+  <data name="Proxy_ChangedRestoring.Content" xml:space="preserve">
+    <value>اكتُشف تعديل خارجي للبروكسي؛ جارٍ الاستعادة</value>
+  </data>
+  <data name="Proxy_GuardError.Text" xml:space="preserve">
+    <value>خطأ في حارس البروكسي: {0}</value>
+  </data>
+  <data name="Proxy_GuardError.Content" xml:space="preserve">
+    <value>خطأ في حارس البروكسي: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
+    <value>فشل تحميل verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeLoadFailed.Content" xml:space="preserve">
+    <value>فشل تحميل verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
+    <value>فشل نسخة ترحيل verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrateBackupFailed.Content" xml:space="preserve">
+    <value>فشل نسخة ترحيل verge.yaml: {0}</value>
+  </data>
+  <data name="Config_VergeMigrated.Text" xml:space="preserve">
+    <value>تم ترحيل verge.yaml إلى المخطط v{0}؛ النسخة: {1}</value>
+  </data>
+  <data name="Config_VergeMigrated.Content" xml:space="preserve">
+    <value>تم ترحيل verge.yaml إلى المخطط v{0}؛ النسخة: {1}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
+    <value>فشل تحميل config.yaml: {0}</value>
+  </data>
+  <data name="Config_ClashLoadFailed.Content" xml:space="preserve">
+    <value>فشل تحميل config.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Text" xml:space="preserve">
+    <value>فشل تحميل profiles.yaml: {0}</value>
+  </data>
+  <data name="Config_ProfilesLoadFailed.Content" xml:space="preserve">
+    <value>فشل تحميل profiles.yaml: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Text" xml:space="preserve">
+    <value>فشل تسجيل البروتوكول: {0}</value>
+  </data>
+  <data name="DeepLink_RegisterFailed.Content" xml:space="preserve">
+    <value>فشل تسجيل البروتوكول: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Text" xml:space="preserve">
+    <value>فشل استيراد الرابط العميق: {0}</value>
+  </data>
+  <data name="DeepLink_ImportFailed.Content" xml:space="preserve">
+    <value>فشل استيراد الرابط العميق: {0}</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Text" xml:space="preserve">
+    <value>عطّل المستخدم بدء التشغيل التلقائي؛ أعد تمكين Flux Proxy من إدارة المهام</value>
+  </data>
+  <data name="AutoStart_DisabledByUser.Content" xml:space="preserve">
+    <value>عطّل المستخدم بدء التشغيل التلقائي؛ أعد تمكين Flux Proxy من إدارة المهام</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Text" xml:space="preserve">
+    <value>بدء التشغيل التلقائي معطّل بواسطة نهج النظام</value>
+  </data>
+  <data name="AutoStart_DisabledByPolicy.Content" xml:space="preserve">
+    <value>بدء التشغيل التلقائي معطّل بواسطة نهج النظام</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Text" xml:space="preserve">
+    <value>لم يسمح المستخدم ببدء التشغيل التلقائي</value>
+  </data>
+  <data name="AutoStart_NotAllowed.Content" xml:space="preserve">
+    <value>لم يسمح المستخدم ببدء التشغيل التلقائي</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Text" xml:space="preserve">
+    <value>تعذّر فتح مفتاح التسجيل Run</value>
+  </data>
+  <data name="AutoStart_RunKeyFailed.Content" xml:space="preserve">
+    <value>تعذّر فتح مفتاح التسجيل Run</value>
+  </data>
+  <data name="Boot_LanguageFailed.Text" xml:space="preserve">
+    <value>فشل تعيين اللغة: {0}</value>
+  </data>
+  <data name="Boot_LanguageFailed.Content" xml:space="preserve">
+    <value>فشل تعيين اللغة: {0}</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Text" xml:space="preserve">
+    <value>النواة غير جاهزة؛ تم تخطي بروكسي النظام</value>
+  </data>
+  <data name="Boot_SkipProxyNoCore.Content" xml:space="preserve">
+    <value>النواة غير جاهزة؛ تم تخطي بروكسي النظام</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Text" xml:space="preserve">
+    <value>فشل تهيئة الاختصارات: {0}</value>
+  </data>
+  <data name="Boot_HotkeyInitFailed.Content" xml:space="preserve">
+    <value>فشل تهيئة الاختصارات: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Text" xml:space="preserve">
+    <value>فشل تسجيل الاختصار: {0}</value>
+  </data>
+  <data name="Boot_HotkeyRegisterFailed.Content" xml:space="preserve">
+    <value>فشل تسجيل الاختصار: {0}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Text" xml:space="preserve">
+    <value>فشل تنفيذ الاختصار ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyExecFailed.Content" xml:space="preserve">
+    <value>فشل تنفيذ الاختصار ({0}): {1}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Text" xml:space="preserve">
+    <value>لم يتم تنفيذ إجراء الاختصار: {0}</value>
+  </data>
+  <data name="Boot_HotkeyNotImplemented.Content" xml:space="preserve">
+    <value>لم يتم تنفيذ إجراء الاختصار: {0}</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Text" xml:space="preserve">
+    <value>لا صلاحيات مسؤول والخدمة غير متاحة؛ عُطّل TUN بأمان</value>
+  </data>
+  <data name="Boot_TunDisabledNoPrivilege.Content" xml:space="preserve">
+    <value>لا صلاحيات مسؤول والخدمة غير متاحة؛ عُطّل TUN بأمان</value>
+  </data>
+  <data name="Boot_LightweightAuto.Text" xml:space="preserve">
+    <value>أُغلقت النافذة {0} دقيقة؛ الدخول للوضع الخفيف</value>
+  </data>
+  <data name="Boot_LightweightAuto.Content" xml:space="preserve">
+    <value>أُغلقت النافذة {0} دقيقة؛ الدخول للوضع الخفيف</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Text" xml:space="preserve">
+    <value>فشل الوضع الخفيف التلقائي: {0}</value>
+  </data>
+  <data name="Boot_LightweightAutoFailed.Content" xml:space="preserve">
+    <value>فشل الوضع الخفيف التلقائي: {0}</value>
+  </data>
+  <data name="Lightweight_Entered.Text" xml:space="preserve">
+    <value>دخل الوضع الخفيف (حُررت النافذة؛ النواة تستمر)</value>
+  </data>
+  <data name="Lightweight_Entered.Content" xml:space="preserve">
+    <value>دخل الوضع الخفيف (حُررت النافذة؛ النواة تستمر)</value>
+  </data>
+  <data name="Lightweight_Exited.Text" xml:space="preserve">
+    <value>خرج من الوضع الخفيف</value>
+  </data>
+  <data name="Lightweight_Exited.Content" xml:space="preserve">
+    <value>خرج من الوضع الخفيف</value>
+  </data>
+  <data name="Boot_StartFailed.Text" xml:space="preserve">
+    <value>فشل البدء: {0}</value>
+  </data>
+  <data name="Boot_StartFailed.Content" xml:space="preserve">
+    <value>فشل البدء: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Text" xml:space="preserve">
+    <value>فشل تشغيل النواة: {0}</value>
+  </data>
+  <data name="Boot_CoreStartFailed.Content" xml:space="preserve">
+    <value>فشل تشغيل النواة: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
+    <value>فشل تطبيق بروكسي النظام: {0}</value>
+  </data>
+  <data name="Boot_SysProxyApplyFailed.Content" xml:space="preserve">
+    <value>فشل تطبيق بروكسي النظام: {0}</value>
   </data>
 </root>

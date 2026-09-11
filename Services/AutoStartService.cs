@@ -38,15 +38,15 @@ public class AutoStartService
             if (state is not (StartupTaskState.Enabled or StartupTaskState.EnabledByPolicy))
                 throw new InvalidOperationException(state switch
                 {
-                    StartupTaskState.DisabledByUser => "开机自启动已被用户禁用，请在任务管理器的“启动应用”中重新启用 Flux Proxy",
-                    StartupTaskState.DisabledByPolicy => "开机自启动已被系统策略禁用",
-                    _ => "用户未允许开机自启动",
+                    StartupTaskState.DisabledByUser => L10n.T("AutoStart_DisabledByUser"),
+                    StartupTaskState.DisabledByPolicy => L10n.T("AutoStart_DisabledByPolicy"),
+                    _ => L10n.T("AutoStart_NotAllowed"),
                 });
             return;
         }
 
         using var key = Registry.CurrentUser.OpenSubKey(RunKey, writable: true)
-            ?? throw new InvalidOperationException("无法打开 Run 注册表键");
+            ?? throw new InvalidOperationException(L10n.T("AutoStart_RunKeyFailed"));
         if (enable)
         {
             var exe = Environment.ProcessPath ?? Path.Combine(AppContext.BaseDirectory, "Flux.exe");

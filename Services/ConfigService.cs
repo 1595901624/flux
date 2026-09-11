@@ -43,7 +43,7 @@ public class ConfigService
                 return;
             }
         }
-        catch (Exception ex) { LogService.App("verge.yaml 加载失败: " + ex.Message, "error"); }
+        catch (Exception ex) { LogService.App(L10n.F("Config_VergeLoadFailed", ex.Message), "error"); }
         Verge = new VergeConfig();
         SaveVerge();
     }
@@ -59,11 +59,11 @@ public class ConfigService
                 $"{DateTime.Now:yyyyMMdd-HHmmss}-v{Verge.SchemaVersion}-verge.yaml");
             if (File.Exists(Paths.VergeConfigFile))
                 File.Copy(Paths.VergeConfigFile, backup, overwrite: true);
-            LogService.App($"verge.yaml 已迁移至 schema v1，备份: {backup}", "info");
+            LogService.App(L10n.F("Config_VergeMigrated", 1, backup), "info");
         }
         catch (Exception ex)
         {
-            LogService.App("verge.yaml 迁移备份失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Config_VergeMigrateBackupFailed", ex.Message), "warn");
         }
         Verge.SchemaVersion = 1;
         SaveVerge();
@@ -88,7 +88,7 @@ public class ConfigService
                 }
             }
         }
-        catch (Exception ex) { LogService.App("config.yaml 加载失败: " + ex.Message, "error"); }
+        catch (Exception ex) { LogService.App(L10n.F("Config_ClashLoadFailed", ex.Message), "error"); }
 
         ClashBase = YamlHelper.ParseMapping(BuildBaseTemplate())!;
         // 默认 secret：首次生成随机值
@@ -115,7 +115,7 @@ public class ConfigService
                 return;
             }
         }
-        catch (Exception ex) { LogService.App("profiles.yaml 加载失败: " + ex.Message, "error"); }
+        catch (Exception ex) { LogService.App(L10n.F("Config_ProfilesLoadFailed", ex.Message), "error"); }
         Profiles = new ProfilesConfig();
     }
 
