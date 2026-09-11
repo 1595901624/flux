@@ -1,0 +1,210 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "cdef8f91e6813d5a63075ae72dc2c80d9167ca65",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 5622,
+    "git_diff_deleted_lines": 66,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 5622,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "771-1182"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/EnhanceEditorDialog.cs": {
+        "BYMC": [
+          "39",
+          "67",
+          "129"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfileEditDialog.cs": {
+        "BYMC": [
+          "29-31",
+          "96",
+          "98",
+          "100",
+          "102"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml.cs": {
+        "BYMC": [
+          "4",
+          "114",
+          "116",
+          "139",
+          "141",
+          "162",
+          "164",
+          "187-190"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "225-226",
+          "301-303",
+          "328",
+          "352",
+          "358",
+          "376-379",
+          "416",
+          "429",
+          "440",
+          "456",
+          "470",
+          "508-509",
+          "570-571",
+          "578",
+          "586",
+          "590",
+          "625",
+          "629",
+          "662",
+          "673",
+          "682",
+          "690",
+          "699",
+          "703",
+          "712",
+          "721",
+          "733",
+          "735",
+          "747",
+          "751",
+          "767",
+          "774",
+          "792",
+          "801",
+          "807",
+          "822"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "113-114"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_messages_table.py": {
+        "BYMC": [
+          "1-79"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_l10n.py": {
+        "BYMC": [
+          "1-120"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789150232,
+  "requirement_id": ""
+}
