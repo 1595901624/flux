@@ -1,0 +1,113 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "626e2f135e133408835b495add5bc0211f7be3cb",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 1762,
+    "git_diff_deleted_lines": 1,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 1762,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "tests/Flux.Tests/HotkeyComboParserTests.cs": {
+        "BYMC": [
+          "1-78"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalBackupServiceTests.cs": {
+        "BYMC": [
+          "1-166"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalizationReswTests.cs": {
+        "BYMC": [
+          "1-78"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/PacScriptGeneratorTests.cs": {
+        "BYMC": [
+          "1-89"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/PortUtilsTests.cs": {
+        "BYMC": [
+          "1-62"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ProxyUriParserTests.cs": {
+        "BYMC": [
+          "1-200"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/RuntimeConfigBuilderTests.cs": {
+        "BYMC": [
+          "1-500"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ScriptSandboxTests.cs": {
+        "BYMC": [
+          "1-112"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SensitiveMaskerTests.cs": {
+        "BYMC": [
+          "1-55"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ServiceProtocolTests.cs": {
+        "BYMC": [
+          "1-163"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SettingsStoreTests.cs": {
+        "BYMC": [
+          "1-148"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/UpdateManifestParserTests.cs": {
+        "BYMC": [
+          "1-93"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/WinInetProxySettingsTests.cs": {
+        "BYMC": [
+          "1-18"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789149802,
+  "requirement_id": ""
+}
