@@ -50,10 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PRIResource Include="Strings\**\*.resw" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="tests\**\*.cs" />
     <None Remove="tests\**\*" />
     <!-- Flux.Core / Flux.Service / Flux.Service.Installer 是独立项目，禁止被默认 glob 重复编译 -->
