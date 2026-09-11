@@ -1,0 +1,269 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "5a3bcf7ba549efcbf999fb8e2bd0a4487d439bc0",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 3500,
+    "git_diff_deleted_lines": 71,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 3496,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.csproj": {
+        "BYMC": [
+          "23-24",
+          "52-53"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "MainWindow.xaml": {
+        "BYMC": [
+          "36",
+          "39",
+          "42",
+          "45",
+          "48",
+          "51",
+          "54",
+          "57"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "27-34"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/L10n.cs": {
+        "BYMC": [
+          "1-32"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1-234"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [
+          "28",
+          "32-34",
+          "36",
+          "43",
+          "56",
+          "73-80"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml": {
+        "BYMC": [
+          "32",
+          "36",
+          "55",
+          "61",
+          "71",
+          "84",
+          "106",
+          "136",
+          "148"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml": {
+        "BYMC": [
+          "28",
+          "31-35",
+          "37",
+          "42",
+          "48",
+          "55",
+          "64"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [
+          "29-30",
+          "42",
+          "45",
+          "48",
+          "51",
+          "68-69",
+          "101-104",
+          "106-107",
+          "109"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml": {
+        "BYMC": [
+          "28",
+          "37",
+          "55-56"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/RulesPage.xaml": {
+        "BYMC": [
+          "25",
+          "27",
+          "32",
+          "38",
+          "45"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "105-122"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "68-73",
+          "363-388"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UnlockPage.xaml": {
+        "BYMC": [
+          "24-25",
+          "27",
+          "55"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "1-131"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_uid.py": {
+        "BYMC": [
+          "1-113"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_uid2.py": {
+        "BYMC": [
+          "1-45"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789148826,
+  "requirement_id": ""
+}
