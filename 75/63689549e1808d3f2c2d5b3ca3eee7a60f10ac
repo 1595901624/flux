@@ -1,0 +1,30 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "7563689549e1808d3f2c2d5b3ca3eee7a60f10ac",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 6,
+    "git_diff_deleted_lines": 2,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 6,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "scripts/Observe-Memory.ps1": {
+        "BYMC": [
+          "22-24",
+          "38-40"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789161639,
+  "requirement_id": ""
+}
