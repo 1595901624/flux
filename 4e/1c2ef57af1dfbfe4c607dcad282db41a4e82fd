@@ -1,0 +1,57 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "4e1c2ef57af1dfbfe4c607dcad282db41a4e82fd",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 491,
+    "git_diff_deleted_lines": 0,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 491,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Update/UpdateManifestParser.cs": {
+        "BYMC": [
+          "1-121"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "81-95"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DiagnosticsService.cs": {
+        "BYMC": [
+          "1-149"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "152-164"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "601-793"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789148104,
+  "requirement_id": ""
+}
