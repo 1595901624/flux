@@ -3,232 +3,769 @@
   <data name="Nav_Home.Text" xml:space="preserve">
     <value>Inicio</value>
   </data>
+  <data name="Nav_Home.Content" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
   <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>Proxies</value>
+  </data>
+  <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>Proxies</value>
   </data>
   <data name="Nav_Profiles.Text" xml:space="preserve">
     <value>Perfiles</value>
   </data>
+  <data name="Nav_Profiles.Content" xml:space="preserve">
+    <value>Perfiles</value>
+  </data>
   <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>Conexiones</value>
+  </data>
+  <data name="Nav_Connections.Content" xml:space="preserve">
     <value>Conexiones</value>
   </data>
   <data name="Nav_Rules.Text" xml:space="preserve">
     <value>Reglas</value>
   </data>
+  <data name="Nav_Rules.Content" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
   <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>Registros</value>
+  </data>
+  <data name="Nav_Logs.Content" xml:space="preserve">
     <value>Registros</value>
   </data>
   <data name="Nav_Unlock.Text" xml:space="preserve">
     <value>Prueba de desbloqueo</value>
   </data>
+  <data name="Nav_Unlock.Content" xml:space="preserve">
+    <value>Prueba de desbloqueo</value>
+  </data>
   <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
     <value>Ajustes</value>
   </data>
   <data name="Common_OK.Text" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="Common_OK.Content" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="Common_Save.Content" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Common_Delete.Content" xml:space="preserve">
     <value>Eliminar</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
+  <data name="Common_Close.Content" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
   <data name="Common_Apply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Common_Apply.Content" xml:space="preserve">
     <value>Aplicar</value>
   </data>
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>Actualizar</value>
   </data>
+  <data name="Common_Refresh.Content" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
   <data name="Home_Title.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="Home_Title.Content" xml:space="preserve">
     <value>Inicio</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>Ajustes de proxy</value>
   </data>
+  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
+    <value>Ajustes de proxy</value>
+  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>Red</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN requiere permisos de administrador</value>
   </data>
+  <data name="Home_TunAdminHint.Content" xml:space="preserve">
+    <value>TUN requiere permisos de administrador</value>
+  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>Perfil actual</value>
+  </data>
+  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>Perfil actual</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>Nodo actual</value>
   </data>
+  <data name="Home_CardNodes.Content" xml:space="preserve">
+    <value>Nodo actual</value>
+  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>Tráfico</value>
+  </data>
+  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>Tráfico</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>Modo</value>
   </data>
+  <data name="Home_CardMode.Content" xml:space="preserve">
+    <value>Modo</value>
+  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>Info del núcleo</value>
+  </data>
+  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>Info del núcleo</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>Proxies</value>
   </data>
+  <data name="Proxies_Title.Content" xml:space="preserve">
+    <value>Proxies</value>
+  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>Filtrar por nombre/tipo</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>Filtrar por nombre/tipo</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>Sin grupos de proxy</value>
   </data>
+  <data name="Proxies_Empty.Content" xml:space="preserve">
+    <value>Sin grupos de proxy</value>
+  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>Importa primero un perfil</value>
+  </data>
+  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>Importa primero un perfil</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>Perfiles</value>
   </data>
+  <data name="Profiles_Title.Content" xml:space="preserve">
+    <value>Perfiles</value>
+  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>URL de suscripción (admite clash://)</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>URL de suscripción (admite clash://)</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>Archivo local</value>
   </data>
+  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
+    <value>Archivo local</value>
+  </data>
   <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>Nuevo perfil vacío</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>Nuevo perfil vacío</value>
   </data>
   <data name="Profiles_UpdateAll.Text" xml:space="preserve">
     <value>Actualizar todo</value>
   </data>
+  <data name="Profiles_UpdateAll.Content" xml:space="preserve">
+    <value>Actualizar todo</value>
+  </data>
   <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>Mejora global</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>Mejora global</value>
   </data>
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>Sin perfiles</value>
   </data>
+  <data name="Profiles_Empty.Content" xml:space="preserve">
+    <value>Sin perfiles</value>
+  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>Pega una URL e importa, o elige un YAML local</value>
+  </data>
+  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>Pega una URL e importa, o elige un YAML local</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>Usar este perfil</value>
   </data>
+  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
+    <value>Usar este perfil</value>
+  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>Actualizar</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>Editar info</value>
   </data>
+  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
+    <value>Editar info</value>
+  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>Editar mejora</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>Editar mejora</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
+  <data name="Profiles_MenuUp.Content" xml:space="preserve">
+    <value>Subir</value>
+  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>Bajar</value>
+  </data>
+  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>Bajar</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
+  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
+    <value>Conexiones</value>
+  </data>
+  <data name="Connections_Title.Content" xml:space="preserve">
     <value>Conexiones</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>Buscar host/regla/proceso</value>
   </data>
+  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
+    <value>Buscar host/regla/proceso</value>
+  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>Cerrar todo</value>
+  </data>
+  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>Cerrar todo</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Cerradas</value>
   </data>
+  <data name="Connections_Closed.Content" xml:space="preserve">
+    <value>Cerradas</value>
+  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="Connections_Host.Content" xml:space="preserve">
     <value>Host</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>Red</value>
   </data>
+  <data name="Connections_Network.Content" xml:space="preserve">
+    <value>Red</value>
+  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
+    <value>Bajada</value>
+  </data>
+  <data name="Connections_Download.Content" xml:space="preserve">
     <value>Bajada</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>Subida</value>
   </data>
+  <data name="Connections_Upload.Content" xml:space="preserve">
+    <value>Subida</value>
+  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>Regla</value>
+  </data>
+  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>Regla</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>Cadena</value>
   </data>
+  <data name="Connections_Chains.Content" xml:space="preserve">
+    <value>Cadena</value>
+  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
+    <value>Proceso</value>
+  </data>
+  <data name="Connections_Process.Content" xml:space="preserve">
     <value>Proceso</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>Hora</value>
   </data>
+  <data name="Connections_Time.Content" xml:space="preserve">
+    <value>Hora</value>
+  </data>
   <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>Orden predeterminado</value>
+  </data>
+  <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>Orden predeterminado</value>
   </data>
   <data name="Connections_SortUpload.Text" xml:space="preserve">
     <value>Por subida</value>
   </data>
+  <data name="Connections_SortUpload.Content" xml:space="preserve">
+    <value>Por subida</value>
+  </data>
   <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>Por bajada</value>
+  </data>
+  <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>Por bajada</value>
   </data>
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>Reglas</value>
   </data>
+  <data name="Rules_Title.Content" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Buscar reglas</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>Buscar reglas</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>Proveedores de reglas</value>
   </data>
+  <data name="Rules_Providers.Content" xml:space="preserve">
+    <value>Proveedores de reglas</value>
+  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>Sin reglas</value>
+  </data>
+  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>Sin reglas</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Registros</value>
   </data>
+  <data name="Logs_Title.Content" xml:space="preserve">
+    <value>Registros</value>
+  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>Todos los niveles</value>
+  </data>
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Todos los niveles</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info y superior</value>
   </data>
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
+    <value>Info y superior</value>
+  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning y superior</value>
+  </data>
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning y superior</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Logs_LevelError.Content" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>Buscar registros</value>
   </data>
+  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
+    <value>Buscar registros</value>
+  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>Pausa</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>Limpiar</value>
   </data>
+  <data name="Logs_Clear.Content" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>Más recientes</value>
+  </data>
+  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>Más recientes</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>Sin registros</value>
   </data>
+  <data name="Logs_Empty.Content" xml:space="preserve">
+    <value>Sin registros</value>
+  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>Prueba de desbloqueo</value>
+  </data>
+  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>Prueba de desbloqueo</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>Comprueba la disponibilidad de servicios de streaming/IA vía el nodo actual</value>
   </data>
+  <data name="Unlock_Subtitle.Content" xml:space="preserve">
+    <value>Comprueba la disponibilidad de servicios de streaming/IA vía el nodo actual</value>
+  </data>
   <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>Probar todo</value>
+  </data>
+  <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Probar todo</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
     <value>Reprobar</value>
+  </data>
+  <data name="Unlock_Retest.Content" xml:space="preserve">
+    <value>Reprobar</value>
+  </data>
+  <data name="Settings_Title.Header" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="Settings_SectionClash.Header" xml:space="preserve">
+    <value>Ajustes de Clash</value>
+  </data>
+  <data name="Settings_SectionApp.Header" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
+    <value>Inicio automático</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Description" xml:space="preserve">
+    <value>Iniciar Flux al iniciar sesión</value>
+  </data>
+  <data name="Settings_CardSilentStart.Header" xml:space="preserve">
+    <value>Inicio silencioso</value>
+  </data>
+  <data name="Settings_CardSilentStart.Description" xml:space="preserve">
+    <value>Ocultar ventana al iniciar</value>
+  </data>
+  <data name="Settings_CardSysProxy.Header" xml:space="preserve">
+    <value>Proxy del sistema</value>
+  </data>
+  <data name="Settings_CardSysProxy.Description" xml:space="preserve">
+    <value>Establecer como proxy del sistema</value>
+  </data>
+  <data name="Settings_CardPac.Header" xml:space="preserve">
+    <value>Modo PAC</value>
+  </data>
+  <data name="Settings_CardPac.Description" xml:space="preserve">
+    <value>Proxy vía script de autoconfig</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Header" xml:space="preserve">
+    <value>Guardián del proxy</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Description" xml:space="preserve">
+    <value>Restaurar si otra app la cambia</value>
+  </data>
+  <data name="Settings_CardBypass.Header" xml:space="preserve">
+    <value>Lista de exclusión</value>
+  </data>
+  <data name="Settings_CardBypass.Description" xml:space="preserve">
+    <value>Direcciones sin proxy (por ;)</value>
+  </data>
+  <data name="Settings_CardMixedPort.Header" xml:space="preserve">
+    <value>Puerto mixto</value>
+  </data>
+  <data name="Settings_CardMixedPort.Description" xml:space="preserve">
+    <value>Puerto mixto HTTP/SOCKS5 (1024-65535)</value>
+  </data>
+  <data name="Settings_CardAllowLan.Header" xml:space="preserve">
+    <value>Permitir LAN</value>
+  </data>
+  <data name="Settings_CardAllowLan.Description" xml:space="preserve">
+    <value>Permitir que otros dispositivos usen el proxy</value>
+  </data>
+  <data name="Settings_CardIpv6.Header" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="Settings_CardIpv6.Description" xml:space="preserve">
+    <value>Habilitar IPv6</value>
+  </data>
+  <data name="Settings_CardLogLevel.Header" xml:space="preserve">
+    <value>Nivel de registro</value>
+  </data>
+  <data name="Settings_CardFileLog.Header" xml:space="preserve">
+    <value>Registro de la app</value>
+  </data>
+  <data name="Settings_CardFileLog.Description" xml:space="preserve">
+    <value>Escribir logs al directorio (apagado)</value>
+  </data>
+  <data name="Settings_CardTun.Header" xml:space="preserve">
+    <value>Modo TUN</value>
+  </data>
+  <data name="Settings_CardTun.Description" xml:space="preserve">
+    <value>Asume todo el tráfico (requiere admin)</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Header" xml:space="preserve">
+    <value>TUN avanzado</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Description" xml:space="preserve">
+    <value>Pila/secuestro DNS; recargar al aplicar</value>
+  </data>
+  <data name="Settings_CardDns.Header" xml:space="preserve">
+    <value>Ajustes de DNS</value>
+  </data>
+  <data name="Settings_CardDns.Description" xml:space="preserve">
+    <value>enhanced-mode/rango fake-ip</value>
+  </data>
+  <data name="Settings_CardController.Header" xml:space="preserve">
+    <value>Controlador externo</value>
+  </data>
+  <data name="Settings_CardController.Description" xml:space="preserve">
+    <value>Dirección API y secreto; reiniciar tras aplicar</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Header" xml:space="preserve">
+    <value>Cerrar conexiones al cambiar de modo</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Description" xml:space="preserve">
+    <value>Cierra las conexiones existentes al cambiar</value>
+  </data>
+  <data name="Settings_CardLanguage.Header" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Settings_CardLanguage.Description" xml:space="preserve">
+    <value>Reinicia para aplicarlo por completo</value>
+  </data>
+  <data name="Settings_CardTheme.Header" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
+    <value>Según el sistema</value>
+  </data>
+  <data name="Settings_ThemeSystem.Content" xml:space="preserve">
+    <value>Según el sistema</value>
+  </data>
+  <data name="Settings_ThemeLight.Text" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="Settings_ThemeLight.Content" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="Settings_ThemeDark.Text" xml:space="preserve">
+    <value>Oscuro</value>
+  </data>
+  <data name="Settings_ThemeDark.Content" xml:space="preserve">
+    <value>Oscuro</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="Settings_CardRestartCore.Description" xml:space="preserve">
+    <value>Recarga la configuración y reinicia mihomo</value>
+  </data>
+  <data name="Settings_CardService.Header" xml:space="preserve">
+    <value>Servicio Flux</value>
+  </data>
+  <data name="Settings_CardService.Description" xml:space="preserve">
+    <value>Ejecuta como LocalSystem; TUN sin admin</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Instalar/reparar servicio</value>
+  </data>
+  <data name="Settings_InstallService.Content" xml:space="preserve">
+    <value>Instalar/reparar servicio</value>
+  </data>
+  <data name="Settings_CardLightweight.Header" xml:space="preserve">
+    <value>Modo ligero</value>
+  </data>
+  <data name="Settings_CardLightweight.Description" xml:space="preserve">
+    <value>Libera la UI al cerrar; mantiene bandeja y núcleo</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
+    <value>minutos</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+    <value>minutos</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
+    <value>Atajo · Mostrar/ocultar ventana</value>
+  </data>
+  <data name="Settings_CardHotkeySysproxy.Header" xml:space="preserve">
+    <value>Atajo · Alternar proxy del sistema</value>
+  </data>
+  <data name="Settings_CardHotkeyTun.Header" xml:space="preserve">
+    <value>Atajo · Alternar TUN</value>
+  </data>
+  <data name="Settings_CardHotkeyReactivate.Header" xml:space="preserve">
+    <value>Atajo · Reactivar perfil</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Header" xml:space="preserve">
+    <value>Atajos</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
+    <value>Se registran al guardar; los conflictos se rechazan</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
+    <value>Guardar atajos</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
+    <value>Guardar atajos</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Header" xml:space="preserve">
+    <value>Copiar variables de entorno</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Description" xml:space="preserve">
+    <value>Encamina CLIs por el proxy en terminal</value>
+  </data>
+  <data name="Settings_CardBackup.Header" xml:space="preserve">
+    <value>Copia y restauración</value>
+  </data>
+  <data name="Settings_CardBackup.Description" xml:space="preserve">
+    <value>Copia ZIP de configs, perfiles y mejoras</value>
+  </data>
+  <data name="Settings_CreateBackup.Text" xml:space="preserve">
+    <value>Crear copia</value>
+  </data>
+  <data name="Settings_CreateBackup.Content" xml:space="preserve">
+    <value>Crear copia</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Restaurar copia</value>
+  </data>
+  <data name="Settings_RestoreBackup.Content" xml:space="preserve">
+    <value>Restaurar copia</value>
+  </data>
+  <data name="Settings_BackupDir.Text" xml:space="preserve">
+    <value>Carpeta de copias</value>
+  </data>
+  <data name="Settings_BackupDir.Content" xml:space="preserve">
+    <value>Carpeta de copias</value>
+  </data>
+  <data name="Settings_CardWebDav.Header" xml:space="preserve">
+    <value>Copia WebDAV</value>
+  </data>
+  <data name="Settings_CardWebDav.Description" xml:space="preserve">
+    <value>Copia en la nube; contraseña cifrada con DPAPI</value>
+  </data>
+  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
+    <value>Configurar servidor</value>
+  </data>
+  <data name="Settings_WebDavConfig.Content" xml:space="preserve">
+    <value>Configurar servidor</value>
+  </data>
+  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="Settings_WebDavUpload.Content" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="Settings_WebDavRestore.Content" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Header" xml:space="preserve">
+    <value>Diagnóstico y actualizaciones</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
+    <value>Exporta diagnóstico local; busca la última versión</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
+    <value>Exportar diagnóstico</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
+    <value>Exportar diagnóstico</value>
+  </data>
+  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
+    <value>Buscar actualizaciones</value>
+  </data>
+  <data name="Settings_CheckUpdate.Content" xml:space="preserve">
+    <value>Buscar actualizaciones</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
+    <value>Abrir carpetas</value>
+  </data>
+  <data name="Settings_OpenData.Text" xml:space="preserve">
+    <value>Carpeta de datos</value>
+  </data>
+  <data name="Settings_OpenData.Content" xml:space="preserve">
+    <value>Carpeta de datos</value>
+  </data>
+  <data name="Settings_OpenLogs.Text" xml:space="preserve">
+    <value>Carpeta de logs</value>
+  </data>
+  <data name="Settings_OpenLogs.Content" xml:space="preserve">
+    <value>Carpeta de logs</value>
+  </data>
+  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
+    <value>Abrir GitHub</value>
+  </data>
+  <data name="Settings_OpenGitHub.Content" xml:space="preserve">
+    <value>Abrir GitHub</value>
+  </data>
+  <data name="Settings_CardGitHub.Description" xml:space="preserve">
+    <value>Código fuente y novedades</value>
+  </data>
+  <data name="Settings_CardAbout.Header" xml:space="preserve">
+    <value>Acerca de Flux</value>
+  </data>
+  <data name="Settings_ExitApp.Text" xml:space="preserve">
+    <value>Salir de la app</value>
+  </data>
+  <data name="Settings_ExitApp.Content" xml:space="preserve">
+    <value>Salir de la app</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
+  <data name="Settings_FollowSystem.Text" xml:space="preserve">
+    <value>Según el sistema</value>
+  </data>
+  <data name="Settings_FollowSystem.Content" xml:space="preserve">
+    <value>Según el sistema</value>
   </data>
 </root>

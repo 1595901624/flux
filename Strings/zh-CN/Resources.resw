@@ -3,232 +3,769 @@
   <data name="Nav_Home.Text" xml:space="preserve">
     <value>首页</value>
   </data>
+  <data name="Nav_Home.Content" xml:space="preserve">
+    <value>首页</value>
+  </data>
   <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>代理</value>
+  </data>
+  <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>代理</value>
   </data>
   <data name="Nav_Profiles.Text" xml:space="preserve">
     <value>订阅</value>
   </data>
+  <data name="Nav_Profiles.Content" xml:space="preserve">
+    <value>订阅</value>
+  </data>
   <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="Nav_Connections.Content" xml:space="preserve">
     <value>连接</value>
   </data>
   <data name="Nav_Rules.Text" xml:space="preserve">
     <value>规则</value>
   </data>
+  <data name="Nav_Rules.Content" xml:space="preserve">
+    <value>规则</value>
+  </data>
   <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="Nav_Logs.Content" xml:space="preserve">
     <value>日志</value>
   </data>
   <data name="Nav_Unlock.Text" xml:space="preserve">
     <value>解锁测试</value>
   </data>
+  <data name="Nav_Unlock.Content" xml:space="preserve">
+    <value>解锁测试</value>
+  </data>
   <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
     <value>设置</value>
   </data>
   <data name="Common_OK.Text" xml:space="preserve">
     <value>确定</value>
   </data>
+  <data name="Common_OK.Content" xml:space="preserve">
+    <value>确定</value>
+  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="Common_Save.Content" xml:space="preserve">
+    <value>保存</value>
+  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Common_Delete.Content" xml:space="preserve">
     <value>删除</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>关闭</value>
   </data>
+  <data name="Common_Close.Content" xml:space="preserve">
+    <value>关闭</value>
+  </data>
   <data name="Common_Apply.Text" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="Common_Apply.Content" xml:space="preserve">
     <value>应用</value>
   </data>
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="Common_Refresh.Content" xml:space="preserve">
+    <value>刷新</value>
+  </data>
   <data name="Home_Title.Text" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="Home_Title.Content" xml:space="preserve">
     <value>首页</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>进入代理设置</value>
   </data>
+  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
+    <value>进入代理设置</value>
+  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>网络控制</value>
+  </data>
+  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>网络控制</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN 需要管理员权限运行</value>
   </data>
+  <data name="Home_TunAdminHint.Content" xml:space="preserve">
+    <value>TUN 需要管理员权限运行</value>
+  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>当前订阅</value>
+  </data>
+  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>当前订阅</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>当前节点</value>
   </data>
+  <data name="Home_CardNodes.Content" xml:space="preserve">
+    <value>当前节点</value>
+  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>流量统计</value>
+  </data>
+  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>流量统计</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>运行模式</value>
   </data>
+  <data name="Home_CardMode.Content" xml:space="preserve">
+    <value>运行模式</value>
+  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>内核信息</value>
+  </data>
+  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>内核信息</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>代理</value>
   </data>
+  <data name="Proxies_Title.Content" xml:space="preserve">
+    <value>代理</value>
+  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>筛选节点名称/类型</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>筛选节点名称/类型</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>暂无代理组</value>
   </data>
+  <data name="Proxies_Empty.Content" xml:space="preserve">
+    <value>暂无代理组</value>
+  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>请先在「订阅」页导入订阅配置</value>
+  </data>
+  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>请先在「订阅」页导入订阅配置</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>订阅</value>
   </data>
+  <data name="Profiles_Title.Content" xml:space="preserve">
+    <value>订阅</value>
+  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>输入订阅链接（https://...），支持 clash:// 安装链接</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>输入订阅链接（https://...），支持 clash:// 安装链接</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>本地文件</value>
   </data>
+  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
+    <value>本地文件</value>
+  </data>
   <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>新建空配置</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>新建空配置</value>
   </data>
   <data name="Profiles_UpdateAll.Text" xml:space="preserve">
     <value>全部更新</value>
   </data>
+  <data name="Profiles_UpdateAll.Content" xml:space="preserve">
+    <value>全部更新</value>
+  </data>
   <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>全局增强</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>全局增强</value>
   </data>
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>暂无订阅</value>
   </data>
+  <data name="Profiles_Empty.Content" xml:space="preserve">
+    <value>暂无订阅</value>
+  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件</value>
+  </data>
+  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>选择此订阅</value>
   </data>
+  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
+    <value>选择此订阅</value>
+  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>更新</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>编辑信息</value>
   </data>
+  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
+    <value>编辑信息</value>
+  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>编辑增强配置</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>编辑增强配置</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>上移</value>
   </data>
+  <data name="Profiles_MenuUp.Content" xml:space="preserve">
+    <value>上移</value>
+  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>下移</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>删除</value>
   </data>
+  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
+    <value>删除</value>
+  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="Connections_Title.Content" xml:space="preserve">
     <value>连接</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>搜索主机 / 规则 / 进程</value>
   </data>
+  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
+    <value>搜索主机 / 规则 / 进程</value>
+  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>关闭全部</value>
+  </data>
+  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>关闭全部</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>已关闭</value>
   </data>
+  <data name="Connections_Closed.Content" xml:space="preserve">
+    <value>已关闭</value>
+  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
+    <value>主机</value>
+  </data>
+  <data name="Connections_Host.Content" xml:space="preserve">
     <value>主机</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>网络</value>
   </data>
+  <data name="Connections_Network.Content" xml:space="preserve">
+    <value>网络</value>
+  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="Connections_Download.Content" xml:space="preserve">
     <value>下载</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>上传</value>
   </data>
+  <data name="Connections_Upload.Content" xml:space="preserve">
+    <value>上传</value>
+  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>规则</value>
+  </data>
+  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>规则</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>链路</value>
   </data>
+  <data name="Connections_Chains.Content" xml:space="preserve">
+    <value>链路</value>
+  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
+    <value>进程</value>
+  </data>
+  <data name="Connections_Process.Content" xml:space="preserve">
     <value>进程</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>时间</value>
   </data>
+  <data name="Connections_Time.Content" xml:space="preserve">
+    <value>时间</value>
+  </data>
   <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>默认排序</value>
+  </data>
+  <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>默认排序</value>
   </data>
   <data name="Connections_SortUpload.Text" xml:space="preserve">
     <value>按上传</value>
   </data>
+  <data name="Connections_SortUpload.Content" xml:space="preserve">
+    <value>按上传</value>
+  </data>
   <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>按下载</value>
+  </data>
+  <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>按下载</value>
   </data>
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>规则</value>
   </data>
+  <data name="Rules_Title.Content" xml:space="preserve">
+    <value>规则</value>
+  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>搜索规则内容</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>搜索规则内容</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>规则 Provider</value>
   </data>
+  <data name="Rules_Providers.Content" xml:space="preserve">
+    <value>规则 Provider</value>
+  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>暂无规则</value>
+  </data>
+  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>暂无规则</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>日志</value>
   </data>
+  <data name="Logs_Title.Content" xml:space="preserve">
+    <value>日志</value>
+  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>全部级别</value>
+  </data>
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>全部级别</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info 及以上</value>
   </data>
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
+    <value>Info 及以上</value>
+  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning 及以上</value>
+  </data>
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning 及以上</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Logs_LevelError.Content" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>搜索日志内容</value>
   </data>
+  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
+    <value>搜索日志内容</value>
+  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>暂停</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>清空</value>
   </data>
+  <data name="Logs_Clear.Content" xml:space="preserve">
+    <value>清空</value>
+  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>倒序</value>
+  </data>
+  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>倒序</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>暂无日志</value>
   </data>
+  <data name="Logs_Empty.Content" xml:space="preserve">
+    <value>暂无日志</value>
+  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>解锁测试</value>
+  </data>
+  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>解锁测试</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）</value>
   </data>
+  <data name="Unlock_Subtitle.Content" xml:space="preserve">
+    <value>检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）</value>
+  </data>
   <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>全部测试</value>
+  </data>
+  <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>全部测试</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
     <value>重测</value>
+  </data>
+  <data name="Unlock_Retest.Content" xml:space="preserve">
+    <value>重测</value>
+  </data>
+  <data name="Settings_Title.Header" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+    <value>系统设置</value>
+  </data>
+  <data name="Settings_SectionClash.Header" xml:space="preserve">
+    <value>Clash 设置</value>
+  </data>
+  <data name="Settings_SectionApp.Header" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
+    <value>开机自启动</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Description" xml:space="preserve">
+    <value>登录 Windows 时自动启动 Flux</value>
+  </data>
+  <data name="Settings_CardSilentStart.Header" xml:space="preserve">
+    <value>静默启动</value>
+  </data>
+  <data name="Settings_CardSilentStart.Description" xml:space="preserve">
+    <value>启动时不显示主窗口</value>
+  </data>
+  <data name="Settings_CardSysProxy.Header" xml:space="preserve">
+    <value>系统代理</value>
+  </data>
+  <data name="Settings_CardSysProxy.Description" xml:space="preserve">
+    <value>将 Flux 设为系统 HTTP/HTTPS 代理</value>
+  </data>
+  <data name="Settings_CardPac.Header" xml:space="preserve">
+    <value>PAC 模式</value>
+  </data>
+  <data name="Settings_CardPac.Description" xml:space="preserve">
+    <value>系统代理经由自动配置脚本（绕过规则生效）</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Header" xml:space="preserve">
+    <value>代理守护</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Description" xml:space="preserve">
+    <value>定期检查并恢复被其他程序修改的系统代理</value>
+  </data>
+  <data name="Settings_CardBypass.Header" xml:space="preserve">
+    <value>代理绕过列表</value>
+  </data>
+  <data name="Settings_CardBypass.Description" xml:space="preserve">
+    <value>不经过代理的地址（分号分隔）</value>
+  </data>
+  <data name="Settings_CardMixedPort.Header" xml:space="preserve">
+    <value>混合代理端口</value>
+  </data>
+  <data name="Settings_CardMixedPort.Description" xml:space="preserve">
+    <value>HTTP/SOCKS5 混合监听端口（1024-65535）</value>
+  </data>
+  <data name="Settings_CardAllowLan.Header" xml:space="preserve">
+    <value>允许局域网连接</value>
+  </data>
+  <data name="Settings_CardAllowLan.Description" xml:space="preserve">
+    <value>允许局域网内其他设备使用本机代理</value>
+  </data>
+  <data name="Settings_CardIpv6.Header" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="Settings_CardIpv6.Description" xml:space="preserve">
+    <value>启用 IPv6 支持</value>
+  </data>
+  <data name="Settings_CardLogLevel.Header" xml:space="preserve">
+    <value>日志级别</value>
+  </data>
+  <data name="Settings_CardFileLog.Header" xml:space="preserve">
+    <value>应用日志</value>
+  </data>
+  <data name="Settings_CardFileLog.Description" xml:space="preserve">
+    <value>将运行日志写入日志目录（默认关闭）</value>
+  </data>
+  <data name="Settings_CardTun.Header" xml:space="preserve">
+    <value>TUN 模式</value>
+  </data>
+  <data name="Settings_CardTun.Description" xml:space="preserve">
+    <value>接管全部系统流量（需要管理员权限）</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Header" xml:space="preserve">
+    <value>TUN 高级设置</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Description" xml:space="preserve">
+    <value>堆栈 / DNS 劫持；应用后重载配置</value>
+  </data>
+  <data name="Settings_CardDns.Header" xml:space="preserve">
+    <value>DNS 设置</value>
+  </data>
+  <data name="Settings_CardDns.Description" xml:space="preserve">
+    <value>enhanced-mode / fake-ip 范围；应用后重载配置</value>
+  </data>
+  <data name="Settings_CardController.Header" xml:space="preserve">
+    <value>外部控制器</value>
+  </data>
+  <data name="Settings_CardController.Description" xml:space="preserve">
+    <value>RESTful API 地址与 Secret；应用后重启内核</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Header" xml:space="preserve">
+    <value>断开连接于模式切换</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Description" xml:space="preserve">
+    <value>切换代理模式时关闭全部现有连接</value>
+  </data>
+  <data name="Settings_CardLanguage.Header" xml:space="preserve">
+    <value>语言 / Language</value>
+  </data>
+  <data name="Settings_CardLanguage.Description" xml:space="preserve">
+    <value>切换后需要重启应用生效</value>
+  </data>
+  <data name="Settings_CardTheme.Header" xml:space="preserve">
+    <value>主题模式</value>
+  </data>
+  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="Settings_ThemeSystem.Content" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="Settings_ThemeLight.Text" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Settings_ThemeLight.Content" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Settings_ThemeDark.Text" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Settings_ThemeDark.Content" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="Settings_CardRestartCore.Description" xml:space="preserve">
+    <value>重新加载运行时配置并重启 mihomo</value>
+  </data>
+  <data name="Settings_CardService.Header" xml:space="preserve">
+    <value>Flux 服务</value>
+  </data>
+  <data name="Settings_CardService.Description" xml:space="preserve">
+    <value>以 LocalSystem 运行，普通用户无需管理员即可使用 TUN</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>安装 / 修复服务</value>
+  </data>
+  <data name="Settings_InstallService.Content" xml:space="preserve">
+    <value>安装 / 修复服务</value>
+  </data>
+  <data name="Settings_CardLightweight.Header" xml:space="preserve">
+    <value>轻量模式</value>
+  </data>
+  <data name="Settings_CardLightweight.Description" xml:space="preserve">
+    <value>关闭窗口后释放主界面，仅保留托盘与内核</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
+    <value>全局热键 · 显示 / 隐藏窗口</value>
+  </data>
+  <data name="Settings_CardHotkeySysproxy.Header" xml:space="preserve">
+    <value>全局热键 · 切换系统代理</value>
+  </data>
+  <data name="Settings_CardHotkeyTun.Header" xml:space="preserve">
+    <value>全局热键 · 切换 TUN</value>
+  </data>
+  <data name="Settings_CardHotkeyReactivate.Header" xml:space="preserve">
+    <value>全局热键 · 重新激活订阅</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Header" xml:space="preserve">
+    <value>全局热键</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
+    <value>保存时注册；冲突的组合会被拒绝并显示原因</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
+    <value>保存热键</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
+    <value>保存热键</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Header" xml:space="preserve">
+    <value>复制环境变量</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Description" xml:space="preserve">
+    <value>在终端中让命令行程序走代理</value>
+  </data>
+  <data name="Settings_CardBackup.Header" xml:space="preserve">
+    <value>备份与恢复</value>
+  </data>
+  <data name="Settings_CardBackup.Description" xml:space="preserve">
+    <value>ZIP 备份应用配置、订阅与增强文件（不含日志与凭据明文）</value>
+  </data>
+  <data name="Settings_CreateBackup.Text" xml:space="preserve">
+    <value>创建备份</value>
+  </data>
+  <data name="Settings_CreateBackup.Content" xml:space="preserve">
+    <value>创建备份</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>恢复备份</value>
+  </data>
+  <data name="Settings_RestoreBackup.Content" xml:space="preserve">
+    <value>恢复备份</value>
+  </data>
+  <data name="Settings_BackupDir.Text" xml:space="preserve">
+    <value>备份目录</value>
+  </data>
+  <data name="Settings_BackupDir.Content" xml:space="preserve">
+    <value>备份目录</value>
+  </data>
+  <data name="Settings_CardWebDav.Header" xml:space="preserve">
+    <value>WebDAV 备份</value>
+  </data>
+  <data name="Settings_CardWebDav.Description" xml:space="preserve">
+    <value>云端备份；密码经 DPAPI 加密存储，界面不回显</value>
+  </data>
+  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
+    <value>设置服务器</value>
+  </data>
+  <data name="Settings_WebDavConfig.Content" xml:space="preserve">
+    <value>设置服务器</value>
+  </data>
+  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="Settings_WebDavUpload.Content" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="Settings_WebDavRestore.Content" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Header" xml:space="preserve">
+    <value>诊断与更新</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
+    <value>导出本地诊断包；检查 GitHub 最新版本</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
+    <value>导出诊断包</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
+    <value>导出诊断包</value>
+  </data>
+  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="Settings_CheckUpdate.Content" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
+    <value>打开目录</value>
+  </data>
+  <data name="Settings_OpenData.Text" xml:space="preserve">
+    <value>数据目录</value>
+  </data>
+  <data name="Settings_OpenData.Content" xml:space="preserve">
+    <value>数据目录</value>
+  </data>
+  <data name="Settings_OpenLogs.Text" xml:space="preserve">
+    <value>日志目录</value>
+  </data>
+  <data name="Settings_OpenLogs.Content" xml:space="preserve">
+    <value>日志目录</value>
+  </data>
+  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
+    <value>打开 GitHub</value>
+  </data>
+  <data name="Settings_OpenGitHub.Content" xml:space="preserve">
+    <value>打开 GitHub</value>
+  </data>
+  <data name="Settings_CardGitHub.Description" xml:space="preserve">
+    <value>查看 Flux 的源代码和最新动态</value>
+  </data>
+  <data name="Settings_CardAbout.Header" xml:space="preserve">
+    <value>关于 Flux</value>
+  </data>
+  <data name="Settings_ExitApp.Text" xml:space="preserve">
+    <value>退出应用</value>
+  </data>
+  <data name="Settings_ExitApp.Content" xml:space="preserve">
+    <value>退出应用</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
+    <value>重启</value>
+  </data>
+  <data name="Settings_FollowSystem.Text" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="Settings_FollowSystem.Content" xml:space="preserve">
+    <value>跟随系统</value>
   </data>
 </root>

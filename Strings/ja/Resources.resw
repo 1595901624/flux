@@ -3,232 +3,769 @@
   <data name="Nav_Home.Text" xml:space="preserve">
     <value>ホーム</value>
   </data>
+  <data name="Nav_Home.Content" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
   <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>プロキシ</value>
+  </data>
+  <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>プロキシ</value>
   </data>
   <data name="Nav_Profiles.Text" xml:space="preserve">
     <value>サブスクリプション</value>
   </data>
+  <data name="Nav_Profiles.Content" xml:space="preserve">
+    <value>サブスクリプション</value>
+  </data>
   <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <data name="Nav_Connections.Content" xml:space="preserve">
     <value>接続</value>
   </data>
   <data name="Nav_Rules.Text" xml:space="preserve">
     <value>ルール</value>
   </data>
+  <data name="Nav_Rules.Content" xml:space="preserve">
+    <value>ルール</value>
+  </data>
   <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>ログ</value>
+  </data>
+  <data name="Nav_Logs.Content" xml:space="preserve">
     <value>ログ</value>
   </data>
   <data name="Nav_Unlock.Text" xml:space="preserve">
     <value>アンロックテスト</value>
   </data>
+  <data name="Nav_Unlock.Content" xml:space="preserve">
+    <value>アンロックテスト</value>
+  </data>
   <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
     <value>設定</value>
   </data>
   <data name="Common_OK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Common_OK.Content" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="Common_Save.Content" xml:space="preserve">
+    <value>保存</value>
+  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Common_Delete.Content" xml:space="preserve">
     <value>削除</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
+  <data name="Common_Close.Content" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
   <data name="Common_Apply.Text" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="Common_Apply.Content" xml:space="preserve">
     <value>適用</value>
   </data>
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>更新</value>
   </data>
+  <data name="Common_Refresh.Content" xml:space="preserve">
+    <value>更新</value>
+  </data>
   <data name="Home_Title.Text" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="Home_Title.Content" xml:space="preserve">
     <value>ホーム</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>プロキシ設定</value>
   </data>
+  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
+    <value>プロキシ設定</value>
+  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>ネットワーク</value>
+  </data>
+  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>ネットワーク</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>TUN には管理者権限が必要です</value>
   </data>
+  <data name="Home_TunAdminHint.Content" xml:space="preserve">
+    <value>TUN には管理者権限が必要です</value>
+  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>現在のサブスク</value>
+  </data>
+  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>現在のサブスク</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>現在のノード</value>
   </data>
+  <data name="Home_CardNodes.Content" xml:space="preserve">
+    <value>現在のノード</value>
+  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>トラフィック統計</value>
+  </data>
+  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>トラフィック統計</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>動作モード</value>
   </data>
+  <data name="Home_CardMode.Content" xml:space="preserve">
+    <value>動作モード</value>
+  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>コア情報</value>
+  </data>
+  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>コア情報</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>プロキシ</value>
   </data>
+  <data name="Proxies_Title.Content" xml:space="preserve">
+    <value>プロキシ</value>
+  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>名前/タイプで絞り込み</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>名前/タイプで絞り込み</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>プロキシグループなし</value>
   </data>
+  <data name="Proxies_Empty.Content" xml:space="preserve">
+    <value>プロキシグループなし</value>
+  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>まずサブスクをインポートしてください</value>
+  </data>
+  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>まずサブスクをインポートしてください</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>サブスクリプション</value>
   </data>
+  <data name="Profiles_Title.Content" xml:space="preserve">
+    <value>サブスクリプション</value>
+  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>サブスクURLを入力（clash:// 対応）</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>サブスクURLを入力（clash:// 対応）</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>ローカルファイル</value>
   </data>
+  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
+    <value>ローカルファイル</value>
+  </data>
   <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>空の設定を作成</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>空の設定を作成</value>
   </data>
   <data name="Profiles_UpdateAll.Text" xml:space="preserve">
     <value>すべて更新</value>
   </data>
+  <data name="Profiles_UpdateAll.Content" xml:space="preserve">
+    <value>すべて更新</value>
+  </data>
   <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>グローバル拡張</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>グローバル拡張</value>
   </data>
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>サブスクなし</value>
   </data>
+  <data name="Profiles_Empty.Content" xml:space="preserve">
+    <value>サブスクなし</value>
+  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>URLを貼り付けてインポート、またはローカルYAMLを選択</value>
+  </data>
+  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>URLを貼り付けてインポート、またはローカルYAMLを選択</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>このサブスクを使用</value>
   </data>
+  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
+    <value>このサブスクを使用</value>
+  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>更新</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>情報を編集</value>
   </data>
+  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
+    <value>情報を編集</value>
+  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>拡張設定を編集</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>拡張設定を編集</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>上へ</value>
   </data>
+  <data name="Profiles_MenuUp.Content" xml:space="preserve">
+    <value>上へ</value>
+  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>下へ</value>
+  </data>
+  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>下へ</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>削除</value>
   </data>
+  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
+    <value>削除</value>
+  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <data name="Connections_Title.Content" xml:space="preserve">
     <value>接続</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>ホスト/ルール/プロセス検索</value>
   </data>
+  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
+    <value>ホスト/ルール/プロセス検索</value>
+  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>すべて閉じる</value>
+  </data>
+  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>すべて閉じる</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>閉じ済み</value>
   </data>
+  <data name="Connections_Closed.Content" xml:space="preserve">
+    <value>閉じ済み</value>
+  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
+    <value>ホスト</value>
+  </data>
+  <data name="Connections_Host.Content" xml:space="preserve">
     <value>ホスト</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>ネットワーク</value>
   </data>
+  <data name="Connections_Network.Content" xml:space="preserve">
+    <value>ネットワーク</value>
+  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="Connections_Download.Content" xml:space="preserve">
     <value>ダウンロード</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>アップロード</value>
   </data>
+  <data name="Connections_Upload.Content" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>ルール</value>
+  </data>
+  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>ルール</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>チェーン</value>
   </data>
+  <data name="Connections_Chains.Content" xml:space="preserve">
+    <value>チェーン</value>
+  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
+    <value>プロセス</value>
+  </data>
+  <data name="Connections_Process.Content" xml:space="preserve">
     <value>プロセス</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>時刻</value>
   </data>
+  <data name="Connections_Time.Content" xml:space="preserve">
+    <value>時刻</value>
+  </data>
   <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>デフォルト順</value>
+  </data>
+  <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>デフォルト順</value>
   </data>
   <data name="Connections_SortUpload.Text" xml:space="preserve">
     <value>アップロード順</value>
   </data>
+  <data name="Connections_SortUpload.Content" xml:space="preserve">
+    <value>アップロード順</value>
+  </data>
   <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>ダウンロード順</value>
+  </data>
+  <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>ダウンロード順</value>
   </data>
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>ルール</value>
   </data>
+  <data name="Rules_Title.Content" xml:space="preserve">
+    <value>ルール</value>
+  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>ルールを検索</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>ルールを検索</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>ルールプロバイダー</value>
   </data>
+  <data name="Rules_Providers.Content" xml:space="preserve">
+    <value>ルールプロバイダー</value>
+  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>ルールなし</value>
+  </data>
+  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>ルールなし</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>ログ</value>
   </data>
+  <data name="Logs_Title.Content" xml:space="preserve">
+    <value>ログ</value>
+  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>全レベル</value>
+  </data>
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>全レベル</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>Info 以上</value>
   </data>
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
+    <value>Info 以上</value>
+  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning 以上</value>
+  </data>
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning 以上</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>エラー</value>
   </data>
+  <data name="Logs_LevelError.Content" xml:space="preserve">
+    <value>エラー</value>
+  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>デバッグ</value>
+  </data>
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>デバッグ</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>ログを検索</value>
   </data>
+  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
+    <value>ログを検索</value>
+  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>一時停止</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>クリア</value>
   </data>
+  <data name="Logs_Clear.Content" xml:space="preserve">
+    <value>クリア</value>
+  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>新しい順</value>
+  </data>
+  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>新しい順</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>ログなし</value>
   </data>
+  <data name="Logs_Empty.Content" xml:space="preserve">
+    <value>ログなし</value>
+  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>アンロックテスト</value>
+  </data>
+  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>アンロックテスト</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>現在のノードでストリーミング/AIサービスの利用可否を確認</value>
   </data>
+  <data name="Unlock_Subtitle.Content" xml:space="preserve">
+    <value>現在のノードでストリーミング/AIサービスの利用可否を確認</value>
+  </data>
   <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>すべて実行</value>
+  </data>
+  <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>すべて実行</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
     <value>再テスト</value>
+  </data>
+  <data name="Unlock_Retest.Content" xml:space="preserve">
+    <value>再テスト</value>
+  </data>
+  <data name="Settings_Title.Header" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+    <value>システム</value>
+  </data>
+  <data name="Settings_SectionClash.Header" xml:space="preserve">
+    <value>Clash 設定</value>
+  </data>
+  <data name="Settings_SectionApp.Header" xml:space="preserve">
+    <value>アプリ</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
+    <value>自動起動</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Description" xml:space="preserve">
+    <value>Windows ログイン時に起動</value>
+  </data>
+  <data name="Settings_CardSilentStart.Header" xml:space="preserve">
+    <value>サイレント起動</value>
+  </data>
+  <data name="Settings_CardSilentStart.Description" xml:space="preserve">
+    <value>起動時に非表示</value>
+  </data>
+  <data name="Settings_CardSysProxy.Header" xml:space="preserve">
+    <value>システムプロキシ</value>
+  </data>
+  <data name="Settings_CardSysProxy.Description" xml:space="preserve">
+    <value>システムプロキシに設定</value>
+  </data>
+  <data name="Settings_CardPac.Header" xml:space="preserve">
+    <value>PAC モード</value>
+  </data>
+  <data name="Settings_CardPac.Description" xml:space="preserve">
+    <value>自動構成スクリプト経由</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Header" xml:space="preserve">
+    <value>プロキシガード</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Description" xml:space="preserve">
+    <value>他プログラムによる変更を復元</value>
+  </data>
+  <data name="Settings_CardBypass.Header" xml:space="preserve">
+    <value>バイパスリスト</value>
+  </data>
+  <data name="Settings_CardBypass.Description" xml:space="preserve">
+    <value>プロキシを経由しないアドレス</value>
+  </data>
+  <data name="Settings_CardMixedPort.Header" xml:space="preserve">
+    <value>混合ポート</value>
+  </data>
+  <data name="Settings_CardMixedPort.Description" xml:space="preserve">
+    <value>HTTP/SOCKS5混合待受ポート</value>
+  </data>
+  <data name="Settings_CardAllowLan.Header" xml:space="preserve">
+    <value>LAN接続を許可</value>
+  </data>
+  <data name="Settings_CardAllowLan.Description" xml:space="preserve">
+    <value>LAN内の他デバイスに公開</value>
+  </data>
+  <data name="Settings_CardIpv6.Header" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="Settings_CardIpv6.Description" xml:space="preserve">
+    <value>IPv6 サポートを有効化</value>
+  </data>
+  <data name="Settings_CardLogLevel.Header" xml:space="preserve">
+    <value>ログレベル</value>
+  </data>
+  <data name="Settings_CardFileLog.Header" xml:space="preserve">
+    <value>アプリログ</value>
+  </data>
+  <data name="Settings_CardFileLog.Description" xml:space="preserve">
+    <value>ログをフォルダへ書き込む(既定OFF)</value>
+  </data>
+  <data name="Settings_CardTun.Header" xml:space="preserve">
+    <value>TUN モード</value>
+  </data>
+  <data name="Settings_CardTun.Description" xml:space="preserve">
+    <value>全システムトラフィックを引受</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Header" xml:space="preserve">
+    <value>TUN 詳細設定</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Description" xml:space="preserve">
+    <value>スタック/DNSハイジャック</value>
+  </data>
+  <data name="Settings_CardDns.Header" xml:space="preserve">
+    <value>DNS 設定</value>
+  </data>
+  <data name="Settings_CardDns.Description" xml:space="preserve">
+    <value>enhanced-mode/fake-ip範囲</value>
+  </data>
+  <data name="Settings_CardController.Header" xml:space="preserve">
+    <value>外部コントローラー</value>
+  </data>
+  <data name="Settings_CardController.Description" xml:space="preserve">
+    <value>APIアドレスとSecret；適用後に再起動</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Header" xml:space="preserve">
+    <value>モード切替時に接続切断</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Description" xml:space="preserve">
+    <value>モード切替時に全接続を閉じる</value>
+  </data>
+  <data name="Settings_CardLanguage.Header" xml:space="preserve">
+    <value>言語 / Language</value>
+  </data>
+  <data name="Settings_CardLanguage.Description" xml:space="preserve">
+    <value>適用には再起動が必要</value>
+  </data>
+  <data name="Settings_CardTheme.Header" xml:space="preserve">
+    <value>テーマ</value>
+  </data>
+  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
+    <value>システムに従う</value>
+  </data>
+  <data name="Settings_ThemeSystem.Content" xml:space="preserve">
+    <value>システムに従う</value>
+  </data>
+  <data name="Settings_ThemeLight.Text" xml:space="preserve">
+    <value>ライト</value>
+  </data>
+  <data name="Settings_ThemeLight.Content" xml:space="preserve">
+    <value>ライト</value>
+  </data>
+  <data name="Settings_ThemeDark.Text" xml:space="preserve">
+    <value>ダーク</value>
+  </data>
+  <data name="Settings_ThemeDark.Content" xml:space="preserve">
+    <value>ダーク</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
+    <value>再起動</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
+    <value>再起動</value>
+  </data>
+  <data name="Settings_CardRestartCore.Description" xml:space="preserve">
+    <value>実行時設定を再読込し再起動</value>
+  </data>
+  <data name="Settings_CardService.Header" xml:space="preserve">
+    <value>Flux サービス</value>
+  </data>
+  <data name="Settings_CardService.Description" xml:space="preserve">
+    <value>LocalSystemで動作し管理者なしでTUN可能</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>サービスをインストール/修復</value>
+  </data>
+  <data name="Settings_InstallService.Content" xml:space="preserve">
+    <value>サービスをインストール/修復</value>
+  </data>
+  <data name="Settings_CardLightweight.Header" xml:space="preserve">
+    <value>軽量モード</value>
+  </data>
+  <data name="Settings_CardLightweight.Description" xml:space="preserve">
+    <value>閉じるとUIを解放しトレイとコアのみ</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
+    <value>ホットキー・表示/非表示</value>
+  </data>
+  <data name="Settings_CardHotkeySysproxy.Header" xml:space="preserve">
+    <value>ホットキー・システムプロキシ切替</value>
+  </data>
+  <data name="Settings_CardHotkeyTun.Header" xml:space="preserve">
+    <value>ホットキー・TUN切替</value>
+  </data>
+  <data name="Settings_CardHotkeyReactivate.Header" xml:space="preserve">
+    <value>ホットキー・サブスク再アクティブ</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Header" xml:space="preserve">
+    <value>ホットキー</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
+    <value>保存時に登録。競合は拒否され理由表示</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
+    <value>ホットキー保存</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
+    <value>ホットキー保存</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Header" xml:space="preserve">
+    <value>環境変数をコピー</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Description" xml:space="preserve">
+    <value>ターミナルでCLIをプロキシ経由に</value>
+  </data>
+  <data name="Settings_CardBackup.Header" xml:space="preserve">
+    <value>バックアップと復元</value>
+  </data>
+  <data name="Settings_CardBackup.Description" xml:space="preserve">
+    <value>設定・サブスク・拡張をZIP保存</value>
+  </data>
+  <data name="Settings_CreateBackup.Text" xml:space="preserve">
+    <value>バックアップ作成</value>
+  </data>
+  <data name="Settings_CreateBackup.Content" xml:space="preserve">
+    <value>バックアップ作成</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>バックアップから復元</value>
+  </data>
+  <data name="Settings_RestoreBackup.Content" xml:space="preserve">
+    <value>バックアップから復元</value>
+  </data>
+  <data name="Settings_BackupDir.Text" xml:space="preserve">
+    <value>バックアップフォルダ</value>
+  </data>
+  <data name="Settings_BackupDir.Content" xml:space="preserve">
+    <value>バックアップフォルダ</value>
+  </data>
+  <data name="Settings_CardWebDav.Header" xml:space="preserve">
+    <value>WebDAVバックアップ</value>
+  </data>
+  <data name="Settings_CardWebDav.Description" xml:space="preserve">
+    <value>クラウドバックアップ。PWはDPAPIで暗号化</value>
+  </data>
+  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
+    <value>サーバー設定</value>
+  </data>
+  <data name="Settings_WebDavConfig.Content" xml:space="preserve">
+    <value>サーバー設定</value>
+  </data>
+  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="Settings_WebDavUpload.Content" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
+    <value>復元</value>
+  </data>
+  <data name="Settings_WebDavRestore.Content" xml:space="preserve">
+    <value>復元</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Header" xml:space="preserve">
+    <value>診断とアップデート</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
+    <value>ローカル診断をエクスポートし最新版を確認</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
+    <value>診断をエクスポート</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
+    <value>診断をエクスポート</value>
+  </data>
+  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
+    <value>更新を確認</value>
+  </data>
+  <data name="Settings_CheckUpdate.Content" xml:space="preserve">
+    <value>更新を確認</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
+    <value>フォルダを開く</value>
+  </data>
+  <data name="Settings_OpenData.Text" xml:space="preserve">
+    <value>データフォルダ</value>
+  </data>
+  <data name="Settings_OpenData.Content" xml:space="preserve">
+    <value>データフォルダ</value>
+  </data>
+  <data name="Settings_OpenLogs.Text" xml:space="preserve">
+    <value>ログフォルダ</value>
+  </data>
+  <data name="Settings_OpenLogs.Content" xml:space="preserve">
+    <value>ログフォルダ</value>
+  </data>
+  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
+    <value>GitHubを開く</value>
+  </data>
+  <data name="Settings_OpenGitHub.Content" xml:space="preserve">
+    <value>GitHubを開く</value>
+  </data>
+  <data name="Settings_CardGitHub.Description" xml:space="preserve">
+    <value>ソースコードと最新情報</value>
+  </data>
+  <data name="Settings_CardAbout.Header" xml:space="preserve">
+    <value>Flux について</value>
+  </data>
+  <data name="Settings_ExitApp.Text" xml:space="preserve">
+    <value>アプリを終了</value>
+  </data>
+  <data name="Settings_ExitApp.Content" xml:space="preserve">
+    <value>アプリを終了</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
+    <value>再起動</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
+    <value>再起動</value>
+  </data>
+  <data name="Settings_FollowSystem.Text" xml:space="preserve">
+    <value>システムに従う</value>
+  </data>
+  <data name="Settings_FollowSystem.Content" xml:space="preserve">
+    <value>システムに従う</value>
   </data>
 </root>

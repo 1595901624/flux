@@ -108,22 +108,36 @@ k("Unlock_Subtitle", "检测当前节点对流媒体与 AI 服务的解锁状态
 k("Unlock_RunAll", "全部测试", "Run all", "全部測試", "すべて実行", "모두 실행", "Alle testen", "Probar todo", "Запустить все", "Tümünü çalıştır", "Jalankan semua", "اجرای همه", "تشغيل الكل", "Барысын да эшләтү")
 k("Unlock_Retest", "重测", "Retest", "重測", "再テスト", "다시 테스트", "Erneut testen", "Reprobar", "Повторить", "Yeniden test", "Uji ulang", "تست مجدد", "إعادة الاختبار", "Кабат тикшерү")
 
+import i18n_settings_table
+i18n_settings_table.register(k)
+
 LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
 
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
+def names_for(key):
+    # 同一值同时提供 .Text 与 .Content（TextBlock 与 Button/ComboBoxItem 各取所需）；
+    # 卡片另有 .Header/.Description。目标元素不支持的性质会被 MRT 忽略。
+    if key.endswith(".Desc"):
+        return [key[:-5] + ".Description"]
+    if key.startswith("Settings_Card") or key.startswith("Settings_Section") or key == "Settings_Title":
+        return [key + ".Header"]
+    return [key + ".Text", key + ".Content"]
+
+NL = chr(10)
 def emit(lang, index):
     out = ['<?xml version="1.0" encoding="utf-8"?>', '<root>']
     for (key, *vals) in T:
-        out.append(f'  <data name="{key}.Text" xml:space="preserve">')
-        out.append(f'    <value>{esc(vals[index])}</value>')
-        out.append('  </data>')
+        for name in names_for(key):
+            out.append(f'  <data name="{name}" xml:space="preserve">')
+            out.append(f'    <value>{esc(vals[index])}</value>')
+            out.append('  </data>')
     out.append('</root>')
     path = os.path.join("Strings", lang, "Resources.resw")
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with io.open(path, "w", encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(out) + "\n")
+    with io.open(path, "w", encoding="utf-8", newline=chr(10)) as f:
+        f.write(NL.join(out) + NL)
     print(f"{path}: {len(T)}")
 
 if __name__ == "__main__":

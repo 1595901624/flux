@@ -3,232 +3,769 @@
   <data name="Nav_Home.Text" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+  <data name="Nav_Home.Content" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
   <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>البروكسي</value>
+  </data>
+  <data name="Nav_Proxies.Content" xml:space="preserve">
     <value>البروكسي</value>
   </data>
   <data name="Nav_Profiles.Text" xml:space="preserve">
     <value>الملفات الشخصية</value>
   </data>
+  <data name="Nav_Profiles.Content" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
   <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>الاتصالات</value>
+  </data>
+  <data name="Nav_Connections.Content" xml:space="preserve">
     <value>الاتصالات</value>
   </data>
   <data name="Nav_Rules.Text" xml:space="preserve">
     <value>القواعد</value>
   </data>
+  <data name="Nav_Rules.Content" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
   <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
+  <data name="Nav_Logs.Content" xml:space="preserve">
     <value>السجلات</value>
   </data>
   <data name="Nav_Unlock.Text" xml:space="preserve">
     <value>اختبار إلغاء القفل</value>
   </data>
+  <data name="Nav_Unlock.Content" xml:space="preserve">
+    <value>اختبار إلغاء القفل</value>
+  </data>
   <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="Nav_Settings.Content" xml:space="preserve">
     <value>الإعدادات</value>
   </data>
   <data name="Common_OK.Text" xml:space="preserve">
     <value>موافق</value>
   </data>
+  <data name="Common_OK.Content" xml:space="preserve">
+    <value>موافق</value>
+  </data>
   <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Common_Cancel.Content" xml:space="preserve">
     <value>إلغاء</value>
   </data>
   <data name="Common_Save.Text" xml:space="preserve">
     <value>حفظ</value>
   </data>
+  <data name="Common_Save.Content" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
   <data name="Common_Delete.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Common_Delete.Content" xml:space="preserve">
     <value>حذف</value>
   </data>
   <data name="Common_Close.Text" xml:space="preserve">
     <value>إغلاق</value>
   </data>
+  <data name="Common_Close.Content" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
   <data name="Common_Apply.Text" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="Common_Apply.Content" xml:space="preserve">
     <value>تطبيق</value>
   </data>
   <data name="Common_Refresh.Text" xml:space="preserve">
     <value>تحديث</value>
   </data>
+  <data name="Common_Refresh.Content" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
   <data name="Home_Title.Text" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Home_Title.Content" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
   <data name="Home_OpenProxySettings.Text" xml:space="preserve">
     <value>إعدادات البروكسي</value>
   </data>
+  <data name="Home_OpenProxySettings.Content" xml:space="preserve">
+    <value>إعدادات البروكسي</value>
+  </data>
   <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="Home_CardNetwork.Content" xml:space="preserve">
     <value>الشبكة</value>
   </data>
   <data name="Home_TunAdminHint.Text" xml:space="preserve">
     <value>يتطلب TUN صلاحيات المسؤول</value>
   </data>
+  <data name="Home_TunAdminHint.Content" xml:space="preserve">
+    <value>يتطلب TUN صلاحيات المسؤول</value>
+  </data>
   <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>الملف الحالي</value>
+  </data>
+  <data name="Home_CardProfile.Content" xml:space="preserve">
     <value>الملف الحالي</value>
   </data>
   <data name="Home_CardNodes.Text" xml:space="preserve">
     <value>العقدة الحالية</value>
   </data>
+  <data name="Home_CardNodes.Content" xml:space="preserve">
+    <value>العقدة الحالية</value>
+  </data>
   <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>إحصاءات حركة البيانات</value>
+  </data>
+  <data name="Home_CardTraffic.Content" xml:space="preserve">
     <value>إحصاءات حركة البيانات</value>
   </data>
   <data name="Home_CardMode.Text" xml:space="preserve">
     <value>وضع التشغيل</value>
   </data>
+  <data name="Home_CardMode.Content" xml:space="preserve">
+    <value>وضع التشغيل</value>
+  </data>
   <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>معلومات النواة</value>
+  </data>
+  <data name="Home_CardCore.Content" xml:space="preserve">
     <value>معلومات النواة</value>
   </data>
   <data name="Proxies_Title.Text" xml:space="preserve">
     <value>البروكسي</value>
   </data>
+  <data name="Proxies_Title.Content" xml:space="preserve">
+    <value>البروكسي</value>
+  </data>
   <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>تصفية بالاسم/النوع</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Content" xml:space="preserve">
     <value>تصفية بالاسم/النوع</value>
   </data>
   <data name="Proxies_Empty.Text" xml:space="preserve">
     <value>لا مجموعات بروكسي</value>
   </data>
+  <data name="Proxies_Empty.Content" xml:space="preserve">
+    <value>لا مجموعات بروكسي</value>
+  </data>
   <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>استورد ملفًا شخصيًا أولًا</value>
+  </data>
+  <data name="Proxies_EmptyHint.Content" xml:space="preserve">
     <value>استورد ملفًا شخصيًا أولًا</value>
   </data>
   <data name="Profiles_Title.Text" xml:space="preserve">
     <value>الملفات الشخصية</value>
   </data>
+  <data name="Profiles_Title.Content" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
   <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>رابط الاشتراك (يدعم clash://)</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Content" xml:space="preserve">
     <value>رابط الاشتراك (يدعم clash://)</value>
   </data>
   <data name="Profiles_ImportLocal.Text" xml:space="preserve">
     <value>ملف محلي</value>
   </data>
+  <data name="Profiles_ImportLocal.Content" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
   <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>ملف شخصي فارغ جديد</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Content" xml:space="preserve">
     <value>ملف شخصي فارغ جديد</value>
   </data>
   <data name="Profiles_UpdateAll.Text" xml:space="preserve">
     <value>تحديث الكل</value>
   </data>
+  <data name="Profiles_UpdateAll.Content" xml:space="preserve">
+    <value>تحديث الكل</value>
+  </data>
   <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>التحسين العام</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Content" xml:space="preserve">
     <value>التحسين العام</value>
   </data>
   <data name="Profiles_Empty.Text" xml:space="preserve">
     <value>لا ملفات شخصية</value>
   </data>
+  <data name="Profiles_Empty.Content" xml:space="preserve">
+    <value>لا ملفات شخصية</value>
+  </data>
   <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>الصق رابط الاشتراك ثم استورد أو اختر ملف YAML محلي</value>
+  </data>
+  <data name="Profiles_EmptyHint.Content" xml:space="preserve">
     <value>الصق رابط الاشتراك ثم استورد أو اختر ملف YAML محلي</value>
   </data>
   <data name="Profiles_MenuSelect.Text" xml:space="preserve">
     <value>استخدم هذا الملف</value>
   </data>
+  <data name="Profiles_MenuSelect.Content" xml:space="preserve">
+    <value>استخدم هذا الملف</value>
+  </data>
   <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Content" xml:space="preserve">
     <value>تحديث</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
     <value>تعديل المعلومات</value>
   </data>
+  <data name="Profiles_MenuEdit.Content" xml:space="preserve">
+    <value>تعديل المعلومات</value>
+  </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>تعديل التحسينات</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Content" xml:space="preserve">
     <value>تعديل التحسينات</value>
   </data>
   <data name="Profiles_MenuUp.Text" xml:space="preserve">
     <value>نقل لأعلى</value>
   </data>
+  <data name="Profiles_MenuUp.Content" xml:space="preserve">
+    <value>نقل لأعلى</value>
+  </data>
   <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>نقل لأسفل</value>
+  </data>
+  <data name="Profiles_MenuDown.Content" xml:space="preserve">
     <value>نقل لأسفل</value>
   </data>
   <data name="Profiles_MenuDelete.Text" xml:space="preserve">
     <value>حذف</value>
   </data>
+  <data name="Profiles_MenuDelete.Content" xml:space="preserve">
+    <value>حذف</value>
+  </data>
   <data name="Connections_Title.Text" xml:space="preserve">
+    <value>الاتصالات</value>
+  </data>
+  <data name="Connections_Title.Content" xml:space="preserve">
     <value>الاتصالات</value>
   </data>
   <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
     <value>بحث عن المضيف/القاعدة/العملية</value>
   </data>
+  <data name="Connections_SearchPlaceholder.Content" xml:space="preserve">
+    <value>بحث عن المضيف/القاعدة/العملية</value>
+  </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>إغلاق الكل</value>
+  </data>
+  <data name="Connections_CloseAll.Content" xml:space="preserve">
     <value>إغلاق الكل</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>مغلق</value>
   </data>
+  <data name="Connections_Closed.Content" xml:space="preserve">
+    <value>مغلق</value>
+  </data>
   <data name="Connections_Host.Text" xml:space="preserve">
+    <value>المضيف</value>
+  </data>
+  <data name="Connections_Host.Content" xml:space="preserve">
     <value>المضيف</value>
   </data>
   <data name="Connections_Network.Text" xml:space="preserve">
     <value>الشبكة</value>
   </data>
+  <data name="Connections_Network.Content" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
   <data name="Connections_Download.Text" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="Connections_Download.Content" xml:space="preserve">
     <value>تنزيل</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
     <value>رفع</value>
   </data>
+  <data name="Connections_Upload.Content" xml:space="preserve">
+    <value>رفع</value>
+  </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>القاعدة</value>
+  </data>
+  <data name="Connections_Rule.Content" xml:space="preserve">
     <value>القاعدة</value>
   </data>
   <data name="Connections_Chains.Text" xml:space="preserve">
     <value>السلسلة</value>
   </data>
+  <data name="Connections_Chains.Content" xml:space="preserve">
+    <value>السلسلة</value>
+  </data>
   <data name="Connections_Process.Text" xml:space="preserve">
+    <value>العملية</value>
+  </data>
+  <data name="Connections_Process.Content" xml:space="preserve">
     <value>العملية</value>
   </data>
   <data name="Connections_Time.Text" xml:space="preserve">
     <value>الوقت</value>
   </data>
+  <data name="Connections_Time.Content" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
   <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>الترتيب الافتراضي</value>
+  </data>
+  <data name="Connections_SortDefault.Content" xml:space="preserve">
     <value>الترتيب الافتراضي</value>
   </data>
   <data name="Connections_SortUpload.Text" xml:space="preserve">
     <value>حسب الرفع</value>
   </data>
+  <data name="Connections_SortUpload.Content" xml:space="preserve">
+    <value>حسب الرفع</value>
+  </data>
   <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>حسب التنزيل</value>
+  </data>
+  <data name="Connections_SortDownload.Content" xml:space="preserve">
     <value>حسب التنزيل</value>
   </data>
   <data name="Rules_Title.Text" xml:space="preserve">
     <value>القواعد</value>
   </data>
+  <data name="Rules_Title.Content" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
   <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>بحث في القواعد</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Content" xml:space="preserve">
     <value>بحث في القواعد</value>
   </data>
   <data name="Rules_Providers.Text" xml:space="preserve">
     <value>مزودات القواعد</value>
   </data>
+  <data name="Rules_Providers.Content" xml:space="preserve">
+    <value>مزودات القواعد</value>
+  </data>
   <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>لا قواعد</value>
+  </data>
+  <data name="Rules_Empty.Content" xml:space="preserve">
     <value>لا قواعد</value>
   </data>
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>السجلات</value>
   </data>
+  <data name="Logs_Title.Content" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
   <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>جميع المستويات</value>
+  </data>
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>جميع المستويات</value>
   </data>
   <data name="Logs_LevelInfo.Text" xml:space="preserve">
     <value>معلومات وأعلى</value>
   </data>
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
+    <value>معلومات وأعلى</value>
+  </data>
   <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>تحذير وأعلى</value>
+  </data>
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>تحذير وأعلى</value>
   </data>
   <data name="Logs_LevelError.Text" xml:space="preserve">
     <value>خطأ</value>
   </data>
+  <data name="Logs_LevelError.Content" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
   <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>تصحيح</value>
+  </data>
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>تصحيح</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
     <value>بحث في السجلات</value>
   </data>
+  <data name="Logs_SearchPlaceholder.Content" xml:space="preserve">
+    <value>بحث في السجلات</value>
+  </data>
   <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>إيقاف مؤقت</value>
+  </data>
+  <data name="Logs_Pause.Content" xml:space="preserve">
     <value>إيقاف مؤقت</value>
   </data>
   <data name="Logs_Clear.Text" xml:space="preserve">
     <value>مسح</value>
   </data>
+  <data name="Logs_Clear.Content" xml:space="preserve">
+    <value>مسح</value>
+  </data>
   <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>الأحدث أولاً</value>
+  </data>
+  <data name="Logs_NewestFirst.Content" xml:space="preserve">
     <value>الأحدث أولاً</value>
   </data>
   <data name="Logs_Empty.Text" xml:space="preserve">
     <value>لا سجلات</value>
   </data>
+  <data name="Logs_Empty.Content" xml:space="preserve">
+    <value>لا سجلات</value>
+  </data>
   <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>اختبار إلغاء القفل</value>
+  </data>
+  <data name="Unlock_Title.Content" xml:space="preserve">
     <value>اختبار إلغاء القفل</value>
   </data>
   <data name="Unlock_Subtitle.Text" xml:space="preserve">
     <value>تحقق من توفر خدمات البث/الذكاء الاصطناعي عبر العقدة الحالية</value>
   </data>
+  <data name="Unlock_Subtitle.Content" xml:space="preserve">
+    <value>تحقق من توفر خدمات البث/الذكاء الاصطناعي عبر العقدة الحالية</value>
+  </data>
   <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>تشغيل الكل</value>
+  </data>
+  <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>تشغيل الكل</value>
   </data>
   <data name="Unlock_Retest.Text" xml:space="preserve">
     <value>إعادة الاختبار</value>
+  </data>
+  <data name="Unlock_Retest.Content" xml:space="preserve">
+    <value>إعادة الاختبار</value>
+  </data>
+  <data name="Settings_Title.Header" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+    <value>النظام</value>
+  </data>
+  <data name="Settings_SectionClash.Header" xml:space="preserve">
+    <value>إعدادات Clash</value>
+  </data>
+  <data name="Settings_SectionApp.Header" xml:space="preserve">
+    <value>التطبيق</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
+    <value>بدء تلقائي</value>
+  </data>
+  <data name="Settings_CardAutoLaunch.Description" xml:space="preserve">
+    <value>ابدأ عند تسجيل الدخول</value>
+  </data>
+  <data name="Settings_CardSilentStart.Header" xml:space="preserve">
+    <value>بدء صامت</value>
+  </data>
+  <data name="Settings_CardSilentStart.Description" xml:space="preserve">
+    <value>إخفاء النافذة عند البدء</value>
+  </data>
+  <data name="Settings_CardSysProxy.Header" xml:space="preserve">
+    <value>بروكسي النظام</value>
+  </data>
+  <data name="Settings_CardSysProxy.Description" xml:space="preserve">
+    <value>اجعل Flux بروكسي النظام</value>
+  </data>
+  <data name="Settings_CardPac.Header" xml:space="preserve">
+    <value>وضع PAC</value>
+  </data>
+  <data name="Settings_CardPac.Description" xml:space="preserve">
+    <value>بروكسي عبر سكربت تلقائي</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Header" xml:space="preserve">
+    <value>حارس البروكسي</value>
+  </data>
+  <data name="Settings_CardProxyGuard.Description" xml:space="preserve">
+    <value>استعادة إذا غيّرها برنامج آخر</value>
+  </data>
+  <data name="Settings_CardBypass.Header" xml:space="preserve">
+    <value>قائمة التجاوز</value>
+  </data>
+  <data name="Settings_CardBypass.Description" xml:space="preserve">
+    <value>عناوين بدون بروكسي (; فاصلة)</value>
+  </data>
+  <data name="Settings_CardMixedPort.Header" xml:space="preserve">
+    <value>منفذ مختلط</value>
+  </data>
+  <data name="Settings_CardMixedPort.Description" xml:space="preserve">
+    <value>منفذ مختلط (1024-65535)</value>
+  </data>
+  <data name="Settings_CardAllowLan.Header" xml:space="preserve">
+    <value>السماح بالشبكة المحلية</value>
+  </data>
+  <data name="Settings_CardAllowLan.Description" xml:space="preserve">
+    <value>السماح لأجهزة الشبكة</value>
+  </data>
+  <data name="Settings_CardIpv6.Header" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="Settings_CardIpv6.Description" xml:space="preserve">
+    <value>تمكين IPv6</value>
+  </data>
+  <data name="Settings_CardLogLevel.Header" xml:space="preserve">
+    <value>مستوى السجل</value>
+  </data>
+  <data name="Settings_CardFileLog.Header" xml:space="preserve">
+    <value>سجل التطبيق</value>
+  </data>
+  <data name="Settings_CardFileLog.Description" xml:space="preserve">
+    <value>كتابة السجلات إلى المجلد</value>
+  </data>
+  <data name="Settings_CardTun.Header" xml:space="preserve">
+    <value>وضع TUN</value>
+  </data>
+  <data name="Settings_CardTun.Description" xml:space="preserve">
+    <value>يتحكم بكل حركة النظام</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Header" xml:space="preserve">
+    <value>إعدادات TUN متقدمة</value>
+  </data>
+  <data name="Settings_CardTunAdvanced.Description" xml:space="preserve">
+    <value>المكدس/اختطاف DNS؛ أعد التحميل</value>
+  </data>
+  <data name="Settings_CardDns.Header" xml:space="preserve">
+    <value>إعدادات DNS</value>
+  </data>
+  <data name="Settings_CardDns.Description" xml:space="preserve">
+    <value>الوضع المتقدم/نطاق fake-ip</value>
+  </data>
+  <data name="Settings_CardController.Header" xml:space="preserve">
+    <value>وحدة التحكم الخارجية</value>
+  </data>
+  <data name="Settings_CardController.Description" xml:space="preserve">
+    <value>عنوان API وسر؛ أعد تشغيل النواة</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Header" xml:space="preserve">
+    <value>أغلق الاتصالات عند تبديل الوضع</value>
+  </data>
+  <data name="Settings_CardAutoCloseConn.Description" xml:space="preserve">
+    <value>أغلق كل الاتصالات عند التبديل</value>
+  </data>
+  <data name="Settings_CardLanguage.Header" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="Settings_CardLanguage.Description" xml:space="preserve">
+    <value>أعد التشغيل للتطبيق الكامل</value>
+  </data>
+  <data name="Settings_CardTheme.Header" xml:space="preserve">
+    <value>السمة</value>
+  </data>
+  <data name="Settings_ThemeSystem.Text" xml:space="preserve">
+    <value>حسب النظام</value>
+  </data>
+  <data name="Settings_ThemeSystem.Content" xml:space="preserve">
+    <value>حسب النظام</value>
+  </data>
+  <data name="Settings_ThemeLight.Text" xml:space="preserve">
+    <value>فاتح</value>
+  </data>
+  <data name="Settings_ThemeLight.Content" xml:space="preserve">
+    <value>فاتح</value>
+  </data>
+  <data name="Settings_ThemeDark.Text" xml:space="preserve">
+    <value>داكن</value>
+  </data>
+  <data name="Settings_ThemeDark.Content" xml:space="preserve">
+    <value>داكن</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Text" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="Settings_RestartCoreButton.Content" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="Settings_CardRestartCore.Description" xml:space="preserve">
+    <value>أعد تحميل التكوين وأعد تشغيل mihomo</value>
+  </data>
+  <data name="Settings_CardService.Header" xml:space="preserve">
+    <value>خدمة Flux</value>
+  </data>
+  <data name="Settings_CardService.Description" xml:space="preserve">
+    <value>يعمل كـ LocalSystem؛ TUN بدون مسؤول</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>تثبيت/إصلاح الخدمة</value>
+  </data>
+  <data name="Settings_InstallService.Content" xml:space="preserve">
+    <value>تثبيت/إصلاح الخدمة</value>
+  </data>
+  <data name="Settings_CardLightweight.Header" xml:space="preserve">
+    <value>الوضع الخفيف</value>
+  </data>
+  <data name="Settings_CardLightweight.Description" xml:space="preserve">
+    <value>يحرر الواجهة عند الإغلاق؛ يبقي الصينية والنواة</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Text" xml:space="preserve">
+    <value>دقائق</value>
+  </data>
+  <data name="Settings_LightweightMinutes.Content" xml:space="preserve">
+    <value>دقائق</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Header" xml:space="preserve">
+    <value>اختصار · إظهار/إخفاء النافذة</value>
+  </data>
+  <data name="Settings_CardHotkeySysproxy.Header" xml:space="preserve">
+    <value>اختصار · تبديل بروكسي النظام</value>
+  </data>
+  <data name="Settings_CardHotkeyTun.Header" xml:space="preserve">
+    <value>اختصار · تبديل TUN</value>
+  </data>
+  <data name="Settings_CardHotkeyReactivate.Header" xml:space="preserve">
+    <value>اختصار · إعادة تنشيط الملف</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Header" xml:space="preserve">
+    <value>الاختصارات</value>
+  </data>
+  <data name="Settings_CardHotkeySave.Description" xml:space="preserve">
+    <value>تُسجَّل عند الحفظ؛ تُرفض التعارضات مع السبب</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Text" xml:space="preserve">
+    <value>حفظ الاختصارات</value>
+  </data>
+  <data name="Settings_SaveHotkeys.Content" xml:space="preserve">
+    <value>حفظ الاختصارات</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Header" xml:space="preserve">
+    <value>نسخ متغيرات البيئة</value>
+  </data>
+  <data name="Settings_CardCopyEnv.Description" xml:space="preserve">
+    <value>مرر برامج الطرفية عبر البروكسي</value>
+  </data>
+  <data name="Settings_CardBackup.Header" xml:space="preserve">
+    <value>النسخ الاحتياطي والاستعادة</value>
+  </data>
+  <data name="Settings_CardBackup.Description" xml:space="preserve">
+    <value>نسخ ZIP للإعدادات والملفات والتحسينات</value>
+  </data>
+  <data name="Settings_CreateBackup.Text" xml:space="preserve">
+    <value>إنشاء نسخة</value>
+  </data>
+  <data name="Settings_CreateBackup.Content" xml:space="preserve">
+    <value>إنشاء نسخة</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>استعادة نسخة</value>
+  </data>
+  <data name="Settings_RestoreBackup.Content" xml:space="preserve">
+    <value>استعادة نسخة</value>
+  </data>
+  <data name="Settings_BackupDir.Text" xml:space="preserve">
+    <value>مجلد النسخ</value>
+  </data>
+  <data name="Settings_BackupDir.Content" xml:space="preserve">
+    <value>مجلد النسخ</value>
+  </data>
+  <data name="Settings_CardWebDav.Header" xml:space="preserve">
+    <value>نسخ WebDAV</value>
+  </data>
+  <data name="Settings_CardWebDav.Description" xml:space="preserve">
+    <value>نسخ سحابي؛ كلمة السر مشفرة بـ DPAPI</value>
+  </data>
+  <data name="Settings_WebDavConfig.Text" xml:space="preserve">
+    <value>إعدادات الخادم</value>
+  </data>
+  <data name="Settings_WebDavConfig.Content" xml:space="preserve">
+    <value>إعدادات الخادم</value>
+  </data>
+  <data name="Settings_WebDavUpload.Text" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="Settings_WebDavUpload.Content" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="Settings_WebDavRestore.Text" xml:space="preserve">
+    <value>استعادة</value>
+  </data>
+  <data name="Settings_WebDavRestore.Content" xml:space="preserve">
+    <value>استعادة</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Header" xml:space="preserve">
+    <value>التشخيص والتحديثات</value>
+  </data>
+  <data name="Settings_CardDiagUpdate.Description" xml:space="preserve">
+    <value>تصدير حزمة التشخيص محليًا؛ تحقق من أحدث إصدار</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Text" xml:space="preserve">
+    <value>تصدير التشخيص</value>
+  </data>
+  <data name="Settings_ExportDiagnostics.Content" xml:space="preserve">
+    <value>تصدير التشخيص</value>
+  </data>
+  <data name="Settings_CheckUpdate.Text" xml:space="preserve">
+    <value>البحث عن تحديثات</value>
+  </data>
+  <data name="Settings_CheckUpdate.Content" xml:space="preserve">
+    <value>البحث عن تحديثات</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Header" xml:space="preserve">
+    <value>فتح المجلدات</value>
+  </data>
+  <data name="Settings_OpenData.Text" xml:space="preserve">
+    <value>مجلد البيانات</value>
+  </data>
+  <data name="Settings_OpenData.Content" xml:space="preserve">
+    <value>مجلد البيانات</value>
+  </data>
+  <data name="Settings_OpenLogs.Text" xml:space="preserve">
+    <value>مجلد السجلات</value>
+  </data>
+  <data name="Settings_OpenLogs.Content" xml:space="preserve">
+    <value>مجلد السجلات</value>
+  </data>
+  <data name="Settings_OpenGitHub.Text" xml:space="preserve">
+    <value>افتح GitHub</value>
+  </data>
+  <data name="Settings_OpenGitHub.Content" xml:space="preserve">
+    <value>افتح GitHub</value>
+  </data>
+  <data name="Settings_CardGitHub.Description" xml:space="preserve">
+    <value>الكود المصدري وأحدث الأخبار</value>
+  </data>
+  <data name="Settings_CardAbout.Header" xml:space="preserve">
+    <value>حول Flux</value>
+  </data>
+  <data name="Settings_ExitApp.Text" xml:space="preserve">
+    <value>إنهاء التطبيق</value>
+  </data>
+  <data name="Settings_ExitApp.Content" xml:space="preserve">
+    <value>إنهاء التطبيق</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Text" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="Settings_RestartCoreButton2.Content" xml:space="preserve">
+    <value>إعادة تشغيل</value>
+  </data>
+  <data name="Settings_FollowSystem.Text" xml:space="preserve">
+    <value>حسب النظام</value>
+  </data>
+  <data name="Settings_FollowSystem.Content" xml:space="preserve">
+    <value>حسب النظام</value>
   </data>
 </root>
