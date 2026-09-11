@@ -36,7 +36,13 @@ public sealed partial class ConnectionsPage : Page
         ConnList.ItemsSource = _filtered;
     }
 
-    private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (SortBox.SelectedItem is ComboBoxItem item && item.Tag is string mode)
+            Vm.SortMode = mode;
+    }
+
+private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         Vm.SearchText = SearchBox.Text;
         ApplyFilter();

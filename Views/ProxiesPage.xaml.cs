@@ -49,6 +49,12 @@ public sealed partial class ProxiesPage : Page
         Unloaded += (_, _) => Vm.StopPolling();
     }
 
+    private async void Providers_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new ProxiesProvidersDialog(XamlRoot);
+        await dialog.ShowAsync();
+    }
+
     private double _lastCardsWidth;
 
     /// <summary>节点卡片按可用宽度自适应 1~3 列，撑满不留白。</summary>

@@ -85,6 +85,10 @@ public partial class ConnectionsViewModel : ObservableObject
     [ObservableProperty]
     public partial string CountText { get; set; } = "";
 
+    /// <summary>活跃连接排序：default（最新优先）| upload | download。</summary>
+    [ObservableProperty]
+    public partial string SortMode { get; set; } = "default";
+
     private readonly Dictionary<string, (long Up, long Down)> _last = new();
     private DateTime _lastTick = DateTime.UtcNow;
     private DispatcherQueueTimer? _flushTimer;
@@ -183,6 +187,7 @@ public partial class ConnectionsViewModel : ObservableObject
         }
 
         TotalsText = $"↑ {Format.Bytes(merged.UploadTotal)}　　↓ {Format.Bytes(merged.DownloadTotal)}";
+        ApplySort();
         RefreshView();
         return Task.CompletedTask;
     }
@@ -190,6 +195,26 @@ public partial class ConnectionsViewModel : ObservableObject
     private void RefreshView()
     {
         CountText = $"活跃 {Active.Count} · 已关闭 {Closed.Count}";
+    }
+
+    partial void OnSortModeChanged(string value) => ApplySort();
+
+    /// <summary>按上传/下载速率或流量排序活跃连接。</summary>
+    private void ApplySort()
+    {
+        if (SortMode is not ("upload" or "download")) return;
+        List<ConnectionVm> sorted = SortMode switch
+        {
+            "upload" => Active.OrderByDescending(x => x.UploadSpeed + x.Item.Upload).ToList(),
+            "download" => Active.OrderByDescending(x => x.DownloadSpeed + x.Item.Download).ToList(),
+            _ => [],
+        };
+        for (var i = 0; i < sorted.Count; i++)
+        {
+            var idx = Active.IndexOf(sorted[i]);
+            if (idx > i)
+                Active.Move(idx, i);
+        }
     }
 
     public async Task CloseAsync(ConnectionVm vm)

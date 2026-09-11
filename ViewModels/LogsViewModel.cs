@@ -46,12 +46,17 @@ public partial class LogsViewModel : ObservableObject
     [ObservableProperty]
     public partial string CountText { get; set; } = "";
 
+    /// <summary>倒序显示（最新在最上）。</summary>
+    [ObservableProperty]
+    public partial bool NewestFirst { get; set; }
+
     private readonly Queue<LogItemVm> _buffer = new();
     private DispatcherQueueTimer? _flushTimer;
     private bool _subscribed;
 
     partial void OnLevelChanged(string value) { }
     partial void OnPausedChanged(bool value) { }
+    partial void OnNewestFirstChanged(bool value) => Reorder();
 
     public LogsViewModel()
     {
@@ -104,14 +109,35 @@ public partial class LogsViewModel : ObservableObject
             var line = _pending.Dequeue();
             var vm = new LogItemVm(line);
             _buffer.Enqueue(vm);
-            Items.Add(vm);
+            if (NewestFirst)
+                Items.Insert(0, vm);
+            else
+                Items.Add(vm);
         }
-        while (Items.Count > MaxCount)
+        if (NewestFirst)
         {
-            Items.RemoveAt(0);
-            _buffer.Dequeue();
+            while (Items.Count > MaxCount)
+                Items.RemoveAt(Items.Count - 1);
+        }
+        else
+        {
+            while (Items.Count > MaxCount)
+            {
+                Items.RemoveAt(0);
+                _buffer.Dequeue();
+            }
         }
         CountText = $"{Items.Count} 条";
+    }
+
+    /// <summary>切换正/倒序时按缓冲区重建显示顺序。</summary>
+    private void Reorder()
+    {
+        Items.Clear();
+        var snapshot = _buffer.ToList();
+        if (NewestFirst) snapshot.Reverse();
+        foreach (var vm in snapshot)
+            Items.Add(vm);
     }
 
     [RelayCommand]

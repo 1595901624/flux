@@ -76,6 +76,11 @@ public sealed partial class LogsPage : Page
         }
     }
 
+    private void NewestFirst_Changed(object sender, RoutedEventArgs e)
+    {
+        Vm.NewestFirst = NewestFirstToggle.IsChecked == true;
+    }
+
     private void Clear_Click(object sender, RoutedEventArgs e)
     {
         Vm.Clear();

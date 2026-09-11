@@ -27,6 +27,12 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="连接" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <TextBlock Text="{x:Bind Vm.TotalsText, Mode=OneWay}" Grid.Column="1" FontSize="12" Opacity="0.7" VerticalAlignment="Center" />
+            <ComboBox x:Name="SortBox" Grid.Column="2" Width="110" VerticalAlignment="Center"
+                      SelectionChanged="SortBox_SelectionChanged" SelectedIndex="0">
+                <ComboBoxItem Tag="default" Content="默认排序" />
+                <ComboBoxItem Tag="upload" Content="按上传" />
+                <ComboBoxItem Tag="download" Content="按下载" />
+            </ComboBox>
             <TextBox
                 x:Name="SearchBox"
                 Grid.Column="3"

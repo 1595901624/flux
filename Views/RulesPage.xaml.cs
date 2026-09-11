@@ -26,6 +26,12 @@ public sealed partial class RulesPage : Page
 
     private async void Refresh_Click(object sender, RoutedEventArgs e) => await Vm.LoadAsync();
 
+    private async void Providers_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new RulesProvidersDialog(XamlRoot);
+        await dialog.ShowAsync();
+    }
+
     private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         Vm.SearchText = SearchBox.Text;

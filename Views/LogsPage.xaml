@@ -23,6 +23,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="日志" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <ComboBox x:Name="LevelBox" Grid.Column="1" VerticalAlignment="Center" Width="120"
@@ -47,7 +48,14 @@
                     <TextBlock Text="清空" />
                 </StackPanel>
             </Button>
-            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" Grid.Column="5" FontSize="12" Opacity="0.6"
+            <ToggleButton x:Name="NewestFirstToggle" Grid.Column="5" VerticalAlignment="Center"
+                          Checked="NewestFirst_Changed" Unchecked="NewestFirst_Changed">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <FontIcon Glyph="&#xE8D5;" FontSize="14" />
+                    <TextBlock Text="倒序" />
+                </StackPanel>
+            </ToggleButton>
+            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" Grid.Column="6" FontSize="12" Opacity="0.6"
                        VerticalAlignment="Center" Margin="8,0,0,0" />
         </Grid>
 

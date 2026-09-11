@@ -169,6 +169,79 @@ public class MihomoApiService
     public Task<JsonElement> GetProxyProvidersAsync() =>
         SendAsync(HttpMethod.Get, "providers/proxies");
 
+    public Task<JsonElement> GetRuleProvidersAsync() =>
+        SendAsync(HttpMethod.Get, "providers/rules");
+
+    /// <summary>PUT /providers/proxies/{name} — 更新代理 Provider。</summary>
+    public Task<JsonElement> UpdateProxyProviderAsync(string name) =>
+        SendAsync(HttpMethod.Put, "providers/proxies/" + Uri.EscapeDataString(name));
+
+    /// <summary>PUT /providers/rules/{name} — 更新规则 Provider。</summary>
+    public Task<JsonElement> UpdateRuleProviderAsync(string name) =>
+        SendAsync(HttpMethod.Put, "providers/rules/" + Uri.EscapeDataString(name));
+
     public Task<JsonElement> HealthCheckProviderAsync(string name) =>
         SendAsync(HttpMethod.Get, $"providers/proxies/{Uri.EscapeDataString(name)}/healthcheck");
+
+    /// <summary>GET /providers/rules 解析为（名称 → (类型, 规则数, 更新时间, 车辆行为)）列表。</summary>
+    public async Task<List<RuleProviderInfo>> GetRuleProviderInfoAsync()
+    {
+        var list = new List<RuleProviderInfo>();
+        try
+        {
+            var json = await GetRuleProvidersAsync().ConfigureAwait(false);
+            if (!json.TryGetProperty("providers", out var providers) ||
+                providers.ValueKind != JsonValueKind.Object)
+                return list;
+            foreach (var p in providers.EnumerateObject())
+            {
+                if (p.Value.ValueKind != JsonValueKind.Object) continue;
+                var name = p.Name;
+                var type = p.Value.TryGetProperty("type", out var t) ? t.GetString() ?? "" : "";
+                var behavior = p.Value.TryGetProperty("behavior", out var b) ? b.GetString() ?? "" : "";
+                var count = p.Value.TryGetProperty("ruleCount", out var rc) && rc.ValueKind == JsonValueKind.Number
+                    ? rc.GetInt32() : 0;
+                var updatedAt = p.Value.TryGetProperty("updatedAt", out var ua) && ua.ValueKind == JsonValueKind.String
+                    ? ua.GetString() : null;
+                list.Add(new RuleProviderInfo(name, type, behavior, count, updatedAt));
+            }
+        }
+        catch { }
+        return list.OrderBy(r => r.Name, StringComparer.OrdinalIgnoreCase).ToList();
+    }
+
+    /// <summary>GET /providers/proxies 解析为代理 Provider 信息列表。</summary>
+    public async Task<List<ProxyProviderInfo>> GetProxyProviderInfoAsync()
+    {
+        var list = new List<ProxyProviderInfo>();
+        try
+        {
+            var json = await GetProxyProvidersAsync().ConfigureAwait(false);
+            if (!json.TryGetProperty("providers", out var providers) ||
+                providers.ValueKind != JsonValueKind.Object)
+                return list;
+            foreach (var p in providers.EnumerateObject())
+            {
+                if (p.Value.ValueKind != JsonValueKind.Object) continue;
+                if (p.Value.TryGetProperty("vehicleType", out var vt) &&
+                    vt.GetString()?.Equals("Compatible", StringComparison.OrdinalIgnoreCase) == true)
+                    continue; // 内置兼容 Provider 不展示
+                var name = p.Name;
+                var count = p.Value.TryGetProperty("proxies", out var px) &&
+                            px.ValueKind == JsonValueKind.Array
+                    ? px.GetArrayLength() : 0;
+                var updatedAt = p.Value.TryGetProperty("updatedAt", out var ua) && ua.ValueKind == JsonValueKind.String
+                    ? ua.GetString() : null;
+                list.Add(new ProxyProviderInfo(name, count, updatedAt));
+            }
+        }
+        catch { }
+        return list.OrderBy(r => r.Name, StringComparer.OrdinalIgnoreCase).ToList();
+    }
 }
+
+/// <summary>规则 Provider 展示信息。</summary>
+public sealed record RuleProviderInfo(string Name, string Type, string Behavior, int RuleCount, string? UpdatedAt);
+
+/// <summary>代理 Provider 展示信息。</summary>
+public sealed record ProxyProviderInfo(string Name, int ProxyCount, string? UpdatedAt);
