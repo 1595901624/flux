@@ -379,6 +379,96 @@ public sealed partial class SettingsPage : Page
         try { System.Diagnostics.Process.Start("explorer.exe", Paths.AppDataDir); } catch { }
     }
 
+    // ---------- 备份与恢复 ----------
+
+    private async void CreateBackup_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var name = await AppServices.Backup.CreateAsync();
+            var dialog = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "备份完成",
+                Content = $"已创建备份 {name}",
+                CloseButtonText = "确定",
+            };
+            await dialog.ShowAsync();
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("备份失败", ex.Message);
+        }
+    }
+
+    private async void RestoreBackup_Click(object sender, RoutedEventArgs e)
+    {
+        List<(string Name, long Size, DateTime Created)> backups;
+        try { backups = (await AppServices.Backup.ListAsync()).ToList(); }
+        catch (Exception ex) { await ShowInfoAsync("读取备份失败", ex.Message); return; }
+
+        if (backups.Count == 0)
+        {
+            await ShowInfoAsync("没有备份", "尚未创建任何备份。");
+            return;
+        }
+
+        var listBox = new ListView { Height = 260, SelectionMode = ListViewSelectionMode.Single };
+        foreach (var (name, size, created) in backups.OrderByDescending(b => b.Created))
+        {
+            listBox.Items.Add(new TextBlock
+            {
+                Text = $"{name}　({Format.Bytes(size)}, {created:yyyy-MM-dd HH:mm})",
+                FontSize = 12,
+            });
+        }
+        listBox.SelectedIndex = 0;
+
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = "恢复备份",
+            Content = new StackPanel { Spacing = 8, Children =
+            {
+                new TextBlock { Text = "选择要恢复的备份（恢复后需要重启内核生效）：", TextWrapping = TextWrapping.Wrap },
+                listBox,
+            } },
+            PrimaryButtonText = "恢复",
+            CloseButtonText = "取消",
+            DefaultButton = ContentDialogButton.Primary,
+        };
+        if (await dialog.ShowAsync() != ContentDialogResult.Primary || listBox.SelectedIndex < 0) return;
+
+        var selectedName = backups.OrderByDescending(b => b.Created).ToList()[listBox.SelectedIndex].Name;
+        try
+        {
+            await Task.Run(() => AppServices.Backup.RestoreAsync(selectedName).GetAwaiter().GetResult());
+            await AppServices.Core.RestartAsync();
+            await ShowInfoAsync("恢复完成", $"已从 {selectedName} 恢复并重启内核。");
+        }
+        catch (Exception ex)
+        {
+            await ShowInfoAsync("恢复失败", ex.Message);
+        }
+    }
+
+    private void OpenBackupDir_Click(object sender, RoutedEventArgs e)
+    {
+        try { System.Diagnostics.Process.Start("explorer.exe", Paths.DataBackupDir); } catch { }
+    }
+
+    private async Task ShowInfoAsync(string title, string message)
+    {
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = title,
+            Content = message,
+            CloseButtonText = "确定",
+        };
+        await dialog.ShowAsync();
+    }
+
     private void OpenLogs_Click(object sender, RoutedEventArgs e)
     {
         try { System.Diagnostics.Process.Start("explorer.exe", Paths.LogsDir); } catch { }

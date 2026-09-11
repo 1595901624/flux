@@ -14,6 +14,9 @@ public static class AppServices
     public static DeepLinkService DeepLink { get; } = new();
     public static PrivilegeBroker Privilege { get; } = new();
 
+    /// <summary>本地备份服务（ZIP：应用配置 + 订阅 + 增强文件，不含日志/内核缓存）。</summary>
+    public static Flux.Core.Backup.LocalBackupService Backup { get; private set; } = null!;
+
     public static bool Initialized { get; private set; }
 
     public static void Initialize()
@@ -22,6 +25,15 @@ public static class AppServices
         Paths.Initialize();
         Config = ConfigService.LoadOrCreate();
         Subscription = new SubscriptionService();
+        Backup = new Flux.Core.Backup.LocalBackupService(
+            Paths.DataBackupDir,
+            () => new Flux.Core.Backup.BackupLayout
+            {
+                DataDir = Paths.AppDataDir,
+                ProfilesDir = Paths.ProfilesDir,
+                ExtraFiles = [Path.Combine(Paths.AppDataDir, "flux-settings.json")],
+            },
+            (level, message) => LogService.App(message, level));
 
         var (controller, secret) = Config.GetControllerInfo();
         Api.Configure(controller, secret);

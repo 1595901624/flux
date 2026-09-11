@@ -70,9 +70,21 @@ public partial class HomeViewModel : ObservableObject
     [ObservableProperty]
     public partial string CoreStatusText { get; set; } = "检查中…";
 
+    [ObservableProperty]
+    public partial string UptimeText { get; set; } = "";
+
+    [ObservableProperty]
+    public partial string RuleCountText { get; set; } = "";
+
+    private DateTime? _coreStartedAt;
+    private DateTime? _lastRuleCountFetch;
+
     public bool TunAvailable => IsAdmin;
     public string AdminHintVisibility => IsAdmin ? "Collapsed" : "Visible";
     public string UsageVisibility => string.IsNullOrEmpty(ProfileUsage) ? "Collapsed" : "Visible";
+    public string RuleCountVisibility => string.IsNullOrEmpty(RuleCountText) ? "Collapsed" : "Visible";
+
+    partial void OnRuleCountTextChanged(string value) => OnPropertyChanged(nameof(RuleCountVisibility));
 
     partial void OnIsAdminChanged(bool value)
     {
@@ -114,6 +126,45 @@ public partial class HomeViewModel : ObservableObject
         _ = RefreshAsync();
     }
 
+    /// <summary>运行时间与规则数量展示。</summary>
+    private void UpdateUptime()
+    {
+        if (AppServices.Core.IsRunning)
+        {
+            if (_coreStartedAt is null)
+                _coreStartedAt = DateTime.Now;
+            var up = DateTime.Now - _coreStartedAt.Value;
+            UptimeText = up.TotalHours >= 1
+                ? $"{(int)up.TotalHours} 小时 {up.Minutes} 分"
+                : $"{up.Minutes} 分 {up.Seconds} 秒";
+        }
+        else
+        {
+            _coreStartedAt = null;
+            UptimeText = "未运行";
+        }
+    }
+
+    /// <summary>规则数量每 60 秒刷新一次。</summary>
+    private async Task RefreshRuleCountAsync()
+    {
+        if (_lastRuleCountFetch is { } last && (DateTime.Now - last).TotalSeconds < 60) return;
+        _lastRuleCountFetch = DateTime.Now;
+        try
+        {
+            var json = await AppServices.Api.GetRulesAsync();
+            var count = json.TryGetProperty("rules", out var rules) &&
+                        rules.ValueKind == System.Text.Json.JsonValueKind.Array
+                ? rules.GetArrayLength()
+                : 0;
+            RuleCountText = count > 0 ? $"{count} 条" : "";
+        }
+        catch
+        {
+            RuleCountText = "";
+        }
+    }
+
     public void StopTimer()
     {
         _timer?.Stop();
@@ -141,6 +192,8 @@ public partial class HomeViewModel : ObservableObject
 
     public async Task RefreshAsync()
     {
+        UpdateUptime();
+        await RefreshRuleCountAsync();
         var verge = AppServices.Config.Verge;
         SystemProxyOn = verge.EnableSystemProxy;
         TunOn = verge.EnableTunMode;
