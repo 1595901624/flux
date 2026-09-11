@@ -1,0 +1,84 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "2c946af2b583c08d49e2064bdf65d21447520e97",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 658,
+    "git_diff_deleted_lines": 0,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 656,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Backup/LocalBackupService.cs": {
+        "BYMC": [
+          "1-246"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Backup/WebDavClient.cs": {
+        "BYMC": [
+          "1-151"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [
+          "17-19",
+          "28-36"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/TrayService.cs": {
+        "BYMC": [
+          "79",
+          "92",
+          "100-188"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/HomeViewModel.cs": {
+        "BYMC": [
+          "73-81",
+          "85-87",
+          "129-167",
+          "195-196"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml": {
+        "BYMC": [
+          "154-159"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "93-99"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "382-471"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789146056,
+  "requirement_id": ""
+}
