@@ -187,7 +187,7 @@ public sealed class HotkeyService : IHotkeyService, IDisposable
         public IntPtr Cursor;
         public IntPtr Background;
         public string? MenuName;
-        public string ClassName;
+        public string ClassName = "";
         public IntPtr IconSm;
     }
 
