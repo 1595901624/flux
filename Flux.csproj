@@ -48,9 +48,13 @@
   <ItemGroup>
     <Compile Remove="tests\**\*.cs" />
     <None Remove="tests\**\*" />
-    <!-- Flux.Core 是独立项目，禁止被主项目的默认 glob 重复编译 -->
+    <!-- Flux.Core / Flux.Service / Flux.Service.Installer 是独立项目，禁止被默认 glob 重复编译 -->
     <Compile Remove="Flux.Core\**\*.cs" />
     <None Remove="Flux.Core\**\*" />
+    <Compile Remove="Flux.Service\**\*.cs" />
+    <None Remove="Flux.Service\**\*" />
+    <Compile Remove="Flux.Service.Installer\**\*.cs" />
+    <None Remove="Flux.Service.Installer\**\*" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,6 +12,7 @@ public static class AppServices
     public static TrayService Tray { get; } = new();
     public static AutoStartService AutoStart { get; } = new();
     public static DeepLinkService DeepLink { get; } = new();
+    public static PrivilegeBroker Privilege { get; } = new();
 
     public static bool Initialized { get; private set; }
 

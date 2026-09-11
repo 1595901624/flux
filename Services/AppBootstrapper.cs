@@ -24,12 +24,14 @@ public static class AppBootstrapper
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
             AppServices.SysProxy.ClearStaleProxy();
 
-            // 已保存的 TUN 状态不能在非管理员进程中悄悄继续生效。
-            if (AppServices.Config.Verge.EnableTunMode && !TrayService.IsElevated())
+            // 已保存的 TUN 状态只在有能力特权运行内核时生效：
+            // 管理员进程或 Flux 服务可用（普通用户经服务模式 TUN），否则安全关闭避免断网。
+            if (AppServices.Config.Verge.EnableTunMode && !TrayService.IsElevated()
+                && !AppServices.Privilege.IsServiceReady())
             {
                 AppServices.Config.Verge.EnableTunMode = false;
                 AppServices.Config.SaveVerge();
-                LogService.App("当前进程没有管理员权限，已安全关闭 TUN 模式", "warn");
+                LogService.App("当前进程没有管理员权限且服务不可用，已安全关闭 TUN 模式", "warn");
             }
 
             // 深链 / 二次实例转发参数

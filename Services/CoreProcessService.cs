@@ -3,20 +3,27 @@ using System.Runtime.InteropServices;
 
 namespace Flux.Services;
 
-public enum RunningMode { NotRunning, Sidecar }
+public enum RunningMode { NotRunning, Sidecar, Service }
 
 /// <summary>
-/// mihomo 内核进程管理（对应参考项目 CoreManager 的 sidecar 模式）：
+/// mihomo 内核进程管理（对齐参考项目 CoreManager）：
+/// - Sidecar 模式：应用直接管理子进程，Job Object 保证主进程退出时内核被一并终止
+/// - Service 模式：TUN 启用时优先经 Flux.Service 以特权方式启动，失败自动回退 sidecar
 /// - 启动前用 `mihomo -t` 校验配置
-/// - Windows Job Object 保证主进程退出时内核被一并终止
-/// - stdout/stderr 汇入日志
 /// </summary>
 public class CoreProcessService : IDisposable
 {
     public RunningMode Mode { get; private set; } = RunningMode.NotRunning;
-    public bool IsRunning => Mode == RunningMode.Sidecar && _process is { HasExited: false };
+    public bool IsRunning =>
+        Mode switch
+        {
+            RunningMode.Sidecar => _process is { HasExited: false },
+            RunningMode.Service => _serviceCoreRunning,
+            _ => false,
+        };
 
     private Process? _process;
+    private bool _serviceCoreRunning;
     private IntPtr _jobHandle = IntPtr.Zero;
     private readonly SemaphoreSlim _lifecycleLock = new(1, 1);
     private readonly SemaphoreSlim _applyLock = new(1, 1);
@@ -44,6 +51,24 @@ public class CoreProcessService : IDisposable
 
             try
             {
+                // TUN 启用时优先使用服务模式（普通用户无需管理员即可 TUN）
+                if (Config.Verge.EnableTunMode && AppServices.Privilege?.IsServiceReady() == true)
+                {
+                    var result = await AppServices.Privilege.StartCoreViaServiceAsync(
+                        Paths.RuntimeConfigFile, Paths.CoreExePath, Paths.AppDataDir);
+                    if (result.Success)
+                    {
+                        Mode = RunningMode.Service;
+                        _serviceCoreRunning = true;
+                        await WaitForControllerAsync(15000, checkSidecarProcess: false);
+                        await RestoreProfileSelectionsAsync();
+                        LogService.App("mihomo 内核已由服务以特权模式启动");
+                        CoreStarted?.Invoke();
+                        return;
+                    }
+                    LogService.App("服务模式启动失败，回退应用内模式: " + result.Error?.Message, "warn");
+                }
+
                 StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
                 await WaitForControllerAsync(15000);
                 await RestoreProfileSelectionsAsync();
@@ -115,7 +140,14 @@ public class CoreProcessService : IDisposable
     {
         try
         {
-            if (_process is { HasExited: false })
+            if (Mode == RunningMode.Service && _serviceCoreRunning)
+            {
+                var result = await AppServices.Privilege?.StopCoreViaServiceAsync()!;
+                if (!result.Success)
+                    LogService.App("服务停止内核失败: " + result.Error?.Message, "warn");
+                _serviceCoreRunning = false;
+            }
+            else if (_process is { HasExited: false })
             {
                 _process.Kill(entireProcessTree: true);
                 await _process.WaitForExitAsync(new CancellationTokenSource(5000).Token);
@@ -127,6 +159,7 @@ public class CoreProcessService : IDisposable
             ReleaseJobObject();
             _process?.Dispose();
             _process = null;
+            _serviceCoreRunning = false;
             Mode = RunningMode.NotRunning;
             CoreStopped?.Invoke();
         }
@@ -236,12 +269,12 @@ public class CoreProcessService : IDisposable
 
     // ---------- 等待 External Controller 就绪 ----------
 
-    private async Task WaitForControllerAsync(int timeoutMs)
+    private async Task WaitForControllerAsync(int timeoutMs, bool checkSidecarProcess = true)
     {
         var deadline = Environment.TickCount64 + timeoutMs;
         while (Environment.TickCount64 < deadline)
         {
-            if (_process is { HasExited: true })
+            if (checkSidecarProcess && _process is { HasExited: true })
                 throw new InvalidOperationException("mihomo 进程异常退出，请查看日志");
             try
             {
