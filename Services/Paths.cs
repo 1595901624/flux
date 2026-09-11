@@ -11,6 +11,8 @@ public static class Paths
     public static string CoreDir { get; private set; } = "";
     public static string LogsDir { get; private set; } = "";
     public static string ProfilesDir { get; private set; } = "";
+    /// <summary>配置迁移与增强文件备份目录。</summary>
+    public static string DataBackupDir { get; private set; } = "";
 
     public static string ExeDir { get; private set; } = "";
     /// <summary>随应用分发的内核路径（安装目录内，MSIX 下只读）。</summary>
@@ -50,6 +52,7 @@ public static class Paths
 
         LogsDir = Path.Combine(AppDataDir, "logs");
         ProfilesDir = Path.Combine(AppDataDir, "profiles");
+        DataBackupDir = Path.Combine(AppDataDir, "backup");
 
         Directory.CreateDirectory(AppDataDir);
         Directory.CreateDirectory(LogsDir);

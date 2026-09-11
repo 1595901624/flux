@@ -8,6 +8,10 @@ namespace Flux.Models;
 /// </summary>
 public class VergeConfig
 {
+    /// <summary>配置 schema 版本；升级时由 ConfigService 执行幂等迁移。</summary>
+    [YamlMember(Alias = "schema-version")]
+    public int SchemaVersion { get; set; } = 1;
+
     [YamlMember(Alias = "language")]
     public string Language { get; set; } = "zh-CN";
 

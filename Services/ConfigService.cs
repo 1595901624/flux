@@ -1,3 +1,5 @@
+using Flux.Core.Config;
+using Flux.Core.Contracts;
 using Flux.Models;
 using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
@@ -6,16 +8,11 @@ namespace Flux.Services;
 
 /// <summary>
 /// 配置管理：config.yaml（基础 Clash 配置）、verge.yaml（应用设置）、profiles.yaml（订阅列表）
-/// 以及运行时配置生成（对应参考项目的 enhance 链：订阅 YAML → 覆盖基础配置 → TUN 补丁 → 控制面字段保护）。
+/// 以及运行时配置生成（委托 Flux.Core 的 RuntimeConfigBuilder 流水线）。
 /// </summary>
 public class ConfigService
 {
-    private static readonly string[] ControlPlaneKeys =
-    [
-        "external-controller", "external-controller-pipe", "secret",
-        "mixed-port", "socks-port", "port", "redir-port", "tproxy-port",
-        "mode", "allow-lan", "log-level", "ipv6", "unified-delay"
-    ];
+    private readonly RuntimeConfigBuilder _runtimeBuilder = new();
 
     public VergeConfig Verge { get; private set; } = new();
     public ProfilesConfig Profiles { get; private set; } = new();
@@ -42,11 +39,33 @@ public class ConfigService
             if (File.Exists(Paths.VergeConfigFile))
             {
                 Verge = VergeConfig.Deserialize(File.ReadAllText(Paths.VergeConfigFile));
+                MigrateVerge();
                 return;
             }
         }
         catch (Exception ex) { LogService.App("verge.yaml 加载失败: " + ex.Message, "error"); }
         Verge = new VergeConfig();
+        SaveVerge();
+    }
+
+    /// <summary>幂等迁移：升级 schema 版本前先备份旧文件。</summary>
+    private void MigrateVerge()
+    {
+        if (Verge.SchemaVersion >= 1) return;
+        try
+        {
+            Directory.CreateDirectory(Paths.DataBackupDir);
+            var backup = Path.Combine(Paths.DataBackupDir,
+                $"{DateTime.Now:yyyyMMdd-HHmmss}-v{Verge.SchemaVersion}-verge.yaml");
+            if (File.Exists(Paths.VergeConfigFile))
+                File.Copy(Paths.VergeConfigFile, backup, overwrite: true);
+            LogService.App($"verge.yaml 已迁移至 schema v1，备份: {backup}", "info");
+        }
+        catch (Exception ex)
+        {
+            LogService.App("verge.yaml 迁移备份失败: " + ex.Message, "warn");
+        }
+        Verge.SchemaVersion = 1;
         SaveVerge();
     }
 
@@ -272,65 +291,34 @@ public class ConfigService
     // ---------- 运行时配置生成 ----------
 
     /// <summary>
-    /// 生成运行时配置：当前订阅 YAML 为底 → 基础配置覆盖 → TUN 补丁 → 控制面字段恢复（不被订阅覆盖）。
+    /// 生成运行时配置（含增强日志）：委托 Flux.Core 流水线 ——
+    /// 订阅 → 内置兼容增强 → Merge/Script → Seq → DNS/TUN → 控制面字段强制恢复。
+    /// 失败时抛出 InvalidOperationException，由调用方决定保留最后一个有效配置。
     /// </summary>
+    public YamlMappingNode GenerateRuntimeNode(out IReadOnlyList<ChainLogEntry> chainLogs)
+    {
+        var input = new RuntimeConfigInput
+        {
+            Profile = GetCurrentProfileNode(),
+            ClashBase = ClashBase,
+            EnableTun = Verge.EnableTunMode,
+            EnableBuiltinEnhance = true,
+        };
+        var result = _runtimeBuilder.Build(input);
+        if (!result.Success)
+        {
+            chainLogs = [];
+            throw new InvalidOperationException(result.Error?.ToString() ?? "运行时配置合成失败");
+        }
+        chainLogs = result.Value!.ChainLogs;
+        return result.Value!.Config;
+    }
+
+    /// <summary>兼容入口：不含增强日志的运行时配置生成。</summary>
     public YamlMappingNode GenerateRuntimeNode()
     {
-        YamlMappingNode runtime = GetCurrentProfileNode() ?? new YamlMappingNode();
-        YamlHelper.DeepOverlay(runtime, ClashBase);
-
-        var snapshot = CaptureControlKeys();
-        ApplyTunPatch(runtime, Verge.EnableTunMode);
-        RestoreControlKeys(runtime, snapshot);
-
-        return runtime;
-    }
-
-    private Dictionary<string, YamlNode> CaptureControlKeys()
-    {
-        var dict = new Dictionary<string, YamlNode>();
-        foreach (var key in ControlPlaneKeys)
-        {
-            if (ClashBase.Children.TryGetValue(new YamlScalarNode(key), out var value))
-                dict[key] = value;
-        }
-        return dict;
-    }
-
-    private void RestoreControlKeys(YamlMappingNode runtime, Dictionary<string, YamlNode> snapshot)
-    {
-        foreach (var (key, value) in snapshot)
-        {
-            runtime.Children[new YamlScalarNode(key)] = value;
-        }
-    }
-
-    private void ApplyTunPatch(YamlMappingNode runtime, bool enable)
-    {
-        // tun 键已在基础配置覆盖时存在
-        if (!runtime.Children.TryGetValue(new YamlScalarNode("tun"), out var tunNode) ||
-            tunNode is not YamlMappingNode tun)
-        {
-            tun = new YamlMappingNode();
-            runtime.Children[new YamlScalarNode("tun")] = tun;
-        }
-        tun.Children[new YamlScalarNode("enable")] = new YamlScalarNode(enable ? "true" : "false");
-
-        if (enable)
-        {
-            // TUN 需要 DNS（fake-ip），缺失时补默认值
-            if (!runtime.Children.TryGetValue(new YamlScalarNode("dns"), out var dnsNode) ||
-                dnsNode is not YamlMappingNode dns)
-            {
-                dns = new YamlMappingNode();
-                runtime.Children[new YamlScalarNode("dns")] = dns;
-            }
-            dns.Children[new YamlScalarNode("enable")] = new YamlScalarNode("true");
-            if (!dns.Children.ContainsKey(new YamlScalarNode("enhanced-mode")))
-                dns.Children[new YamlScalarNode("enhanced-mode")] = new YamlScalarNode("fake-ip");
-            if (!dns.Children.ContainsKey(new YamlScalarNode("fake-ip-range")))
-                dns.Children[new YamlScalarNode("fake-ip-range")] = new YamlScalarNode("198.18.0.1/16");
-        }
+        var node = GenerateRuntimeNode(out _);
+        return node;
     }
 
     public void WriteRuntimeFile(string path)

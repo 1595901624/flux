@@ -42,8 +42,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="Flux.Core\Flux.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="tests\**\*.cs" />
     <None Remove="tests\**\*" />
+    <!-- Flux.Core 是独立项目，禁止被主项目的默认 glob 重复编译 -->
+    <Compile Remove="Flux.Core\**\*.cs" />
+    <None Remove="Flux.Core\**\*" />
   </ItemGroup>
 
   <ItemGroup>
