@@ -33,28 +33,28 @@
             SelectionChanged="NavView_SelectionChanged">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="home" Content="首页">
+                <NavigationViewItem x:Uid="Nav_Home" Tag="home" Content="首页">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE80F;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="proxies" Content="代理">
+                <NavigationViewItem x:Uid="Nav_Proxies" Tag="proxies" Content="代理">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE8CB;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="profiles" Content="订阅">
+                <NavigationViewItem x:Uid="Nav_Profiles" Tag="profiles" Content="订阅">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE8F1;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="connections" Content="连接">
+                <NavigationViewItem x:Uid="Nav_Connections" Tag="connections" Content="连接">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE71B;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="rules" Content="规则">
+                <NavigationViewItem x:Uid="Nav_Rules" Tag="rules" Content="规则">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE71E;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="logs" Content="日志">
+                <NavigationViewItem x:Uid="Nav_Logs" Tag="logs" Content="日志">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE9D9;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="unlock" Content="解锁测试">
+                <NavigationViewItem x:Uid="Nav_Unlock" Tag="unlock" Content="解锁测试">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE7F4;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="settings" Content="设置">
+                <NavigationViewItem x:Uid="Nav_Settings" Tag="settings" Content="设置">
                     <NavigationViewItem.Icon><FontIcon Glyph="&#xE713;" /></NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>

@@ -65,6 +65,12 @@ public sealed partial class SettingsPage : Page
         HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
         HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
         LightweightSwitch.IsOn = verge.EnableLightweightMode;
+        _loading = true;
+        var savedLang = verge.Language is null or "" or "system" ? "system" : verge.Language;
+        foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
+            if ((string)item.Tag == savedLang) { LanguageBox.SelectedItem = item; break; }
+        if (LanguageBox.SelectedItem is null) LanguageBox.SelectedIndex = 0;
+        _loading = false;
         LightweightMinutesBox.Text = verge.AutoLightweightMinutes.ToString();
 
         // TUN / DNS / 外部控制器 初始值（来自基础配置）
@@ -352,6 +358,34 @@ public sealed partial class SettingsPage : Page
         AppServices.Config.Verge.Hotkeys = hotkeys;
         AppServices.Config.SaveVerge();
         await ShowInfoAsync("热键已保存", "全局热键已注册生效。");
+    }
+
+    private async void Language_Changed(object sender, SelectionChangedEventArgs e)
+    {
+        if (_loading) return;
+        if (LanguageBox.SelectedItem is not ComboBoxItem { Tag: string lang }) return;
+        var verge = AppServices.Config.Verge;
+        if (!SaveVerge(v => v.Language = lang)) return;
+        try
+        {
+            Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
+                lang == "system" ? "" : lang;
+        }
+        catch { }
+        var dialog = new ContentDialog
+        {
+            XamlRoot = XamlRoot,
+            Title = "语言已更改",
+            Content = "请重启应用以完整应用新语言设置。",
+            PrimaryButtonText = "立即重启",
+            CloseButtonText = "稍后",
+            DefaultButton = ContentDialogButton.Primary,
+        };
+        if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+        {
+            AppServices.ShutdownAsync().Wait(3000);
+            Microsoft.Windows.AppLifecycle.AppInstance.Restart("");
+        }
     }
 
     private void Lightweight_Toggled(object sender, RoutedEventArgs e)

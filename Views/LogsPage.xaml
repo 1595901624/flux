@@ -25,34 +25,34 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="日志" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
+            <TextBlock x:Uid="Logs_Title" Text="日志" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <ComboBox x:Name="LevelBox" Grid.Column="1" VerticalAlignment="Center" Width="120"
                       SelectionChanged="LevelBox_SelectionChanged" SelectedIndex="1">
-                <ComboBoxItem Tag="all" Content="全部级别" />
-                <ComboBoxItem Tag="info" Content="Info 及以上" />
-                <ComboBoxItem Tag="warning" Content="Warning 及以上" />
-                <ComboBoxItem Tag="error" Content="Error" />
-                <ComboBoxItem Tag="debug" Content="Debug" />
+                <ComboBoxItem x:Uid="Logs_LevelAll" Tag="all" Content="全部级别" />
+                <ComboBoxItem x:Uid="Logs_LevelInfo" Tag="info" Content="Info 及以上" />
+                <ComboBoxItem x:Uid="Logs_LevelWarning" Tag="warning" Content="Warning 及以上" />
+                <ComboBoxItem x:Uid="Logs_LevelError" Tag="error" Content="Error" />
+                <ComboBoxItem x:Uid="Logs_LevelDebug" Tag="debug" Content="Debug" />
             </ComboBox>
-            <TextBox x:Name="SearchBox" Grid.Column="2" Width="240" VerticalAlignment="Center"
+            <TextBox x:Uid="Logs_SearchBox" x:Name="SearchBox" Grid.Column="2" Width="240" VerticalAlignment="Center"
                      PlaceholderText="搜索日志内容" TextChanged="SearchBox_TextChanged" />
             <Button x:Name="PauseButton" Grid.Column="3" VerticalAlignment="Center" Click="Pause_Click">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE769;" FontSize="14" />
-                    <TextBlock Text="暂停" />
+                    <TextBlock x:Uid="Logs_Pause" Text="暂停" />
                 </StackPanel>
             </Button>
             <Button Grid.Column="4" VerticalAlignment="Center" Click="Clear_Click" Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE74D;" FontSize="14" />
-                    <TextBlock Text="清空" />
+                    <TextBlock x:Uid="Logs_Clear" Text="清空" />
                 </StackPanel>
             </Button>
             <ToggleButton x:Name="NewestFirstToggle" Grid.Column="5" VerticalAlignment="Center"
                           Checked="NewestFirst_Changed" Unchecked="NewestFirst_Changed">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8D5;" FontSize="14" />
-                    <TextBlock Text="倒序" />
+                    <TextBlock x:Uid="Logs_NewestFirst" Text="倒序" />
                 </StackPanel>
             </ToggleButton>
             <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" Grid.Column="6" FontSize="12" Opacity="0.6"
@@ -61,7 +61,7 @@
 
         <StackPanel Grid.Row="1" x:Name="EmptyPanel" Visibility="Visible" Spacing="6" HorizontalAlignment="Center" Margin="0,40,0,0">
             <FontIcon Glyph="&#xE9D9;" FontSize="32" Opacity="0.35" />
-            <TextBlock Text="暂无日志" Opacity="0.55" HorizontalAlignment="Center" />
+            <TextBlock x:Uid="Logs_Empty" Text="暂无日志" Opacity="0.55" HorizontalAlignment="Center" />
         </StackPanel>
 
         <ListView

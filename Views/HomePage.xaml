@@ -29,11 +29,11 @@
 
             <!-- 标题行 -->
             <StackPanel Orientation="Horizontal" Spacing="12">
-                <TextBlock Text="首页" FontSize="26" FontWeight="SemiBold" />
+                <TextBlock x:Uid="Home_Title" Text="首页" FontSize="26" FontWeight="SemiBold" />
                 <Button Click="NavProxies_Click" Style="{StaticResource SubtleButtonStyle}" VerticalAlignment="Center">
                     <StackPanel Orientation="Horizontal" Spacing="6">
                         <FontIcon Glyph="&#xE8CB;" FontSize="14" />
-                        <TextBlock Text="进入代理设置" />
+                        <TextBlock x:Uid="Home_OpenProxySettings" Text="进入代理设置" />
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -52,13 +52,13 @@
                 <!-- 系统代理 / TUN -->
                 <Border Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="网络控制" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardNetwork" Text="网络控制" Style="{StaticResource CardTitleStyle}" />
                         <ToggleSwitch Header="系统代理" IsOn="{x:Bind Vm.SystemProxyOn, Mode=TwoWay}"
                                       Toggled="SysProxy_Toggled" />
                         <ToggleSwitch Header="TUN 模式" IsOn="{x:Bind Vm.TunOn, Mode=TwoWay}"
                                       Toggled="Tun_Toggled"
                                       IsEnabled="{x:Bind Vm.TunAvailable, Mode=OneWay}" />
-                        <TextBlock FontSize="11" Opacity="0.55"
+                        <TextBlock x:Uid="Home_TunAdminHint" FontSize="11" Opacity="0.55"
                                    Visibility="{x:Bind Vm.AdminHintVisibility, Mode=OneWay}"
                                    Text="TUN 需要管理员权限运行" />
                     </StackPanel>
@@ -68,7 +68,7 @@
                 <Border Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch"
                         Tapped="NavProfiles_Tapped">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="当前订阅" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardProfile" Text="当前订阅" Style="{StaticResource CardTitleStyle}" />
                         <TextBlock Text="{x:Bind Vm.ProfileName, Mode=OneWay}" FontSize="16" FontWeight="SemiBold"
                                    TextTrimming="CharacterEllipsis" />
                         <TextBlock Text="{x:Bind Vm.ProfileUsage, Mode=OneWay}" FontSize="12" Opacity="0.65" />
@@ -81,7 +81,7 @@
                 <!-- 当前节点 -->
                 <Border Grid.Row="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="当前节点" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardNodes" Text="当前节点" Style="{StaticResource CardTitleStyle}" />
                         <ItemsControl ItemsSource="{x:Bind Vm.CurrentNodes, Mode=OneWay}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate x:DataType="vm:CurrentNodeItem">
@@ -103,7 +103,7 @@
                 <!-- 流量统计 -->
                 <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
                     <StackPanel Spacing="6">
-                        <TextBlock Text="流量统计" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardTraffic" Text="流量统计" Style="{StaticResource CardTitleStyle}" />
                         <Grid ColumnSpacing="8">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -133,7 +133,7 @@
                 <!-- 运行模式 -->
                 <Border Grid.Row="2" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
                     <StackPanel Spacing="10">
-                        <TextBlock Text="运行模式" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardMode" Text="运行模式" Style="{StaticResource CardTitleStyle}" />
                         <RadioButtons x:Name="ModeRadios">
                             <RadioButton Content="规则" Tag="rule" />
                             <RadioButton Content="全局" Tag="global" />
@@ -145,7 +145,7 @@
                 <!-- 内核信息 -->
                 <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource CardStyle}" VerticalAlignment="Stretch">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="内核信息" Style="{StaticResource CardTitleStyle}" />
+                        <TextBlock x:Uid="Home_CardCore" Text="内核信息" Style="{StaticResource CardTitleStyle}" />
                         <TextBlock Text="{x:Bind Vm.CoreVersion, Mode=OneWay}" FontSize="13" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
                         <TextBlock FontSize="12" Opacity="0.7">
                             <Run Text="混合端口: " /><Run Text="{x:Bind Vm.MixedPort, Mode=OneWay}" />

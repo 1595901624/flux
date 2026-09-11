@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Home.Text" xml:space="preserve">
+    <value>Баш бит</value>
+  </data>
+  <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="Nav_Profiles.Text" xml:space="preserve">
+    <value>Профильләр</value>
+  </data>
+  <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>Тоташулар</value>
+  </data>
+  <data name="Nav_Rules.Text" xml:space="preserve">
+    <value>Кагыйдәләр</value>
+  </data>
+  <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>Журналлар</value>
+  </data>
+  <data name="Nav_Unlock.Text" xml:space="preserve">
+    <value>Ачуды тикшерү</value>
+  </data>
+  <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>Көйләүләр</value>
+  </data>
+  <data name="Common_OK.Text" xml:space="preserve">
+    <value>Тамам</value>
+  </data>
+  <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>Баш тарту</value>
+  </data>
+  <data name="Common_Save.Text" xml:space="preserve">
+    <value>Саклау</value>
+  </data>
+  <data name="Common_Delete.Text" xml:space="preserve">
+    <value>Бетерү</value>
+  </data>
+  <data name="Common_Close.Text" xml:space="preserve">
+    <value>Ябу</value>
+  </data>
+  <data name="Common_Apply.Text" xml:space="preserve">
+    <value>Куллану</value>
+  </data>
+  <data name="Common_Refresh.Text" xml:space="preserve">
+    <value>Яңарту</value>
+  </data>
+  <data name="Home_Title.Text" xml:space="preserve">
+    <value>Баш бит</value>
+  </data>
+  <data name="Home_OpenProxySettings.Text" xml:space="preserve">
+    <value>Прокси көйләүләре</value>
+  </data>
+  <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>Челтәр</value>
+  </data>
+  <data name="Home_TunAdminHint.Text" xml:space="preserve">
+    <value>TUN өчен администратор хоккы кирәк</value>
+  </data>
+  <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>Хәзерге профиль</value>
+  </data>
+  <data name="Home_CardNodes.Text" xml:space="preserve">
+    <value>Хәзерге төен</value>
+  </data>
+  <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>Трафик статистикасы</value>
+  </data>
+  <data name="Home_CardMode.Text" xml:space="preserve">
+    <value>Эш режимы</value>
+  </data>
+  <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>Йөзәк турында</value>
+  </data>
+  <data name="Proxies_Title.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>Исем/тип буенча фильтр</value>
+  </data>
+  <data name="Proxies_Empty.Text" xml:space="preserve">
+    <value>Прокси төркеме юк</value>
+  </data>
+  <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>Беренче профильне кертегез</value>
+  </data>
+  <data name="Profiles_Title.Text" xml:space="preserve">
+    <value>Профильләр</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>Абу URL (clash:// хуплана)</value>
+  </data>
+  <data name="Profiles_ImportLocal.Text" xml:space="preserve">
+    <value>Локаль файл</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>Яңа буш профиль</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Барысын яңарту</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>Глобаль яхшырту</value>
+  </data>
+  <data name="Profiles_Empty.Text" xml:space="preserve">
+    <value>Профиль юк</value>
+  </data>
+  <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>URL куйып кертегез яки җирле YAML сайлагыз</value>
+  </data>
+  <data name="Profiles_MenuSelect.Text" xml:space="preserve">
+    <value>Бу профильне куллану</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>Яңарту</value>
+  </data>
+  <data name="Profiles_MenuEdit.Text" xml:space="preserve">
+    <value>Мәгълүматны үзгәртү</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>Яхшыртуну үзгәртү</value>
+  </data>
+  <data name="Profiles_MenuUp.Text" xml:space="preserve">
+    <value>Өскә</value>
+  </data>
+  <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>Аска</value>
+  </data>
+  <data name="Profiles_MenuDelete.Text" xml:space="preserve">
+    <value>Бетерү</value>
+  </data>
+  <data name="Connections_Title.Text" xml:space="preserve">
+    <value>Тоташулар</value>
+  </data>
+  <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Хост/кагыйдә/процесс эзләү</value>
+  </data>
+  <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>Барысын да ябу</value>
+  </data>
+  <data name="Connections_Closed.Text" xml:space="preserve">
+    <value>Ябылган</value>
+  </data>
+  <data name="Connections_Host.Text" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="Connections_Network.Text" xml:space="preserve">
+    <value>Челтәр</value>
+  </data>
+  <data name="Connections_Download.Text" xml:space="preserve">
+    <value>Йөкләү</value>
+  </data>
+  <data name="Connections_Upload.Text" xml:space="preserve">
+    <value>Йөкләү</value>
+  </data>
+  <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
+  <data name="Connections_Chains.Text" xml:space="preserve">
+    <value>Чылбыр</value>
+  </data>
+  <data name="Connections_Process.Text" xml:space="preserve">
+    <value>Процесс</value>
+  </data>
+  <data name="Connections_Time.Text" xml:space="preserve">
+    <value>Вакыт</value>
+  </data>
+  <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>Тәртип буенча</value>
+  </data>
+  <data name="Connections_SortUpload.Text" xml:space="preserve">
+    <value>Йөкләү буенча</value>
+  </data>
+  <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>Йөкләү буенча</value>
+  </data>
+  <data name="Rules_Title.Text" xml:space="preserve">
+    <value>Кагыйдәләр</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Кагыйдә эзләү</value>
+  </data>
+  <data name="Rules_Providers.Text" xml:space="preserve">
+    <value>Кагыйдә тәэмин итүчеләр</value>
+  </data>
+  <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>Кагыйдә юк</value>
+  </data>
+  <data name="Logs_Title.Text" xml:space="preserve">
+    <value>Журналлар</value>
+  </data>
+  <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>Барлык дәрәҗә</value>
+  </data>
+  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+    <value>Info һәм югарырак</value>
+  </data>
+  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Кисәтү һәм югарырак</value>
+  </data>
+  <data name="Logs_LevelError.Text" xml:space="preserve">
+    <value>Хата</value>
+  </data>
+  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Дебуг</value>
+  </data>
+  <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Журналларда эзләү</value>
+  </data>
+  <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>Туктау</value>
+  </data>
+  <data name="Logs_Clear.Text" xml:space="preserve">
+    <value>Чистарту</value>
+  </data>
+  <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>Яңалары башта</value>
+  </data>
+  <data name="Logs_Empty.Text" xml:space="preserve">
+    <value>Журнал юк</value>
+  </data>
+  <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>Ачуды тикшерү</value>
+  </data>
+  <data name="Unlock_Subtitle.Text" xml:space="preserve">
+    <value>Агым/AI хезмәтләренең ачылыгын тикшерү</value>
+  </data>
+  <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>Барысын да эшләтү</value>
+  </data>
+  <data name="Unlock_Retest.Text" xml:space="preserve">
+    <value>Кабат тикшерү</value>
+  </data>
+</root>

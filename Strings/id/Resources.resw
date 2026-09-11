@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Home.Text" xml:space="preserve">
+    <value>Beranda</value>
+  </data>
+  <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="Nav_Profiles.Text" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>Koneksi</value>
+  </data>
+  <data name="Nav_Rules.Text" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Nav_Unlock.Text" xml:space="preserve">
+    <value>Uji Buka Kunci</value>
+  </data>
+  <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="Common_OK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Common_Save.Text" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Common_Delete.Text" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Common_Close.Text" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="Common_Apply.Text" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="Common_Refresh.Text" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="Home_Title.Text" xml:space="preserve">
+    <value>Beranda</value>
+  </data>
+  <data name="Home_OpenProxySettings.Text" xml:space="preserve">
+    <value>Pengaturan proxy</value>
+  </data>
+  <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>Jaringan</value>
+  </data>
+  <data name="Home_TunAdminHint.Text" xml:space="preserve">
+    <value>TUN membutuhkan hak administrator</value>
+  </data>
+  <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>Profil saat ini</value>
+  </data>
+  <data name="Home_CardNodes.Text" xml:space="preserve">
+    <value>Node saat ini</value>
+  </data>
+  <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>Statistik trafik</value>
+  </data>
+  <data name="Home_CardMode.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>Info core</value>
+  </data>
+  <data name="Proxies_Title.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>Filter nama/tipe</value>
+  </data>
+  <data name="Proxies_Empty.Text" xml:space="preserve">
+    <value>Tidak ada grup proxy</value>
+  </data>
+  <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>Impor profil dulu</value>
+  </data>
+  <data name="Profiles_Title.Text" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>URL langganan (mendukung clash://)</value>
+  </data>
+  <data name="Profiles_ImportLocal.Text" xml:space="preserve">
+    <value>File lokal</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>Profil kosong baru</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Perbarui semua</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>Peningkatan global</value>
+  </data>
+  <data name="Profiles_Empty.Text" xml:space="preserve">
+    <value>Tidak ada profil</value>
+  </data>
+  <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>Tempel URL lalu impor, atau pilih file YAML lokal</value>
+  </data>
+  <data name="Profiles_MenuSelect.Text" xml:space="preserve">
+    <value>Gunakan profil ini</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>Perbarui</value>
+  </data>
+  <data name="Profiles_MenuEdit.Text" xml:space="preserve">
+    <value>Edit info</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>Edit peningkatan</value>
+  </data>
+  <data name="Profiles_MenuUp.Text" xml:space="preserve">
+    <value>Naik</value>
+  </data>
+  <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>Turun</value>
+  </data>
+  <data name="Profiles_MenuDelete.Text" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Connections_Title.Text" xml:space="preserve">
+    <value>Koneksi</value>
+  </data>
+  <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Cari host/aturan/proses</value>
+  </data>
+  <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>Tutup semua</value>
+  </data>
+  <data name="Connections_Closed.Text" xml:space="preserve">
+    <value>Tertutup</value>
+  </data>
+  <data name="Connections_Host.Text" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="Connections_Network.Text" xml:space="preserve">
+    <value>Jaringan</value>
+  </data>
+  <data name="Connections_Download.Text" xml:space="preserve">
+    <value>Unduh</value>
+  </data>
+  <data name="Connections_Upload.Text" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Connections_Chains.Text" xml:space="preserve">
+    <value>Rantai</value>
+  </data>
+  <data name="Connections_Process.Text" xml:space="preserve">
+    <value>Proses</value>
+  </data>
+  <data name="Connections_Time.Text" xml:space="preserve">
+    <value>Waktu</value>
+  </data>
+  <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>Urutan default</value>
+  </data>
+  <data name="Connections_SortUpload.Text" xml:space="preserve">
+    <value>Berdasarkan unggah</value>
+  </data>
+  <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>Berdasarkan unduh</value>
+  </data>
+  <data name="Rules_Title.Text" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Cari aturan</value>
+  </data>
+  <data name="Rules_Providers.Text" xml:space="preserve">
+    <value>Penyedia aturan</value>
+  </data>
+  <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>Tidak ada aturan</value>
+  </data>
+  <data name="Logs_Title.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>Semua level</value>
+  </data>
+  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+    <value>Info ke atas</value>
+  </data>
+  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning ke atas</value>
+  </data>
+  <data name="Logs_LevelError.Text" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Cari log</value>
+  </data>
+  <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Logs_Clear.Text" xml:space="preserve">
+    <value>Bersihkan</value>
+  </data>
+  <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>Terbaru dulu</value>
+  </data>
+  <data name="Logs_Empty.Text" xml:space="preserve">
+    <value>Tidak ada log</value>
+  </data>
+  <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>Uji Buka Kunci</value>
+  </data>
+  <data name="Unlock_Subtitle.Text" xml:space="preserve">
+    <value>Periksa ketersediaan layanan streaming/AI via node saat ini</value>
+  </data>
+  <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>Jalankan semua</value>
+  </data>
+  <data name="Unlock_Retest.Text" xml:space="preserve">
+    <value>Uji ulang</value>
+  </data>
+</root>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Home.Text" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>البروكسي</value>
+  </data>
+  <data name="Nav_Profiles.Text" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
+  <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>الاتصالات</value>
+  </data>
+  <data name="Nav_Rules.Text" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
+  <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
+  <data name="Nav_Unlock.Text" xml:space="preserve">
+    <value>اختبار إلغاء القفل</value>
+  </data>
+  <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="Common_OK.Text" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Common_Save.Text" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Common_Delete.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Common_Close.Text" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Common_Apply.Text" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="Common_Refresh.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="Home_Title.Text" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Home_OpenProxySettings.Text" xml:space="preserve">
+    <value>إعدادات البروكسي</value>
+  </data>
+  <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="Home_TunAdminHint.Text" xml:space="preserve">
+    <value>يتطلب TUN صلاحيات المسؤول</value>
+  </data>
+  <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>الملف الحالي</value>
+  </data>
+  <data name="Home_CardNodes.Text" xml:space="preserve">
+    <value>العقدة الحالية</value>
+  </data>
+  <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>إحصاءات حركة البيانات</value>
+  </data>
+  <data name="Home_CardMode.Text" xml:space="preserve">
+    <value>وضع التشغيل</value>
+  </data>
+  <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>معلومات النواة</value>
+  </data>
+  <data name="Proxies_Title.Text" xml:space="preserve">
+    <value>البروكسي</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>تصفية بالاسم/النوع</value>
+  </data>
+  <data name="Proxies_Empty.Text" xml:space="preserve">
+    <value>لا مجموعات بروكسي</value>
+  </data>
+  <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>استورد ملفًا شخصيًا أولًا</value>
+  </data>
+  <data name="Profiles_Title.Text" xml:space="preserve">
+    <value>الملفات الشخصية</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>رابط الاشتراك (يدعم clash://)</value>
+  </data>
+  <data name="Profiles_ImportLocal.Text" xml:space="preserve">
+    <value>ملف محلي</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>ملف شخصي فارغ جديد</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>تحديث الكل</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>التحسين العام</value>
+  </data>
+  <data name="Profiles_Empty.Text" xml:space="preserve">
+    <value>لا ملفات شخصية</value>
+  </data>
+  <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>الصق رابط الاشتراك ثم استورد أو اختر ملف YAML محلي</value>
+  </data>
+  <data name="Profiles_MenuSelect.Text" xml:space="preserve">
+    <value>استخدم هذا الملف</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="Profiles_MenuEdit.Text" xml:space="preserve">
+    <value>تعديل المعلومات</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>تعديل التحسينات</value>
+  </data>
+  <data name="Profiles_MenuUp.Text" xml:space="preserve">
+    <value>نقل لأعلى</value>
+  </data>
+  <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>نقل لأسفل</value>
+  </data>
+  <data name="Profiles_MenuDelete.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Connections_Title.Text" xml:space="preserve">
+    <value>الاتصالات</value>
+  </data>
+  <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
+    <value>بحث عن المضيف/القاعدة/العملية</value>
+  </data>
+  <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>إغلاق الكل</value>
+  </data>
+  <data name="Connections_Closed.Text" xml:space="preserve">
+    <value>مغلق</value>
+  </data>
+  <data name="Connections_Host.Text" xml:space="preserve">
+    <value>المضيف</value>
+  </data>
+  <data name="Connections_Network.Text" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="Connections_Download.Text" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="Connections_Upload.Text" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>القاعدة</value>
+  </data>
+  <data name="Connections_Chains.Text" xml:space="preserve">
+    <value>السلسلة</value>
+  </data>
+  <data name="Connections_Process.Text" xml:space="preserve">
+    <value>العملية</value>
+  </data>
+  <data name="Connections_Time.Text" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>الترتيب الافتراضي</value>
+  </data>
+  <data name="Connections_SortUpload.Text" xml:space="preserve">
+    <value>حسب الرفع</value>
+  </data>
+  <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>حسب التنزيل</value>
+  </data>
+  <data name="Rules_Title.Text" xml:space="preserve">
+    <value>القواعد</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>بحث في القواعد</value>
+  </data>
+  <data name="Rules_Providers.Text" xml:space="preserve">
+    <value>مزودات القواعد</value>
+  </data>
+  <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>لا قواعد</value>
+  </data>
+  <data name="Logs_Title.Text" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
+  <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>جميع المستويات</value>
+  </data>
+  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+    <value>معلومات وأعلى</value>
+  </data>
+  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>تحذير وأعلى</value>
+  </data>
+  <data name="Logs_LevelError.Text" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>تصحيح</value>
+  </data>
+  <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
+    <value>بحث في السجلات</value>
+  </data>
+  <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>إيقاف مؤقت</value>
+  </data>
+  <data name="Logs_Clear.Text" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>الأحدث أولاً</value>
+  </data>
+  <data name="Logs_Empty.Text" xml:space="preserve">
+    <value>لا سجلات</value>
+  </data>
+  <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>اختبار إلغاء القفل</value>
+  </data>
+  <data name="Unlock_Subtitle.Text" xml:space="preserve">
+    <value>تحقق من توفر خدمات البث/الذكاء الاصطناعي عبر العقدة الحالية</value>
+  </data>
+  <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>تشغيل الكل</value>
+  </data>
+  <data name="Unlock_Retest.Text" xml:space="preserve">
+    <value>إعادة الاختبار</value>
+  </data>
+</root>

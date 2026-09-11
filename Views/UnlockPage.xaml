@@ -21,10 +21,10 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="解锁测试" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <TextBlock Grid.Column="1" Text="检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）"
+            <TextBlock x:Uid="Unlock_Title" Text="解锁测试" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
+            <TextBlock x:Uid="Unlock_Subtitle" Grid.Column="1" Text="检测当前节点对流媒体与 AI 服务的解锁状态（请求经内核代理）"
                        FontSize="12" Opacity="0.6" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
-            <Button Grid.Column="2" Style="{StaticResource AccentButtonStyle}" VerticalAlignment="Center"
+            <Button x:Uid="Unlock_RunAll" Grid.Column="2" Style="{StaticResource AccentButtonStyle}" VerticalAlignment="Center"
                     Click="RunAll_Click" x:Name="RunAllButton">
                 全部测试
             </Button>
@@ -52,7 +52,7 @@
                         <TextBlock Grid.Column="2" Text="{x:Bind Detail}" FontSize="11" Opacity="0.6"
                                    VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
                                    IsTextSelectionEnabled="True" />
-                        <Button Grid.Column="3" Content="重测" Style="{StaticResource SubtleButtonStyle}"
+                        <Button x:Uid="Unlock_Retest" Grid.Column="3" Content="重测" Style="{StaticResource SubtleButtonStyle}"
                                 FontSize="11" Click="Retest_Click" />
                     </Grid>
                 </DataTemplate>

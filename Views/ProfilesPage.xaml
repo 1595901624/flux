@@ -26,8 +26,8 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="订阅" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <TextBox
+            <TextBlock x:Uid="Profiles_Title" Text="订阅" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
+            <TextBox x:Uid="Profiles_UrlBox"
                 x:Name="UrlBox"
                 Grid.Column="1"
                 PlaceholderText="输入订阅链接（https://...），支持 clash:// 安装链接"
@@ -39,16 +39,16 @@
             <Button Grid.Column="3" VerticalAlignment="Center" Click="ImportLocal_Click">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8E5;" FontSize="14" />
-                    <TextBlock Text="本地文件" />
+                    <TextBlock x:Uid="Profiles_ImportLocal" Text="本地文件" />
                 </StackPanel>
             </Button>
-            <Button Grid.Column="4" VerticalAlignment="Center" Click="CreateEmpty_Click">
+            <Button x:Uid="Profiles_CreateEmpty" Grid.Column="4" VerticalAlignment="Center" Click="CreateEmpty_Click">
                 新建空配置
             </Button>
-            <Button Grid.Column="5" VerticalAlignment="Center" Click="UpdateAll_Click">
+            <Button x:Uid="Profiles_UpdateAll" Grid.Column="5" VerticalAlignment="Center" Click="UpdateAll_Click">
                 全部更新
             </Button>
-            <Button Grid.Column="6" VerticalAlignment="Center" Click="MenuGlobalEnhance_Click">
+            <Button x:Uid="Profiles_GlobalEnhance" Grid.Column="6" VerticalAlignment="Center" Click="MenuGlobalEnhance_Click">
                 全局增强
             </Button>
         </Grid>
@@ -65,8 +65,8 @@
         <!-- 空状态 -->
         <StackPanel Grid.Row="2" x:Name="EmptyPanel" Visibility="Collapsed" Spacing="8" HorizontalAlignment="Center" Margin="0,60,0,0">
             <FontIcon Glyph="&#xE8F1;" FontSize="36" Opacity="0.4" />
-            <TextBlock Text="暂无订阅" Opacity="0.6" HorizontalAlignment="Center" />
-            <TextBlock Text="粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件" Opacity="0.5" HorizontalAlignment="Center" />
+            <TextBlock x:Uid="Profiles_Empty" Text="暂无订阅" Opacity="0.6" HorizontalAlignment="Center" />
+            <TextBlock x:Uid="Profiles_EmptyHint" Text="粘贴订阅链接后点击「导入」，或选择本地 YAML 配置文件" Opacity="0.5" HorizontalAlignment="Center" />
         </StackPanel>
 
         <!-- 订阅卡片 -->
@@ -98,15 +98,15 @@
                         BorderThickness="1">
                         <Border.ContextFlyout>
                             <MenuFlyout>
-                                <MenuFlyoutItem Text="选择此订阅" Click="MenuSelect_Click" />
-                                <MenuFlyoutItem Text="更新" Click="MenuUpdate_Click" />
-                                <MenuFlyoutItem Text="编辑信息" Click="MenuEdit_Click" />
-                                <MenuFlyoutItem Text="编辑增强配置" Click="MenuEnhance_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuSelect" Text="选择此订阅" Click="MenuSelect_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuUpdate" Text="更新" Click="MenuUpdate_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuEdit" Text="编辑信息" Click="MenuEdit_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuEnhance" Text="编辑增强配置" Click="MenuEnhance_Click" />
                                 <MenuFlyoutSeparator />
-                                <MenuFlyoutItem Text="上移" Click="MenuUp_Click" />
-                                <MenuFlyoutItem Text="下移" Click="MenuDown_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuUp" Text="上移" Click="MenuUp_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuDown" Text="下移" Click="MenuDown_Click" />
                                 <MenuFlyoutSeparator />
-                                <MenuFlyoutItem Text="删除" Click="MenuDelete_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuDelete" Text="删除" Click="MenuDelete_Click" />
                             </MenuFlyout>
                         </Border.ContextFlyout>
                         <Grid RowSpacing="5">

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Home.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="Nav_Profiles.Text" xml:space="preserve">
+    <value>Подписки</value>
+  </data>
+  <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>Соединения</value>
+  </data>
+  <data name="Nav_Rules.Text" xml:space="preserve">
+    <value>Правила</value>
+  </data>
+  <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>Журналы</value>
+  </data>
+  <data name="Nav_Unlock.Text" xml:space="preserve">
+    <value>Тест разблокировки</value>
+  </data>
+  <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Common_OK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Common_Save.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Common_Delete.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Common_Close.Text" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Common_Apply.Text" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Common_Refresh.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Home_Title.Text" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Home_OpenProxySettings.Text" xml:space="preserve">
+    <value>Настройки прокси</value>
+  </data>
+  <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>Сеть</value>
+  </data>
+  <data name="Home_TunAdminHint.Text" xml:space="preserve">
+    <value>TUN требует прав администратора</value>
+  </data>
+  <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>Текущая подписка</value>
+  </data>
+  <data name="Home_CardNodes.Text" xml:space="preserve">
+    <value>Текущий узел</value>
+  </data>
+  <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>Трафик</value>
+  </data>
+  <data name="Home_CardMode.Text" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>О ядре</value>
+  </data>
+  <data name="Proxies_Title.Text" xml:space="preserve">
+    <value>Прокси</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>Фильтр по имени/типу</value>
+  </data>
+  <data name="Proxies_Empty.Text" xml:space="preserve">
+    <value>Нет групп прокси</value>
+  </data>
+  <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>Сначала импортируйте подписку</value>
+  </data>
+  <data name="Profiles_Title.Text" xml:space="preserve">
+    <value>Подписки</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>URL подписки (поддерживается clash://)</value>
+  </data>
+  <data name="Profiles_ImportLocal.Text" xml:space="preserve">
+    <value>Локальный файл</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>Новый пустой профиль</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Обновить все</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>Глобальные улучшения</value>
+  </data>
+  <data name="Profiles_Empty.Text" xml:space="preserve">
+    <value>Нет подписок</value>
+  </data>
+  <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>Вставьте URL и импортируйте или выберите локальный YAML</value>
+  </data>
+  <data name="Profiles_MenuSelect.Text" xml:space="preserve">
+    <value>Использовать эту подписку</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Profiles_MenuEdit.Text" xml:space="preserve">
+    <value>Изменить info</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>Изменить улучшения</value>
+  </data>
+  <data name="Profiles_MenuUp.Text" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="Profiles_MenuDelete.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Connections_Title.Text" xml:space="preserve">
+    <value>Соединения</value>
+  </data>
+  <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Поиск: хост/правило/процесс</value>
+  </data>
+  <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>Закрыть все</value>
+  </data>
+  <data name="Connections_Closed.Text" xml:space="preserve">
+    <value>Закрытые</value>
+  </data>
+  <data name="Connections_Host.Text" xml:space="preserve">
+    <value>Хост</value>
+  </data>
+  <data name="Connections_Network.Text" xml:space="preserve">
+    <value>Сеть</value>
+  </data>
+  <data name="Connections_Download.Text" xml:space="preserve">
+    <value>Загрузка</value>
+  </data>
+  <data name="Connections_Upload.Text" xml:space="preserve">
+    <value>Отдача</value>
+  </data>
+  <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>Правило</value>
+  </data>
+  <data name="Connections_Chains.Text" xml:space="preserve">
+    <value>Цепочка</value>
+  </data>
+  <data name="Connections_Process.Text" xml:space="preserve">
+    <value>Процесс</value>
+  </data>
+  <data name="Connections_Time.Text" xml:space="preserve">
+    <value>Время</value>
+  </data>
+  <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="Connections_SortUpload.Text" xml:space="preserve">
+    <value>По отдаче</value>
+  </data>
+  <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>По загрузке</value>
+  </data>
+  <data name="Rules_Title.Text" xml:space="preserve">
+    <value>Правила</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Поиск правил</value>
+  </data>
+  <data name="Rules_Providers.Text" xml:space="preserve">
+    <value>Поставщики правил</value>
+  </data>
+  <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>Нет правил</value>
+  </data>
+  <data name="Logs_Title.Text" xml:space="preserve">
+    <value>Журналы</value>
+  </data>
+  <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>Все уровни</value>
+  </data>
+  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+    <value>Info и выше</value>
+  </data>
+  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning и выше</value>
+  </data>
+  <data name="Logs_LevelError.Text" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Поиск по журналам</value>
+  </data>
+  <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Logs_Clear.Text" xml:space="preserve">
+    <value>Очистить</value>
+  </data>
+  <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>Сначала новые</value>
+  </data>
+  <data name="Logs_Empty.Text" xml:space="preserve">
+    <value>Нет журналов</value>
+  </data>
+  <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>Тест разблокировки</value>
+  </data>
+  <data name="Unlock_Subtitle.Text" xml:space="preserve">
+    <value>Проверка доступности стриминговых/AI-сервисов через текущий узел</value>
+  </data>
+  <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>Запустить все</value>
+  </data>
+  <data name="Unlock_Retest.Text" xml:space="preserve">
+    <value>Повторить</value>
+  </data>
+</root>

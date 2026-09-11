@@ -20,6 +20,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <!-- i18n：默认（回退）语言为英文；各语言 resw 经 MRT Core 打包进 resources.pri -->
+    <DefaultLanguage>en-US</DefaultLanguage>
     <WindowsPackageType>None</WindowsPackageType>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <SelfContained>true</SelfContained>
@@ -45,6 +47,10 @@
 
   <ItemGroup>
     <ProjectReference Include="Flux.Core\Flux.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PRIResource Include="Strings\**\*.resw" />
   </ItemGroup>
 
   <ItemGroup>

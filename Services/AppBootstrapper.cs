@@ -24,6 +24,14 @@ public static class AppBootstrapper
         {
             AppServices.Initialize();
 
+            // 语言覆盖必须在窗口创建前生效（x:Uid 解析依赖）
+            var lang = AppServices.Config.Verge.Language;
+            if (!string.IsNullOrEmpty(lang) && lang != "system")
+            {
+                try { Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = lang; }
+                catch (Exception ex) { LogService.App("语言设置失败: " + ex.Message, "warn"); }
+            }
+
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
             AppServices.SysProxy.ClearStaleProxy();
 

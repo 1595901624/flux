@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Nav_Home.Text" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="Nav_Proxies.Text" xml:space="preserve">
+    <value>Proxyler</value>
+  </data>
+  <data name="Nav_Profiles.Text" xml:space="preserve">
+    <value>Profiller</value>
+  </data>
+  <data name="Nav_Connections.Text" xml:space="preserve">
+    <value>Bağlantılar</value>
+  </data>
+  <data name="Nav_Rules.Text" xml:space="preserve">
+    <value>Kurallar</value>
+  </data>
+  <data name="Nav_Logs.Text" xml:space="preserve">
+    <value>Kayıtlar</value>
+  </data>
+  <data name="Nav_Unlock.Text" xml:space="preserve">
+    <value>Kilit Açma Testi</value>
+  </data>
+  <data name="Nav_Settings.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Common_OK.Text" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="Common_Cancel.Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Common_Save.Text" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="Common_Delete.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Common_Close.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="Common_Apply.Text" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="Common_Refresh.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="Home_Title.Text" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="Home_OpenProxySettings.Text" xml:space="preserve">
+    <value>Proxy ayarları</value>
+  </data>
+  <data name="Home_CardNetwork.Text" xml:space="preserve">
+    <value>Ağ</value>
+  </data>
+  <data name="Home_TunAdminHint.Text" xml:space="preserve">
+    <value>TUN yönetici hakkı gerektirir</value>
+  </data>
+  <data name="Home_CardProfile.Text" xml:space="preserve">
+    <value>Mevcut profil</value>
+  </data>
+  <data name="Home_CardNodes.Text" xml:space="preserve">
+    <value>Mevcut düğüm</value>
+  </data>
+  <data name="Home_CardTraffic.Text" xml:space="preserve">
+    <value>Trafik</value>
+  </data>
+  <data name="Home_CardMode.Text" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="Home_CardCore.Text" xml:space="preserve">
+    <value>Çekirdek bilgisi</value>
+  </data>
+  <data name="Proxies_Title.Text" xml:space="preserve">
+    <value>Proxyler</value>
+  </data>
+  <data name="Proxies_FilterPlaceholder.Text" xml:space="preserve">
+    <value>Ada/türe göre filtrele</value>
+  </data>
+  <data name="Proxies_Empty.Text" xml:space="preserve">
+    <value>Proxy grubu yok</value>
+  </data>
+  <data name="Proxies_EmptyHint.Text" xml:space="preserve">
+    <value>Önce profil içe aktarın</value>
+  </data>
+  <data name="Profiles_Title.Text" xml:space="preserve">
+    <value>Profiller</value>
+  </data>
+  <data name="Profiles_UrlPlaceholder.Text" xml:space="preserve">
+    <value>Abonelik URL'si (clash:// desteklenir)</value>
+  </data>
+  <data name="Profiles_ImportLocal.Text" xml:space="preserve">
+    <value>Yerel dosya</value>
+  </data>
+  <data name="Profiles_CreateEmpty.Text" xml:space="preserve">
+    <value>Yeni boş profil</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Tümünü güncelle</value>
+  </data>
+  <data name="Profiles_GlobalEnhance.Text" xml:space="preserve">
+    <value>Küresel geliştirme</value>
+  </data>
+  <data name="Profiles_Empty.Text" xml:space="preserve">
+    <value>Profil yok</value>
+  </data>
+  <data name="Profiles_EmptyHint.Text" xml:space="preserve">
+    <value>Abonelik URL'sini yapıştır ve içe aktar veya yerel YAML seç</value>
+  </data>
+  <data name="Profiles_MenuSelect.Text" xml:space="preserve">
+    <value>Bu profili kullan</value>
+  </data>
+  <data name="Profiles_MenuUpdate.Text" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="Profiles_MenuEdit.Text" xml:space="preserve">
+    <value>Bilgiyi düzenle</value>
+  </data>
+  <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
+    <value>Geliştirmeyi düzenle</value>
+  </data>
+  <data name="Profiles_MenuUp.Text" xml:space="preserve">
+    <value>Yukarı taşı</value>
+  </data>
+  <data name="Profiles_MenuDown.Text" xml:space="preserve">
+    <value>Aşağı taşı</value>
+  </data>
+  <data name="Profiles_MenuDelete.Text" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Connections_Title.Text" xml:space="preserve">
+    <value>Bağlantılar</value>
+  </data>
+  <data name="Connections_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Ana makine/kural/süreç ara</value>
+  </data>
+  <data name="Connections_CloseAll.Text" xml:space="preserve">
+    <value>Tümünü kapat</value>
+  </data>
+  <data name="Connections_Closed.Text" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Connections_Host.Text" xml:space="preserve">
+    <value>Ana makine</value>
+  </data>
+  <data name="Connections_Network.Text" xml:space="preserve">
+    <value>Ağ</value>
+  </data>
+  <data name="Connections_Download.Text" xml:space="preserve">
+    <value>İndirme</value>
+  </data>
+  <data name="Connections_Upload.Text" xml:space="preserve">
+    <value>Yükleme</value>
+  </data>
+  <data name="Connections_Rule.Text" xml:space="preserve">
+    <value>Kural</value>
+  </data>
+  <data name="Connections_Chains.Text" xml:space="preserve">
+    <value>Zincir</value>
+  </data>
+  <data name="Connections_Process.Text" xml:space="preserve">
+    <value>Süreç</value>
+  </data>
+  <data name="Connections_Time.Text" xml:space="preserve">
+    <value>Zaman</value>
+  </data>
+  <data name="Connections_SortDefault.Text" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="Connections_SortUpload.Text" xml:space="preserve">
+    <value>Yüklemeye göre</value>
+  </data>
+  <data name="Connections_SortDownload.Text" xml:space="preserve">
+    <value>İndirmeye göre</value>
+  </data>
+  <data name="Rules_Title.Text" xml:space="preserve">
+    <value>Kurallar</value>
+  </data>
+  <data name="Rules_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Kural ara</value>
+  </data>
+  <data name="Rules_Providers.Text" xml:space="preserve">
+    <value>Kural sağlayıcılar</value>
+  </data>
+  <data name="Rules_Empty.Text" xml:space="preserve">
+    <value>Kural yok</value>
+  </data>
+  <data name="Logs_Title.Text" xml:space="preserve">
+    <value>Kayıtlar</value>
+  </data>
+  <data name="Logs_LevelAll.Text" xml:space="preserve">
+    <value>Tüm düzeyler</value>
+  </data>
+  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+    <value>Info ve üzeri</value>
+  </data>
+  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+    <value>Warning ve üzeri</value>
+  </data>
+  <data name="Logs_LevelError.Text" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
+  </data>
+  <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
+    <value>Kayıtlarda ara</value>
+  </data>
+  <data name="Logs_Pause.Text" xml:space="preserve">
+    <value>Duraklat</value>
+  </data>
+  <data name="Logs_Clear.Text" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="Logs_NewestFirst.Text" xml:space="preserve">
+    <value>En yeni önce</value>
+  </data>
+  <data name="Logs_Empty.Text" xml:space="preserve">
+    <value>Kayıt yok</value>
+  </data>
+  <data name="Unlock_Title.Text" xml:space="preserve">
+    <value>Kilit Açma Testi</value>
+  </data>
+  <data name="Unlock_Subtitle.Text" xml:space="preserve">
+    <value>Akış/AI servislerinin kullanılabilirliğini mevcut düğümle kontrol et</value>
+  </data>
+  <data name="Unlock_RunAll.Text" xml:space="preserve">
+    <value>Tümünü çalıştır</value>
+  </data>
+  <data name="Unlock_Retest.Text" xml:space="preserve">
+    <value>Yeniden test</value>
+  </data>
+</root>

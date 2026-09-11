@@ -25,22 +25,22 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="连接" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
+            <TextBlock x:Uid="Connections_Title" Text="连接" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <TextBlock Text="{x:Bind Vm.TotalsText, Mode=OneWay}" Grid.Column="1" FontSize="12" Opacity="0.7" VerticalAlignment="Center" />
             <ComboBox x:Name="SortBox" Grid.Column="2" Width="110" VerticalAlignment="Center"
                       SelectionChanged="SortBox_SelectionChanged" SelectedIndex="0">
-                <ComboBoxItem Tag="default" Content="默认排序" />
-                <ComboBoxItem Tag="upload" Content="按上传" />
-                <ComboBoxItem Tag="download" Content="按下载" />
+                <ComboBoxItem x:Uid="Connections_SortDefault" Tag="default" Content="默认排序" />
+                <ComboBoxItem x:Uid="Connections_SortUpload" Tag="upload" Content="按上传" />
+                <ComboBoxItem x:Uid="Connections_SortDownload" Tag="download" Content="按下载" />
             </ComboBox>
-            <TextBox
+            <TextBox x:Uid="Connections_SearchBox"
                 x:Name="SearchBox"
                 Grid.Column="3"
                 Width="220"
                 PlaceholderText="搜索主机 / 规则 / 进程"
                 VerticalAlignment="Center"
                 TextChanged="SearchBox_TextChanged" />
-            <ToggleButton
+            <ToggleButton x:Uid="Connections_ClosedToggle"
                 x:Name="ClosedToggle"
                 Grid.Column="4"
                 Content="已关闭"
@@ -53,7 +53,7 @@
                 Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE74D;" FontSize="14" />
-                    <TextBlock Text="关闭全部" />
+                    <TextBlock x:Uid="Connections_CloseAll" Text="关闭全部" />
                 </StackPanel>
             </Button>
         </Grid>
@@ -70,14 +70,14 @@
                 <ColumnDefinition Width="120" />
                 <ColumnDefinition Width="90" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="主机" FontSize="12" Opacity="0.6" />
-            <TextBlock Text="网络" Grid.Column="1" FontSize="12" Opacity="0.6" />
-            <TextBlock Text="下载" Grid.Column="2" FontSize="12" Opacity="0.6" />
-            <TextBlock Text="上传" Grid.Column="3" FontSize="12" Opacity="0.6" />
-            <TextBlock Text="规则" Grid.Column="4" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
-            <TextBlock Text="链路" Grid.Column="5" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
-            <TextBlock Text="进程" Grid.Column="6" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
-            <TextBlock Text="时间" Grid.Column="7" FontSize="12" Opacity="0.6" />
+            <TextBlock x:Uid="Connections_Host" Text="主机" FontSize="12" Opacity="0.6" />
+            <TextBlock x:Uid="Connections_Network" Text="网络" Grid.Column="1" FontSize="12" Opacity="0.6" />
+            <TextBlock x:Uid="Connections_Download" Text="下载" Grid.Column="2" FontSize="12" Opacity="0.6" />
+            <TextBlock x:Uid="Connections_Upload" Text="上传" Grid.Column="3" FontSize="12" Opacity="0.6" />
+            <TextBlock x:Uid="Connections_Rule" Text="规则" Grid.Column="4" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
+            <TextBlock x:Uid="Connections_Chains" Text="链路" Grid.Column="5" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
+            <TextBlock x:Uid="Connections_Process" Text="进程" Grid.Column="6" FontSize="12" Opacity="0.6" TextTrimming="CharacterEllipsis" />
+            <TextBlock x:Uid="Connections_Time" Text="时间" Grid.Column="7" FontSize="12" Opacity="0.6" />
         </Grid>
 
         <!-- 连接列表 -->
