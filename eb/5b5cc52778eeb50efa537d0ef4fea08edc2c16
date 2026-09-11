@@ -1,0 +1,220 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "eb5b5cc52778eeb50efa537d0ef4fea08edc2c16",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 1965,
+    "git_diff_deleted_lines": 49,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 1961,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.csproj": {
+        "BYMC": [
+          "46"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "96-103"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1879-1980"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [
+          "27-28",
+          "45-58",
+          "61",
+          "66",
+          "77-78"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml.cs": {
+        "BYMC": [
+          "14-31",
+          "36",
+          "43-129",
+          "148",
+          "154",
+          "170-265"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [
+          "103"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml.cs": {
+        "BYMC": [
+          "102-120"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/QrDialog.cs": {
+        "BYMC": [
+          "1-69"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "163-165"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "474-479"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [
+          "1-196"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "119-120"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_dialog_table.py": {
+        "BYMC": [
+          "52-69"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_settings_table.py": {
+        "BYMC": [
+          "87-89"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_features.py": {
+        "BYMC": [
+          "1-85"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789152340,
+  "requirement_id": ""
+}
