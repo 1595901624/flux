@@ -1,0 +1,159 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "5af7a21e1efeee3e11e268b342617a95a74fdf52",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 839,
+    "git_diff_deleted_lines": 23,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 828,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Config/RuntimeConfigBuilder.cs": {
+        "BYMC": [
+          "47-50"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Hotkeys/HotkeyComboParser.cs": {
+        "BYMC": [
+          "1-130"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Proxy/PacScriptGenerator.cs": {
+        "BYMC": [
+          "1-84"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [
+          "27-30",
+          "73-75"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "15-16",
+          "21",
+          "110",
+          "113-179"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [
+          "19"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "191-218"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/HotkeyService.cs": {
+        "BYMC": [
+          "1-235"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [
+          "33-36"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SysProxyService.cs": {
+        "BYMC": [
+          "36",
+          "48",
+          "51-62",
+          "67-73",
+          "132-134",
+          "146",
+          "186-190",
+          "193-196",
+          "227-228",
+          "244"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SystemProxyOwnership.cs": {
+        "BYMC": [
+          "8-12"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/WinInetProxySettings.cs": {
+        "BYMC": [
+          "19",
+          "24-25",
+          "32",
+          "34-35",
+          "38",
+          "43-44",
+          "46-48",
+          "50-60",
+          "62-63",
+          "73",
+          "88-91",
+          "96",
+          "106",
+          "112-113",
+          "119",
+          "128",
+          "130",
+          "132",
+          "135",
+          "153-160",
+          "165",
+          "181",
+          "201-202"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "29-31",
+          "69-96",
+          "118-131"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "62-77",
+          "164-179",
+          "331-424"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789147242,
+  "requirement_id": ""
+}
