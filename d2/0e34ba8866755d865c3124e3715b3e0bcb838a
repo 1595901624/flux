@@ -1,0 +1,29 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "d20e34ba8866755d865c3124e3715b3e0bcb838a",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 2,
+    "git_diff_deleted_lines": 1,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 2,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [
+          "59-60"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789152424,
+  "requirement_id": ""
+}
