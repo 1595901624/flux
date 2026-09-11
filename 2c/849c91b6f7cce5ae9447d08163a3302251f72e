@@ -1,0 +1,116 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "2c849c91b6f7cce5ae9447d08163a3302251f72e",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 1569,
+    "git_diff_deleted_lines": 12,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 1566,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Proxies/ProxyUriParser.cs": {
+        "BYMC": [
+          "1-640"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Models/ProfilesConfig.cs": {
+        "BYMC": [
+          "24-35",
+          "102-142",
+          "145-153"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "304"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileEnhanceService.cs": {
+        "BYMC": [
+          "1-278"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SubscriptionService.cs": {
+        "BYMC": [
+          "27",
+          "42",
+          "79",
+          "87-102",
+          "107-108",
+          "111-114",
+          "123-127",
+          "132-214",
+          "217-218",
+          "221-243",
+          "247-256",
+          "262-271",
+          "287-292",
+          "295-297",
+          "302-309",
+          "318-320",
+          "327-328",
+          "340",
+          "430",
+          "513-515"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProfilesViewModel.cs": {
+        "BYMC": [
+          "213-260"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/EnhanceEditorDialog.cs": {
+        "BYMC": [
+          "1-144"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfileEditDialog.cs": {
+        "BYMC": [
+          "1-118"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [
+          "25-27",
+          "45-52",
+          "103-104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml.cs": {
+        "BYMC": [
+          "68-78",
+          "101-166"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789144465,
+  "requirement_id": ""
+}
