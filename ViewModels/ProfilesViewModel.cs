@@ -210,6 +210,54 @@ public partial class ProfilesViewModel : ObservableObject
         }
     }
 
+    public async Task CreateEmptyAsync(string? name = null)
+    {
+        try
+        {
+            var item = await AppServices.Subscription.CreateEmptyAsync(name ?? "新配置");
+            Load();
+            StatusText = $"已创建: {item.Name}";
+        }
+        catch (Exception ex)
+        {
+            StatusText = "创建失败: " + ex.Message;
+        }
+    }
+
+    public async Task UpdateAllAsync()
+    {
+        var targets = AppServices.Config.Profiles.Items.Where(i => i.Type == "remote").ToList();
+        if (targets.Count == 0)
+        {
+            StatusText = "没有可更新的远程订阅";
+            return;
+        }
+        Busy = true;
+        var ok = 0;
+        try
+        {
+            foreach (var item in targets)
+            {
+                StatusText = $"正在更新: {item.Name}…";
+                try
+                {
+                    await AppServices.Subscription.UpdateAsync(item);
+                    ok++;
+                }
+                catch (Exception ex)
+                {
+                    LogService.App($"订阅更新失败: {item.Name}: {ex.Message}", "warn");
+                }
+            }
+            StatusText = $"全部更新完成：成功 {ok}/{targets.Count}";
+        }
+        finally
+        {
+            Busy = false;
+            Load();
+        }
+    }
+
     public async Task UpdateAsync(ProfileItemVm vm)
     {
         Busy = true;

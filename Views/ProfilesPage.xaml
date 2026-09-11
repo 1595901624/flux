@@ -22,6 +22,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Text="订阅" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <TextBox
@@ -38,6 +41,15 @@
                     <FontIcon Glyph="&#xE8E5;" FontSize="14" />
                     <TextBlock Text="本地文件" />
                 </StackPanel>
+            </Button>
+            <Button Grid.Column="4" VerticalAlignment="Center" Click="CreateEmpty_Click">
+                新建空配置
+            </Button>
+            <Button Grid.Column="5" VerticalAlignment="Center" Click="UpdateAll_Click">
+                全部更新
+            </Button>
+            <Button Grid.Column="6" VerticalAlignment="Center" Click="MenuGlobalEnhance_Click">
+                全局增强
             </Button>
         </Grid>
 
@@ -88,6 +100,8 @@
                             <MenuFlyout>
                                 <MenuFlyoutItem Text="选择此订阅" Click="MenuSelect_Click" />
                                 <MenuFlyoutItem Text="更新" Click="MenuUpdate_Click" />
+                                <MenuFlyoutItem Text="编辑信息" Click="MenuEdit_Click" />
+                                <MenuFlyoutItem Text="编辑增强配置" Click="MenuEnhance_Click" />
                                 <MenuFlyoutSeparator />
                                 <MenuFlyoutItem Text="上移" Click="MenuUp_Click" />
                                 <MenuFlyoutItem Text="下移" Click="MenuDown_Click" />

@@ -21,6 +21,18 @@ public class ProfileOption
 
     [YamlMember(Alias = "timeout-seconds")]
     public int TimeoutSeconds { get; set; } = 20;
+
+    /// <summary>是否参与自动更新（默认 true，显式关闭后仅手动更新）。</summary>
+    [YamlMember(Alias = "allow-auto-update")]
+    public bool AllowAutoUpdate { get; set; } = true;
+
+    /// <summary>危险选项：接受无效 TLS 证书。</summary>
+    [YamlMember(Alias = "danger-accept-invalid-certs")]
+    public bool DangerAcceptInvalidCerts { get; set; } = false;
+
+    /// <summary>更新通道：direct | system | self | auto（auto = 直连→内核代理→系统代理回退）。</summary>
+    [YamlMember(Alias = "update-channel")]
+    public string UpdateChannel { get; set; } = "auto";
 }
 
 public class ProfileExtra
@@ -87,8 +99,58 @@ public class ProfileItem
     [YamlMember(Alias = "extra")]
     public ProfileExtra? Extra { get; set; }
 
+    /// <summary>远程订阅主页（profile-web-page-url）。</summary>
+    [YamlMember(Alias = "home")]
+    public string Home { get; set; } = "";
+
+    /// <summary>上次更新状态：unknown | success | not-modified | failed。</summary>
+    [YamlMember(Alias = "last-update-status")]
+    public string LastUpdateStatus { get; set; } = "unknown";
+
+    /// <summary>上次更新失败原因（成功时为空）。</summary>
+    [YamlMember(Alias = "last-error")]
+    public string LastError { get; set; } = "";
+
+    /// <summary>下一次自动更新时间。</summary>
+    [YamlMember(Alias = "next-update-at")]
+    public DateTime? NextUpdateAt { get; set; }
+
+    // ---------- 增强文件 ID（Merge/Script/Rules/Proxies/Groups） ----------
+
+    [YamlMember(Alias = "merge")]
+    public string? Merge { get; set; }
+
+    [YamlMember(Alias = "script")]
+    public string? Script { get; set; }
+
+    [YamlMember(Alias = "rules")]
+    public string? Rules { get; set; }
+
+    [YamlMember(Alias = "proxies")]
+    public string? Proxies { get; set; }
+
+    [YamlMember(Alias = "groups")]
+    public string? Groups { get; set; }
+
+    // ---------- HTTP 条件请求缓存 ----------
+
+    [YamlMember(Alias = "etag")]
+    public string? ETag { get; set; }
+
+    [YamlMember(Alias = "last-modified")]
+    public string? LastModified { get; set; }
+
     [YamlIgnore]
     public string FilePath => Path.Combine(Models.ProfilesConfig.Dir, Path.GetFileName(File));
+
+    /// <summary>更新间隔对应的下次更新时间；未启用时为 null。</summary>
+    public DateTime? ComputeNextUpdateAt()
+    {
+        if (Type != "remote" || !Option.AllowAutoUpdate || Option.UpdateInterval <= 0)
+            return null;
+        var baseTime = Updated == default ? DateTime.Now : Updated;
+        return baseTime.AddMinutes(Option.UpdateInterval);
+    }
 }
 
 public class ProfilesConfig

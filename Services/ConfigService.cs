@@ -301,6 +301,7 @@ public class ConfigService
         {
             Profile = GetCurrentProfileNode(),
             ClashBase = ClashBase,
+            ChainItems = ProfileEnhanceService.BuildChainItems(Profiles.GetCurrent()),
             EnableTun = Verge.EnableTunMode,
             EnableBuiltinEnhance = true,
         };

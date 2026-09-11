@@ -65,6 +65,17 @@ public sealed partial class ProfilesPage : Page
         UpdateEmptyState();
     }
 
+    private async void CreateEmpty_Click(object sender, RoutedEventArgs e)
+    {
+        await Vm.CreateEmptyAsync();
+        UpdateEmptyState();
+    }
+
+    private async void UpdateAll_Click(object sender, RoutedEventArgs e)
+    {
+        await Vm.UpdateAllAsync();
+    }
+
     private async void CardList_ItemClick(object sender, ItemClickEventArgs e)
     {
         if (e.ClickedItem is ProfileItemVm vm)
@@ -85,6 +96,74 @@ public sealed partial class ProfilesPage : Page
     private async void MenuUpdate_Click(object sender, RoutedEventArgs e)
     {
         if (VmFromMenu(sender) is { } vm) await Vm.UpdateAsync(vm);
+    }
+
+    private async void MenuEdit_Click(object sender, RoutedEventArgs e)
+    {
+        if (VmFromMenu(sender) is not { } vm) return;
+        var dialog = new ProfileEditDialog(vm.Item, XamlRoot);
+        var result = await dialog.ShowAsync();
+        if (result != ContentDialogResult.Primary) return;
+        var error = dialog.Apply();
+        if (error is not null)
+        {
+            var warn = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "保存失败",
+                Content = error,
+                CloseButtonText = "确定",
+            };
+            await warn.ShowAsync();
+        }
+        Vm.Load();
+    }
+
+    private async void MenuEnhance_Click(object sender, RoutedEventArgs e)
+    {
+        if (VmFromMenu(sender) is not { } vm) return;
+        var dialog = new EnhanceEditorDialog(vm.Item, XamlRoot);
+        var result = await dialog.ShowAsync();
+        if (result != ContentDialogResult.Primary) return;
+        try
+        {
+            dialog.SaveCurrent();
+            await dialog.ApplyConfigAsync();
+        }
+        catch (Exception ex)
+        {
+            var warn = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "保存失败",
+                Content = ex.Message,
+                CloseButtonText = "确定",
+            };
+            await warn.ShowAsync();
+        }
+    }
+
+    private async void MenuGlobalEnhance_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new EnhanceEditorDialog(null, XamlRoot);
+        var result = await dialog.ShowAsync();
+        if (result != ContentDialogResult.Primary) return;
+        try
+        {
+            dialog.SaveCurrent();
+            await dialog.ApplyConfigAsync();
+        }
+        catch (Exception ex)
+        {
+            var warn = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = "保存失败",
+                Content = ex.Message,
+                CloseButtonText = "确定",
+            };
+            await warn.ShowAsync();
+        }
     }
 
     private async void MenuUp_Click(object sender, RoutedEventArgs e)
