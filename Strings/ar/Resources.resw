@@ -1876,4 +1876,106 @@
   <data name="Msg_DetailTime.Content" xml:space="preserve">
     <value>الوقت: {0}</value>
   </data>
+  <data name="Msg_QrTitle.Text" xml:space="preserve">
+    <value>رمز QR: {0}</value>
+  </data>
+  <data name="Msg_QrTitle.Content" xml:space="preserve">
+    <value>رمز QR: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Text" xml:space="preserve">
+    <value>فشل إنشاء رمز QR: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Content" xml:space="preserve">
+    <value>فشل إنشاء رمز QR: {0}</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
+    <value>أداة UWP Loopback</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
+    <value>أداة UWP Loopback</value>
+  </data>
+  <data name="Msg_LoopbackHint.Text" xml:space="preserve">
+    <value>حدد تطبيقات UWP المسموح لها بالاتصال المحلي؛ يتطلب صلاحيات المسؤول</value>
+  </data>
+  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
+    <value>حدد تطبيقات UWP المسموح لها بالاتصال المحلي؛ يتطلب صلاحيات المسؤول</value>
+  </data>
+  <data name="Msg_LoopbackApply.Text" xml:space="preserve">
+    <value>تطبيق التغييرات</value>
+  </data>
+  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
+    <value>تطبيق التغييرات</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
+    <value>جارٍ التطبيق…</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
+    <value>جارٍ التطبيق…</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
+    <value>تم تطبيق تغييرات Loopback</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
+    <value>تم تطبيق تغييرات Loopback</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
+    <value>فشل التطبيق: {0}</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
+    <value>فشل التطبيق: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
+    <value>فشل قراءة قائمة تطبيقات UWP: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
+    <value>فشل قراءة قائمة تطبيقات UWP: {0}</value>
+  </data>
+  <data name="Msg_ColumnSettings.Text" xml:space="preserve">
+    <value>إعدادات الأعمدة</value>
+  </data>
+  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
+    <value>إعدادات الأعمدة</value>
+  </data>
+  <data name="Msg_LayoutTable.Text" xml:space="preserve">
+    <value>جدول</value>
+  </data>
+  <data name="Msg_LayoutTable.Content" xml:space="preserve">
+    <value>جدول</value>
+  </data>
+  <data name="Msg_LayoutList.Text" xml:space="preserve">
+    <value>قائمة</value>
+  </data>
+  <data name="Msg_LayoutList.Content" xml:space="preserve">
+    <value>قائمة</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
+    <value>يجب أن يبقى عمود واحد ظاهرًا على الأقل</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
+    <value>يجب أن يبقى عمود واحد ظاهرًا على الأقل</value>
+  </data>
+  <data name="Msg_UacCancelled.Text" xml:space="preserve">
+    <value>ألغى المستخدم موافقة UAC</value>
+  </data>
+  <data name="Msg_UacCancelled.Content" xml:space="preserve">
+    <value>ألغى المستخدم موافقة UAC</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>افتح الأداة</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>افتح الأداة</value>
+  </data>
+  <data name="Profiles_MenuQr.Text" xml:space="preserve">
+    <value>رمز QR</value>
+  </data>
+  <data name="Profiles_MenuQr.Content" xml:space="preserve">
+    <value>رمز QR</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
+    <value>رمز QR متاح للملفات البعيدة فقط</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
+    <value>رمز QR متاح للملفات البعيدة فقط</value>
+  </data>
 </root>

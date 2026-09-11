@@ -1876,4 +1876,106 @@
   <data name="Msg_DetailTime.Content" xml:space="preserve">
     <value>时间: {0}</value>
   </data>
+  <data name="Msg_QrTitle.Text" xml:space="preserve">
+    <value>二维码：{0}</value>
+  </data>
+  <data name="Msg_QrTitle.Content" xml:space="preserve">
+    <value>二维码：{0}</value>
+  </data>
+  <data name="Msg_QrFailed.Text" xml:space="preserve">
+    <value>二维码生成失败: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Content" xml:space="preserve">
+    <value>二维码生成失败: {0}</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
+    <value>UWP Loopback 工具</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
+    <value>UWP Loopback 工具</value>
+  </data>
+  <data name="Msg_LoopbackHint.Text" xml:space="preserve">
+    <value>勾选需要允许本地回环联网的 UWP 应用，应用更改时会请求管理员授权。</value>
+  </data>
+  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
+    <value>勾选需要允许本地回环联网的 UWP 应用，应用更改时会请求管理员授权。</value>
+  </data>
+  <data name="Msg_LoopbackApply.Text" xml:space="preserve">
+    <value>应用更改</value>
+  </data>
+  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
+    <value>应用更改</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
+    <value>正在应用…</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
+    <value>正在应用…</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
+    <value>已应用 Loopback 更改。</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
+    <value>已应用 Loopback 更改。</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
+    <value>应用失败: {0}</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
+    <value>应用失败: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
+    <value>读取 UWP 应用列表失败: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
+    <value>读取 UWP 应用列表失败: {0}</value>
+  </data>
+  <data name="Msg_ColumnSettings.Text" xml:space="preserve">
+    <value>列设置</value>
+  </data>
+  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
+    <value>列设置</value>
+  </data>
+  <data name="Msg_LayoutTable.Text" xml:space="preserve">
+    <value>表格</value>
+  </data>
+  <data name="Msg_LayoutTable.Content" xml:space="preserve">
+    <value>表格</value>
+  </data>
+  <data name="Msg_LayoutList.Text" xml:space="preserve">
+    <value>列表</value>
+  </data>
+  <data name="Msg_LayoutList.Content" xml:space="preserve">
+    <value>列表</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
+    <value>至少保留一列可见。</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
+    <value>至少保留一列可见。</value>
+  </data>
+  <data name="Msg_UacCancelled.Text" xml:space="preserve">
+    <value>用户取消了 UAC 授权</value>
+  </data>
+  <data name="Msg_UacCancelled.Content" xml:space="preserve">
+    <value>用户取消了 UAC 授权</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>打开工具</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>打开工具</value>
+  </data>
+  <data name="Profiles_MenuQr.Text" xml:space="preserve">
+    <value>二维码</value>
+  </data>
+  <data name="Profiles_MenuQr.Content" xml:space="preserve">
+    <value>二维码</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
+    <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
+    <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
+  </data>
 </root>

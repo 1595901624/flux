@@ -1876,4 +1876,106 @@
   <data name="Msg_DetailTime.Content" xml:space="preserve">
     <value>時刻: {0}</value>
   </data>
+  <data name="Msg_QrTitle.Text" xml:space="preserve">
+    <value>QRコード: {0}</value>
+  </data>
+  <data name="Msg_QrTitle.Content" xml:space="preserve">
+    <value>QRコード: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Text" xml:space="preserve">
+    <value>QR生成に失敗: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Content" xml:space="preserve">
+    <value>QR生成に失敗: {0}</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
+    <value>UWP Loopbackツール</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
+    <value>UWP Loopbackツール</value>
+  </data>
+  <data name="Msg_LoopbackHint.Text" xml:space="preserve">
+    <value>ループバックを許可するUWPアプリを選択（適用時に管理者権限）</value>
+  </data>
+  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
+    <value>ループバックを許可するUWPアプリを選択（適用時に管理者権限）</value>
+  </data>
+  <data name="Msg_LoopbackApply.Text" xml:space="preserve">
+    <value>変更を適用</value>
+  </data>
+  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
+    <value>変更を適用</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
+    <value>適用中…</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
+    <value>適用中…</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
+    <value>Loopbackの変更を適用しました</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
+    <value>Loopbackの変更を適用しました</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
+    <value>適用に失敗: {0}</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
+    <value>適用に失敗: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
+    <value>UWPアプリ一覧の取得に失敗: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
+    <value>UWPアプリ一覧の取得に失敗: {0}</value>
+  </data>
+  <data name="Msg_ColumnSettings.Text" xml:space="preserve">
+    <value>列の設定</value>
+  </data>
+  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
+    <value>列の設定</value>
+  </data>
+  <data name="Msg_LayoutTable.Text" xml:space="preserve">
+    <value>テーブル</value>
+  </data>
+  <data name="Msg_LayoutTable.Content" xml:space="preserve">
+    <value>テーブル</value>
+  </data>
+  <data name="Msg_LayoutList.Text" xml:space="preserve">
+    <value>リスト</value>
+  </data>
+  <data name="Msg_LayoutList.Content" xml:space="preserve">
+    <value>リスト</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
+    <value>少なくとも1列は表示してください</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
+    <value>少なくとも1列は表示してください</value>
+  </data>
+  <data name="Msg_UacCancelled.Text" xml:space="preserve">
+    <value>UACをキャンセルしました</value>
+  </data>
+  <data name="Msg_UacCancelled.Content" xml:space="preserve">
+    <value>UACをキャンセルしました</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>ツールを開く</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>ツールを開く</value>
+  </data>
+  <data name="Profiles_MenuQr.Text" xml:space="preserve">
+    <value>QRコード</value>
+  </data>
+  <data name="Profiles_MenuQr.Content" xml:space="preserve">
+    <value>QRコード</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
+    <value>QRコードはリモート購読のみ対応</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
+    <value>QRコードはリモート購読のみ対応</value>
+  </data>
 </root>

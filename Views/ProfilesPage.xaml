@@ -100,6 +100,7 @@
                             <MenuFlyout>
                                 <MenuFlyoutItem x:Uid="Profiles_MenuSelect" Text="选择此订阅" Click="MenuSelect_Click" />
                                 <MenuFlyoutItem x:Uid="Profiles_MenuUpdate" Text="更新" Click="MenuUpdate_Click" />
+                                <MenuFlyoutItem x:Uid="Profiles_MenuQr" Text="二维码" Click="MenuQr_Click" />
                                 <MenuFlyoutItem x:Uid="Profiles_MenuEdit" Text="编辑信息" Click="MenuEdit_Click" />
                                 <MenuFlyoutItem x:Uid="Profiles_MenuEnhance" Text="编辑增强配置" Click="MenuEnhance_Click" />
                                 <MenuFlyoutSeparator />

@@ -99,6 +99,25 @@ public sealed partial class ProfilesPage : Page
         if (VmFromMenu(sender) is { } vm) await Vm.UpdateAsync(vm);
     }
 
+    private async void MenuQr_Click(object sender, RoutedEventArgs e)
+    {
+        if (VmFromMenu(sender) is not { } vm) return;
+        if (vm.Item.Type != "remote" || string.IsNullOrEmpty(vm.Item.Url))
+        {
+            var warn = new ContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = L10n.T("Msg_QrTitle").Split('：')[0],
+                Content = L10n.T("Msg_QrRemoteOnly"),
+                CloseButtonText = L10n.T("Common_OK"),
+            };
+            await warn.ShowAsync();
+            return;
+        }
+        var dialog = new QrDialog(vm.Item, XamlRoot);
+        await dialog.ShowAsync();
+    }
+
     private async void MenuEdit_Click(object sender, RoutedEventArgs e)
     {
         if (VmFromMenu(sender) is not { } vm) return;

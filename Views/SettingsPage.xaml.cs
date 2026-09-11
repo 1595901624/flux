@@ -471,6 +471,12 @@ public sealed partial class SettingsPage : Page
         }
     }
 
+    private async void OpenLoopback_Click(object sender, RoutedEventArgs e)
+    {
+        var dialog = new UwpLoopbackDialog(XamlRoot);
+        await dialog.ShowAsync();
+    }
+
     private async void InstallService_Click(object sender, RoutedEventArgs e)
         => await InstallServiceAsync();
 

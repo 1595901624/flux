@@ -1876,4 +1876,106 @@
   <data name="Msg_DetailTime.Content" xml:space="preserve">
     <value>Time: {0}</value>
   </data>
+  <data name="Msg_QrTitle.Text" xml:space="preserve">
+    <value>QR code: {0}</value>
+  </data>
+  <data name="Msg_QrTitle.Content" xml:space="preserve">
+    <value>QR code: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Text" xml:space="preserve">
+    <value>QR generation failed: {0}</value>
+  </data>
+  <data name="Msg_QrFailed.Content" xml:space="preserve">
+    <value>QR generation failed: {0}</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Text" xml:space="preserve">
+    <value>UWP Loopback tool</value>
+  </data>
+  <data name="Msg_LoopbackTitle.Content" xml:space="preserve">
+    <value>UWP Loopback tool</value>
+  </data>
+  <data name="Msg_LoopbackHint.Text" xml:space="preserve">
+    <value>Check UWP apps that should be allowed loopback; applying requests admin consent.</value>
+  </data>
+  <data name="Msg_LoopbackHint.Content" xml:space="preserve">
+    <value>Check UWP apps that should be allowed loopback; applying requests admin consent.</value>
+  </data>
+  <data name="Msg_LoopbackApply.Text" xml:space="preserve">
+    <value>Apply changes</value>
+  </data>
+  <data name="Msg_LoopbackApply.Content" xml:space="preserve">
+    <value>Apply changes</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Text" xml:space="preserve">
+    <value>Applying…</value>
+  </data>
+  <data name="Msg_LoopbackApplying.Content" xml:space="preserve">
+    <value>Applying…</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Text" xml:space="preserve">
+    <value>Loopback changes applied.</value>
+  </data>
+  <data name="Msg_LoopbackApplied.Content" xml:space="preserve">
+    <value>Loopback changes applied.</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Text" xml:space="preserve">
+    <value>Apply failed: {0}</value>
+  </data>
+  <data name="Msg_LoopbackFailed.Content" xml:space="preserve">
+    <value>Apply failed: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Text" xml:space="preserve">
+    <value>Failed to list UWP apps: {0}</value>
+  </data>
+  <data name="Msg_LoopbackLoadFailed.Content" xml:space="preserve">
+    <value>Failed to list UWP apps: {0}</value>
+  </data>
+  <data name="Msg_ColumnSettings.Text" xml:space="preserve">
+    <value>Column settings</value>
+  </data>
+  <data name="Msg_ColumnSettings.Content" xml:space="preserve">
+    <value>Column settings</value>
+  </data>
+  <data name="Msg_LayoutTable.Text" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Msg_LayoutTable.Content" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Msg_LayoutList.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Msg_LayoutList.Content" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
+    <value>At least one column must stay visible.</value>
+  </data>
+  <data name="Msg_NoVisibleColumns.Content" xml:space="preserve">
+    <value>At least one column must stay visible.</value>
+  </data>
+  <data name="Msg_UacCancelled.Text" xml:space="preserve">
+    <value>UAC consent cancelled</value>
+  </data>
+  <data name="Msg_UacCancelled.Content" xml:space="preserve">
+    <value>UAC consent cancelled</value>
+  </data>
+  <data name="Settings_OpenLoopback.Text" xml:space="preserve">
+    <value>Open tool</value>
+  </data>
+  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
+    <value>Open tool</value>
+  </data>
+  <data name="Profiles_MenuQr.Text" xml:space="preserve">
+    <value>QR code</value>
+  </data>
+  <data name="Profiles_MenuQr.Content" xml:space="preserve">
+    <value>QR code</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
+    <value>Only remote profiles have a QR code (local profiles have no URL)</value>
+  </data>
+  <data name="Msg_QrRemoteOnly.Content" xml:space="preserve">
+    <value>Only remote profiles have a QR code (local profiles have no URL)</value>
+  </data>
 </root>

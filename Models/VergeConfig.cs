@@ -93,6 +93,14 @@ public class VergeConfig
     [YamlMember(Alias = "webdav-password-encrypted")]
     public string WebDavPasswordEncrypted { get; set; } = "";
 
+    /// <summary>连接页可见列及顺序（id 列表：host/network/download/upload/rule/chains/process/time）。</summary>
+    [YamlMember(Alias = "connections-columns")]
+    public List<string> ConnectionsColumns { get; set; } = new();
+
+    /// <summary>连接页布局：table（表格，按配置列）| list（列表，紧凑固定列）。</summary>
+    [YamlMember(Alias = "connections-layout")]
+    public string ConnectionsLayout { get; set; } = "table";
+
     /// <summary>全局热键：action → 组合键文本（如 "Ctrl+Shift+F"）。空串表示未设置。</summary>
     [YamlMember(Alias = "hotkeys")]
     public Dictionary<string, string> Hotkeys { get; set; } = new();
