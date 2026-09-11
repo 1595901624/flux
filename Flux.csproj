@@ -6,7 +6,9 @@
     <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
     <RootNamespace>Flux</RootNamespace>
     <AssemblyName>Flux</AssemblyName>
-    <Version>0.1.0</Version>
+    <!-- 版本单一来源：发布时由 build-msix workflow 输入统一写入 appxmanifest；
+         此处为便携版程序集版本，需与 Package.appxmanifest 的 Identity Version 保持一致 -->
+    <Version>0.3.0</Version>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\app.ico</ApplicationIcon>
     <Platforms>AnyCPU;x86;x64;ARM64</Platforms>
