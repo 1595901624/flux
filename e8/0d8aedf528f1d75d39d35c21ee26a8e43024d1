@@ -1,0 +1,384 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "e80d8aedf528f1d75d39d35c21ee26a8e43024d1",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 4774,
+    "git_diff_deleted_lines": 107,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 4773,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "App.xaml.cs": {
+        "BYMC": [
+          "26",
+          "30",
+          "33"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "167"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [
+          "57"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "340",
+          "364"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DiagnosticsService.cs": {
+        "BYMC": [
+          "32-33",
+          "37-40",
+          "42-44",
+          "48",
+          "52",
+          "56",
+          "58-59",
+          "63",
+          "65-67",
+          "72-73",
+          "75-76",
+          "80",
+          "91",
+          "96",
+          "113",
+          "132"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/HotkeyService.cs": {
+        "BYMC": [
+          "45",
+          "52",
+          "70"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [
+          "76"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/PrivilegeBroker.cs": {
+        "BYMC": [
+          "64",
+          "101",
+          "104",
+          "107",
+          "114",
+          "128",
+          "133",
+          "142",
+          "150"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileContentValidator.cs": {
+        "BYMC": [
+          "15"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileEnhanceService.cs": {
+        "BYMC": [
+          "66",
+          "211",
+          "219"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/WinInetProxySettings.cs": {
+        "BYMC": [
+          "65",
+          "67",
+          "101",
+          "174"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/YamlHelper.cs": {
+        "BYMC": [
+          "22"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1247-1573"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Utils/Format.cs": {
+        "BYMC": [
+          "34"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesModels.cs": {
+        "BYMC": [
+          "28"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesViewModel.cs": {
+        "BYMC": [
+          "226",
+          "247",
+          "260"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/RulesViewModel.cs": {
+        "BYMC": [
+          "80",
+          "101"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/EnhanceEditorDialog.cs": {
+        "BYMC": [
+          "40-41",
+          "46-52"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml": {
+        "BYMC": [
+          "56",
+          "58",
+          "138-140",
+          "151",
+          "155",
+          "158",
+          "161-162"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml.cs": {
+        "BYMC": [
+          "134"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml.cs": {
+        "BYMC": [
+          "75"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfileEditDialog.cs": {
+        "BYMC": [
+          "15-16",
+          "18",
+          "21-22",
+          "58-59",
+          "62-65",
+          "69"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [
+          "135",
+          "139",
+          "143"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml": {
+        "BYMC": [
+          "32-34",
+          "95"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [
+          "125"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "330-331"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "123-124",
+          "145",
+          "154-155",
+          "168-171"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_gaps_table.py": {
+        "BYMC": [
+          "1-137"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_diag.py": {
+        "BYMC": [
+          "1-45"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_gaps.py": {
+        "BYMC": [
+          "1-174"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/scan_i18n_gaps.py": {
+        "BYMC": [
+          "1-39"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/L10nStub.cs": {
+        "BYMC": [
+          "1-12"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789177017,
+  "requirement_id": ""
+}
