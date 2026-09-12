@@ -1,0 +1,105 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "f473546a04e867ba6a9f2cfa26905aa82dc426c6",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 38,
+    "git_diff_deleted_lines": 38,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 38,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Services/DiagnosticsService.cs": {
+        "BYMC": [
+          "100"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/PrivilegeBroker.cs": {
+        "BYMC": [
+          "60",
+          "154"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileContentValidator.cs": {
+        "BYMC": [
+          "19",
+          "25"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileEnhanceService.cs": {
+        "BYMC": [
+          "125",
+          "130",
+          "143"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesModels.cs": {
+        "BYMC": [
+          "27"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/EnhanceEditorDialog.cs": {
+        "BYMC": [
+          "135"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfileEditDialog.cs": {
+        "BYMC": [
+          "45-48"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "12",
+          "43",
+          "58",
+          "135",
+          "151",
+          "168",
+          "187",
+          "196",
+          "204",
+          "227",
+          "304",
+          "332",
+          "516",
+          "553",
+          "555",
+          "578",
+          "614",
+          "617",
+          "621",
+          "671",
+          "742",
+          "774",
+          "844",
+          "879"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789177453,
+  "requirement_id": ""
+}
