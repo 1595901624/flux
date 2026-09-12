@@ -28,11 +28,13 @@ public static class AppBootstrapper
 
             // 语言覆盖必须在窗口创建前生效（x:Uid 解析依赖）
             var lang = AppServices.Config.Verge.Language;
-            if (!string.IsNullOrEmpty(lang) && lang != "system")
+            try
             {
-                try { Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = lang; }
-                catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
+                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
+                    string.IsNullOrEmpty(lang) || lang == "system" ? "" : lang;
+                L10n.Reset();
             }
+            catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
 
             Program.Trace("lang ok");
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复

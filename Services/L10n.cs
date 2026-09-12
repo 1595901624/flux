@@ -15,6 +15,11 @@ public static class L10n
     // 无作用域的 ResourceLoader 查找裸路径会抛 NamedResource 异常。
     public static ResourceLoader Loader => _loader ??= new ResourceLoader("Resources");
 
+    /// <summary>
+    /// 语言覆盖发生变化后丢弃旧加载器，避免动态菜单继续使用创建时的语言上下文。
+    /// </summary>
+    public static void Reset() => _loader = null;
+
     /// <summary>按键取文本；全部语言缺失时返回键名本身（不显示空文本）。
     /// 回退链：&lt;键&gt; → &lt;键&gt;.Text → 键名。</summary>
     public static string T(string key)

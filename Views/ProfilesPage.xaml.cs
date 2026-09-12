@@ -89,6 +89,20 @@ public sealed partial class ProfilesPage : Page
         return null;
     }
 
+    /// <summary>
+    /// DataTemplate 内的 MenuFlyout 在部分 WinUI 运行路径下不会稳定应用 x:Uid。
+    /// 每次打开时显式按 Tag 中的资源键刷新，避免显示 XAML 的中文回退文本。
+    /// </summary>
+    private void ProfileMenu_Opening(object sender, object e)
+    {
+        if (sender is not MenuFlyout flyout) return;
+        foreach (var item in flyout.Items.OfType<MenuFlyoutItem>())
+        {
+            if (item.Tag is string resourceKey)
+                item.Text = L10n.T(resourceKey);
+        }
+    }
+
     private async void MenuSelect_Click(object sender, RoutedEventArgs e)
     {
         if (VmFromMenu(sender) is { } vm) await Vm.SelectAsync(vm);

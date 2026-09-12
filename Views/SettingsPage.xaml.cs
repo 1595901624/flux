@@ -368,6 +368,8 @@ public sealed partial class SettingsPage : Page
         {
             Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
                 lang == "system" ? "" : lang;
+            L10n.Reset();
+            AppServices.Tray.RebuildMenu();
         }
         catch { }
         var dialog = new ContentDialog
