@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>Only remote profiles have a QR code (local profiles have no URL)</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>Password (encrypted on save)</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>Opens the GitHub release page for manual download (MSIX/portable).</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>Config not applied</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>Core not running or rejected the new config; settings were restored. Check the logs and retry.</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomo core started in privileged service mode</value>
   </data>

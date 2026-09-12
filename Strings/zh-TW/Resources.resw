@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>僅遠端訂閱支援二維碼（本地設定沒有 URL）</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>恢復</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>使用者名稱</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>密碼（儲存後加密儲存）</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>將開啟 GitHub 發佈頁手動下載（MSIX/便攜包）。</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>設定未應用</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>核心未執行或拒絕了新設定，設定已恢復。請檢視日誌後重試。</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomo 核心已由服務以特權模式啟動</value>
   </data>

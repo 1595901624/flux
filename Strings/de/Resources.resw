@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>QR nur für Remote-Profile</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>Kennwort (verschlüsselt gespeichert)</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>Öffnet die GitHub-Releaseseite</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>Konfiguration nicht angewendet</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>Kern läuft nicht oder hat die Konfiguration abgelehnt. Einstellungen wiederhergestellt.</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomo-Kern im privilegierten Dienstmodus gestartet</value>
   </data>

@@ -177,7 +177,7 @@ public sealed class UwpLoopbackDialog : ContentDialog
                 CreateNoWindow = true,
             };
             using var process = Process.Start(psi);
-            if (process is null) throw new InvalidOperationException("CheckNetIsolation 启动失败");
+            if (process is null) throw new InvalidOperationException("CheckNetIsolation launch failed");
             await process.WaitForExitAsync();
             if (process.ExitCode != 0)
                 throw new InvalidOperationException($"CheckNetIsolation exit {process.ExitCode}");

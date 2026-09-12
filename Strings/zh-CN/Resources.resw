@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>仅远程订阅支持二维码（本地配置没有 URL）</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>密码（保存后加密存储）</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>将打开 GitHub 发布页手动下载（MSIX/便携包）。</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>配置未应用</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>内核未运行或拒绝了新配置，设置已恢复。请查看日志后重试。</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomo 内核已由服务以特权模式启动</value>
   </data>

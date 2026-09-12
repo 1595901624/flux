@@ -617,7 +617,7 @@ public sealed partial class SettingsPage : Page
                 new TextBlock { Text = L10n.T("Msg_RestorePick"), TextWrapping = TextWrapping.Wrap },
                 listBox,
             } },
-            PrimaryButtonText = "恢复",
+            PrimaryButtonText = L10n.T("Msg_WebDavRestoreButton"),
             CloseButtonText = L10n.T("Common_Cancel"),
             DefaultButton = ContentDialogButton.Primary,
         };
@@ -652,8 +652,8 @@ public sealed partial class SettingsPage : Page
     {
         var verge = AppServices.Config.Verge;
         var urlBox = new TextBox { PlaceholderText = "https://dav.example.com/dav/", Text = verge.WebDavUrl, MinWidth = 360 };
-        var userBox = new TextBox { PlaceholderText = "用户名", Text = verge.WebDavUsername, MinWidth = 360 };
-        var passBox = new PasswordBox { PlaceholderText = "密码（保存后加密存储）", MinWidth = 360 };
+        var userBox = new TextBox { PlaceholderText = L10n.T("Msg_WebDavUsername"), Text = verge.WebDavUsername, MinWidth = 360 };
+        var passBox = new PasswordBox { PlaceholderText = L10n.T("Msg_WebDavPassword"), MinWidth = 360 };
         var dirBox = new TextBox { PlaceholderText = "flux-backups", Text = verge.WebDavDir, MinWidth = 360 };
 
         var form = new StackPanel { Spacing = 10, MinWidth = 380 };
@@ -667,7 +667,7 @@ public sealed partial class SettingsPage : Page
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_WebDavTitle"),
             Content = form,
-            PrimaryButtonText = "保存",
+            PrimaryButtonText = L10n.T("Common_Save"),
             CloseButtonText = L10n.T("Common_Cancel"),
             DefaultButton = ContentDialogButton.Primary,
         };
@@ -769,7 +769,7 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "诊断包已导出",
+                Title = L10n.T("Diag_Exported"),
                 Content = path + " " + L10n.T("Msg_DiagLocalOnly"),
                 CloseButtonText = L10n.T("Common_OK"),
             };
@@ -808,10 +808,10 @@ public sealed partial class SettingsPage : Page
                 Content = new StackPanel { Spacing = 8, Children =
                 {
                     new TextBlock { Text = notes, TextWrapping = TextWrapping.Wrap, MaxHeight = 240 },
-                    new TextBlock { Text = "将打开 GitHub 发布页手动下载（MSIX/便携包）。", FontSize = 12, Opacity = 0.7, TextWrapping = TextWrapping.Wrap },
+                    new TextBlock { Text = L10n.T("Msg_UpdateHintShort"), FontSize = 12, Opacity = 0.7, TextWrapping = TextWrapping.Wrap },
                 } },
                 PrimaryButtonText = L10n.T("Msg_OpenReleasePage"),
-                CloseButtonText = "关闭",
+                CloseButtonText = L10n.T("Common_Close"),
                 DefaultButton = ContentDialogButton.Primary,
             };
             if (await dialog.ShowAsync() == ContentDialogResult.Primary && result.ReleaseUrl is not null)
@@ -874,8 +874,8 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = "配置未应用",
-            Content = "内核未运行或拒绝了新配置，设置已恢复。请查看日志后重试。",
+            Title = L10n.T("Msg_ApplyRejectedTitle"),
+            Content = L10n.T("Msg_ApplyRejectedBody"),
             CloseButtonText = L10n.T("Common_OK"),
         };
         await dialog.ShowAsync();

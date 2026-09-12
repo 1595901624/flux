@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>QRコードはリモート購読のみ対応</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>復元</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>ユーザー名</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>パスワード（保存時に暗号化）</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>GitHubリリースページを開きます</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>設定を適用できませんでした</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>コアが停止中か新しい設定を拒否しました。ログを確認して再試行してください。</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>mihomoコアをサービス特権モードで起動</value>
   </data>

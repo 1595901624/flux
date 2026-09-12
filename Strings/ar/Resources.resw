@@ -1088,6 +1088,24 @@
   <data name="Msg_QrRemoteOnly.Text" xml:space="preserve">
     <value>رمز QR متاح للملفات البعيدة فقط</value>
   </data>
+  <data name="Msg_WebDavRestoreButton.Text" xml:space="preserve">
+    <value>استعادة</value>
+  </data>
+  <data name="Msg_WebDavUsername.Text" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Msg_WebDavPassword.Text" xml:space="preserve">
+    <value>كلمة المرور (تُشفَّر عند الحفظ)</value>
+  </data>
+  <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
+    <value>يفتح صفحة إصدارات GitHub</value>
+  </data>
+  <data name="Msg_ApplyRejectedTitle.Text" xml:space="preserve">
+    <value>لم يُطبَّق التكوين</value>
+  </data>
+  <data name="Msg_ApplyRejectedBody.Text" xml:space="preserve">
+    <value>النواة لا تعمل أو رفضت التكوين الجديد؛ استُرجعت الإعدادات.</value>
+  </data>
   <data name="Core_StartedService.Text" xml:space="preserve">
     <value>تم تشغيل نواة mihomo بوضع الخدمة المميز</value>
   </data>
