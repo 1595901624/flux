@@ -189,19 +189,19 @@
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Kayıtlar</value>
   </data>
-  <data name="Logs_LevelAll.Text" xml:space="preserve">
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Tüm düzeyler</value>
   </data>
-  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
     <value>Info ve üzeri</value>
   </data>
-  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning ve üzeri</value>
   </data>
-  <data name="Logs_LevelError.Text" xml:space="preserve">
+  <data name="Logs_LevelError.Content" xml:space="preserve">
     <value>Hata</value>
   </data>
-  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Hata ayıklama</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
@@ -228,19 +228,19 @@
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Tümünü çalıştır</value>
   </data>
-  <data name="Unlock_Retest.Text" xml:space="preserve">
+  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Yeniden test</value>
   </data>
-  <data name="Settings_Title.Header" xml:space="preserve">
+  <data name="Settings_Title.Text" xml:space="preserve">
     <value>Ayarlar</value>
   </data>
-  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+  <data name="Settings_SectionSystem.Text" xml:space="preserve">
     <value>Sistem</value>
   </data>
-  <data name="Settings_SectionClash.Header" xml:space="preserve">
+  <data name="Settings_SectionClash.Text" xml:space="preserve">
     <value>Clash ayarları</value>
   </data>
-  <data name="Settings_SectionApp.Header" xml:space="preserve">
+  <data name="Settings_SectionApp.Text" xml:space="preserve">
     <value>Uygulama</value>
   </data>
   <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
@@ -914,10 +914,19 @@
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
     <value>Kural</value>
   </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Kural</value>
+  </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Global</value>
   </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Doğrudan</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Doğrudan</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
@@ -1078,9 +1087,6 @@
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Kullanıcı UAC'ı iptal etti</value>
-  </data>
-  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
-    <value>Aracı aç</value>
   </data>
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>QR kod</value>
@@ -1277,10 +1283,10 @@
   <data name="Home_RulesCountLabel.Text" xml:space="preserve">
     <value>Kural sayısı: </value>
   </data>
-  <data name="Home_RestartCore.Text" xml:space="preserve">
+  <data name="Home_RestartCore.Content" xml:space="preserve">
     <value>Çekirdeği yeniden başlat</value>
   </data>
-  <data name="Home_OpenLogs.Text" xml:space="preserve">
+  <data name="Home_OpenLogs.Content" xml:space="preserve">
     <value>Kayıt klasörünü aç</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
@@ -1588,5 +1594,44 @@
   </data>
   <data name="Config_TargetDirMissing.Text" xml:space="preserve">
     <value>Hedef dosyanın klasörü yok</value>
+  </data>
+  <data name="Connections_ClosedToggle.Content" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Ana makine/kural/süreç ara</value>
+  </data>
+  <data name="Logs_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Kayıtlarda ara</value>
+  </data>
+  <data name="Profiles_UrlBox.PlaceholderText" xml:space="preserve">
+    <value>Abonelik URL'si (clash:// desteklenir)</value>
+  </data>
+  <data name="Proxies_FilterBox.PlaceholderText" xml:space="preserve">
+    <value>Ada/türe göre filtrele</value>
+  </data>
+  <data name="Rules_Refresh.Text" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="Rules_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Kural ara</value>
+  </data>
+  <data name="Home_RadioRule.Content" xml:space="preserve">
+    <value>Kural</value>
+  </data>
+  <data name="Home_RadioGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Home_RadioDirect.Content" xml:space="preserve">
+    <value>Doğrudan</value>
+  </data>
+  <data name="Proxies_SegRule.Content" xml:space="preserve">
+    <value>Kural</value>
+  </data>
+  <data name="Proxies_SegGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Proxies_SegDirect.Content" xml:space="preserve">
+    <value>Doğrudan</value>
   </data>
 </root>

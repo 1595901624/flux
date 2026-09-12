@@ -62,7 +62,9 @@ public class TrayService
 
     private void RebuildMenuOnUiThread() => _dispatcher?.TryEnqueue(RebuildMenu);
 
-    public void RebuildMenu()
+    public void RebuildMenu() => RebuildMenu(skipProxyRefresh: false);
+
+    private void RebuildMenu(bool skipProxyRefresh)
     {
         if (_tray is null) return;
         try
@@ -100,7 +102,7 @@ public class TrayService
                 }
             };
             _tray.ContextMenu = menu;
-            RefreshProxyGroupsCache();
+            if (!skipProxyRefresh) RefreshProxyGroupsCache();
         }
         catch (Exception ex)
         {
@@ -156,9 +158,11 @@ public class TrayService
     }
 
     /// <summary>异步刷新代理组快照后重建菜单（对齐参考项目托盘的动态节点菜单）。</summary>
+    private bool _suppressProxyRefresh;
+
     private void RefreshProxyGroupsCache()
     {
-        if (_refreshingProxyGroups || !AppServices.Core.IsRunning) return;
+        if (_refreshingProxyGroups || _suppressProxyRefresh || !AppServices.Core.IsRunning) return;
         _refreshingProxyGroups = true;
         _ = Task.Run(async () =>
         {
@@ -192,7 +196,13 @@ public class TrayService
 
                 if (groups.Count > 8) groups = groups.Take(8).ToList();
                 _proxyGroupsCache = groups;
-                RebuildMenuOnUiThread();
+                // 刷新完成后的重建不再触发新的刷新，避免无限循环
+                _dispatcher?.TryEnqueue(() =>
+                {
+                    _suppressProxyRefresh = true;
+                    try { RebuildMenu(skipProxyRefresh: true); }
+                    finally { _suppressProxyRefresh = false; }
+                });
             }
             catch { }
             finally { _refreshingProxyGroups = false; }

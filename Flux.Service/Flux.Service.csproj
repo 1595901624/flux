@@ -10,8 +10,11 @@
     <RootNamespace>Flux.Service</RootNamespace>
     <AssemblyName>Flux.Service</AssemblyName>
     <OutputType>Exe</OutputType>
-    <PlatformTarget>x64</PlatformTarget>
-    <Version>0.1.0</Version>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-x86'">x86</PlatformTarget>
+    <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-x64' Or '$(RuntimeIdentifier)' == ''">x64</PlatformTarget>
+    <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-arm64'">ARM64</PlatformTarget>
+    <Version>0.3.0</Version>
     <Description>Flux 特权服务：以 LocalSystem 运行，仅负责 mihomo 的特权生命周期管理。</Description>
   </PropertyGroup>
 
@@ -22,6 +25,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Flux.Core\Flux.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Assets\core\win-x86\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest"
+             Condition="'$(RuntimeIdentifier)' == 'win-x86'" />
+    <Content Include="..\Assets\core\win-x64\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest"
+             Condition="'$(RuntimeIdentifier)' == 'win-x64'" />
+    <Content Include="..\Assets\core\win-arm64\mihomo.exe" Link="core\mihomo.exe" CopyToOutputDirectory="PreserveNewest"
+             Condition="'$(RuntimeIdentifier)' == 'win-arm64'" />
   </ItemGroup>
 
 </Project>

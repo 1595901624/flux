@@ -39,6 +39,19 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
         return response is { Ok: true } ? response.ServiceVersion : null;
     }
 
+    public async Task<ServiceCoreState?> GetServiceCoreStateAsync(CancellationToken ct = default)
+    {
+        try
+        {
+            var response = await RequestAsync(ServiceRequest.Status(), ct).ConfigureAwait(false);
+            return response is { Ok: true, Version: ServiceProtocol.Version } ? response.State : null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     // ---------- 服务生命周期（UAC） ----------
 
     public async Task<OperationResult<bool>> InstallServiceAsync(CancellationToken ct = default) =>

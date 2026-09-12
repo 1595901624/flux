@@ -189,19 +189,19 @@
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Registros</value>
   </data>
-  <data name="Logs_LevelAll.Text" xml:space="preserve">
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Todos los niveles</value>
   </data>
-  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
     <value>Info y superior</value>
   </data>
-  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning y superior</value>
   </data>
-  <data name="Logs_LevelError.Text" xml:space="preserve">
+  <data name="Logs_LevelError.Content" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
@@ -228,19 +228,19 @@
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Probar todo</value>
   </data>
-  <data name="Unlock_Retest.Text" xml:space="preserve">
+  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Reprobar</value>
   </data>
-  <data name="Settings_Title.Header" xml:space="preserve">
+  <data name="Settings_Title.Text" xml:space="preserve">
     <value>Ajustes</value>
   </data>
-  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+  <data name="Settings_SectionSystem.Text" xml:space="preserve">
     <value>Sistema</value>
   </data>
-  <data name="Settings_SectionClash.Header" xml:space="preserve">
+  <data name="Settings_SectionClash.Text" xml:space="preserve">
     <value>Ajustes de Clash</value>
   </data>
-  <data name="Settings_SectionApp.Header" xml:space="preserve">
+  <data name="Settings_SectionApp.Text" xml:space="preserve">
     <value>Aplicación</value>
   </data>
   <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
@@ -914,10 +914,19 @@
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
     <value>Reglas</value>
   </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Global</value>
   </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Directo</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Directo</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
@@ -1078,9 +1087,6 @@
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Consentimiento UAC cancelado</value>
-  </data>
-  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
-    <value>Abrir herramienta</value>
   </data>
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>Código QR</value>
@@ -1277,10 +1283,10 @@
   <data name="Home_RulesCountLabel.Text" xml:space="preserve">
     <value>Reglas: </value>
   </data>
-  <data name="Home_RestartCore.Text" xml:space="preserve">
+  <data name="Home_RestartCore.Content" xml:space="preserve">
     <value>Reiniciar núcleo</value>
   </data>
-  <data name="Home_OpenLogs.Text" xml:space="preserve">
+  <data name="Home_OpenLogs.Content" xml:space="preserve">
     <value>Abrir carpeta de logs</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
@@ -1588,5 +1594,44 @@
   </data>
   <data name="Config_TargetDirMissing.Text" xml:space="preserve">
     <value>El archivo de destino no tiene directorio</value>
+  </data>
+  <data name="Connections_ClosedToggle.Content" xml:space="preserve">
+    <value>Cerradas</value>
+  </data>
+  <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Buscar host/regla/proceso</value>
+  </data>
+  <data name="Logs_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Buscar registros</value>
+  </data>
+  <data name="Profiles_UrlBox.PlaceholderText" xml:space="preserve">
+    <value>URL de suscripción (admite clash://)</value>
+  </data>
+  <data name="Proxies_FilterBox.PlaceholderText" xml:space="preserve">
+    <value>Filtrar por nombre/tipo</value>
+  </data>
+  <data name="Rules_Refresh.Text" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Rules_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Buscar reglas</value>
+  </data>
+  <data name="Home_RadioRule.Content" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
+  <data name="Home_RadioGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Home_RadioDirect.Content" xml:space="preserve">
+    <value>Directo</value>
+  </data>
+  <data name="Proxies_SegRule.Content" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
+  <data name="Proxies_SegGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Proxies_SegDirect.Content" xml:space="preserve">
+    <value>Directo</value>
   </data>
 </root>

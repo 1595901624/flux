@@ -1,6 +1,9 @@
 using System.IO.Pipes;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 using Flux.Core.Service;
 
 namespace Flux.Service;
@@ -11,11 +14,11 @@ namespace Flux.Service;
 /// </summary>
 public sealed class PipeServer
 {
-    private readonly Func<ServiceRequest, CancellationToken, ServiceResponse> _handler;
+    private readonly Func<ServiceRequest, ServiceClientContext, CancellationToken, ServiceResponse> _handler;
     private readonly Action<string, string> _log;
     private CancellationTokenSource? _cts;
 
-    public PipeServer(Func<ServiceRequest, CancellationToken, ServiceResponse> handler, Action<string, string> log)
+    public PipeServer(Func<ServiceRequest, ServiceClientContext, CancellationToken, ServiceResponse> handler, Action<string, string> log)
     {
         _handler = handler;
         _log = log;
@@ -39,6 +42,11 @@ public sealed class PipeServer
             {
                 pipe = CreatePipe();
                 await pipe.WaitForConnectionAsync(ct).ConfigureAwait(false);
+                ServiceClientContext? client = null;
+                pipe.RunAsClient(() => client = UserDataDirectoryResolver.Capture());
+                if (client is null)
+                    throw new UnauthorizedAccessException("无法识别管道客户端");
+                client = client with { ExecutablePath = GetClientExecutablePath(pipe.SafePipeHandle) };
                 using var registration = ct.Register(() => { try { pipe.Disconnect(); } catch { } });
 
                 using var timeoutCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
@@ -47,7 +55,7 @@ public sealed class PipeServer
                 var request = await ServiceFrame.DecodeAsync<ServiceRequest>(pipe, timeoutCts.Token).ConfigureAwait(false);
                 var response = request is null
                     ? ServiceResponse.Fail("", "请求为空")
-                    : _handler(request, ct);
+                    : _handler(request, client, ct);
                 await pipe.WriteAsync(ServiceFrame.Encode(response), timeoutCts.Token).ConfigureAwait(false);
                 await pipe.FlushAsync(timeoutCts.Token).ConfigureAwait(false);
             }
@@ -65,6 +73,24 @@ public sealed class PipeServer
             }
         }
     }
+
+    private static string? GetClientExecutablePath(SafePipeHandle pipeHandle)
+    {
+        if (!GetNamedPipeClientProcessId(pipeHandle, out var processId)) return null;
+        try
+        {
+            using var process = Process.GetProcessById(checked((int)processId));
+            return process.MainModule?.FileName;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool GetNamedPipeClientProcessId(SafePipeHandle pipe, out uint clientProcessId);
 
     /// <summary>创建带 ACL 的服务端管道：SYSTEM 与管理员完全控制，交互式用户读写。</summary>
     public static NamedPipeServerStream CreatePipe()

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Security.Cryptography;
 using Flux.Core.Contracts;
 using Flux.Core.Service;
 using Xunit;
@@ -72,7 +73,7 @@ public class ServiceProtocolTests
         Assert.Contains("\"Version\"", json);
         var deserialized = JsonSerializer.Deserialize<ServiceRequest>(json);
         Assert.Equal(ServiceProtocol.Version, deserialized!.Version);
-        Assert.Equal(ServiceProtocol.Version, 1); // 当前协议版本
+        Assert.Equal(ServiceProtocol.Version, 2); // 当前协议版本
     }
 
     [Fact]
@@ -94,6 +95,11 @@ public class ServicePathValidatorTests
         _installDir = Path.Combine(Path.GetTempPath(), "flux-svc-tests", Guid.NewGuid().ToString("N"), "app");
         Directory.CreateDirectory(Path.Combine(_dataDir, "core-cache", "v1.19.30"));
         Directory.CreateDirectory(Path.Combine(_installDir, "core"));
+        File.WriteAllText(Path.Combine(_dataDir, "runtime.yaml"), "mixed-port: 7890");
+        var corePath = Path.Combine(_installDir, "core", "mihomo.exe");
+        File.WriteAllBytes(corePath, [0x4d, 0x5a]);
+        using var coreStream = File.OpenRead(corePath);
+        File.WriteAllText(corePath + ".sha256", Convert.ToHexString(SHA256.HashData(coreStream)));
     }
 
     [Fact]
@@ -130,6 +136,14 @@ public class ServicePathValidatorTests
     }
 
     [Fact]
+    public void ValidateConfigDirectory_仅接受当前用户数据目录()
+    {
+        Assert.Null(ServicePathValidator.ValidateConfigDirectory(_dataDir, _dataDir));
+        Assert.NotNull(ServicePathValidator.ValidateConfigDirectory(Path.GetDirectoryName(_dataDir), _dataDir));
+        Assert.NotNull(ServicePathValidator.ValidateConfigDirectory("relative", _dataDir));
+    }
+
+    [Fact]
     public void ValidateCorePath_内置内核_通过()
     {
         var error = ServicePathValidator.ValidateCorePath(
@@ -138,17 +152,27 @@ public class ServicePathValidatorTests
     }
 
     [Fact]
-    public void ValidateCorePath_版本化缓存内核_通过()
+    public void ValidateCorePath_版本化缓存内核_拒绝()
     {
         var error = ServicePathValidator.ValidateCorePath(
             Path.Combine(_dataDir, "core-cache", "v1.19.30", "mihomo.exe"), _installDir, _dataDir);
-        Assert.Null(error);
+        Assert.NotNull(error);
     }
 
     [Fact]
     public void ValidateCorePath_任意路径_拒绝()
     {
         var error = ServicePathValidator.ValidateCorePath(@"C:\evil\mihomo.exe", _installDir, _dataDir);
+        Assert.NotNull(error);
+        Assert.Equal("invalid_core", error!.Code);
+    }
+
+    [Fact]
+    public void ValidateCorePath_内核被篡改_拒绝()
+    {
+        var corePath = Path.Combine(_installDir, "core", "mihomo.exe");
+        File.AppendAllText(corePath, "tampered");
+        var error = ServicePathValidator.ValidateCorePath(corePath, _installDir, _dataDir);
         Assert.NotNull(error);
         Assert.Equal("invalid_core", error!.Code);
     }

@@ -50,6 +50,16 @@
     <ProjectReference Include="Flux.Core\Flux.Core.csproj" />
   </ItemGroup>
 
+  <!-- 发行编排传入预先 publish 的、与当前 RID 匹配的特权服务载荷。 -->
+  <ItemGroup Condition="'$(ServicePayloadDir)' != ''">
+    <Content Include="$(ServicePayloadDir)\service-payload\**\*"
+             Link="service-payload\%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="$(ServicePayloadDir)\Flux.Service.Installer.exe"
+             Link="Flux.Service.Installer.exe"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="tests\**\*.cs" />
     <None Remove="tests\**\*" />
@@ -78,8 +88,9 @@
   <!-- 修复：dotnet publish 不会复制应用自身的 Flux.pri，未打包 WinUI
        启动时因缺少该文件而立即崩溃（combase 80004005） -->
   <Target Name="EnsurePriInPublish" AfterTargets="Publish">
+    <!-- 未打包应用的 MRT Core 要求 PRI 文件名为 resources.pri（构建产物名为 Flux.pri） -->
     <Copy SourceFiles="$(OutDir)$(AssemblyName).pri"
-          DestinationFolder="$(PublishDir)"
+          DestinationFiles="$(PublishDir)resources.pri"
           SkipUnchangedFiles="true"
           Condition="Exists('$(OutDir)$(AssemblyName).pri')" />
   </Target>

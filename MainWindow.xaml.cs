@@ -12,7 +12,7 @@ namespace Flux;
 
 public sealed partial class MainWindow : Window
 {
-    private readonly EndSessionHook _endSessionHook;
+    private readonly EndSessionHook? _endSessionHook;
 
     [DllImport("user32.dll")]
     private static extern uint GetDpiForWindow(IntPtr hwnd);
@@ -54,7 +54,13 @@ public sealed partial class MainWindow : Window
             AppWindow.Hide();
             Services.LightweightManager.OnWindowHidden();
         };
-        Closed += (_, _) => App.MainWindow = null;
+        Closed += (_, _) =>
+        {
+            _graphTimer?.Stop();
+            AppServices.Streams.Traffic -= OnTraffic;
+            _endSessionHook?.Dispose();
+            App.MainWindow = null;
+        };
 
         // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
         var scale = GetDpiForWindow(WinRT.Interop.WindowNative.GetWindowHandle(this)) / 96.0;
@@ -68,20 +74,22 @@ public sealed partial class MainWindow : Window
         _endSessionHook = new EndSessionHook(WinRT.Interop.WindowNative.GetWindowHandle(this));
 
         // 实时流量订阅
-        AppServices.Streams.Traffic += (up, down) =>
-            DispatcherQueue.TryEnqueue(() =>
-            {
-                UpText.Text = "↑ " + Format.Bytes(up) + "/s";
-                DownText.Text = "↓ " + Format.Bytes(down) + "/s";
-                PushSample(_upSamples, up);
-                PushSample(_downSamples, down);
-            });
+        AppServices.Streams.Traffic += OnTraffic;
 
         _graphTimer = DispatcherQueue.CreateTimer();
         _graphTimer.Interval = TimeSpan.FromSeconds(1);
         _graphTimer.Tick += (_, _) => RedrawGraph();
         _graphTimer.Start();
     }
+
+    private void OnTraffic(double up, double down) =>
+        DispatcherQueue.TryEnqueue(() =>
+        {
+            UpText.Text = "↑ " + Format.Bytes(up) + "/s";
+            DownText.Text = "↓ " + Format.Bytes(down) + "/s";
+            PushSample(_upSamples, up);
+            PushSample(_downSamples, down);
+        });
 
     private static void PushSample(Queue<double> queue, double value)
     {

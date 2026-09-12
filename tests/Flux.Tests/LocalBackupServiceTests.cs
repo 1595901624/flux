@@ -61,7 +61,7 @@ public class LocalBackupServiceTests : IDisposable
         var list = await _service.ListAsync();
         Assert.Single(list);
         Assert.True(list[0].Size > 0);
-        Assert.Matches(@"^flux-\d{8}-\d{6}\.zip$", list[0].Name);
+        Assert.Matches(@"^flux-\d{8}-\d{6}-\d{3}-[0-9a-f]{8}\.zip$", list[0].Name);
     }
 
     [Fact]

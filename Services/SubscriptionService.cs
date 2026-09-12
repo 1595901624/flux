@@ -489,7 +489,7 @@ public class SubscriptionService
         {
             foreach (var item in Config.Profiles.Items.ToList())
             {
-                if (item.Type != "remote" || item.Option.UpdateInterval <= 0) continue;
+                if (item.Type != "remote" || !item.Option.AllowAutoUpdate || item.Option.UpdateInterval <= 0) continue;
                 if ((DateTime.Now - item.Updated).TotalMinutes < item.Option.UpdateInterval) continue;
                 try
                 {

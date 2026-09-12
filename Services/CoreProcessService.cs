@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Flux.Core.Service;
 
 namespace Flux.Services;
 
@@ -24,6 +25,7 @@ public class CoreProcessService : IDisposable
 
     private Process? _process;
     private bool _serviceCoreRunning;
+    private CancellationTokenSource? _serviceMonitorCts;
     private IntPtr _jobHandle = IntPtr.Zero;
     private readonly SemaphoreSlim _lifecycleLock = new(1, 1);
     private readonly SemaphoreSlim _applyLock = new(1, 1);
@@ -51,6 +53,10 @@ public class CoreProcessService : IDisposable
 
             try
             {
+                if (Config.Verge.EnableTunMode && !TrayService.IsElevated() &&
+                    AppServices.Privilege?.IsServiceReady() != true)
+                    throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));
+
                 // TUN 启用时优先使用服务模式（普通用户无需管理员即可 TUN）
                 if (Config.Verge.EnableTunMode && AppServices.Privilege?.IsServiceReady() == true)
                 {
@@ -62,11 +68,14 @@ public class CoreProcessService : IDisposable
                         _serviceCoreRunning = true;
                         await WaitForControllerAsync(15000, checkSidecarProcess: false);
                         await RestoreProfileSelectionsAsync();
+                        StartServiceMonitor();
                         LogService.App(L10n.T("Core_StartedService"));
                         CoreStarted?.Invoke();
                         return;
                     }
                     LogService.App(L10n.F("Core_ServiceStartFailedFallback", result.Error?.Message ?? ""), "warn");
+                    if (!TrayService.IsElevated())
+                        throw new InvalidOperationException(result.Error?.Message ?? L10n.T("Priv_ServiceUnavailable"));
                 }
 
                 StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
@@ -138,6 +147,7 @@ public class CoreProcessService : IDisposable
 
     private async Task StopCoreUnsafeAsync()
     {
+        StopServiceMonitor();
         try
         {
             if (Mode == RunningMode.Service && _serviceCoreRunning)
@@ -162,6 +172,61 @@ public class CoreProcessService : IDisposable
             _serviceCoreRunning = false;
             Mode = RunningMode.NotRunning;
             CoreStopped?.Invoke();
+        }
+    }
+
+    private void StartServiceMonitor()
+    {
+        StopServiceMonitor();
+        _serviceMonitorCts = new CancellationTokenSource();
+        var ct = _serviceMonitorCts.Token;
+        _ = Task.Run(async () =>
+        {
+            var unavailableCount = 0;
+            try
+            {
+                while (!ct.IsCancellationRequested)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(2), ct);
+                    var state = await AppServices.Privilege.GetServiceCoreStateAsync(ct);
+                    if (state == ServiceCoreState.Running)
+                    {
+                        unavailableCount = 0;
+                        continue;
+                    }
+                    if (state is null && ++unavailableCount < 3) continue;
+                    await HandleServiceCoreLostAsync(state is null ? "服务连接中断" : "特权内核已退出", ct);
+                    return;
+                }
+            }
+            catch (OperationCanceledException) { }
+        }, ct);
+    }
+
+    private void StopServiceMonitor()
+    {
+        var cts = Interlocked.Exchange(ref _serviceMonitorCts, null);
+        if (cts is null) return;
+        cts.Cancel();
+        cts.Dispose();
+    }
+
+    private async Task HandleServiceCoreLostAsync(string reason, CancellationToken ct)
+    {
+        await _lifecycleLock.WaitAsync(ct);
+        try
+        {
+            if (Mode != RunningMode.Service || !_serviceCoreRunning) return;
+            _serviceCoreRunning = false;
+            Mode = RunningMode.NotRunning;
+            AppServices.Streams.Stop();
+            AppServices.SysProxy.Reset();
+            LogService.App($"{reason}，已关闭系统代理", "error");
+            CoreStopped?.Invoke();
+        }
+        finally
+        {
+            _lifecycleLock.Release();
         }
     }
 
@@ -237,6 +302,21 @@ public class CoreProcessService : IDisposable
         try
         {
             if (!IsRunning) return false;
+            var serviceReady = AppServices.Privilege?.IsServiceReady() == true;
+            if (Config.Verge.EnableTunMode && !TrayService.IsElevated() && !serviceReady)
+            {
+                LogService.App(L10n.T("Boot_TunDisabledNoPrivilege"), "warn");
+                return false;
+            }
+
+            var desiredMode = Config.Verge.EnableTunMode && !TrayService.IsElevated()
+                ? RunningMode.Service
+                : RunningMode.Sidecar;
+            if (Mode != desiredMode)
+            {
+                await RestartAsync();
+                return IsRunning && Mode == desiredMode;
+            }
             try
             {
                 Config.WriteRuntimeFile(Paths.RuntimeConfigFile);

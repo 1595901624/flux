@@ -18,7 +18,6 @@ public sealed class FluxServiceWorker : BackgroundService
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
         var installDir = AppContext.BaseDirectory;
-        var dataDir = ServicePathValidator.ResolveDataDir(installDir);
         var serviceVersion = typeof(FluxServiceWorker).Assembly.GetName().Version?.ToString(3) ?? "0.0.0";
 
         void Log(string level, string message)
@@ -29,12 +28,12 @@ public sealed class FluxServiceWorker : BackgroundService
         }
 
         _core = new PrivilegedCoreManager(Log);
-        _handler = new RequestHandler(_core, Log, installDir, dataDir, serviceVersion);
+        _handler = new RequestHandler(_core, Log, installDir, UserDataDirectoryResolver.ResolveAllowed, serviceVersion);
         _pipe = new PipeServer(_handler.Handle, Log);
         _pipe.Start(stoppingToken);
 
-        _logger.LogInformation("Flux 服务已启动（协议 v{Version}，数据目录 {DataDir}）",
-            ServiceProtocol.Version, dataDir);
+        _logger.LogInformation("Flux 服务已启动（协议 v{Version}，按客户端 SID 隔离数据目录）",
+            ServiceProtocol.Version);
 
         // 保持运行直到关闭
         return Task.Delay(Timeout.Infinite, stoppingToken).ContinueWith(t => { }, stoppingToken);

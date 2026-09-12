@@ -29,9 +29,9 @@
                 <ctk:Segmented
                     x:Name="ModeSegment"
                     VerticalAlignment="Center">
-                    <ctk:SegmentedItem x:Uid="Fmt_ModeRule" Tag="rule" Content="规则" />
-                    <ctk:SegmentedItem x:Uid="Fmt_ModeGlobal" Tag="global" Content="全局" />
-                    <ctk:SegmentedItem x:Uid="Fmt_ModeDirect" Tag="direct" Content="直连" />
+                    <ctk:SegmentedItem x:Uid="Proxies_SegRule" Tag="rule" Content="规则" />
+                    <ctk:SegmentedItem x:Uid="Proxies_SegGlobal" Tag="global" Content="全局" />
+                    <ctk:SegmentedItem x:Uid="Proxies_SegDirect" Tag="direct" Content="直连" />
                 </ctk:Segmented>
             </StackPanel>
             <TextBox x:Uid="Proxies_FilterBox"

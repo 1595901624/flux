@@ -189,19 +189,19 @@
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Log</value>
   </data>
-  <data name="Logs_LevelAll.Text" xml:space="preserve">
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Semua level</value>
   </data>
-  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
     <value>Info ke atas</value>
   </data>
-  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Warning ke atas</value>
   </data>
-  <data name="Logs_LevelError.Text" xml:space="preserve">
+  <data name="Logs_LevelError.Content" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
@@ -228,19 +228,19 @@
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Jalankan semua</value>
   </data>
-  <data name="Unlock_Retest.Text" xml:space="preserve">
+  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Uji ulang</value>
   </data>
-  <data name="Settings_Title.Header" xml:space="preserve">
+  <data name="Settings_Title.Text" xml:space="preserve">
     <value>Pengaturan</value>
   </data>
-  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+  <data name="Settings_SectionSystem.Text" xml:space="preserve">
     <value>Sistem</value>
   </data>
-  <data name="Settings_SectionClash.Header" xml:space="preserve">
+  <data name="Settings_SectionClash.Text" xml:space="preserve">
     <value>Pengaturan Clash</value>
   </data>
-  <data name="Settings_SectionApp.Header" xml:space="preserve">
+  <data name="Settings_SectionApp.Text" xml:space="preserve">
     <value>Aplikasi</value>
   </data>
   <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
@@ -914,10 +914,19 @@
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
     <value>Aturan</value>
   </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Global</value>
   </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Langsung</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
@@ -1078,9 +1087,6 @@
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Persetujuan UAC dibatalkan</value>
-  </data>
-  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
-    <value>Buka alat</value>
   </data>
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>Kode QR</value>
@@ -1277,10 +1283,10 @@
   <data name="Home_RulesCountLabel.Text" xml:space="preserve">
     <value>Jumlah aturan: </value>
   </data>
-  <data name="Home_RestartCore.Text" xml:space="preserve">
+  <data name="Home_RestartCore.Content" xml:space="preserve">
     <value>Restart core</value>
   </data>
-  <data name="Home_OpenLogs.Text" xml:space="preserve">
+  <data name="Home_OpenLogs.Content" xml:space="preserve">
     <value>Buka folder log</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
@@ -1588,5 +1594,44 @@
   </data>
   <data name="Config_TargetDirMissing.Text" xml:space="preserve">
     <value>File target tidak punya direktori</value>
+  </data>
+  <data name="Connections_ClosedToggle.Content" xml:space="preserve">
+    <value>Tertutup</value>
+  </data>
+  <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari host/aturan/proses</value>
+  </data>
+  <data name="Logs_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari log</value>
+  </data>
+  <data name="Profiles_UrlBox.PlaceholderText" xml:space="preserve">
+    <value>URL langganan (mendukung clash://)</value>
+  </data>
+  <data name="Proxies_FilterBox.PlaceholderText" xml:space="preserve">
+    <value>Filter nama/tipe</value>
+  </data>
+  <data name="Rules_Refresh.Text" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="Rules_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Cari aturan</value>
+  </data>
+  <data name="Home_RadioRule.Content" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Home_RadioGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Home_RadioDirect.Content" xml:space="preserve">
+    <value>Langsung</value>
+  </data>
+  <data name="Proxies_SegRule.Content" xml:space="preserve">
+    <value>Aturan</value>
+  </data>
+  <data name="Proxies_SegGlobal.Content" xml:space="preserve">
+    <value>Global</value>
+  </data>
+  <data name="Proxies_SegDirect.Content" xml:space="preserve">
+    <value>Langsung</value>
   </data>
 </root>

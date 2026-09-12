@@ -123,10 +123,7 @@ i18n_core_table.register(k)
 import i18n_gaps_table
 i18n_gaps_table.register(k)
 
-LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
-
-def esc(s):
-    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+# ---------- 属性映射与发射 ----------
 
 # 挂在 Button/ToggleButton/ComboBoxItem/NavigationViewItem 上的键 → .Content
 CONTENT_KEYS = {
@@ -135,7 +132,7 @@ CONTENT_KEYS = {
     "Common_Apply",
     "Profiles_CreateEmpty", "Profiles_UpdateAll", "Profiles_GlobalEnhance",
     "Connections_ClosedToggle", "Connections_SortDefault", "Connections_SortUpload", "Connections_SortDownload",
-    "Unlock_RunAll",
+    "Unlock_RunAll", "Unlock_Retest",
     "Settings_ThemeSystem", "Settings_ThemeLight", "Settings_ThemeDark",
     "Settings_RestartCoreButton2", "Settings_InstallService", "Settings_SaveHotkeys",
     "Settings_CreateBackup", "Settings_RestoreBackup", "Settings_BackupDir",
@@ -143,6 +140,9 @@ CONTENT_KEYS = {
     "Settings_ExportDiagnostics", "Settings_CheckUpdate",
     "Settings_OpenData", "Settings_OpenLogs", "Settings_OpenGitHub", "Settings_ExitApp",
     "Settings_OpenLoopback", "Settings_LangFollowSystem",
+    "Home_RestartCore", "Home_OpenLogs", "Home_RadioRule", "Home_RadioGlobal", "Home_RadioDirect",
+    "Proxies_SegRule", "Proxies_SegGlobal", "Proxies_SegDirect",
+    "Logs_LevelAll", "Logs_LevelInfo", "Logs_LevelWarning", "Logs_LevelError", "Logs_LevelDebug",
 }
 
 # 挂在 TextBox 上的键 → .PlaceholderText
@@ -151,15 +151,23 @@ PLACEHOLDER_KEYS = {
     "Rules_SearchBox", "Logs_SearchBox", "Settings_LightweightMinutes",
 }
 
+# 挂在 ToggleSwitch 上的键 → .Header
 HEADER_KEYS = {"Home_ToggleSysProxy", "Home_ToggleTun"}
+
+# 附加属性（ToolTipService.ToolTip）适用于任何元素
 TOOLTIP_KEYS = {"Profiles_TipUpdate", "Profiles_TipDelete", "Proxies_TipGroupTest"}
+
+# 同时被代码 L10n.T（找裸键/.Text）与 x:Uid 的 RadioButton/SegmentedItem（.Content）
+# 使用的键 → 双属性（x:Uid 应用时任一可解析即成功）
+DUAL_KEYS = {"Fmt_ModeRule", "Fmt_ModeGlobal", "Fmt_ModeDirect"}
 
 def names_for(key):
     # x:Uid 只应用目标元素存在的属性；不存在的属性（如 NavigationViewItem.Text）
-    # 会直接抛 XamlParseException 使窗口创建崩溃，因此必须精确输出。
+    # 会直接抛 XamlParseException 使窗口创建崩溃，因此属性名必须精确。
     if key.endswith(".Desc"):
         return [key[:-5] + ".Description"]
-    if key.startswith("Settings_Card") or key.startswith("Settings_Section") or key == "Settings_Title":
+    if key.startswith("Settings_Card"):
+        # .Description 由对应的 ".Desc" 键提供，避免重复条目
         return [key + ".Header"]
     if key in CONTENT_KEYS:
         return [key + ".Content"]
@@ -169,13 +177,24 @@ def names_for(key):
         return [key + ".Header"]
     if key in TOOLTIP_KEYS:
         return [key + ".ToolTipService.ToolTip"]
+    if key in DUAL_KEYS:
+        return [key + ".Text", key + ".Content"]
     return [key + ".Text"]
+
+LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
+
+def esc(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 NL = chr(10)
 def emit(lang, index):
     out = ['<?xml version="1.0" encoding="utf-8"?>', '<root>']
+    emitted = set()
     for (key, *vals) in T:
         for name in names_for(key):
+            if name in emitted:
+                continue
+            emitted.add(name)
             out.append(f'  <data name="{name}" xml:space="preserve">')
             out.append(f'    <value>{esc(vals[index])}</value>')
             out.append('  </data>')

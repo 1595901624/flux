@@ -189,19 +189,19 @@
   <data name="Logs_Title.Text" xml:space="preserve">
     <value>Журналлар</value>
   </data>
-  <data name="Logs_LevelAll.Text" xml:space="preserve">
+  <data name="Logs_LevelAll.Content" xml:space="preserve">
     <value>Барлык дәрәҗә</value>
   </data>
-  <data name="Logs_LevelInfo.Text" xml:space="preserve">
+  <data name="Logs_LevelInfo.Content" xml:space="preserve">
     <value>Info һәм югарырак</value>
   </data>
-  <data name="Logs_LevelWarning.Text" xml:space="preserve">
+  <data name="Logs_LevelWarning.Content" xml:space="preserve">
     <value>Кисәтү һәм югарырак</value>
   </data>
-  <data name="Logs_LevelError.Text" xml:space="preserve">
+  <data name="Logs_LevelError.Content" xml:space="preserve">
     <value>Хата</value>
   </data>
-  <data name="Logs_LevelDebug.Text" xml:space="preserve">
+  <data name="Logs_LevelDebug.Content" xml:space="preserve">
     <value>Дебуг</value>
   </data>
   <data name="Logs_SearchPlaceholder.Text" xml:space="preserve">
@@ -228,19 +228,19 @@
   <data name="Unlock_RunAll.Content" xml:space="preserve">
     <value>Барысын да эшләтү</value>
   </data>
-  <data name="Unlock_Retest.Text" xml:space="preserve">
+  <data name="Unlock_Retest.Content" xml:space="preserve">
     <value>Кабат тикшерү</value>
   </data>
-  <data name="Settings_Title.Header" xml:space="preserve">
+  <data name="Settings_Title.Text" xml:space="preserve">
     <value>Көйләүләр</value>
   </data>
-  <data name="Settings_SectionSystem.Header" xml:space="preserve">
+  <data name="Settings_SectionSystem.Text" xml:space="preserve">
     <value>Система</value>
   </data>
-  <data name="Settings_SectionClash.Header" xml:space="preserve">
+  <data name="Settings_SectionClash.Text" xml:space="preserve">
     <value>Clash көйләүләре</value>
   </data>
-  <data name="Settings_SectionApp.Header" xml:space="preserve">
+  <data name="Settings_SectionApp.Text" xml:space="preserve">
     <value>Кушак</value>
   </data>
   <data name="Settings_CardAutoLaunch.Header" xml:space="preserve">
@@ -914,10 +914,19 @@
   <data name="Fmt_ModeRule.Text" xml:space="preserve">
     <value>Кагыйдә</value>
   </data>
+  <data name="Fmt_ModeRule.Content" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
   <data name="Fmt_ModeGlobal.Text" xml:space="preserve">
     <value>Глобаль</value>
   </data>
+  <data name="Fmt_ModeGlobal.Content" xml:space="preserve">
+    <value>Глобаль</value>
+  </data>
   <data name="Fmt_ModeDirect.Text" xml:space="preserve">
+    <value>Туры</value>
+  </data>
+  <data name="Fmt_ModeDirect.Content" xml:space="preserve">
     <value>Туры</value>
   </data>
   <data name="Msg_ProviderTitleProxy.Text" xml:space="preserve">
@@ -1078,9 +1087,6 @@
   </data>
   <data name="Msg_UacCancelled.Text" xml:space="preserve">
     <value>Кулланучы UAC'ны баш тартты</value>
-  </data>
-  <data name="Settings_OpenLoopback.Content" xml:space="preserve">
-    <value>Коралны ачу</value>
   </data>
   <data name="Profiles_MenuQr.Text" xml:space="preserve">
     <value>QR код</value>
@@ -1277,10 +1283,10 @@
   <data name="Home_RulesCountLabel.Text" xml:space="preserve">
     <value>Кагыйдә саны: </value>
   </data>
-  <data name="Home_RestartCore.Text" xml:space="preserve">
+  <data name="Home_RestartCore.Content" xml:space="preserve">
     <value>Йөзәкне яңадан башлау</value>
   </data>
-  <data name="Home_OpenLogs.Text" xml:space="preserve">
+  <data name="Home_OpenLogs.Content" xml:space="preserve">
     <value>Журнал папкасын ачу</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
@@ -1588,5 +1594,44 @@
   </data>
   <data name="Config_TargetDirMissing.Text" xml:space="preserve">
     <value>Максат файлында папка юк</value>
+  </data>
+  <data name="Connections_ClosedToggle.Content" xml:space="preserve">
+    <value>Ябылган</value>
+  </data>
+  <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Хост/кагыйдә/процесс эзләү</value>
+  </data>
+  <data name="Logs_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Журналларда эзләү</value>
+  </data>
+  <data name="Profiles_UrlBox.PlaceholderText" xml:space="preserve">
+    <value>Абу URL (clash:// хуплана)</value>
+  </data>
+  <data name="Proxies_FilterBox.PlaceholderText" xml:space="preserve">
+    <value>Исем/тип буенча фильтр</value>
+  </data>
+  <data name="Rules_Refresh.Text" xml:space="preserve">
+    <value>Яңарту</value>
+  </data>
+  <data name="Rules_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Кагыйдә эзләү</value>
+  </data>
+  <data name="Home_RadioRule.Content" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
+  <data name="Home_RadioGlobal.Content" xml:space="preserve">
+    <value>Глобаль</value>
+  </data>
+  <data name="Home_RadioDirect.Content" xml:space="preserve">
+    <value>Туры</value>
+  </data>
+  <data name="Proxies_SegRule.Content" xml:space="preserve">
+    <value>Кагыйдә</value>
+  </data>
+  <data name="Proxies_SegGlobal.Content" xml:space="preserve">
+    <value>Глобаль</value>
+  </data>
+  <data name="Proxies_SegDirect.Content" xml:space="preserve">
+    <value>Туры</value>
   </data>
 </root>

@@ -10,6 +10,7 @@ namespace Flux.Service;
 public sealed class PrivilegedCoreManager : IDisposable
 {
     private Process? _process;
+    private string? _ownerSid;
     private readonly SemaphoreSlim _gate = new(1, 1);
     private readonly Action<string, string> _log;
 
@@ -20,13 +21,17 @@ public sealed class PrivilegedCoreManager : IDisposable
 
     public int ProcessId => _process is { HasExited: false } p ? p.Id : 0;
 
-    public async Task<ServiceResponse> StartAsync(ServiceRequest request, CancellationToken ct)
+    public async Task<ServiceResponse> StartAsync(ServiceRequest request, ServiceClientContext client, CancellationToken ct)
     {
         await _gate.WaitAsync(ct).ConfigureAwait(false);
         try
         {
             if (State == ServiceCoreState.Running)
                 return ServiceResponse.Fail(request.RequestId, "内核已在服务内运行，请先停止");
+
+            _process?.Dispose();
+            _process = null;
+            _ownerSid = null;
 
             var configPath = request.ConfigPath!;
             var corePath = request.CorePath!;
@@ -38,13 +43,16 @@ public sealed class PrivilegedCoreManager : IDisposable
             var startInfo = new ProcessStartInfo
             {
                 FileName = corePath,
-                Arguments = $"-d \"{configDir}\" -f \"{configPath}\"",
                 UseShellExecute = false,
                 CreateNoWindow = true,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 WorkingDirectory = configDir,
             };
+            startInfo.ArgumentList.Add("-d");
+            startInfo.ArgumentList.Add(configDir);
+            startInfo.ArgumentList.Add("-f");
+            startInfo.ArgumentList.Add(configPath);
 
             var process = new Process { StartInfo = startInfo, EnableRaisingEvents = true };
             process.OutputDataReceived += (_, e) =>
@@ -60,6 +68,7 @@ public sealed class PrivilegedCoreManager : IDisposable
                 return ServiceResponse.Fail(request.RequestId, "内核进程启动失败");
 
             _process = process;
+            _ownerSid = client.Sid;
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
             _log("info", $"特权内核已启动 (PID {process.Id})");
@@ -76,11 +85,14 @@ public sealed class PrivilegedCoreManager : IDisposable
         }
     }
 
-    public async Task<ServiceResponse> StopAsync(ServiceRequest request, CancellationToken ct)
+    public async Task<ServiceResponse> StopAsync(ServiceRequest request, ServiceClientContext client, CancellationToken ct)
     {
         await _gate.WaitAsync(ct).ConfigureAwait(false);
         try
         {
+            if (_ownerSid is not null && !string.Equals(_ownerSid, client.Sid, StringComparison.OrdinalIgnoreCase)
+                && !client.IsAdministrator)
+                return ServiceResponse.Fail(request.RequestId, "不能停止其他用户启动的内核");
             return StopCoreInternal(request.RequestId);
         }
         finally
@@ -111,6 +123,7 @@ public sealed class PrivilegedCoreManager : IDisposable
         {
             _process?.Dispose();
             _process = null;
+            _ownerSid = null;
         }
     }
 

@@ -88,7 +88,7 @@ public sealed partial class SettingsPage : Page
         MixedPortBox.Value = AppServices.Config.MixedPort;
         AllowLanSwitch.IsOn = AppServices.Config.GetBool("allow-lan", false);
         Ipv6Switch.IsOn = AppServices.Config.GetBool("ipv6", true);
-        TunSwitch.IsOn = verge.EnableTunMode && TrayService.IsElevated();
+        TunSwitch.IsOn = verge.EnableTunMode;
         AutoCloseConnSwitch.IsOn = verge.AutoCloseConnection;
         EnableLogSwitch.IsOn = verge.EnableLog;
 
@@ -626,13 +626,39 @@ public sealed partial class SettingsPage : Page
         var selectedName = backups.OrderByDescending(b => b.Created).ToList()[listBox.SelectedIndex].Name;
         try
         {
-            await Task.Run(() => AppServices.Backup.RestoreAsync(selectedName).GetAwaiter().GetResult());
-            await AppServices.Core.RestartAsync();
+            await RestoreWithSafetyAsync(selectedName);
             await ShowInfoAsync(L10n.T("Msg_RestoreDone"), L10n.F("Msg_RestoreDoneBody", selectedName));
         }
         catch (Exception ex)
         {
             await ShowInfoAsync(L10n.T("Msg_RestoreFailed"), ex.Message);
+        }
+    }
+
+    private static async Task RestoreWithSafetyAsync(string backupName)
+    {
+        var wasRunning = AppServices.Core.IsRunning;
+        var safetyBackup = await AppServices.Backup.CreateAsync("automatic pre-restore rollback");
+        await AppServices.Core.StopAsync();
+        try
+        {
+            await AppServices.Backup.RestoreAsync(backupName);
+            AppServices.ReloadConfiguration();
+            if (wasRunning) await AppServices.Core.StartAsync();
+        }
+        catch (Exception restoreError)
+        {
+            try
+            {
+                await AppServices.Backup.RestoreAsync(safetyBackup);
+                AppServices.ReloadConfiguration();
+                if (wasRunning) await AppServices.Core.StartAsync();
+            }
+            catch (Exception rollbackError)
+            {
+                throw new AggregateException("恢复失败，且恢复前状态回滚失败", restoreError, rollbackError);
+            }
+            throw;
         }
     }
 
@@ -674,7 +700,7 @@ public sealed partial class SettingsPage : Page
         if (await dialog.ShowAsync() != ContentDialogResult.Primary) return;
 
         if (!Uri.TryCreate(urlBox.Text.Trim(), UriKind.Absolute, out var uri) ||
-            uri.Scheme is not ("http" or "https"))
+            uri.Scheme is not ("http" or "https") || (uri.Scheme == "http" && !uri.IsLoopback))
         {
             await ShowInfoAsync(L10n.T("Msg_WebDavInvalidTitle"), L10n.T("Msg_WebDavInvalidBody"));
             return;
@@ -690,7 +716,7 @@ public sealed partial class SettingsPage : Page
 
     private async void WebDavUpload_Click(object sender, RoutedEventArgs e)
     {
-        var client = CreateWebDavClient();
+        using var client = CreateWebDavClient();
         if (client is null)
         {
             await ShowInfoAsync(L10n.T("Msg_NotConfigured"), L10n.T("Msg_NotConfiguredBody"));
@@ -712,7 +738,7 @@ public sealed partial class SettingsPage : Page
 
     private async void WebDavRestore_Click(object sender, RoutedEventArgs e)
     {
-        var client = CreateWebDavClient();
+        using var client = CreateWebDavClient();
         if (client is null)
         {
             await ShowInfoAsync(L10n.T("Msg_NotConfigured"), L10n.T("Msg_NotConfiguredBody"));
@@ -746,10 +772,18 @@ public sealed partial class SettingsPage : Page
 
             var selected = remote.OrderByDescending(r => r.Modified).ToList()[listBox.SelectedIndex].Name;
             var bytes = await client.DownloadAsync(dir, selected);
-            var localPath = Path.Combine(Paths.DataBackupDir, Path.GetFileName(selected));
-            await File.WriteAllBytesAsync(localPath, bytes);
-            await Task.Run(() => AppServices.Backup.RestoreAsync(Path.GetFileName(selected)).GetAwaiter().GetResult());
-            await AppServices.Core.RestartAsync();
+            var tempPath = Path.Combine(Path.GetTempPath(), "flux-webdav-" + Guid.NewGuid().ToString("N") + ".zip");
+            string imported;
+            try
+            {
+                await File.WriteAllBytesAsync(tempPath, bytes);
+                imported = await AppServices.Backup.ImportAsync(tempPath);
+            }
+            finally
+            {
+                try { File.Delete(tempPath); } catch { }
+            }
+            await RestoreWithSafetyAsync(imported);
             await ShowInfoAsync(L10n.T("Msg_RestoreDone"), L10n.F("Msg_RestoreDoneBody", selected));
         }
         catch (Exception ex)

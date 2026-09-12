@@ -44,13 +44,29 @@ jobs:
           dotnet restore Flux.slnx
           dotnet test tests/Flux.Tests/Flux.Tests.csproj -c Release
 
+      - name: Publish privileged service payloads
+        shell: pwsh
+        run: |
+          foreach ($rid in 'win-x86', 'win-x64', 'win-arm64') {
+            $root = "service-artifacts\$rid"
+            dotnet publish Flux.Service/Flux.Service.csproj -c Release -r $rid --self-contained true -p:Version=${{ steps.version.outputs.version }} -o "$root\service-payload"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            dotnet publish Flux.Service.Installer/Flux.Service.Installer.csproj -c Release -r $rid --self-contained true -p:Version=${{ steps.version.outputs.version }} -o "$root\installer"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            Copy-Item -LiteralPath "$root\installer\Flux.Service.Installer.exe" -Destination "$root\Flux.Service.Installer.exe"
+            foreach ($required in @("$root\Flux.Service.Installer.exe", "$root\service-payload\Flux.Service.exe", "$root\service-payload\core\mihomo.exe")) {
+              if (!(Test-Path -LiteralPath $required)) { throw "服务发行载荷缺失: $required" }
+            }
+          }
+
       - name: Publish portable application
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force artifacts | Out-Null
           foreach ($rid in 'win-x86', 'win-x64', 'win-arm64') {
             $output = "portable\$rid"
-            dotnet publish Flux.csproj -c Release -r $rid --self-contained true -p:WindowsPackageType=None -o $output
+            $payload = (Resolve-Path "service-artifacts\$rid").Path
+            dotnet publish Flux.csproj -c Release -r $rid --self-contained true -p:WindowsPackageType=None -p:Version=${{ steps.version.outputs.version }} -p:ServicePayloadDir="$payload" -o $output
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
             Compress-Archive -Path "$output\*" -DestinationPath "artifacts\Flux-$rid-v${{ steps.version.outputs.version }}.zip"
           }
@@ -88,6 +104,7 @@ jobs:
           foreach ($architecture in $architectures) {
             $publishArguments = @(
               'publish', 'Flux.csproj', '-c', 'Release', '-r', $architecture.Rid, "-p:Platform=$($architecture.Platform)",
+              "-p:Version=${{ steps.version.outputs.version }}", "-p:ServicePayloadDir=$((Resolve-Path "service-artifacts\$($architecture.Rid)").Path)",
               '-p:WindowsPackageType=MSIX', '-p:EnableMsixTooling=true',
               '-p:UapAppxPackageBuildMode=SideloadOnly', '-p:GenerateAppxPackageOnBuild=true',
               '-p:AppxBundle=Never', "-p:AppxPackageDir=$env:GITHUB_WORKSPACE\msix\$($architecture.Rid)\"

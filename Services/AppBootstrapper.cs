@@ -173,12 +173,25 @@ public static class AppBootstrapper
                     AppServices.SysProxy.Apply(verge);
                     break;
                 case "toggle_tun":
-                    verge.EnableTunMode = !verge.EnableTunMode;
+                {
+                    var previous = verge.EnableTunMode;
+                    var next = !previous;
+                    if (next && !TrayService.IsElevated() && !AppServices.Privilege.IsServiceReady())
+                    {
+                        LogService.App(L10n.T("VM_TunNeedAdmin"), "warn");
+                        break;
+                    }
+                    verge.EnableTunMode = next;
                     AppServices.Config.SaveVerge();
-                    await AppServices.Core.ApplyConfigAsync();
+                    if (!await AppServices.Core.ApplyConfigAsync())
+                    {
+                        verge.EnableTunMode = previous;
+                        AppServices.Config.SaveVerge();
+                    }
                     break;
+                }
                 case "show_hide_window":
-                    App.ShowMainWindow();
+                    App.ToggleMainWindowVisibility();
                     break;
                 case "lightweight_mode":
                     LightweightManager.Enter();

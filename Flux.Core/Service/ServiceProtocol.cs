@@ -8,10 +8,10 @@ namespace Flux.Core.Service;
 public static class ServiceProtocol
 {
     /// <summary>协议版本：请求与响应必须匹配，否则客户端报告 VersionMismatch。</summary>
-    public const int Version = 1;
+    public const int Version = 2;
 
     /// <summary>命名管道名称（含协议版本，避免新旧进程互连）。</summary>
-    public const string PipeName = "flux-service-v" + "1";
+    public const string PipeName = "flux-service-v" + "2";
 
     /// <summary>单条消息上限（字节），防止内存耗尽。</summary>
     public const int MaxMessageBytes = 64 * 1024;

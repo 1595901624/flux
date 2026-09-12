@@ -66,6 +66,17 @@ public partial class App : Application
         }
     }
 
+    public static void ToggleMainWindowVisibility()
+    {
+        if (MainWindow?.AppWindow.IsVisible == true)
+        {
+            MainWindow.AppWindow.Hide();
+            Services.LightweightManager.OnWindowHidden();
+            return;
+        }
+        ShowMainWindow();
+    }
+
     /// <summary>应用主题模式（system | light | dark）。</summary>
     public static void ApplyTheme(string themeMode)
     {

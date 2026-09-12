@@ -43,6 +43,15 @@ public static class AppServices
         Initialized = true;
     }
 
+    /// <summary>备份恢复后重新加载磁盘配置，并让 API 客户端切换到恢复后的控制器。</summary>
+    public static void ReloadConfiguration()
+    {
+        Config = ConfigService.LoadOrCreate();
+        var (controller, secret) = Config.GetControllerInfo();
+        Api.Configure(controller, secret);
+        Streams.Configure(controller, secret);
+    }
+
     /// <summary>退出前清理：恢复系统代理、停止内核。</summary>
     public static async Task ShutdownAsync()
     {

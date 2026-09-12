@@ -5,7 +5,7 @@ using System.Xml.Linq;
 namespace Flux.Core.Backup;
 
 /// <summary>WebDAV 备份存储客户端（凭据由调用方经 DPAPI 加密存储，本类不落盘）。</summary>
-public sealed class WebDavClient
+public sealed class WebDavClient : IDisposable
 {
     private readonly HttpClient _http = new() { Timeout = TimeSpan.FromSeconds(30) };
     private readonly string _baseUrl;
@@ -17,6 +17,8 @@ public sealed class WebDavClient
         if (!Uri.TryCreate(baseUrl, UriKind.Absolute, out var uri) ||
             uri.Scheme is not ("http" or "https"))
             throw new ArgumentException("WebDAV 地址必须是有效的 HTTP/HTTPS URL", nameof(baseUrl));
+        if (uri.Scheme == "http" && !uri.IsLoopback)
+            throw new ArgumentException("WebDAV Basic 凭据只允许通过 HTTPS 传输", nameof(baseUrl));
         _baseUrl = uri.ToString().TrimEnd('/') + "/";
         _username = username;
         _password = password;
@@ -36,9 +38,10 @@ public sealed class WebDavClient
     /// <summary>确保远程目录存在（MKCOL，已存在忽略 405）。</summary>
     public async Task EnsureDirectoryAsync(string remoteDir, CancellationToken ct = default)
     {
+        var partial = "";
         foreach (var segment in remoteDir.Split('/', StringSplitOptions.RemoveEmptyEntries))
         {
-            var partial = segment;
+            partial = partial.Length == 0 ? segment : partial + "/" + segment;
             using var request = new HttpRequestMessage(new HttpMethod("MKCOL"), DirUrl(partial));
             ApplyAuth(request);
             using var response = await _http.SendAsync(request, ct);
@@ -46,6 +49,8 @@ public sealed class WebDavClient
                 throw new InvalidOperationException($"创建 WebDAV 目录失败: {response.StatusCode}");
         }
     }
+
+    public void Dispose() => _http.Dispose();
 
     /// <summary>上传文件。</summary>
     public async Task UploadAsync(string remoteDir, string fileName, byte[] content, CancellationToken ct = default)

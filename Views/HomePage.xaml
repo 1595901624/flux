@@ -135,9 +135,9 @@
                     <StackPanel Spacing="10">
                         <TextBlock x:Uid="Home_CardMode" Text="运行模式" Style="{StaticResource CardTitleStyle}" />
                         <RadioButtons x:Name="ModeRadios">
-                            <RadioButton x:Uid="Fmt_ModeRule" Content="规则" Tag="rule" />
-                            <RadioButton x:Uid="Fmt_ModeGlobal" Content="全局" Tag="global" />
-                            <RadioButton x:Uid="Fmt_ModeDirect" Content="直连" Tag="direct" />
+                            <RadioButton x:Uid="Home_RadioRule" Content="规则" Tag="rule" />
+                            <RadioButton x:Uid="Home_RadioGlobal" Content="全局" Tag="global" />
+                            <RadioButton x:Uid="Home_RadioDirect" Content="直连" Tag="direct" />
                         </RadioButtons>
                     </StackPanel>
                 </Border>

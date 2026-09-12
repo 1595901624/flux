@@ -315,7 +315,7 @@ public partial class HomeViewModel : ObservableObject
 
     public async Task ToggleTunAsync(bool on)
     {
-        if (on && !TrayService.IsElevated())
+        if (on && !TrayService.IsElevated() && !AppServices.Privilege.IsServiceReady())
         {
             TunOn = false;
             throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));

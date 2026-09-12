@@ -42,7 +42,7 @@ public sealed class LocalBackupService
     {
         Directory.CreateDirectory(_backupDir);
         var layout = _layoutFactory();
-        var name = $"flux-{DateTime.Now:yyyyMMdd-HHmmss}.zip";
+        var name = $"flux-{DateTime.Now:yyyyMMdd-HHmmss-fff}-{Guid.NewGuid().ToString("N")[..8]}.zip";
         var path = Path.Combine(_backupDir, name);
         var temp = path + ".tmp";
 
@@ -149,32 +149,60 @@ public sealed class LocalBackupService
             if (!hasConfig)
                 throw new InvalidOperationException("备份内容不完整（缺少应用配置文件），已取消恢复");
 
-            // 原子替换：先把现有文件移入回滚目录，成功后再清理
+            // 事务替换：记录每个目标，任何一步失败都恢复原文件。
             var rollbackDir = Path.Combine(Path.GetTempPath(), "flux-rollback-" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(rollbackDir);
-            foreach (var file in new[] { "config.yaml", "verge.yaml", "profiles.yaml" })
+            Directory.CreateDirectory(layout.DataDir);
+            Directory.CreateDirectory(layout.ProfilesDir);
+            var changes = new List<(string Target, string? Backup)>();
+            try
             {
-                var source = Path.Combine(restoredData, file);
-                var target = Path.Combine(layout.DataDir, file);
-                if (!File.Exists(source)) continue;
-                if (File.Exists(target))
+                foreach (var file in new[] { "config.yaml", "verge.yaml", "profiles.yaml" })
                 {
-                    var backupPath = Path.Combine(rollbackDir, file);
-                    File.Move(target, backupPath, overwrite: true);
-                }
-                File.Move(source, target, overwrite: true);
-            }
-
-            var profilesSource = Path.Combine(restoredData, "profiles");
-            if (Directory.Exists(profilesSource))
-            {
-                foreach (var file in Directory.GetFiles(profilesSource))
-                {
-                    var target = Path.Combine(layout.ProfilesDir, Path.GetFileName(file));
+                    var source = Path.Combine(restoredData, file);
+                    var target = Path.Combine(layout.DataDir, file);
+                    if (!File.Exists(source)) continue;
+                    string? backupPath = null;
                     if (File.Exists(target))
-                        File.Move(target, Path.Combine(rollbackDir, "profiles-" + Path.GetFileName(file)), overwrite: true);
-                    File.Move(file, target, overwrite: true);
+                    {
+                        backupPath = Path.Combine(rollbackDir, file);
+                        File.Move(target, backupPath, overwrite: true);
+                    }
+                    changes.Add((target, backupPath));
+                    File.Move(source, target, overwrite: true);
                 }
+
+                var profilesSource = Path.Combine(restoredData, "profiles");
+                if (Directory.Exists(profilesSource))
+                {
+                    foreach (var file in Directory.GetFiles(profilesSource))
+                    {
+                        var target = Path.Combine(layout.ProfilesDir, Path.GetFileName(file));
+                        string? backupPath = null;
+                        if (File.Exists(target))
+                        {
+                            backupPath = Path.Combine(rollbackDir, "profiles-" + Path.GetFileName(file));
+                            File.Move(target, backupPath, overwrite: true);
+                        }
+                        changes.Add((target, backupPath));
+                        File.Move(file, target, overwrite: true);
+                    }
+                }
+            }
+            catch
+            {
+                foreach (var (target, backup) in changes.AsEnumerable().Reverse())
+                {
+                    try
+                    {
+                        if (File.Exists(target)) File.Delete(target);
+                        if (backup is not null && File.Exists(backup))
+                            File.Move(backup, target, overwrite: true);
+                    }
+                    catch { /* 保留 rollbackDir 供人工恢复 */ }
+                }
+                _log?.Invoke("error", $"备份恢复失败，已尝试回滚（回滚数据: {rollbackDir}）");
+                throw;
             }
 
             // 回滚目录留待下一次清理（不立即删除，供失败回退排查）
@@ -227,7 +255,7 @@ public sealed class LocalBackupService
         }
 
         Directory.CreateDirectory(_backupDir);
-        var name = $"flux-{DateTime.Now:yyyyMMdd-HHmmss}-imported.zip";
+        var name = $"flux-{DateTime.Now:yyyyMMdd-HHmmss-fff}-{Guid.NewGuid().ToString("N")[..8]}-imported.zip";
         File.Copy(sourceZipPath, Path.Combine(_backupDir, name), overwrite: true);
         _log?.Invoke("info", $"已导入备份: {name}");
         return name;

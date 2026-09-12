@@ -205,8 +205,8 @@ public partial class ConnectionsViewModel : ObservableObject
         if (SortMode is not ("upload" or "download")) return;
         List<ConnectionVm> sorted = SortMode switch
         {
-            "upload" => Active.OrderByDescending(x => x.UploadSpeed + x.Item.Upload).ToList(),
-            "download" => Active.OrderByDescending(x => x.DownloadSpeed + x.Item.Download).ToList(),
+            "upload" => Active.OrderByDescending(x => x.UploadSpeed).ToList(),
+            "download" => Active.OrderByDescending(x => x.DownloadSpeed).ToList(),
             _ => [],
         };
         for (var i = 0; i < sorted.Count; i++)

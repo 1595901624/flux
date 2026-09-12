@@ -1,10 +1,10 @@
 using Flux.Core.Contracts;
+using System.Security.Cryptography;
 
 namespace Flux.Core.Service;
 
 /// <summary>
-/// 服务端路径校验：运行时配置必须位于 Flux 数据目录，内核必须是内置安装目录
-/// 或数据目录 core-cache 下的版本化缓存文件。拒绝任意路径以防止特权滥用。
+/// 服务端路径校验：配置必须位于已认证用户的数据目录，内核只能是服务目录中的固定文件。
 /// </summary>
 public static class ServicePathValidator
 {
@@ -24,10 +24,25 @@ public static class ServicePathValidator
             return OperationError.Of("invalid_path", $"运行时配置必须位于数据目录内: {dataDir}", "ServicePath");
         if (!string.Equals(Path.GetExtension(full), ".yaml", StringComparison.OrdinalIgnoreCase))
             return OperationError.Of("invalid_path", "运行时配置必须是 .yaml 文件", "ServicePath");
+        if (!File.Exists(full))
+            return OperationError.Of("invalid_path", "运行时配置文件不存在", "ServicePath");
+        if (ContainsReparsePoint(root) || ContainsReparsePoint(full))
+            return OperationError.Of("invalid_path", "运行时配置路径不能包含符号链接或重解析点", "ServicePath");
         return null;
     }
 
-    /// <summary>校验内核路径：仅允许安装目录内置内核或数据目录 core-cache 下的缓存内核。</summary>
+    public static OperationError? ValidateConfigDirectory(string? configDir, string dataDir)
+    {
+        if (string.IsNullOrWhiteSpace(configDir) || !Path.IsPathRooted(configDir))
+            return OperationError.Of("invalid_path", "配置工作目录必须是绝对路径", "ServicePath");
+        var candidate = Path.TrimEndingDirectorySeparator(Path.GetFullPath(configDir));
+        var expected = Path.TrimEndingDirectorySeparator(Path.GetFullPath(dataDir));
+        return string.Equals(candidate, expected, StringComparison.OrdinalIgnoreCase)
+            ? null
+            : OperationError.Of("invalid_path", "配置工作目录与当前用户数据目录不匹配", "ServicePath");
+    }
+
+    /// <summary>校验内核路径：只允许服务受保护目录中的固定 mihomo.exe。</summary>
     public static OperationError? ValidateCorePath(string? corePath, string installDir, string dataDir)
     {
         if (string.IsNullOrWhiteSpace(corePath))
@@ -39,25 +54,47 @@ public static class ServicePathValidator
         if (!string.Equals(Path.GetFileName(full), "mihomo.exe", StringComparison.OrdinalIgnoreCase))
             return OperationError.Of("invalid_core", "内核文件名必须是 mihomo.exe", "ServicePath");
 
-        var builtinRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(installDir));
-        var builtinCore = Path.TrimEndingDirectorySeparator(Path.Combine(builtinRoot, "core"));
-        var cacheRoot = Path.TrimEndingDirectorySeparator(Path.GetFullPath(Path.Combine(dataDir, "core-cache")));
-
-        var inBuiltin = full.StartsWith(builtinCore + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase);
-        var inCache = full.StartsWith(cacheRoot + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase);
-
-        if (!inBuiltin && !inCache)
-            return OperationError.Of("invalid_core", "内核必须位于安装目录 core 或数据目录 core-cache 内", "ServicePath");
+        if (!string.Equals(full, GetTrustedCorePath(installDir), StringComparison.OrdinalIgnoreCase))
+            return OperationError.Of("invalid_core", "服务只允许启动受保护目录中的内置内核", "ServicePath");
+        if (!File.Exists(full))
+            return OperationError.Of("invalid_core", "服务内置内核不存在", "ServicePath");
+        if (ContainsReparsePoint(Path.GetFullPath(installDir)) || ContainsReparsePoint(full))
+            return OperationError.Of("invalid_core", "服务内核路径不能包含符号链接或重解析点", "ServicePath");
+        var hashFile = full + ".sha256";
+        if (!File.Exists(hashFile))
+            return OperationError.Of("invalid_core", "服务内核缺少可信哈希清单", "ServicePath");
+        try
+        {
+            var expectedHash = File.ReadAllText(hashFile).Trim();
+            using var stream = File.OpenRead(full);
+            var actualHash = Convert.ToHexString(SHA256.HashData(stream));
+            if (!string.Equals(expectedHash, actualHash, StringComparison.OrdinalIgnoreCase))
+                return OperationError.Of("invalid_core", "服务内核哈希校验失败", "ServicePath");
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            return OperationError.Of("invalid_core", "服务内核哈希校验失败: " + ex.Message, "ServicePath");
+        }
         return null;
     }
 
-    /// <summary>解析数据目录：便携标记存在时使用 exe 目录，否则使用 %APPDATA%\flux。</summary>
-    public static string ResolveDataDir(string serviceExeDir)
+    public static string GetTrustedCorePath(string installDir) =>
+        Path.GetFullPath(Path.Combine(installDir, "core", "mihomo.exe"));
+
+    private static bool ContainsReparsePoint(string path)
     {
-        var portableMarker = Path.Combine(serviceExeDir, ".config", "PORTABLE");
-        if (File.Exists(portableMarker))
-            return Path.Combine(serviceExeDir, ".config", "flux");
-        var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        return Path.Combine(appData, "flux");
+        var full = Path.GetFullPath(path);
+        var root = Path.GetPathRoot(full);
+        if (string.IsNullOrEmpty(root)) return true;
+        var current = root;
+        foreach (var segment in full[root.Length..].Split(
+                     Path.DirectorySeparatorChar, StringSplitOptions.RemoveEmptyEntries))
+        {
+            current = Path.Combine(current, segment);
+            if (!File.Exists(current) && !Directory.Exists(current)) continue;
+            if ((File.GetAttributes(current) & FileAttributes.ReparsePoint) != 0) return true;
+        }
+        return false;
     }
+
 }
