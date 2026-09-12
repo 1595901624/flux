@@ -1,0 +1,766 @@
+tests/Flux.Tests/LocalBackupServiceTests.cs
+  35b7ee3e220740eb 64
+Flux.Service/RequestHandler.cs
+  35b7ee3e220740eb 13,17-18,23,27,38-39,44,46-52,59-60,67-69
+Flux.csproj
+  35b7ee3e220740eb 53-62,91,93
+Flux.Core/Service/ServicePathValidator.cs
+  35b7ee3e220740eb 2,7,27-30,34-45,57-77,81-84,86-97,99
+Strings/id/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Services/CoreProcessService.cs
+  35b7ee3e220740eb 3,28,56-59,71,77-78,150,178-229,305-319
+Flux.Service/Flux.Service.csproj
+  35b7ee3e220740eb 13-17,30-36
+tests/Flux.Tests/ServiceProtocolTests.cs
+  35b7ee3e220740eb 2,76,98-102,139-145,155,159,170-175
+Strings/ar/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+docs/实现问题审计与修复优先级.md
+  35b7ee3e220740eb 1-350
+docs/规划文档.md
+  35b7ee3e220740eb 1-401
+Strings/ru/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Services/PrivilegeBroker.cs
+  35b7ee3e220740eb 42-54
+Views/ProxiesPage.xaml
+  35b7ee3e220740eb 32-34
+Strings/en-US/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+scripts/check_uid_props.py
+  35b7ee3e220740eb 1-70
+Strings/fa/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+App.xaml.cs
+  35b7ee3e220740eb 69-79
+Flux.Core/Backup/WebDavClient.cs
+  35b7ee3e220740eb 8,20-21,41,44,53
+MainWindow.xaml.cs
+  35b7ee3e220740eb 15,57-63,77,85
+scripts/i18n_gaps_table.py
+  35b7ee3e220740eb 138-150
+Flux.Service.Installer/Flux.Service.Installer.csproj
+  35b7ee3e220740eb 13-16,18-20
+Views/HomePage.xaml
+  35b7ee3e220740eb 138-140
+Strings/zh-CN/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Services/AppServices.cs
+  35b7ee3e220740eb 46-54
+Strings/es/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Services/AppBootstrapper.cs
+  35b7ee3e220740eb 176-184,186-190,192,194
+Services/TrayService.cs
+  35b7ee3e220740eb 65-67,105,161-162,165,199-205
+Flux.Core/Backup/LocalBackupService.cs
+  35b7ee3e220740eb 45,152,155-158,160,162-165,167-172,175,180-192,194,196-202,204-205,258
+Strings/ko/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Services/SubscriptionService.cs
+  35b7ee3e220740eb 492
+Flux.Service.Installer/Program.cs
+  35b7ee3e220740eb 3-4,11-13,48,54-77,82-89,123-131
+Flux.Service/PrivilegedCoreManager.cs
+  35b7ee3e220740eb 13,24,32-34,52-55,71,88,93-95,126
+ViewModels/ConnectionsViewModel.cs
+  35b7ee3e220740eb 208-209
+.github/workflows/build-msix.yml
+  35b7ee3e220740eb 47-61,68-69,107
+Flux.Core/Service/ServiceProtocol.cs
+  35b7ee3e220740eb 11,14
+Strings/ja/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Flux.Service/PipeServer.cs
+  35b7ee3e220740eb 4-6,17,21,45-49,58,77-93
+Strings/tt/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Strings/tr/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Flux.Service/ServiceClientContext.cs
+  35b7ee3e220740eb 1-42
+Strings/zh-TW/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Flux.Service/FluxServiceWorker.cs
+  35b7ee3e220740eb 31,35-36
+scripts/gen_i18n.py
+  35b7ee3e220740eb 126,135,143-145,154,156-157,160-162
+Services/L10n.cs
+  35b7ee3e220740eb 2,14-16,18-19,22-23,26-27,29,33,35-36
+Strings/de/Resources.resw
+  35b7ee3e220740eb 192,195,198,201,204,231,234,237,240,243,917-919,923-925,929-931,1286,1289,1598-1636
+Views/SettingsPage.xaml.cs
+  35b7ee3e220740eb 91,629,638-661,703,719,741,775-786
+ViewModels/HomeViewModel.cs
+  35b7ee3e220740eb 318
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "3180c602f2cb5145e34cec33f67df382eb9d1b40",
+  "prompts": {
+    "35b7ee3e220740eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a090fb-0e3c-7582-a276-aed73e53af5f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 26409,
+      "total_deletions": 23975,
+      "accepted_lines": 26553,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 2220,
+    "git_diff_deleted_lines": 320,
+    "ai_additions": 2173,
+    "ai_accepted": 2173,
+    "BYMC": 13,
+    "mixed_additions": 0,
+    "BYAC": 2173,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "47-61",
+          "68-69",
+          "107"
+        ],
+        "BYRC": []
+      },
+      "App.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "69-79"
+        ],
+        "BYRC": []
+      },
+      "Flux.Core/Backup/LocalBackupService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "45",
+          "152",
+          "155-158",
+          "160",
+          "162-165",
+          "167-172",
+          "175",
+          "180-192",
+          "194",
+          "196-202",
+          "204-205",
+          "258"
+        ],
+        "BYRC": []
+      },
+      "Flux.Core/Backup/WebDavClient.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "8",
+          "20-21",
+          "41",
+          "44",
+          "53"
+        ],
+        "BYRC": []
+      },
+      "Flux.Core/Service/ServicePathValidator.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "2",
+          "7",
+          "27-30",
+          "34-45",
+          "57-77",
+          "81-84",
+          "86-97",
+          "99"
+        ],
+        "BYRC": []
+      },
+      "Flux.Core/Service/ServiceProtocol.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "11",
+          "14"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Flux.Service.Installer.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "13-16",
+          "18-20"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Program.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "3-4",
+          "11-13",
+          "48",
+          "54-77",
+          "82-89",
+          "123-131"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/Flux.Service.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "13-17",
+          "30-36"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/FluxServiceWorker.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "31",
+          "35-36"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/PipeServer.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "4-6",
+          "17",
+          "21",
+          "45-49",
+          "58",
+          "77-93"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/PrivilegedCoreManager.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "13",
+          "24",
+          "32-34",
+          "52-55",
+          "71",
+          "88",
+          "93-95",
+          "126"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/RequestHandler.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "13",
+          "17-18",
+          "23",
+          "27",
+          "38-39",
+          "44",
+          "46-52",
+          "59-60",
+          "67-69"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/ServiceClientContext.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-42"
+        ],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "53-62",
+          "91",
+          "93"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "15",
+          "57-63",
+          "77",
+          "85"
+        ],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "176-184",
+          "186-190",
+          "192",
+          "194"
+        ],
+        "BYRC": []
+      },
+      "Services/AppServices.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "46-54"
+        ],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "3",
+          "28",
+          "56-59",
+          "71",
+          "77-78",
+          "150",
+          "178-229",
+          "305-319"
+        ],
+        "BYRC": []
+      },
+      "Services/L10n.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "2",
+          "14-16",
+          "18-19",
+          "22-23",
+          "26-27",
+          "29",
+          "33",
+          "35-36"
+        ],
+        "BYRC": []
+      },
+      "Services/PrivilegeBroker.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "42-54"
+        ],
+        "BYRC": []
+      },
+      "Services/SubscriptionService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "492"
+        ],
+        "BYRC": []
+      },
+      "Services/TrayService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "65-67",
+          "105",
+          "161-162",
+          "165",
+          "199-205"
+        ],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "192",
+          "195",
+          "198",
+          "201",
+          "204",
+          "231",
+          "234",
+          "237",
+          "240",
+          "243",
+          "917-919",
+          "923-925",
+          "929-931",
+          "1286",
+          "1289",
+          "1598-1636"
+        ],
+        "BYRC": []
+      },
+      "ViewModels/ConnectionsViewModel.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "208-209"
+        ],
+        "BYRC": []
+      },
+      "ViewModels/HomeViewModel.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "318"
+        ],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "138-140"
+        ],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "32-34"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "91",
+          "629",
+          "638-661",
+          "703",
+          "719",
+          "741",
+          "775-786"
+        ],
+        "BYRC": []
+      },
+      "docs/实现问题审计与修复优先级.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-350"
+        ],
+        "BYRC": []
+      },
+      "docs/规划文档.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-401"
+        ],
+        "BYRC": []
+      },
+      "scripts/check_uid_props.py": {
+        "BYMC": [],
+        "BYAC": [
+          "1-70"
+        ],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [
+          "166",
+          "169-170",
+          "180-181",
+          "184-187",
+          "192",
+          "195-197"
+        ],
+        "BYAC": [
+          "126",
+          "135",
+          "143-145",
+          "154",
+          "156-157",
+          "160-162"
+        ],
+        "BYRC": []
+      },
+      "scripts/i18n_gaps_table.py": {
+        "BYMC": [],
+        "BYAC": [
+          "138-150"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalBackupServiceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "64"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ServiceProtocolTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "2",
+          "76",
+          "98-102",
+          "139-145",
+          "155",
+          "159",
+          "170-175"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789195531,
+  "requirement_id": ""
+}
