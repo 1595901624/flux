@@ -1,0 +1,62 @@
+Program.cs
+  35b7ee3e220740eb 32-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "9d55ac363fe65805f7d3b7871cc6a676ad5b9af8",
+  "prompts": {
+    "35b7ee3e220740eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a090fb-0e3c-7582-a276-aed73e53af5f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 18,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 34,
+    "git_diff_deleted_lines": 27,
+    "ai_additions": 5,
+    "ai_accepted": 5,
+    "BYMC": 29,
+    "mixed_additions": 0,
+    "BYAC": 5,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.csproj": {
+        "BYMC": [
+          "88-96"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Program.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "32-36"
+        ],
+        "BYRC": []
+      },
+      "Services/L10n.cs": {
+        "BYMC": [
+          "14-22",
+          "30",
+          "33-41",
+          "54"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789211501,
+  "requirement_id": ""
+}
