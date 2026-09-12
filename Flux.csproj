@@ -85,10 +85,16 @@
     <Content Include="Assets\app.svg" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
-  <!-- 修复：dotnet publish 不会复制应用自身的 Flux.pri，未打包 WinUI
-       启动时因缺少该文件而立即崩溃（combase 80004005） -->
+  <!-- 未打包 MRT Core 固定从入口目录加载 resources.pri，而 XAML 编译生成的
+       文件名是 Flux.pri。Build 覆盖 dotnet run，Publish 覆盖便携版发行。 -->
+  <Target Name="EnsurePriInBuildOutput" AfterTargets="Build">
+    <Copy SourceFiles="$(OutDir)$(AssemblyName).pri"
+          DestinationFiles="$(OutDir)resources.pri"
+          SkipUnchangedFiles="true"
+          Condition="Exists('$(OutDir)$(AssemblyName).pri')" />
+  </Target>
+
   <Target Name="EnsurePriInPublish" AfterTargets="Publish">
-    <!-- 未打包应用的 MRT Core 要求 PRI 文件名为 resources.pri（构建产物名为 Flux.pri） -->
     <Copy SourceFiles="$(OutDir)$(AssemblyName).pri"
           DestinationFiles="$(PublishDir)resources.pri"
           SkipUnchangedFiles="true"

@@ -29,24 +29,11 @@ public static class Program
         WinRT.ComWrappersSupport.InitializeComWrappers();
         Trace("comwrappers ok");
 
-        // 仅未打包（self-contained portable）部署需要初始化 Bootstrap；
-        // 打包（MSIX）应用由包依赖自动解析运行时，调用 Bootstrap 反而失败。
-        if (!PackageIdentity.IsPackaged)
-        {
-            Trace("bootstrap begin");
-            // 0x00010008 = WinAppSDK 1.8（major=1, minor=8）。
-            if (!Microsoft.Windows.ApplicationModel.DynamicDependency.Bootstrap.TryInitialize(
-                    0x00010008, out var bootstrapHresult))
-            {
-                Trace($"bootstrap failed 0x{bootstrapHresult:X}");
-                return bootstrapHresult != 0 ? bootstrapHresult : -1;
-            }
-            Trace("bootstrap ok");
-        }
-        else
-        {
-            Trace("packaged, bootstrap skipped");
-        }
+        // 本项目启用了 WindowsAppSDKSelfContained。构建系统会生成自包含运行时的
+        // UndockedRegFreeWinRT 初始化代码，不能再调用 Bootstrap.TryInitialize；
+        // 后者会加载机器上安装的另一套 Windows App Runtime，导致 CoreMessagingXP
+        // 在 Application.Start 前以 0xc0000602 fail-fast 终止。
+        Trace(PackageIdentity.IsPackaged ? "packaged runtime" : "self-contained runtime");
 
         Args = GetEffectiveArgs(args);
         Trace("args ok");

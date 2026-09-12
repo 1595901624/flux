@@ -11,9 +11,15 @@ public static class L10n
 {
     private static ResourceLoader? _loader;
 
-    // Resources.resw 的内容位于 PRI 的 "Resources" 子树；
-    // 无作用域的 ResourceLoader 查找裸路径会抛 NamedResource 异常。
-    public static ResourceLoader Loader => _loader ??= new ResourceLoader("Resources");
+    // 单参数 ResourceLoader(string) 的参数是 PRI 文件名，不是资源子树。
+    // 必须使用两参数构造器，把默认 PRI 与 "Resources" 子树分别传入。
+    public static ResourceLoader Loader => _loader ??= CreateLoader();
+
+    private static ResourceLoader CreateLoader()
+    {
+        var resourceFile = ResourceLoader.GetDefaultResourceFilePath();
+        return new ResourceLoader(resourceFile, "Resources");
+    }
 
     /// <summary>
     /// 语言覆盖发生变化后丢弃旧加载器，避免动态菜单继续使用创建时的语言上下文。
@@ -21,11 +27,18 @@ public static class L10n
     public static void Reset() => _loader = null;
 
     /// <summary>按键取文本；全部语言缺失时返回键名本身（不显示空文本）。
-    /// 回退链：&lt;键&gt; → &lt;键&gt;.Text → 键名。</summary>
+    /// RESW 的 "Key.Text" 在 PRI 中会编译为 "Key/Text" 路径。</summary>
     public static string T(string key)
     {
-        // 代码消费的键在 resw 中为 "<键>.Text"；裸键名仅少数场景存在。
-        // GetString 对缺失资源会抛异常（而非返回空），因此两次查找各自捕获。
+        // ResourceLoader.GetString 使用 PRI 路径语法。XAML x:Uid 使用的点号属性
+        // 在 PRI 中是子树分隔符，因此程序化查询必须优先使用 "Key/Text"。
+        try
+        {
+            var value = Loader.GetString(key + "/Text");
+            if (!string.IsNullOrEmpty(value)) return value;
+        }
+        catch { }
+        // 兼容可能直接以点号命名的手工 PRI/旧资源包。
         try
         {
             var value = Loader.GetString(key + ".Text");
@@ -38,6 +51,7 @@ public static class L10n
             if (!string.IsNullOrEmpty(value)) return value;
         }
         catch { }
+        Program.Trace("l10n missing: " + key);
         return key;
     }
 
