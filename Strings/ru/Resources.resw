@@ -1244,4 +1244,331 @@
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
     <value>Ошибка применения системного прокси: {0}</value>
   </data>
+  <data name="Home_ToggleSysProxy.Header" xml:space="preserve">
+    <value>Системный прокси</value>
+  </data>
+  <data name="Home_ToggleTun.Header" xml:space="preserve">
+    <value>Режим TUN</value>
+  </data>
+  <data name="Home_MixedPortLabel.Text" xml:space="preserve">
+    <value>Смешанный порт: </value>
+  </data>
+  <data name="Home_UptimeLabel.Text" xml:space="preserve">
+    <value>Время работы: </value>
+  </data>
+  <data name="Home_RulesCountLabel.Text" xml:space="preserve">
+    <value>Правил: </value>
+  </data>
+  <data name="Home_RestartCore.Text" xml:space="preserve">
+    <value>Перезапустить ядро</value>
+  </data>
+  <data name="Home_OpenLogs.Text" xml:space="preserve">
+    <value>Открыть папку логов</value>
+  </data>
+  <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
+    <value>Текущая</value>
+  </data>
+  <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Обновить подписку</value>
+  </data>
+  <data name="Profiles_TipDelete.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Удалить подписку</value>
+  </data>
+  <data name="Proxies_TipGroupTest.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Тест задержки группы</value>
+  </data>
+  <data name="ProfileEdit_NamePlaceholder.Text" xml:space="preserve">
+    <value>Имя подписки</value>
+  </data>
+  <data name="ProfileEdit_DescPlaceholder.Text" xml:space="preserve">
+    <value>Описание (необяз.)</value>
+  </data>
+  <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
+    <value>По умолчанию clash-verge/v2.5.2</value>
+  </data>
+  <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
+    <value>Принимать недействительные TLS-сертификаты (опасно)</value>
+  </data>
+  <data name="ProfileEdit_AutoUpdateLabel.Text" xml:space="preserve">
+    <value>Участвовать в автообновлении</value>
+  </data>
+  <data name="ProfileEdit_ChannelAuto.Text" xml:space="preserve">
+    <value>Авто-откат (напрямую→ядро→система)</value>
+  </data>
+  <data name="ProfileEdit_ChannelCore.Text" xml:space="preserve">
+    <value>Через прокси ядра</value>
+  </data>
+  <data name="ProfileEdit_ChannelSystem.Text" xml:space="preserve">
+    <value>Через системный прокси</value>
+  </data>
+  <data name="ProfileEdit_FieldName.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="ProfileEdit_FieldDesc.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ProfileEdit_FieldUrl.Text" xml:space="preserve">
+    <value>URL подписки</value>
+  </data>
+  <data name="ProfileEdit_FieldChannel.Text" xml:space="preserve">
+    <value>Канал обновления</value>
+  </data>
+  <data name="ProfileEdit_FieldInterval.Text" xml:space="preserve">
+    <value>Интервал (мин, 0 = выкл.)</value>
+  </data>
+  <data name="ProfileEdit_FieldTimeout.Text" xml:space="preserve">
+    <value>Таймаут загрузки (сек)</value>
+  </data>
+  <data name="ProfileEdit_FieldUa.Text" xml:space="preserve">
+    <value>User-Agent</value>
+  </data>
+  <data name="Enhace_SaveAndApply.Text" xml:space="preserve">
+    <value>Сохранить и применить</value>
+  </data>
+  <data name="Enhance_NameGlobalMerge.Text" xml:space="preserve">
+    <value>Глобальный Merge</value>
+  </data>
+  <data name="Enhance_NameGlobalScript.Text" xml:space="preserve">
+    <value>Глобальный Script</value>
+  </data>
+  <data name="Enhance_NameProfileMerge.Text" xml:space="preserve">
+    <value>Merge профиля</value>
+  </data>
+  <data name="Enhance_NameProfileScript.Text" xml:space="preserve">
+    <value>Script профиля</value>
+  </data>
+  <data name="Enhance_NameProfileRules.Text" xml:space="preserve">
+    <value>Правила профиля</value>
+  </data>
+  <data name="Enhance_NameProfileProxies.Text" xml:space="preserve">
+    <value>Прокси профиля</value>
+  </data>
+  <data name="Enhance_NameProfileGroups.Text" xml:space="preserve">
+    <value>Группы профиля</value>
+  </data>
+  <data name="Enhance_TypedName.Text" xml:space="preserve">
+    <value>Улучшение {0}</value>
+  </data>
+  <data name="Enhance_ScriptNeedsMain.Text" xml:space="preserve">
+    <value>Скрипт должен определять main(config, profileName)</value>
+  </data>
+  <data name="Validator_InvalidYamlMapping.Text" xml:space="preserve">
+    <value>Содержимое не является корректным YAML-отображением</value>
+  </data>
+  <data name="Validator_InvalidYaml.Text" xml:space="preserve">
+    <value>Содержимое не является корректным YAML</value>
+  </data>
+  <data name="Validator_NotClash.Text" xml:space="preserve">
+    <value>Отсутствуют proxies/proxy-providers</value>
+  </data>
+  <data name="Enhance_GlobalNotSupported.Text" xml:space="preserve">
+    <value>Глобальное улучшение для этого типа недоступно</value>
+  </data>
+  <data name="Yaml_ParseFailed.Text" xml:space="preserve">
+    <value>Ошибка разбора YAML: {0}</value>
+  </data>
+  <data name="Format_Timeout.Text" xml:space="preserve">
+    <value>Таймаут</value>
+  </data>
+  <data name="Paths_CoreMissing.Text" xml:space="preserve">
+    <value>Встроенное ядро mihomo не найдено</value>
+  </data>
+  <data name="Proxies_CurrentNow.Text" xml:space="preserve">
+    <value>Сейчас: {0}</value>
+  </data>
+  <data name="Proxies_NodeCount.Text" xml:space="preserve">
+    <value>{0} узлов</value>
+  </data>
+  <data name="ProxiesVM_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>Ошибка смены режима: {0}</value>
+  </data>
+  <data name="ProxiesVM_ClosedOldConnections.Text" xml:space="preserve">
+    <value>После переключения закрыто {0} соединений</value>
+  </data>
+  <data name="ProxiesVM_NodeSwitchFailed.Text" xml:space="preserve">
+    <value>Ошибка смены узла [{0} → {1}]: {2}</value>
+  </data>
+  <data name="RulesVM_LoadFailed.Text" xml:space="preserve">
+    <value>Ошибка загрузки: {0}</value>
+  </data>
+  <data name="RulesVM_Count.Text" xml:space="preserve">
+    <value>Всего {0} правил</value>
+  </data>
+  <data name="Logs_Continue.Text" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="Hotkey_UnknownCombo.Text" xml:space="preserve">
+    <value>{0}: неизвестная комбинация &quot;{1}&quot;</value>
+  </data>
+  <data name="Hotkey_Duplicate.Text" xml:space="preserve">
+    <value>{0}: конфликт с &quot;{1}&quot; ({2})</value>
+  </data>
+  <data name="Hotkey_InUse.Text" xml:space="preserve">
+    <value>{0}: комбинация &quot;{1}&quot; уже занята</value>
+  </data>
+  <data name="Priv_ActionStartCore.Text" xml:space="preserve">
+    <value>Запуск ядра через службу</value>
+  </data>
+  <data name="Priv_ActionStopCore.Text" xml:space="preserve">
+    <value>Остановка ядра через службу</value>
+  </data>
+  <data name="Priv_ServiceUnavailable.Text" xml:space="preserve">
+    <value>Не удалось подключиться к службе Flux</value>
+  </data>
+  <data name="Priv_VersionMismatch.Text" xml:space="preserve">
+    <value>Несовпадение версии протокола (служба v{0}, приложение v{1}); перезапустите службу</value>
+  </data>
+  <data name="Priv_UnknownError.Text" xml:space="preserve">
+    <value>Неизвестная ошибка службы</value>
+  </data>
+  <data name="Priv_InstallerMissing.Text" xml:space="preserve">
+    <value>Установщик службы не найден; переустановите приложение</value>
+  </data>
+  <data name="Priv_InstallerLaunchFailed.Text" xml:space="preserve">
+    <value>Не удалось запустить установщик</value>
+  </data>
+  <data name="Priv_InstallerExitCode.Text" xml:space="preserve">
+    <value>Код выхода установщика {0} (отмена или сбой)</value>
+  </data>
+  <data name="Priv_NotReady.Text" xml:space="preserve">
+    <value>Служба установлена, но не готова</value>
+  </data>
+  <data name="Priv_InstallStep.Text" xml:space="preserve">
+    <value>Установка службы</value>
+  </data>
+  <data name="WinInet_NotifyFailed.Text" xml:space="preserve">
+    <value>Не удалось уведомить Windows</value>
+  </data>
+  <data name="WinInet_RefreshFailed.Text" xml:space="preserve">
+    <value>Не удалось обновить настройки прокси</value>
+  </data>
+  <data name="WinInet_ReadFailed.Text" xml:space="preserve">
+    <value>Не удалось прочитать настройки прокси</value>
+  </data>
+  <data name="WinInet_WriteFailed.Text" xml:space="preserve">
+    <value>Не удалось изменить настройки прокси</value>
+  </data>
+  <data name="App_UnhandledUi.Text" xml:space="preserve">
+    <value>Необработанное исключение UI: {0}</value>
+  </data>
+  <data name="App_UnhandledDomain.Text" xml:space="preserve">
+    <value>Необработанное исключение процесса: {0}</value>
+  </data>
+  <data name="App_UnobservedTask.Text" xml:space="preserve">
+    <value>Необработанное исключение задачи: {0}</value>
+  </data>
+  <data name="Settings_AppDescription.Text" xml:space="preserve">
+    <value>Клиент Clash/Mihomo на WinUI 3 · v{0}</value>
+  </data>
+  <data name="Settings_Unknown.Text" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="Settings_AutoStartReadFailed.Text" xml:space="preserve">
+    <value>Ошибка чтения состояния автозапуска: {0}</value>
+  </data>
+  <data name="Settings_AutoStartFailed.Text" xml:space="preserve">
+    <value>Ошибка настройки автозапуска: {0}</value>
+  </data>
+  <data name="Settings_AutoStartUpdateFailed.Text" xml:space="preserve">
+    <value>Ошибка обновления автозапуска: {0}</value>
+  </data>
+  <data name="Settings_SysProxyFailed.Text" xml:space="preserve">
+    <value>Ошибка настройки системного прокси: {0}</value>
+  </data>
+  <data name="Settings_PacFailed.Text" xml:space="preserve">
+    <value>Ошибка настройки режима PAC: {0}</value>
+  </data>
+  <data name="Settings_GuardFailed.Text" xml:space="preserve">
+    <value>Ошибка настройки защиты прокси: {0}</value>
+  </data>
+  <data name="Settings_BypassFailed.Text" xml:space="preserve">
+    <value>Ошибка настройки списка исключений: {0}</value>
+  </data>
+  <data name="Diag_Title.Text" xml:space="preserve">
+    <value>=== Диагностика Flux ===</value>
+  </data>
+  <data name="Diag_ExportedAt.Text" xml:space="preserve">
+    <value>Время экспорта: {0}</value>
+  </data>
+  <data name="Diag_SectionSystem.Text" xml:space="preserve">
+    <value>--- Система ---</value>
+  </data>
+  <data name="Diag_OsVersion.Text" xml:space="preserve">
+    <value>Версия ОС: {0}</value>
+  </data>
+  <data name="Diag_Arch.Text" xml:space="preserve">
+    <value>Архитектура: {0}</value>
+  </data>
+  <data name="Diag_Processors.Text" xml:space="preserve">
+    <value>Процессоров: {0}</value>
+  </data>
+  <data name="Diag_FluxVersion.Text" xml:space="preserve">
+    <value>Версия Flux: {0}</value>
+  </data>
+  <data name="Diag_RunMode.Text" xml:space="preserve">
+    <value>Режим запуска: {0}</value>
+  </data>
+  <data name="Diag_Admin.Text" xml:space="preserve">
+    <value>Администратор: {0}</value>
+  </data>
+  <data name="Diag_SectionCore.Text" xml:space="preserve">
+    <value>--- Ядро ---</value>
+  </data>
+  <data name="Diag_CoreVersion.Text" xml:space="preserve">
+    <value>Версия mihomo: {0}</value>
+  </data>
+  <data name="Diag_CoreVersionFailed.Text" xml:space="preserve">
+    <value>Версия mihomo: ошибка получения ({0})</value>
+  </data>
+  <data name="Diag_CoreMode.Text" xml:space="preserve">
+    <value>Режим ядра: {0}</value>
+  </data>
+  <data name="Diag_ServiceState.Text" xml:space="preserve">
+    <value>Состояние службы: {0}</value>
+  </data>
+  <data name="Diag_SectionConfig.Text" xml:space="preserve">
+    <value>--- Структура конфигурации (скрыто) ---</value>
+  </data>
+  <data name="Diag_CurrentProfile.Text" xml:space="preserve">
+    <value>Текущая подписка: {0}</value>
+  </data>
+  <data name="Diag_SectionRuntime.Text" xml:space="preserve">
+    <value>--- Сводка настроек ---</value>
+  </data>
+  <data name="Diag_SystemProxyLine.Text" xml:space="preserve">
+    <value>Системный прокси: {0} (PAC: {1})</value>
+  </data>
+  <data name="Diag_SectionLogs.Text" xml:space="preserve">
+    <value>--- Последние журналы (200, скрыто) ---</value>
+  </data>
+  <data name="Diag_NoLogFile.Text" xml:space="preserve">
+    <value>(нет файла журнала)</value>
+  </data>
+  <data name="Diag_LogReadFailed.Text" xml:space="preserve">
+    <value>(ошибка чтения журналов: {0})</value>
+  </data>
+  <data name="Diag_Exported.Text" xml:space="preserve">
+    <value>Диагностика экспортирована: {0}</value>
+  </data>
+  <data name="Diag_MaskedValue.Text" xml:space="preserve">
+    <value>(скрыто)</value>
+  </data>
+  <data name="Enhance_YamlSyntaxError.Text" xml:space="preserve">
+    <value>Синтаксическая ошибка YAML в {0} (нужен mapping)</value>
+  </data>
+  <data name="Boot_HotkeyModeSwitch.Text" xml:space="preserve">
+    <value>Горячая клавиша сменила режим: {0}</value>
+  </data>
+  <data name="Settings_LangFollowSystem.Content" xml:space="preserve">
+    <value>Как в системе</value>
+  </data>
+  <data name="App_ShutdownFailed.Text" xml:space="preserve">
+    <value>Ошибка очистки при выходе: {0}</value>
+  </data>
+  <data name="Config_RuntimeGenFailed.Text" xml:space="preserve">
+    <value>Ошибка генерации конфигурации</value>
+  </data>
+  <data name="Config_TargetDirMissing.Text" xml:space="preserve">
+    <value>У целевого файла нет каталога</value>
+  </data>
 </root>

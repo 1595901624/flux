@@ -1244,4 +1244,331 @@
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
     <value>Sistem proxy uygulama başarısız: {0}</value>
   </data>
+  <data name="Home_ToggleSysProxy.Header" xml:space="preserve">
+    <value>Sistem proxy</value>
+  </data>
+  <data name="Home_ToggleTun.Header" xml:space="preserve">
+    <value>TUN modu</value>
+  </data>
+  <data name="Home_MixedPortLabel.Text" xml:space="preserve">
+    <value>Karma port: </value>
+  </data>
+  <data name="Home_UptimeLabel.Text" xml:space="preserve">
+    <value>Çalışma süresi: </value>
+  </data>
+  <data name="Home_RulesCountLabel.Text" xml:space="preserve">
+    <value>Kural sayısı: </value>
+  </data>
+  <data name="Home_RestartCore.Text" xml:space="preserve">
+    <value>Çekirdeği yeniden başlat</value>
+  </data>
+  <data name="Home_OpenLogs.Text" xml:space="preserve">
+    <value>Kayıt klasörünü aç</value>
+  </data>
+  <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
+    <value>Mevcut</value>
+  </data>
+  <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Profili güncelle</value>
+  </data>
+  <data name="Profiles_TipDelete.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Profili sil</value>
+  </data>
+  <data name="Proxies_TipGroupTest.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Grup gecikme testi</value>
+  </data>
+  <data name="ProfileEdit_NamePlaceholder.Text" xml:space="preserve">
+    <value>Profil adı</value>
+  </data>
+  <data name="ProfileEdit_DescPlaceholder.Text" xml:space="preserve">
+    <value>설명(선택)</value>
+  </data>
+  <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
+    <value>Varsayılan clash-verge/v2.5.2</value>
+  </data>
+  <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
+    <value>Geçersiz TLS sertifikalarını kabul et (tehlikeli)</value>
+  </data>
+  <data name="ProfileEdit_AutoUpdateLabel.Text" xml:space="preserve">
+    <value>Otomatik güncellemeye dahil et</value>
+  </data>
+  <data name="ProfileEdit_ChannelAuto.Text" xml:space="preserve">
+    <value>Otomatik (doğrudan→çekirdek→sistem)</value>
+  </data>
+  <data name="ProfileEdit_ChannelCore.Text" xml:space="preserve">
+    <value>Çekirdek proxy üzerinden</value>
+  </data>
+  <data name="ProfileEdit_ChannelSystem.Text" xml:space="preserve">
+    <value>Sistem proxy üzerinden</value>
+  </data>
+  <data name="ProfileEdit_FieldName.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="ProfileEdit_FieldDesc.Text" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="ProfileEdit_FieldUrl.Text" xml:space="preserve">
+    <value>Abonelik URL</value>
+  </data>
+  <data name="ProfileEdit_FieldChannel.Text" xml:space="preserve">
+    <value>Güncelleme kanalı</value>
+  </data>
+  <data name="ProfileEdit_FieldInterval.Text" xml:space="preserve">
+    <value>Aralık (dakika, 0 = kapalı)</value>
+  </data>
+  <data name="ProfileEdit_FieldTimeout.Text" xml:space="preserve">
+    <value>İndirme zaman aşımı (sn)</value>
+  </data>
+  <data name="ProfileEdit_FieldUa.Text" xml:space="preserve">
+    <value>User-Agent</value>
+  </data>
+  <data name="Enhace_SaveAndApply.Text" xml:space="preserve">
+    <value>Kaydet ve uygula</value>
+  </data>
+  <data name="Enhance_NameGlobalMerge.Text" xml:space="preserve">
+    <value>Küresel Merge</value>
+  </data>
+  <data name="Enhance_NameGlobalScript.Text" xml:space="preserve">
+    <value>Küresel Script</value>
+  </data>
+  <data name="Enhance_NameProfileMerge.Text" xml:space="preserve">
+    <value>Profil Merge</value>
+  </data>
+  <data name="Enhance_NameProfileScript.Text" xml:space="preserve">
+    <value>Profil Script</value>
+  </data>
+  <data name="Enhance_NameProfileRules.Text" xml:space="preserve">
+    <value>Profil kuralları</value>
+  </data>
+  <data name="Enhance_NameProfileProxies.Text" xml:space="preserve">
+    <value>Profil proxy'leri</value>
+  </data>
+  <data name="Enhance_NameProfileGroups.Text" xml:space="preserve">
+    <value>Profil grupları</value>
+  </data>
+  <data name="Enhance_TypedName.Text" xml:space="preserve">
+    <value>{0} geliştirme</value>
+  </data>
+  <data name="Enhance_ScriptNeedsMain.Text" xml:space="preserve">
+    <value>Script, main(config, profileName) tanımlamalı</value>
+  </data>
+  <data name="Validator_InvalidYamlMapping.Text" xml:space="preserve">
+    <value>İçerik geçerli bir YAML eşlemesi değil</value>
+  </data>
+  <data name="Validator_InvalidYaml.Text" xml:space="preserve">
+    <value>İçerik geçerli YAML değil</value>
+  </data>
+  <data name="Validator_NotClash.Text" xml:space="preserve">
+    <value>proxies/proxy-providers eksik</value>
+  </data>
+  <data name="Enhance_GlobalNotSupported.Text" xml:space="preserve">
+    <value>Bu tür küresel geliştirmeyi desteklemiyor</value>
+  </data>
+  <data name="Yaml_ParseFailed.Text" xml:space="preserve">
+    <value>YAML ayrıştırma başarısız: {0}</value>
+  </data>
+  <data name="Format_Timeout.Text" xml:space="preserve">
+    <value>Zaman aşımı</value>
+  </data>
+  <data name="Paths_CoreMissing.Text" xml:space="preserve">
+    <value>Yerleşik mihomo çekirdeği bulunamadı</value>
+  </data>
+  <data name="Proxies_CurrentNow.Text" xml:space="preserve">
+    <value>Şu an: {0}</value>
+  </data>
+  <data name="Proxies_NodeCount.Text" xml:space="preserve">
+    <value>{0} düğüm</value>
+  </data>
+  <data name="ProxiesVM_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>Mod değiştirme başarısız: {0}</value>
+  </data>
+  <data name="ProxiesVM_ClosedOldConnections.Text" xml:space="preserve">
+    <value>Geçiş sonrası {0} bağlantı kapatıldı</value>
+  </data>
+  <data name="ProxiesVM_NodeSwitchFailed.Text" xml:space="preserve">
+    <value>Düğüm geçişi başarısız [{0} → {1}]: {2}</value>
+  </data>
+  <data name="RulesVM_LoadFailed.Text" xml:space="preserve">
+    <value>Yükleme başarısız: {0}</value>
+  </data>
+  <data name="RulesVM_Count.Text" xml:space="preserve">
+    <value>Toplam {0} kural</value>
+  </data>
+  <data name="Logs_Continue.Text" xml:space="preserve">
+    <value>Devam et</value>
+  </data>
+  <data name="Hotkey_UnknownCombo.Text" xml:space="preserve">
+    <value>{0}: tanınmayan kombinasyon &quot;{1}&quot;</value>
+  </data>
+  <data name="Hotkey_Duplicate.Text" xml:space="preserve">
+    <value>{0}: &quot;{1}&quot; ile çakışıyor ({2})</value>
+  </data>
+  <data name="Hotkey_InUse.Text" xml:space="preserve">
+    <value>{0}: &quot;{1}&quot; zaten kullanımda</value>
+  </data>
+  <data name="Priv_ActionStartCore.Text" xml:space="preserve">
+    <value>Servis ile çekirdeği başlat</value>
+  </data>
+  <data name="Priv_ActionStopCore.Text" xml:space="preserve">
+    <value>Servis ile çekirdeği durdur</value>
+  </data>
+  <data name="Priv_ServiceUnavailable.Text" xml:space="preserve">
+    <value>Flux servisine bağlanılamadı</value>
+  </data>
+  <data name="Priv_VersionMismatch.Text" xml:space="preserve">
+    <value>Protokol sürümü uyuşmuyor (servis v{0}, uygulama v{1}); servisi yeniden başlatın</value>
+  </data>
+  <data name="Priv_UnknownError.Text" xml:space="preserve">
+    <value>Bilinmeyen servis hatası</value>
+  </data>
+  <data name="Priv_InstallerMissing.Text" xml:space="preserve">
+    <value>Servis yükleyicisi bulunamadı; uygulamayı yeniden kurun</value>
+  </data>
+  <data name="Priv_InstallerLaunchFailed.Text" xml:space="preserve">
+    <value>Yükleyici başlatılamadı</value>
+  </data>
+  <data name="Priv_InstallerExitCode.Text" xml:space="preserve">
+    <value>Yükleyici çıkış kodu {0} (iptal veya başarısız)</value>
+  </data>
+  <data name="Priv_NotReady.Text" xml:space="preserve">
+    <value>Servis kuruldu ama hazır değil</value>
+  </data>
+  <data name="Priv_InstallStep.Text" xml:space="preserve">
+    <value>Servis kurulumu</value>
+  </data>
+  <data name="WinInet_NotifyFailed.Text" xml:space="preserve">
+    <value>Windows'a bildirilemedi</value>
+  </data>
+  <data name="WinInet_RefreshFailed.Text" xml:space="preserve">
+    <value>Proxy ayarları yenilenemedi</value>
+  </data>
+  <data name="WinInet_ReadFailed.Text" xml:space="preserve">
+    <value>Proxy ayarları okunamadı</value>
+  </data>
+  <data name="WinInet_WriteFailed.Text" xml:space="preserve">
+    <value>Proxy ayarları değiştirilemedi</value>
+  </data>
+  <data name="App_UnhandledUi.Text" xml:space="preserve">
+    <value>UI işlenmeyen özel durum: {0}</value>
+  </data>
+  <data name="App_UnhandledDomain.Text" xml:space="preserve">
+    <value>İşlem işlenmeyen özel durum: {0}</value>
+  </data>
+  <data name="App_UnobservedTask.Text" xml:space="preserve">
+    <value>Gözlenmeyen görev özel durumu: {0}</value>
+  </data>
+  <data name="Settings_AppDescription.Text" xml:space="preserve">
+    <value>WinUI 3 tabanlı Clash/Mihomo istemcisi · v{0}</value>
+  </data>
+  <data name="Settings_Unknown.Text" xml:space="preserve">
+    <value>Bilinmiyor</value>
+  </data>
+  <data name="Settings_AutoStartReadFailed.Text" xml:space="preserve">
+    <value>Otomatik başlatma durumu okunamadı: {0}</value>
+  </data>
+  <data name="Settings_AutoStartFailed.Text" xml:space="preserve">
+    <value>Otomatik başlatma ayarı başarısız: {0}</value>
+  </data>
+  <data name="Settings_AutoStartUpdateFailed.Text" xml:space="preserve">
+    <value>Otomatik başlatma güncelleme başarısız: {0}</value>
+  </data>
+  <data name="Settings_SysProxyFailed.Text" xml:space="preserve">
+    <value>Sistem proxy ayarı başarısız: {0}</value>
+  </data>
+  <data name="Settings_PacFailed.Text" xml:space="preserve">
+    <value>PAC modu ayarı başarısız: {0}</value>
+  </data>
+  <data name="Settings_GuardFailed.Text" xml:space="preserve">
+    <value>Proxy koruması ayarı başarısız: {0}</value>
+  </data>
+  <data name="Settings_BypassFailed.Text" xml:space="preserve">
+    <value>Bypass listesi ayarı başarısız: {0}</value>
+  </data>
+  <data name="Diag_Title.Text" xml:space="preserve">
+    <value>=== Flux Teşhis Paketi ===</value>
+  </data>
+  <data name="Diag_ExportedAt.Text" xml:space="preserve">
+    <value>Dışa aktarma zamanı: {0}</value>
+  </data>
+  <data name="Diag_SectionSystem.Text" xml:space="preserve">
+    <value>--- Sistem ---</value>
+  </data>
+  <data name="Diag_OsVersion.Text" xml:space="preserve">
+    <value>OS sürümü: {0}</value>
+  </data>
+  <data name="Diag_Arch.Text" xml:space="preserve">
+    <value>Mimari: {0}</value>
+  </data>
+  <data name="Diag_Processors.Text" xml:space="preserve">
+    <value>İşlemci sayısı: {0}</value>
+  </data>
+  <data name="Diag_FluxVersion.Text" xml:space="preserve">
+    <value>Flux sürümü: {0}</value>
+  </data>
+  <data name="Diag_RunMode.Text" xml:space="preserve">
+    <value>Çalışma modu: {0}</value>
+  </data>
+  <data name="Diag_Admin.Text" xml:space="preserve">
+    <value>Yönetici: {0}</value>
+  </data>
+  <data name="Diag_SectionCore.Text" xml:space="preserve">
+    <value>--- Çekirdek ---</value>
+  </data>
+  <data name="Diag_CoreVersion.Text" xml:space="preserve">
+    <value>mihomo sürümü: {0}</value>
+  </data>
+  <data name="Diag_CoreVersionFailed.Text" xml:space="preserve">
+    <value>mihomo sürümü: alınamadı ({0})</value>
+  </data>
+  <data name="Diag_CoreMode.Text" xml:space="preserve">
+    <value>Çekirdek modu: {0}</value>
+  </data>
+  <data name="Diag_ServiceState.Text" xml:space="preserve">
+    <value>Servis durumu: {0}</value>
+  </data>
+  <data name="Diag_SectionConfig.Text" xml:space="preserve">
+    <value>--- Yapılandırma yapısı (hassas alanlar maskeli) ---</value>
+  </data>
+  <data name="Diag_CurrentProfile.Text" xml:space="preserve">
+    <value>Mevcut profil: {0}</value>
+  </data>
+  <data name="Diag_SectionRuntime.Text" xml:space="preserve">
+    <value>--- Çalışma ayarları özeti ---</value>
+  </data>
+  <data name="Diag_SystemProxyLine.Text" xml:space="preserve">
+    <value>Sistem proxy: {0} (PAC: {1})</value>
+  </data>
+  <data name="Diag_SectionLogs.Text" xml:space="preserve">
+    <value>--- Son uygulama kayıtları (200, maskeli) ---</value>
+  </data>
+  <data name="Diag_NoLogFile.Text" xml:space="preserve">
+    <value>(uygulama kayıt dosyası yok)</value>
+  </data>
+  <data name="Diag_LogReadFailed.Text" xml:space="preserve">
+    <value>Kayıtlar okunamadı: {0}</value>
+  </data>
+  <data name="Diag_Exported.Text" xml:space="preserve">
+    <value>Teşhis dışa aktarıldı: {0}</value>
+  </data>
+  <data name="Diag_MaskedValue.Text" xml:space="preserve">
+    <value>(maskeli)</value>
+  </data>
+  <data name="Enhance_YamlSyntaxError.Text" xml:space="preserve">
+    <value>{0} içinde YAML sözdizimi hatası (eşleme olmalı)</value>
+  </data>
+  <data name="Boot_HotkeyModeSwitch.Text" xml:space="preserve">
+    <value>Kısayol mod değiştirdi: {0}</value>
+  </data>
+  <data name="Settings_LangFollowSystem.Content" xml:space="preserve">
+    <value>Sistemi takip et</value>
+  </data>
+  <data name="App_ShutdownFailed.Text" xml:space="preserve">
+    <value>Çıkış temizliği başarısız: {0}</value>
+  </data>
+  <data name="Config_RuntimeGenFailed.Text" xml:space="preserve">
+    <value>Çalışma yapılandırması oluşturulamadı</value>
+  </data>
+  <data name="Config_TargetDirMissing.Text" xml:space="preserve">
+    <value>Hedef dosyanın klasörü yok</value>
+  </data>
 </root>

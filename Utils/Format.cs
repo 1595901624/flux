@@ -31,7 +31,7 @@ public static class Format
     public static string DelayText(int delay) => delay switch
     {
         < 0 => "",
-        0 => "超时",
+        0 => Flux.Services.L10n.T("Format_Timeout"),
         _ => $"{delay} ms",
     };
 

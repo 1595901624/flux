@@ -164,7 +164,7 @@ public static class AppBootstrapper
                     var mode = action["mode_".Length..];
                     await AppServices.Api.PatchConfigsAsync(new Dictionary<string, object> { ["mode"] = mode });
                     AppServices.Config.Mode = mode;
-                    LogService.App($"热键切换模式: {mode}");
+                    LogService.App(L10n.F("Boot_HotkeyModeSwitch", mode));
                     break;
                 }
                 case "toggle_system_proxy":

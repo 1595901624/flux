@@ -337,7 +337,7 @@ public class ConfigService
         if (!result.Success)
         {
             chainLogs = [];
-            throw new InvalidOperationException(result.Error?.ToString() ?? "运行时配置合成失败");
+            throw new InvalidOperationException(result.Error?.ToString() ?? L10n.T("Config_RuntimeGenFailed"));
         }
         chainLogs = result.Value!.ChainLogs;
         return result.Value!.Config;
@@ -361,7 +361,7 @@ public class ConfigService
     internal static void WriteAllTextAtomic(string path, string content)
     {
         var directory = Path.GetDirectoryName(path)
-            ?? throw new InvalidOperationException("目标文件缺少目录");
+            ?? throw new InvalidOperationException(L10n.T("Config_TargetDirMissing"));
         Directory.CreateDirectory(directory);
         var temp = Path.Combine(directory, $".{Path.GetFileName(path)}.{Guid.NewGuid():N}.tmp");
         try

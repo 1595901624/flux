@@ -42,14 +42,14 @@ public sealed class HotkeyService : IHotkeyService, IDisposable
                 var combo = HotkeyComboParser.Parse(comboText);
                 if (combo is null)
                 {
-                    failures.Add($"{action}: 无法识别的组合键「{comboText}」");
+                    failures.Add(L10n.F("Hotkey_UnknownCombo", action, comboText));
                     continue;
                 }
 
                 var duplicate = parsed.FirstOrDefault(p => HotkeyComboParser.Conflicts(p.Combo, combo));
                 if (duplicate.Combo is not null)
                 {
-                    failures.Add($"{action}: 与「{duplicate.Action}」的热键冲突（{comboText}）");
+                    failures.Add(L10n.F("Hotkey_Duplicate", action, duplicate.Action, comboText));
                     continue;
                 }
 
@@ -67,7 +67,7 @@ public sealed class HotkeyService : IHotkeyService, IDisposable
                 }
                 else
                 {
-                    failures.Add($"{action}: 组合键「{combo.Display}」已被其他程序占用");
+                    failures.Add(L10n.F("Hotkey_InUse", action, combo.Display));
                 }
             }
 

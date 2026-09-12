@@ -1244,4 +1244,331 @@
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
     <value>Systemproxy anwenden fehlgeschlagen: {0}</value>
   </data>
+  <data name="Home_ToggleSysProxy.Header" xml:space="preserve">
+    <value>Systemproxy</value>
+  </data>
+  <data name="Home_ToggleTun.Header" xml:space="preserve">
+    <value>TUN-Modus</value>
+  </data>
+  <data name="Home_MixedPortLabel.Text" xml:space="preserve">
+    <value>Mixed-Port: </value>
+  </data>
+  <data name="Home_UptimeLabel.Text" xml:space="preserve">
+    <value>Laufzeit: </value>
+  </data>
+  <data name="Home_RulesCountLabel.Text" xml:space="preserve">
+    <value>Regeln: </value>
+  </data>
+  <data name="Home_RestartCore.Text" xml:space="preserve">
+    <value>Kern neu starten</value>
+  </data>
+  <data name="Home_OpenLogs.Text" xml:space="preserve">
+    <value>Log-Ordner öffnen</value>
+  </data>
+  <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
+    <value>Aktuell</value>
+  </data>
+  <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Profil aktualisieren</value>
+  </data>
+  <data name="Profiles_TipDelete.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Profil löschen</value>
+  </data>
+  <data name="Proxies_TipGroupTest.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Gruppen-Latenztest</value>
+  </data>
+  <data name="ProfileEdit_NamePlaceholder.Text" xml:space="preserve">
+    <value>Profilname</value>
+  </data>
+  <data name="ProfileEdit_DescPlaceholder.Text" xml:space="preserve">
+    <value>Beschreibung (optional)</value>
+  </data>
+  <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
+    <value>Standard clash-verge/v2.5.2</value>
+  </data>
+  <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
+    <value>Ungültige TLS-Zertifikate akzeptieren (gefährlich)</value>
+  </data>
+  <data name="ProfileEdit_AutoUpdateLabel.Text" xml:space="preserve">
+    <value>An Auto-Update teilnehmen</value>
+  </data>
+  <data name="ProfileEdit_ChannelAuto.Text" xml:space="preserve">
+    <value>Automatisch (Direkt→Kern→System)</value>
+  </data>
+  <data name="ProfileEdit_ChannelCore.Text" xml:space="preserve">
+    <value>Über Kern-Proxy</value>
+  </data>
+  <data name="ProfileEdit_ChannelSystem.Text" xml:space="preserve">
+    <value>Über Systemproxy</value>
+  </data>
+  <data name="ProfileEdit_FieldName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProfileEdit_FieldDesc.Text" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="ProfileEdit_FieldUrl.Text" xml:space="preserve">
+    <value>Abo-URL</value>
+  </data>
+  <data name="ProfileEdit_FieldChannel.Text" xml:space="preserve">
+    <value>Update-Kanal</value>
+  </data>
+  <data name="ProfileEdit_FieldInterval.Text" xml:space="preserve">
+    <value>Intervall (Minuten, 0 = aus)</value>
+  </data>
+  <data name="ProfileEdit_FieldTimeout.Text" xml:space="preserve">
+    <value>Download-Timeout (Sek.)</value>
+  </data>
+  <data name="ProfileEdit_FieldUa.Text" xml:space="preserve">
+    <value>User-Agent</value>
+  </data>
+  <data name="Enhace_SaveAndApply.Text" xml:space="preserve">
+    <value>Speichern &amp; anwenden</value>
+  </data>
+  <data name="Enhance_NameGlobalMerge.Text" xml:space="preserve">
+    <value>Globales Merge</value>
+  </data>
+  <data name="Enhance_NameGlobalScript.Text" xml:space="preserve">
+    <value>Globales Script</value>
+  </data>
+  <data name="Enhance_NameProfileMerge.Text" xml:space="preserve">
+    <value>Profil-Merge</value>
+  </data>
+  <data name="Enhance_NameProfileScript.Text" xml:space="preserve">
+    <value>Profil-Script</value>
+  </data>
+  <data name="Enhance_NameProfileRules.Text" xml:space="preserve">
+    <value>Profil-Regeln</value>
+  </data>
+  <data name="Enhance_NameProfileProxies.Text" xml:space="preserve">
+    <value>Profil-Proxys</value>
+  </data>
+  <data name="Enhance_NameProfileGroups.Text" xml:space="preserve">
+    <value>Profil-Gruppen</value>
+  </data>
+  <data name="Enhance_TypedName.Text" xml:space="preserve">
+    <value>{0}-Erweiterung</value>
+  </data>
+  <data name="Enhance_ScriptNeedsMain.Text" xml:space="preserve">
+    <value>Script muss main(config, profileName) definieren</value>
+  </data>
+  <data name="Validator_InvalidYamlMapping.Text" xml:space="preserve">
+    <value>Inhalt ist kein gültiges YAML-Mapping</value>
+  </data>
+  <data name="Validator_InvalidYaml.Text" xml:space="preserve">
+    <value>Inhalt ist kein gültiges YAML</value>
+  </data>
+  <data name="Validator_NotClash.Text" xml:space="preserve">
+    <value>proxies/proxy-providers fehlen</value>
+  </data>
+  <data name="Enhance_GlobalNotSupported.Text" xml:space="preserve">
+    <value>Keine globale Erweiterung für diesen Typ</value>
+  </data>
+  <data name="Yaml_ParseFailed.Text" xml:space="preserve">
+    <value>YAML-Parsing fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Format_Timeout.Text" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="Paths_CoreMissing.Text" xml:space="preserve">
+    <value>Mihomo-Kern nicht gefunden (core\mihomo.exe)</value>
+  </data>
+  <data name="Proxies_CurrentNow.Text" xml:space="preserve">
+    <value>Aktuell: {0}</value>
+  </data>
+  <data name="Proxies_NodeCount.Text" xml:space="preserve">
+    <value>{0} Knoten</value>
+  </data>
+  <data name="ProxiesVM_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>Moduswechsel fehlgeschlagen: {0}</value>
+  </data>
+  <data name="ProxiesVM_ClosedOldConnections.Text" xml:space="preserve">
+    <value>{0} alte Verbindungen geschlossen</value>
+  </data>
+  <data name="ProxiesVM_NodeSwitchFailed.Text" xml:space="preserve">
+    <value>Knotenwechsel fehlgeschlagen [{0} → {1}]: {2}</value>
+  </data>
+  <data name="RulesVM_LoadFailed.Text" xml:space="preserve">
+    <value>Laden fehlgeschlagen: {0}</value>
+  </data>
+  <data name="RulesVM_Count.Text" xml:space="preserve">
+    <value>{0} Regeln</value>
+  </data>
+  <data name="Logs_Continue.Text" xml:space="preserve">
+    <value>Fortsetzen</value>
+  </data>
+  <data name="Hotkey_UnknownCombo.Text" xml:space="preserve">
+    <value>{0}: unbekannte Kombination &quot;{1}&quot;</value>
+  </data>
+  <data name="Hotkey_Duplicate.Text" xml:space="preserve">
+    <value>{0}: Konflikt mit &quot;{1}&quot; ({2})</value>
+  </data>
+  <data name="Hotkey_InUse.Text" xml:space="preserve">
+    <value>{0}: &quot;{1}&quot; wird bereits verwendet</value>
+  </data>
+  <data name="Priv_ActionStartCore.Text" xml:space="preserve">
+    <value>Kern über Dienst starten</value>
+  </data>
+  <data name="Priv_ActionStopCore.Text" xml:space="preserve">
+    <value>Kern über Dienst stoppen</value>
+  </data>
+  <data name="Priv_ServiceUnavailable.Text" xml:space="preserve">
+    <value>Flux-Dienst nicht erreichbar</value>
+  </data>
+  <data name="Priv_VersionMismatch.Text" xml:space="preserve">
+    <value>Protokollversion weicht ab (Dienst v{0}, App v{1}); Dienst neu starten</value>
+  </data>
+  <data name="Priv_UnknownError.Text" xml:space="preserve">
+    <value>Unbekannter Dienstfehler</value>
+  </data>
+  <data name="Priv_InstallerMissing.Text" xml:space="preserve">
+    <value>Dienst-Installer nicht gefunden; App neu installieren</value>
+  </data>
+  <data name="Priv_InstallerLaunchFailed.Text" xml:space="preserve">
+    <value>Installer konnte nicht gestartet werden</value>
+  </data>
+  <data name="Priv_InstallerExitCode.Text" xml:space="preserve">
+    <value>Installer-Exitcode {0} (abgebrochen oder fehlgeschlagen)</value>
+  </data>
+  <data name="Priv_NotReady.Text" xml:space="preserve">
+    <value>Dienst installiert, aber nicht bereit</value>
+  </data>
+  <data name="Priv_InstallStep.Text" xml:space="preserve">
+    <value>Dienstinstallation</value>
+  </data>
+  <data name="WinInet_NotifyFailed.Text" xml:space="preserve">
+    <value>Windows konnte nicht benachrichtigt werden</value>
+  </data>
+  <data name="WinInet_RefreshFailed.Text" xml:space="preserve">
+    <value>Proxy-Einstellungen konnten nicht aktualisiert werden</value>
+  </data>
+  <data name="WinInet_ReadFailed.Text" xml:space="preserve">
+    <value>Proxy-Einstellungen konnten nicht gelesen werden</value>
+  </data>
+  <data name="WinInet_WriteFailed.Text" xml:space="preserve">
+    <value>Proxy-Einstellungen konnten nicht geändert werden</value>
+  </data>
+  <data name="App_UnhandledUi.Text" xml:space="preserve">
+    <value>UI-Unbehandelte Ausnahme: {0}</value>
+  </data>
+  <data name="App_UnhandledDomain.Text" xml:space="preserve">
+    <value>Prozess-Unbehandelte Ausnahme: {0}</value>
+  </data>
+  <data name="App_UnobservedTask.Text" xml:space="preserve">
+    <value>Unbeobachtete Task-Ausnahme: {0}</value>
+  </data>
+  <data name="Settings_AppDescription.Text" xml:space="preserve">
+    <value>Clash/Mihomo-Client auf WinUI 3 · v{0}</value>
+  </data>
+  <data name="Settings_Unknown.Text" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="Settings_AutoStartReadFailed.Text" xml:space="preserve">
+    <value>Autostart-Status konnte nicht gelesen werden: {0}</value>
+  </data>
+  <data name="Settings_AutoStartFailed.Text" xml:space="preserve">
+    <value>Autostart fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Settings_AutoStartUpdateFailed.Text" xml:space="preserve">
+    <value>Autostart-Update fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Settings_SysProxyFailed.Text" xml:space="preserve">
+    <value>Systemproxy fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Settings_PacFailed.Text" xml:space="preserve">
+    <value>PAC-Modus fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Settings_GuardFailed.Text" xml:space="preserve">
+    <value>Proxy-Schutz fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Settings_BypassFailed.Text" xml:space="preserve">
+    <value>Bypass-Liste fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Diag_Title.Text" xml:space="preserve">
+    <value>=== Flux-Diagnose ===</value>
+  </data>
+  <data name="Diag_ExportedAt.Text" xml:space="preserve">
+    <value>Exportiert: {0}</value>
+  </data>
+  <data name="Diag_SectionSystem.Text" xml:space="preserve">
+    <value>--- System ---</value>
+  </data>
+  <data name="Diag_OsVersion.Text" xml:space="preserve">
+    <value>BS-Version: {0}</value>
+  </data>
+  <data name="Diag_Arch.Text" xml:space="preserve">
+    <value>Architektur: {0}</value>
+  </data>
+  <data name="Diag_Processors.Text" xml:space="preserve">
+    <value>Prozessoren: {0}</value>
+  </data>
+  <data name="Diag_FluxVersion.Text" xml:space="preserve">
+    <value>Flux-Version: {0}</value>
+  </data>
+  <data name="Diag_RunMode.Text" xml:space="preserve">
+    <value>Ausführungsmodus: {0}</value>
+  </data>
+  <data name="Diag_Admin.Text" xml:space="preserve">
+    <value>Administrator: {0}</value>
+  </data>
+  <data name="Diag_SectionCore.Text" xml:space="preserve">
+    <value>--- Kern ---</value>
+  </data>
+  <data name="Diag_CoreVersion.Text" xml:space="preserve">
+    <value>mihomo-Version: {0}</value>
+  </data>
+  <data name="Diag_CoreVersionFailed.Text" xml:space="preserve">
+    <value>mihomo-Version: Abruf fehlgeschlagen ({0})</value>
+  </data>
+  <data name="Diag_CoreMode.Text" xml:space="preserve">
+    <value>Kern-Modus: {0}</value>
+  </data>
+  <data name="Diag_ServiceState.Text" xml:space="preserve">
+    <value>Dienststatus: {0}</value>
+  </data>
+  <data name="Diag_SectionConfig.Text" xml:space="preserve">
+    <value>--- Konfigstruktur (sensible Felder maskiert) ---</value>
+  </data>
+  <data name="Diag_CurrentProfile.Text" xml:space="preserve">
+    <value>Aktuelles Profil: {0}</value>
+  </data>
+  <data name="Diag_SectionRuntime.Text" xml:space="preserve">
+    <value>--- Laufzeiteinstellungen ---</value>
+  </data>
+  <data name="Diag_SystemProxyLine.Text" xml:space="preserve">
+    <value>Systemproxy: {0} (PAC: {1})</value>
+  </data>
+  <data name="Diag_SectionLogs.Text" xml:space="preserve">
+    <value>--- Letzte Logs (200, maskiert) ---</value>
+  </data>
+  <data name="Diag_NoLogFile.Text" xml:space="preserve">
+    <value>(keine Logdatei)</value>
+  </data>
+  <data name="Diag_LogReadFailed.Text" xml:space="preserve">
+    <value>(Logs konnten nicht gelesen werden: {0})</value>
+  </data>
+  <data name="Diag_Exported.Text" xml:space="preserve">
+    <value>Diagnose exportiert: {0}</value>
+  </data>
+  <data name="Diag_MaskedValue.Text" xml:space="preserve">
+    <value>(maskiert)</value>
+  </data>
+  <data name="Enhance_YamlSyntaxError.Text" xml:space="preserve">
+    <value>YAML-Syntaxfehler in {0} (Mapping erforderlich)</value>
+  </data>
+  <data name="Boot_HotkeyModeSwitch.Text" xml:space="preserve">
+    <value>Hotkey-Moduswechsel: {0}</value>
+  </data>
+  <data name="Settings_LangFollowSystem.Content" xml:space="preserve">
+    <value>System folgen</value>
+  </data>
+  <data name="App_ShutdownFailed.Text" xml:space="preserve">
+    <value>Cleanup beim Beenden fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Config_RuntimeGenFailed.Text" xml:space="preserve">
+    <value>Laufzeitkonfiguration fehlgeschlagen</value>
+  </data>
+  <data name="Config_TargetDirMissing.Text" xml:space="preserve">
+    <value>Zieldatei ohne Verzeichnis</value>
+  </data>
 </root>

@@ -37,19 +37,19 @@ public sealed class EnhanceEditorDialog : ContentDialog
         _item = item;
         XamlRoot = root;
         Title = item is null ? L10n.T("Msg_EnhanceGlobalTitle") : L10n.F("Msg_EnhanceProfileTitle", item.Name);
-        PrimaryButtonText = "保存并应用";
-        CloseButtonText = "关闭";
+        PrimaryButtonText = L10n.T("Enhace_SaveAndApply");
+        CloseButtonText = L10n.T("Common_Close");
         DefaultButton = ContentDialogButton.Primary;
 
         var entries = new List<(ChainType Type, string Label, bool Global)>
         {
-            (ChainType.Merge, "全局 Merge", true),
-            (ChainType.Script, "全局 Script", true),
-            (ChainType.Merge, "订阅 Merge", false),
-            (ChainType.Script, "订阅 Script", false),
-            (ChainType.Rules, "订阅 Rules", false),
-            (ChainType.Proxies, "订阅 Proxies", false),
-            (ChainType.Groups, "订阅 Groups", false),
+            (ChainType.Merge, L10n.T("Enhance_NameGlobalMerge"), true),
+            (ChainType.Script, L10n.T("Enhance_NameGlobalScript"), true),
+            (ChainType.Merge, L10n.T("Enhance_NameProfileMerge"), false),
+            (ChainType.Script, L10n.T("Enhance_NameProfileScript"), false),
+            (ChainType.Rules, L10n.T("Enhance_NameProfileRules"), false),
+            (ChainType.Proxies, L10n.T("Enhance_NameProfileProxies"), false),
+            (ChainType.Groups, L10n.T("Enhance_NameProfileGroups"), false),
         };
 
         foreach (var (type, label, global) in entries)

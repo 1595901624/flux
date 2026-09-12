@@ -54,7 +54,7 @@ public static class AppServices
         }
         catch (Exception ex)
         {
-            LogService.App("退出清理失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("App_ShutdownFailed", ex.Message), "warn");
         }
     }
 }

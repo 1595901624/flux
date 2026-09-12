@@ -132,15 +132,15 @@
                                     <Border Background="{ThemeResource AccentFillColorSecondaryBrush}" CornerRadius="4"
                                             Padding="6,2" VerticalAlignment="Center"
                                             Visibility="{x:Bind CurrentVisibility}">
-                                        <TextBlock Text="当前" FontSize="10" Foreground="White" />
+                                        <TextBlock x:Uid="Profiles_CurrentBadge" Text="当前" FontSize="10" Foreground="White" />
                                     </Border>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
-                                    <Button Click="MenuUpdate_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
+                                    <Button x:Uid="Profiles_TipUpdate" Click="MenuUpdate_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
                                             ToolTipService.ToolTip="更新订阅">
                                         <FontIcon Glyph="&#xE72C;" FontSize="13" />
                                     </Button>
-                                    <Button Click="MenuDelete_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
+                                    <Button x:Uid="Profiles_TipDelete" Click="MenuDelete_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
                                             ToolTipService.ToolTip="删除订阅">
                                         <FontIcon Glyph="&#xE74D;" FontSize="13" Foreground="IndianRed" />
                                     </Button>

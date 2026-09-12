@@ -1244,4 +1244,331 @@
   <data name="Boot_SysProxyApplyFailed.Text" xml:space="preserve">
     <value>系统代理应用失败: {0}</value>
   </data>
+  <data name="Home_ToggleSysProxy.Header" xml:space="preserve">
+    <value>系统代理</value>
+  </data>
+  <data name="Home_ToggleTun.Header" xml:space="preserve">
+    <value>TUN 模式</value>
+  </data>
+  <data name="Home_MixedPortLabel.Text" xml:space="preserve">
+    <value>混合端口: </value>
+  </data>
+  <data name="Home_UptimeLabel.Text" xml:space="preserve">
+    <value>运行时间: </value>
+  </data>
+  <data name="Home_RulesCountLabel.Text" xml:space="preserve">
+    <value>规则数量: </value>
+  </data>
+  <data name="Home_RestartCore.Text" xml:space="preserve">
+    <value>重启内核</value>
+  </data>
+  <data name="Home_OpenLogs.Text" xml:space="preserve">
+    <value>打开日志目录</value>
+  </data>
+  <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
+    <value>当前</value>
+  </data>
+  <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
+    <value>更新订阅</value>
+  </data>
+  <data name="Profiles_TipDelete.ToolTipService.ToolTip" xml:space="preserve">
+    <value>删除订阅</value>
+  </data>
+  <data name="Proxies_TipGroupTest.ToolTipService.ToolTip" xml:space="preserve">
+    <value>整组测速</value>
+  </data>
+  <data name="ProfileEdit_NamePlaceholder.Text" xml:space="preserve">
+    <value>订阅名称</value>
+  </data>
+  <data name="ProfileEdit_DescPlaceholder.Text" xml:space="preserve">
+    <value>描述（可选）</value>
+  </data>
+  <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
+    <value>默认 clash-verge/v2.5.2</value>
+  </data>
+  <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
+    <value>接受无效 TLS 证书（危险）</value>
+  </data>
+  <data name="ProfileEdit_AutoUpdateLabel.Text" xml:space="preserve">
+    <value>参与自动更新</value>
+  </data>
+  <data name="ProfileEdit_ChannelAuto.Text" xml:space="preserve">
+    <value>自动回退（直连→内核→系统）</value>
+  </data>
+  <data name="ProfileEdit_ChannelCore.Text" xml:space="preserve">
+    <value>经内核代理</value>
+  </data>
+  <data name="ProfileEdit_ChannelSystem.Text" xml:space="preserve">
+    <value>经系统代理</value>
+  </data>
+  <data name="ProfileEdit_FieldName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="ProfileEdit_FieldDesc.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="ProfileEdit_FieldUrl.Text" xml:space="preserve">
+    <value>订阅 URL</value>
+  </data>
+  <data name="ProfileEdit_FieldChannel.Text" xml:space="preserve">
+    <value>更新通道</value>
+  </data>
+  <data name="ProfileEdit_FieldInterval.Text" xml:space="preserve">
+    <value>更新间隔（分钟，0=不自动）</value>
+  </data>
+  <data name="ProfileEdit_FieldTimeout.Text" xml:space="preserve">
+    <value>下载超时（秒）</value>
+  </data>
+  <data name="ProfileEdit_FieldUa.Text" xml:space="preserve">
+    <value>User-Agent</value>
+  </data>
+  <data name="Enhace_SaveAndApply.Text" xml:space="preserve">
+    <value>保存并应用</value>
+  </data>
+  <data name="Enhance_NameGlobalMerge.Text" xml:space="preserve">
+    <value>全局 Merge</value>
+  </data>
+  <data name="Enhance_NameGlobalScript.Text" xml:space="preserve">
+    <value>全局 Script</value>
+  </data>
+  <data name="Enhance_NameProfileMerge.Text" xml:space="preserve">
+    <value>订阅 Merge</value>
+  </data>
+  <data name="Enhance_NameProfileScript.Text" xml:space="preserve">
+    <value>订阅 Script</value>
+  </data>
+  <data name="Enhance_NameProfileRules.Text" xml:space="preserve">
+    <value>订阅 Rules</value>
+  </data>
+  <data name="Enhance_NameProfileProxies.Text" xml:space="preserve">
+    <value>订阅 Proxies</value>
+  </data>
+  <data name="Enhance_NameProfileGroups.Text" xml:space="preserve">
+    <value>订阅 Groups</value>
+  </data>
+  <data name="Enhance_TypedName.Text" xml:space="preserve">
+    <value>{0} 增强</value>
+  </data>
+  <data name="Enhance_ScriptNeedsMain.Text" xml:space="preserve">
+    <value>Script 文件必须定义 main(config, profileName) 函数</value>
+  </data>
+  <data name="Validator_InvalidYamlMapping.Text" xml:space="preserve">
+    <value>内容不是有效的 YAML 映射</value>
+  </data>
+  <data name="Validator_InvalidYaml.Text" xml:space="preserve">
+    <value>内容不是有效的 YAML</value>
+  </data>
+  <data name="Validator_NotClash.Text" xml:space="preserve">
+    <value>配置中缺少 proxies / proxy-providers，不是有效的 Clash 配置</value>
+  </data>
+  <data name="Enhance_GlobalNotSupported.Text" xml:space="preserve">
+    <value>该类型不支持全局增强</value>
+  </data>
+  <data name="Yaml_ParseFailed.Text" xml:space="preserve">
+    <value>YAML 解析失败: {0}</value>
+  </data>
+  <data name="Format_Timeout.Text" xml:space="preserve">
+    <value>超时</value>
+  </data>
+  <data name="Paths_CoreMissing.Text" xml:space="preserve">
+    <value>未找到内置 mihomo 内核（core\mihomo.exe）</value>
+  </data>
+  <data name="Proxies_CurrentNow.Text" xml:space="preserve">
+    <value>当前: {0}</value>
+  </data>
+  <data name="Proxies_NodeCount.Text" xml:space="preserve">
+    <value>{0} 个</value>
+  </data>
+  <data name="ProxiesVM_ModeSwitchFailed.Text" xml:space="preserve">
+    <value>模式切换失败: {0}</value>
+  </data>
+  <data name="ProxiesVM_ClosedOldConnections.Text" xml:space="preserve">
+    <value>切换节点后已关闭 {0} 个旧连接</value>
+  </data>
+  <data name="ProxiesVM_NodeSwitchFailed.Text" xml:space="preserve">
+    <value>切换节点失败 [{0} → {1}]: {2}</value>
+  </data>
+  <data name="RulesVM_LoadFailed.Text" xml:space="preserve">
+    <value>加载失败: {0}</value>
+  </data>
+  <data name="RulesVM_Count.Text" xml:space="preserve">
+    <value>共 {0} 条</value>
+  </data>
+  <data name="Logs_Continue.Text" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="Hotkey_UnknownCombo.Text" xml:space="preserve">
+    <value>{0}: 无法识别的组合键「{1}」</value>
+  </data>
+  <data name="Hotkey_Duplicate.Text" xml:space="preserve">
+    <value>{0}: 与「{1}」的热键冲突（{2}）</value>
+  </data>
+  <data name="Hotkey_InUse.Text" xml:space="preserve">
+    <value>{0}: 组合键「{1}」已被其他程序占用</value>
+  </data>
+  <data name="Priv_ActionStartCore.Text" xml:space="preserve">
+    <value>通过服务启动内核</value>
+  </data>
+  <data name="Priv_ActionStopCore.Text" xml:space="preserve">
+    <value>通过服务停止内核</value>
+  </data>
+  <data name="Priv_ServiceUnavailable.Text" xml:space="preserve">
+    <value>无法连接 Flux 服务</value>
+  </data>
+  <data name="Priv_VersionMismatch.Text" xml:space="preserve">
+    <value>服务协议版本不匹配（服务 v{0}，应用 v{1}），请重启服务</value>
+  </data>
+  <data name="Priv_UnknownError.Text" xml:space="preserve">
+    <value>未知服务错误</value>
+  </data>
+  <data name="Priv_InstallerMissing.Text" xml:space="preserve">
+    <value>未找到服务安装器，请重新安装应用</value>
+  </data>
+  <data name="Priv_InstallerLaunchFailed.Text" xml:space="preserve">
+    <value>无法启动安装器</value>
+  </data>
+  <data name="Priv_InstallerExitCode.Text" xml:space="preserve">
+    <value>安装器退出码 {0}（用户取消或安装失败）</value>
+  </data>
+  <data name="Priv_NotReady.Text" xml:space="preserve">
+    <value>服务已安装但未就绪</value>
+  </data>
+  <data name="Priv_InstallStep.Text" xml:space="preserve">
+    <value>服务安装</value>
+  </data>
+  <data name="WinInet_NotifyFailed.Text" xml:space="preserve">
+    <value>无法通知 Windows 系统代理设置已更改</value>
+  </data>
+  <data name="WinInet_RefreshFailed.Text" xml:space="preserve">
+    <value>无法刷新 Windows 系统代理设置</value>
+  </data>
+  <data name="WinInet_ReadFailed.Text" xml:space="preserve">
+    <value>无法读取 Windows 系统代理设置</value>
+  </data>
+  <data name="WinInet_WriteFailed.Text" xml:space="preserve">
+    <value>无法修改 Windows 系统代理设置</value>
+  </data>
+  <data name="App_UnhandledUi.Text" xml:space="preserve">
+    <value>UI 未处理异常: {0}</value>
+  </data>
+  <data name="App_UnhandledDomain.Text" xml:space="preserve">
+    <value>进程未处理异常: {0}</value>
+  </data>
+  <data name="App_UnobservedTask.Text" xml:space="preserve">
+    <value>未观察任务异常: {0}</value>
+  </data>
+  <data name="Settings_AppDescription.Text" xml:space="preserve">
+    <value>基于 WinUI 3 的 Clash/Mihomo 客户端 · v{0}</value>
+  </data>
+  <data name="Settings_Unknown.Text" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="Settings_AutoStartReadFailed.Text" xml:space="preserve">
+    <value>读取自启动状态失败: {0}</value>
+  </data>
+  <data name="Settings_AutoStartFailed.Text" xml:space="preserve">
+    <value>自启动设置失败: {0}</value>
+  </data>
+  <data name="Settings_AutoStartUpdateFailed.Text" xml:space="preserve">
+    <value>更新自启动设置失败: {0}</value>
+  </data>
+  <data name="Settings_SysProxyFailed.Text" xml:space="preserve">
+    <value>系统代理设置失败: {0}</value>
+  </data>
+  <data name="Settings_PacFailed.Text" xml:space="preserve">
+    <value>PAC 模式设置失败: {0}</value>
+  </data>
+  <data name="Settings_GuardFailed.Text" xml:space="preserve">
+    <value>代理守护设置失败: {0}</value>
+  </data>
+  <data name="Settings_BypassFailed.Text" xml:space="preserve">
+    <value>代理绕过设置失败: {0}</value>
+  </data>
+  <data name="Diag_Title.Text" xml:space="preserve">
+    <value>=== Flux 诊断包 ===</value>
+  </data>
+  <data name="Diag_ExportedAt.Text" xml:space="preserve">
+    <value>导出时间: {0}</value>
+  </data>
+  <data name="Diag_SectionSystem.Text" xml:space="preserve">
+    <value>--- 系统信息 ---</value>
+  </data>
+  <data name="Diag_OsVersion.Text" xml:space="preserve">
+    <value>OS 版本: {0}</value>
+  </data>
+  <data name="Diag_Arch.Text" xml:space="preserve">
+    <value>架构: {0}</value>
+  </data>
+  <data name="Diag_Processors.Text" xml:space="preserve">
+    <value>处理器数: {0}</value>
+  </data>
+  <data name="Diag_FluxVersion.Text" xml:space="preserve">
+    <value>Flux 版本: {0}</value>
+  </data>
+  <data name="Diag_RunMode.Text" xml:space="preserve">
+    <value>运行模式: {0}</value>
+  </data>
+  <data name="Diag_Admin.Text" xml:space="preserve">
+    <value>管理员: {0}</value>
+  </data>
+  <data name="Diag_SectionCore.Text" xml:space="preserve">
+    <value>--- 内核 ---</value>
+  </data>
+  <data name="Diag_CoreVersion.Text" xml:space="preserve">
+    <value>mihomo 版本: {0}</value>
+  </data>
+  <data name="Diag_CoreVersionFailed.Text" xml:space="preserve">
+    <value>mihomo 版本: 获取失败 ({0})</value>
+  </data>
+  <data name="Diag_CoreMode.Text" xml:space="preserve">
+    <value>内核模式: {0}</value>
+  </data>
+  <data name="Diag_ServiceState.Text" xml:space="preserve">
+    <value>服务状态: {0}</value>
+  </data>
+  <data name="Diag_SectionConfig.Text" xml:space="preserve">
+    <value>--- 配置结构（敏感字段已遮蔽） ---</value>
+  </data>
+  <data name="Diag_CurrentProfile.Text" xml:space="preserve">
+    <value>当前订阅: {0}</value>
+  </data>
+  <data name="Diag_SectionRuntime.Text" xml:space="preserve">
+    <value>--- 运行设置摘要 ---</value>
+  </data>
+  <data name="Diag_SystemProxyLine.Text" xml:space="preserve">
+    <value>系统代理: {0} (PAC: {1})</value>
+  </data>
+  <data name="Diag_SectionLogs.Text" xml:space="preserve">
+    <value>--- 最近应用日志（200 条，敏感信息已遮蔽） ---</value>
+  </data>
+  <data name="Diag_NoLogFile.Text" xml:space="preserve">
+    <value>(无应用日志文件)</value>
+  </data>
+  <data name="Diag_LogReadFailed.Text" xml:space="preserve">
+    <value>(日志读取失败: {0})</value>
+  </data>
+  <data name="Diag_Exported.Text" xml:space="preserve">
+    <value>诊断包已导出: {0}</value>
+  </data>
+  <data name="Diag_MaskedValue.Text" xml:space="preserve">
+    <value>（已遮蔽）</value>
+  </data>
+  <data name="Enhance_YamlSyntaxError.Text" xml:space="preserve">
+    <value>YAML 语法错误: {0}（必须是键值映射）</value>
+  </data>
+  <data name="Boot_HotkeyModeSwitch.Text" xml:space="preserve">
+    <value>热键切换模式: {0}</value>
+  </data>
+  <data name="Settings_LangFollowSystem.Content" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="App_ShutdownFailed.Text" xml:space="preserve">
+    <value>退出清理失败: {0}</value>
+  </data>
+  <data name="Config_RuntimeGenFailed.Text" xml:space="preserve">
+    <value>运行时配置合成失败</value>
+  </data>
+  <data name="Config_TargetDirMissing.Text" xml:space="preserve">
+    <value>目标文件缺少目录</value>
+  </data>
 </root>

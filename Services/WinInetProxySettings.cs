@@ -62,9 +62,9 @@ internal static class WinInetProxySettings
     private static void NotifyChanged()
     {
         if (!InternetSetOption(IntPtr.Zero, InternetOptionSettingsChanged, IntPtr.Zero, 0))
-            throw CreateWin32Exception("无法通知 Windows 系统代理设置已更改");
+            throw CreateWin32Exception(Flux.Services.L10n.T("WinInet_NotifyFailed"));
         if (!InternetSetOption(IntPtr.Zero, InternetOptionRefresh, IntPtr.Zero, 0))
-            throw CreateWin32Exception("无法刷新 Windows 系统代理设置");
+            throw CreateWin32Exception(Flux.Services.L10n.T("WinInet_RefreshFailed"));
     }
 
     private static QueryResult QueryOptions()
@@ -98,7 +98,7 @@ internal static class WinInetProxySettings
             };
             var listSize = list.Size;
             if (!InternetQueryOption(IntPtr.Zero, InternetOptionPerConnectionOption, ref list, ref listSize))
-                throw CreateWin32Exception("无法读取 Windows 系统代理设置");
+                throw CreateWin32Exception(Flux.Services.L10n.T("WinInet_ReadFailed"));
 
             var flags = ReadOption(optionBuffer, optionSize, 0).Value.IntValue;
             var serverOption = ReadOption(optionBuffer, optionSize, 1);
@@ -171,7 +171,7 @@ internal static class WinInetProxySettings
                     ref list,
                     list.Size))
             {
-                throw CreateWin32Exception("无法修改 Windows 系统代理设置");
+                throw CreateWin32Exception(Flux.Services.L10n.T("WinInet_WriteFailed"));
             }
         }
         finally

@@ -12,14 +12,14 @@ namespace Flux.Views;
 public sealed class ProfileEditDialog : ContentDialog
 {
     private readonly ProfileItem _item;
-    private readonly TextBox _nameBox = new() { PlaceholderText = "订阅名称" };
-    private readonly TextBox _descBox = new() { PlaceholderText = "描述（可选）" };
+    private readonly TextBox _nameBox = new() { PlaceholderText = L10n.T("ProfileEdit_NamePlaceholder") };
+    private readonly TextBox _descBox = new() { PlaceholderText = L10n.T("ProfileEdit_DescPlaceholder") };
     private readonly TextBox _urlBox = new() { TextWrapping = TextWrapping.Wrap };
-    private readonly TextBox _uaBox = new() { PlaceholderText = "默认 clash-verge/v2.5.2" };
+    private readonly TextBox _uaBox = new() { PlaceholderText = L10n.T("ProfileEdit_UaPlaceholder") };
     private readonly TextBox _timeoutBox = new();
     private readonly TextBox _intervalBox = new();
-    private readonly CheckBox _invalidCertBox = new() { Content = "接受无效 TLS 证书（危险）" };
-    private readonly CheckBox _autoUpdateBox = new() { Content = "参与自动更新" };
+    private readonly CheckBox _invalidCertBox = new() { Content = L10n.T("ProfileEdit_InvalidCertLabel") };
+    private readonly CheckBox _autoUpdateBox = new() { Content = L10n.T("ProfileEdit_AutoUpdateLabel") };
     private readonly ComboBox _channelBox = new();
 
     public ProfileEditDialog(ProfileItem item, XamlRoot root)
@@ -55,18 +55,18 @@ public sealed class ProfileEditDialog : ContentDialog
         if (_channelBox.SelectedItem is null) _channelBox.SelectedIndex = 0;
 
         var form = new StackPanel { Spacing = 10, MinWidth = 420 };
-        form.Children.Add(Field("名称", _nameBox));
-        form.Children.Add(Field("描述", _descBox));
+        form.Children.Add(Field(L10n.T("ProfileEdit_FieldName"), _nameBox));
+        form.Children.Add(Field(L10n.T("ProfileEdit_FieldDesc"), _descBox));
         if (item.Type == "remote")
         {
-            form.Children.Add(Field("订阅 URL", _urlBox));
-            form.Children.Add(Field("User-Agent", _uaBox));
-            form.Children.Add(Field("更新通道", _channelBox));
-            form.Children.Add(Field("更新间隔（分钟，0=不自动）", _intervalBox));
+            form.Children.Add(Field(L10n.T("ProfileEdit_FieldUrl"), _urlBox));
+            form.Children.Add(Field(L10n.T("ProfileEdit_FieldUa"), _uaBox));
+            form.Children.Add(Field(L10n.T("ProfileEdit_FieldChannel"), _channelBox));
+            form.Children.Add(Field(L10n.T("ProfileEdit_FieldInterval"), _intervalBox));
             form.Children.Add(_autoUpdateBox);
             form.Children.Add(_invalidCertBox);
         }
-        form.Children.Add(Field("下载超时（秒）", _timeoutBox));
+        form.Children.Add(Field(L10n.T("ProfileEdit_FieldTimeout"), _timeoutBox));
 
         Content = new ScrollViewer
         {

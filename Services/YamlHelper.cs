@@ -19,7 +19,7 @@ public static class YamlHelper
         }
         catch (Exception ex)
         {
-            LogService.App("YAML 解析失败: " + ex.Message, "error");
+            LogService.App(Flux.Services.L10n.F("Yaml_ParseFailed", ex.Message), "error");
         }
         return null;
     }

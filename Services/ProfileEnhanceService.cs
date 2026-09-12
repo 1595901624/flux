@@ -63,7 +63,7 @@ public static class ProfileEnhanceService
     public static void SetGlobalContent(ChainType type, string content)
     {
         var file = GetGlobalFile(type);
-        if (file == "") throw new InvalidOperationException("该类型不支持全局增强");
+        if (file == "") throw new InvalidOperationException(L10n.T("Enhance_GlobalNotSupported"));
         ValidateEnhanceContent(type, content, file);
         ConfigService.WriteAllTextAtomic(Path.Combine(Paths.ProfilesDir, file), content);
     }
@@ -208,7 +208,7 @@ public static class ProfileEnhanceService
             case ChainType.Script:
                 // 基本检查：必须包含 main 定义；语法校验由 Jint 编译错误捕获
                 if (content.Length > 0 && !content.Contains("main", StringComparison.Ordinal))
-                    throw new InvalidOperationException("Script 文件必须定义 main(config, profileName) 函数");
+                    throw new InvalidOperationException(L10n.T("Enhance_ScriptNeedsMain"));
                 break;
             case ChainType.Merge:
             case ChainType.Rules:
@@ -216,7 +216,7 @@ public static class ProfileEnhanceService
             case ChainType.Groups:
                 if (content.Length == 0) return; // 空文件 = 未启用
                 if (YamlOps.ParseMapping(content) is null)
-                    throw new InvalidOperationException($"YAML 语法错误: {fileName}（必须是键值映射）");
+                    throw new InvalidOperationException(L10n.F("Enhance_YamlSyntaxError", fileName));
                 break;
         }
     }

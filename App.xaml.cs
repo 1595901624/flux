@@ -23,14 +23,14 @@ public partial class App : Application
 
         UnhandledException += (_, e) =>
         {
-            Services.LogService.App("UI 未处理异常: " + e.Message + "\n" + e.Exception, "error");
+            Services.LogService.App(Services.L10n.F("App_UnhandledUi", e.Message + "\n" + e.Exception), "error");
             e.Handled = true;
         };
         AppDomain.CurrentDomain.UnhandledException += (_, e) =>
-            Services.LogService.App("进程未处理异常: " + e.ExceptionObject, "error");
+            Services.LogService.App(Services.L10n.F("App_UnhandledDomain", e.ExceptionObject), "error");
         TaskScheduler.UnobservedTaskException += (_, e) =>
         {
-            Services.LogService.App("未观察任务异常: " + e.Exception, "warn");
+            Services.LogService.App(Services.L10n.F("App_UnobservedTask", e.Exception), "warn");
             e.SetObserved();
         };
     }

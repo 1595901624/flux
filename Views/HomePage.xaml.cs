@@ -131,7 +131,7 @@ public sealed partial class HomePage : Page
             XamlRoot = XamlRoot,
             Title = title,
             Content = message,
-            CloseButtonText = "确定",
+            CloseButtonText = L10n.T("Common_OK"),
             DefaultButton = ContentDialogButton.Close,
         };
         await dialog.ShowAsync();

@@ -73,7 +73,7 @@ public static class Paths
     public static void EnsureCoreExecutable()
     {
         if (!File.Exists(CoreSourcePath))
-            throw new FileNotFoundException("未找到内置 mihomo 内核（core\\mihomo.exe）", CoreSourcePath);
+            throw new FileNotFoundException(Flux.Services.L10n.T("Paths_CoreMissing"), CoreSourcePath);
 
     }
 }

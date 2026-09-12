@@ -72,7 +72,7 @@ public sealed partial class LogsPage : Page
         if (PauseButton.Content is StackPanel panel)
         {
             if (panel.Children[0] is FontIcon icon) icon.Glyph = paused ? "\uE768" : "\uE769";
-            if (panel.Children[1] is TextBlock text) text.Text = paused ? "继续" : "暂停";
+            if (panel.Children[1] is TextBlock text) text.Text = paused ? Flux.Services.L10n.T("Logs_Continue") : Flux.Services.L10n.T("Logs_Pause");
         }
     }
 

@@ -120,6 +120,8 @@ import i18n_dialog_table as _dt
 _dt.register_extra(k)
 import i18n_core_table
 i18n_core_table.register(k)
+import i18n_gaps_table
+i18n_gaps_table.register(k)
 
 LANGS = ["zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt"]
 
@@ -140,7 +142,7 @@ CONTENT_KEYS = {
     "Settings_WebDavConfig", "Settings_WebDavUpload", "Settings_WebDavRestore",
     "Settings_ExportDiagnostics", "Settings_CheckUpdate",
     "Settings_OpenData", "Settings_OpenLogs", "Settings_OpenGitHub", "Settings_ExitApp",
-    "Settings_OpenLoopback",
+    "Settings_OpenLoopback", "Settings_LangFollowSystem",
 }
 
 # 挂在 TextBox 上的键 → .PlaceholderText
@@ -148,6 +150,9 @@ PLACEHOLDER_KEYS = {
     "Proxies_FilterBox", "Profiles_UrlBox", "Connections_SearchBox",
     "Rules_SearchBox", "Logs_SearchBox", "Settings_LightweightMinutes",
 }
+
+HEADER_KEYS = {"Home_ToggleSysProxy", "Home_ToggleTun"}
+TOOLTIP_KEYS = {"Profiles_TipUpdate", "Profiles_TipDelete", "Proxies_TipGroupTest"}
 
 def names_for(key):
     # x:Uid 只应用目标元素存在的属性；不存在的属性（如 NavigationViewItem.Text）
@@ -160,6 +165,10 @@ def names_for(key):
         return [key + ".Content"]
     if key in PLACEHOLDER_KEYS:
         return [key + ".PlaceholderText"]
+    if key in HEADER_KEYS:
+        return [key + ".Header"]
+    if key in TOOLTIP_KEYS:
+        return [key + ".ToolTipService.ToolTip"]
     return [key + ".Text"]
 
 NL = chr(10)

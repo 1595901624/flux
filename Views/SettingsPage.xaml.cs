@@ -327,8 +327,8 @@ public sealed partial class SettingsPage : Page
             XamlRoot = XamlRoot,
             Title = result.Success ? L10n.T("Msg_ServiceInstalledTitle") : L10n.T("Msg_ServiceFailedTitle"),
             Content = result.Success
-                ? "Flux 服务已安装并启动，普通用户模式下即可开启 TUN。"
-                : result.Error?.ToString() ?? "未知错误",
+                ? L10n.T("Msg_ServiceInstalledBody")
+                : result.Error?.ToString() ?? L10n.T("Priv_UnknownError"),
             CloseButtonText = "确定",
         };
         await dialog.ShowAsync();

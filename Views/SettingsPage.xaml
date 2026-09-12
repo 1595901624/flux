@@ -122,7 +122,7 @@
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardTheme" Header="主题模式">
                     <ComboBox x:Name="ThemeBox" Width="140" SelectionChanged="Theme_Changed">
-                        <ComboBoxItem Content="跟随系统" Tag="system" />
+                        <ComboBoxItem x:Uid="Settings_ThemeSystem" Content="跟随系统" Tag="system" />
                         <ComboBoxItem x:Uid="Settings_ThemeLight" Content="浅色" Tag="light" />
                         <ComboBoxItem x:Uid="Settings_ThemeDark" Content="深色" Tag="dark" />
                     </ComboBox>

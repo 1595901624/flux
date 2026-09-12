@@ -77,7 +77,7 @@ public partial class RulesViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            CountText = "加载失败: " + ex.Message;
+            CountText = Flux.Services.L10n.F("RulesVM_LoadFailed", ex.Message) + ex.Message;
         }
         finally
         {
@@ -98,6 +98,6 @@ public partial class RulesViewModel : ObservableObject
         Items.Clear();
         foreach (var r in filtered.Take(5000))
             Items.Add(r);
-        CountText = $"共 {_all.Count} 条";
+        CountText = Flux.Services.L10n.F("RulesVM_Count", _all.Count);
     }
 }

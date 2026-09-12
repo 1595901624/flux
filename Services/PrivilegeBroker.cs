@@ -61,7 +61,7 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
     }
 
     public Task<OperationResult<bool>> StopCoreViaServiceAsync(CancellationToken ct = default) =>
-        RequestAndCheckAsync(ServiceRequest.StopCore(), "通过服务停止内核", ct);
+        RequestAndCheckAsync(ServiceRequest.StopCore(), L10n.T("Priv_ActionStopCore"), ct);
 
     // ---------- 内部 ----------
 
@@ -98,20 +98,20 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
     private static OperationResult<bool> ToResult(ServiceResponse? response, string action)
     {
         if (response is null)
-            return OperationResult<bool>.Fail("service_unavailable", "无法连接 Flux 服务", action);
+            return OperationResult<bool>.Fail("service_unavailable", L10n.T("Priv_ServiceUnavailable"), action);
         if (response.Version != ServiceProtocol.Version)
             return OperationResult<bool>.Fail("version_mismatch",
-                $"服务协议版本不匹配（服务 v{response.Version}，应用 v{ServiceProtocol.Version}），请重启服务", action);
+                L10n.F("Priv_VersionMismatch", response.Version, ServiceProtocol.Version), action);
         return response.Ok
             ? OperationResult<bool>.Ok(true)
-            : OperationResult<bool>.Fail("service_error", response.Error ?? "未知服务错误", action);
+            : OperationResult<bool>.Fail("service_error", response.Error ?? L10n.T("Priv_UnknownError"), action);
     }
 
     private async Task<OperationResult<bool>> RunInstallerAsync(string operation, CancellationToken ct)
     {
         if (!File.Exists(InstallerPath))
             return OperationResult<bool>.Fail("installer_missing",
-                "未找到服务安装器，请重新安装应用", "服务安装");
+                L10n.T("Priv_InstallerMissing"), L10n.T("Priv_InstallStep"));
 
         try
         {
@@ -125,12 +125,12 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
             };
             using var process = Process.Start(startInfo);
             if (process is null)
-                return OperationResult<bool>.Fail("installer_failed", "无法启动安装器", "服务安装");
+                return OperationResult<bool>.Fail("installer_failed", L10n.T("Priv_InstallerLaunchFailed"), L10n.T("Priv_InstallStep"));
 
             await process.WaitForExitAsync(ct).ConfigureAwait(false);
             if (process.ExitCode != 0)
                 return OperationResult<bool>.Fail("installer_failed",
-                    $"安装器退出码 {process.ExitCode}（用户取消或安装失败）", "服务安装");
+                    L10n.F("Priv_InstallerExitCode", process.ExitCode), L10n.T("Priv_InstallStep"));
 
             // 安装后等待服务就绪
             for (var i = 0; i < 30; i++)
@@ -139,7 +139,7 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
                     return OperationResult<bool>.Ok(true);
                 await Task.Delay(300, ct).ConfigureAwait(false);
             }
-            return OperationResult<bool>.Fail("service_not_ready", "服务已安装但未就绪", "服务安装");
+            return OperationResult<bool>.Fail("service_not_ready", L10n.T("Priv_NotReady"), L10n.T("Priv_InstallStep"));
         }
         catch (OperationCanceledException)
         {
@@ -147,7 +147,7 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
         }
         catch (System.ComponentModel.Win32Exception ex) when (ex.NativeErrorCode == 1223)
         {
-            return OperationResult<bool>.Fail("uac_cancelled", "用户取消了 UAC 授权", "服务安装");
+            return OperationResult<bool>.Fail("uac_cancelled", L10n.T("Msg_UacCancelled"), L10n.T("Priv_InstallStep"));
         }
         catch (Exception ex)
         {

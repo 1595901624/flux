@@ -223,7 +223,7 @@ public partial class ProxiesViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            LogService.App("模式切换失败: " + ex.Message, "warn");
+            LogService.App(Flux.Services.L10n.F("ProxiesVM_ModeSwitchFailed", ex.Message), "warn");
         }
         finally
         {
@@ -244,7 +244,7 @@ public partial class ProxiesViewModel : ObservableObject
                 !string.Equals(previous, name, StringComparison.Ordinal))
             {
                 var closed = await AppServices.Api.CloseConnectionsUsingProxyAsync(previous);
-                if (closed > 0) LogService.App($"切换节点后已关闭 {closed} 个旧连接");
+                if (closed > 0) LogService.App(Flux.Services.L10n.F("ProxiesVM_ClosedOldConnections", closed));
             }
             var header = Groups.FirstOrDefault(g => g.Name == group);
             if (header is not null)
@@ -257,7 +257,7 @@ public partial class ProxiesViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            LogService.App($"切换节点失败 [{group} → {name}]: " + ex.Message, "warn");
+            LogService.App(Flux.Services.L10n.F("ProxiesVM_NodeSwitchFailed", group, name, ex.Message), "warn");
         }
     }
 

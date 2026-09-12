@@ -12,7 +12,7 @@ internal static class ProfileContentValidator
             var stream = new YamlStream();
             stream.Load(new StringReader(content));
             mapping = stream.Documents.FirstOrDefault()?.RootNode as YamlMappingNode
-                ?? throw new InvalidOperationException("内容不是有效的 YAML 映射");
+                ?? throw new InvalidOperationException(Flux.Services.L10n.T("Validator_InvalidYamlMapping"));
         }
         catch (Exception ex) when (ex is not InvalidOperationException)
         {
