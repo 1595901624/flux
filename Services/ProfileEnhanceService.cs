@@ -122,12 +122,12 @@ public static class ProfileEnhanceService
         var globalMerge = GetGlobalContent(ChainType.Merge);
         if (!string.IsNullOrWhiteSpace(globalMerge))
             chain.Add(new ChainItemWithContent(
-                new ChainItem(ChainType.Merge, GlobalUid, "全局 Merge", GlobalMergeFile, true), globalMerge));
+                new ChainItem(ChainType.Merge, GlobalUid, L10n.T("Enhance_NameGlobalMerge"), GlobalMergeFile, true), globalMerge));
 
         var globalScript = GetGlobalContent(ChainType.Script);
         if (!string.IsNullOrWhiteSpace(globalScript))
             chain.Add(new ChainItemWithContent(
-                new ChainItem(ChainType.Script, GlobalUid, "全局 Script", GlobalScriptFile, true), globalScript));
+                new ChainItem(ChainType.Script, GlobalUid, L10n.T("Enhance_NameGlobalScript"), GlobalScriptFile, true), globalScript));
 
         if (item is not null)
         {
@@ -140,7 +140,7 @@ public static class ProfileEnhanceService
                 var content = SafeRead(path);
                 if (string.IsNullOrWhiteSpace(content)) continue;
                 chain.Add(new ChainItemWithContent(
-                    new ChainItem(type, item.Uid, $"{type} 增强", Path.GetFileName(fileName), false), content));
+                    new ChainItem(type, item.Uid, L10n.F("Enhance_TypedName", type.ToString()), Path.GetFileName(fileName), false), content));
             }
         }
 

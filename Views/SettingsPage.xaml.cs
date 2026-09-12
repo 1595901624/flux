@@ -9,7 +9,7 @@ public sealed partial class SettingsPage : Page
 {
     private bool _loading = true;
 
-    public string AppVersion => $"基于 WinUI 3 的 Clash/Mihomo 客户端 · v{GetAppVersion()}";
+    public string AppVersion => L10n.F("Settings_AppDescription", GetAppVersion());
 
     public SettingsPage()
     {
@@ -40,7 +40,7 @@ public sealed partial class SettingsPage : Page
 
         return assemblyVersion?.Split('+')[0]
             ?? typeof(SettingsPage).Assembly.GetName().Version?.ToString(3)
-            ?? "未知";
+            ?? L10n.T("Settings_Unknown");
     }
 
     private async Task LoadFromConfigAsync()
@@ -55,7 +55,7 @@ public sealed partial class SettingsPage : Page
         catch (Exception ex)
         {
             AutoLaunchSwitch.IsOn = false;
-            LogService.App("读取自启动状态失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Settings_AutoStartReadFailed", ex.Message), "warn");
         }
         SilentStartSwitch.IsOn = verge.EnableSilentStart;
         SysProxySwitch.IsOn = verge.EnableSystemProxy;
@@ -132,7 +132,7 @@ public sealed partial class SettingsPage : Page
         }
         catch (Exception ex)
         {
-            LogService.App("自启动设置失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Settings_AutoStartFailed", ex.Message), "warn");
             _loading = true;
             try { AutoLaunchSwitch.IsOn = await AutoStartService.IsEnabledAsync(); }
             finally { _loading = false; }
@@ -148,7 +148,7 @@ public sealed partial class SettingsPage : Page
         }
         catch (Exception ex)
         {
-            LogService.App("更新自启动设置失败: " + ex.Message, "warn");
+            LogService.App(L10n.F("Settings_AutoStartUpdateFailed", ex.Message), "warn");
         }
     }
 
@@ -165,7 +165,7 @@ public sealed partial class SettingsPage : Page
             _loading = true;
             SysProxySwitch.IsOn = previous;
             _loading = false;
-            LogService.App("系统代理设置失败: " + ex.Message, "error");
+            LogService.App(L10n.F("Settings_SysProxyFailed", ex.Message), "error");
         }
     }
 
@@ -184,7 +184,7 @@ public sealed partial class SettingsPage : Page
             _loading = true;
             PacSwitch.IsOn = previous;
             _loading = false;
-            LogService.App("PAC 模式设置失败: " + ex.Message, "error");
+            LogService.App(L10n.F("Settings_PacFailed", ex.Message), "error");
         }
     }
 
@@ -193,7 +193,7 @@ public sealed partial class SettingsPage : Page
         if (!SaveVerge(v => v.EnableProxyGuard = ProxyGuardSwitch.IsOn)) return;
         var verge = AppServices.Config.Verge;
         try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
-        catch (Exception ex) { LogService.App("代理守护设置失败: " + ex.Message, "error"); }
+        catch (Exception ex) { LogService.App(L10n.F("Settings_GuardFailed", ex.Message), "error"); }
     }
 
     private async void Bypass_LostFocus(object sender, RoutedEventArgs e)
@@ -201,7 +201,7 @@ public sealed partial class SettingsPage : Page
         if (!SaveVerge(v => v.SystemProxyBypass = BypassBox.Text)) return;
         var verge = AppServices.Config.Verge;
         try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
-        catch (Exception ex) { LogService.App("代理绕过设置失败: " + ex.Message, "error"); }
+        catch (Exception ex) { LogService.App(L10n.F("Settings_BypassFailed", ex.Message), "error"); }
     }
 
     // ---------- Clash 设置 ----------
@@ -224,7 +224,7 @@ public sealed partial class SettingsPage : Page
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_PortOccupiedTitle"),
                 Content = L10n.F("Msg_PortOccupiedBody", port),
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await dialog.ShowAsync();
             return;
@@ -301,7 +301,7 @@ public sealed partial class SettingsPage : Page
                 Title = L10n.T("Msg_TunPrivilegeTitle"),
                 Content = L10n.T("Msg_TunPrivilegeBody"),
                 PrimaryButtonText = L10n.T("Settings_InstallService"),
-                CloseButtonText = "取消",
+                CloseButtonText = L10n.T("Common_Cancel"),
                 DefaultButton = ContentDialogButton.Primary,
             };
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
@@ -329,7 +329,7 @@ public sealed partial class SettingsPage : Page
             Content = result.Success
                 ? L10n.T("Msg_ServiceInstalledBody")
                 : result.Error?.ToString() ?? L10n.T("Priv_UnknownError"),
-            CloseButtonText = "确定",
+            CloseButtonText = L10n.T("Common_OK"),
         };
         await dialog.ShowAsync();
     }
@@ -513,7 +513,7 @@ public sealed partial class SettingsPage : Page
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_Copied"),
             Content = L10n.F("Msg_CopiedBody", format == "powershell" ? "PowerShell" : "CMD"),
-            CloseButtonText = "确定",
+            CloseButtonText = L10n.T("Common_OK"),
         };
         await dialog.ShowAsync();
     }
@@ -550,9 +550,9 @@ public sealed partial class SettingsPage : Page
             var dialog = new ContentDialog
             {
                 XamlRoot = XamlRoot,
-                Title = "重启失败",
+                Title = L10n.T("Msg_CoreRestartFailedTitle"),
                 Content = ex.Message,
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await dialog.ShowAsync();
         }
@@ -575,7 +575,7 @@ public sealed partial class SettingsPage : Page
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_BackupDone"),
                 Content = L10n.F("Msg_BackupDoneBody", name),
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await dialog.ShowAsync();
         }
@@ -611,14 +611,14 @@ public sealed partial class SettingsPage : Page
         var dialog = new ContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = "恢复备份",
+            Title = L10n.T("Settings_RestoreBackup"),
             Content = new StackPanel { Spacing = 8, Children =
             {
-                new TextBlock { Text = "选择要恢复的备份（恢复后需要重启内核生效）：", TextWrapping = TextWrapping.Wrap },
+                new TextBlock { Text = L10n.T("Msg_RestorePick"), TextWrapping = TextWrapping.Wrap },
                 listBox,
             } },
             PrimaryButtonText = "恢复",
-            CloseButtonText = "取消",
+            CloseButtonText = L10n.T("Common_Cancel"),
             DefaultButton = ContentDialogButton.Primary,
         };
         if (await dialog.ShowAsync() != ContentDialogResult.Primary || listBox.SelectedIndex < 0) return;
@@ -668,7 +668,7 @@ public sealed partial class SettingsPage : Page
             Title = L10n.T("Msg_WebDavTitle"),
             Content = form,
             PrimaryButtonText = "保存",
-            CloseButtonText = "取消",
+            CloseButtonText = L10n.T("Common_Cancel"),
             DefaultButton = ContentDialogButton.Primary,
         };
         if (await dialog.ShowAsync() != ContentDialogResult.Primary) return;
@@ -739,7 +739,7 @@ public sealed partial class SettingsPage : Page
                 Title = L10n.T("Msg_WebDavRestoreTitle"),
                 Content = listBox,
                 PrimaryButtonText = L10n.T("Msg_DownloadRestore"),
-                CloseButtonText = "取消",
+                CloseButtonText = L10n.T("Common_Cancel"),
                 DefaultButton = ContentDialogButton.Primary,
             };
             if (await dialog.ShowAsync() != ContentDialogResult.Primary || listBox.SelectedIndex < 0) return;
@@ -771,7 +771,7 @@ public sealed partial class SettingsPage : Page
                 XamlRoot = XamlRoot,
                 Title = "诊断包已导出",
                 Content = path + " " + L10n.T("Msg_DiagLocalOnly"),
-                CloseButtonText = "确定",
+                CloseButtonText = L10n.T("Common_OK"),
             };
             await dialog.ShowAsync();
         }
@@ -841,7 +841,7 @@ public sealed partial class SettingsPage : Page
             XamlRoot = XamlRoot,
             Title = title,
             Content = message,
-            CloseButtonText = "确定",
+            CloseButtonText = L10n.T("Common_OK"),
         };
         await dialog.ShowAsync();
     }
@@ -876,7 +876,7 @@ public sealed partial class SettingsPage : Page
             XamlRoot = XamlRoot,
             Title = "配置未应用",
             Content = "内核未运行或拒绝了新配置，设置已恢复。请查看日志后重试。",
-            CloseButtonText = "确定",
+            CloseButtonText = L10n.T("Common_OK"),
         };
         await dialog.ShowAsync();
     }

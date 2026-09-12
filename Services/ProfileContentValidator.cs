@@ -16,12 +16,12 @@ internal static class ProfileContentValidator
         }
         catch (Exception ex) when (ex is not InvalidOperationException)
         {
-            throw new InvalidOperationException("内容不是有效的 YAML", ex);
+            throw new InvalidOperationException(Flux.Services.L10n.T("Validator_InvalidYaml"), ex);
         }
 
         var hasProxies = mapping.Children.ContainsKey(new YamlScalarNode("proxies"));
         var hasProviders = mapping.Children.ContainsKey(new YamlScalarNode("proxy-providers"));
         if (!hasProxies && !hasProviders)
-            throw new InvalidOperationException("配置中缺少 proxies / proxy-providers，不是有效的 Clash 订阅");
+            throw new InvalidOperationException(Flux.Services.L10n.T("Validator_NotClash"));
     }
 }

@@ -24,7 +24,7 @@ public class ProxiesGroupHeader : ObservableObject
         }
     }
 
-    public string NowDisplay => string.IsNullOrEmpty(Now) ? "" : $"当前: {Now}";
+    public string NowDisplay => string.IsNullOrEmpty(Now) ? "" : Flux.Services.L10n.F("Proxies_CurrentNow", Now);
     public string NodeCountText => Flux.Services.L10n.F("Proxies_NodeCount", Nodes.Count);
 
     public ObservableCollection<ProxiesNodeVm> Nodes { get; } = new();

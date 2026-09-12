@@ -42,10 +42,10 @@ public sealed class ProfileEditDialog : ContentDialog
 
         foreach (var (label, value) in new[]
         {
-            ("自动回退（直连→内核→系统）", "auto"),
-            ("直连", "direct"),
-            ("经内核代理", "self"),
-            ("经系统代理", "system"),
+            (L10n.T("ProfileEdit_ChannelAuto"), "auto"),
+            (L10n.T("Fmt_ModeDirect"), "direct"),
+            (L10n.T("ProfileEdit_ChannelCore"), "self"),
+            (L10n.T("ProfileEdit_ChannelSystem"), "system"),
         })
         {
             _channelBox.Items.Add(new ComboBoxItem { Content = label, Tag = value });

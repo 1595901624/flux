@@ -57,7 +57,7 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
     {
         var response = await RequestAsync(ServiceRequest.StartCore(configPath, corePath, configDir), ct)
             .ConfigureAwait(false);
-        return ToResult(response, "通过服务启动内核");
+        return ToResult(response, L10n.T("Priv_ActionStartCore"));
     }
 
     public Task<OperationResult<bool>> StopCoreViaServiceAsync(CancellationToken ct = default) =>
@@ -151,7 +151,7 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
         }
         catch (Exception ex)
         {
-            return OperationResult<bool>.Fail("installer_error", ex.Message, "服务安装");
+            return OperationResult<bool>.Fail("installer_error", ex.Message, L10n.T("Priv_InstallStep"));
         }
     }
 }

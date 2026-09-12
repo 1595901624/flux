@@ -132,7 +132,7 @@ public sealed class EnhanceEditorDialog : ContentDialog
     private static void ScriptSyntaxCheck(string content)
     {
         if (content.Contains("main", StringComparison.Ordinal)) return;
-        throw new InvalidOperationException("Script 必须定义 main(config, profileName) 函数");
+        throw new InvalidOperationException(L10n.T("Enhance_ScriptNeedsMain"));
     }
 
     /// <summary>应用运行时配置（主对话框关闭且成功后调用）。</summary>

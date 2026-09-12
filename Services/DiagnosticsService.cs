@@ -97,7 +97,7 @@ public sealed class DiagnosticsService
         }
 
         await File.WriteAllTextAsync(path, SensitiveMasker.Mask(sb.ToString()), Encoding.UTF8);
-        _log?.Invoke("info", $"诊断包已导出: {path}");
+        _log?.Invoke("info", L10n.F("Diag_Exported", path));
         return path;
     }
 
