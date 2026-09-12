@@ -1,0 +1,140 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "f39782352c97c3e46ebd0c45de35ca485149715d",
+  "prompts": {},
+  "commit_stats": {
+    "git_diff_added_lines": 250,
+    "git_diff_deleted_lines": 10,
+    "ai_additions": 0,
+    "ai_accepted": 0,
+    "BYMC": 249,
+    "mixed_additions": 0,
+    "BYAC": 0,
+    "BYRC": 0,
+    "per_file": {
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1091-1107"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1091-1108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "620",
+          "655-656",
+          "670",
+          "772",
+          "811",
+          "814",
+          "877-878"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [
+          "180"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_dialog_table.py": {
+        "BYMC": [
+          "70-75"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1789177711,
+  "requirement_id": ""
+}
