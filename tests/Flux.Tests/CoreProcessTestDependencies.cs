@@ -11,6 +11,7 @@ namespace Flux.Models
 
 namespace Flux.Services
 {
+    public sealed record LogLine(DateTime Time, string Type, string Payload);
     public static class AppServices
     {
         public static ConfigService Config { get; } = new();

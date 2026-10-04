@@ -20,7 +20,8 @@ public class MihomoStreamService
     public event Action<ConnectionsSnapshot>? Connections;
 
     private readonly List<ChannelRunner> _runners = [];
-    private volatile bool _running;
+    private readonly object _sync = new();
+    private bool _running;
 
     public void Configure(string controller, string secret)
     {
@@ -28,11 +29,25 @@ public class MihomoStreamService
         var secure = host.StartsWith("https://", StringComparison.OrdinalIgnoreCase);
         host = host.Replace("http://", "", StringComparison.OrdinalIgnoreCase)
             .Replace("https://", "", StringComparison.OrdinalIgnoreCase).TrimEnd('/');
-        _wsBase = (secure ? "wss://" : "ws://") + host;
-        _secret = secret;
+        var address = (secure ? "wss://" : "ws://") + host;
+        _ = new Uri(address);
+        lock (_sync)
+        {
+            if (_wsBase == address && _secret == secret) return;
+            var restart = _running;
+            StopUnsafe();
+            _wsBase = address;
+            _secret = secret;
+            if (restart) StartUnsafe();
+        }
     }
 
     public void Start()
+    {
+        lock (_sync) StartUnsafe();
+    }
+
+    private void StartUnsafe()
     {
         if (_running) return;
         _running = true;
@@ -44,6 +59,21 @@ public class MihomoStreamService
 
     public void Stop()
     {
+        lock (_sync) StopUnsafe();
+    }
+
+    public void Restart()
+    {
+        lock (_sync)
+        {
+            if (!_running) return;
+            StopUnsafe();
+            StartUnsafe();
+        }
+    }
+
+    private void StopUnsafe()
+    {
         _running = false;
         foreach (var r in _runners) r.Stop();
         _runners.Clear();
@@ -51,7 +81,7 @@ public class MihomoStreamService
 
     private void StartChannel(string path, Func<JsonElement, Task> handler)
     {
-        var runner = new ChannelRunner(_wsBase + "/" + path, _secret, () => _running, handler);
+        var runner = new ChannelRunner(_wsBase + "/" + path, _secret, handler);
         _runners.Add(runner);
         _ = Task.Run(runner.RunAsync);
     }
@@ -98,76 +128,71 @@ public class MihomoStreamService
         private readonly string _url;
         private readonly string _secret;
         private readonly Func<JsonElement, Task> _handler;
-        private readonly Func<bool> _running;
         private ClientWebSocket? _ws;
-        private CancellationTokenSource? _cts;
+        private readonly CancellationTokenSource _cts = new();
 
-        public ChannelRunner(string url, string secret, Func<bool> running, Func<JsonElement, Task> handler)
+        public ChannelRunner(string url, string secret, Func<JsonElement, Task> handler)
         {
             _url = url;
             _secret = secret;
-            _running = running;
             _handler = handler;
         }
 
         public void Stop()
         {
-            try { _cts?.Cancel(); _ws?.Abort(); } catch { }
+            try { _cts.Cancel(); _ws?.Abort(); } catch (ObjectDisposedException) { }
         }
 
         public async Task RunAsync()
         {
-            var buffer = new byte[64 * 1024];
-            while (_running())
+            var ct = _cts.Token;
+            try
             {
-                try
+                var buffer = new byte[64 * 1024];
+                while (!ct.IsCancellationRequested)
                 {
-                    _cts = new CancellationTokenSource();
-                    _ws = new ClientWebSocket();
-                    if (!string.IsNullOrEmpty(_secret))
-                        _ws.Options.SetRequestHeader("Authorization", "Bearer " + _secret);
-                    await _ws.ConnectAsync(new Uri(_url), _cts.Token);
-
-                    var message = new StringBuilder();
-                    while (_running() && _ws.State == WebSocketState.Open)
+                    try
                     {
-                        message.Clear();
-                        WebSocketReceiveResult result;
-                        do
-                        {
-                            result = await _ws.ReceiveAsync(new ArraySegment<byte>(buffer), _cts.Token);
-                            if (result.MessageType == WebSocketMessageType.Close)
-                                throw new WebSocketException("closed by remote");
-                            message.Append(Encoding.UTF8.GetString(buffer, 0, result.Count));
-                        }
-                        while (!result.EndOfMessage);
+                        _ws = new ClientWebSocket();
+                        if (!string.IsNullOrEmpty(_secret))
+                            _ws.Options.SetRequestHeader("Authorization", "Bearer " + _secret);
+                        await _ws.ConnectAsync(new Uri(_url), ct);
 
-                        if (message.Length == 0) continue;
-                        try
+                        using var message = new MemoryStream();
+                        while (!ct.IsCancellationRequested && _ws.State == WebSocketState.Open)
                         {
-                            var json = JsonSerializer.Deserialize<JsonElement>(message.ToString());
-                            await _handler(json);
-                        }
-                        catch (JsonException)
-                        {
-                            // 忽略无法解析的消息
+                            message.SetLength(0);
+                            WebSocketReceiveResult result;
+                            do
+                            {
+                                result = await _ws.ReceiveAsync(new ArraySegment<byte>(buffer), ct);
+                                if (result.MessageType == WebSocketMessageType.Close)
+                                    throw new WebSocketException("closed by remote");
+                                message.Write(buffer, 0, result.Count);
+                            }
+                            while (!result.EndOfMessage);
+
+                            if (message.Length == 0 || ct.IsCancellationRequested) continue;
+                            try
+                            {
+                                // 完整消息后解码，避免 UTF-8 字符被拆在不同帧中。
+                                var json = JsonSerializer.Deserialize<JsonElement>(message.GetBuffer().AsSpan(0, (int)message.Length));
+                                await _handler(json);
+                            }
+                            catch (JsonException) { }
                         }
                     }
+                    catch (OperationCanceledException) when (ct.IsCancellationRequested) { break; }
+                    catch { /* 断线重连 */ }
+                    finally
+                    {
+                        try { _ws?.Abort(); _ws?.Dispose(); } catch { }
+                    }
+                    await Task.Delay(2000, ct);
                 }
-                catch (OperationCanceledException) { break; }
-                catch
-                {
-                    // 断线重连
-                }
-                finally
-                {
-                    try { _ws?.Abort(); _ws?.Dispose(); } catch { }
-                    _cts?.Dispose();
-                    _cts = null;
-                }
-
-                if (_running()) await Task.Delay(2000);
             }
+            catch (OperationCanceledException) when (ct.IsCancellationRequested) { }
+            finally { _cts.Dispose(); }
         }
     }
 }

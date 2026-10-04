@@ -177,6 +177,7 @@ public class CoreProcessService : IDisposable
     private async Task StopCoreUnsafeAsync()
     {
         StopServiceMonitor();
+        AppServices.Streams.Stop();
         try
         {
             if (Mode == RunningMode.Service && _serviceCoreRunning)

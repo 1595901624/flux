@@ -285,6 +285,7 @@ public sealed partial class SettingsPage : Page
             _loading = true; SelectByTag(LogLevelBox, previousVerge); _loading = false;
             await ShowApplyFailureAsync();
         }
+        else AppServices.Streams.Restart();
     }
 
     private async void Tun_Toggled(object sender, RoutedEventArgs e)

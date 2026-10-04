@@ -28,5 +28,7 @@
     <Compile Include="..\..\Services\CoreProcessService.cs" Link="CoreProcessService.cs" />
     <Compile Include="..\..\Services\SysProxyService.cs" Link="SysProxyService.cs" />
     <Compile Include="..\..\Models\VergeConfig.cs" Link="VergeConfig.cs" />
+    <Compile Include="..\..\Models\MihomoModels.cs" Link="MihomoModels.cs" />
+    <Compile Include="..\..\Services\MihomoStreamService.cs" Link="MihomoStreamService.cs" />
   </ItemGroup>
 </Project>
