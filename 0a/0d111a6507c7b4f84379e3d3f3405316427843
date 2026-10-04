@@ -1,0 +1,208 @@
+Views/UnlockPage.xaml
+  b2973540a3591f1f 34-35,48-49,51,53
+Flux.Core/Unlock/UnlockTestService.cs
+  b2973540a3591f1f 6-16,30,51-52,58-63,100,102,105,122,124-126,135,137,139,151,153-154,164-166,175-177,189,191,193,205,207,219,221-222,231,233-234,243,245,247-248,260,262
+Views/UnlockPage.xaml.cs
+  b2973540a3591f1f 16,37,41-45,53-55,68,71,76,81,91-93,96-101,104-112,118-125,130,132,140-141,143-166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "0a0d111a6507c7b4f84379e3d3f3405316427843",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 132,
+      "total_deletions": 62,
+      "accepted_lines": 130,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 325,
+    "git_diff_deleted_lines": 60,
+    "ai_additions": 130,
+    "ai_accepted": 130,
+    "BYMC": 195,
+    "mixed_additions": 0,
+    "BYAC": 130,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Unlock/UnlockTestService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "6-16",
+          "30",
+          "51-52",
+          "58-63",
+          "100",
+          "102",
+          "105",
+          "122",
+          "124-126",
+          "135",
+          "137",
+          "139",
+          "151",
+          "153-154",
+          "164-166",
+          "175-177",
+          "189",
+          "191",
+          "193",
+          "205",
+          "207",
+          "219",
+          "221-222",
+          "231",
+          "233-234",
+          "243",
+          "245",
+          "247-248",
+          "260",
+          "262"
+        ],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1637-1645"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UnlockPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "34-35",
+          "48-49",
+          "51",
+          "53"
+        ],
+        "BYRC": []
+      },
+      "Views/UnlockPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "16",
+          "37",
+          "41-45",
+          "53-55",
+          "68",
+          "71",
+          "76",
+          "81",
+          "91-93",
+          "96-101",
+          "104-112",
+          "118-125",
+          "130",
+          "132",
+          "140-141",
+          "143-166"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/UnlockTestServiceTests.cs": {
+        "BYMC": [
+          "1-78"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791103820,
+  "requirement_id": ""
+}
