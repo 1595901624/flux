@@ -6,7 +6,7 @@ on:
       version:
         description: '版本号（例如 0.1.0）'
         required: true
-        default: '0.1.0'
+        default: '0.4.0'
       create_release:
         description: '构建完成后发布便携 ZIP'
         type: boolean

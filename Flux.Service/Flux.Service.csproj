@@ -14,7 +14,7 @@
     <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-x86'">x86</PlatformTarget>
     <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-x64' Or '$(RuntimeIdentifier)' == ''">x64</PlatformTarget>
     <PlatformTarget Condition="'$(RuntimeIdentifier)' == 'win-arm64'">ARM64</PlatformTarget>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <Description>Flux 特权服务：以 LocalSystem 运行，仅负责 mihomo 的特权生命周期管理。</Description>
   </PropertyGroup>
 
