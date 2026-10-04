@@ -1,0 +1,105 @@
+tests/Flux.Tests/Flux.Tests.csproj
+  b2973540a3591f1f 31-32
+Services/CoreProcessService.cs
+  b2973540a3591f1f 180
+Views/SettingsPage.xaml.cs
+  b2973540a3591f1f 288
+Services/MihomoStreamService.cs
+  b2973540a3591f1f 23-24,32-42,46-50,62-75,84,132,134,143,148-149,151-152,154,156-159,161-162,164,168-182,185-186,190-191,194-195
+tests/Flux.Tests/CoreProcessTestDependencies.cs
+  b2973540a3591f1f 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "6c6c40a9489b77b9386887f85a6502797023659e",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 81,
+      "total_deletions": 51,
+      "accepted_lines": 75,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 207,
+    "git_diff_deleted_lines": 51,
+    "ai_additions": 74,
+    "ai_accepted": 74,
+    "BYMC": 126,
+    "mixed_additions": 0,
+    "BYAC": 74,
+    "BYRC": 0,
+    "per_file": {
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "180"
+        ],
+        "BYRC": []
+      },
+      "Services/MihomoStreamService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "23-24",
+          "32-42",
+          "46-50",
+          "62-75",
+          "84",
+          "132",
+          "134",
+          "143",
+          "148-149",
+          "151-152",
+          "154",
+          "156-159",
+          "161-162",
+          "164",
+          "168-182",
+          "185-186",
+          "190-191",
+          "194-195"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "288"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessTestDependencies.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "14"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "31-32"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/MihomoStreamServiceTests.cs": {
+        "BYMC": [
+          "1-126"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097718,
+  "requirement_id": ""
+}
