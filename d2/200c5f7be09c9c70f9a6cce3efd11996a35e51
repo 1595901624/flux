@@ -1,0 +1,54 @@
+tests/Flux.Tests/RuntimeConfigBuilderTests.cs
+  b2973540a3591f1f 12-61
+Flux.Core/Config/YamlOps.cs
+  b2973540a3591f1f 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "d2200c5f7be09c9c70f9a6cce3efd11996a35e51",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 52,
+      "total_deletions": 28,
+      "accepted_lines": 51,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 51,
+    "git_diff_deleted_lines": 27,
+    "ai_additions": 51,
+    "ai_accepted": 51,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 51,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Config/YamlOps.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "7"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/RuntimeConfigBuilderTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "12-61"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791096794,
+  "requirement_id": ""
+}
