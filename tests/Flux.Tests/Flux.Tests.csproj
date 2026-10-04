@@ -25,5 +25,6 @@
     <Compile Include="..\..\Services\SystemProxyOwnership.cs" Link="SystemProxyOwnership.cs" />
     <Compile Include="..\..\Services\WinInetProxySettings.cs" Link="WinInetProxySettings.cs" />
     <Compile Include="..\..\Services\MihomoApiService.cs" Link="MihomoApiService.cs" />
+    <Compile Include="..\..\Services\CoreProcessService.cs" Link="CoreProcessService.cs" />
   </ItemGroup>
 </Project>

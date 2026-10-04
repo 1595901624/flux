@@ -140,10 +140,11 @@ public class CoreProcessService : IDisposable
             StandardErrorEncoding = System.Text.Encoding.UTF8,
         };
 
-        _process = new Process { StartInfo = psi, EnableRaisingEvents = true };
+        var process = new Process { StartInfo = psi, EnableRaisingEvents = true };
+        _process = process;
         _process.OutputDataReceived += (_, e) => { if (e.Data != null) LogService.Core(e.Data); };
         _process.ErrorDataReceived += (_, e) => { if (e.Data != null) LogService.Core(e.Data); };
-        _process.Exited += (_, _) => { Mode = RunningMode.NotRunning; CoreStopped?.Invoke(); };
+        process.Exited += (_, _) => _ = HandleSidecarExitedAsync(process);
 
         if (!_process.Start())
             throw new InvalidOperationException(L10n.T("Core_ProcessStartFailed"));
@@ -152,6 +153,25 @@ public class CoreProcessService : IDisposable
         _process.BeginErrorReadLine();
         AssignJobObject(_process.Handle);
         LogService.App(L10n.F("Core_Pid", _process.Id));
+    }
+
+    private async Task HandleSidecarExitedAsync(Process process)
+    {
+        await _lifecycleLock.WaitAsync();
+        try
+        {
+            // 主动停止会在持锁期间清空 _process；旧进程的延迟事件不能清理新内核。
+            if (!ReferenceEquals(_process, process) || Mode != RunningMode.Sidecar) return;
+            ReleaseJobObject();
+            _process = null;
+            process.Dispose();
+            HandleCoreLostUnsafe("内核进程已退出");
+        }
+        catch (Exception ex)
+        {
+            LogService.App($"内核退出清理失败: {ex.Message}", "error");
+        }
+        finally { _lifecycleLock.Release(); }
     }
 
     private async Task StopCoreUnsafeAsync()
@@ -226,17 +246,23 @@ public class CoreProcessService : IDisposable
         try
         {
             if (Mode != RunningMode.Service || !_serviceCoreRunning) return;
-            _serviceCoreRunning = false;
-            Mode = RunningMode.NotRunning;
-            AppServices.Streams.Stop();
-            AppServices.SysProxy.Reset();
-            LogService.App($"{reason}，已关闭系统代理", "error");
-            CoreStopped?.Invoke();
+            HandleCoreLostUnsafe(reason);
         }
         finally
         {
             _lifecycleLock.Release();
         }
+    }
+
+    private void HandleCoreLostUnsafe(string reason)
+    {
+        _serviceCoreRunning = false;
+        Mode = RunningMode.NotRunning;
+        AppServices.Streams.Stop();
+        try { AppServices.SysProxy.Reset(); }
+        catch (Exception ex) { LogService.App($"恢复系统代理失败: {ex.Message}", "error"); }
+        LogService.App($"{reason}，已尝试恢复系统代理", "error");
+        CoreStopped?.Invoke();
     }
 
     // ---------- 残留清理 ----------
