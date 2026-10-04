@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Flux.Core.Service;
+using Flux.Core.Config;
+using Flux.Models;
 
 namespace Flux.Services;
 
@@ -39,7 +41,9 @@ public class CoreProcessService : IDisposable
 
     // ---------- 生命周期 ----------
 
-    public async Task StartAsync()
+    public Task StartAsync() => StartAsync(usePreparedRuntime: false);
+
+    private async Task StartAsync(bool usePreparedRuntime)
     {
         await _lifecycleLock.WaitAsync();
         try
@@ -48,17 +52,20 @@ public class CoreProcessService : IDisposable
             KillLeftoverCores();
             Paths.EnsureCoreExecutable();
 
-            Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
-            await ValidateConfigAsync(Paths.RuntimeConfigFile);
+            if (!usePreparedRuntime)
+                await ValidatedFileUpdate.ApplyAsync(Paths.RuntimeConfigFile,
+                    Config.WriteRuntimeFile, ValidateConfigAsync);
+            var enableTun = YamlOps.GetScalar(YamlOps.ParseMapping(File.ReadAllText(Paths.RuntimeConfigFile))!,
+                "tun", "enable") == "true";
 
             try
             {
-                if (Config.Verge.EnableTunMode && !TrayService.IsElevated() &&
+                if (enableTun && !TrayService.IsElevated() &&
                     AppServices.Privilege?.IsServiceReady() != true)
                     throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));
 
                 // TUN 启用时优先使用服务模式（普通用户无需管理员即可 TUN）
-                if (Config.Verge.EnableTunMode && AppServices.Privilege?.IsServiceReady() == true)
+                if (enableTun && AppServices.Privilege?.IsServiceReady() == true)
                 {
                     var result = await AppServices.Privilege.StartCoreViaServiceAsync(
                         Paths.RuntimeConfigFile, Paths.CoreExePath, Paths.AppDataDir);
@@ -110,10 +117,12 @@ public class CoreProcessService : IDisposable
         }
     }
 
-    public async Task RestartAsync()
+    public Task RestartAsync() => RestartAsync(usePreparedRuntime: false);
+
+    private async Task RestartAsync(bool usePreparedRuntime)
     {
         await StopAsync();
-        await StartAsync();
+        await StartAsync(usePreparedRuntime);
     }
 
     private void StartSidecar(string configPath, string configDir)
@@ -286,13 +295,30 @@ public class CoreProcessService : IDisposable
         var stdoutTask = p.StandardOutput.ReadToEndAsync();
         var stderrTask = p.StandardError.ReadToEndAsync();
         using var timeout = new CancellationTokenSource(15000);
-        await p.WaitForExitAsync(timeout.Token);
+        try { await p.WaitForExitAsync(timeout.Token); }
+        catch
+        {
+            if (!p.HasExited) p.Kill(entireProcessTree: true);
+            await p.WaitForExitAsync();
+            throw;
+        }
         var output = await stdoutTask + await stderrTask;
         if (!string.IsNullOrWhiteSpace(output)) LogService.Core(output.TrimEnd());
         if (p.ExitCode != 0 || output.Contains("FATA", StringComparison.OrdinalIgnoreCase))
         {
             throw new InvalidOperationException(L10n.F("Core_ValidateFailed", output.Trim()));
         }
+    }
+
+    public async Task ValidateProfileAsync(ProfileItem item, string content)
+    {
+        var candidate = Path.Combine(Paths.AppDataDir, $".profile-check-{Guid.NewGuid():N}.yaml");
+        try
+        {
+            Config.WriteProfileRuntimeFile(candidate, item, content);
+            await ValidateConfigAsync(candidate);
+        }
+        finally { if (File.Exists(candidate)) File.Delete(candidate); }
     }
 
     /// <summary>重新生成运行时配置并应用到运行中的内核（热重载，失败则重启内核）。</summary>
@@ -309,36 +335,46 @@ public class CoreProcessService : IDisposable
                 return false;
             }
 
-            var desiredMode = Config.Verge.EnableTunMode && !TrayService.IsElevated()
+            var previousMode = Mode;
+            var desiredMode = Config.Verge.EnableTunMode && serviceReady
                 ? RunningMode.Service
                 : RunningMode.Sidecar;
-            if (Mode != desiredMode)
-            {
-                await RestartAsync();
-                return IsRunning && Mode == desiredMode;
-            }
             try
             {
-                Config.WriteRuntimeFile(Paths.RuntimeConfigFile);
-                await ValidateConfigAsync(Paths.RuntimeConfigFile);
+                await ValidatedFileUpdate.ApplyAsync(Paths.RuntimeConfigFile,
+                    Config.WriteRuntimeFile, ValidateConfigAsync,
+                    apply: async () =>
+                    {
+                        if (Mode != desiredMode)
+                            await RestartAsync(usePreparedRuntime: true);
+                        else
+                        {
+                            try
+                            {
+                                await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
+                                await RestoreProfileSelectionsAsync();
+                                LogService.App(L10n.T("Core_HotReloaded"));
+                            }
+                            catch (Exception ex)
+                            {
+                                LogService.App(L10n.F("Core_HotReloadFailedRestart", ex.Message), "warn");
+                                await RestartAsync(usePreparedRuntime: true);
+                            }
+                        }
+                    },
+                    rollback: async () =>
+                    {
+                        if (!IsRunning || Mode != previousMode)
+                            await RestartAsync(usePreparedRuntime: true);
+                        else
+                            await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
+                    });
+                return true;
             }
             catch (Exception ex)
             {
                 LogService.App(L10n.F("Core_ApplyRejected", ex.Message), "error");
                 return false;
-            }
-            try
-            {
-                await AppServices.Api.ReloadConfigAsync(Paths.RuntimeConfigFile);
-                await RestoreProfileSelectionsAsync();
-                LogService.App(L10n.T("Core_HotReloaded"));
-                return true;
-            }
-            catch (Exception ex)
-            {
-                LogService.App(L10n.F("Core_HotReloadFailedRestart", ex.Message), "warn");
-                await RestartAsync();
-                return true;
             }
         }
         finally

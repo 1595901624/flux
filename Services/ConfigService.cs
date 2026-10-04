@@ -324,12 +324,16 @@ public class ConfigService
     /// 失败时抛出 InvalidOperationException，由调用方决定保留最后一个有效配置。
     /// </summary>
     public YamlMappingNode GenerateRuntimeNode(out IReadOnlyList<ChainLogEntry> chainLogs)
+        => GenerateRuntimeNode(Profiles.GetCurrent(), GetCurrentProfileNode(), out chainLogs);
+
+    private YamlMappingNode GenerateRuntimeNode(ProfileItem? item, YamlMappingNode? profile,
+        out IReadOnlyList<ChainLogEntry> chainLogs)
     {
         var input = new RuntimeConfigInput
         {
-            Profile = GetCurrentProfileNode(),
+            Profile = profile,
             ClashBase = ClashBase,
-            ChainItems = ProfileEnhanceService.BuildChainItems(Profiles.GetCurrent()),
+            ChainItems = ProfileEnhanceService.BuildChainItems(item),
             EnableTun = Verge.EnableTunMode,
             EnableBuiltinEnhance = true,
         };
@@ -355,6 +359,14 @@ public class ConfigService
         var node = GenerateRuntimeNode();
         var yaml = new Serializer().Serialize(node);
         WriteAllTextAtomic(path, yaml);
+    }
+
+    public void WriteProfileRuntimeFile(string path, ProfileItem item, string content)
+    {
+        var profile = YamlHelper.ParseMapping(content)
+            ?? throw new InvalidOperationException(L10n.T("SVC_InvalidYaml"));
+        var node = GenerateRuntimeNode(item, profile, out _);
+        WriteAllTextAtomic(path, new Serializer().Serialize(node));
     }
 
     /// <summary>在同一目录写临时文件后替换，避免断电或崩溃留下半个 YAML 文件。</summary>

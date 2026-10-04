@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using Microsoft.UI.Dispatching;
 using Flux.Models;
+using Flux.Core.Config;
 using YamlDotNet.RepresentationModel;
 
 namespace Flux.Services;
@@ -79,6 +80,15 @@ public class SubscriptionService
     /// <summary>更新远程订阅（按更新通道下载；304 只更新时间戳，不重写文件）。</summary>
     public async Task UpdateAsync(ProfileItem item)
     {
+        await _updateLock.WaitAsync();
+        try { await UpdateProfileAsync(item); }
+        finally { _updateLock.Release(); }
+    }
+
+    private readonly SemaphoreSlim _updateLock = new(1, 1);
+
+    private async Task UpdateProfileAsync(ProfileItem item)
+    {
         if (item.Type != "remote" || string.IsNullOrEmpty(item.Url))
             throw new InvalidOperationException(L10n.T("SVC_OnlyRemoteUpdatable"));
 
@@ -102,7 +112,15 @@ public class SubscriptionService
 
             ValidateClashContent(content);
 
-            SaveProfileFile(item, content);
+            await ValidatedFileUpdate.ApplyAsync(item.FilePath,
+                candidate => ConfigService.WriteAllTextAtomic(candidate, content),
+                _ => AppServices.Core.ValidateProfileAsync(item, content),
+                apply: async () =>
+                {
+                    if (item.Uid == Config.Profiles.Current && AppServices.Core.IsRunning &&
+                        !await AppServices.Core.ApplyConfigAsync())
+                        throw new InvalidOperationException("订阅配置未能应用，已保留原配置");
+                });
             item.Updated = DateTime.Now;
             item.LastUpdateStatus = "success";
             item.LastError = "";
@@ -115,8 +133,6 @@ public class SubscriptionService
             Config.SaveProfiles();
             ProfilesChanged?.Invoke();
 
-            if (item.Uid == Config.Profiles.Current)
-                await AppServices.Core.ApplyConfigAsync();
         }
         catch (Exception ex)
         {
