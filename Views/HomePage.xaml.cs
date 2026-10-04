@@ -126,7 +126,7 @@ public sealed partial class HomePage : Page
 
     private async Task ShowErrorAsync(string title, string message)
     {
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = title,

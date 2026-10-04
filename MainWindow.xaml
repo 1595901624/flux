@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <!-- 自定义标题栏（Mica 背景） -->
-        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="48" Background="Transparent">
+        <Grid x:Name="AppTitleBar" Grid.Row="0" Height="48" Background="Transparent" FlowDirection="LeftToRight">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0" Spacing="10">
                 <Image Width="22" Height="22" Source="ms-appx:///Assets/app.svg" AutomationProperties.Name="Flux" />
                 <TextBlock Text="Flux" FontWeight="SemiBold" FontSize="14" VerticalAlignment="Center" />
@@ -60,7 +60,7 @@
             </NavigationView.MenuItems>
 
             <NavigationView.PaneFooter>
-                <Grid x:Name="TrafficFooter" Height="88" Margin="12,0,12,12">
+                <Grid x:Name="TrafficFooter" Height="88" Margin="12,0,12,12" FlowDirection="LeftToRight">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />

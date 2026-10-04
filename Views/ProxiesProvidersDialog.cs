@@ -6,7 +6,7 @@ using Microsoft.UI.Xaml.Media;
 namespace Flux.Views;
 
 /// <summary>代理 Provider 对话框：节点数/更新时间，支持单个更新、全部更新与健康检查。</summary>
-public sealed class ProxiesProvidersDialog : ContentDialog
+public sealed class ProxiesProvidersDialog : LocalizedContentDialog
 {
     private readonly StackPanel _list = new() { Spacing = 6 };
     private readonly TextBlock _status = new() { Opacity = 0.75, FontSize = 12 };

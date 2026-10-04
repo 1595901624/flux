@@ -118,7 +118,7 @@ public sealed partial class ProfilesPage : Page
         if (VmFromMenu(sender) is not { } vm) return;
         if (vm.Item.Type != "remote" || string.IsNullOrEmpty(vm.Item.Url))
         {
-            var warn = new ContentDialog
+            var warn = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_QrTitle").Split('：')[0],
@@ -141,7 +141,7 @@ public sealed partial class ProfilesPage : Page
         var error = dialog.Apply();
         if (error is not null)
         {
-            var warn = new ContentDialog
+            var warn = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_SaveFailed"),
@@ -166,7 +166,7 @@ public sealed partial class ProfilesPage : Page
         }
         catch (Exception ex)
         {
-            var warn = new ContentDialog
+            var warn = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_SaveFailed"),
@@ -189,7 +189,7 @@ public sealed partial class ProfilesPage : Page
         }
         catch (Exception ex)
         {
-            var warn = new ContentDialog
+            var warn = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_SaveFailed"),
@@ -214,7 +214,7 @@ public sealed partial class ProfilesPage : Page
     {
         if (VmFromMenu(sender) is { } vm)
         {
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_DeleteProfileTitle"),

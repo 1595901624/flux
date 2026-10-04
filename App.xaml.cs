@@ -77,6 +77,13 @@ public partial class App : Application
         ShowMainWindow();
     }
 
+    /// <summary>按当前应用语言更新主窗口排版方向。</summary>
+    public static void ApplyLanguageDirection()
+    {
+        if (MainWindow?.Content is FrameworkElement root)
+            root.FlowDirection = Services.LanguageLayout.Current;
+    }
+
     /// <summary>应用主题模式（system | light | dark）。</summary>
     public static void ApplyTheme(string themeMode)
     {

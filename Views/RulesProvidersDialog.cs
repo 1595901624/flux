@@ -6,7 +6,7 @@ using Microsoft.UI.Xaml.Media;
 namespace Flux.Views;
 
 /// <summary>规则 Provider 对话框：展示类型/行为/规则数/更新时间，支持单个与全部更新。</summary>
-public sealed class RulesProvidersDialog : ContentDialog
+public sealed class RulesProvidersDialog : LocalizedContentDialog
 {
     private readonly StackPanel _list = new() { Spacing = 6 };
     private readonly TextBlock _status = new() { Opacity = 0.75, FontSize = 12 };

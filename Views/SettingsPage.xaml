@@ -33,7 +33,7 @@
                     <ToggleSwitch x:Name="ProxyGuardSwitch" Toggled="ProxyGuard_Toggled" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardBypass" Header="代理绕过列表" Description="不经过代理的地址（分号分隔）">
-                    <TextBox x:Name="BypassBox" MinWidth="260" MaxWidth="520" HorizontalAlignment="Right"
+                    <TextBox FlowDirection="LeftToRight" x:Name="BypassBox" MinWidth="260" MaxWidth="520" HorizontalAlignment="Right"
                              LostFocus="Bypass_LostFocus" />
                 </sc:SettingsCard>
             </StackPanel>
@@ -42,7 +42,7 @@
             <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <sc:SettingsCard x:Uid="Settings_CardMixedPort" Header="混合代理端口" Description="HTTP/SOCKS5 混合监听端口（1024-65535）">
-                    <NumberBox x:Name="MixedPortBox" Width="140" Minimum="1024" Maximum="65535" SpinButtonPlacementMode="Hidden"
+                    <NumberBox FlowDirection="LeftToRight" x:Name="MixedPortBox" Width="140" Minimum="1024" Maximum="65535" SpinButtonPlacementMode="Hidden"
                                ValueChanged="MixedPort_Changed" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardAllowLan" Header="允许局域网连接" Description="允许局域网内其他设备使用本机代理">
@@ -73,7 +73,7 @@
                             <ComboBoxItem Tag="system" Content="system" />
                             <ComboBoxItem Tag="mixed" Content="mixed" />
                         </ComboBox>
-                        <TextBox x:Name="TunDnsHijackBox" Width="110" PlaceholderText="any:53" />
+                        <TextBox FlowDirection="LeftToRight" x:Name="TunDnsHijackBox" Width="110" PlaceholderText="any:53" />
                         <Button x:Uid="Common_Apply" Content="应用" Click="ApplyTunAdvanced_Click" />
                     </StackPanel>
                 </sc:SettingsCard>
@@ -83,14 +83,14 @@
                             <ComboBoxItem Tag="fake-ip" Content="fake-ip" />
                             <ComboBoxItem Tag="redir-host" Content="redir-host" />
                         </ComboBox>
-                        <TextBox x:Name="DnsFakeIpRangeBox" Width="140" PlaceholderText="198.18.0.1/16" />
+                        <TextBox FlowDirection="LeftToRight" x:Name="DnsFakeIpRangeBox" Width="140" PlaceholderText="198.18.0.1/16" />
                         <Button x:Uid="Common_Apply" Content="应用" Click="ApplyDns_Click" />
                     </StackPanel>
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardController" Header="外部控制器" Description="RESTful API 地址与 Secret；应用后重启内核">
                     <StackPanel Orientation="Horizontal" Spacing="8">
-                        <TextBox x:Name="ControllerBox" Width="160" PlaceholderText="127.0.0.1:9097" />
-                        <PasswordBox x:Name="ControllerSecretBox" Width="140" PlaceholderText="Secret" />
+                        <TextBox FlowDirection="LeftToRight" x:Name="ControllerBox" Width="160" PlaceholderText="127.0.0.1:9097" />
+                        <PasswordBox FlowDirection="LeftToRight" x:Name="ControllerSecretBox" Width="140" PlaceholderText="Secret" />
                         <Button x:Uid="Common_Apply" Content="应用" Click="ApplyController_Click" />
                     </StackPanel>
                 </sc:SettingsCard>
@@ -136,20 +136,20 @@
                 <sc:SettingsCard x:Uid="Settings_CardLightweight" Header="轻量模式" Description="关闭窗口后释放主界面，仅保留托盘与内核">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <ToggleSwitch x:Name="LightweightSwitch" Toggled="Lightweight_Toggled" />
-                        <TextBox x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="90" PlaceholderText="分钟" />
+                        <TextBox FlowDirection="LeftToRight" x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="90" PlaceholderText="分钟" />
                     </StackPanel>
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeyWindow" Header="全局热键 · 显示 / 隐藏窗口" Description="如 Ctrl+Shift+F1；留空禁用">
-                    <TextBox x:Name="HotkeyWindowBox" MinWidth="180" />
+                    <TextBox FlowDirection="LeftToRight" x:Name="HotkeyWindowBox" MinWidth="180" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeySysproxy" Header="全局热键 · 切换系统代理">
-                    <TextBox x:Name="HotkeySysproxyBox" MinWidth="180" />
+                    <TextBox FlowDirection="LeftToRight" x:Name="HotkeySysproxyBox" MinWidth="180" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeyTun" Header="全局热键 · 切换 TUN">
-                    <TextBox x:Name="HotkeyTunBox" MinWidth="180" />
+                    <TextBox FlowDirection="LeftToRight" x:Name="HotkeyTunBox" MinWidth="180" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeyReactivate" Header="全局热键 · 重新激活订阅">
-                    <TextBox x:Name="HotkeyReactivateBox" MinWidth="180" />
+                    <TextBox FlowDirection="LeftToRight" x:Name="HotkeyReactivateBox" MinWidth="180" />
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeySave" Header="全局热键" Description="保存时注册；冲突的组合会被拒绝并显示原因">
                     <Button x:Uid="Settings_SaveHotkeys" Content="保存热键" Click="SaveHotkeys_Click" />

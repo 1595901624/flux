@@ -10,7 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 namespace Flux.Views;
 
 /// <summary>订阅二维码对话框（QRCoder 本地生成，不上传到任何外部服务）。</summary>
-public sealed class QrDialog : ContentDialog
+public sealed class QrDialog : LocalizedContentDialog
 {
     public QrDialog(ProfileItem item, XamlRoot root)
     {
@@ -20,6 +20,7 @@ public sealed class QrDialog : ContentDialog
 
         var image = new Image
         {
+            FlowDirection = FlowDirection.LeftToRight,
             Width = 260,
             Height = 260,
             Stretch = Stretch.Uniform,
@@ -27,6 +28,7 @@ public sealed class QrDialog : ContentDialog
 
         var urlBox = new TextBox
         {
+            FlowDirection = FlowDirection.LeftToRight,
             Text = item.Url,
             IsReadOnly = true,
             TextWrapping = TextWrapping.Wrap,

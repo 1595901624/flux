@@ -9,15 +9,15 @@ namespace Flux.Views;
 /// <summary>
 /// 订阅信息编辑对话框：名称/说明/URL/User-Agent/超时/更新间隔/证书校验/更新通道。
 /// </summary>
-public sealed class ProfileEditDialog : ContentDialog
+public sealed class ProfileEditDialog : LocalizedContentDialog
 {
     private readonly ProfileItem _item;
     private readonly TextBox _nameBox = new() { PlaceholderText = L10n.T("ProfileEdit_NamePlaceholder") };
     private readonly TextBox _descBox = new() { PlaceholderText = L10n.T("ProfileEdit_DescPlaceholder") };
-    private readonly TextBox _urlBox = new() { TextWrapping = TextWrapping.Wrap };
-    private readonly TextBox _uaBox = new() { PlaceholderText = L10n.T("ProfileEdit_UaPlaceholder") };
-    private readonly TextBox _timeoutBox = new();
-    private readonly TextBox _intervalBox = new();
+    private readonly TextBox _urlBox = new() { TextWrapping = TextWrapping.Wrap, FlowDirection = FlowDirection.LeftToRight };
+    private readonly TextBox _uaBox = new() { PlaceholderText = L10n.T("ProfileEdit_UaPlaceholder"), FlowDirection = FlowDirection.LeftToRight };
+    private readonly TextBox _timeoutBox = new() { FlowDirection = FlowDirection.LeftToRight };
+    private readonly TextBox _intervalBox = new() { FlowDirection = FlowDirection.LeftToRight };
     private readonly CheckBox _invalidCertBox = new() { Content = L10n.T("ProfileEdit_InvalidCertLabel") };
     private readonly CheckBox _autoUpdateBox = new() { Content = L10n.T("ProfileEdit_AutoUpdateLabel") };
     private readonly ComboBox _channelBox = new();

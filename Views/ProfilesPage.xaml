@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock x:Uid="Profiles_Title" Text="订阅" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <TextBox x:Uid="Profiles_UrlBox"
+            <TextBox FlowDirection="LeftToRight" x:Uid="Profiles_UrlBox"
                 x:Name="UrlBox"
                 Grid.Column="1"
                 PlaceholderText="输入订阅链接（https://...），支持 clash:// 安装链接"

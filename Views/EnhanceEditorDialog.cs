@@ -13,7 +13,7 @@ namespace Flux.Views;
 /// 可视化编辑与原始文本编辑共用 ProfileEnhanceService 同一模型。
 /// 保存前校验：YAML 语法与 main 函数存在性；校验失败不覆盖有效文件。
 /// </summary>
-public sealed class EnhanceEditorDialog : ContentDialog
+public sealed class EnhanceEditorDialog : LocalizedContentDialog
 {
     private readonly ProfileItem? _item;
     private readonly TextBox _editor = CreateEditor();
@@ -24,6 +24,7 @@ public sealed class EnhanceEditorDialog : ContentDialog
     private static TextBox CreateEditor() => new()
     {
         AcceptsReturn = true,
+        FlowDirection = FlowDirection.LeftToRight,
         TextWrapping = TextWrapping.NoWrap,
         IsSpellCheckEnabled = false,
         FontFamily = new FontFamily("Consolas"),

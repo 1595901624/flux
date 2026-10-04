@@ -10,7 +10,7 @@ namespace Flux.Views;
 /// UWP Loopback 工具：列出 UWP 应用并允许/取消其本地回环联网权限。
 /// 通过 CheckNetIsolation.exe 应用更改（需要 UAC 管理员授权）。
 /// </summary>
-public sealed class UwpLoopbackDialog : ContentDialog
+public sealed class UwpLoopbackDialog : LocalizedContentDialog
 {
     private readonly StackPanel _list = new() { Spacing = 4 };
     private readonly TextBlock _status = new() { Opacity = 0.75, FontSize = 12 };

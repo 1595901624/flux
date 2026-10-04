@@ -25,6 +25,7 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        ((FrameworkElement)Content).FlowDirection = LanguageLayout.Current;
 
         Title = "Flux";
         ExtendsContentIntoTitleBar = true;

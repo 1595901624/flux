@@ -219,7 +219,7 @@ public sealed partial class SettingsPage : Page
             _loading = true;
             MixedPortBox.Value = previous;
             _loading = false;
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_PortOccupiedTitle"),
@@ -296,7 +296,7 @@ public sealed partial class SettingsPage : Page
             _loading = true;
             TunSwitch.IsOn = false;
             _loading = false;
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_TunPrivilegeTitle"),
@@ -323,7 +323,7 @@ public sealed partial class SettingsPage : Page
     private async Task InstallServiceAsync()
     {
         var result = await AppServices.Privilege.InstallServiceAsync();
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = result.Success ? L10n.T("Msg_ServiceInstalledTitle") : L10n.T("Msg_ServiceFailedTitle"),
@@ -370,10 +370,11 @@ public sealed partial class SettingsPage : Page
             Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
                 lang == "system" ? "" : lang;
             L10n.Reset();
+            App.ApplyLanguageDirection();
             AppServices.Tray.RebuildMenu();
         }
         catch { }
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_LangChanged"),
@@ -511,7 +512,7 @@ public sealed partial class SettingsPage : Page
         pack.SetText(text);
         Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(pack);
 
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_Copied"),
@@ -550,7 +551,7 @@ public sealed partial class SettingsPage : Page
         }
         catch (Exception ex)
         {
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_CoreRestartFailedTitle"),
@@ -573,7 +574,7 @@ public sealed partial class SettingsPage : Page
         try
         {
             var name = await AppServices.Backup.CreateAsync();
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_BackupDone"),
@@ -611,7 +612,7 @@ public sealed partial class SettingsPage : Page
         }
         listBox.SelectedIndex = 0;
 
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Settings_RestoreBackup"),
@@ -680,10 +681,10 @@ public sealed partial class SettingsPage : Page
     private async void WebDavConfig_Click(object sender, RoutedEventArgs e)
     {
         var verge = AppServices.Config.Verge;
-        var urlBox = new TextBox { PlaceholderText = "https://dav.example.com/dav/", Text = verge.WebDavUrl, MinWidth = 360 };
-        var userBox = new TextBox { PlaceholderText = L10n.T("Msg_WebDavUsername"), Text = verge.WebDavUsername, MinWidth = 360 };
-        var passBox = new PasswordBox { PlaceholderText = L10n.T("Msg_WebDavPassword"), MinWidth = 360 };
-        var dirBox = new TextBox { PlaceholderText = "flux-backups", Text = verge.WebDavDir, MinWidth = 360 };
+        var urlBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "https://dav.example.com/dav/", Text = verge.WebDavUrl, MinWidth = 360 };
+        var userBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = L10n.T("Msg_WebDavUsername"), Text = verge.WebDavUsername, MinWidth = 360 };
+        var passBox = new PasswordBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = L10n.T("Msg_WebDavPassword"), MinWidth = 360 };
+        var dirBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "flux-backups", Text = verge.WebDavDir, MinWidth = 360 };
 
         var form = new StackPanel { Spacing = 10, MinWidth = 380 };
         form.Children.Add(urlBox);
@@ -691,7 +692,7 @@ public sealed partial class SettingsPage : Page
         form.Children.Add(passBox);
         form.Children.Add(dirBox);
 
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_WebDavTitle"),
@@ -762,7 +763,7 @@ public sealed partial class SettingsPage : Page
                 listBox.Items.Add(new TextBlock { Text = name + "　(" + Format.Bytes(size) + ")", FontSize = 12 });
             listBox.SelectedIndex = 0;
 
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_WebDavRestoreTitle"),
@@ -803,7 +804,7 @@ public sealed partial class SettingsPage : Page
         {
             var service = new DiagnosticsService(Paths.AppDataDir, (level, msg) => LogService.App(msg, level));
             var path = await service.ExportAsync();
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Diag_Exported"),
@@ -838,7 +839,7 @@ public sealed partial class SettingsPage : Page
 
             var notes = result.ReleaseNotes ?? "";
             if (notes.Length > 600) notes = notes[..600] + "…";
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.F("Msg_NewVersion", result.LatestVersion),
@@ -873,7 +874,7 @@ public sealed partial class SettingsPage : Page
 
     private async Task ShowInfoAsync(string title, string message)
     {
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = title,
@@ -908,7 +909,7 @@ public sealed partial class SettingsPage : Page
 
     private async Task ShowApplyFailureAsync()
     {
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_ApplyRejectedTitle"),

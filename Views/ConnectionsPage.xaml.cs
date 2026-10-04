@@ -122,7 +122,7 @@ public sealed partial class ConnectionsPage : Page
             var mode = dynamic ? ", Mode=OneWay" : "";
             sb.Append("            <TextBlock Text=\"{Binding ").Append(path).Append(mode)
               .Append("}\" Grid.Column=\"").Append(index)
-              .Append("\" FontSize=\"11\" Opacity=\"0.6\" VerticalAlignment=\"Center\" TextTrimming=\"CharacterEllipsis\" />\n");
+              .Append("\" FlowDirection=\"LeftToRight\" FontSize=\"11\" Opacity=\"0.6\" VerticalAlignment=\"Center\" TextTrimming=\"CharacterEllipsis\" />\n");
             index++;
         }
         sb.Append("</Grid></DataTemplate>");
@@ -209,7 +209,7 @@ public sealed partial class ConnectionsPage : Page
             down.Click += (_, _) => MoveRow(panel, row, +1);
         }
 
-        var dialog = new ContentDialog
+        var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_ColumnSettings"),
@@ -230,7 +230,7 @@ public sealed partial class ConnectionsPage : Page
         }
         if (result.Count == 0)
         {
-            await new ContentDialog
+            await new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_ColumnSettings"),
@@ -270,7 +270,7 @@ public sealed partial class ConnectionsPage : Page
         if (ClosedToggle.IsChecked == true) return;
         if (e.ClickedItem is ConnectionVm vm)
         {
-            var dialog = new ContentDialog
+            var dialog = new LocalizedContentDialog
             {
                 XamlRoot = XamlRoot,
                 Title = vm.Host,

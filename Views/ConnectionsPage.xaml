@@ -35,7 +35,7 @@
                 <ComboBoxItem x:Uid="Connections_SortUpload" Tag="upload" Content="按上传" />
                 <ComboBoxItem x:Uid="Connections_SortDownload" Tag="download" Content="按下载" />
             </ComboBox>
-            <TextBox x:Uid="Connections_SearchBox"
+            <TextBox FlowDirection="LeftToRight" x:Uid="Connections_SearchBox"
                 x:Name="SearchBox"
                 Grid.Column="3"
                 Width="220"

@@ -34,7 +34,7 @@
                 <ComboBoxItem x:Uid="Logs_LevelError" Tag="error" Content="Error" />
                 <ComboBoxItem x:Uid="Logs_LevelDebug" Tag="debug" Content="Debug" />
             </ComboBox>
-            <TextBox x:Uid="Logs_SearchBox" x:Name="SearchBox" Grid.Column="2" Width="240" VerticalAlignment="Center"
+            <TextBox FlowDirection="LeftToRight" x:Uid="Logs_SearchBox" x:Name="SearchBox" Grid.Column="2" Width="240" VerticalAlignment="Center"
                      PlaceholderText="搜索日志内容" TextChanged="SearchBox_TextChanged" />
             <Button x:Name="PauseButton" Grid.Column="3" VerticalAlignment="Center" Click="Pause_Click">
                 <StackPanel Orientation="Horizontal" Spacing="6">
@@ -76,11 +76,11 @@
                             <ColumnDefinition Width="64" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{x:Bind TimeText}" FontSize="11" Opacity="0.5" VerticalAlignment="Center" FontFamily="Consolas" />
+                        <TextBlock FlowDirection="LeftToRight" Text="{x:Bind TimeText}" FontSize="11" Opacity="0.5" VerticalAlignment="Center" FontFamily="Consolas" />
                         <Border Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <TextBlock Text="{x:Bind TypeText}" FontSize="10" Foreground="{x:Bind TypeBrush}" FontFamily="Consolas" />
+                            <TextBlock FlowDirection="LeftToRight" Text="{x:Bind TypeText}" FontSize="10" Foreground="{x:Bind TypeBrush}" FontFamily="Consolas" />
                         </Border>
-                        <TextBlock Grid.Column="2" Text="{x:Bind Payload}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center"
+                        <TextBlock FlowDirection="LeftToRight" Grid.Column="2" Text="{x:Bind Payload}" FontSize="12" TextWrapping="Wrap" VerticalAlignment="Center"
                                    FontFamily="Consolas" IsTextSelectionEnabled="True" />
                     </Grid>
                 </DataTemplate>
