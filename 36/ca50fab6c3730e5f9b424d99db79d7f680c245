@@ -1,0 +1,84 @@
+tests/Flux.Tests/SysProxyServiceTests.cs
+  b2973540a3591f1f 29-61
+Services/SysProxyService.cs
+  b2973540a3591f1f 18,27,31-32,38,67-72,128,166,174-178,182,263-264,280-282
+tests/Flux.Tests/WinInetProxySettingsTests.cs
+  b2973540a3591f1f 8-18
+Services/WinInetProxySettings.cs
+  b2973540a3591f1f 35-36,39-49,214-215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "36ca50fab6c3730e5f9b424d99db79d7f680c245",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 84,
+      "total_deletions": 9,
+      "accepted_lines": 84,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 84,
+    "git_diff_deleted_lines": 9,
+    "ai_additions": 83,
+    "ai_accepted": 83,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 83,
+    "BYRC": 0,
+    "per_file": {
+      "Services/SysProxyService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "18",
+          "27",
+          "31-32",
+          "38",
+          "67-72",
+          "128",
+          "166",
+          "174-178",
+          "182",
+          "263-264",
+          "280-282"
+        ],
+        "BYRC": []
+      },
+      "Services/WinInetProxySettings.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "35-36",
+          "39-49",
+          "214-215"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SysProxyServiceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "29-61"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/WinInetProxySettingsTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "8-18"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097503,
+  "requirement_id": ""
+}
