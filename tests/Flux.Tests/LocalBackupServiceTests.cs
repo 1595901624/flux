@@ -54,6 +54,56 @@ public class LocalBackupServiceTests : IDisposable
         Assert.Equal("proxies: []\n", File.ReadAllText(Path.Combine(_profilesDir, "R111111.yaml")));
     }
 
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task RestoreIncludesExtraFilesInsideAndOutsideDataDirectory(bool outside)
+    {
+        var extra = Path.Combine(outside ? _root : _dataDir, "flux-settings.json");
+        File.WriteAllText(extra, "{\"original\":true}");
+        var service = new LocalBackupService(_backupDir, () => new BackupLayout
+        {
+            DataDir = _dataDir, ProfilesDir = _profilesDir, ExtraFiles = [extra],
+        });
+        var backup = await service.CreateAsync();
+        File.WriteAllText(extra, "{\"changed\":true}");
+        await service.RestoreAsync(backup);
+        Assert.Equal("{\"original\":true}", File.ReadAllText(extra));
+    }
+
+    [Fact]
+    public async Task LegacyBackupWithoutExtraFileLeavesCurrentSettingsUntouched()
+    {
+        var backup = await _service.CreateAsync();
+        var extra = Path.Combine(_dataDir, "flux-settings.json");
+        File.WriteAllText(extra, "current settings");
+        var service = new LocalBackupService(_backupDir, () => new BackupLayout
+        {
+            DataDir = _dataDir, ProfilesDir = _profilesDir, ExtraFiles = [extra],
+        });
+        await service.RestoreAsync(backup);
+        Assert.Equal("current settings", File.ReadAllText(extra));
+    }
+
+    [Fact]
+    public async Task FailureRestoringExtraFileRollsBackPreviouslyReplacedConfigurations()
+    {
+        var extra = Path.Combine(_dataDir, "flux-settings.json");
+        File.WriteAllText(extra, "original settings");
+        var service = new LocalBackupService(_backupDir, () => new BackupLayout
+        {
+            DataDir = _dataDir, ProfilesDir = _profilesDir, ExtraFiles = [extra],
+        });
+        var backup = await service.CreateAsync();
+        var config = Path.Combine(_dataDir, "config.yaml");
+        File.WriteAllText(config, "current config");
+        File.WriteAllText(extra, "current settings");
+        using (var locked = new FileStream(extra, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+            await Assert.ThrowsAnyAsync<IOException>(() => service.RestoreAsync(backup));
+        Assert.Equal("current config", File.ReadAllText(config));
+        Assert.Equal("current settings", File.ReadAllText(extra));
+    }
+
     [Fact]
     public async Task List_列出备份并包含大小()
     {

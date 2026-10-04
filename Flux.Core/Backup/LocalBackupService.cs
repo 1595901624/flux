@@ -82,10 +82,17 @@ public sealed class LocalBackupService
     private static void AddFile(ZipArchive zip, BackupLayout layout, string filePath)
     {
         if (!File.Exists(filePath)) return;
-        var relative = filePath.StartsWith(layout.DataDir, StringComparison.OrdinalIgnoreCase)
-            ? filePath[(layout.DataDir.Length + 1)..]
-            : Path.GetFileName(filePath);
+        var relative = GetRelativePath(layout, filePath);
         zip.CreateEntryFromFile(filePath, $"{layout.Root}/{relative.Replace('\\', '/')}", CompressionLevel.Optimal);
+    }
+
+    private static string GetRelativePath(BackupLayout layout, string filePath)
+    {
+        var root = Path.TrimEndingDirectorySeparator(Path.GetFullPath(layout.DataDir));
+        var full = Path.GetFullPath(filePath);
+        return full.StartsWith(root + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)
+            ? Path.GetRelativePath(root, full)
+            : Path.GetFileName(full);
     }
 
     public Task<IReadOnlyList<(string Name, long Size, DateTime Created)>> ListAsync()
@@ -157,20 +164,26 @@ public sealed class LocalBackupService
             var changes = new List<(string Target, string? Backup)>();
             try
             {
-                foreach (var file in new[] { "config.yaml", "verge.yaml", "profiles.yaml" })
+                void ReplaceFile(string source, string target)
                 {
-                    var source = Path.Combine(restoredData, file);
-                    var target = Path.Combine(layout.DataDir, file);
-                    if (!File.Exists(source)) continue;
+                    if (!File.Exists(source)) return;
+                    Directory.CreateDirectory(Path.GetDirectoryName(target)!);
                     string? backupPath = null;
                     if (File.Exists(target))
                     {
-                        backupPath = Path.Combine(rollbackDir, file);
+                        backupPath = Path.Combine(rollbackDir, $"before-{changes.Count}");
                         File.Move(target, backupPath, overwrite: true);
                     }
                     changes.Add((target, backupPath));
                     File.Move(source, target, overwrite: true);
                 }
+
+                var targets = new[] { "config.yaml", "verge.yaml", "profiles.yaml" }
+                    .Select(file => (Relative: file, Target: Path.Combine(layout.DataDir, file)))
+                    .Concat(layout.ExtraFiles.Select(file => (Relative: GetRelativePath(layout, file), Target: file)))
+                    .DistinctBy(item => Path.GetFullPath(item.Target), StringComparer.OrdinalIgnoreCase);
+                foreach (var (relative, target) in targets)
+                    ReplaceFile(Path.Combine(restoredData, relative), target);
 
                 var profilesSource = Path.Combine(restoredData, "profiles");
                 if (Directory.Exists(profilesSource))
@@ -178,14 +191,7 @@ public sealed class LocalBackupService
                     foreach (var file in Directory.GetFiles(profilesSource))
                     {
                         var target = Path.Combine(layout.ProfilesDir, Path.GetFileName(file));
-                        string? backupPath = null;
-                        if (File.Exists(target))
-                        {
-                            backupPath = Path.Combine(rollbackDir, "profiles-" + Path.GetFileName(file));
-                            File.Move(target, backupPath, overwrite: true);
-                        }
-                        changes.Add((target, backupPath));
-                        File.Move(file, target, overwrite: true);
+                        ReplaceFile(file, target);
                     }
                 }
             }
