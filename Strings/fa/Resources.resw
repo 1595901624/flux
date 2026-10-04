@@ -1634,4 +1634,13 @@
   <data name="Proxies_SegDirect.Content" xml:space="preserve">
     <value>مستقیم</value>
   </data>
+  <data name="Msg_UnlockProgress.Text" xml:space="preserve">
+    <value>{0}/{1} بررسی تکمیل شد</value>
+  </data>
+  <data name="Msg_UnlockCompleted.Text" xml:space="preserve">
+    <value>آزمایش کامل شد: {0} بررسی.</value>
+  </data>
+  <data name="Msg_UnlockError.Text" xml:space="preserve">
+    <value>آزمایش ناموفق بود: {0}</value>
+  </data>
 </root>

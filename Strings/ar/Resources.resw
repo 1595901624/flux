@@ -1634,4 +1634,13 @@
   <data name="Proxies_SegDirect.Content" xml:space="preserve">
     <value>مباشر</value>
   </data>
+  <data name="Msg_UnlockProgress.Text" xml:space="preserve">
+    <value>اكتمل {0}/{1} من الاختبارات</value>
+  </data>
+  <data name="Msg_UnlockCompleted.Text" xml:space="preserve">
+    <value>اكتمل الاختبار: {0} فحصًا.</value>
+  </data>
+  <data name="Msg_UnlockError.Text" xml:space="preserve">
+    <value>فشل الاختبار: {0}</value>
+  </data>
 </root>

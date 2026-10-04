@@ -3,7 +3,17 @@ using System.Text.RegularExpressions;
 
 namespace Flux.Core.Unlock;
 
-/// <summary>单项检测结果。Status: 支持 | 不支持 | 未知 | 失败。</summary>
+public static class UnlockStatus
+{
+    public const string Supported = "supported";
+    public const string Unsupported = "unsupported";
+    public const string Unknown = "unknown";
+    public const string Failed = "failed";
+    public const string Testing = "testing";
+    public const string Untested = "untested";
+}
+
+/// <summary>单项检测结果。Status 使用 UnlockStatus，显示文本由 UI 本地化。</summary>
 public sealed record UnlockResult(string Id, string Name, string Status, string? Region = null, string? Detail = null);
 
 /// <summary>解锁检测规则：请求 + 响应判定。解析不出结论时必须返回"未知"，不误报。</summary>
@@ -17,7 +27,7 @@ public sealed class UnlockCheck
 
     /// <summary>响应判定：body 与 status → (status, region, detail)。</summary>
     public Func<int, string, (string Status, string? Region, string? Detail)> Judge { get; init; } =
-        (_, _) => ("unknown", null, null);
+        (_, _) => (UnlockStatus.Unknown, null, null);
 }
 
 /// <summary>
@@ -38,13 +48,19 @@ public sealed class UnlockTestService
     public IReadOnlyList<UnlockCheck> Checks { get; } = BuildChecks();
 
     /// <summary>运行全部检测；并发受 4 限制，ct 取消全部请求。</summary>
-    public async Task<IReadOnlyList<UnlockResult>> RunAllAsync(int timeoutMs, CancellationToken ct = default)
+    public async Task<IReadOnlyList<UnlockResult>> RunAllAsync(int timeoutMs, CancellationToken ct = default,
+        IProgress<UnlockResult>? progress = null)
     {
         using var gate = new SemaphoreSlim(4, 4);
         var tasks = Checks.Select(async check =>
         {
             await gate.WaitAsync(ct);
-            try { return await RunAsync(check, timeoutMs, ct); }
+            try
+            {
+                var result = await RunAsync(check, timeoutMs, ct);
+                progress?.Report(result);
+                return result;
+            }
             catch (OperationCanceledException) { throw; }
             finally { gate.Release(); }
         });
@@ -81,11 +97,12 @@ public sealed class UnlockTestService
         }
         catch (OperationCanceledException) when (!ct.IsCancellationRequested)
         {
-            return new UnlockResult(check.Id, check.Name, "失败", null, "请求超时");
+            return new UnlockResult(check.Id, check.Name, UnlockStatus.Failed, null, "请求超时");
         }
+        catch (OperationCanceledException) { throw; }
         catch (Exception ex)
         {
-            return new UnlockResult(check.Id, check.Name, "失败", null, ex.Message);
+            return new UnlockResult(check.Id, check.Name, UnlockStatus.Failed, null, ex.Message);
         }
     }
 
@@ -102,11 +119,11 @@ public sealed class UnlockTestService
                     // 标题页可访问 = 非自制内容解锁；地区从页面 JS 常量提取
                     var region = Extract(body, @"""currentCountry"":\s*""([A-Za-z]{2})""") ??
                                  Extract(body, @"requestCountry"":""([A-Za-z]{2})""");
-                    return ("supported", region, "original-only unlocked");
+                    return (UnlockStatus.Supported, region, "original-only unlocked");
                 }
-                if (status == 403) return ("unsupported", null, "403");
-                if (status == 404) return ("supported", null, "originals only");
-                return ("unknown", null, $"HTTP {status}");
+                if (status == 403) return (UnlockStatus.Unsupported, null, "403");
+                if (status == 404) return (UnlockStatus.Supported, null, "originals only");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -115,11 +132,11 @@ public sealed class UnlockTestService
             Url = "https://www.youtube.com/premium",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("unknown", null, $"HTTP {status}");
+                if (status != 200) return (UnlockStatus.Unknown, null, $"HTTP {status}");
                 if (body.Contains("Premium is not available in your country", StringComparison.OrdinalIgnoreCase))
-                    return ("不支持", null, null);
+                    return (UnlockStatus.Unsupported, null, null);
                 var region = Extract(body, @"""gl"":\s*""([A-Za-z]{2})""");
-                return ("supported", region, null);
+                return (UnlockStatus.Supported, region, null);
             },
         },
         new UnlockCheck
@@ -131,10 +148,10 @@ public sealed class UnlockTestService
                 if (status == 200 && (body.Contains("disneyplus", StringComparison.OrdinalIgnoreCase)))
                 {
                     var region = Extract(body, @"""region"":\s*""([A-Za-z]{2})""");
-                    return ("supported", region, null);
+                    return (UnlockStatus.Supported, region, null);
                 }
-                if (status == 403 || status == 404) return ("不支持", null, $"HTTP {status}");
-                return ("unknown", null, $"HTTP {status}");
+                if (status == 403 || status == 404) return (UnlockStatus.Unsupported, null, $"HTTP {status}");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -144,9 +161,9 @@ public sealed class UnlockTestService
             Judge = (status, body) =>
             {
                 if (status == 200 && body.Contains("display_name", StringComparison.OrdinalIgnoreCase))
-                    return ("支持", null, null);
-                if (status == 403 || status == 451) return ("unsupported", null, $"HTTP {status}");
-                return ("unknown", null, $"HTTP {status}");
+                    return (UnlockStatus.Supported, null, null);
+                if (status == 403 || status == 451) return (UnlockStatus.Unsupported, null, $"HTTP {status}");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -155,9 +172,9 @@ public sealed class UnlockTestService
             Url = "https://claude.ai/login",
             Judge = (status, _) =>
             {
-                if (status == 200) return ("supported", null, null);
-                if (status == 403) return ("unsupported", null, "403");
-                return ("unknown", null, $"HTTP {status}");
+                if (status == 200) return (UnlockStatus.Supported, null, null);
+                if (status == 403) return (UnlockStatus.Unsupported, null, "403");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -169,11 +186,11 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     if (body.Contains("not available in your country", StringComparison.OrdinalIgnoreCase))
-                        return ("不支持", null, null);
+                        return (UnlockStatus.Unsupported, null, null);
                     var region = Extract(body, @"""countryCode"":\s*""([A-Za-z]{2})""");
-                    return ("supported", region, null);
+                    return (UnlockStatus.Supported, region, null);
                 }
-                return ("unknown", null, $"HTTP {status}");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -185,9 +202,9 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""country_code"":\s*""([A-Za-z]{2})""");
-                    return string.IsNullOrEmpty(region) ? ("unknown", null, "no region") : ("supported", region, null);
+                    return string.IsNullOrEmpty(region) ? (UnlockStatus.Unknown, null, "no region") : (UnlockStatus.Supported, region, null);
                 }
-                return ("unknown", null, $"HTTP {status}");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -199,10 +216,10 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""region"":\s*""([A-Za-z]{2})""");
-                    return ("supported", region, null);
+                    return (UnlockStatus.Supported, region, null);
                 }
-                if (status == 403) return ("unsupported", null, "403");
-                return ("unknown", null, $"HTTP {status}");
+                if (status == 403) return (UnlockStatus.Unsupported, null, "403");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
         new UnlockCheck
@@ -211,10 +228,10 @@ public sealed class UnlockTestService
             Url = "https://ani.gamer.com.tw/ajax/token.php?adsn=",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("unknown", null, $"HTTP {status}");
+                if (status != 200) return (UnlockStatus.Unknown, null, $"HTTP {status}");
                 if (body.Contains("\"sn\":2", StringComparison.Ordinal) || body.Contains("error", StringComparison.OrdinalIgnoreCase))
-                    return ("unknown", null, body.Length > 60 ? body[..60] : body);
-                return ("supported", "TW", null);
+                    return (UnlockStatus.Unknown, null, body.Length > 60 ? body[..60] : body);
+                return (UnlockStatus.Supported, "TW", null);
             },
         },
         new UnlockCheck
@@ -223,12 +240,12 @@ public sealed class UnlockTestService
             Url = "https://api.bilibili.com/pgc/player/web/v2/playurl?ep_id=1&cid=1",
             Judge = (status, body) =>
             {
-                if (status != 200) return ("unknown", null, $"HTTP {status}");
+                if (status != 200) return (UnlockStatus.Unknown, null, $"HTTP {status}");
                 if (body.Contains("仅限港澳台", StringComparison.Ordinal) || body.Contains("area limit", StringComparison.OrdinalIgnoreCase))
-                    return ("unsupported", null, null);
+                    return (UnlockStatus.Unsupported, null, null);
                 if (body.Contains("\"code\":0", StringComparison.Ordinal) || body.Contains(" dash", StringComparison.Ordinal))
-                    return ("supported", null, null);
-                return ("unknown", null, null);
+                    return (UnlockStatus.Supported, null, null);
+                return (UnlockStatus.Unknown, null, null);
             },
         },
         new UnlockCheck
@@ -240,9 +257,9 @@ public sealed class UnlockTestService
                 if (status == 200)
                 {
                     var region = Extract(body, @"""currentTerritory"":\s*""([A-Za-z]{2})""");
-                    return ("supported", region, null);
+                    return (UnlockStatus.Supported, region, null);
                 }
-                return ("unknown", null, $"HTTP {status}");
+                return (UnlockStatus.Unknown, null, $"HTTP {status}");
             },
         },
     ];

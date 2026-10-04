@@ -1634,4 +1634,13 @@
   <data name="Proxies_SegDirect.Content" xml:space="preserve">
     <value>Direkt</value>
   </data>
+  <data name="Msg_UnlockProgress.Text" xml:space="preserve">
+    <value>{0}/{1} Tests abgeschlossen</value>
+  </data>
+  <data name="Msg_UnlockCompleted.Text" xml:space="preserve">
+    <value>Tests abgeschlossen: {0}.</value>
+  </data>
+  <data name="Msg_UnlockError.Text" xml:space="preserve">
+    <value>Test fehlgeschlagen: {0}</value>
+  </data>
 </root>

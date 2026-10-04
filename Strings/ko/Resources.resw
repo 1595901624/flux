@@ -1634,4 +1634,13 @@
   <data name="Proxies_SegDirect.Content" xml:space="preserve">
     <value>다이렉트</value>
   </data>
+  <data name="Msg_UnlockProgress.Text" xml:space="preserve">
+    <value>{0}/{1}개 완료</value>
+  </data>
+  <data name="Msg_UnlockCompleted.Text" xml:space="preserve">
+    <value>테스트 완료: {0}개.</value>
+  </data>
+  <data name="Msg_UnlockError.Text" xml:space="preserve">
+    <value>테스트 실패: {0}</value>
+  </data>
 </root>

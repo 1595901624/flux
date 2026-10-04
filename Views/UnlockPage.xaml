@@ -31,7 +31,8 @@
         </Grid>
 
         <StackPanel Grid.Row="1" x:Name="StatusPanel" Visibility="Collapsed" Spacing="8">
-            <ProgressBar x:Name="RunProgress" IsIndeterminate="True" />
+            <ProgressBar x:Name="RunProgress" IsIndeterminate="False" Minimum="0" />
+            <TextBlock x:Name="StatusMessage" FontSize="12" TextWrapping="Wrap" />
         </StackPanel>
 
         <ListView Grid.Row="2" x:Name="ResultList" SelectionMode="None">
@@ -44,12 +45,12 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{x:Bind Name}" FontSize="13" VerticalAlignment="Center" />
-                        <Border Grid.Column="1" Background="{x:Bind StatusBrush}" CornerRadius="4"
+                        <TextBlock Text="{x:Bind Name, Mode=OneWay}" FontSize="13" VerticalAlignment="Center" />
+                        <Border Grid.Column="1" Background="{x:Bind StatusBrush, Mode=OneWay}" CornerRadius="4"
                                 Padding="8,2" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <TextBlock Text="{x:Bind StatusText}" FontSize="11" Foreground="White" />
+                            <TextBlock Text="{x:Bind StatusText, Mode=OneWay}" FontSize="11" Foreground="White" />
                         </Border>
-                        <TextBlock Grid.Column="2" Text="{x:Bind Detail}" FontSize="11" Opacity="0.6"
+                        <TextBlock Grid.Column="2" Text="{x:Bind Detail, Mode=OneWay}" FontSize="11" Opacity="0.6"
                                    VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
                                    IsTextSelectionEnabled="True" />
                         <Button x:Uid="Unlock_Retest" Grid.Column="3" Content="重测" Style="{StaticResource SubtleButtonStyle}"
