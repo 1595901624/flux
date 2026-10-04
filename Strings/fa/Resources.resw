@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>پیکربندی خالی جدید</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>استثناهای سیستم با برنامه‌های انتخاب‌شده مطابقت ندارند. فهرست را تازه کنید و دوباره تلاش کنید.</value>
+  </data>
 </root>

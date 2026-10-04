@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>새 빈 설정</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>시스템 예외 설정이 선택한 앱과 일치하지 않습니다. 목록을 새로 고친 후 다시 시도하세요.</value>
+  </data>
 </root>

@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>Новая пустая конфигурация</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>Системные исключения не соответствуют выбранным приложениям. Обновите список и повторите попытку.</value>
+  </data>
 </root>

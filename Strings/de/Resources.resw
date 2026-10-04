@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>Neue leere Konfiguration</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>Die Systemausnahmen stimmen nicht mit den ausgewählten Anwendungen überein. Liste aktualisieren und erneut versuchen.</value>
+  </data>
 </root>

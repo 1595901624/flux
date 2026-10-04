@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>Nueva configuración vacía</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>Las excepciones del sistema no coinciden con las aplicaciones seleccionadas. Actualiza la lista e inténtalo de nuevo.</value>
+  </data>
 </root>

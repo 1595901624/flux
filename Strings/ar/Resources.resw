@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>إعدادات فارغة جديدة</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>استثناءات النظام لا تطابق التطبيقات المحددة. حدّث القائمة وحاول مرة أخرى.</value>
+  </data>
 </root>

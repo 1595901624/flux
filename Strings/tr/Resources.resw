@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>Yeni boş yapılandırma</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>Sistem istisnaları seçilen uygulamalarla eşleşmiyor. Listeyi yenileyip tekrar deneyin.</value>
+  </data>
 </root>

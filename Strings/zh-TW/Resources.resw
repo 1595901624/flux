@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>新增空設定</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>系統豁免狀態與所選應用程式不一致，請重新整理清單後再試。</value>
+  </data>
 </root>

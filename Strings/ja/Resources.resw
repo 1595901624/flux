@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>新しい空の設定</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>システムの例外設定が選択したアプリと一致しません。一覧を更新して再試行してください。</value>
+  </data>
 </root>

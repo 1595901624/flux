@@ -1775,4 +1775,7 @@
   <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
     <value>Яңа буш көйләүләр</value>
   </data>
+  <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
+    <value>Система чыгарылмалары сайланган кушымталарга туры килми. Исемлекне яңартып, кабатлап карагыз.</value>
+  </data>
 </root>
