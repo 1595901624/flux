@@ -1,0 +1,60 @@
+Flux.Core/Backup/LocalBackupService.cs
+  b2973540a3591f1f 85,89-95,167,169-170,174,181-186,194
+tests/Flux.Tests/LocalBackupServiceTests.cs
+  b2973540a3591f1f 57-106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "d79beb2a76545fd7858cf3963f1a4597ad7f46fd",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 72,
+      "total_deletions": 16,
+      "accepted_lines": 72,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 72,
+    "git_diff_deleted_lines": 16,
+    "ai_additions": 69,
+    "ai_accepted": 69,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 69,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Backup/LocalBackupService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "85",
+          "89-95",
+          "167",
+          "169-170",
+          "174",
+          "181-186",
+          "194"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalBackupServiceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "57-106"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097884,
+  "requirement_id": ""
+}
