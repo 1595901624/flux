@@ -1,0 +1,71 @@
+Services/CoreProcessService.cs
+  b2973540a3591f1f 143-144,147,158-174,249,257-258,262-265
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "755d1ccda39909169b25d88d7a4fa9eaf25cd25b",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 34,
+      "total_deletions": 8,
+      "accepted_lines": 31,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 158,
+    "git_diff_deleted_lines": 8,
+    "ai_additions": 27,
+    "ai_accepted": 27,
+    "BYMC": 124,
+    "mixed_additions": 0,
+    "BYAC": 27,
+    "BYRC": 0,
+    "per_file": {
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "143-144",
+          "147",
+          "158-174",
+          "249",
+          "257-258",
+          "262-265"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessServiceTests.cs": {
+        "BYMC": [
+          "1-55"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessTestDependencies.cs": {
+        "BYMC": [
+          "1-68"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [
+          "28"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097226,
+  "requirement_id": ""
+}
