@@ -1,0 +1,85 @@
+tests/Flux.Tests/CoreProcessTestDependencies.cs
+  b2973540a3591f1f 24-30,46-48
+tests/Flux.Tests/Flux.Tests.csproj
+  b2973540a3591f1f 29-30
+tests/Flux.Tests/SysProxyServiceTests.cs
+  b2973540a3591f1f 1-60
+Services/SysProxyService.cs
+  b2973540a3591f1f 15-35,74,116-117,144,165,167,171-172,174,178-179,189-190,192,194,216
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "3a2ecd2c8e1090038467da08394aedfcc461213d",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 109,
+      "total_deletions": 17,
+      "accepted_lines": 109,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 109,
+    "git_diff_deleted_lines": 17,
+    "ai_additions": 109,
+    "ai_accepted": 109,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 109,
+    "BYRC": 0,
+    "per_file": {
+      "Services/SysProxyService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "15-35",
+          "74",
+          "116-117",
+          "144",
+          "165",
+          "167",
+          "171-172",
+          "174",
+          "178-179",
+          "189-190",
+          "192",
+          "194",
+          "216"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessTestDependencies.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "24-30",
+          "46-48"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "29-30"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SysProxyServiceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-60"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097378,
+  "requirement_id": ""
+}
