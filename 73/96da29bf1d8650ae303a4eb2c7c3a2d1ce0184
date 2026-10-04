@@ -1,0 +1,66 @@
+Services/MihomoApiService.cs
+  b2973540a3591f1f 12-18,24-27,33-36
+tests/Flux.Tests/MihomoApiServiceTests.cs
+  b2973540a3591f1f 10-37
+Views/SettingsPage.xaml.cs
+  b2973540a3591f1f 449-453,469
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "7396da29bf1d8650ae303a4eb2c7c3a2d1ce0184",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 50,
+      "total_deletions": 15,
+      "accepted_lines": 50,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 50,
+    "git_diff_deleted_lines": 15,
+    "ai_additions": 49,
+    "ai_accepted": 49,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 49,
+    "BYRC": 0,
+    "per_file": {
+      "Services/MihomoApiService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "12-18",
+          "24-27",
+          "33-36"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "449-453",
+          "469"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/MihomoApiServiceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "10-37"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791096690,
+  "requirement_id": ""
+}
