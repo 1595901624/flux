@@ -1,0 +1,274 @@
+Views/UwpLoopbackDialog.cs
+  b2973540a3591f1f 13
+Views/LocalizedContentDialog.cs
+  b2973540a3591f1f 1-10
+Views/HomePage.xaml.cs
+  b2973540a3591f1f 129
+Views/ProxiesProvidersDialog.cs
+  b2973540a3591f1f 9
+MainWindow.xaml
+  b2973540a3591f1f 17,63
+Views/ProfilesPage.xaml
+  b2973540a3591f1f 30
+Views/ProfilesPage.xaml.cs
+  b2973540a3591f1f 121,144,169,192,217
+Views/SettingsPage.xaml
+  b2973540a3591f1f 36,45,76,86,92-93,139,143,146,149,152
+Flux.Core/Localization/LanguageDirection.cs
+  b2973540a3591f1f 1-16
+App.xaml.cs
+  b2973540a3591f1f 80-86
+Services/LanguageLayout.cs
+  b2973540a3591f1f 1-19
+tests/Flux.Tests/LanguageDirectionTests.cs
+  b2973540a3591f1f 1-40
+Views/QrDialog.cs
+  b2973540a3591f1f 13,23,31
+Views/RulesPage.xaml
+  b2973540a3591f1f 27,61-63
+Views/ConnectionsPage.xaml
+  b2973540a3591f1f 38
+Views/EnhanceEditorDialog.cs
+  b2973540a3591f1f 16,27
+MainWindow.xaml.cs
+  b2973540a3591f1f 28
+Views/ProfileEditDialog.cs
+  b2973540a3591f1f 12,17-20
+Views/RulesProvidersDialog.cs
+  b2973540a3591f1f 9
+Views/ConnectionsPage.xaml.cs
+  b2973540a3591f1f 125,212,233,273
+Views/LogsPage.xaml
+  b2973540a3591f1f 37,79,81,83
+Views/SettingsPage.xaml.cs
+  b2973540a3591f1f 222,299,326,373,377,515,554,577,615,684-687,695,766,807,842,877,912
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "6d3ea551a2c536d4ac2c76fa4abfac72db3c36fe",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 159,
+      "total_deletions": 62,
+      "accepted_lines": 159,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 158,
+    "git_diff_deleted_lines": 61,
+    "ai_additions": 158,
+    "ai_accepted": 158,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 158,
+    "BYRC": 0,
+    "per_file": {
+      "App.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "80-86"
+        ],
+        "BYRC": []
+      },
+      "Flux.Core/Localization/LanguageDirection.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-16"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "17",
+          "63"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "28"
+        ],
+        "BYRC": []
+      },
+      "Services/LanguageLayout.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-19"
+        ],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "38"
+        ],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "125",
+          "212",
+          "233",
+          "273"
+        ],
+        "BYRC": []
+      },
+      "Views/EnhanceEditorDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "16",
+          "27"
+        ],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "129"
+        ],
+        "BYRC": []
+      },
+      "Views/LocalizedContentDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-10"
+        ],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "37",
+          "79",
+          "81",
+          "83"
+        ],
+        "BYRC": []
+      },
+      "Views/ProfileEditDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "12",
+          "17-20"
+        ],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "30"
+        ],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "121",
+          "144",
+          "169",
+          "192",
+          "217"
+        ],
+        "BYRC": []
+      },
+      "Views/ProxiesProvidersDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      },
+      "Views/QrDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "13",
+          "23",
+          "31"
+        ],
+        "BYRC": []
+      },
+      "Views/RulesPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "27",
+          "61-63"
+        ],
+        "BYRC": []
+      },
+      "Views/RulesProvidersDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "36",
+          "45",
+          "76",
+          "86",
+          "92-93",
+          "139",
+          "143",
+          "146",
+          "149",
+          "152"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "222",
+          "299",
+          "326",
+          "373",
+          "377",
+          "515",
+          "554",
+          "577",
+          "615",
+          "684-687",
+          "695",
+          "766",
+          "807",
+          "842",
+          "877",
+          "912"
+        ],
+        "BYRC": []
+      },
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "13"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LanguageDirectionTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-40"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791105121,
+  "requirement_id": ""
+}
