@@ -20,7 +20,7 @@ public sealed class ProxiesProvidersDialog : LocalizedContentDialog
 
         var header = new StackPanel { Spacing = 10, MinWidth = 480 };
         var toolbar = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
-        var updateAll = new Button { Content = L10n.T("Profiles_UpdateAll") };
+        var updateAll = new Button { Content = L10n.T("Msg_UpdateAll") };
         updateAll.Click += async (_, _) => await UpdateAllAsync();
         var healthCheck = new Button { Content = L10n.T("Msg_HealthCheck") };
         healthCheck.Click += async (_, _) => await HealthCheckAllAsync();

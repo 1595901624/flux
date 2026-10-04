@@ -1736,13 +1736,13 @@
   <data name="Home_ToggleTun.OffContent" xml:space="preserve">
     <value>خاموش</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+  <data name="Msg_UpdateAll.Text" xml:space="preserve">
     <value>همه را به‌روزرسانی کن</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
+  <data name="Msg_InstallService.Text" xml:space="preserve">
     <value>نصب/تعمیر سرویس</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+  <data name="Msg_RestoreBackup.Text" xml:space="preserve">
     <value>بازیابی پشتیبان</value>
   </data>
   <data name="Settings_LogLevelDebug.Content" xml:space="preserve">

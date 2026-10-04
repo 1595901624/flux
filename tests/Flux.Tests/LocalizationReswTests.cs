@@ -130,6 +130,10 @@ public class LocalizationReswTests
         foreach (var element in XDocument.Load(file).Descendants())
         {
             var uid = element.Attribute(x + "Uid")?.Value;
+            // WinUI applies every resource under x:Uid to that control. A text alias
+            // sharing a Button's UID crashes page construction even when Content exists.
+            if (uid is not null && element.Name.LocalName is "Button" or "ComboBoxItem" or "RadioButton")
+                Assert.False(resources.ContainsKey(uid + ".Text"), $"{file}: {uid} has Text resource but control requires Content");
             if (element.Name.LocalName == "ToggleSwitch")
             {
                 Assert.True(resources.ContainsKey(uid + ".OnContent"), $"{file}: toggle needs localized OnContent");

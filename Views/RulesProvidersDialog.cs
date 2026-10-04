@@ -20,7 +20,7 @@ public sealed class RulesProvidersDialog : LocalizedContentDialog
 
         var header = new StackPanel { Spacing = 10, MinWidth = 480 };
         var toolbar = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
-        var refreshAll = new Button { Content = L10n.T("Profiles_UpdateAll") };
+        var refreshAll = new Button { Content = L10n.T("Msg_UpdateAll") };
         refreshAll.Click += async (_, _) => await UpdateAllAsync();
         var reload = new Button { Content = L10n.T("Msg_RefreshList") };
         reload.Click += async (_, _) => await LoadAsync();

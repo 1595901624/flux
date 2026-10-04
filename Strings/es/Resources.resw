@@ -1736,13 +1736,13 @@
   <data name="Home_ToggleTun.OffContent" xml:space="preserve">
     <value>Desactivado</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+  <data name="Msg_UpdateAll.Text" xml:space="preserve">
     <value>Actualizar todo</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
+  <data name="Msg_InstallService.Text" xml:space="preserve">
     <value>Instalar/reparar servicio</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+  <data name="Msg_RestoreBackup.Text" xml:space="preserve">
     <value>Restaurar copia</value>
   </data>
   <data name="Settings_LogLevelDebug.Content" xml:space="preserve">

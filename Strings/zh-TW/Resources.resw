@@ -1736,13 +1736,13 @@
   <data name="Home_ToggleTun.OffContent" xml:space="preserve">
     <value>關</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+  <data name="Msg_UpdateAll.Text" xml:space="preserve">
     <value>全部更新</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
+  <data name="Msg_InstallService.Text" xml:space="preserve">
     <value>安裝 / 修復服務</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+  <data name="Msg_RestoreBackup.Text" xml:space="preserve">
     <value>恢復備份</value>
   </data>
   <data name="Settings_LogLevelDebug.Content" xml:space="preserve">

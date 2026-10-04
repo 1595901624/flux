@@ -311,7 +311,7 @@ public sealed partial class SettingsPage : Page
                 XamlRoot = XamlRoot,
                 Title = L10n.T("Msg_TunPrivilegeTitle"),
                 Content = L10n.T("Msg_TunPrivilegeBody"),
-                PrimaryButtonText = L10n.T("Settings_InstallService"),
+                PrimaryButtonText = L10n.T("Msg_InstallService"),
                 CloseButtonText = L10n.T("Common_Cancel"),
                 DefaultButton = ContentDialogButton.Primary,
             };
@@ -625,7 +625,7 @@ public sealed partial class SettingsPage : Page
         var dialog = new LocalizedContentDialog
         {
             XamlRoot = XamlRoot,
-            Title = L10n.T("Settings_RestoreBackup"),
+            Title = L10n.T("Msg_RestoreBackup"),
             Content = new StackPanel { Spacing = 8, Children =
             {
                 new TextBlock { Text = L10n.T("Msg_RestorePick"), TextWrapping = TextWrapping.Wrap },

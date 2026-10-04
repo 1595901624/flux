@@ -1736,13 +1736,13 @@
   <data name="Home_ToggleTun.OffContent" xml:space="preserve">
     <value>Nonaktif</value>
   </data>
-  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+  <data name="Msg_UpdateAll.Text" xml:space="preserve">
     <value>Perbarui semua</value>
   </data>
-  <data name="Settings_InstallService.Text" xml:space="preserve">
+  <data name="Msg_InstallService.Text" xml:space="preserve">
     <value>Instal/perbaiki layanan</value>
   </data>
-  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+  <data name="Msg_RestoreBackup.Text" xml:space="preserve">
     <value>Pulihkan cadangan</value>
   </data>
   <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
