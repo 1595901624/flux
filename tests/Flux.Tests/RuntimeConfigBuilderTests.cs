@@ -9,6 +9,56 @@ namespace Flux.Tests;
 /// <summary>运行时配置合成流水线测试：Merge 顺序、Seq 语义、控制面保护、DNS/TUN、链式代理。</summary>
 public class RuntimeConfigBuilderTests
 {
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void Build_PreservesProviderNamesAndDictionaryKeys(bool script)
+    {
+        const string profile = """
+            rule-providers:
+              MyRules:
+                type: file
+                behavior: classical
+                path: ./rules.yaml
+              myrules:
+                type: file
+                behavior: classical
+                path: ./other.yaml
+            proxy-providers:
+              MyNodes:
+                type: file
+                path: ./nodes.yaml
+            proxy-groups:
+              - name: Main
+                type: select
+                use: [MyNodes]
+            rules:
+              - RULE-SET,MyRules,Main
+            proxies:
+              - name: Node
+                type: vmess
+                ws-opts:
+                  headers:
+                    X-Custom-Token: value
+            """;
+        List<ChainItemWithContent> chain = script
+            ? [new(new ChainItem(ChainType.Script, "s", "passthrough", "s.js", false),
+                "function main(config) { return config; }")]
+            : [];
+        var result = new RuntimeConfigBuilder().Build(Input(profile: profile, chain: chain));
+        Assert.True(result.Success);
+        var config = result.Value!.Config;
+        Assert.Equal("./rules.yaml", YamlOps.GetScalar(config, "rule-providers", "MyRules", "path"));
+        Assert.Equal("./other.yaml", YamlOps.GetScalar(config, "rule-providers", "myrules", "path"));
+        Assert.Equal("./nodes.yaml", YamlOps.GetScalar(config, "proxy-providers", "MyNodes", "path"));
+        var groups = (YamlSequenceNode)config.Children[new YamlScalarNode("proxy-groups")];
+        var group = (YamlMappingNode)groups.Children[0];
+        var providers = (YamlSequenceNode)group.Children[new YamlScalarNode("use")];
+        Assert.Equal("MyNodes", ((YamlScalarNode)providers.Children.Single()).Value);
+        Assert.Contains("X-Custom-Token", Serialize(config));
+        Assert.Contains("RULE-SET,MyRules,Main", Serialize(config));
+    }
+
     private static YamlMappingNode ParseYaml(string yaml) =>
         YamlOps.ParseMapping(yaml) ?? throw new InvalidOperationException("测试 YAML 非法");
 

@@ -4,7 +4,7 @@ using YamlDotNet.RepresentationModel;
 
 namespace Flux.Core.Config;
 
-/// <summary>YAML 映射操作工具：键小写化、深合并、序列前后插入、JSON 互转。</summary>
+/// <summary>YAML 映射操作工具：深合并、序列前后插入、JSON 互转；保留用户键名大小写。</summary>
 public static class YamlOps
 {
     /// <summary>解析 YAML 文本为 Mapping；失败返回 null。</summary>
@@ -23,30 +23,6 @@ public static class YamlOps
         catch
         {
             return null;
-        }
-    }
-
-    /// <summary>递归小写化所有顶层及嵌套映射的标量键（mihomo 键不区分大小写）。</summary>
-    public static void LowercaseKeys(YamlMappingNode mapping)
-    {
-        foreach (var (key, value) in mapping.Children.ToList())
-        {
-            if (value is YamlMappingNode child)
-            {
-                LowercaseKeys(child);
-            }
-            else if (value is YamlSequenceNode seq)
-            {
-                foreach (var item in seq.Children.OfType<YamlMappingNode>())
-                    LowercaseKeys(item);
-            }
-
-            var text = key is YamlScalarNode scalar ? scalar.Value : null;
-            if (text is not null && !string.Equals(text, text.ToLowerInvariant(), StringComparison.Ordinal))
-            {
-                mapping.Children.Remove(key);
-                mapping.Children[new YamlScalarNode(text.ToLowerInvariant())] = value;
-            }
         }
     }
 

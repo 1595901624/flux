@@ -42,7 +42,6 @@ public sealed class RuntimeConfigBuilder : IRuntimeConfigBuilder
 
         // 1. 订阅为底
         var config = input.Profile is null ? new YamlMappingNode() : (YamlMappingNode)YamlOps.Clone(input.Profile);
-        YamlOps.LowercaseKeys(config);
 
         // 1b. 应用基础配置整体合并（tun/dns/profile/tcp-concurrent 等默认值来源；
         //     控制面键由步骤 11 强制恢复，因此此处合并不会泄漏订阅/脚本的修改）
@@ -152,7 +151,6 @@ public sealed class RuntimeConfigBuilder : IRuntimeConfigBuilder
         config.Children.Clear();
         foreach (var (key, value) in newConfig.Children)
             config.Children[key] = value;
-        YamlOps.LowercaseKeys(config);
         existsKeys.Add("script:" + item.Item.Uid);
         logs.Add(new ChainLogEntry("info", item.Item.Uid, item.Item.Name, "Script 已应用"));
         return null;
