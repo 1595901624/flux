@@ -1,0 +1,96 @@
+Flux.Core/Config/ValidatedFileUpdate.cs
+  b2973540a3591f1f 1-45
+Services/SubscriptionService.cs
+  b2973540a3591f1f 5,83-90,115-123
+Services/ConfigService.cs
+  b2973540a3591f1f 327-330,334,336,364-369
+Services/CoreProcessService.cs
+  b2973540a3591f1f 4-5,44-46,55-59,63,68,120-122,125,298-304,313-321,338-339,344-351,355-356,361-372
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "2ef331aae81474bf11c8e36b8364a629042975e7",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 143,
+      "total_deletions": 34,
+      "accepted_lines": 145,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 220,
+    "git_diff_deleted_lines": 34,
+    "ai_additions": 131,
+    "ai_accepted": 131,
+    "BYMC": 77,
+    "mixed_additions": 0,
+    "BYAC": 131,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Config/ValidatedFileUpdate.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-45"
+        ],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "327-330",
+          "334",
+          "336",
+          "364-369"
+        ],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "4-5",
+          "44-46",
+          "55-59",
+          "63",
+          "68",
+          "120-122",
+          "125",
+          "298-304",
+          "313-321",
+          "338-339",
+          "344-351",
+          "355-356",
+          "361-372"
+        ],
+        "BYRC": []
+      },
+      "Services/SubscriptionService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "5",
+          "83-90",
+          "115-123"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ValidatedFileUpdateTests.cs": {
+        "BYMC": [
+          "1-77"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791097030,
+  "requirement_id": ""
+}
