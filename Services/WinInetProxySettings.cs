@@ -32,8 +32,21 @@ internal static class WinInetProxySettings
             (options.Flags & ProxyTypeAutoProxyUrl) != 0,
             options.Server,
             options.Bypass,
-            options.AutoConfigUrl);
+            options.AutoConfigUrl,
+            (options.Flags & ProxyTypeAutoDetect) != 0);
     }
+
+    /// <summary>完整恢复开启 Flux 之前的手动代理、PAC 和自动检测设置。</summary>
+    public static void Restore(State state)
+    {
+        SetOptions(GetRestoreFlags(state), state.Server, state.Bypass, state.AutoConfigUrl);
+        NotifyChanged();
+    }
+
+    internal static int GetRestoreFlags(State state) => ProxyTypeDirect |
+        (state.Enable ? ProxyTypeProxy : 0) |
+        (state.PacEnabled ? ProxyTypeAutoProxyUrl : 0) |
+        (state.AutoDetect ? ProxyTypeAutoDetect : 0);
 
     /// <summary>设置/关闭手动代理。关闭时同时清除 PAC URL，避免指向已失效的脚本。</summary>
     public static void Write(bool enable, string server, string bypass)
@@ -198,7 +211,8 @@ internal static class WinInetProxySettings
     private static Win32Exception CreateWin32Exception(string message) =>
         new(Marshal.GetLastWin32Error(), message);
 
-    internal sealed record State(bool Enable, bool PacEnabled, string Server, string Bypass, string AutoConfigUrl);
+    internal sealed record State(bool Enable, bool PacEnabled, string Server, string Bypass,
+        string AutoConfigUrl, bool AutoDetect = false);
     private sealed record QueryResult(int Flags, string Server, string Bypass, string AutoConfigUrl);
 
     [StructLayout(LayoutKind.Sequential)]

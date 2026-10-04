@@ -15,6 +15,7 @@ public class SysProxyService
     private readonly Func<WinInetProxySettings.State> _readState;
     private readonly Action<bool, string, string> _writeManual;
     private readonly Action<bool, string> _writePac;
+    private readonly Action<WinInetProxySettings.State> _restore;
     private readonly string? _snapshotFile;
     private string SnapshotFile => _snapshotFile ?? Paths.ProxyStateFile;
 
@@ -23,15 +24,18 @@ public class SysProxyService
         _readState = WinInetProxySettings.Read;
         _writeManual = WinInetProxySettings.Write;
         _writePac = WinInetProxySettings.WritePac;
+        _restore = WinInetProxySettings.Restore;
     }
 
     internal SysProxyService(string snapshotFile, Func<WinInetProxySettings.State> read,
-        Action<bool, string, string> writeManual, Action<bool, string> writePac) : this()
+        Action<bool, string, string> writeManual, Action<bool, string> writePac,
+        Action<WinInetProxySettings.State> restore) : this()
     {
         _snapshotFile = snapshotFile;
         _readState = read;
         _writeManual = writeManual;
         _writePac = writePac;
+        _restore = restore;
     }
 
     public static string DefaultBypass => "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;<local>";
@@ -60,7 +64,12 @@ public class SysProxyService
             if (snapshot is null)
             {
                 var original = ReadState();
-                snapshot = new ProxySnapshot(original.Enable, original.Server, original.Bypass, server);
+                snapshot = new ProxySnapshot(original.Enable, original.Server, original.Bypass, server)
+                {
+                    OriginalPacEnabled = original.PacEnabled,
+                    OriginalAutoConfigUrl = original.AutoConfigUrl,
+                    OriginalAutoDetect = original.AutoDetect,
+                };
             }
             else
             {
@@ -116,7 +125,7 @@ public class SysProxyService
                     if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer) ||
                         SystemProxyOwnership.IsOwnedPac(current.PacEnabled, current.AutoConfigUrl, snapshot.FluxPacUrl))
                     {
-                        SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
+                        RestoreSnapshot(snapshot, current);
                         LogService.App(L10n.T("Proxy_StaleRestored"), "warn");
                     }
                     DeleteSnapshot();
@@ -154,7 +163,7 @@ public class SysProxyService
             var ownedManual = SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer);
             var ownedPac = SystemProxyOwnership.IsOwnedPac(current.PacEnabled, current.AutoConfigUrl, snapshot.FluxPacUrl);
             if (ownedManual || ownedPac)
-                SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
+                RestoreSnapshot(snapshot, current);
             else
                 LogService.App(L10n.T("Proxy_ChangedByOther"), "warn");
             DeleteSnapshot();
@@ -162,10 +171,15 @@ public class SysProxyService
         _lastApplied = null;
     }
 
+    private void RestoreSnapshot(ProxySnapshot snapshot, ProxyState current) =>
+        _restore(new WinInetProxySettings.State(snapshot.OriginalEnable, snapshot.OriginalPacEnabled,
+            snapshot.OriginalServer, snapshot.OriginalBypass, snapshot.OriginalAutoConfigUrl,
+            snapshot.OriginalAutoDetect ?? current.AutoDetect));
+
     private ProxyState ReadState()
     {
         var state = _readState();
-        return new ProxyState(state.Enable, state.Server, state.Bypass, state.PacEnabled, state.AutoConfigUrl);
+        return new ProxyState(state.Enable, state.Server, state.Bypass, state.PacEnabled, state.AutoConfigUrl, state.AutoDetect);
     }
 
     private void SetProxy(ProxyState state) =>
@@ -246,7 +260,8 @@ public class SysProxyService
         _guardTimer = null;
     }
 
-    private sealed record ProxyState(bool Enable, string Server, string Bypass, bool PacEnabled = false, string AutoConfigUrl = "");
+    private sealed record ProxyState(bool Enable, string Server, string Bypass, bool PacEnabled = false,
+        string AutoConfigUrl = "", bool AutoDetect = false);
     private sealed record AppliedProxy(string Server, string Bypass, string? PacUrl);
     private sealed class ProxySnapshot
     {
@@ -262,6 +277,9 @@ public class SysProxyService
         public bool OriginalEnable { get; set; }
         public string OriginalServer { get; set; } = "";
         public string OriginalBypass { get; set; } = "";
+        public bool OriginalPacEnabled { get; set; }
+        public string OriginalAutoConfigUrl { get; set; } = "";
+        public bool? OriginalAutoDetect { get; set; }
         public string FluxServer { get; set; } = "";
         public string FluxPacUrl { get; set; } = "";
     }

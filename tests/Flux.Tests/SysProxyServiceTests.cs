@@ -26,7 +26,39 @@ public sealed class SysProxyServiceTests : IDisposable
             if (writeFails) throw new IOException("write failed");
             _state = new(enabled, false, server, bypass, "");
         },
-        (enabled, url) => _state = new(false, enabled, "", "", url));
+        (enabled, url) => _state = new(false, enabled, "", "", url),
+        state =>
+        {
+            if (writeFails) throw new IOException("restore failed");
+            _state = state;
+        });
+
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public void RestoresOriginalPacAndAutoDetectOnResetOrNextStartup(bool startup)
+    {
+        var original = new WinInetProxySettings.State(true, true, "company:8080", "intranet",
+            "https://company/proxy.pac", true);
+        _state = original;
+        File.Delete(Snapshot);
+        var service = Create();
+        service.Apply(new Flux.Models.VergeConfig { EnableSystemProxy = true, EnableProxyGuard = false });
+        Assert.False(_state.PacEnabled);
+        Assert.Equal("127.0.0.1:7897", _state.Server);
+        if (startup) Create().ClearStaleProxy();
+        else service.Reset();
+        Assert.Equal(original, _state);
+        Assert.False(File.Exists(Snapshot));
+    }
+
+    [Fact]
+    public void LegacySnapshotPreservesCurrentAutoDetect()
+    {
+        _state = _state with { AutoDetect = true };
+        Create().ClearStaleProxy();
+        Assert.True(_state.AutoDetect);
+    }
 
     [Fact]
     public void StartupRecoversOwnedPacAndRemovesSnapshotAfterRecovery()
