@@ -10,7 +10,7 @@ namespace Flux.Services;
 /// 配置管理：config.yaml（基础 Clash 配置）、verge.yaml（应用设置）、profiles.yaml（订阅列表）
 /// 以及运行时配置生成（委托 Flux.Core 的 RuntimeConfigBuilder 流水线）。
 /// </summary>
-public class ConfigService
+public partial class ConfigService
 {
     private readonly RuntimeConfigBuilder _runtimeBuilder = new();
 
@@ -67,11 +67,6 @@ public class ConfigService
         }
         Verge.SchemaVersion = 1;
         SaveVerge();
-    }
-
-    public void SaveVerge()
-    {
-        WriteAllTextAtomic(Paths.VergeConfigFile, Verge.Serialize());
     }
 
     private void LoadClashBase()

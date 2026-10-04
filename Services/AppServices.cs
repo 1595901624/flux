@@ -47,6 +47,7 @@ public static class AppServices
     public static void ReloadConfiguration()
     {
         Config = ConfigService.LoadOrCreate();
+        Tray.BindConfiguration(Config);
         var (controller, secret) = Config.GetControllerInfo();
         Api.Configure(controller, secret);
         Streams.Configure(controller, secret);

@@ -13,6 +13,7 @@ public class TrayService
     private TrayIconWithContextMenu? _tray;
     private System.Drawing.Icon? _icon;
     private DispatcherQueue? _dispatcher;
+    private ConfigService? _subscribedConfig;
 
     public void Initialize()
     {
@@ -34,7 +35,7 @@ public class TrayService
             Program.Trace("tray: created");
             RebuildMenu();
             Program.Trace("tray: menu rebuilt");
-            AppServices.Config.RuntimeInvalidated += RebuildMenuOnUiThread;
+            BindConfiguration(AppServices.Config);
             AppServices.Subscription.ProfilesChanged += RebuildMenuOnUiThread;
         }
         catch (Exception ex)
@@ -59,6 +60,23 @@ public class TrayService
     }
 
     // ---------- 菜单 ----------
+
+    /// <summary>配置恢复会替换 ConfigService，需要重新绑定，避免菜单继续监听旧对象。</summary>
+    internal void BindConfiguration(ConfigService config)
+    {
+        if (_subscribedConfig is not null)
+        {
+            _subscribedConfig.RuntimeInvalidated -= RebuildMenuOnUiThread;
+            _subscribedConfig.SettingsChanged -= RefreshSettingsOnUiThread;
+        }
+        _subscribedConfig = config;
+        config.RuntimeInvalidated += RebuildMenuOnUiThread;
+        config.SettingsChanged += RefreshSettingsOnUiThread;
+        RefreshSettingsOnUiThread();
+    }
+
+    private void RefreshSettingsOnUiThread() =>
+        _dispatcher?.TryEnqueue(() => RebuildMenu(skipProxyRefresh: true));
 
     private void RebuildMenuOnUiThread() => _dispatcher?.TryEnqueue(RebuildMenu);
 

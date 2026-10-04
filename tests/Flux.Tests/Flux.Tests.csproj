@@ -30,5 +30,6 @@
     <Compile Include="..\..\Models\VergeConfig.cs" Link="VergeConfig.cs" />
     <Compile Include="..\..\Models\MihomoModels.cs" Link="MihomoModels.cs" />
     <Compile Include="..\..\Services\MihomoStreamService.cs" Link="MihomoStreamService.cs" />
+    <Compile Include="..\..\Services\ConfigService.Settings.cs" Link="ConfigService.Settings.cs" />
   </ItemGroup>
 </Project>

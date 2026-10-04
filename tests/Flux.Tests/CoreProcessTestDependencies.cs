@@ -20,7 +20,7 @@ namespace Flux.Services
         public static TestStreams Streams { get; } = new();
         public static TestProxy SysProxy { get; } = new();
     }
-    public sealed class ConfigService
+    public partial class ConfigService
     {
         public Flux.Models.VergeConfig Verge { get; } = new();
         public int MixedPort => 7897;
@@ -44,6 +44,7 @@ namespace Flux.Services
         public static string CoreExePath => "unused-mihomo.exe";
         public static string LegacyCoreExePath => "unused-legacy.exe";
         public static string RuntimeConfigFile => "unused-runtime.yaml";
+        public static string VergeConfigFile { get; set; } = "unused-verge.yaml";
         public static string ProxyStateFile => throw new NotSupportedException();
         public static string PacFile => throw new NotSupportedException();
         public static string PacFileUrl => throw new NotSupportedException();
