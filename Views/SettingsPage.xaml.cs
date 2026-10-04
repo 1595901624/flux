@@ -444,13 +444,13 @@ public sealed partial class SettingsPage : Page
         }
 
         var (previousAddress, previousSecret) = AppServices.Config.GetControllerInfo();
-        AppServices.Config.PatchClashBase("external-controller", address);
-        AppServices.Config.PatchClashBase("secret", secret);
-        // 先切换 API 客户端到新地址（内核启动等待依赖它），失败再回滚
-        AppServices.Api.Configure(address, secret);
-        AppServices.Streams.Configure(address, secret);
         try
         {
+            // 先验证客户端地址，再保存；失败时回到旧端点探测旧内核。
+            AppServices.Api.Configure(address, secret);
+            AppServices.Streams.Configure(address, secret);
+            AppServices.Config.PatchClashBase("external-controller", address);
+            AppServices.Config.PatchClashBase("secret", secret);
             await AppServices.Core.RestartAsync();
             var (newAddress, newSecret) = AppServices.Config.GetControllerInfo();
             AppServices.Api.Configure(newAddress, newSecret);
@@ -464,9 +464,9 @@ public sealed partial class SettingsPage : Page
             AppServices.Config.PatchClashBase("secret", previousSecret);
             try
             {
-                await AppServices.Core.RestartAsync();
                 AppServices.Api.Configure(previousAddress, previousSecret);
                 AppServices.Streams.Configure(previousAddress, previousSecret);
+                await AppServices.Core.RestartAsync();
             }
             catch { }
             await ShowInfoAsync(L10n.T("Msg_ApplyFailedTitle"), ex.Message + L10n.T("Msg_RolledBack"));

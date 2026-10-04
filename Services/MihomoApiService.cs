@@ -9,25 +9,31 @@ namespace Flux.Services;
 /// </summary>
 public class MihomoApiService
 {
-    private readonly HttpClient _http = new()
-    {
-        BaseAddress = new Uri("http://127.0.0.1:9097"),
-        Timeout = TimeSpan.FromSeconds(15),
-    };
+    private readonly HttpClient _http;
+    private sealed record Endpoint(Uri Address, string Secret);
+    private Endpoint _endpoint = new(new Uri("http://127.0.0.1:9097/"), "");
+
+    public MihomoApiService() : this(new HttpClient { Timeout = TimeSpan.FromSeconds(15) }) { }
+
+    internal MihomoApiService(HttpClient http) => _http = http;
 
     public void Configure(string controller, string secret)
     {
         var host = controller.StartsWith(':') ? "127.0.0.1" + controller : controller;
         if (!host.StartsWith("http")) host = "http://" + host;
-        _http.BaseAddress = new Uri(host.TrimEnd('/') + "/");
-        _http.DefaultRequestHeaders.Authorization =
-            string.IsNullOrEmpty(secret) ? null : new AuthenticationHeaderValue("Bearer", secret);
+        var address = new Uri(host.TrimEnd('/') + "/");
+        if (address.Scheme is not ("http" or "https"))
+            throw new ArgumentException("控制器必须使用 HTTP 或 HTTPS", nameof(controller));
+        Volatile.Write(ref _endpoint, new Endpoint(address, secret));
     }
 
     private async Task<JsonElement> SendAsync(
         HttpMethod method, string path, object? body = null, CancellationToken ct = default)
     {
-        using var req = new HttpRequestMessage(method, path);
+        var endpoint = Volatile.Read(ref _endpoint);
+        using var req = new HttpRequestMessage(method, new Uri(endpoint.Address, path));
+        req.Headers.Authorization = string.IsNullOrEmpty(endpoint.Secret)
+            ? null : new AuthenticationHeaderValue("Bearer", endpoint.Secret);
         if (body is not null)
         {
             req.Content = new StringContent(
