@@ -115,7 +115,7 @@
     <value>Perbarui</value>
   </data>
   <data name="Profiles_MenuEdit.Text" xml:space="preserve">
-    <value>Edit info</value>
+    <value>Edit informasi</value>
   </data>
   <data name="Profiles_MenuEnhance.Text" xml:space="preserve">
     <value>Edit peningkatan</value>
@@ -876,7 +876,7 @@
     <value>Mode ringan</value>
   </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
-    <value>Restart core</value>
+    <value>Mulai ulang inti</value>
   </data>
   <data name="Tray_Exit.Text" xml:space="preserve">
     <value>Keluar</value>
@@ -1284,7 +1284,7 @@
     <value>Jumlah aturan: </value>
   </data>
   <data name="Home_RestartCore.Content" xml:space="preserve">
-    <value>Restart core</value>
+    <value>Mulai ulang inti</value>
   </data>
   <data name="Home_OpenLogs.Content" xml:space="preserve">
     <value>Buka folder log</value>
@@ -1536,7 +1536,7 @@
     <value>Administrator: {0}</value>
   </data>
   <data name="Diag_SectionCore.Text" xml:space="preserve">
-    <value>--- Core ---</value>
+    <value>--- Inti ---</value>
   </data>
   <data name="Diag_CoreVersion.Text" xml:space="preserve">
     <value>Versi mihomo: {0}</value>
@@ -1642,5 +1642,137 @@
   </data>
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>Pengujian gagal: {0}</value>
+  </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>Nonaktif</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>Mulai ulang inti</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>Contoh Ctrl+Shift+F1; kosongkan untuk menonaktifkan</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>Diagnostik dan pembaruan</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>Ekspor diagnostik lokal; periksa rilis terbaru di GitHub</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>Direktori data / direktori log</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>Gagal menghapus: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>Pemulihan dan pengembalian ke keadaan sebelumnya gagal</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>Tidak dapat memperoleh SID pengguna saat ini</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>Gagal menjalankan CheckNetIsolation</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>Tidak ditemukan aplikasi UWP</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} aplikasi</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>Hanya judul orisinal</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>Wilayah tidak tersedia</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>Permintaan kehabisan waktu</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Anime Bahamut</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (Hong Kong, Makau, Taiwan)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>Gagal membersihkan setelah inti berhenti: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>Koneksi layanan terputus</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>Inti dengan hak istimewa berhenti</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>Gagal memulihkan proxy sistem: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}; pemulihan proxy sistem telah dicoba</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>Konfigurasi langganan tidak dapat diterapkan; konfigurasi sebelumnya dipertahankan</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>Pengontrol harus menggunakan HTTP atau HTTPS</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>Nonaktif</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>Nonaktif</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>Nonaktif</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Perbarui semua</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Instal/perbaiki layanan</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Pulihkan cadangan</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>Informasi</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>Peringatan</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>Kesalahan</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>Tanpa log</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>Penyedia</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>Kunci rahasia</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>Impor</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation gagal dengan kode keluar {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>Konfigurasi kosong baru</value>
   </data>
 </root>

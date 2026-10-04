@@ -660,7 +660,7 @@ public sealed partial class SettingsPage : Page
             }
             catch (Exception rollbackError)
             {
-                throw new AggregateException("恢复失败，且恢复前状态回滚失败", restoreError, rollbackError);
+                throw new AggregateException(L10n.T("Msg_RestoreRollbackFailed"), restoreError, rollbackError);
             }
             throw;
         }

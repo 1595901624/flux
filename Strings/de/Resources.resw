@@ -148,10 +148,10 @@
     <value>Netzwerk</value>
   </data>
   <data name="Connections_Download.Text" xml:space="preserve">
-    <value>Down</value>
+    <value>Download</value>
   </data>
   <data name="Connections_Upload.Text" xml:space="preserve">
-    <value>Up</value>
+    <value>Upload</value>
   </data>
   <data name="Connections_Rule.Text" xml:space="preserve">
     <value>Regel</value>
@@ -1642,5 +1642,137 @@
   </data>
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>Test fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>Ein</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>Kern neu starten</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>Zum Beispiel Ctrl+Shift+F1; zum Deaktivieren leer lassen</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>Diagnose und Updates</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>Lokale Diagnose exportieren; neueste GitHub-Version prüfen</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>Datenverzeichnis / Protokollverzeichnis</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>Löschen fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>Wiederherstellung und Rückkehr zum vorherigen Zustand fehlgeschlagen</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>SID des aktuellen Benutzers konnte nicht ermittelt werden</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation konnte nicht gestartet werden</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>Keine UWP-Anwendungen gefunden</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} Anwendungen</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>Nur Eigenproduktionen</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>Region nicht verfügbar</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>Zeitüberschreitung der Anfrage</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Bahamut-Anime</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (Hongkong, Macau, Taiwan)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>Bereinigung nach Beenden des Kerns fehlgeschlagen: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>Dienstverbindung unterbrochen</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>Privilegierter Kern beendet</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>Systemproxy konnte nicht wiederhergestellt werden: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}; Wiederherstellung des Systemproxys versucht</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>Abonnementkonfiguration konnte nicht angewendet werden; vorherige Konfiguration beibehalten</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>Controller muss HTTP oder HTTPS verwenden</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>Ein</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>Ein</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>Ein</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Alle aktualisieren</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Dienst installieren/reparieren</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Backup wiederherstellen</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>Debugging</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>Stumm</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>Anbieter</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>Geheimschlüssel</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation fehlgeschlagen mit Exitcode {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>Neue leere Konfiguration</value>
   </data>
 </root>

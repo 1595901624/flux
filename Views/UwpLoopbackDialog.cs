@@ -90,7 +90,7 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
         try
         {
             var sid = System.Security.Principal.WindowsIdentity.GetCurrent().User?.Value
-                ?? throw new InvalidOperationException("no user sid");
+                ?? throw new InvalidOperationException(L10n.T("Msg_LoopbackMissingSid"));
             var manager = new Windows.Management.Deployment.PackageManager();
             packages = manager.FindPackagesForUser(sid).ToArray();
             exempted = await GetExemptedFamiliesAsync();
@@ -130,8 +130,8 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
         }
 
         _status.Text = shown == 0
-            ? L10n.T("Msg_NoBackups")
-            : L10n.F("Msg_ProviderCount", shown);
+            ? L10n.T("Msg_LoopbackEmpty")
+            : L10n.F("Msg_LoopbackCount", shown);
     }
 
     private async Task ApplyAsync()
@@ -177,10 +177,10 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
                 CreateNoWindow = true,
             };
             using var process = Process.Start(psi);
-            if (process is null) throw new InvalidOperationException("CheckNetIsolation launch failed");
+            if (process is null) throw new InvalidOperationException(L10n.T("Msg_LoopbackLaunchFailed"));
             await process.WaitForExitAsync();
             if (process.ExitCode != 0)
-                throw new InvalidOperationException($"CheckNetIsolation exit {process.ExitCode}");
+                throw new InvalidOperationException(L10n.F("Msg_LoopbackExitFailed", process.ExitCode));
 
             _initialExempted = await GetExemptedFamiliesAsync();
             _status.Text = L10n.T("Msg_LoopbackApplied");

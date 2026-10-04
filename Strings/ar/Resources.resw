@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>فشل الاختبار: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>إعادة تشغيل النواة</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>مثلاً Ctrl+Shift+F1؛ اتركه فارغاً للتعطيل</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>التشخيص والتحديثات</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>تصدير التشخيص المحلي؛ التحقق من أحدث إصدار على GitHub</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>مجلد البيانات / مجلد السجلات</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>فشل الحذف: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>فشلت الاستعادة والعودة إلى الحالة السابقة</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>تعذر الحصول على SID للمستخدم الحالي</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>تعذر تشغيل CheckNetIsolation</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>لم يتم العثور على تطبيقات UWP</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} تطبيقات</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>المحتوى الأصلي فقط</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>المنطقة غير متاحة</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>انتهت مهلة الطلب</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>أنمي Bahamut</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (هونغ كونغ، ماكاو، تايوان)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>فشل التنظيف بعد خروج النواة: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>انقطع الاتصال بالخدمة</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>توقفت النواة ذات الامتيازات</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>فشلت استعادة بروكسي النظام: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}؛ جرت محاولة استعادة بروكسي النظام</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>تعذر تطبيق إعدادات الاشتراك؛ تم الاحتفاظ بالإعدادات السابقة</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>يجب أن تستخدم وحدة التحكم HTTP أو HTTPS</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>تحديث الكل</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>تثبيت/إصلاح الخدمة</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>استعادة نسخة</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>تصحيح الأخطاء</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>دون سجلات</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>المزوّد</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>المفتاح السري</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>فشل CheckNetIsolation برمز الخروج {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>إعدادات فارغة جديدة</value>
+  </data>
 </root>

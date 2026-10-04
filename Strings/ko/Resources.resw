@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>테스트 실패: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>코어 재시작</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>예: Ctrl+Shift+F1. 비워 두면 비활성화</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>진단 및 업데이트</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>로컬 진단 내보내기 및 GitHub 최신 릴리스 확인</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>데이터 폴더 / 로그 폴더</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>삭제 실패: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>복원 및 이전 상태로의 롤백에 실패했습니다</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>현재 사용자의 SID를 가져올 수 없습니다</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation을 실행할 수 없습니다</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>UWP 앱을 찾을 수 없습니다</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>앱 {0}개</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>오리지널 콘텐츠만</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>지역을 확인할 수 없습니다</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>요청 시간 초과</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Bahamut 애니메이션</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (홍콩, 마카오, 대만)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>코어 종료 후 정리 실패: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>서비스 연결 끊김</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>권한 있는 코어 종료됨</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>시스템 프록시 복원 실패: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}. 시스템 프록시 복원을 시도했습니다</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>구독 설정을 적용할 수 없어 이전 설정을 유지했습니다</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>컨트롤러는 HTTP 또는 HTTPS를 사용해야 합니다</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>모두 업데이트</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>서비스 설치/복구</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>백업 복구</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>디버그</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>출력 없음</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>제공자</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>비밀 키</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>가져오기</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation 실행 실패, 종료 코드 {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>새 빈 설정</value>
+  </data>
 </root>

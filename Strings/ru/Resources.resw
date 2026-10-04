@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>Ошибка тестирования: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>Перезапустить ядро</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>Например, Ctrl+Shift+F1; оставьте пустым для отключения</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>Диагностика и обновления</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>Экспорт локальной диагностики; проверка последнего выпуска на GitHub</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>Каталог данных / каталог журналов</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>Не удалось удалить: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>Не удалось восстановить данные и вернуться к предыдущему состоянию</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>Не удалось получить SID текущего пользователя</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>Не удалось запустить CheckNetIsolation</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>Приложения UWP не найдены</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>Приложений: {0}</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>Только оригинальные фильмы и сериалы</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>Регион недоступен</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>Время ожидания запроса истекло</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Аниме Bahamut</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (Гонконг, Макао, Тайвань)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>Ошибка очистки после завершения ядра: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>Соединение со службой потеряно</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>Привилегированное ядро завершено</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>Не удалось восстановить системный прокси: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}; предпринята попытка восстановить системный прокси</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>Не удалось применить конфигурацию подписки; сохранена предыдущая конфигурация</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>Контроллер должен использовать HTTP или HTTPS</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Обновить все</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Установить/восстановить службу</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Восстановить копию</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>Без журналов</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>Поставщик</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>Секретный ключ</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation завершён с кодом ошибки {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>Новая пустая конфигурация</value>
+  </data>
 </root>

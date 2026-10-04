@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>Error en la prueba: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>Reiniciar núcleo</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>Por ejemplo Ctrl+Shift+F1; dejar vacío para desactivar</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>Diagnóstico y actualizaciones</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>Exportar diagnóstico local; buscar la última versión en GitHub</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>Carpeta de datos / carpeta de registros</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>Error al eliminar: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>Fallaron la restauración y la reversión al estado anterior</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>No se pudo obtener el SID del usuario actual</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>No se pudo iniciar CheckNetIsolation</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>No se encontraron aplicaciones UWP</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} aplicaciones</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>Solo títulos originales</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>Región no disponible</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>La solicitud agotó el tiempo de espera</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Anime de Bahamut</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (Hong Kong, Macao, Taiwán)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>Error al limpiar tras la salida del núcleo: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>Conexión con el servicio perdida</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>El núcleo privilegiado terminó</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>Error al restaurar el proxy del sistema: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}; se intentó restaurar el proxy del sistema</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>No se pudo aplicar la configuración de suscripción; se conservó la anterior</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>El controlador debe usar HTTP o HTTPS</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Actualizar todo</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Instalar/reparar servicio</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Restaurar copia</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>Depuración</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>Sin registros</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>Clave secreta</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation falló con el código de salida {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>Nueva configuración vacía</value>
+  </data>
 </root>

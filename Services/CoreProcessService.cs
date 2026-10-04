@@ -165,11 +165,11 @@ public class CoreProcessService : IDisposable
             ReleaseJobObject();
             _process = null;
             process.Dispose();
-            HandleCoreLostUnsafe("内核进程已退出");
+            HandleCoreLostUnsafe(L10n.T("Core_ProcessExited"));
         }
         catch (Exception ex)
         {
-            LogService.App($"内核退出清理失败: {ex.Message}", "error");
+            LogService.App(L10n.F("Core_ExitCleanupFailed", ex.Message), "error");
         }
         finally { _lifecycleLock.Release(); }
     }
@@ -225,7 +225,7 @@ public class CoreProcessService : IDisposable
                         continue;
                     }
                     if (state is null && ++unavailableCount < 3) continue;
-                    await HandleServiceCoreLostAsync(state is null ? "服务连接中断" : "特权内核已退出", ct);
+                    await HandleServiceCoreLostAsync(L10n.T(state is null ? "Core_ServiceDisconnected" : "Core_PrivilegedExited"), ct);
                     return;
                 }
             }
@@ -261,8 +261,8 @@ public class CoreProcessService : IDisposable
         Mode = RunningMode.NotRunning;
         AppServices.Streams.Stop();
         try { AppServices.SysProxy.Reset(); }
-        catch (Exception ex) { LogService.App($"恢复系统代理失败: {ex.Message}", "error"); }
-        LogService.App($"{reason}，已尝试恢复系统代理", "error");
+        catch (Exception ex) { LogService.App(L10n.F("Core_RestoreFailed", ex.Message), "error"); }
+        LogService.App(L10n.F("Core_LostRestoreAttempted", reason), "error");
         CoreStopped?.Invoke();
     }
 

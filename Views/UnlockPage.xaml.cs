@@ -35,7 +35,12 @@ public sealed class UnlockItemVm : INotifyPropertyChanged
     public void Update(UnlockResult result)
     {
         Id = result.Id;
-        Name = result.Name;
+        Name = result.Id switch
+        {
+            "bahamut" => L10n.T("Unlock_Bahamut"),
+            "bilibili" => L10n.T("Unlock_Bilibili"),
+            _ => result.Name,
+        };
         StatusText = result.Status switch
         {
             UnlockStatus.Supported => L10n.T("Msg_UnlockSupported"),
@@ -45,9 +50,16 @@ public sealed class UnlockItemVm : INotifyPropertyChanged
             UnlockStatus.Testing => L10n.T("Msg_UnlockTesting"),
             _ => L10n.T("Msg_UnlockUntested"),
         };
+        var detail = result.Detail switch
+        {
+            "original-only unlocked" or "originals only" => L10n.T("Msg_UnlockOriginalsOnly"),
+            "no region" => L10n.T("Msg_UnlockNoRegion"),
+            "请求超时" => L10n.T("Msg_UnlockTimeout"),
+            _ => result.Detail ?? "",
+        };
         Detail = string.IsNullOrEmpty(result.Region)
-            ? result.Detail ?? ""
-            : $"{result.Detail} · {result.Region}".Trim(' ', '·');
+            ? detail
+            : $"{detail} · {result.Region}".Trim(' ', '·');
         StatusBrush = result.Status switch
         {
             UnlockStatus.Supported => Green(),

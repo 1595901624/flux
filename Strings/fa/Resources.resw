@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>آزمایش ناموفق بود: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>راه‌اندازی مجدد هسته</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>مثلاً Ctrl+Shift+F1؛ برای غیرفعال کردن خالی بگذارید</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>عیب‌یابی و به‌روزرسانی</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>صدور گزارش عیب‌یابی محلی؛ بررسی آخرین نسخه در GitHub</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>پوشهٔ داده‌ها / پوشهٔ گزارش‌ها</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>حذف ناموفق بود: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>بازیابی و بازگشت به وضعیت قبلی ناموفق بود</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>شناسهٔ SID کاربر فعلی دریافت نشد</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>اجرای CheckNetIsolation ناموفق بود</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>هیچ برنامهٔ UWP یافت نشد</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} برنامه</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>فقط محتوای اختصاصی</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>منطقه در دسترس نیست</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>مهلت درخواست به پایان رسید</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>انیمهٔ Bahamut</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (هنگ کنگ، ماکائو، تایوان)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>پاک‌سازی پس از خروج هسته ناموفق بود: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>ارتباط با سرویس قطع شد</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>هستهٔ دارای دسترسی ویژه متوقف شد</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>بازیابی پروکسی سیستم ناموفق بود: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}؛ تلاش برای بازیابی پروکسی سیستم انجام شد</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>پیکربندی اشتراک اعمال نشد؛ پیکربندی قبلی حفظ شد</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>کنترل‌کننده باید از HTTP یا HTTPS استفاده کند</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>همه را به‌روزرسانی کن</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>نصب/تعمیر سرویس</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>بازیابی پشتیبان</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>اشکال‌زدایی</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>اطلاعات</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>هشدار</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>بدون گزارش</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>ارائه‌دهنده</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>کلید محرمانه</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>وارد کردن</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation با کد خروج {0} ناموفق بود</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>پیکربندی خالی جدید</value>
+  </data>
 </root>

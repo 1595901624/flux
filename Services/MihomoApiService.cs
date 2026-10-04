@@ -23,7 +23,7 @@ public class MihomoApiService
         if (!host.StartsWith("http")) host = "http://" + host;
         var address = new Uri(host.TrimEnd('/') + "/");
         if (address.Scheme is not ("http" or "https"))
-            throw new ArgumentException("控制器必须使用 HTTP 或 HTTPS", nameof(controller));
+            throw new ArgumentException(L10n.T("Api_InvalidControllerScheme"), nameof(controller));
         Volatile.Write(ref _endpoint, new Endpoint(address, secret));
     }
 

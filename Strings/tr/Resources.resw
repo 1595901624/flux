@@ -1643,4 +1643,136 @@
   <data name="Msg_UnlockError.Text" xml:space="preserve">
     <value>Test başarısız: {0}</value>
   </data>
+  <data name="Common_On.Text" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Common_Off.Text" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Settings_CardRestartCore.Header" xml:space="preserve">
+    <value>Çekirdeği yeniden başlat</value>
+  </data>
+  <data name="Settings_CardHotkeyWindow.Description" xml:space="preserve">
+    <value>Örneğin Ctrl+Shift+F1; devre dışı bırakmak için boş bırakın</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Header" xml:space="preserve">
+    <value>Tanılama ve güncellemeler</value>
+  </data>
+  <data name="Settings_CardDiagnostics.Description" xml:space="preserve">
+    <value>Yerel tanılamayı dışa aktar; en son GitHub sürümünü denetle</value>
+  </data>
+  <data name="Settings_CardOpenDirs.Description" xml:space="preserve">
+    <value>Veri dizini / günlük dizini</value>
+  </data>
+  <data name="VM_DeleteFailed.Text" xml:space="preserve">
+    <value>Silinemedi: {0}</value>
+  </data>
+  <data name="Msg_RestoreRollbackFailed.Text" xml:space="preserve">
+    <value>Geri yükleme ve önceki duruma dönüş başarısız oldu</value>
+  </data>
+  <data name="Msg_LoopbackMissingSid.Text" xml:space="preserve">
+    <value>Geçerli kullanıcının SID değeri alınamadı</value>
+  </data>
+  <data name="Msg_LoopbackLaunchFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation başlatılamadı</value>
+  </data>
+  <data name="Msg_LoopbackEmpty.Text" xml:space="preserve">
+    <value>UWP uygulaması bulunamadı</value>
+  </data>
+  <data name="Msg_LoopbackCount.Text" xml:space="preserve">
+    <value>{0} uygulama</value>
+  </data>
+  <data name="Msg_UnlockOriginalsOnly.Text" xml:space="preserve">
+    <value>Yalnızca orijinal yapımlar</value>
+  </data>
+  <data name="Msg_UnlockNoRegion.Text" xml:space="preserve">
+    <value>Bölge bilgisi alınamadı</value>
+  </data>
+  <data name="Msg_UnlockTimeout.Text" xml:space="preserve">
+    <value>İstek zaman aşımına uğradı</value>
+  </data>
+  <data name="Unlock_Bahamut.Text" xml:space="preserve">
+    <value>Bahamut Anime</value>
+  </data>
+  <data name="Unlock_Bilibili.Text" xml:space="preserve">
+    <value>Bilibili (Hong Kong, Makao, Tayvan)</value>
+  </data>
+  <data name="Core_ExitCleanupFailed.Text" xml:space="preserve">
+    <value>Çekirdek çıkışı sonrası temizleme başarısız: {0}</value>
+  </data>
+  <data name="Core_ServiceDisconnected.Text" xml:space="preserve">
+    <value>Hizmet bağlantısı kesildi</value>
+  </data>
+  <data name="Core_PrivilegedExited.Text" xml:space="preserve">
+    <value>Ayrıcalıklı çekirdek sonlandı</value>
+  </data>
+  <data name="Core_RestoreFailed.Text" xml:space="preserve">
+    <value>Sistem proxy'si geri yüklenemedi: {0}</value>
+  </data>
+  <data name="Core_LostRestoreAttempted.Text" xml:space="preserve">
+    <value>{0}; sistem proxy'si geri yüklenmeye çalışıldı</value>
+  </data>
+  <data name="SVC_UpdateApplyRejected.Text" xml:space="preserve">
+    <value>Abonelik yapılandırması uygulanamadı; önceki yapılandırma korundu</value>
+  </data>
+  <data name="Api_InvalidControllerScheme.Text" xml:space="preserve">
+    <value>Denetleyici HTTP veya HTTPS kullanmalıdır</value>
+  </data>
+  <data name="Common_Toggle.OnContent" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Common_Toggle.OffContent" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OnContent" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Home_ToggleSysProxy.OffContent" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Home_ToggleTun.OnContent" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Home_ToggleTun.OffContent" xml:space="preserve">
+    <value>Kapalı</value>
+  </data>
+  <data name="Profiles_UpdateAll.Text" xml:space="preserve">
+    <value>Tümünü güncelle</value>
+  </data>
+  <data name="Settings_InstallService.Text" xml:space="preserve">
+    <value>Servisi kur/onar</value>
+  </data>
+  <data name="Settings_RestoreBackup.Text" xml:space="preserve">
+    <value>Yedeği geri yükle</value>
+  </data>
+  <data name="Settings_LogLevelDebug.Content" xml:space="preserve">
+    <value>Hata ayıklama</value>
+  </data>
+  <data name="Settings_LogLevelInfo.Content" xml:space="preserve">
+    <value>Bilgi</value>
+  </data>
+  <data name="Settings_LogLevelWarning.Content" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="Settings_LogLevelError.Content" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="Settings_LogLevelSilent.Content" xml:space="preserve">
+    <value>Sessiz</value>
+  </data>
+  <data name="Proxies_ProviderLabel.Text" xml:space="preserve">
+    <value>Sağlayıcı</value>
+  </data>
+  <data name="Settings_ControllerSecret.PlaceholderText" xml:space="preserve">
+    <value>Gizli anahtar</value>
+  </data>
+  <data name="Profiles_Import.Content" xml:space="preserve">
+    <value>İçe aktar</value>
+  </data>
+  <data name="Msg_LoopbackExitFailed.Text" xml:space="preserve">
+    <value>CheckNetIsolation başarısız oldu, çıkış kodu {0}</value>
+  </data>
+  <data name="SVC_EmptyConfigComment.Text" xml:space="preserve">
+    <value>Yeni boş yapılandırma</value>
+  </data>
 </root>

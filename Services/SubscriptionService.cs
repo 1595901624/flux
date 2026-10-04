@@ -119,7 +119,7 @@ public class SubscriptionService
                 {
                     if (item.Uid == Config.Profiles.Current && AppServices.Core.IsRunning &&
                         !await AppServices.Core.ApplyConfigAsync())
-                        throw new InvalidOperationException("订阅配置未能应用，已保留原配置");
+                        throw new InvalidOperationException(L10n.T("SVC_UpdateApplyRejected"));
                 });
             item.Updated = DateTime.Now;
             item.LastUpdateStatus = "success";
@@ -175,7 +175,7 @@ public class SubscriptionService
             File = "",
             Updated = DateTime.Now,
         };
-        SaveProfileFile(item, "# 新建空配置\n# proxies:\n#   - name: node\n#     type: ss\n#     ...\n");
+        SaveProfileFile(item, $"# {L10n.T("SVC_EmptyConfigComment")}\n# proxies:\n#   - name: node\n#     type: ss\n#     ...\n");
         ProfileEnhanceService.EnsureCompanionFiles(item);
         Config.Profiles.Items.Add(item);
         if (Config.Profiles.Current is null)
