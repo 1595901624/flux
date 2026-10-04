@@ -26,5 +26,7 @@
     <Compile Include="..\..\Services\WinInetProxySettings.cs" Link="WinInetProxySettings.cs" />
     <Compile Include="..\..\Services\MihomoApiService.cs" Link="MihomoApiService.cs" />
     <Compile Include="..\..\Services\CoreProcessService.cs" Link="CoreProcessService.cs" />
+    <Compile Include="..\..\Services\SysProxyService.cs" Link="SysProxyService.cs" />
+    <Compile Include="..\..\Models\VergeConfig.cs" Link="VergeConfig.cs" />
   </ItemGroup>
 </Project>

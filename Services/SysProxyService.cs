@@ -12,6 +12,27 @@ public class SysProxyService
     private readonly object _sync = new();
     private AppliedProxy? _lastApplied;
     private System.Threading.Timer? _guardTimer;
+    private readonly Func<WinInetProxySettings.State> _readState;
+    private readonly Action<bool, string, string> _writeManual;
+    private readonly Action<bool, string> _writePac;
+    private readonly string? _snapshotFile;
+    private string SnapshotFile => _snapshotFile ?? Paths.ProxyStateFile;
+
+    public SysProxyService()
+    {
+        _readState = WinInetProxySettings.Read;
+        _writeManual = WinInetProxySettings.Write;
+        _writePac = WinInetProxySettings.WritePac;
+    }
+
+    internal SysProxyService(string snapshotFile, Func<WinInetProxySettings.State> read,
+        Action<bool, string, string> writeManual, Action<bool, string> writePac) : this()
+    {
+        _snapshotFile = snapshotFile;
+        _readState = read;
+        _writeManual = writeManual;
+        _writePac = writePac;
+    }
 
     public static string DefaultBypass => "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;<local>";
 
@@ -50,7 +71,7 @@ public class SysProxyService
 
             if (pacUrl is not null)
             {
-                WinInetProxySettings.WritePac(true, pacUrl);
+                _writePac(true, pacUrl);
                 _lastApplied = new AppliedProxy(server, bypass, pacUrl);
                 LogService.App(L10n.F("Proxy_EnabledPac", pacUrl));
             }
@@ -92,7 +113,8 @@ public class SysProxyService
                 if (LoadSnapshot() is { } snapshot)
                 {
                     var current = ReadState();
-                    if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer))
+                    if (SystemProxyOwnership.IsOwned(current.Enable, current.Server, snapshot.FluxServer) ||
+                        SystemProxyOwnership.IsOwnedPac(current.PacEnabled, current.AutoConfigUrl, snapshot.FluxPacUrl))
                     {
                         SetProxy(new ProxyState(snapshot.OriginalEnable, snapshot.OriginalServer, snapshot.OriginalBypass));
                         LogService.App(L10n.T("Proxy_StaleRestored"), "warn");
@@ -119,7 +141,7 @@ public class SysProxyService
 
     public static (bool Enable, string Server) GetSystemState()
     {
-        var state = ReadState();
+        var state = WinInetProxySettings.Read();
         return (state.Enable, state.Server);
     }
 
@@ -140,21 +162,21 @@ public class SysProxyService
         _lastApplied = null;
     }
 
-    private static ProxyState ReadState()
+    private ProxyState ReadState()
     {
-        var state = WinInetProxySettings.Read();
+        var state = _readState();
         return new ProxyState(state.Enable, state.Server, state.Bypass, state.PacEnabled, state.AutoConfigUrl);
     }
 
-    private static void SetProxy(ProxyState state) =>
-        WinInetProxySettings.Write(state.Enable, state.Server, state.Bypass);
+    private void SetProxy(ProxyState state) =>
+        _writeManual(state.Enable, state.Server, state.Bypass);
 
-    private static ProxySnapshot? LoadSnapshot()
+    private ProxySnapshot? LoadSnapshot()
     {
         try
         {
-            return File.Exists(Paths.ProxyStateFile)
-                ? JsonSerializer.Deserialize<ProxySnapshot>(File.ReadAllText(Paths.ProxyStateFile))
+            return File.Exists(SnapshotFile)
+                ? JsonSerializer.Deserialize<ProxySnapshot>(File.ReadAllText(SnapshotFile))
                 : null;
         }
         catch (Exception ex)
@@ -164,12 +186,12 @@ public class SysProxyService
         }
     }
 
-    private static void SaveSnapshot(ProxySnapshot snapshot) =>
-        ConfigService.WriteAllTextAtomic(Paths.ProxyStateFile, JsonSerializer.Serialize(snapshot));
+    private void SaveSnapshot(ProxySnapshot snapshot) =>
+        ConfigService.WriteAllTextAtomic(SnapshotFile, JsonSerializer.Serialize(snapshot));
 
-    private static void DeleteSnapshot()
+    private void DeleteSnapshot()
     {
-        try { if (File.Exists(Paths.ProxyStateFile)) File.Delete(Paths.ProxyStateFile); } catch { }
+        try { if (File.Exists(SnapshotFile)) File.Delete(SnapshotFile); } catch { }
     }
 
     private void StartGuardUnsafe(VergeConfig verge)
@@ -191,7 +213,7 @@ public class SysProxyService
                     {
                         LogService.App(L10n.T("Proxy_ChangedRestoring"), "warn");
                         if (last.PacUrl is not null)
-                            WinInetProxySettings.WritePac(true, last.PacUrl);
+                            _writePac(true, last.PacUrl);
                         else
                             SetProxy(new ProxyState(true, last.Server, last.Bypass));
                     }
