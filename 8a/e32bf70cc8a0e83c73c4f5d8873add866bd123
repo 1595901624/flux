@@ -1,0 +1,182 @@
+Views/UwpLoopbackDialog.cs
+  b2973540a3591f1f 2,19-21,37-38,41-42,55-58,64,69,72-74,76-79,84-85,88-90,92-93,96-100,102-107,109-112,114-118,126,130-133,136-140,145,163-165,169-170,173-174,176-177,182,184,187-188,199-203,205-214
+Flux.Core/Proxy/LoopbackExemptions.cs
+  b2973540a3591f1f 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "8ae32bf70cc8a0e83c73c4f5d8873add866bd123",
+  "prompts": {
+    "b2973540a3591f1f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1058f-be36-7f02-88cf-e8ccfb5e64cd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 149,
+      "total_deletions": 83,
+      "accepted_lines": 148,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 249,
+    "git_diff_deleted_lines": 80,
+    "ai_additions": 135,
+    "ai_accepted": 135,
+    "BYMC": 104,
+    "mixed_additions": 0,
+    "BYAC": 135,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Proxy/LoopbackExemptions.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-48"
+        ],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1778-1780"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [
+          "183"
+        ],
+        "BYAC": [
+          "2",
+          "19-21",
+          "37-38",
+          "41-42",
+          "55-58",
+          "64",
+          "69",
+          "72-74",
+          "76-79",
+          "84-85",
+          "88-90",
+          "92-93",
+          "96-100",
+          "102-107",
+          "109-112",
+          "114-118",
+          "126",
+          "130-133",
+          "136-140",
+          "145",
+          "163-165",
+          "169-170",
+          "173-174",
+          "176-177",
+          "182",
+          "184",
+          "187-188",
+          "199-203",
+          "205-214"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LoopbackExemptionsTests.cs": {
+        "BYMC": [
+          "1-64"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791115960,
+  "requirement_id": ""
+}
