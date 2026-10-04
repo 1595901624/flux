@@ -46,55 +46,60 @@ public sealed partial class SettingsPage : Page
     private async Task LoadFromConfigAsync()
     {
         _loading = true;
-        var verge = AppServices.Config.Verge;
-
+        // 初始化赋值会触发 Toggled/SelectionChanged，整个过程必须禁止写配置和重载内核。
         try
         {
-            AutoLaunchSwitch.IsOn = await AutoStartService.IsEnabledAsync();
+            var verge = AppServices.Config.Verge;
+
+            try
+            {
+                AutoLaunchSwitch.IsOn = await AutoStartService.IsEnabledAsync();
+            }
+            catch (Exception ex)
+            {
+                AutoLaunchSwitch.IsOn = false;
+                LogService.App(L10n.F("Settings_AutoStartReadFailed", ex.Message), "warn");
+            }
+            SilentStartSwitch.IsOn = verge.EnableSilentStart;
+            SysProxySwitch.IsOn = verge.EnableSystemProxy;
+            PacSwitch.IsOn = verge.EnablePacMode;
+            HotkeyWindowBox.Text = verge.Hotkeys.GetValueOrDefault("show_hide_window", "");
+            HotkeySysproxyBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
+            HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
+            HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
+            LightweightSwitch.IsOn = verge.EnableLightweightMode;
+            var savedLang = verge.Language is null or "" or "system" ? "system" : verge.Language;
+            foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
+                if ((string)item.Tag == savedLang) { LanguageBox.SelectedItem = item; break; }
+            if (LanguageBox.SelectedItem is null) LanguageBox.SelectedIndex = 0;
+            LightweightMinutesBox.Text = verge.AutoLightweightMinutes.ToString();
+
+            // TUN / DNS / 外部控制器 初始值（来自基础配置）
+            var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
+            SelectTag(TunStackBox, string.IsNullOrEmpty(tunStack) ? "gvisor" : tunStack);
+            TunDnsHijackBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "dns-hijack") is { } hijack && hijack.Length > 0 ? hijack : "any:53";
+            var dnsMode = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "enhanced-mode");
+            SelectTag(DnsModeBox, string.IsNullOrEmpty(dnsMode) ? "fake-ip" : dnsMode);
+            DnsFakeIpRangeBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "fake-ip-range") ?? "";
+            var (controllerInfo, secretInfo) = AppServices.Config.GetControllerInfo();
+            ControllerBox.Text = controllerInfo;
+            ControllerSecretBox.Password = secretInfo;
+            ProxyGuardSwitch.IsOn = verge.EnableProxyGuard;
+            BypassBox.Text = verge.SystemProxyBypass;
+            MixedPortBox.Value = AppServices.Config.MixedPort;
+            AllowLanSwitch.IsOn = AppServices.Config.GetBool("allow-lan", false);
+            Ipv6Switch.IsOn = AppServices.Config.GetBool("ipv6", true);
+            TunSwitch.IsOn = verge.EnableTunMode;
+            AutoCloseConnSwitch.IsOn = verge.AutoCloseConnection;
+            EnableLogSwitch.IsOn = verge.EnableLog;
+
+            SelectByTag(LogLevelBox, verge.LogLevel);
+            SelectByTag(ThemeBox, verge.ThemeMode);
         }
-        catch (Exception ex)
+        finally
         {
-            AutoLaunchSwitch.IsOn = false;
-            LogService.App(L10n.F("Settings_AutoStartReadFailed", ex.Message), "warn");
+            _loading = false;
         }
-        SilentStartSwitch.IsOn = verge.EnableSilentStart;
-        SysProxySwitch.IsOn = verge.EnableSystemProxy;
-        PacSwitch.IsOn = verge.EnablePacMode;
-        HotkeyWindowBox.Text = verge.Hotkeys.GetValueOrDefault("show_hide_window", "");
-        HotkeySysproxyBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
-        HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
-        HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
-        LightweightSwitch.IsOn = verge.EnableLightweightMode;
-        _loading = true;
-        var savedLang = verge.Language is null or "" or "system" ? "system" : verge.Language;
-        foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
-            if ((string)item.Tag == savedLang) { LanguageBox.SelectedItem = item; break; }
-        if (LanguageBox.SelectedItem is null) LanguageBox.SelectedIndex = 0;
-        _loading = false;
-        LightweightMinutesBox.Text = verge.AutoLightweightMinutes.ToString();
-
-        // TUN / DNS / 外部控制器 初始值（来自基础配置）
-        var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
-        SelectTag(TunStackBox, string.IsNullOrEmpty(tunStack) ? "gvisor" : tunStack);
-        TunDnsHijackBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "dns-hijack") is { } hijack && hijack.Length > 0 ? hijack : "any:53";
-        var dnsMode = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "enhanced-mode");
-        SelectTag(DnsModeBox, string.IsNullOrEmpty(dnsMode) ? "fake-ip" : dnsMode);
-        DnsFakeIpRangeBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "fake-ip-range") ?? "";
-        var (controllerInfo, secretInfo) = AppServices.Config.GetControllerInfo();
-        ControllerBox.Text = controllerInfo;
-        ControllerSecretBox.Password = secretInfo;
-        ProxyGuardSwitch.IsOn = verge.EnableProxyGuard;
-        BypassBox.Text = verge.SystemProxyBypass;
-        MixedPortBox.Value = AppServices.Config.MixedPort;
-        AllowLanSwitch.IsOn = AppServices.Config.GetBool("allow-lan", false);
-        Ipv6Switch.IsOn = AppServices.Config.GetBool("ipv6", true);
-        TunSwitch.IsOn = verge.EnableTunMode;
-        AutoCloseConnSwitch.IsOn = verge.AutoCloseConnection;
-        EnableLogSwitch.IsOn = verge.EnableLog;
-
-        SelectByTag(LogLevelBox, verge.LogLevel);
-        SelectByTag(ThemeBox, verge.ThemeMode);
-        _loading = false;
     }
 
     private static void SelectByTag(ComboBox box, string tag)
@@ -291,7 +296,12 @@ public sealed partial class SettingsPage : Page
     private async void Tun_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
-        if (TunSwitch.IsOn && !TrayService.IsElevated() && !AppServices.Privilege.IsServiceReady())
+        var requestedTun = TunSwitch.IsOn;
+        var canEnableTun = !requestedTun || TrayService.IsElevated() ||
+            await AppServices.Privilege.IsServiceReadyAsync();
+        // 异步查询期间用户可能已再次切换开关，旧查询不得覆盖新选择。
+        if (_loading || TunSwitch.IsOn != requestedTun) return;
+        if (!canEnableTun)
         {
             _loading = true;
             TunSwitch.IsOn = false;

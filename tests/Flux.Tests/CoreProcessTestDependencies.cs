@@ -69,6 +69,13 @@ namespace Flux.Services
     public sealed class PrivilegeBroker
     {
         public bool IsServiceReady() => false;
+        public int ServiceReadyChecks { get; set; }
+        public Task<bool>? ServiceReadyResult { get; set; }
+        public Task<bool> IsServiceReadyAsync()
+        {
+            ServiceReadyChecks++;
+            return ServiceReadyResult ?? Task.FromResult(false);
+        }
         public Task<ServiceCoreState?> GetServiceCoreStateAsync(CancellationToken ct)
             => Task.FromResult<ServiceCoreState?>(null);
         public Task<OperationResult<bool>> StartCoreViaServiceAsync(string config, string core, string data)

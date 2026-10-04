@@ -60,12 +60,13 @@ public class CoreProcessService : IDisposable
 
             try
             {
-                if (enableTun && !TrayService.IsElevated() &&
-                    AppServices.Privilege?.IsServiceReady() != true)
+                var serviceReady = enableTun && AppServices.Privilege is { } privilege &&
+                    await privilege.IsServiceReadyAsync();
+                if (enableTun && !TrayService.IsElevated() && !serviceReady)
                     throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));
 
                 // TUN 启用时优先使用服务模式（普通用户无需管理员即可 TUN）
-                if (enableTun && AppServices.Privilege?.IsServiceReady() == true)
+                if (serviceReady)
                 {
                     var result = await AppServices.Privilege.StartCoreViaServiceAsync(
                         Paths.RuntimeConfigFile, Paths.CoreExePath, Paths.AppDataDir);
@@ -355,7 +356,8 @@ public class CoreProcessService : IDisposable
         try
         {
             if (!IsRunning) return false;
-            var serviceReady = AppServices.Privilege?.IsServiceReady() == true;
+            var serviceReady = Config.Verge.EnableTunMode && AppServices.Privilege is { } privilege &&
+                await privilege.IsServiceReadyAsync();
             if (Config.Verge.EnableTunMode && !TrayService.IsElevated() && !serviceReady)
             {
                 LogService.App(L10n.T("Boot_TunDisabledNoPrivilege"), "warn");

@@ -21,6 +21,21 @@ public sealed class PrivilegeBroker : IPrivilegeBroker
         return response is { Ok: true };
     }
 
+    /// <summary>与同步查询使用相同的超时和判定规则，但不阻塞调用线程。</summary>
+    public async Task<bool> IsServiceReadyAsync()
+    {
+        try
+        {
+            using var cts = new CancellationTokenSource(1500);
+            var response = await RequestAsync(ServiceRequest.Status(), cts.Token).ConfigureAwait(false);
+            return response is { Ok: true };
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     public ServiceInstallState GetServiceState()
     {
         var response = TryRequest(ServiceRequest.Status(), timeoutMs: 1500);

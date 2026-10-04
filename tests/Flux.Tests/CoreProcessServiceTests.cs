@@ -7,6 +7,40 @@ namespace Flux.Tests;
 
 public sealed class CoreProcessServiceTests
 {
+    [Theory]
+    [InlineData(false)]
+    [InlineData(true)]
+    public async Task ApplyingConfigSkipsServiceProbeWithoutTunAndAwaitsItWithTun(bool tun)
+    {
+        var core = new CoreProcessService();
+        Track(core, null, RunningMode.Service);
+        typeof(CoreProcessService).GetField("_serviceCoreRunning", BindingFlags.Instance | BindingFlags.NonPublic)!
+            .SetValue(core, true);
+        var previousTun = AppServices.Config.Verge.EnableTunMode;
+        var probe = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        AppServices.Privilege.ServiceReadyResult = probe.Task;
+        AppServices.Privilege.ServiceReadyChecks = 0;
+        AppServices.Config.Verge.EnableTunMode = tun;
+        try
+        {
+            var apply = core.ApplyConfigAsync();
+            Assert.Equal(tun ? 1 : 0, AppServices.Privilege.ServiceReadyChecks);
+            if (tun)
+            {
+                // The caller must get control back while a slow/unavailable service is being queried.
+                Assert.False(apply.IsCompleted);
+                probe.SetResult(false);
+            }
+            Assert.False(await apply.WaitAsync(TimeSpan.FromSeconds(5)));
+        }
+        finally
+        {
+            probe.TrySetResult(false);
+            AppServices.Config.Verge.EnableTunMode = previousTun;
+            AppServices.Privilege.ServiceReadyResult = null;
+        }
+    }
+
     private static Task ExitAsync(CoreProcessService core, Process exited) =>
         (Task)typeof(CoreProcessService).GetMethod("HandleSidecarExitedAsync",
             BindingFlags.Instance | BindingFlags.NonPublic)!.Invoke(core, [exited])!;
