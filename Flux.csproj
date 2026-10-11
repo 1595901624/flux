@@ -107,6 +107,8 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="Assets\Square44x44Logo.png" />
+    <!-- Shell selects targetsize / altform variants through MRT resource qualifiers. -->
+    <Content Include="Assets\Square44x44Logo.targetsize-*.png" />
     <Content Include="Assets\Square150x150Logo.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
