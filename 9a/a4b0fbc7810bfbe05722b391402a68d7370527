@@ -1,0 +1,56 @@
+Flux.csproj
+  6daac58949bf83c3 110-111
+scripts/generate-icons.py
+  6daac58949bf83c3 15,31-37,49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "9aa4b0fbc7810bfbe05722b391402a68d7370527",
+  "prompts": {
+    "6daac58949bf83c3": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a12a58-5186-71b0-9165-e210ed6437bd",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 1,
+      "accepted_lines": 11,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 11,
+    "git_diff_deleted_lines": 1,
+    "ai_additions": 11,
+    "ai_accepted": 11,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 11,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "110-111"
+        ],
+        "BYRC": []
+      },
+      "scripts/generate-icons.py": {
+        "BYMC": [],
+        "BYAC": [
+          "15",
+          "31-37",
+          "49"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1791723899,
+  "requirement_id": ""
+}
