@@ -1,0 +1,99 @@
+Flux.csproj
+  b83104070f99f638 11
+.github/workflows/build-msix.yml
+  b83104070f99f638 9
+Flux.Service/Flux.Service.csproj
+  b83104070f99f638 17
+scripts/Verify-Distributions.ps1
+  b83104070f99f638 9
+scripts/Build-StorePackages.ps1
+  b83104070f99f638 2
+Package.appxmanifest
+  b83104070f99f638 12
+Flux.Service.Installer/Flux.Service.Installer.csproj
+  b83104070f99f638 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "ee2007b89b4a137412f3698c2290b1804be7d5e0",
+  "prompts": {
+    "b83104070f99f638": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a16d06-5055-7e40-b02a-f4ef0909700e",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 7,
+      "total_deletions": 7,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 7,
+    "git_diff_deleted_lines": 7,
+    "ai_additions": 7,
+    "ai_accepted": 7,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 7,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Flux.Service.Installer.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "18"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/Flux.Service.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "17"
+        ],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "11"
+        ],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [],
+        "BYAC": [
+          "12"
+        ],
+        "BYRC": []
+      },
+      "scripts/Build-StorePackages.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "2"
+        ],
+        "BYRC": []
+      },
+      "scripts/Verify-Distributions.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1792830779,
+  "requirement_id": ""
+}
