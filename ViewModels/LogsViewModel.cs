@@ -50,9 +50,9 @@ public partial class LogsViewModel : ObservableObject
     [ObservableProperty]
     public partial bool NewestFirst { get; set; }
 
-    private readonly Queue<LogItemVm> _buffer = new();
     private DispatcherQueueTimer? _flushTimer;
     private bool _subscribed;
+    private volatile int _generation;
 
     partial void OnLevelChanged(string value) { }
     partial void OnPausedChanged(bool value) { }
@@ -65,6 +65,7 @@ public partial class LogsViewModel : ObservableObject
         {
             Items.Add(new LogItemVm(line));
         }
+        UpdateCount();
     }
 
     public void Start()
@@ -79,23 +80,32 @@ public partial class LogsViewModel : ObservableObject
         if (!_subscribed) return;
         AppServices.Streams.Log -= OnLog;
         _subscribed = false;
+        _generation++;
         _flushTimer?.Stop();
+        _pending.Clear();
     }
 
     private void OnLog(LogLine line)
     {
         if (Paused) return;
-        App.UiDispatcher.TryEnqueue(() => QueueLog(line));
+        var generation = _generation;
+        App.UiDispatcher.TryEnqueue(() =>
+        {
+            if (_subscribed && !Paused && generation == _generation) QueueLog(line);
+        });
     }
 
     private void QueueLog(LogLine line)
     {
-        _flushTimer ??= App.UiDispatcher.CreateTimer();
+        if (_flushTimer is null)
+        {
+            _flushTimer = App.UiDispatcher.CreateTimer();
+            _flushTimer.Interval = TimeSpan.FromMilliseconds(200);
+            _flushTimer.Tick += (_, _) => { _flushTimer.Stop(); Flush(); };
+        }
         _pending.Enqueue(line);
         if (!_flushTimer.IsRunning)
         {
-            _flushTimer.Interval = TimeSpan.FromMilliseconds(200);
-            _flushTimer.Tick += (_, _) => { _flushTimer.Stop(); Flush(); };
             _flushTimer.Start();
         }
     }
@@ -108,34 +118,24 @@ public partial class LogsViewModel : ObservableObject
         {
             var line = _pending.Dequeue();
             var vm = new LogItemVm(line);
-            _buffer.Enqueue(vm);
             if (NewestFirst)
                 Items.Insert(0, vm);
             else
                 Items.Add(vm);
-        }
-        if (NewestFirst)
-        {
+
             while (Items.Count > MaxCount)
-                Items.RemoveAt(Items.Count - 1);
+                Items.RemoveAt(NewestFirst ? Items.Count - 1 : 0);
         }
-        else
-        {
-            while (Items.Count > MaxCount)
-            {
-                Items.RemoveAt(0);
-                _buffer.Dequeue();
-            }
-        }
-        CountText = L10n.F("VM_LogsCount", Items.Count);
+        UpdateCount();
     }
 
-    /// <summary>切换正/倒序时按缓冲区重建显示顺序。</summary>
+    private void UpdateCount() => CountText = Items.Count == 0 ? "" : L10n.F("VM_LogsCount", Items.Count);
+
+    /// <summary>直接反转现有日志，启动日志和实时日志使用同一份有界集合。</summary>
     private void Reorder()
     {
+        var snapshot = Items.Reverse().ToArray();
         Items.Clear();
-        var snapshot = _buffer.ToList();
-        if (NewestFirst) snapshot.Reverse();
         foreach (var vm in snapshot)
             Items.Add(vm);
     }
@@ -143,8 +143,10 @@ public partial class LogsViewModel : ObservableObject
     [RelayCommand]
     public void Clear()
     {
+        _generation++;
+        _flushTimer?.Stop();
+        _pending.Clear();
         Items.Clear();
-        _buffer.Clear();
         CountText = "";
     }
 
