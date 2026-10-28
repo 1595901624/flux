@@ -1,0 +1,158 @@
+MainWindow.xaml.cs
+  3b5bd669371ab0f6 16,30,41,88-96
+Services/CoreProcessService.cs
+  3b5bd669371ab0f6 52,59,80,82,95,97,319,426-427,429,431-435,438-441
+ViewModels/HomeViewModel.cs
+  3b5bd669371ab0f6 222-228
+tests/Flux.Tests/CoreProcessTestDependencies.cs
+  3b5bd669371ab0f6 6-10,24
+Views/HomePage.xaml.cs
+  3b5bd669371ab0f6 60,73
+App.xaml.cs
+  3b5bd669371ab0f6 59-60
+MainWindow.xaml
+  3b5bd669371ab0f6 22
+Services/AppBootstrapper.cs
+  3b5bd669371ab0f6 7,12,20-21,42-46,48,54,76,90-95,104-105,124
+Services/MihomoApiService.cs
+  3b5bd669371ab0f6 53,55,58,61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "ff0c74a695eca4f6257785b0c6326a14ebe85bb1",
+  "prompts": {
+    "3b5bd669371ab0f6": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a17de3-bca3-72d1-a449-a2f1042f5e95",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 179,
+      "total_deletions": 131,
+      "accepted_lines": 183,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 114,
+    "git_diff_deleted_lines": 29,
+    "ai_additions": 74,
+    "ai_accepted": 74,
+    "BYMC": 36,
+    "mixed_additions": 0,
+    "BYAC": 74,
+    "BYRC": 0,
+    "per_file": {
+      "App.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "59-60"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "22"
+        ],
+        "BYRC": []
+      },
+      "MainWindow.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "16",
+          "30",
+          "41",
+          "88-96"
+        ],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "7",
+          "12",
+          "20-21",
+          "42-46",
+          "48",
+          "54",
+          "76",
+          "90-95",
+          "104-105",
+          "124"
+        ],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "52",
+          "59",
+          "80",
+          "82",
+          "95",
+          "97",
+          "319",
+          "426-427",
+          "429",
+          "431-435",
+          "438-441"
+        ],
+        "BYRC": []
+      },
+      "Services/MihomoApiService.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "53",
+          "55",
+          "58",
+          "61"
+        ],
+        "BYRC": []
+      },
+      "ViewModels/HomeViewModel.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "222-228"
+        ],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "60",
+          "73"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessServiceTests.cs": {
+        "BYMC": [
+          "10-36"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessTestDependencies.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "6-10",
+          "24"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/MihomoApiServiceTests.cs": {
+        "BYMC": [
+          "10-18"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793154021,
+  "requirement_id": ""
+}
