@@ -6,7 +6,7 @@
 param(
     [ValidateSet('Portable', 'Msix', 'All')]
     [string]$Mode = 'All',
-    [string]$Version = '0.5.0'
+    [string]$Version = '0.5.1'
 )
 
 $ErrorActionPreference = 'Stop'
