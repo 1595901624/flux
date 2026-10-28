@@ -49,12 +49,14 @@ public class CoreProcessService : IDisposable
         try
         {
             if (IsRunning) return;
+            Program.Trace("core: prepare begin");
             KillLeftoverCores();
             Paths.EnsureCoreExecutable();
 
             if (!usePreparedRuntime)
                 await ValidatedFileUpdate.ApplyAsync(Paths.RuntimeConfigFile,
                     Config.WriteRuntimeFile, ValidateConfigAsync);
+            Program.Trace("core: config validated");
             var enableTun = YamlOps.GetScalar(YamlOps.ParseMapping(File.ReadAllText(Paths.RuntimeConfigFile))!,
                 "tun", "enable") == "true";
 
@@ -75,7 +77,9 @@ public class CoreProcessService : IDisposable
                         Mode = RunningMode.Service;
                         _serviceCoreRunning = true;
                         await WaitForControllerAsync(15000, checkSidecarProcess: false);
+                        Program.Trace("core: controller ready");
                         await RestoreProfileSelectionsAsync();
+                        Program.Trace("core: selections restored");
                         StartServiceMonitor();
                         LogService.App(L10n.T("Core_StartedService"));
                         CoreStarted?.Invoke();
@@ -88,7 +92,9 @@ public class CoreProcessService : IDisposable
 
                 StartSidecar(Paths.RuntimeConfigFile, Paths.AppDataDir);
                 await WaitForControllerAsync(15000);
+                Program.Trace("core: controller ready");
                 await RestoreProfileSelectionsAsync();
+                Program.Trace("core: selections restored");
                 Mode = RunningMode.Sidecar;
                 LogService.App(L10n.T("Core_Started"));
                 CoreStarted?.Invoke();
@@ -310,6 +316,7 @@ public class CoreProcessService : IDisposable
     /// <summary>用内核 `-t` 参数校验配置文件，失败抛异常。</summary>
     private async Task ValidateConfigAsync(string configFile)
     {
+        Program.Trace("core: validation begin");
         var psi = new ProcessStartInfo
         {
             FileName = Paths.CoreExePath,
@@ -416,19 +423,22 @@ public class CoreProcessService : IDisposable
 
     private async Task WaitForControllerAsync(int timeoutMs, bool checkSidecarProcess = true)
     {
-        var deadline = Environment.TickCount64 + timeoutMs;
-        while (Environment.TickCount64 < deadline)
+        using var timeout = new CancellationTokenSource(timeoutMs);
+        try
         {
-            if (checkSidecarProcess && _process is { HasExited: true })
-                throw new InvalidOperationException(L10n.T("Core_ProcessExited"));
-            try
+            while (true)
             {
-                if (await AppServices.Api.GetVersionAsync() is not null) return;
+                timeout.Token.ThrowIfCancellationRequested();
+                if (checkSidecarProcess && _process is { HasExited: true })
+                    throw new InvalidOperationException(L10n.T("Core_ProcessExited"));
+                if (await AppServices.Api.GetVersionAsync(timeout.Token) is not null) return;
+                await Task.Delay(250, timeout.Token);
             }
-            catch { }
-            await Task.Delay(250);
         }
-        throw new TimeoutException(L10n.T("Core_ControllerTimeout"));
+        catch (OperationCanceledException) when (timeout.IsCancellationRequested)
+        {
+            throw new TimeoutException(L10n.T("Core_ControllerTimeout"));
+        }
     }
 
     /// <summary>

@@ -4,11 +4,12 @@ using Microsoft.UI.Xaml;
 namespace Flux.Services;
 
 /// <summary>
-/// 应用启动引导：初始化目录与配置 → 启动内核 → 初始化托盘 → 显示主窗口 → 应用系统代理。
+/// 应用启动引导：初始化目录与语言 → 显示主窗口 → 后台启动内核 → 应用启动状态。
 /// </summary>
 public static class AppBootstrapper
 {
     public static bool Started { get; private set; }
+    public static bool IsStarting { get; private set; }
     public static bool StartFailed { get; private set; }
     public static string StartError { get; private set; } = "";
 
@@ -16,7 +17,8 @@ public static class AppBootstrapper
 
     public static async Task StartAsync()
     {
-        if (Started) return;
+        if (Started || IsStarting) return;
+        IsStarting = true;
         var dispatcher = DispatcherQueue.GetForCurrentThread();
         _uiDispatcher = dispatcher;
 
@@ -37,14 +39,19 @@ public static class AppBootstrapper
             catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
 
             Program.Trace("lang ok");
+            var silentByArg = Program.Args.Any(a => a.Equals("--silent", StringComparison.OrdinalIgnoreCase));
+            var hasDeepLink = Program.Args.Any(DeepLinkService.IsSupportedUri);
+            var silent = (AppServices.Config.Verge.EnableSilentStart || silentByArg) && !hasDeepLink;
+            if (!silent) App.ShowMainWindow();
+
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
-            AppServices.SysProxy.ClearStaleProxy();
+            await Task.Run(AppServices.SysProxy.ClearStaleProxy);
             Program.Trace("stale-proxy ok");
 
             // 已保存的 TUN 状态只在有能力特权运行内核时生效：
             // 管理员进程或 Flux 服务可用（普通用户经服务模式 TUN），否则安全关闭避免断网。
             if (AppServices.Config.Verge.EnableTunMode && !TrayService.IsElevated()
-                && !AppServices.Privilege.IsServiceReady())
+                && !await AppServices.Privilege.IsServiceReadyAsync())
             {
                 AppServices.Config.Verge.EnableTunMode = false;
                 AppServices.Config.SaveVerge();
@@ -66,14 +73,7 @@ public static class AppBootstrapper
 
             Program.Trace("tray init");
             AppServices.Tray.Initialize();
-            App.ShowMainWindow();
-            App.ApplyTheme(AppServices.Config.Verge.ThemeMode);
-
-            // 静默启动：--silent 参数或设置开启时隐藏窗口
-            var silentByArg = Program.Args.Any(a => a.Equals("--silent", StringComparison.OrdinalIgnoreCase));
-            var hasDeepLink = Program.Args.Any(DeepLinkService.IsSupportedUri);
-            if ((AppServices.Config.Verge.EnableSilentStart || silentByArg) && !hasDeepLink)
-                App.MainWindow?.AppWindow.Hide();
+            if (!coreReady && App.MainWindow is null) App.ShowMainWindow();
 
             AppServices.DeepLink.HandleArgs(Program.Args);
             await ApplyStartupStateAsync(coreReady);
@@ -87,6 +87,12 @@ public static class AppBootstrapper
             LogService.App(L10n.F("Boot_StartFailed", ex.Message), "error");
             dispatcher.TryEnqueue(() => App.ShowMainWindow()); // 失败也显示窗口供查看日志
         }
+        finally
+        {
+            IsStarting = false;
+            App.MainWindow?.SetStartupState(false);
+            Program.Trace("bootstrapper complete");
+        }
     }
 
     /// <summary>启动内核并订阅实时数据流。</summary>
@@ -95,7 +101,8 @@ public static class AppBootstrapper
         AppServices.Core.CoreStarted += AppServices.Streams.Start;
         try
         {
-            await AppServices.Core.StartAsync();
+            // 配置合成、脚本和进程启动不占用 UI 线程；启动期间配置操作被禁用。
+            await Task.Run(() => AppServices.Core.StartAsync());
             return true;
         }
         catch (Exception ex)
@@ -114,7 +121,7 @@ public static class AppBootstrapper
         try
         {
             if (AppServices.Config.Verge.EnableSystemProxy && coreReady)
-                AppServices.SysProxy.Apply(AppServices.Config.Verge);
+                await Task.Run(() => AppServices.SysProxy.Apply(AppServices.Config.Verge));
             else if (AppServices.Config.Verge.EnableSystemProxy)
                 LogService.App(L10n.T("Boot_SkipProxyNoCore"), "warn");
         }
@@ -125,7 +132,6 @@ public static class AppBootstrapper
 
         AppServices.Subscription.StartAutoUpdateTimer();
         InitializeHotkeys();
-        await Task.CompletedTask;
     }
 
     /// <summary>初始化全局热键：注册失败（冲突）的组合写入日志并对用户可见。</summary>

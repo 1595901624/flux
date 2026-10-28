@@ -3,6 +3,11 @@ using Flux.Core.Contracts;
 using Flux.Core.Service;
 using YamlDotNet.RepresentationModel;
 
+namespace Flux
+{
+    public static class Program { public static void Trace(string message) { } }
+}
+
 namespace Flux.Models
 {
     public sealed class ProfileItem { }
@@ -16,7 +21,7 @@ namespace Flux.Services
     {
         public static ConfigService Config { get; } = new();
         public static PrivilegeBroker Privilege { get; } = new();
-        public static MihomoApiService Api { get; } = new();
+        public static MihomoApiService Api { get; set; } = new();
         public static TestStreams Streams { get; } = new();
         public static TestProxy SysProxy { get; } = new();
     }

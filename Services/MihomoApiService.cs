@@ -50,13 +50,15 @@ public class MihomoApiService
     // ---------- 基础 ----------
 
     /// <summary>GET /version — 也用于启动就绪探测。</summary>
-    public async Task<string?> GetVersionAsync()
+    public async Task<string?> GetVersionAsync(CancellationToken ct = default)
     {
+        ct.ThrowIfCancellationRequested();
         try
         {
-            var json = await SendAsync(HttpMethod.Get, "version").ConfigureAwait(false);
+            var json = await SendAsync(HttpMethod.Get, "version", ct: ct).ConfigureAwait(false);
             return json.TryGetProperty("version", out var v) ? v.GetString() : null;
         }
+        catch (OperationCanceledException) when (ct.IsCancellationRequested) { throw; }
         catch { return null; }
     }
 

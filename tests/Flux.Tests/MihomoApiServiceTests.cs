@@ -7,6 +7,16 @@ namespace Flux.Tests;
 public class MihomoApiServiceTests
 {
     [Fact]
+    public async Task VersionProbeHonorsCallerCancellation()
+    {
+        using var http = new HttpClient(new RecordingHandler());
+        var api = new MihomoApiService(http);
+        using var cts = new CancellationTokenSource();
+        cts.Cancel();
+        await Assert.ThrowsAnyAsync<OperationCanceledException>(() => api.GetVersionAsync(cts.Token));
+    }
+
+    [Fact]
     public async Task ReconfigureAfterRequestsUsesNewAddressAndSecret()
     {
         var handler = new RecordingHandler();

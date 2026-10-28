@@ -7,6 +7,33 @@ namespace Flux.Tests;
 
 public sealed class CoreProcessServiceTests
 {
+    [Fact]
+    public async Task ControllerDeadlineCancelsAnUnresponsiveRequest()
+    {
+        using var http = new HttpClient(new UnresponsiveHandler()) { Timeout = TimeSpan.FromSeconds(15) };
+        var previous = AppServices.Api;
+        AppServices.Api = new MihomoApiService(http);
+        try
+        {
+            using var core = new CoreProcessService();
+            var wait = (Task)typeof(CoreProcessService).GetMethod("WaitForControllerAsync",
+                BindingFlags.Instance | BindingFlags.NonPublic)!.Invoke(core, [100, false])!;
+            // A stalled HTTP request must obey the controller deadline, not the 15s client timeout.
+            await Assert.ThrowsAsync<TimeoutException>(() => wait.WaitAsync(TimeSpan.FromSeconds(3)));
+            Assert.True(wait.IsFaulted); // The controller task itself timed out, not only the test's WaitAsync.
+        }
+        finally { AppServices.Api = previous; }
+    }
+
+    private sealed class UnresponsiveHandler : HttpMessageHandler
+    {
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken ct)
+        {
+            await Task.Delay(Timeout.Infinite, ct);
+            throw new InvalidOperationException("Unreachable");
+        }
+    }
+
     [Theory]
     [InlineData(false)]
     [InlineData(true)]

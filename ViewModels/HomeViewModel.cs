@@ -193,7 +193,6 @@ public partial class HomeViewModel : ObservableObject
     public async Task RefreshAsync()
     {
         UpdateUptime();
-        await RefreshRuleCountAsync();
         var verge = AppServices.Config.Verge;
         SystemProxyOn = verge.EnableSystemProxy;
         TunOn = verge.EnableTunMode;
@@ -219,6 +218,14 @@ public partial class HomeViewModel : ObservableObject
         SubscriptionStatusText = current is null
             ? L10n.T("VM_SubNoProfile")
             : current.Type == "remote" ? L10n.T("VM_SubRemoteHint") : L10n.T("VM_SubLocalHint");
+
+        if (AppBootstrapper.IsStarting)
+        {
+            CoreStatusText = L10n.T("Msg_Loading");
+            return;
+        }
+
+        await RefreshRuleCountAsync();
 
         try
         {

@@ -13,6 +13,7 @@ namespace Flux;
 public sealed partial class MainWindow : Window
 {
     private readonly EndSessionHook? _endSessionHook;
+    private bool _starting;
 
     [DllImport("user32.dll")]
     private static extern uint GetDpiForWindow(IntPtr hwnd);
@@ -26,6 +27,7 @@ public sealed partial class MainWindow : Window
     {
         InitializeComponent();
         ((FrameworkElement)Content).FlowDirection = LanguageLayout.Current;
+        ((FrameworkElement)Content).Loaded += (_, _) => Program.Trace("mainwindow content loaded");
 
         Title = "Flux";
         ExtendsContentIntoTitleBar = true;
@@ -36,7 +38,7 @@ public sealed partial class MainWindow : Window
         };
 
         NavView.SelectedItem = NavView.MenuItems[0];
-        ContentFrame.Navigate(typeof(HomePage));
+        if (ContentFrame.Content is null) ContentFrame.Navigate(typeof(HomePage));
 
         // 侧边栏收起时隐藏左下角流量图
         TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed;
@@ -81,6 +83,17 @@ public sealed partial class MainWindow : Window
         _graphTimer.Interval = TimeSpan.FromSeconds(1);
         _graphTimer.Tick += (_, _) => RedrawGraph();
         _graphTimer.Start();
+    }
+
+    public void SetStartupState(bool starting)
+    {
+        var wasStarting = _starting;
+        _starting = starting;
+        NavView.IsEnabled = !starting;
+        AppTitleSub.Text = starting ? L10n.T("Msg_Loading") : "";
+        StartupProgress.IsActive = starting;
+        StartupProgress.Visibility = starting ? Visibility.Visible : Visibility.Collapsed;
+        if (wasStarting && !starting && ContentFrame.Content is HomePage home) _ = home.Vm.RefreshAsync();
     }
 
     private void OnTraffic(double up, double down) =>

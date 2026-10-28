@@ -19,6 +19,7 @@
                 <Image Width="22" Height="22" Source="ms-appx:///Assets/app.svg" AutomationProperties.Name="Flux" />
                 <TextBlock Text="Flux" FontWeight="SemiBold" FontSize="14" VerticalAlignment="Center" />
                 <TextBlock x:Name="AppTitleSub" Text="" Opacity="0.6" FontSize="12" VerticalAlignment="Center" />
+                <ProgressRing x:Name="StartupProgress" Width="16" Height="16" IsActive="False" Visibility="Collapsed" />
             </StackPanel>
         </Grid>
 

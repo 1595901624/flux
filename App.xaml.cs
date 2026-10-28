@@ -56,6 +56,8 @@ public partial class App : Application
                 MainWindow = new MainWindow();
                 Program.Trace("mainwindow created");
             }
+            MainWindow.SetStartupState(Services.AppBootstrapper.IsStarting);
+            ApplyTheme(Services.AppServices.Config.Verge.ThemeMode);
             MainWindow.Activate();
             Program.Trace("mainwindow activated");
         }

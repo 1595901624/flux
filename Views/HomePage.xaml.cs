@@ -57,6 +57,7 @@ public sealed partial class HomePage : Page
 
     private async void SysProxy_Toggled(object sender, RoutedEventArgs e)
     {
+        if (AppBootstrapper.IsStarting || ((ToggleSwitch)sender).IsOn == AppServices.Config.Verge.EnableSystemProxy) return;
         try
         {
             await Vm.ToggleSystemProxyAsync(((ToggleSwitch)sender).IsOn);
@@ -69,6 +70,7 @@ public sealed partial class HomePage : Page
 
     private async void Tun_Toggled(object sender, RoutedEventArgs e)
     {
+        if (AppBootstrapper.IsStarting || ((ToggleSwitch)sender).IsOn == AppServices.Config.Verge.EnableTunMode) return;
         try
         {
             await Vm.ToggleTunAsync(((ToggleSwitch)sender).IsOn);
