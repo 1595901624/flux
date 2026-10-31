@@ -1,0 +1,58 @@
+.github/workflows/build-msix.yml
+  ca9dc92348df8b08 135-140
+scripts/Install-FluxSideload.ps1
+  ca9dc92348df8b08 1-4,6-8,12-23,27,33-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "0709cbe12f0772a7a9da3a566e35fffeecdb4ac0",
+  "prompts": {
+    "ca9dc92348df8b08": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1913e-2416-7aa3-808d-f635890f6cf2",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 55,
+      "total_deletions": 14,
+      "accepted_lines": 55,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 54,
+    "git_diff_deleted_lines": 13,
+    "ai_additions": 54,
+    "ai_accepted": 54,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 54,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "135-140"
+        ],
+        "BYRC": []
+      },
+      "scripts/Install-FluxSideload.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "1-4",
+          "6-8",
+          "12-23",
+          "27",
+          "33-60"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793438896,
+  "requirement_id": ""
+}
