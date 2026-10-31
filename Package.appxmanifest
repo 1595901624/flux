@@ -9,11 +9,11 @@
   <Identity
       Name="194272F5631C5.FluxProxy"
       Publisher="CN=98115004-601A-4933-A2AC-7F81FB1DAD0A"
-      Version="0.6.0.0" />
+      Version="0.7.0.0" />
 
   <Properties>
     <DisplayName>Flux Proxy</DisplayName>
-    <PublisherDisplayName>卢浩宇</PublisherDisplayName>
+    <PublisherDisplayName>Cloris Luna</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
