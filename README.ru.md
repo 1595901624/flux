@@ -6,6 +6,8 @@ Flux — лёгкий прокси-клиент для Windows на базе я�
 
 [Скачать](https://github.com/1595901624/flux/releases) · [Сообщить о проблеме](https://github.com/1595901624/flux/issues) · [Лицензия](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## Скриншоты
 
 ### Главная страница

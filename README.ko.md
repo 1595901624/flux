@@ -6,6 +6,8 @@ Flux는 [mihomo](https://github.com/MetaCubeX/mihomo) 코어를 사용하는 가
 
 [다운로드](https://github.com/1595901624/flux/releases) · [문제 신고](https://github.com/1595901624/flux/issues) · [라이선스](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## 스크린샷
 
 ### 홈

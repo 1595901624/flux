@@ -6,6 +6,8 @@ Flux هو عميل وكيل خفيف لنظام Windows يعتمد على نوا
 
 [تنزيل](https://github.com/1595901624/flux/releases) · [الإبلاغ عن مشكلة](https://github.com/1595901624/flux/issues) · [الترخيص](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## لقطات الشاشة
 
 ### الصفحة الرئيسية

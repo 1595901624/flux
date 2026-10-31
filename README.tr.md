@@ -6,6 +6,8 @@ Flux, [mihomo](https://github.com/MetaCubeX/mihomo) çekirdeğini kullanan, WinU
 
 [İndir](https://github.com/1595901624/flux/releases) · [Sorun bildir](https://github.com/1595901624/flux/issues) · [Lisans](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## Ekran görüntüleri
 
 ### Ana sayfa

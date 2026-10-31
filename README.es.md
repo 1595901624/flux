@@ -6,6 +6,8 @@ Flux es un cliente proxy ligero para Windows basado en el núcleo [mihomo](https
 
 [Descargar](https://github.com/1595901624/flux/releases) · [Informar de un problema](https://github.com/1595901624/flux/issues) · [Licencia](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## Capturas de pantalla
 
 ### Inicio

@@ -6,6 +6,8 @@ Flux 是一款基於 [mihomo](https://github.com/MetaCubeX/mihomo) 核心的輕�
 
 [下載安裝](https://github.com/1595901624/flux/releases) · [回報問題](https://github.com/1595901624/flux/issues) · [授權條款](LICENSE)
 
+[![從 Microsoft 取得](https://get.microsoft.com/images/zh-tw%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## 介面預覽
 
 ### 首頁概覽
