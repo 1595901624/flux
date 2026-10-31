@@ -1,0 +1,243 @@
+Views/SettingsPage.xaml
+  74900f7d25919519 139-140
+Flux.Core/Config/SettingsConfigEditor.cs
+  74900f7d25919519 1-71
+Views/SettingsPage.xaml.cs
+  74900f7d25919519 5,12,82,365,414-420,424-430,444-445,452-480,761
+Models/VergeConfig.cs
+  74900f7d25919519 96-102
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "3995a8d70b75dac5def63dee79b5e0f666e2ef3a",
+  "prompts": {
+    "74900f7d25919519": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a190a1-c0bc-70c3-9b7c-4f2612ca722d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 133,
+      "total_deletions": 19,
+      "accepted_lines": 132,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 509,
+    "git_diff_deleted_lines": 103,
+    "ai_additions": 130,
+    "ai_accepted": 130,
+    "BYMC": 362,
+    "mixed_additions": 0,
+    "BYAC": 130,
+    "BYRC": 0,
+    "per_file": {
+      "Flux.Core/Config/SettingsConfigEditor.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-71"
+        ],
+        "BYRC": []
+      },
+      "Models/VergeConfig.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "96-102"
+        ],
+        "BYRC": []
+      },
+      "Services/HotkeyService.cs": {
+        "BYMC": [
+          "2",
+          "16",
+          "18-22",
+          "35",
+          "37-41",
+          "43-44",
+          "46-48",
+          "54-55",
+          "58-59",
+          "61-62",
+          "65-77",
+          "79-80",
+          "82",
+          "87-88",
+          "92-94",
+          "96-98",
+          "101-114",
+          "116-118",
+          "126-130",
+          "135",
+          "145",
+          "147-169",
+          "175-176",
+          "186-190",
+          "198",
+          "200-213",
+          "215-218",
+          "222",
+          "224-228",
+          "237",
+          "244",
+          "246-249",
+          "251",
+          "256-259",
+          "262",
+          "274",
+          "296-298",
+          "300-306"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1104"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "139-140"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "5",
+          "12",
+          "82",
+          "365",
+          "414-420",
+          "424-430",
+          "444-445",
+          "452-480",
+          "761"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [
+          "34"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/HotkeyServiceTests.cs": {
+        "BYMC": [
+          "1-68"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SettingsConfigEditorTests.cs": {
+        "BYMC": [
+          "1-98"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/WebDavSettingsTests.cs": {
+        "BYMC": [
+          "1-32"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793430851,
+  "requirement_id": ""
+}
