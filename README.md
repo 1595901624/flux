@@ -1,51 +1,78 @@
 # Flux
 
-[简体中文](README.zh-CN.md)
+English | [简体中文](README.zh-CN.md)
 
-Flux is a lightweight proxy client for Windows powered by the [mihomo](https://github.com/MetaCubeX/mihomo) core, built with WinUI 3.
+A lightweight Windows proxy client powered by [mihomo](https://github.com/MetaCubeX/mihomo), built with WinUI 3 and Fluent design.
+
+[Downloads](https://github.com/1595901624/flux/releases) · [Report an issue](https://github.com/1595901624/flux/issues) · [License](LICENSE)
+
+## Screenshots
+
+### Home
+
+Manage the system proxy and routing mode, and view the active profile, current node, live traffic, and core status in one place.
+
+![Flux home page showing network controls, the active profile, traffic statistics, and core information](screenshots/home.png)
+
+### Proxies
+
+Browse proxy groups, filter nodes by name or type, switch nodes, and run latency tests.
+
+![Flux proxies page showing routing modes, proxy groups, node selection, and latency test results](screenshots/proxies.png)
+
+The screenshots use the demo profile in [`sample-profile.yaml`](sample-profile.yaml). Its placeholder servers are for UI demonstration and cannot be used as working proxy endpoints.
 
 ## Features
 
-- **Modern UI** — Native WinUI 3 interface with Mica backdrop and Fluent design
-- **System tray** — Closing the window hides to tray; exit from the tray menu
-- **Real-time traffic graph** — Live upload/download throughput monitoring
-- **YAML profiles** — Uses Clash-compatible YAML configuration (proxies, proxy groups, rules)
-- **Self-contained** — Bundles the mihomo core and Windows App SDK, no extra installation required
+- **Native Windows interface** — WinUI 3, Mica backdrop, Fluent design, and multiple interface languages.
+- **Flexible routing** — Rule, Global, and Direct modes, with system proxy and TUN controls.
+- **Profile management** — Import Clash-compatible YAML files or subscription URLs, switch profiles, and update subscriptions.
+- **Proxy management** — Select nodes, filter by name or type, inspect proxy providers, and test latency.
+- **Traffic and diagnostics** — Live upload/download graphs, active connections, routing rules, core logs, and unlock tests.
+- **Tray integration** — Close the window to hide Flux to the system tray; use the tray menu to exit.
+- **Bundled runtime and core** — Distribution builds include mihomo, .NET, and Windows App SDK components.
 
-## Requirements
+## Getting started
 
-- Windows 10 version 19041 (2004) or later (x86, x64, or ARM64)
-- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) with the Windows workload for building
+Flux supports **Windows 10 version 2004 (build 19041) or later**, on x86, x64, and ARM64.
 
-## Getting Started
+1. Open [Releases](https://github.com/1595901624/flux/releases) and select a package matching your Windows architecture. Follow the installation instructions for that release. For a sideload ZIP, extract it and run the included `Install-FluxSideload.ps1` as administrator.
+2. Launch Flux and open **Profiles**. Import your subscription URL or a local Clash-compatible YAML file, then select the profile to activate it.
+3. Open **Proxies** to choose a node or proxy group. Use **Rule** mode to route traffic according to the profile.
+4. Enable **System proxy** on **Home** to let applications that follow Windows proxy settings use Flux.
 
-1. Clone the repository:
+TUN mode requires administrator privileges or a working Flux privileged service. Closing the window keeps Flux running in the tray.
 
-   ```bash
-   git clone https://github.com/1595901624/flux.git
-   cd flux
-   ```
+Unsigned MSIX artifacts from CI are for development testing. Portable ZIP artifacts, when provided, can be extracted and launched with `Flux.exe`.
 
-2. Build and run:
+## Configuration and data
 
-   ```bash
-   dotnet build Flux.csproj -c Release
-   ```
+Flux uses Clash-compatible YAML profiles containing `proxies`, `proxy-groups`, and `rules`. See [`sample-profile.yaml`](sample-profile.yaml) for an example. Supply your own valid server details or subscription URL; Flux does not include a proxy subscription.
 
-   Or open `Flux.slnx` in Visual Studio 2022 and press <kbd>F5</kbd>.
+By default, settings, profiles, and logs are stored in `%APPDATA%\flux`. For a portable distribution in a writable directory, create an empty `.config\PORTABLE` file beside `Flux.exe` before launch to store data in `.config\flux` instead.
+
+## Build from source
+
+Build on Windows with the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0). The project targets Windows SDK `10.0.22621.0` and uses WinUI 3. For IDE development, use a Visual Studio version that supports .NET 10 and WinUI 3.
+
+```powershell
+git clone https://github.com/1595901624/flux.git
+cd flux
+dotnet restore Flux.slnx
+dotnet build Flux.csproj -c Release
+dotnet run --project Flux.csproj -c Release --no-build
+```
+
+The default target is `win-x64`. Pass `-r win-x86` or `-r win-arm64` to build for another architecture. The repository includes a matching mihomo core for each target.
 
 Run the tests:
 
-```bash
-dotnet test Flux.slnx -c Release
+```powershell
+dotnet test tests/Flux.Tests/Flux.Tests.csproj -c Release
 ```
 
-The portable ZIP from Releases can be extracted and run directly. Unsigned MSIX artifacts produced by CI are for development testing only and are not published as installable releases.
-
-## Configuration
-
-Flux uses standard Clash-compatible YAML profiles. See [`sample-profile.yaml`](sample-profile.yaml) for a minimal example covering proxies, proxy groups, and rules.
+For distribution packaging, including the privileged service payload, see the [build workflow](.github/workflows/build-msix.yml).
 
 ## License
 
-Flux is licensed under the [GNU GPL v3.0](LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the bundled mihomo version, checksum, corresponding source, and license information.
+Flux is licensed under [GNU GPL v3.0](LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the bundled mihomo version, checksum, corresponding source, and license information.
