@@ -1,0 +1,111 @@
+Views/WrappingPanel.cs
+  74900f7d25919519 1-66
+Views/ConnectionsPage.xaml
+  74900f7d25919519 9,20,22-23,35,42,63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "125313475c24fc8f9da45986da4329f7c9c4b8df",
+  "prompts": {
+    "74900f7d25919519": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a190a1-c0bc-70c3-9b7c-4f2612ca722d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 74,
+      "total_deletions": 20,
+      "accepted_lines": 73,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 110,
+    "git_diff_deleted_lines": 87,
+    "ai_additions": 73,
+    "ai_accepted": 73,
+    "BYMC": 37,
+    "mixed_additions": 0,
+    "BYAC": 73,
+    "BYRC": 0,
+    "per_file": {
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "9",
+          "20",
+          "22-23",
+          "35",
+          "42",
+          "63"
+        ],
+        "BYRC": []
+      },
+      "Views/LogsPage.xaml": {
+        "BYMC": [
+          "9",
+          "19",
+          "21",
+          "29",
+          "31",
+          "37",
+          "43",
+          "50",
+          "52"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [
+          "9",
+          "20",
+          "23",
+          "27",
+          "30",
+          "36",
+          "39",
+          "42",
+          "45"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProxiesPage.xaml": {
+        "BYMC": [
+          "10",
+          "21-29",
+          "36",
+          "42"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/RulesPage.xaml": {
+        "BYMC": [
+          "9",
+          "18",
+          "20-21",
+          "23",
+          "29",
+          "35"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/WrappingPanel.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "1-66"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793437587,
+  "requirement_id": ""
+}
