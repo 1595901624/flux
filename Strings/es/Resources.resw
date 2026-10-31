@@ -1778,4 +1778,7 @@
   <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
     <value>Las excepciones del sistema no coinciden con las aplicaciones seleccionadas. Actualiza la lista e inténtalo de nuevo.</value>
   </data>
+  <data name="Msg_StartingCore.Text" xml:space="preserve">
+    <value>Iniciando el núcleo…</value>
+  </data>
 </root>

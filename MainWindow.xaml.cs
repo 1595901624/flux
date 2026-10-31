@@ -90,7 +90,7 @@ public sealed partial class MainWindow : Window
         var wasStarting = _starting;
         _starting = starting;
         NavView.IsEnabled = !starting;
-        AppTitleSub.Text = starting ? L10n.T("Msg_Loading") : "";
+        AppTitleSub.Text = starting ? L10n.T("Msg_StartingCore") : "";
         StartupProgress.IsActive = starting;
         StartupProgress.Visibility = starting ? Visibility.Visible : Visibility.Collapsed;
         if (wasStarting && !starting && ContentFrame.Content is HomePage home) _ = home.Vm.RefreshAsync();

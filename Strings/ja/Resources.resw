@@ -1778,4 +1778,7 @@
   <data name="Msg_LoopbackVerifyFailed.Text" xml:space="preserve">
     <value>システムの例外設定が選択したアプリと一致しません。一覧を更新して再試行してください。</value>
   </data>
+  <data name="Msg_StartingCore.Text" xml:space="preserve">
+    <value>コアを起動中…</value>
+  </data>
 </root>

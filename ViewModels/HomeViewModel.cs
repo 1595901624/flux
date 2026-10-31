@@ -221,7 +221,7 @@ public partial class HomeViewModel : ObservableObject
 
         if (AppBootstrapper.IsStarting)
         {
-            CoreStatusText = L10n.T("Msg_Loading");
+            CoreStatusText = L10n.T("Msg_StartingCore");
             return;
         }
 
