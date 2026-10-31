@@ -1,0 +1,153 @@
+README.zh-CN.md
+  74900f7d25919519 3
+README.ko.md
+  74900f7d25919519 1-78
+README.md
+  74900f7d25919519 3
+README.zh-TW.md
+  74900f7d25919519 1-78
+README.tr.md
+  74900f7d25919519 1-78
+README.ru.md
+  74900f7d25919519 1-78
+README.de.md
+  74900f7d25919519 1-78
+README.ar.md
+  74900f7d25919519 1-78
+README.id.md
+  74900f7d25919519 1-78
+README.fa.md
+  74900f7d25919519 1-78
+README.es.md
+  74900f7d25919519 1-78
+README.ja.md
+  74900f7d25919519 1-78
+README.tt.md
+  74900f7d25919519 1-78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "824979137e84a2041260267787d5ba01bccde632",
+  "prompts": {
+    "74900f7d25919519": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a190a1-c0bc-70c3-9b7c-4f2612ca722d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 860,
+      "total_deletions": 2,
+      "accepted_lines": 860,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 860,
+    "git_diff_deleted_lines": 2,
+    "ai_additions": 860,
+    "ai_accepted": 860,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 860,
+    "BYRC": 0,
+    "per_file": {
+      "README.ar.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.de.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.es.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.fa.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.id.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.ja.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.ko.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.md": {
+        "BYMC": [],
+        "BYAC": [
+          "3"
+        ],
+        "BYRC": []
+      },
+      "README.ru.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.tr.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.tt.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      },
+      "README.zh-CN.md": {
+        "BYMC": [],
+        "BYAC": [
+          "3"
+        ],
+        "BYRC": []
+      },
+      "README.zh-TW.md": {
+        "BYMC": [],
+        "BYAC": [
+          "1-78"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793428858,
+  "requirement_id": ""
+}
