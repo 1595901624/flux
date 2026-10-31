@@ -3,13 +3,13 @@ using Microsoft.Win32;
 namespace Flux.Services;
 
 /// <summary>
-/// clash:// 深链协议（clash://install-config?url=...&name=...）：
+/// Flux 导入协议（flux://install-config?url=...&name=...），兼容 Clash 导入链接：
 /// - HKCU 注册协议（免管理员）
 /// - 处理二次实例转发来的参数
 /// </summary>
 public class DeepLinkService
 {
-    private const string Scheme = "clash";
+    private const string Scheme = "flux";
     public static bool IsSupportedUri(string value) =>
         DeepLinkParser.IsSupportedUri(value);
 
@@ -20,7 +20,8 @@ public class DeepLinkService
 
         try
         {
-            RegisterScheme();
+            RegisterScheme(Scheme);
+            RegisterScheme("clash");
         }
         catch (Exception ex)
         {
@@ -28,11 +29,11 @@ public class DeepLinkService
         }
     }
 
-    private static void RegisterScheme()
+    private static void RegisterScheme(string scheme)
     {
         var exe = Environment.ProcessPath ?? Path.Combine(AppContext.BaseDirectory, "Flux.exe");
-        using var key = Registry.CurrentUser.CreateSubKey($"Software\\Classes\\{Scheme}");
-        key.SetValue("", "URL:Flux Clash Protocol");
+        using var key = Registry.CurrentUser.CreateSubKey($"Software\\Classes\\{scheme}");
+        key.SetValue("", "URL:Flux Import Protocol");
         key.SetValue("URL Protocol", "");
         using var cmd = key.CreateSubKey(@"shell\open\command");
         cmd.SetValue("", $"\"{exe}\" \"%1\"");

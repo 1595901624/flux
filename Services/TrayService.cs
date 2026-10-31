@@ -96,7 +96,7 @@ public class TrayService
         if (_tray is null) return;
         try
         {
-            var verge = AppServices.Config.Verge;
+            var settings = AppServices.Config.Settings;
             var mode = AppServices.Config.Mode;
 
             var menu = new PopupMenu
@@ -113,9 +113,9 @@ public class TrayService
                     CreateProxiesSubMenu(),
                     new PopupMenuSeparator(),
                     new PopupMenuItem(L10n.T("Tray_SystemProxy"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleSystemProxyAsync()))
-                        { Checked = verge.EnableSystemProxy },
+                        { Checked = settings.EnableSystemProxy },
                     new PopupMenuItem(L10n.T("Tray_TunMode"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
-                        { Checked = verge.EnableTunMode },
+                        { Checked = settings.EnableTunMode },
                     new PopupMenuSeparator(),
                     new PopupMenuItem(L10n.T("Tray_RestartCore"), (_, _) => _dispatcher?.TryEnqueue(async () =>
                         await AppServices.Core.RestartAsync())),
@@ -178,7 +178,7 @@ public class TrayService
         }
     }
 
-    /// <summary>异步刷新代理组快照后重建菜单（对齐参考项目托盘的动态节点菜单）。</summary>
+    /// <summary>异步获取代理组快照，并刷新托盘中的节点菜单。</summary>
     private bool _suppressProxyRefresh;
 
     private void RefreshProxyGroupsCache()
@@ -271,7 +271,7 @@ public class TrayService
         {
             await AppServices.Api.PatchConfigsAsync(new() { ["mode"] = mode });
             AppServices.Config.PatchClashBase("mode", mode);
-            if (AppServices.Config.Verge.AutoCloseConnection)
+            if (AppServices.Config.Settings.AutoCloseConnection)
                 await AppServices.Api.CloseAllConnectionsAsync();
         }
         catch (Exception ex)
@@ -284,18 +284,18 @@ public class TrayService
 
     private async Task ToggleSystemProxyAsync()
     {
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnableSystemProxy;
-        verge.EnableSystemProxy = !verge.EnableSystemProxy;
-        AppServices.Config.SaveVerge();
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnableSystemProxy;
+        settings.EnableSystemProxy = !settings.EnableSystemProxy;
+        AppServices.Config.SaveSettings();
         try
         {
-            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+            await Task.Run(() => AppServices.SysProxy.Apply(settings));
         }
         catch (Exception ex)
         {
-            verge.EnableSystemProxy = previous;
-            AppServices.Config.SaveVerge();
+            settings.EnableSystemProxy = previous;
+            AppServices.Config.SaveSettings();
             LogService.App(L10n.F("Tray_SysProxyToggleFailed", ex.Message), "error");
             ShowNotification(L10n.F("Tray_SysProxyToggleFailed", ex.Message));
         }
@@ -309,14 +309,14 @@ public class TrayService
             ShowNotification(L10n.T("VM_TunNeedAdmin"));
             return;
         }
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnableTunMode;
-        verge.EnableTunMode = !verge.EnableTunMode;
-        AppServices.Config.SaveVerge();
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnableTunMode;
+        settings.EnableTunMode = !settings.EnableTunMode;
+        AppServices.Config.SaveSettings();
         if (!await AppServices.Core.ApplyConfigAsync())
         {
-            verge.EnableTunMode = previous;
-            AppServices.Config.SaveVerge();
+            settings.EnableTunMode = previous;
+            AppServices.Config.SaveSettings();
             ShowNotification(L10n.T("VM_TunRejected"));
         }
         RebuildMenu();

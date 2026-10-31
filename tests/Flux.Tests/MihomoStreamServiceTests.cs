@@ -17,7 +17,7 @@ public sealed class MihomoStreamServiceTests
         await using var first = new WebSocketServer();
         await using var second = new WebSocketServer();
         var streams = new MihomoStreamService();
-        var oldLevel = AppServices.Config.Verge.LogLevel;
+        var oldLevel = AppServices.Config.Settings.LogLevel;
         try
         {
             streams.Configure(first.Address, "old");
@@ -32,7 +32,7 @@ public sealed class MihomoStreamServiceTests
             streams.Configure(second.Address, "next");
             await WaitAsync(() => second.Requests.Count == 4 && first.Closed == 8);
             Assert.All(second.Requests, r => Assert.Equal("Bearer next", r.Authorization));
-            AppServices.Config.Verge.LogLevel = "debug";
+            AppServices.Config.Settings.LogLevel = "debug";
             streams.Restart();
             await WaitAsync(() => second.Requests.Count == 8 && second.Closed >= 4);
             Assert.Contains(second.Requests.Skip(4), r => r.Path == "/logs?level=debug");
@@ -46,7 +46,7 @@ public sealed class MihomoStreamServiceTests
         finally
         {
             streams.Stop();
-            AppServices.Config.Verge.LogLevel = oldLevel;
+            AppServices.Config.Settings.LogLevel = oldLevel;
         }
     }
 

@@ -105,7 +105,7 @@ patch("Views/EnhanceEditorDialog.cs", [
 patch("Views/ProfileEditDialog.cs", [
     ('PlaceholderText = "订阅名称"', 'PlaceholderText = L10n.T("ProfileEdit_NamePlaceholder")'),
     ('PlaceholderText = "描述（可选）"', 'PlaceholderText = L10n.T("ProfileEdit_DescPlaceholder")'),
-    ('PlaceholderText = "默认 clash-verge/v2.5.2"', 'PlaceholderText = L10n.T("ProfileEdit_UaPlaceholder")'),
+    ('PlaceholderText = "留空使用 Flux 默认标识"', 'PlaceholderText = L10n.T("ProfileEdit_UaPlaceholder")'),
     ('Content = "接受无效 TLS 证书（危险）"', 'Content = L10n.T("ProfileEdit_InvalidCertLabel")'),
     ('Content = "参与自动更新"', 'Content = L10n.T("ProfileEdit_AutoUpdateLabel")'),
     ('("自动回退（直连→内核→系统）", "auto"),', '("自动回退（直连→内核→系统）", "auto"),'),  # 保留（下方统一替换）

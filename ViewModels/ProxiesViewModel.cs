@@ -31,7 +31,7 @@ public partial class ProxiesViewModel : ObservableObject
 
     public ProxiesViewModel()
     {
-        TestUrl = AppServices.Config.Verge.DefaultLatencyTest;
+        TestUrl = AppServices.Config.Settings.DefaultLatencyTest;
         Mode = AppServices.Config.Mode;
     }
 
@@ -79,7 +79,7 @@ public partial class ProxiesViewModel : ObservableObject
     public async Task RefreshAsync()
     {
         if (_testing) return;
-        // 模式以持久化配置为准（对齐 verge：UI 状态跟随配置而非页面本地状态）
+        // 模式以持久化配置为准，避免页面状态与持久化配置不一致
         if (!_switchingMode) Mode = AppServices.Config.Mode;
         try
         {
@@ -114,7 +114,7 @@ public partial class ProxiesViewModel : ObservableObject
             }
         }
 
-        // 对齐 verge：非规则模式下只显示 GLOBAL 组（全局/直连的实际走向由 GLOBAL 决定）
+        // 非规则模式显示 GLOBAL 组；实际路由由内核的 mode 配置决定。
         if (Mode != "rule" && proxies.TryGetProperty("GLOBAL", out var globalElem))
         {
             var g = new ProxyInfo { Name = "GLOBAL", Type = "Selector" };
@@ -218,7 +218,7 @@ public partial class ProxiesViewModel : ObservableObject
         {
             await AppServices.Api.PatchConfigsAsync(new() { ["mode"] = mode });
             AppServices.Config.PatchClashBase("mode", mode);
-            if (AppServices.Config.Verge.AutoCloseConnection)
+            if (AppServices.Config.Settings.AutoCloseConnection)
                 await AppServices.Api.CloseAllConnectionsAsync();
         }
         catch (Exception ex)
@@ -239,7 +239,7 @@ public partial class ProxiesViewModel : ObservableObject
         {
             await AppServices.Api.SelectProxyAsync(group, name);
             AppServices.Config.SaveCurrentProxySelection(group, name);
-            if (AppServices.Config.Verge.AutoCloseConnection &&
+            if (AppServices.Config.Settings.AutoCloseConnection &&
                 !string.IsNullOrWhiteSpace(previous) &&
                 !string.Equals(previous, name, StringComparison.Ordinal))
             {
@@ -271,7 +271,7 @@ public partial class ProxiesViewModel : ObservableObject
                 foreach (var n in header.Nodes) n.Delay = -2;
 
             var result = await AppServices.Api.GetGroupDelayAsync(
-                group, TestUrl, AppServices.Config.Verge.DefaultLatencyTimeout);
+                group, TestUrl, AppServices.Config.Settings.DefaultLatencyTimeout);
             if (header is not null)
             {
                 foreach (var n in header.Nodes)
@@ -288,7 +288,7 @@ public partial class ProxiesViewModel : ObservableObject
     {
         node.Delay = -2;
         var delay = await AppServices.Api.GetProxyDelayAsync(
-            node.Name, TestUrl, AppServices.Config.Verge.DefaultLatencyTimeout);
+            node.Name, TestUrl, AppServices.Config.Settings.DefaultLatencyTimeout);
         node.Delay = delay;
     }
 }

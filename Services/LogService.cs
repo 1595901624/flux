@@ -5,7 +5,7 @@ namespace Flux.Services;
 public record LogLine(DateTime Time, string Type, string Payload);
 
 /// <summary>
-/// 日志：内核 stdout 环形缓冲供日志页展示；文件写入默认关闭，由 verge.yaml 的 enable-log 控制。
+/// 日志：内核 stdout 环形缓冲供日志页展示；文件写入默认关闭，由 settings.yaml 的 enable-log 控制。
 /// </summary>
 public static class LogService
 {
@@ -20,7 +20,7 @@ public static class LogService
 
     /// <summary>文件日志默认关闭，需在设置页开启 enable-log 才写入文件。</summary>
     private static bool IsFileLoggingEnabled =>
-        AppServices.Initialized && AppServices.Config.Verge.EnableLog;
+        AppServices.Initialized && AppServices.Config.Settings.EnableLog;
 
     public static void Core(string line)
     {

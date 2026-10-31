@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>Прокси саклау хата: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>verge.yaml йөкләү хата: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>settings.yaml йөкләү хата: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>verge.yaml миграция резервы хата: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>settings.yaml миграция резервы хата: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml schema v{0}'ка миграцияланды; резерв: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>settings.yaml schema v{0}'ка миграцияланды; резерв: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>config.yaml йөкләү хата: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>Тасвирлама (теләсә)</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>Кабул clash-verge/v2.5.2</value>
+    <value>Flux килешүен куллану өчен буш калдырыгыз</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>Хата TLS сертификатларын кабул итү (хәтәр)</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>минут</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>Кулланылмаган үзгәрешләрне сакларгамы?</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>Кушымталарның җирле тоташу рөхсәтләре үзгәртелде. Ябар алдыннан кулланыргамы? Администратор рөхсәте кирәк.</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>Куллану һәм ябу</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>Үзгәрешләрне кире кагу</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>Үзгәртүне дәвам итү</value>
   </data>
 </root>

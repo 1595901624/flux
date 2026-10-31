@@ -7,7 +7,7 @@ namespace Flux.Core.Backup;
 /// <summary>备份包含的文件清单描述：相对路径 → 绝对路径来源。</summary>
 public sealed class BackupLayout
 {
-    /// <summary>数据目录（config.yaml / verge.yaml / profiles.yaml 等所在目录）。</summary>
+    /// <summary>数据目录（config.yaml / settings.yaml / profiles.yaml 等所在目录）。</summary>
     public required string DataDir { get; init; }
 
     /// <summary>订阅/增强文件目录。</summary>
@@ -42,6 +42,7 @@ public sealed class LocalBackupService
     {
         Directory.CreateDirectory(_backupDir);
         var layout = _layoutFactory();
+        Flux.Core.Compatibility.LegacyCompatibility.MigrateSettingsFile(layout.DataDir);
         var name = $"flux-{DateTime.Now:yyyyMMdd-HHmmss-fff}-{Guid.NewGuid().ToString("N")[..8]}.zip";
         var path = Path.Combine(_backupDir, name);
         var temp = path + ".tmp";
@@ -50,7 +51,7 @@ public sealed class LocalBackupService
         using (var zip = new ZipArchive(stream, ZipArchiveMode.Create))
         {
             AddFile(zip, layout, Path.Combine(layout.DataDir, "config.yaml"));
-            AddFile(zip, layout, Path.Combine(layout.DataDir, "verge.yaml"));
+            AddFile(zip, layout, Path.Combine(layout.DataDir, "settings.yaml"));
             AddFile(zip, layout, Path.Combine(layout.DataDir, "profiles.yaml"));
             foreach (var extra in layout.ExtraFiles)
                 AddFile(zip, layout, extra);
@@ -151,8 +152,9 @@ public sealed class LocalBackupService
             }
 
             var restoredData = Path.Combine(tempDir, layout.Root);
+            Flux.Core.Compatibility.LegacyCompatibility.MigrateSettingsFile(restoredData);
             var hasConfig = File.Exists(Path.Combine(restoredData, "config.yaml")) ||
-                            File.Exists(Path.Combine(restoredData, "verge.yaml"));
+                            File.Exists(Path.Combine(restoredData, "settings.yaml"));
             if (!hasConfig)
                 throw new InvalidOperationException("备份内容不完整（缺少应用配置文件），已取消恢复");
 
@@ -178,7 +180,7 @@ public sealed class LocalBackupService
                     File.Move(source, target, overwrite: true);
                 }
 
-                var targets = new[] { "config.yaml", "verge.yaml", "profiles.yaml" }
+                var targets = new[] { "config.yaml", "settings.yaml", "profiles.yaml" }
                     .Select(file => (Relative: file, Target: Path.Combine(layout.DataDir, file)))
                     .Concat(layout.ExtraFiles.Select(file => (Relative: GetRelativePath(layout, file), Target: file)))
                     .DistinctBy(item => Path.GetFullPath(item.Target), StringComparer.OrdinalIgnoreCase);

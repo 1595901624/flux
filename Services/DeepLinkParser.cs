@@ -3,8 +3,9 @@ namespace Flux.Services;
 internal static class DeepLinkParser
 {
     public static bool IsSupportedUri(string value) =>
+        value.StartsWith("flux://", StringComparison.OrdinalIgnoreCase) ||
         value.StartsWith("clash://", StringComparison.OrdinalIgnoreCase) ||
-        value.StartsWith("clash-verge://", StringComparison.OrdinalIgnoreCase);
+        value.StartsWith(Flux.Core.Compatibility.LegacyCompatibility.ImportScheme + "://", StringComparison.OrdinalIgnoreCase);
 
     public static bool TryParseInstallUri(string value, out string importUrl, out string? name)
     {

@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>خطای نگهبان پروکسی: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>بارگذاری verge.yaml ناموفق: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>بارگذاری settings.yaml ناموفق: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>پشتیبان‌گیری مهاجرت verge.yaml ناموفق: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>پشتیبان‌گیری مهاجرت settings.yaml ناموفق: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml به اسکیمای v{0} منتقل شد؛ پشتیبان: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>settings.yaml به اسکیمای v{0} منتقل شد؛ پشتیبان: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>بارگذاری config.yaml ناموفق: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>توضیحات (اختیاری)</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>پیش‌فرض clash-verge/v2.5.2</value>
+    <value>برای استفاده از مقدار پیش‌فرض Flux خالی بگذارید</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>پذیرش گواهی TLS نامعتبر (خطرناک)</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>دقیقه</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>تغییرات اعمال‌نشده حفظ شوند؟</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>مجوزهای حلقهٔ محلی برنامه‌ها تغییر کرده‌اند. پیش از بستن اعمال شوند؟ تأیید مدیر لازم است.</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>اعمال و بستن</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>حذف تغییرات</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>ادامهٔ ویرایش</value>
   </data>
 </root>

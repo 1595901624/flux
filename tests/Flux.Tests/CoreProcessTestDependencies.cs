@@ -27,7 +27,7 @@ namespace Flux.Services
     }
     public partial class ConfigService
     {
-        public Flux.Models.VergeConfig Verge { get; } = new();
+        public Flux.Models.AppSettings Settings { get; } = new();
         public int MixedPort => 7897;
         public static void WriteAllTextAtomic(string path, string content)
         {
@@ -49,7 +49,7 @@ namespace Flux.Services
         public static string CoreExePath => "unused-mihomo.exe";
         public static string LegacyCoreExePath => "unused-legacy.exe";
         public static string RuntimeConfigFile => "unused-runtime.yaml";
-        public static string VergeConfigFile { get; set; } = "unused-verge.yaml";
+        public static string AppSettingsFile { get; set; } = "unused-settings.yaml";
         public static string ProxyStateFile => throw new NotSupportedException();
         public static string PacFile => throw new NotSupportedException();
         public static string PacFileUrl => throw new NotSupportedException();

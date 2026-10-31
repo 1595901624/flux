@@ -17,14 +17,31 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
     private readonly Dictionary<string, CheckBox> _rows = new();
     private HashSet<string> _initialExempted = new(StringComparer.OrdinalIgnoreCase);
     private bool _busy;
-    private readonly Button _apply = new() { Content = L10n.T("Msg_LoopbackApply") };
-    private readonly Button _reload = new() { Content = L10n.T("Msg_RefreshList") };
+    private bool _loaded;
 
     public UwpLoopbackDialog(XamlRoot root)
     {
         XamlRoot = root;
         Title = L10n.T("Msg_LoopbackTitle");
         CloseButtonText = L10n.T("Common_Close");
+        PrimaryButtonText = L10n.T("Msg_LoopbackApply");
+        SecondaryButtonText = L10n.T("Msg_RefreshList");
+        DefaultButton = ContentDialogButton.Primary;
+        PrimaryButtonClick += async (_, e) =>
+        {
+            e.Cancel = true;
+            var deferral = e.GetDeferral();
+            try { await ApplyAsync(); }
+            finally { deferral.Complete(); }
+        };
+        SecondaryButtonClick += async (_, e) =>
+        {
+            e.Cancel = true;
+            var deferral = e.GetDeferral();
+            try { await LoadAsync(); }
+            finally { deferral.Complete(); }
+        };
+        Closing += (_, e) => { if (_busy) e.Cancel = true; };
 
         var header = new StackPanel { Spacing = 8, MinWidth = 480 };
         var hint = new TextBlock
@@ -34,20 +51,43 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
             Opacity = 0.7,
             TextWrapping = TextWrapping.Wrap,
         };
-        _apply.Click += async (_, _) => await ApplyAsync();
-        _reload.Click += async (_, _) => await LoadAsync();
-
-        var toolbar = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 8 };
-        toolbar.Children.Add(_apply);
-        toolbar.Children.Add(_reload);
-
         header.Children.Add(hint);
-        header.Children.Add(toolbar);
         header.Children.Add(_status);
         header.Children.Add(new ScrollViewer { MaxHeight = 380, Content = _list });
 
         Content = header;
-        Loaded += async (_, _) => await LoadAsync();
+        Loaded += async (_, _) =>
+        {
+            if (_loaded) return;
+            _loaded = true;
+            await LoadAsync();
+        };
+    }
+
+    private bool HasChanges => !LoopbackExemptions.MatchesSelection(
+        _rows.ToDictionary(row => row.Key, row => row.Value.IsChecked == true), _initialExempted);
+
+    // 同一 XamlRoot 只能显示一个 ContentDialog；待工具关闭后再询问，取消时重新显示原选择。
+    public new async Task<ContentDialogResult> ShowAsync()
+    {
+        while (true)
+        {
+            var result = await base.ShowAsync();
+            if (!HasChanges) return result;
+            var confirmation = new LocalizedContentDialog
+            {
+                XamlRoot = XamlRoot,
+                Title = L10n.T("Msg_LoopbackUnsavedTitle"),
+                Content = L10n.T("Msg_LoopbackUnsavedBody"),
+                PrimaryButtonText = L10n.T("Msg_LoopbackApplyClose"),
+                SecondaryButtonText = L10n.T("Msg_LoopbackDiscard"),
+                CloseButtonText = L10n.T("Msg_LoopbackContinue"),
+                DefaultButton = ContentDialogButton.Primary,
+            };
+            var choice = await confirmation.ShowAsync();
+            if (choice == ContentDialogResult.Secondary) return result;
+            if (choice == ContentDialogResult.Primary && await ApplyAsync()) return result;
+        }
     }
 
     /// <summary>解析 CheckNetIsolation -s 输出，返回已获回环豁免的包系列名集合。</summary>
@@ -82,12 +122,12 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
     private async Task LoadAsync()
     {
         if (_busy) return;
+        var pending = _rows.Where(row => (row.Value.IsChecked == true) != _initialExempted.Contains(row.Key))
+            .ToDictionary(row => row.Key, row => row.Value.IsChecked == true, StringComparer.OrdinalIgnoreCase);
         SetBusy(true);
         try
         {
             _status.Text = L10n.T("Msg_Loading");
-            _list.Children.Clear();
-            _rows.Clear();
 
             HashSet<string> exempted;
             Windows.ApplicationModel.Package[] packages;
@@ -105,6 +145,8 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
                 return;
             }
             _initialExempted = exempted;
+            _list.Children.Clear();
+            _rows.Clear();
 
             var shown = 0;
             foreach (var package in packages)
@@ -124,7 +166,7 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
                             FontSize = 12,
                             TextTrimming = TextTrimming.CharacterEllipsis,
                         },
-                        IsChecked = exempted.Contains(family),
+                        IsChecked = pending.TryGetValue(family, out var wanted) ? wanted : exempted.Contains(family),
                     };
                     _rows[family] = box;
                     _list.Children.Add(box);
@@ -140,9 +182,9 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
         finally { SetBusy(false); }
     }
 
-    private async Task ApplyAsync()
+    private async Task<bool> ApplyAsync()
     {
-        if (_busy || _rows.Count == 0) return;
+        if (_busy) return false;
         // 相对进入对话框时的初始豁免集合计算增删
         var toAdd = new List<string>();
         var toRemove = new List<string>();
@@ -157,12 +199,13 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
         if (toAdd.Count == 0 && toRemove.Count == 0)
         {
             _status.Text = L10n.T("Msg_LoopbackApplied");
-            return;
+            return true;
         }
 
         var selected = _rows.ToDictionary(row => row.Key, row => row.Value.IsChecked == true);
         var scriptPath = Path.Combine(Path.GetTempPath(), $"flux-loopback-{Guid.NewGuid():N}.cmd");
         SetBusy(true);
+        var applied = false;
         _status.Text = L10n.T("Msg_LoopbackApplying");
         try
         {
@@ -179,14 +222,14 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
             using var process = Process.Start(psi);
             if (process is null) throw new InvalidOperationException(L10n.T("Msg_LoopbackLaunchFailed"));
             await process.WaitForExitAsync();
-            // 即使批处理中途失败，也显示已实际写入的状态，避免下一次增删使用旧基线。
+            // 即使批处理中途失败，也读取实际状态作为新基线；保留用户选择以便重试。
             _initialExempted = await GetExemptedFamiliesAsync();
-            foreach (var (family, box) in _rows) box.IsChecked = _initialExempted.Contains(family);
             if (process.ExitCode != 0)
                 throw new InvalidOperationException(L10n.F("Msg_LoopbackExitFailed", process.ExitCode));
             if (!LoopbackExemptions.MatchesSelection(selected, _initialExempted))
                 throw new InvalidOperationException(L10n.T("Msg_LoopbackVerifyFailed"));
             _status.Text = L10n.T("Msg_LoopbackApplied");
+            applied = true;
         }
         catch (System.ComponentModel.Win32Exception ex) when (ex.NativeErrorCode == 1223)
         {
@@ -201,13 +244,14 @@ public sealed class UwpLoopbackDialog : LocalizedContentDialog
             try { File.Delete(scriptPath); } catch { }
             SetBusy(false);
         }
+        return applied;
     }
 
     private void SetBusy(bool busy)
     {
         _busy = busy;
-        _apply.IsEnabled = !busy && _rows.Count > 0;
-        _reload.IsEnabled = !busy;
+        IsPrimaryButtonEnabled = !busy && _rows.Count > 0;
+        IsSecondaryButtonEnabled = !busy;
         _list.IsHitTestVisible = !busy;
         foreach (var box in _rows.Values) box.IsEnabled = !busy;
     }

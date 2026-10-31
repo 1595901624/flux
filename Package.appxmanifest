@@ -9,7 +9,7 @@
   <Identity
       Name="194272F5631C5.FluxProxy"
       Publisher="CN=98115004-601A-4933-A2AC-7F81FB1DAD0A"
-      Version="0.5.1.0" />
+      Version="0.6.0.0" />
 
   <Properties>
     <DisplayName>Flux Proxy</DisplayName>
@@ -38,6 +38,11 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="flux">
+            <uap:DisplayName>Flux Proxy</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
         <uap:Extension Category="windows.protocol">
           <uap:Protocol Name="clash">
             <uap:DisplayName>Flux Proxy</uap:DisplayName>

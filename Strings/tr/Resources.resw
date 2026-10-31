@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>Proxy koruma hatası: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>verge.yaml yüklenemedi: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>settings.yaml yüklenemedi: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>verge.yaml geçiş yedeği başarısız: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>settings.yaml geçiş yedeği başarısız: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml şema v{0}'a taşındı; yedek: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>settings.yaml şema v{0}'a taşındı; yedek: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>config.yaml yüklenemedi: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>설명(선택)</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>Varsayılan clash-verge/v2.5.2</value>
+    <value>Flux varsayılanı için boş bırakın</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>Geçersiz TLS sertifikalarını kabul et (tehlikeli)</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>dakika</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>Uygulanmamış değişiklikler korunsun mu?</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>Uygulamaların geri döngü izinlerini değiştirdiniz. Kapatmadan önce uygulansın mı? Yönetici onayı gerekir.</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>Uygula ve kapat</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>Değişiklikleri at</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>Düzenlemeye devam</value>
   </data>
 </root>

@@ -70,7 +70,7 @@ public static class ProfileEnhanceService
 
     // ---------- 订阅增强 ----------
 
-    /// <summary>确保订阅的 5 类增强文件存在（对齐参考项目导入时自动创建）。</summary>
+    /// <summary>导入订阅时创建缺失的五类增强文件。</summary>
     public static void EnsureCompanionFiles(ProfileItem item)
     {
         foreach (var (type, _, _) in EnhanceFileTypes.All)
@@ -112,7 +112,7 @@ public static class ProfileEnhanceService
     // ---------- 流水线链构建 ----------
 
     /// <summary>
-    /// 构建运行时流水线的增强链（顺序对齐参考项目）：
+    /// 按固定优先级构建配置增强链：
     /// 全局 Merge → 订阅 Merge → 全局 Script → 订阅 Script → Rules → Proxies → Groups。
     /// </summary>
     public static IReadOnlyList<ChainItemWithContent> BuildChainItems(ProfileItem? item)

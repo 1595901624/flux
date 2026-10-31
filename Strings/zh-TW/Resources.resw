@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>代理守護異常: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>verge.yaml 載入失敗: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>settings.yaml 載入失敗: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>verge.yaml 遷移備份失敗: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>settings.yaml 遷移備份失敗: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml 已遷移至 schema v{0}，備份: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>settings.yaml 已遷移至 schema v{0}，備份: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>config.yaml 載入失敗: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>描述（可選）</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>預設 clash-verge/v2.5.2</value>
+    <value>留空使用 Flux 預設識別</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>接受無效 TLS 憑證（危險）</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>分鐘</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>保留尚未套用的變更？</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>你修改了應用程式的回環權限。是否套用後關閉？套用時需要系統管理員授權。</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>套用並關閉</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>放棄變更</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>繼續編輯</value>
   </data>
 </root>

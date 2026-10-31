@@ -30,7 +30,7 @@ public static class LightweightManager
             if (IsLightweight) return;
             // 定时任务可能已投递到 UI 队列，但用户随后重新打开了窗口。
             if (autoToken is { } token && (token.IsCancellationRequested ||
-                App.MainWindow?.AppWindow.IsVisible == true || !AppServices.Config.Verge.EnableLightweightMode)) return;
+                App.MainWindow?.AppWindow.IsVisible == true || !AppServices.Config.Settings.EnableLightweightMode)) return;
             var window = App.MainWindow;
             if (window is not null)
             {
@@ -73,12 +73,12 @@ public static class LightweightManager
     {
         CancelAutoTimer();
         if (!AutoEntryAvailable) return;
-        var verge = AppServices.Config.Verge;
-        if (!verge.EnableLightweightMode || verge.AutoLightweightMinutes <= 0) return;
+        var settings = AppServices.Config.Settings;
+        if (!settings.EnableLightweightMode || settings.AutoLightweightMinutes <= 0) return;
 
         _autoCts = new CancellationTokenSource();
         var token = _autoCts.Token;
-        var minutes = verge.AutoLightweightMinutes;
+        var minutes = settings.AutoLightweightMinutes;
         _ = Task.Run(async () =>
         {
             try

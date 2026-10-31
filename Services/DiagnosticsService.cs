@@ -62,16 +62,16 @@ public sealed class DiagnosticsService
         // 配置结构（遮蔽 secret / url）
         sb.AppendLine(L10n.T("Diag_SectionConfig"));
         AppendMaskedConfig(sb, Paths.ClashConfigFile);
-        sb.AppendLine("verge.yaml: " + string.Join(", ", ReadTopLevelKeys(Paths.VergeConfigFile)));
+        sb.AppendLine("settings.yaml: " + string.Join(", ", ReadTopLevelKeys(Paths.AppSettingsFile)));
         sb.AppendLine("profiles.yaml: " + string.Join(", ", ReadTopLevelKeys(Paths.ProfilesConfigFile)));
         sb.AppendLine(L10n.F("Diag_CurrentProfile", SensitiveMasker.Mask(AppServices.Config.Profiles.GetCurrent()?.Name)));
         sb.AppendLine();
 
         // 运行设置摘要
-        var verge = AppServices.Config.Verge;
+        var settings = AppServices.Config.Settings;
         sb.AppendLine(L10n.T("Diag_SectionRuntime"));
-        sb.AppendLine(L10n.F("Diag_SystemProxyLine", verge.EnableSystemProxy, verge.EnablePacMode));
-        sb.AppendLine($"TUN: {verge.EnableTunMode}");
+        sb.AppendLine(L10n.F("Diag_SystemProxyLine", settings.EnableSystemProxy, settings.EnablePacMode));
+        sb.AppendLine($"TUN: {settings.EnableTunMode}");
         sb.AppendLine(L10n.F("Diag_CoreMode", AppServices.Config.Mode));
         sb.AppendLine(L10n.F("Diag_RunMode", AppServices.Core.Mode));
         sb.AppendLine();

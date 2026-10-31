@@ -6,7 +6,7 @@ using YamlDotNet.Serialization;
 namespace Flux.Core.Config;
 
 /// <summary>
-/// 确定性运行时配置流水线（对齐参考项目 enhance/mod.rs）：
+/// 确定性运行时配置流水线：
 /// 订阅 → 内置兼容增强 → 全局 Merge → 订阅 Merge → 全局 Script → 订阅 Script
 /// → 规则/节点/代理组前后插入 → DNS 覆写 → TUN → 临时链式代理 → 控制面字段强制恢复 → 字段排序。
 /// 任一步骤失败返回步骤名、文件名与消息；调用方应保留最后一个有效配置。

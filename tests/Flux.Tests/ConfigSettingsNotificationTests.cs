@@ -7,12 +7,12 @@ namespace Flux.Tests;
 public sealed class ConfigSettingsNotificationTests : IDisposable
 {
     private readonly string _directory = Path.Combine(Path.GetTempPath(), "flux-settings-events", Guid.NewGuid().ToString("N"));
-    private readonly string _previousPath = Paths.VergeConfigFile;
+    private readonly string _previousPath = Paths.AppSettingsFile;
 
     public ConfigSettingsNotificationTests()
     {
         Directory.CreateDirectory(_directory);
-        Paths.VergeConfigFile = Path.Combine(_directory, "verge.yaml");
+        Paths.AppSettingsFile = Path.Combine(_directory, "settings.yaml");
     }
 
     [Fact]
@@ -22,17 +22,17 @@ public sealed class ConfigSettingsNotificationTests : IDisposable
         var displayed = new List<bool>();
         config.SettingsChanged += () =>
         {
-            var persisted = VergeConfig.Deserialize(File.ReadAllText(Paths.VergeConfigFile));
-            Assert.Equal(config.Verge.EnableSystemProxy, persisted.EnableSystemProxy);
-            displayed.Add(config.Verge.EnableSystemProxy);
+            var persisted = AppSettings.Deserialize(File.ReadAllText(Paths.AppSettingsFile));
+            Assert.Equal(config.Settings.EnableSystemProxy, persisted.EnableSystemProxy);
+            displayed.Add(config.Settings.EnableSystemProxy);
         };
-        config.Verge.EnableSystemProxy = true;
-        config.SaveVerge();
-        config.Verge.EnableSystemProxy = false;
-        config.SaveVerge();
+        config.Settings.EnableSystemProxy = true;
+        config.SaveSettings();
+        config.Settings.EnableSystemProxy = false;
+        config.SaveSettings();
         // 模拟关闭失败后，调用方保存回滚值。
-        config.Verge.EnableSystemProxy = true;
-        config.SaveVerge();
+        config.Settings.EnableSystemProxy = true;
+        config.SaveSettings();
         Assert.Equal(new[] { true, false, true }, displayed);
     }
 
@@ -42,14 +42,14 @@ public sealed class ConfigSettingsNotificationTests : IDisposable
         var config = new ConfigService();
         var notifications = 0;
         config.SettingsChanged += () => notifications++;
-        Paths.VergeConfigFile = _directory;
-        Assert.Throws<UnauthorizedAccessException>(() => config.SaveVerge());
+        Paths.AppSettingsFile = _directory;
+        Assert.Throws<UnauthorizedAccessException>(() => config.SaveSettings());
         Assert.Equal(0, notifications);
     }
 
     public void Dispose()
     {
-        Paths.VergeConfigFile = _previousPath;
+        Paths.AppSettingsFile = _previousPath;
         Directory.Delete(_directory, recursive: true);
     }
 }

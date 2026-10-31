@@ -8,7 +8,7 @@ using YamlDotNet.RepresentationModel;
 namespace Flux.Services;
 
 /// <summary>
-/// 订阅下载与管理（对应参考项目 PrfItem::from_url / update_profile）：
+/// 订阅下载与管理：
 /// - 解析 subscription-userinfo（流量/到期）、content-disposition、profile-update-interval
 /// - 更新通道：直连 → 走内核 → 走系统代理
 /// </summary>
@@ -292,7 +292,7 @@ public class SubscriptionService
 
         using var request = new HttpRequestMessage(HttpMethod.Get, RemoveUserInfo(uri));
         var ua = string.IsNullOrWhiteSpace(option.UserAgent)
-            ? "clash-verge/v2.5.2" : option.UserAgent;
+            ? $"Flux/{typeof(SubscriptionService).Assembly.GetName().Version?.ToString(3) ?? "0.0.0"}" : option.UserAgent;
         request.Headers.UserAgent.ParseAdd(ua);
         // URL 携带 userinfo 时转换为 Basic 认证
         if (!string.IsNullOrEmpty(uri.UserInfo))

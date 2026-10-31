@@ -51,7 +51,7 @@ public sealed partial class SettingsPage : Page
         // 初始化赋值会触发 Toggled/SelectionChanged，整个过程必须禁止写配置和重载内核。
         try
         {
-            var verge = AppServices.Config.Verge;
+            var settings = AppServices.Config.Settings;
 
             try
             {
@@ -62,19 +62,19 @@ public sealed partial class SettingsPage : Page
                 AutoLaunchSwitch.IsOn = false;
                 LogService.App(L10n.F("Settings_AutoStartReadFailed", ex.Message), "warn");
             }
-            SilentStartSwitch.IsOn = verge.EnableSilentStart;
-            SysProxySwitch.IsOn = verge.EnableSystemProxy;
-            PacSwitch.IsOn = verge.EnablePacMode;
-            HotkeyWindowBox.Text = verge.Hotkeys.GetValueOrDefault("show_hide_window", "");
-            HotkeySysproxyBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
-            HotkeyTunBox.Text = verge.Hotkeys.GetValueOrDefault("toggle_tun", "");
-            HotkeyReactivateBox.Text = verge.Hotkeys.GetValueOrDefault("reactivate_profile", "");
-            LightweightSwitch.IsOn = verge.EnableLightweightMode;
-            var savedLang = verge.Language is null or "" or "system" ? "system" : verge.Language;
+            SilentStartSwitch.IsOn = settings.EnableSilentStart;
+            SysProxySwitch.IsOn = settings.EnableSystemProxy;
+            PacSwitch.IsOn = settings.EnablePacMode;
+            HotkeyWindowBox.Text = settings.Hotkeys.GetValueOrDefault("show_hide_window", "");
+            HotkeySysproxyBox.Text = settings.Hotkeys.GetValueOrDefault("toggle_system_proxy", "");
+            HotkeyTunBox.Text = settings.Hotkeys.GetValueOrDefault("toggle_tun", "");
+            HotkeyReactivateBox.Text = settings.Hotkeys.GetValueOrDefault("reactivate_profile", "");
+            LightweightSwitch.IsOn = settings.EnableLightweightMode;
+            var savedLang = settings.Language is null or "" or "system" ? "system" : settings.Language;
             foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
                 if ((string)item.Tag == savedLang) { LanguageBox.SelectedItem = item; break; }
             if (LanguageBox.SelectedItem is null) LanguageBox.SelectedIndex = 0;
-            LightweightMinutesBox.Text = verge.AutoLightweightMinutes.ToString();
+            LightweightMinutesBox.Text = settings.AutoLightweightMinutes.ToString();
 
             // TUN / DNS / 外部控制器 初始值（来自基础配置）
             var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
@@ -86,17 +86,17 @@ public sealed partial class SettingsPage : Page
             var (controllerInfo, secretInfo) = AppServices.Config.GetControllerInfo();
             ControllerBox.Text = controllerInfo;
             ControllerSecretBox.Password = secretInfo;
-            ProxyGuardSwitch.IsOn = verge.EnableProxyGuard;
-            BypassBox.Text = verge.SystemProxyBypass;
+            ProxyGuardSwitch.IsOn = settings.EnableProxyGuard;
+            BypassBox.Text = settings.SystemProxyBypass;
             MixedPortBox.Value = AppServices.Config.MixedPort;
             AllowLanSwitch.IsOn = AppServices.Config.GetBool("allow-lan", false);
             Ipv6Switch.IsOn = AppServices.Config.GetBool("ipv6", true);
-            TunSwitch.IsOn = verge.EnableTunMode;
-            AutoCloseConnSwitch.IsOn = verge.AutoCloseConnection;
-            EnableLogSwitch.IsOn = verge.EnableLog;
+            TunSwitch.IsOn = settings.EnableTunMode;
+            AutoCloseConnSwitch.IsOn = settings.AutoCloseConnection;
+            EnableLogSwitch.IsOn = settings.EnableLog;
 
-            SelectByTag(LogLevelBox, verge.LogLevel);
-            SelectByTag(ThemeBox, verge.ThemeMode);
+            SelectByTag(LogLevelBox, settings.LogLevel);
+            SelectByTag(ThemeBox, settings.ThemeMode);
         }
         finally
         {
@@ -119,12 +119,12 @@ public sealed partial class SettingsPage : Page
     private static string? SelectedTag(ComboBox box) =>
         (box.SelectedItem as ComboBoxItem)?.Tag as string;
 
-    private bool SaveVerge(Action<Flux.Models.VergeConfig> patch)
+    private bool SaveSettings(Action<Flux.Models.AppSettings> patch)
     {
         if (_loading) return false;
-        var verge = AppServices.Config.Verge;
-        patch(verge);
-        AppServices.Config.SaveVerge();
+        var settings = AppServices.Config.Settings;
+        patch(settings);
+        AppServices.Config.SaveSettings();
         return true;
     }
 
@@ -135,7 +135,7 @@ public sealed partial class SettingsPage : Page
         if (_loading) return;
         try
         {
-            await AutoStartService.SetEnabledAsync(AutoLaunchSwitch.IsOn, AppServices.Config.Verge.EnableSilentStart);
+            await AutoStartService.SetEnabledAsync(AutoLaunchSwitch.IsOn, AppServices.Config.Settings.EnableSilentStart);
         }
         catch (Exception ex)
         {
@@ -148,7 +148,7 @@ public sealed partial class SettingsPage : Page
 
     private async void SilentStart_Toggled(object sender, RoutedEventArgs e)
     {
-        if (!SaveVerge(v => v.EnableSilentStart = SilentStartSwitch.IsOn)) return;
+        if (!SaveSettings(v => v.EnableSilentStart = SilentStartSwitch.IsOn)) return;
         try
         {
             await AutoStartService.SetEnabledAsync(AutoLaunchSwitch.IsOn, SilentStartSwitch.IsOn);
@@ -161,14 +161,14 @@ public sealed partial class SettingsPage : Page
 
     private async void SysProxy_Toggled(object sender, RoutedEventArgs e)
     {
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnableSystemProxy;
-        if (!SaveVerge(v => v.EnableSystemProxy = SysProxySwitch.IsOn)) return;
-        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnableSystemProxy;
+        if (!SaveSettings(v => v.EnableSystemProxy = SysProxySwitch.IsOn)) return;
+        try { await Task.Run(() => AppServices.SysProxy.Apply(settings)); }
         catch (Exception ex)
         {
-            verge.EnableSystemProxy = previous;
-            AppServices.Config.SaveVerge();
+            settings.EnableSystemProxy = previous;
+            AppServices.Config.SaveSettings();
             _loading = true;
             SysProxySwitch.IsOn = previous;
             _loading = false;
@@ -179,15 +179,15 @@ public sealed partial class SettingsPage : Page
     private async void Pac_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnablePacMode;
-        if (!SaveVerge(v => v.EnablePacMode = PacSwitch.IsOn)) return;
-        if (!verge.EnableSystemProxy) return; // PAC 仅在系统代理开启时生效，切换开关下次开启时应用
-        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnablePacMode;
+        if (!SaveSettings(v => v.EnablePacMode = PacSwitch.IsOn)) return;
+        if (!settings.EnableSystemProxy) return; // PAC 仅在系统代理开启时生效，切换开关下次开启时应用
+        try { await Task.Run(() => AppServices.SysProxy.Apply(settings)); }
         catch (Exception ex)
         {
-            verge.EnablePacMode = previous;
-            AppServices.Config.SaveVerge();
+            settings.EnablePacMode = previous;
+            AppServices.Config.SaveSettings();
             _loading = true;
             PacSwitch.IsOn = previous;
             _loading = false;
@@ -197,17 +197,17 @@ public sealed partial class SettingsPage : Page
 
     private async void ProxyGuard_Toggled(object sender, RoutedEventArgs e)
     {
-        if (!SaveVerge(v => v.EnableProxyGuard = ProxyGuardSwitch.IsOn)) return;
-        var verge = AppServices.Config.Verge;
-        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        if (!SaveSettings(v => v.EnableProxyGuard = ProxyGuardSwitch.IsOn)) return;
+        var settings = AppServices.Config.Settings;
+        try { await Task.Run(() => AppServices.SysProxy.Apply(settings)); }
         catch (Exception ex) { LogService.App(L10n.F("Settings_GuardFailed", ex.Message), "error"); }
     }
 
     private async void Bypass_LostFocus(object sender, RoutedEventArgs e)
     {
-        if (!SaveVerge(v => v.SystemProxyBypass = BypassBox.Text)) return;
-        var verge = AppServices.Config.Verge;
-        try { await Task.Run(() => AppServices.SysProxy.Apply(verge)); }
+        if (!SaveSettings(v => v.SystemProxyBypass = BypassBox.Text)) return;
+        var settings = AppServices.Config.Settings;
+        try { await Task.Run(() => AppServices.SysProxy.Apply(settings)); }
         catch (Exception ex) { LogService.App(L10n.F("Settings_BypassFailed", ex.Message), "error"); }
     }
 
@@ -239,8 +239,8 @@ public sealed partial class SettingsPage : Page
         AppServices.Config.PatchClashBase("mixed-port", port);
         if (await AppServices.Core.ApplyConfigAsync())
         {
-            var verge = AppServices.Config.Verge;
-            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+            var settings = AppServices.Config.Settings;
+            await Task.Run(() => AppServices.SysProxy.Apply(settings));
             return;
         }
         AppServices.Config.PatchClashBase("mixed-port", previous);
@@ -282,14 +282,14 @@ public sealed partial class SettingsPage : Page
         var level = SelectedTag(LogLevelBox);
         if (level is null) return;
         var previous = AppServices.Config.GetScalar("log-level", "info");
-        var previousVerge = AppServices.Config.Verge.LogLevel;
-        SaveVerge(v => v.LogLevel = level);
+        var previousSettings = AppServices.Config.Settings.LogLevel;
+        SaveSettings(v => v.LogLevel = level);
         AppServices.Config.PatchClashBase("log-level", level);
         if (!await AppServices.Core.ApplyConfigAsync())
         {
-            SaveVerge(v => v.LogLevel = previousVerge);
+            SaveSettings(v => v.LogLevel = previousSettings);
             AppServices.Config.PatchClashBase("log-level", previous);
-            _loading = true; SelectByTag(LogLevelBox, previousVerge); _loading = false;
+            _loading = true; SelectByTag(LogLevelBox, previousSettings); _loading = false;
             await ShowApplyFailureAsync();
         }
         else AppServices.Streams.Restart();
@@ -321,11 +321,11 @@ public sealed partial class SettingsPage : Page
                 await InstallServiceAsync();
             return;
         }
-        var previous = AppServices.Config.Verge.EnableTunMode;
-        SaveVerge(v => v.EnableTunMode = TunSwitch.IsOn);
+        var previous = AppServices.Config.Settings.EnableTunMode;
+        SaveSettings(v => v.EnableTunMode = TunSwitch.IsOn);
         if (!await AppServices.Core.ApplyConfigAsync())
         {
-            SaveVerge(v => v.EnableTunMode = previous);
+            SaveSettings(v => v.EnableTunMode = previous);
             _loading = true; TunSwitch.IsOn = previous; _loading = false;
             await ShowApplyFailureAsync();
         }
@@ -366,8 +366,8 @@ public sealed partial class SettingsPage : Page
             return;
         }
 
-        AppServices.Config.Verge.Hotkeys = hotkeys;
-        AppServices.Config.SaveVerge();
+        AppServices.Config.Settings.Hotkeys = hotkeys;
+        AppServices.Config.SaveSettings();
         await ShowInfoAsync(L10n.T("Msg_HotkeySaved"), L10n.T("Msg_HotkeySavedBody"));
     }
 
@@ -375,8 +375,8 @@ public sealed partial class SettingsPage : Page
     {
         if (_loading) return;
         if (LanguageBox.SelectedItem is not ComboBoxItem { Tag: string lang }) return;
-        var verge = AppServices.Config.Verge;
-        if (!SaveVerge(v => v.Language = lang)) return;
+        var settings = AppServices.Config.Settings;
+        if (!SaveSettings(v => v.Language = lang)) return;
         try
         {
             Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
@@ -405,7 +405,7 @@ public sealed partial class SettingsPage : Page
     private void Lightweight_Toggled(object sender, RoutedEventArgs e)
     {
         if (_loading) return;
-        if (!SaveVerge(v => v.EnableLightweightMode = LightweightSwitch.IsOn)) return;
+        if (!SaveSettings(v => v.EnableLightweightMode = LightweightSwitch.IsOn)) return;
         ApplyLightweightMinutes();
     }
 
@@ -415,10 +415,10 @@ public sealed partial class SettingsPage : Page
         if (!int.TryParse(LightweightMinutesBox.Text, out var minutes) || minutes < 0 ||
             TimeSpan.FromMinutes(minutes).TotalMilliseconds > uint.MaxValue - 1d)
         {
-            LightweightMinutesBox.Text = AppServices.Config.Verge.AutoLightweightMinutes.ToString();
+            LightweightMinutesBox.Text = AppServices.Config.Settings.AutoLightweightMinutes.ToString();
             return;
         }
-        SaveVerge(v => v.AutoLightweightMinutes = minutes);
+        SaveSettings(v => v.AutoLightweightMinutes = minutes);
     }
 
     private void LightweightMinutes_LostFocus(object sender, RoutedEventArgs e) => ApplyLightweightMinutes();
@@ -535,7 +535,7 @@ public sealed partial class SettingsPage : Page
     private async void CopyEnvCmd_Click(object sender, RoutedEventArgs e)
         => await CopyEnvAsync("cmd");
 
-    /// <summary>复制 CMD/PowerShell 环境变量设置命令（对齐参考项目 copy_clash_env）。</summary>
+    /// <summary>复制用于 CMD 或 PowerShell 当前会话的代理环境变量命令。</summary>
     private async Task CopyEnvAsync(string format)
     {
         var port = AppServices.Config.MixedPort;
@@ -569,12 +569,12 @@ public sealed partial class SettingsPage : Page
 
     private void AutoCloseConn_Toggled(object sender, RoutedEventArgs e)
     {
-        SaveVerge(v => v.AutoCloseConnection = AutoCloseConnSwitch.IsOn);
+        SaveSettings(v => v.AutoCloseConnection = AutoCloseConnSwitch.IsOn);
     }
 
     private void EnableLog_Toggled(object sender, RoutedEventArgs e)
     {
-        SaveVerge(v => v.EnableLog = EnableLogSwitch.IsOn);
+        SaveSettings(v => v.EnableLog = EnableLogSwitch.IsOn);
     }
 
     // ---------- 应用 ----------
@@ -584,7 +584,7 @@ public sealed partial class SettingsPage : Page
         if (_loading) return;
         var mode = SelectedTag(ThemeBox);
         if (mode is null) return;
-        SaveVerge(v => v.ThemeMode = mode);
+        SaveSettings(v => v.ThemeMode = mode);
         App.ApplyTheme(mode);
     }
 
@@ -715,21 +715,21 @@ public sealed partial class SettingsPage : Page
 
     private Flux.Core.Backup.WebDavClient? CreateWebDavClient()
     {
-        var verge = AppServices.Config.Verge;
-        if (string.IsNullOrWhiteSpace(verge.WebDavUrl)) return null;
+        var settings = AppServices.Config.Settings;
+        if (string.IsNullOrWhiteSpace(settings.WebDavUrl)) return null;
         return new Flux.Core.Backup.WebDavClient(
-            verge.WebDavUrl,
-            verge.WebDavUsername,
-            Flux.Core.Utils.DataProtector.Unprotect(verge.WebDavPasswordEncrypted));
+            settings.WebDavUrl,
+            settings.WebDavUsername,
+            Flux.Core.Utils.DataProtector.Unprotect(settings.WebDavPasswordEncrypted));
     }
 
     private async void WebDavConfig_Click(object sender, RoutedEventArgs e)
     {
-        var verge = AppServices.Config.Verge;
-        var urlBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "https://dav.example.com/dav/", Text = verge.WebDavUrl, MinWidth = 360 };
-        var userBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = L10n.T("Msg_WebDavUsername"), Text = verge.WebDavUsername, MinWidth = 360 };
+        var settings = AppServices.Config.Settings;
+        var urlBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "https://dav.example.com/dav/", Text = settings.WebDavUrl, MinWidth = 360 };
+        var userBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = L10n.T("Msg_WebDavUsername"), Text = settings.WebDavUsername, MinWidth = 360 };
         var passBox = new PasswordBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = L10n.T("Msg_WebDavPassword"), MinWidth = 360 };
-        var dirBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "flux-backups", Text = verge.WebDavDir, MinWidth = 360 };
+        var dirBox = new TextBox { FlowDirection = FlowDirection.LeftToRight, PlaceholderText = "flux-backups", Text = settings.WebDavDir, MinWidth = 360 };
 
         var form = new StackPanel { Spacing = 10, MinWidth = 380 };
         form.Children.Add(urlBox);
@@ -755,11 +755,11 @@ public sealed partial class SettingsPage : Page
             return;
         }
 
-        verge.WebDavUrl = urlBox.Text.Trim();
-        verge.WebDavUsername = userBox.Text.Trim();
-        verge.WebDavDir = string.IsNullOrWhiteSpace(dirBox.Text) ? "flux-backups" : dirBox.Text.Trim();
-        verge.UpdateWebDavPassword(passBox.Password);
-        AppServices.Config.SaveVerge();
+        settings.WebDavUrl = urlBox.Text.Trim();
+        settings.WebDavUsername = userBox.Text.Trim();
+        settings.WebDavDir = string.IsNullOrWhiteSpace(dirBox.Text) ? "flux-backups" : dirBox.Text.Trim();
+        settings.UpdateWebDavPassword(passBox.Password);
+        AppServices.Config.SaveSettings();
         await ShowInfoAsync(L10n.T("Msg_WebDavSaved"), L10n.T("Msg_WebDavSavedBody"));
     }
 
@@ -775,7 +775,7 @@ public sealed partial class SettingsPage : Page
         {
             var name = await AppServices.Backup.CreateAsync("webdav upload");
             var bytes = await File.ReadAllBytesAsync(Path.Combine(Paths.DataBackupDir, name));
-            var dir = AppServices.Config.Verge.WebDavDir;
+            var dir = AppServices.Config.Settings.WebDavDir;
             await client.UploadAsync(dir, name, bytes);
             await ShowInfoAsync(L10n.T("Msg_UploadDone"), L10n.F("Msg_UploadDoneBody", name));
         }
@@ -795,7 +795,7 @@ public sealed partial class SettingsPage : Page
         }
         try
         {
-            var dir = AppServices.Config.Verge.WebDavDir;
+            var dir = AppServices.Config.Settings.WebDavDir;
             var remote = await client.ListAsync(dir);
             if (remote.Count == 0)
             {

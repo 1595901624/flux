@@ -5,6 +5,17 @@ namespace Flux.Tests;
 
 public class DeepLinkParserTests
 {
+    [Theory]
+    [InlineData("flux")]
+    [InlineData("clash")]
+    [InlineData(Flux.Core.Compatibility.LegacyCompatibility.ImportScheme)]
+    public void SupportsCurrentAndCompatibleImportSchemes(string scheme)
+    {
+        Assert.True(DeepLinkParser.TryParseInstallUri(
+            scheme + "://install-config?url=https%3A%2F%2Fexample.com%2Fsub.yaml",
+            out var url, out _));
+        Assert.Equal("https://example.com/sub.yaml", url);
+    }
     [Fact]
     public void ParsesEncodedInstallUri()
     {

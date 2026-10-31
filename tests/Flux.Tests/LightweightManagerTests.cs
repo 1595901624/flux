@@ -7,13 +7,13 @@ namespace Flux.Tests
     public sealed class LightweightManagerTests : IDisposable
     {
         private readonly Queue<Action> _queue = new();
-        private readonly bool _previousEnabled = AppServices.Config.Verge.EnableLightweightMode;
+        private readonly bool _previousEnabled = AppServices.Config.Settings.EnableLightweightMode;
 
         public LightweightManagerTests()
         {
             LightweightManager.OnWindowShown();
             LightweightManager.RunOnUiThread = action => _queue.Enqueue(action);
-            AppServices.Config.Verge.EnableLightweightMode = true;
+            AppServices.Config.Settings.EnableLightweightMode = true;
             App.MainWindow = new LightweightTestWindow();
             App.ShowFailure = null;
         }
@@ -109,7 +109,7 @@ namespace Flux.Tests
         {
             LightweightManager.OnWindowShown();
             LightweightManager.RunOnUiThread = null;
-            AppServices.Config.Verge.EnableLightweightMode = _previousEnabled;
+            AppServices.Config.Settings.EnableLightweightMode = _previousEnabled;
             App.MainWindow = null;
             App.ShowFailure = null;
         }

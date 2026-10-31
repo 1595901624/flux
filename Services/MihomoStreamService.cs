@@ -53,7 +53,7 @@ public class MihomoStreamService
         _running = true;
         StartChannel("traffic", HandleTraffic);
         StartChannel("memory", HandleMemory);
-        StartChannel($"logs?level={Uri.EscapeDataString(AppServices.Config.Verge.LogLevel)}", HandleLog);
+        StartChannel($"logs?level={Uri.EscapeDataString(AppServices.Config.Settings.LogLevel)}", HandleLog);
         StartChannel("connections", HandleConnections);
     }
 

@@ -43,7 +43,7 @@ public sealed class SysProxyServiceTests : IDisposable
         _state = original;
         File.Delete(Snapshot);
         var service = Create();
-        service.Apply(new Flux.Models.VergeConfig { EnableSystemProxy = true, EnableProxyGuard = false });
+        service.Apply(new Flux.Models.AppSettings { EnableSystemProxy = true, EnableProxyGuard = false });
         Assert.False(_state.PacEnabled);
         Assert.Equal("127.0.0.1:7897", _state.Server);
         if (startup) Create().ClearStaleProxy();

@@ -23,7 +23,7 @@ public class LocalBackupServiceTests : IDisposable
         Directory.CreateDirectory(_profilesDir);
         Directory.CreateDirectory(_backupDir);
         File.WriteAllText(Path.Combine(_dataDir, "config.yaml"), "mixed-port: 7897\nsecret: abc\n");
-        File.WriteAllText(Path.Combine(_dataDir, "verge.yaml"), "language: zh-CN\n");
+        File.WriteAllText(Path.Combine(_dataDir, "settings.yaml"), "language: zh-CN\n");
         File.WriteAllText(Path.Combine(_dataDir, "profiles.yaml"), "current: u1\nitems: []\n");
         File.WriteAllText(Path.Combine(_profilesDir, "R111111.yaml"), "proxies: []\n");
 
@@ -37,6 +37,39 @@ public class LocalBackupServiceTests : IDisposable
     public void Dispose()
     {
         try { Directory.Delete(_root, recursive: true); } catch { }
+    }
+
+    [Fact]
+    public async Task OldBackupRestoresApplicationSettingsOverExistingNewSettings()
+    {
+        var name = "legacy.zip";
+        using (var archive = ZipFile.Open(Path.Combine(_backupDir, name), ZipArchiveMode.Create))
+        {
+            var entry = archive.CreateEntry("flux/" + Flux.Core.Compatibility.LegacyCompatibility.SettingsFileName);
+            using var writer = new StreamWriter(entry.Open());
+            writer.Write("language: ja\n");
+        }
+        await _service.RestoreAsync(name);
+        Assert.Equal("language: ja\n", File.ReadAllText(Path.Combine(_dataDir, "settings.yaml")));
+    }
+
+    [Fact]
+    public async Task MixedBackupPrefersNewSettings()
+    {
+        var name = "mixed.zip";
+        using (var archive = ZipFile.Open(Path.Combine(_backupDir, name), ZipArchiveMode.Create))
+        {
+            foreach (var (file, content) in new[] {
+                (Flux.Core.Compatibility.LegacyCompatibility.SettingsFileName, "language: ja"),
+                ("settings.yaml", "language: de") })
+            {
+                var entry = archive.CreateEntry("flux/" + file);
+                using var writer = new StreamWriter(entry.Open());
+                writer.Write(content);
+            }
+        }
+        await _service.RestoreAsync(name);
+        Assert.Equal("language: de", File.ReadAllText(Path.Combine(_dataDir, "settings.yaml")));
     }
 
     [Fact]

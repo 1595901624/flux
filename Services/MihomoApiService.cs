@@ -131,7 +131,7 @@ public class MihomoApiService
 
     /// <summary>
     /// 关闭仍使用指定节点的已有连接。切换节点不会迁移已经建立的 TCP 连接；
-    /// 此操作与 Clash Verge Rev 的 auto-close-connection 行为一致。
+    /// 按用户设置在切换节点后关闭原节点上的连接。
     /// </summary>
     public async Task<int> CloseConnectionsUsingProxyAsync(string proxyName)
     {

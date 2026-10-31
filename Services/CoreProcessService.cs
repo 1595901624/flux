@@ -9,7 +9,7 @@ namespace Flux.Services;
 public enum RunningMode { NotRunning, Sidecar, Service }
 
 /// <summary>
-/// mihomo 内核进程管理（对齐参考项目 CoreManager）：
+/// mihomo 内核进程管理：
 /// - Sidecar 模式：应用直接管理子进程，Job Object 保证主进程退出时内核被一并终止
 /// - Service 模式：TUN 启用时优先经 Flux.Service 以特权方式启动，失败自动回退 sidecar
 /// - 启动前用 `mihomo -t` 校验配置
@@ -378,16 +378,16 @@ public class CoreProcessService : IDisposable
         try
         {
             if (!IsRunning) return false;
-            var serviceReady = Config.Verge.EnableTunMode && AppServices.Privilege is { } privilege &&
+            var serviceReady = Config.Settings.EnableTunMode && AppServices.Privilege is { } privilege &&
                 await privilege.IsServiceReadyAsync();
-            if (Config.Verge.EnableTunMode && !TrayService.IsElevated() && !serviceReady)
+            if (Config.Settings.EnableTunMode && !TrayService.IsElevated() && !serviceReady)
             {
                 LogService.App(L10n.T("Boot_TunDisabledNoPrivilege"), "warn");
                 return false;
             }
 
             var previousMode = Mode;
-            var desiredMode = Config.Verge.EnableTunMode && serviceReady
+            var desiredMode = Config.Settings.EnableTunMode && serviceReady
                 ? RunningMode.Service
                 : RunningMode.Sidecar;
             try
@@ -457,7 +457,7 @@ public class CoreProcessService : IDisposable
     }
 
     /// <summary>
-    /// 对齐 Clash Verge Rev：节点切换记录属于订阅状态，而非一次性的 API 调用。
+    /// 节点选择按订阅持久化，配置重载后恢复有效选择。
     /// 配置重载可能重置内核的选择，因此在控制器就绪后恢复仍存在于对应组内的节点。
     /// </summary>
     private async Task RestoreProfileSelectionsAsync()
@@ -467,7 +467,7 @@ public class CoreProcessService : IDisposable
 
         try
         {
-            // /version 会早于所有代理组完成初始化。参考 Clash Verge Rev 的激活逻辑，
+            // /version 可能早于代理组初始化完成；
             // 对尚未出现在首个 /proxies 快照中的组做短暂重试，避免启动后静默丢失选择。
             const int maxAttempts = 5;
             for (var attempt = 1; attempt <= maxAttempts && pending.Count > 0; attempt++)

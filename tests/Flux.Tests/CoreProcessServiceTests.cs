@@ -86,11 +86,11 @@ public sealed class CoreProcessServiceTests
         Track(core, null, RunningMode.Service);
         typeof(CoreProcessService).GetField("_serviceCoreRunning", BindingFlags.Instance | BindingFlags.NonPublic)!
             .SetValue(core, true);
-        var previousTun = AppServices.Config.Verge.EnableTunMode;
+        var previousTun = AppServices.Config.Settings.EnableTunMode;
         var probe = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
         AppServices.Privilege.ServiceReadyResult = probe.Task;
         AppServices.Privilege.ServiceReadyChecks = 0;
-        AppServices.Config.Verge.EnableTunMode = tun;
+        AppServices.Config.Settings.EnableTunMode = tun;
         try
         {
             var apply = core.ApplyConfigAsync();
@@ -106,7 +106,7 @@ public sealed class CoreProcessServiceTests
         finally
         {
             probe.TrySetResult(false);
-            AppServices.Config.Verge.EnableTunMode = previousTun;
+            AppServices.Config.Settings.EnableTunMode = previousTun;
             AppServices.Privilege.ServiceReadyResult = null;
         }
     }

@@ -29,7 +29,7 @@ public static class AppBootstrapper
             Program.Trace("initialize ok");
 
             // 语言覆盖必须在窗口创建前生效（x:Uid 解析依赖）
-            var lang = AppServices.Config.Verge.Language;
+            var lang = AppServices.Config.Settings.Language;
             try
             {
                 Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
@@ -41,7 +41,7 @@ public static class AppBootstrapper
             Program.Trace("lang ok");
             var silentByArg = Program.Args.Any(a => a.Equals("--silent", StringComparison.OrdinalIgnoreCase));
             var hasDeepLink = Program.Args.Any(DeepLinkService.IsSupportedUri);
-            var silent = (AppServices.Config.Verge.EnableSilentStart || silentByArg) && !hasDeepLink;
+            var silent = (AppServices.Config.Settings.EnableSilentStart || silentByArg) && !hasDeepLink;
             if (!silent) App.ShowMainWindow();
 
             // 上次异常退出可能遗留指向本端口的系统代理（内核已死，代理会断网），先恢复
@@ -50,11 +50,11 @@ public static class AppBootstrapper
 
             // 已保存的 TUN 状态只在有能力特权运行内核时生效：
             // 管理员进程或 Flux 服务可用（普通用户经服务模式 TUN），否则安全关闭避免断网。
-            if (AppServices.Config.Verge.EnableTunMode && !TrayService.IsElevated()
+            if (AppServices.Config.Settings.EnableTunMode && !TrayService.IsElevated()
                 && !await AppServices.Privilege.IsServiceReadyAsync())
             {
-                AppServices.Config.Verge.EnableTunMode = false;
-                AppServices.Config.SaveVerge();
+                AppServices.Config.Settings.EnableTunMode = false;
+                AppServices.Config.SaveSettings();
                 LogService.App(L10n.T("Boot_TunDisabledNoPrivilege"), "warn");
             }
 
@@ -120,9 +120,9 @@ public static class AppBootstrapper
     {
         try
         {
-            if (AppServices.Config.Verge.EnableSystemProxy && coreReady)
-                await Task.Run(() => AppServices.SysProxy.Apply(AppServices.Config.Verge));
-            else if (AppServices.Config.Verge.EnableSystemProxy)
+            if (AppServices.Config.Settings.EnableSystemProxy && coreReady)
+                await Task.Run(() => AppServices.SysProxy.Apply(AppServices.Config.Settings));
+            else if (AppServices.Config.Settings.EnableSystemProxy)
                 LogService.App(L10n.T("Boot_SkipProxyNoCore"), "warn");
         }
         catch (Exception ex)
@@ -143,7 +143,7 @@ public static class AppBootstrapper
             hotkey.Dispatcher = action => _uiDispatcher?.TryEnqueue(() => action());
             hotkey.HotkeyPressed += OnHotkeyPressed;
             LightweightManager.RunOnUiThread = action => _uiDispatcher?.TryEnqueue(() => action());
-            var failures = hotkey.ApplyHotkeys(AppServices.Config.Verge.Hotkeys).Value ?? [];
+            var failures = hotkey.ApplyHotkeys(AppServices.Config.Settings.Hotkeys).Value ?? [];
             foreach (var failure in failures)
                 LogService.App(L10n.F("Boot_HotkeyRegisterFailed", failure), "warn");
         }
@@ -162,7 +162,7 @@ public static class AppBootstrapper
     {
         try
         {
-            var verge = AppServices.Config.Verge;
+            var settings = AppServices.Config.Settings;
             switch (action)
             {
                 case "mode_rule":
@@ -176,25 +176,25 @@ public static class AppBootstrapper
                     break;
                 }
                 case "toggle_system_proxy":
-                    verge.EnableSystemProxy = !verge.EnableSystemProxy;
-                    AppServices.Config.SaveVerge();
-                    AppServices.SysProxy.Apply(verge);
+                    settings.EnableSystemProxy = !settings.EnableSystemProxy;
+                    AppServices.Config.SaveSettings();
+                    AppServices.SysProxy.Apply(settings);
                     break;
                 case "toggle_tun":
                 {
-                    var previous = verge.EnableTunMode;
+                    var previous = settings.EnableTunMode;
                     var next = !previous;
                     if (next && !TrayService.IsElevated() && !AppServices.Privilege.IsServiceReady())
                     {
                         LogService.App(L10n.T("VM_TunNeedAdmin"), "warn");
                         break;
                     }
-                    verge.EnableTunMode = next;
-                    AppServices.Config.SaveVerge();
+                    settings.EnableTunMode = next;
+                    AppServices.Config.SaveSettings();
                     if (!await AppServices.Core.ApplyConfigAsync())
                     {
-                        verge.EnableTunMode = previous;
-                        AppServices.Config.SaveVerge();
+                        settings.EnableTunMode = previous;
+                        AppServices.Config.SaveSettings();
                     }
                     break;
                 }

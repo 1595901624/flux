@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>Proxy-Schutz-Fehler: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>verge.yaml konnte nicht geladen werden: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>settings.yaml konnte nicht geladen werden: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>verge.yaml Migrations-Backup fehlgeschlagen: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>settings.yaml Migrations-Backup fehlgeschlagen: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>verge.yaml auf Schema v{0} migriert; Backup: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>settings.yaml auf Schema v{0} migriert; Backup: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>config.yaml konnte nicht geladen werden: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>Beschreibung (optional)</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>Standard clash-verge/v2.5.2</value>
+    <value>Leer lassen für den Flux-Standard</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>Ungültige TLS-Zertifikate akzeptieren (gefährlich)</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>Minuten</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>Änderungen übernehmen?</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>Die Loopback-Berechtigungen wurden geändert. Vor dem Schließen anwenden? Administratorrechte sind erforderlich.</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>Anwenden und schließen</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>Änderungen verwerfen</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>Weiter bearbeiten</value>
   </data>
 </root>

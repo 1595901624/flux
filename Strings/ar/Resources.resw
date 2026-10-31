@@ -1193,14 +1193,14 @@
   <data name="Proxy_GuardError.Text" xml:space="preserve">
     <value>خطأ في حارس البروكسي: {0}</value>
   </data>
-  <data name="Config_VergeLoadFailed.Text" xml:space="preserve">
-    <value>فشل تحميل verge.yaml: {0}</value>
+  <data name="Config_SettingsLoadFailed.Text" xml:space="preserve">
+    <value>فشل تحميل settings.yaml: {0}</value>
   </data>
-  <data name="Config_VergeMigrateBackupFailed.Text" xml:space="preserve">
-    <value>فشل نسخة ترحيل verge.yaml: {0}</value>
+  <data name="Config_SettingsMigrateBackupFailed.Text" xml:space="preserve">
+    <value>فشل نسخة ترحيل settings.yaml: {0}</value>
   </data>
-  <data name="Config_VergeMigrated.Text" xml:space="preserve">
-    <value>تم ترحيل verge.yaml إلى المخطط v{0}؛ النسخة: {1}</value>
+  <data name="Config_SettingsMigrated.Text" xml:space="preserve">
+    <value>تم ترحيل settings.yaml إلى المخطط v{0}؛ النسخة: {1}</value>
   </data>
   <data name="Config_ClashLoadFailed.Text" xml:space="preserve">
     <value>فشل تحميل config.yaml: {0}</value>
@@ -1308,7 +1308,7 @@
     <value>وصف (اختياري)</value>
   </data>
   <data name="ProfileEdit_UaPlaceholder.Text" xml:space="preserve">
-    <value>افتراضي clash-verge/v2.5.2</value>
+    <value>اتركه فارغًا لاستخدام قيمة Flux الافتراضية</value>
   </data>
   <data name="ProfileEdit_InvalidCertLabel.Text" xml:space="preserve">
     <value>قبول شهادات TLS غير صالحة (خطر)</value>
@@ -1786,5 +1786,20 @@
   </data>
   <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
     <value>دقيقة</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedTitle.Text" xml:space="preserve">
+    <value>هل تريد الاحتفاظ بالتغييرات غير المطبّقة؟</value>
+  </data>
+  <data name="Msg_LoopbackUnsavedBody.Text" xml:space="preserve">
+    <value>غيّرت أذونات الاتصال المحلي للتطبيقات. هل تريد تطبيقها قبل الإغلاق؟ يلزم إذن المسؤول.</value>
+  </data>
+  <data name="Msg_LoopbackApplyClose.Text" xml:space="preserve">
+    <value>تطبيق وإغلاق</value>
+  </data>
+  <data name="Msg_LoopbackDiscard.Text" xml:space="preserve">
+    <value>تجاهل التغييرات</value>
+  </data>
+  <data name="Msg_LoopbackContinue.Text" xml:space="preserve">
+    <value>متابعة التحرير</value>
   </data>
 </root>

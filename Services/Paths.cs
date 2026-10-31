@@ -25,7 +25,7 @@ public static class Paths
     /// <summary>旧版复制到数据目录的内核路径，仅用于升级时清理残留进程。</summary>
     public static string LegacyCoreExePath => Path.Combine(AppDataDir, "FluxCore.exe");
     public static string ClashConfigFile => Path.Combine(AppDataDir, "config.yaml");
-    public static string VergeConfigFile => Path.Combine(AppDataDir, "verge.yaml");
+    public static string AppSettingsFile => Path.Combine(AppDataDir, "settings.yaml");
     public static string ProfilesConfigFile => Path.Combine(AppDataDir, "profiles.yaml");
     public static string RuntimeConfigFile => Path.Combine(AppDataDir, "runtime.yaml");
     public static string CheckConfigFile => Path.Combine(AppDataDir, "check.yaml");

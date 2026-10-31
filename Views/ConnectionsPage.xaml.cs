@@ -47,11 +47,11 @@ public sealed partial class ConnectionsPage : Page
         _rebuilding = true;
         try
         {
-            var verge = AppServices.Config.Verge;
-            var layout = verge.ConnectionsLayout == "list" ? "list" : "table";
+            var settings = AppServices.Config.Settings;
+            var layout = settings.ConnectionsLayout == "list" ? "list" : "table";
 
-            var ordered = verge.ConnectionsColumns.Count > 0
-                ? verge.ConnectionsColumns.Where(id => AllColumns.Any(c => c.Id == id)).ToList()
+            var ordered = settings.ConnectionsColumns.Count > 0
+                ? settings.ConnectionsColumns.Where(id => AllColumns.Any(c => c.Id == id)).ToList()
                 : AllColumns.Select(c => c.Id).ToList();
             foreach (var c in AllColumns)
                 if (!ordered.Contains(c.Id)) ordered.Add(c.Id);
@@ -170,9 +170,9 @@ public sealed partial class ConnectionsPage : Page
     /// <summary>列设置对话框：可见性勾选 + 上移/下移排序。</summary>
     private async void ColumnSettings_Click(object sender, RoutedEventArgs e)
     {
-        var verge = AppServices.Config.Verge;
-        var ordered = verge.ConnectionsColumns.Count > 0
-            ? verge.ConnectionsColumns.Where(id => AllColumns.Any(c => c.Id == id)).ToList()
+        var settings = AppServices.Config.Settings;
+        var ordered = settings.ConnectionsColumns.Count > 0
+            ? settings.ConnectionsColumns.Where(id => AllColumns.Any(c => c.Id == id)).ToList()
             : AllColumns.Select(c => c.Id).ToList();
         foreach (var c in AllColumns)
             if (!ordered.Contains(c.Id)) ordered.Add(c.Id);
@@ -185,7 +185,7 @@ public sealed partial class ConnectionsPage : Page
             var box = new CheckBox
             {
                 Content = new TextBlock { Text = L10n.T(def.ResourceKey), FontSize = 13 },
-                IsChecked = verge.ConnectionsColumns.Count == 0 || verge.ConnectionsColumns.Contains(id),
+                IsChecked = settings.ConnectionsColumns.Count == 0 || settings.ConnectionsColumns.Contains(id),
                 Tag = id,
             };
             checkboxes[id] = box;
@@ -240,8 +240,8 @@ public sealed partial class ConnectionsPage : Page
             return;
         }
 
-        verge.ConnectionsColumns = result;
-        AppServices.Config.SaveVerge();
+        settings.ConnectionsColumns = result;
+        AppServices.Config.SaveSettings();
         RebuildColumns();
         ApplyFilter();
     }
@@ -257,10 +257,10 @@ public sealed partial class ConnectionsPage : Page
 
     private void LayoutToggle_Click(object sender, RoutedEventArgs e)
     {
-        var verge = AppServices.Config.Verge;
-        verge.ConnectionsLayout = verge.ConnectionsLayout == "list" ? "table" : "list";
-        AppServices.Config.SaveVerge();
-        LayoutButton.Content = verge.ConnectionsLayout == "list" ? L10n.T("Msg_LayoutList") : L10n.T("Msg_LayoutTable");
+        var settings = AppServices.Config.Settings;
+        settings.ConnectionsLayout = settings.ConnectionsLayout == "list" ? "table" : "list";
+        AppServices.Config.SaveSettings();
+        LayoutButton.Content = settings.ConnectionsLayout == "list" ? L10n.T("Msg_LayoutList") : L10n.T("Msg_LayoutTable");
         RebuildColumns();
         ApplyFilter();
     }

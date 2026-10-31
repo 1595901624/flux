@@ -4,9 +4,9 @@ using YamlDotNet.Serialization.NamingConventions;
 namespace Flux.Models;
 
 /// <summary>
-/// 应用设置（verge.yaml），命名采用 kebab-case 与参考项目保持一致。
+/// Flux 应用设置（settings.yaml），YAML 字段采用 kebab-case 命名。
 /// </summary>
-public class VergeConfig
+public class AppSettings
 {
     /// <summary>配置 schema 版本；升级时由 ConfigService 执行幂等迁移。</summary>
     [YamlMember(Alias = "schema-version")]
@@ -112,7 +112,7 @@ public class VergeConfig
     [YamlMember(Alias = "hotkeys")]
     public Dictionary<string, string> Hotkeys { get; set; } = new();
 
-    /// <summary>保存到 verge.yaml。</summary>
+    /// <summary>保存到 settings.yaml。</summary>
     public string Serialize()
     {
         var serializer = new SerializerBuilder()
@@ -122,12 +122,12 @@ public class VergeConfig
         return serializer.Serialize(this);
     }
 
-    public static VergeConfig Deserialize(string yaml)
+    public static AppSettings Deserialize(string yaml)
     {
         var deserializer = new DeserializerBuilder()
             .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .IgnoreUnmatchedProperties()
             .Build();
-        return deserializer.Deserialize<VergeConfig>(yaml) ?? new VergeConfig();
+        return deserializer.Deserialize<AppSettings>(yaml) ?? new AppSettings();
     }
 }

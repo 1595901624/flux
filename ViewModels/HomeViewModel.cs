@@ -97,8 +97,8 @@ public partial class HomeViewModel : ObservableObject
 
     public HomeViewModel()
     {
-        SystemProxyOn = AppServices.Config.Verge.EnableSystemProxy;
-        TunOn = AppServices.Config.Verge.EnableTunMode;
+        SystemProxyOn = AppServices.Config.Settings.EnableSystemProxy;
+        TunOn = AppServices.Config.Settings.EnableTunMode;
         IsAdmin = TrayService.IsElevated();
         Mode = AppServices.Config.Mode;
         ModeText = Format.ModeText(Mode);
@@ -193,9 +193,9 @@ public partial class HomeViewModel : ObservableObject
     public async Task RefreshAsync()
     {
         UpdateUptime();
-        var verge = AppServices.Config.Verge;
-        SystemProxyOn = verge.EnableSystemProxy;
-        TunOn = verge.EnableTunMode;
+        var settings = AppServices.Config.Settings;
+        SystemProxyOn = settings.EnableSystemProxy;
+        TunOn = settings.EnableTunMode;
         Mode = AppServices.Config.Mode;
         ModeText = Format.ModeText(Mode);
         MixedPort = AppServices.Config.MixedPort.ToString();
@@ -247,7 +247,7 @@ public partial class HomeViewModel : ObservableObject
             CoreStatusText = L10n.T("VM_CoreNotRunning");
         }
 
-        // 与 Clash Verge Rev 一致：规则模式优先恢复该订阅上次选择的代理组；
+        // 规则模式优先恢复该订阅上次选择的代理组；
         // 无保存值时依次选择常见主组名称、MATCH 兜底组和配置中的第一个可选组。
         try
         {
@@ -302,19 +302,19 @@ public partial class HomeViewModel : ObservableObject
 
     public async Task ToggleSystemProxyAsync(bool on)
     {
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnableSystemProxy;
-        verge.EnableSystemProxy = on;
-        AppServices.Config.SaveVerge();
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnableSystemProxy;
+        settings.EnableSystemProxy = on;
+        AppServices.Config.SaveSettings();
         SystemProxyOn = on;
         try
         {
-            await Task.Run(() => AppServices.SysProxy.Apply(verge));
+            await Task.Run(() => AppServices.SysProxy.Apply(settings));
         }
         catch
         {
-            verge.EnableSystemProxy = previous;
-            AppServices.Config.SaveVerge();
+            settings.EnableSystemProxy = previous;
+            AppServices.Config.SaveSettings();
             SystemProxyOn = previous;
             throw;
         }
@@ -327,14 +327,14 @@ public partial class HomeViewModel : ObservableObject
             TunOn = false;
             throw new InvalidOperationException(L10n.T("VM_TunNeedAdmin"));
         }
-        var verge = AppServices.Config.Verge;
-        var previous = verge.EnableTunMode;
-        verge.EnableTunMode = on;
-        AppServices.Config.SaveVerge();
+        var settings = AppServices.Config.Settings;
+        var previous = settings.EnableTunMode;
+        settings.EnableTunMode = on;
+        AppServices.Config.SaveSettings();
         TunOn = on;
         if (await AppServices.Core.ApplyConfigAsync()) return;
-        verge.EnableTunMode = previous;
-        AppServices.Config.SaveVerge();
+        settings.EnableTunMode = previous;
+        AppServices.Config.SaveSettings();
         TunOn = previous;
         throw new InvalidOperationException(L10n.T("VM_TunRejected"));
     }

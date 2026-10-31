@@ -40,25 +40,25 @@ public class SysProxyService
 
     public static string DefaultBypass => "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;<local>";
 
-    public void Apply(VergeConfig verge)
+    public void Apply(AppSettings settings)
     {
         lock (_sync)
         {
             StopGuardUnsafe();
-            if (!verge.EnableSystemProxy)
+            if (!settings.EnableSystemProxy)
             {
                 RestoreOriginalUnsafe();
                 LogService.App(L10n.T("Proxy_Restored"));
                 return;
             }
 
-            var bypass = verge.UseDefaultBypass
-                ? (string.IsNullOrEmpty(verge.SystemProxyBypass)
+            var bypass = settings.UseDefaultBypass
+                ? (string.IsNullOrEmpty(settings.SystemProxyBypass)
                     ? DefaultBypass
-                    : DefaultBypass + ";" + verge.SystemProxyBypass)
-                : verge.SystemProxyBypass;
+                    : DefaultBypass + ";" + settings.SystemProxyBypass)
+                : settings.SystemProxyBypass;
             var server = $"127.0.0.1:{AppServices.Config.MixedPort}";
-            var pacUrl = verge.EnablePacMode ? WritePacFile(verge, bypass) : null;
+            var pacUrl = settings.EnablePacMode ? WritePacFile(settings, bypass) : null;
 
             var snapshot = LoadSnapshot();
             if (snapshot is null)
@@ -90,12 +90,12 @@ public class SysProxyService
                 _lastApplied = new AppliedProxy(server, bypass, null);
                 LogService.App(L10n.F("Proxy_Enabled", server));
             }
-            StartGuardUnsafe(verge);
+            StartGuardUnsafe(settings);
         }
     }
 
     /// <summary>生成 PAC 文件并返回其 file:// URL。</summary>
-    private static string WritePacFile(VergeConfig verge, string bypass)
+    private static string WritePacFile(AppSettings settings, string bypass)
     {
         var port = AppServices.Config.MixedPort;
         var content = Flux.Core.Proxy.PacScriptGenerator.Generate(port, bypass.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries));
@@ -134,7 +134,7 @@ public class SysProxyService
                 }
 
                 var state = ReadState();
-                if (AppServices.Config.Verge.EnableSystemProxy &&
+                if (AppServices.Config.Settings.EnableSystemProxy &&
                     SystemProxyOwnership.IsOwned(state.Enable, state.Server, $"127.0.0.1:{AppServices.Config.MixedPort}"))
                 {
                     SetProxy(new ProxyState(false, "", ""));
@@ -208,9 +208,9 @@ public class SysProxyService
         try { if (File.Exists(SnapshotFile)) File.Delete(SnapshotFile); } catch { }
     }
 
-    private void StartGuardUnsafe(VergeConfig verge)
+    private void StartGuardUnsafe(AppSettings settings)
     {
-        if (!verge.EnableProxyGuard || _lastApplied is null) return;
+        if (!settings.EnableProxyGuard || _lastApplied is null) return;
         _guardTimer = new System.Threading.Timer(_ =>
         {
             lock (_sync)
@@ -240,12 +240,12 @@ public class SysProxyService
         }, null, TimeSpan.FromSeconds(30), TimeSpan.FromSeconds(30));
     }
 
-    public void StartGuard(VergeConfig verge)
+    public void StartGuard(AppSettings settings)
     {
         lock (_sync)
         {
             StopGuardUnsafe();
-            StartGuardUnsafe(verge);
+            StartGuardUnsafe(settings);
         }
     }
 

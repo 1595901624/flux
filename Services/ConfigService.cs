@@ -7,14 +7,14 @@ using YamlDotNet.Serialization;
 namespace Flux.Services;
 
 /// <summary>
-/// 配置管理：config.yaml（基础 Clash 配置）、verge.yaml（应用设置）、profiles.yaml（订阅列表）
+/// 配置管理：config.yaml（基础 Clash 配置）、settings.yaml（应用设置）、profiles.yaml（订阅列表）
 /// 以及运行时配置生成（委托 Flux.Core 的 RuntimeConfigBuilder 流水线）。
 /// </summary>
 public partial class ConfigService
 {
     private readonly RuntimeConfigBuilder _runtimeBuilder = new();
 
-    public VergeConfig Verge { get; private set; } = new();
+    public AppSettings Settings { get; private set; } = new();
     public ProfilesConfig Profiles { get; private set; } = new();
     public YamlMappingNode ClashBase { get; private set; } = new();
 
@@ -26,47 +26,50 @@ public partial class ConfigService
     public static ConfigService LoadOrCreate()
     {
         var svc = new ConfigService();
-        svc.LoadVerge();
+        svc.LoadSettings();
         svc.LoadClashBase();
         svc.LoadProfiles();
         return svc;
     }
 
-    private void LoadVerge()
+    private void LoadSettings()
     {
+        // 迁移失败时停止加载，避免用默认值覆盖用户的历史设置。
+        Flux.Core.Compatibility.LegacyCompatibility.MigrateSettingsFile(Paths.AppDataDir,
+            text => AppSettings.Deserialize(text));
         try
         {
-            if (File.Exists(Paths.VergeConfigFile))
+            if (File.Exists(Paths.AppSettingsFile))
             {
-                Verge = VergeConfig.Deserialize(File.ReadAllText(Paths.VergeConfigFile));
-                MigrateVerge();
+                Settings = AppSettings.Deserialize(File.ReadAllText(Paths.AppSettingsFile));
+                MigrateSettings();
                 return;
             }
         }
-        catch (Exception ex) { LogService.App(L10n.F("Config_VergeLoadFailed", ex.Message), "error"); }
-        Verge = new VergeConfig();
-        SaveVerge();
+        catch (Exception ex) { LogService.App(L10n.F("Config_SettingsLoadFailed", ex.Message), "error"); }
+        Settings = new AppSettings();
+        SaveSettings();
     }
 
     /// <summary>幂等迁移：升级 schema 版本前先备份旧文件。</summary>
-    private void MigrateVerge()
+    private void MigrateSettings()
     {
-        if (Verge.SchemaVersion >= 1) return;
+        if (Settings.SchemaVersion >= 1) return;
         try
         {
             Directory.CreateDirectory(Paths.DataBackupDir);
             var backup = Path.Combine(Paths.DataBackupDir,
-                $"{DateTime.Now:yyyyMMdd-HHmmss}-v{Verge.SchemaVersion}-verge.yaml");
-            if (File.Exists(Paths.VergeConfigFile))
-                File.Copy(Paths.VergeConfigFile, backup, overwrite: true);
-            LogService.App(L10n.F("Config_VergeMigrated", 1, backup), "info");
+                $"{DateTime.Now:yyyyMMdd-HHmmss}-v{Settings.SchemaVersion}-settings.yaml");
+            if (File.Exists(Paths.AppSettingsFile))
+                File.Copy(Paths.AppSettingsFile, backup, overwrite: true);
+            LogService.App(L10n.F("Config_SettingsMigrated", 1, backup), "info");
         }
         catch (Exception ex)
         {
-            LogService.App(L10n.F("Config_VergeMigrateBackupFailed", ex.Message), "warn");
+            LogService.App(L10n.F("Config_SettingsMigrateBackupFailed", ex.Message), "warn");
         }
-        Verge.SchemaVersion = 1;
-        SaveVerge();
+        Settings.SchemaVersion = 1;
+        SaveSettings();
     }
 
     private void LoadClashBase()
@@ -329,7 +332,7 @@ public partial class ConfigService
             Profile = profile,
             ClashBase = ClashBase,
             ChainItems = ProfileEnhanceService.BuildChainItems(item),
-            EnableTun = Verge.EnableTunMode,
+            EnableTun = Settings.EnableTunMode,
             EnableBuiltinEnhance = true,
         };
         var result = _runtimeBuilder.Build(input);
