@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:Flux.ViewModels"
+    xmlns:views="using:Flux.Views"
     mc:Ignorable="d">
 
     <Grid Padding="28,16,28,12" RowSpacing="10">
@@ -15,18 +16,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" ColumnSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <views:WrappingPanel Grid.Row="0" Spacing="10">
             <TextBlock x:Uid="Logs_Title" Text="日志" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <ComboBox x:Name="LevelBox" Grid.Column="1" VerticalAlignment="Center" Width="120"
+            <ComboBox x:Name="LevelBox" VerticalAlignment="Center" MinWidth="160"
                       SelectionChanged="LevelBox_SelectionChanged" SelectedIndex="1">
                 <ComboBoxItem x:Uid="Logs_LevelAll" Tag="all" Content="全部级别" />
                 <ComboBoxItem x:Uid="Logs_LevelInfo" Tag="info" Content="Info 及以上" />
@@ -34,30 +26,30 @@
                 <ComboBoxItem x:Uid="Logs_LevelError" Tag="error" Content="Error" />
                 <ComboBoxItem x:Uid="Logs_LevelDebug" Tag="debug" Content="Debug" />
             </ComboBox>
-            <TextBox FlowDirection="LeftToRight" x:Uid="Logs_SearchBox" x:Name="SearchBox" Grid.Column="2" Width="240" VerticalAlignment="Center"
+            <TextBox FlowDirection="LeftToRight" x:Uid="Logs_SearchBox" x:Name="SearchBox" Width="240" VerticalAlignment="Center"
                      PlaceholderText="搜索日志内容" TextChanged="SearchBox_TextChanged" />
-            <Button x:Name="PauseButton" Grid.Column="3" VerticalAlignment="Center" Click="Pause_Click">
+            <Button x:Name="PauseButton" VerticalAlignment="Center" Click="Pause_Click">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE769;" FontSize="14" />
                     <TextBlock x:Uid="Logs_Pause" Text="暂停" />
                 </StackPanel>
             </Button>
-            <Button Grid.Column="4" VerticalAlignment="Center" Click="Clear_Click" Style="{StaticResource SubtleButtonStyle}">
+            <Button VerticalAlignment="Center" Click="Clear_Click" Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE74D;" FontSize="14" />
                     <TextBlock x:Uid="Logs_Clear" Text="清空" />
                 </StackPanel>
             </Button>
-            <ToggleButton x:Name="NewestFirstToggle" Grid.Column="5" VerticalAlignment="Center"
+            <ToggleButton x:Name="NewestFirstToggle" VerticalAlignment="Center"
                           Checked="NewestFirst_Changed" Unchecked="NewestFirst_Changed">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8D5;" FontSize="14" />
                     <TextBlock x:Uid="Logs_NewestFirst" Text="倒序" />
                 </StackPanel>
             </ToggleButton>
-            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" Grid.Column="6" FontSize="12" Opacity="0.6"
+            <TextBlock Text="{x:Bind Vm.CountText, Mode=OneWay}" FontSize="12" Opacity="0.6"
                        VerticalAlignment="Center" Margin="8,0,0,0" />
-        </Grid>
+        </views:WrappingPanel>
 
         <StackPanel Grid.Row="1" x:Name="EmptyPanel" Visibility="Visible" Spacing="6" HorizontalAlignment="Center" Margin="0,40,0,0">
             <FontIcon Glyph="&#xE9D9;" FontSize="32" Opacity="0.35" />

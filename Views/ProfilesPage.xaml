@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:Flux.ViewModels"
+    xmlns:views="using:Flux.Views"
     mc:Ignorable="d">
 
     <Grid Padding="28,16,28,12" RowSpacing="12">
@@ -16,42 +17,32 @@
         </Grid.RowDefinitions>
 
         <!-- 标题 + 导入 -->
-        <Grid Grid.Row="0" ColumnSpacing="12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <views:WrappingPanel Grid.Row="0" Spacing="12">
             <TextBlock x:Uid="Profiles_Title" Text="订阅" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
             <TextBox FlowDirection="LeftToRight" x:Uid="Profiles_UrlBox"
-                x:Name="UrlBox"
-                Grid.Column="1"
+                x:Name="UrlBox" Width="320"
                 PlaceholderText="输入订阅链接（https://...），支持 clash:// 安装链接"
                 VerticalAlignment="Center"
                 KeyDown="UrlBox_KeyDown" />
-            <Button x:Uid="Profiles_Import" Grid.Column="2" Style="{StaticResource AccentButtonStyle}" VerticalAlignment="Center" Click="Import_Click">
+            <Button x:Uid="Profiles_Import" Style="{StaticResource AccentButtonStyle}" VerticalAlignment="Center" Click="Import_Click">
                 导入
             </Button>
-            <Button Grid.Column="3" VerticalAlignment="Center" Click="ImportLocal_Click">
+            <Button VerticalAlignment="Center" Click="ImportLocal_Click">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8E5;" FontSize="14" />
                     <TextBlock x:Uid="Profiles_ImportLocal" Text="本地文件" />
                 </StackPanel>
             </Button>
-            <Button x:Uid="Profiles_CreateEmpty" Grid.Column="4" VerticalAlignment="Center" Click="CreateEmpty_Click">
+            <Button x:Uid="Profiles_CreateEmpty" VerticalAlignment="Center" Click="CreateEmpty_Click">
                 新建空配置
             </Button>
-            <Button x:Uid="Profiles_UpdateAll" Grid.Column="5" VerticalAlignment="Center" Click="UpdateAll_Click">
+            <Button x:Uid="Profiles_UpdateAll" VerticalAlignment="Center" Click="UpdateAll_Click">
                 全部更新
             </Button>
-            <Button x:Uid="Profiles_GlobalEnhance" Grid.Column="6" VerticalAlignment="Center" Click="MenuGlobalEnhance_Click">
+            <Button x:Uid="Profiles_GlobalEnhance" VerticalAlignment="Center" Click="MenuGlobalEnhance_Click">
                 全局增强
             </Button>
-        </Grid>
+        </views:WrappingPanel>
 
         <!-- 状态行 -->
         <Grid Grid.Row="1" Visibility="{x:Bind Vm.StatusVisibility, Mode=OneWay}">

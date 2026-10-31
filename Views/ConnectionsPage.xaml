@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:Flux.ViewModels"
+    xmlns:views="using:Flux.Views"
     mc:Ignorable="d">
 
     <Grid Padding="28,16,28,12" RowSpacing="10">
@@ -16,20 +17,10 @@
         </Grid.RowDefinitions>
 
         <!-- 头部 -->
-        <Grid Grid.Row="0" ColumnSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <views:WrappingPanel Grid.Row="0" Spacing="10">
             <TextBlock x:Uid="Connections_Title" Text="连接" FontSize="26" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <TextBlock Text="{x:Bind Vm.TotalsText, Mode=OneWay}" Grid.Column="1" FontSize="12" Opacity="0.7" VerticalAlignment="Center" />
-            <ComboBox x:Name="SortBox" Grid.Column="2" Width="110" VerticalAlignment="Center"
+            <TextBlock Text="{x:Bind Vm.TotalsText, Mode=OneWay}" FontSize="12" Opacity="0.7" VerticalAlignment="Center" />
+            <ComboBox x:Name="SortBox" MinWidth="140" VerticalAlignment="Center"
                       SelectionChanged="SortBox_SelectionChanged" SelectedIndex="0">
                 <ComboBoxItem x:Uid="Connections_SortDefault" Tag="default" Content="默认排序" />
                 <ComboBoxItem x:Uid="Connections_SortUpload" Tag="upload" Content="按上传" />
@@ -37,19 +28,18 @@
             </ComboBox>
             <TextBox FlowDirection="LeftToRight" x:Uid="Connections_SearchBox"
                 x:Name="SearchBox"
-                Grid.Column="3"
                 Width="220"
                 PlaceholderText="搜索主机 / 规则 / 进程"
                 VerticalAlignment="Center"
                 TextChanged="SearchBox_TextChanged" />
-            <Button x:Name="LayoutButton" Grid.Column="4" VerticalAlignment="Center"
+            <Button x:Name="LayoutButton" VerticalAlignment="Center"
                     Click="LayoutToggle_Click" Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8FD;" FontSize="14" />
                     <TextBlock x:Uid="Msg_LayoutTable" Text="表格" />
                 </StackPanel>
             </Button>
-            <Button Grid.Column="5" VerticalAlignment="Center" Click="ColumnSettings_Click"
+            <Button VerticalAlignment="Center" Click="ColumnSettings_Click"
                     Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE700;" FontSize="14" />
@@ -58,12 +48,10 @@
             </Button>
             <ToggleButton x:Uid="Connections_ClosedToggle"
                 x:Name="ClosedToggle"
-                Grid.Column="6"
                 Content="已关闭"
                 VerticalAlignment="Center"
                 Checked="ClosedToggle_Changed" Unchecked="ClosedToggle_Changed" />
             <Button
-                Grid.Column="7"
                 VerticalAlignment="Center"
                 Click="CloseAll_Click"
                 Style="{StaticResource SubtleButtonStyle}">
@@ -72,7 +60,7 @@
                     <TextBlock x:Uid="Connections_CloseAll" Text="关闭全部" />
                 </StackPanel>
             </Button>
-        </Grid>
+        </views:WrappingPanel>
 
         <!-- 表头（列由代码根据用户配置动态生成） -->
         <Grid x:Name="HeaderGrid" Grid.Row="1" Padding="12,6,12,6" Background="{ThemeResource ControlFillColorDefaultBrush}" CornerRadius="4" ColumnSpacing="10" />
