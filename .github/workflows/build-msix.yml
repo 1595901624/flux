@@ -132,6 +132,12 @@ jobs:
             Copy-Item -Path 'scripts\Install-FluxSideload.ps1' -Destination "$stagingDirectory\Install-FluxSideload.ps1"
             Export-Certificate -Cert "Cert:\CurrentUser\My\$env:certificate_thumbprint" -FilePath "$stagingDirectory\Flux.cer" -Force | Out-Null
             Compress-Archive -Path "$stagingDirectory\*" -DestinationPath $zipPath -Force
+            # Verify the final ZIP using the same discovery logic as installation.
+            $verificationDirectory = Join-Path $env:RUNNER_TEMP "flux-sideload-verify-$rid"
+            Expand-Archive -LiteralPath $zipPath -DestinationPath $verificationDirectory
+            & "$verificationDirectory\Install-FluxSideload.ps1" -VerifyOnly -RuntimeIdentifier $rid
+            & powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$verificationDirectory\Install-FluxSideload.ps1" -VerifyOnly -RuntimeIdentifier $rid
+            if ($LASTEXITCODE -ne 0) { throw "Windows PowerShell 侧载包校验失败：$rid" }
           }
 
       - name: Remove MSIX signing certificate
