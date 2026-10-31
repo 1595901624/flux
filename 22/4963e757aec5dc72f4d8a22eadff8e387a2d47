@@ -1,0 +1,734 @@
+Flux.csproj
+  74900f7d25919519 11
+Flux.Service.Installer/Flux.Service.Installer.csproj
+  74900f7d25919519 18
+Flux.Service/Flux.Service.csproj
+  74900f7d25919519 17
+.github/workflows/build-msix.yml
+  74900f7d25919519 9
+scripts/Verify-Distributions.ps1
+  74900f7d25919519 9
+Package.appxmanifest
+  74900f7d25919519 12,42-45
+scripts/Build-StorePackages.ps1
+  74900f7d25919519 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "224963e757aec5dc72f4d8a22eadff8e387a2d47",
+  "prompts": {
+    "74900f7d25919519": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a190a1-c0bc-70c3-9b7c-4f2612ca722d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 12,
+      "total_deletions": 7,
+      "accepted_lines": 12,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 917,
+    "git_diff_deleted_lines": 540,
+    "ai_additions": 11,
+    "ai_accepted": 11,
+    "BYMC": 891,
+    "mixed_additions": 0,
+    "BYAC": 11,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      },
+      "App.xaml.cs": {
+        "BYMC": [
+          "61"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Backup/LocalBackupService.cs": {
+        "BYMC": [
+          "10",
+          "45",
+          "54",
+          "155",
+          "157",
+          "183"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Compatibility/LegacyCompatibility.cs": {
+        "BYMC": [
+          "1-29"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Config/RuntimeConfigBuilder.cs": {
+        "BYMC": [
+          "9"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Service.Installer/Flux.Service.Installer.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "18"
+        ],
+        "BYRC": []
+      },
+      "Flux.Service/Flux.Service.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "17"
+        ],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "11"
+        ],
+        "BYRC": []
+      },
+      "Models/AppSettings.cs": {
+        "BYMC": [
+          "1-133"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [
+          "41"
+        ],
+        "BYAC": [
+          "12",
+          "42-45"
+        ],
+        "BYRC": []
+      },
+      "Services/AppBootstrapper.cs": {
+        "BYMC": [
+          "32",
+          "44",
+          "53",
+          "56-57",
+          "123-125",
+          "146",
+          "165",
+          "179-181",
+          "185",
+          "192-193",
+          "196-197"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.Settings.cs": {
+        "BYMC": [
+          "8",
+          "10"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ConfigService.cs": {
+        "BYMC": [
+          "10",
+          "17",
+          "29",
+          "35",
+          "37-39",
+          "42",
+          "44-45",
+          "49-51",
+          "55",
+          "57",
+          "62-65",
+          "69",
+          "71-72",
+          "335"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/CoreProcessService.cs": {
+        "BYMC": [
+          "12",
+          "381",
+          "383",
+          "390",
+          "460",
+          "470"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DeepLinkParser.cs": {
+        "BYMC": [
+          "6",
+          "8"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DeepLinkService.cs": {
+        "BYMC": [
+          "6",
+          "12",
+          "23-24",
+          "32",
+          "35-36"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/DiagnosticsService.cs": {
+        "BYMC": [
+          "65",
+          "71",
+          "73-74"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LanguageLayout.cs": {
+        "BYMC": [
+          "15"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LightweightManager.cs": {
+        "BYMC": [
+          "33",
+          "76-77",
+          "81"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/LogService.cs": {
+        "BYMC": [
+          "8",
+          "23"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/MihomoApiService.cs": {
+        "BYMC": [
+          "134"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/MihomoStreamService.cs": {
+        "BYMC": [
+          "56"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/Paths.cs": {
+        "BYMC": [
+          "28"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/ProfileEnhanceService.cs": {
+        "BYMC": [
+          "73",
+          "115"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SubscriptionService.cs": {
+        "BYMC": [
+          "11",
+          "295"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/SysProxyService.cs": {
+        "BYMC": [
+          "43",
+          "48",
+          "55-56",
+          "58-59",
+          "61",
+          "93",
+          "98",
+          "137",
+          "211",
+          "213",
+          "243",
+          "248"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Services/TrayService.cs": {
+        "BYMC": [
+          "99",
+          "116",
+          "118",
+          "181",
+          "274",
+          "287-290",
+          "293",
+          "297-298",
+          "312-315",
+          "318-319"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1196-1197",
+          "1199-1200",
+          "1202-1203",
+          "1311",
+          "1790-1803"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/HomeViewModel.cs": {
+        "BYMC": [
+          "100-101",
+          "196-198",
+          "250",
+          "305-308",
+          "312",
+          "316-317",
+          "330-333",
+          "336-337"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "ViewModels/ProxiesViewModel.cs": {
+        "BYMC": [
+          "34",
+          "82",
+          "117",
+          "221",
+          "242",
+          "274",
+          "291"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml.cs": {
+        "BYMC": [
+          "50-51",
+          "53-54",
+          "173-175",
+          "188",
+          "243-244",
+          "260-263"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/HomePage.xaml.cs": {
+        "BYMC": [
+          "60",
+          "73"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "54",
+          "65-73",
+          "77",
+          "89-90",
+          "94-96",
+          "98-99",
+          "122",
+          "125-127",
+          "138",
+          "151",
+          "164-167",
+          "170-171",
+          "182-186",
+          "189-190",
+          "200-202",
+          "208-210",
+          "242-243",
+          "285-286",
+          "290",
+          "292",
+          "324-325",
+          "328",
+          "369-370",
+          "378-379",
+          "408",
+          "418",
+          "421",
+          "538",
+          "572",
+          "577",
+          "587",
+          "718-719",
+          "721-723",
+          "728-730",
+          "732",
+          "758-762",
+          "778",
+          "798"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/UwpLoopbackDialog.cs": {
+        "BYMC": [
+          "20",
+          "27-44",
+          "59-90",
+          "125-126",
+          "148-149",
+          "169",
+          "185",
+          "187",
+          "202",
+          "208",
+          "225",
+          "232",
+          "247",
+          "253-254"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "docs/实现问题审计与修复优先级.md": {
+        "BYMC": [
+          "3-4",
+          "7",
+          "34",
+          "136",
+          "159"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "docs/规划文档.md": {
+        "BYMC": [
+          "1-3",
+          "9",
+          "16",
+          "43",
+          "46",
+          "52",
+          "194",
+          "322",
+          "345",
+          "384",
+          "399-400",
+          "403"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/Build-StorePackages.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "2"
+        ],
+        "BYRC": []
+      },
+      "scripts/Verify-Distributions.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      },
+      "scripts/i18n_core_table.py": {
+        "BYMC": [
+          "38-40"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/i18n_gaps_table.py": {
+        "BYMC": [
+          "24"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_diag.py": {
+        "BYMC": [
+          "33",
+          "37"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_gaps.py": {
+        "BYMC": [
+          "108"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/patch_l10n_core.py": {
+        "BYMC": [
+          "54-56"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/ConfigSettingsNotificationTests.cs": {
+        "BYMC": [
+          "10",
+          "15",
+          "25-27",
+          "29-32",
+          "34-35",
+          "45-46",
+          "52"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessServiceTests.cs": {
+        "BYMC": [
+          "89",
+          "93",
+          "109"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/CoreProcessTestDependencies.cs": {
+        "BYMC": [
+          "30",
+          "52"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/DeepLinkParserTests.cs": {
+        "BYMC": [
+          "8-18"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/Flux.Tests.csproj": {
+        "BYMC": [
+          "30"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LightweightManagerTests.cs": {
+        "BYMC": [
+          "10",
+          "16",
+          "112"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalBackupServiceTests.cs": {
+        "BYMC": [
+          "26",
+          "42-72"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/MihomoStreamServiceTests.cs": {
+        "BYMC": [
+          "20",
+          "35",
+          "49"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SettingsMigrationTests.cs": {
+        "BYMC": [
+          "1-49"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/SysProxyServiceTests.cs": {
+        "BYMC": [
+          "46"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/WebDavSettingsTests.cs": {
+        "BYMC": [
+          "12",
+          "18",
+          "27"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793436286,
+  "requirement_id": ""
+}
