@@ -21,7 +21,7 @@ public sealed partial class MainWindow : Window
     private const int SampleCount = 80;
     private readonly Queue<double> _upSamples = new();
     private readonly Queue<double> _downSamples = new();
-    private readonly Microsoft.UI.Dispatching.DispatcherQueueTimer? _graphTimer;
+    private Microsoft.UI.Dispatching.DispatcherQueueTimer? _graphTimer;
 
     public MainWindow()
     {
@@ -60,9 +60,19 @@ public sealed partial class MainWindow : Window
         Closed += (_, _) =>
         {
             _graphTimer?.Stop();
+            if (_graphTimer is not null) _graphTimer.Tick -= OnGraphTick;
+            _graphTimer = null;
             AppServices.Streams.Traffic -= OnTraffic;
+            AppServices.Core.RestartStateChanged -= OnCoreRestartStateChanged;
             _endSessionHook?.Dispose();
-            App.MainWindow = null;
+            // 主动卸载页面以触发 Unloaded，解除页面的数据流订阅与轮询。
+            ContentFrame.Content = null;
+            ContentFrame.BackStack.Clear();
+            ContentFrame.ForwardStack.Clear();
+            ContentFrame.CacheSize = 0;
+            SystemBackdrop = null;
+            Content = null;
+            if (ReferenceEquals(App.MainWindow, this)) App.MainWindow = null;
         };
 
         // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
@@ -78,15 +88,19 @@ public sealed partial class MainWindow : Window
 
         // 实时流量订阅
         AppServices.Streams.Traffic += OnTraffic;
+        AppServices.Core.RestartStateChanged += OnCoreRestartStateChanged;
 
         _graphTimer = DispatcherQueue.CreateTimer();
         _graphTimer.Interval = TimeSpan.FromSeconds(1);
-        _graphTimer.Tick += (_, _) => RedrawGraph();
+        _graphTimer.Tick += OnGraphTick;
         _graphTimer.Start();
     }
 
-    public void SetStartupState(bool starting)
+    private void OnGraphTick(Microsoft.UI.Dispatching.DispatcherQueueTimer sender, object args) => RedrawGraph();
+
+    public void UpdateStartupState()
     {
+        var starting = AppBootstrapper.IsStarting || AppServices.Core.IsRestarting;
         var wasStarting = _starting;
         _starting = starting;
         NavView.IsEnabled = !starting;
@@ -94,6 +108,12 @@ public sealed partial class MainWindow : Window
         StartupProgress.IsActive = starting;
         StartupProgress.Visibility = starting ? Visibility.Visible : Visibility.Collapsed;
         if (wasStarting && !starting && ContentFrame.Content is HomePage home) _ = home.Vm.RefreshAsync();
+    }
+
+    private void OnCoreRestartStateChanged()
+    {
+        if (DispatcherQueue.HasThreadAccess) UpdateStartupState();
+        else DispatcherQueue.TryEnqueue(UpdateStartupState);
     }
 
     private void OnTraffic(double up, double down) =>

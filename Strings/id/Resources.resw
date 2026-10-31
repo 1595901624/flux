@@ -373,7 +373,7 @@
     <value>Mode ringan</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>Lepaskan UI saat ditutup; tray dan core tetap</value>
+    <value>Setelah jendela ditutup, tunggu waktu yang ditentukan lalu bebaskan antarmuka. Proxy tetap berjalan. 0 menonaktifkan pembebasan otomatis.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>menit</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Memulai inti…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Tunggu setelah ditutup</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>menit</value>
   </data>
 </root>

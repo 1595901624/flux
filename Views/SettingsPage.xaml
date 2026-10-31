@@ -133,11 +133,17 @@
                 <sc:SettingsCard x:Uid="Settings_CardService" Header="Flux 服务" Description="以 LocalSystem 运行，普通用户无需管理员即可使用 TUN">
                     <Button x:Uid="Settings_InstallService" Content="安装 / 修复服务" Click="InstallService_Click" />
                 </sc:SettingsCard>
-                <sc:SettingsCard x:Uid="Settings_CardLightweight" Header="轻量模式" Description="关闭窗口后释放主界面，仅保留托盘与内核">
-                    <StackPanel Orientation="Horizontal" Spacing="8">
-                        <ToggleSwitch x:Uid="Common_Toggle" x:Name="LightweightSwitch" Toggled="Lightweight_Toggled" />
-                        <TextBox FlowDirection="LeftToRight" x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="90" PlaceholderText="分钟"
-                                 LostFocus="LightweightMinutes_LostFocus" KeyDown="LightweightMinutes_KeyDown" />
+                <sc:SettingsCard x:Uid="Settings_CardLightweight" Header="轻量模式" Description="关闭窗口后，等待设定时间再释放主界面，代理继续运行。0 表示不自动释放。" Visibility="Collapsed">
+                    <StackPanel Spacing="8">
+                        <ToggleSwitch x:Uid="Common_Toggle" x:Name="LightweightSwitch" HorizontalAlignment="Right" Toggled="Lightweight_Toggled" />
+                        <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                            <TextBlock x:Uid="Settings_LightweightDelayPrefix" x:Name="LightweightDelayLabel" Text="关闭窗口后等待" VerticalAlignment="Center" />
+                            <TextBox FlowDirection="LeftToRight" x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="64" PlaceholderText="分钟"
+                                     IsEnabled="{Binding IsOn, ElementName=LightweightSwitch}"
+                                     AutomationProperties.LabeledBy="{Binding ElementName=LightweightDelayLabel}"
+                                     LostFocus="LightweightMinutes_LostFocus" KeyDown="LightweightMinutes_KeyDown" />
+                            <TextBlock x:Uid="Settings_LightweightDelayUnit" Text="分钟" VerticalAlignment="Center" />
+                        </StackPanel>
                     </StackPanel>
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeyWindow" Header="全局热键 · 显示 / 隐藏窗口" Description="如 Ctrl+Shift+F1；留空禁用">

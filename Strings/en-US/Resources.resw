@@ -373,7 +373,7 @@
     <value>Lightweight mode</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>Release UI on close; keep tray and core</value>
+    <value>After closing the window, wait before releasing the UI. The proxy keeps running. Set 0 to disable automatic release.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>minutes</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Starting core…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Wait after closing</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>minutes</value>
   </data>
 </root>

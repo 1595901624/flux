@@ -18,6 +18,8 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
+        // 轻量模式会关闭最后一个 XAML 窗口；保持 UI 消息循环，供托盘重建窗口。
+        DispatcherShutdownMode = Microsoft.UI.Xaml.DispatcherShutdownMode.OnExplicitShutdown;
         Instance = this;
         UiDispatcher = DispatcherQueue.GetForCurrentThread();
 
@@ -47,7 +49,6 @@ public partial class App : Application
 
     public static void ShowMainWindow()
     {
-        Services.LightweightManager.OnWindowShown();
         try
         {
             if (MainWindow is null)
@@ -56,9 +57,10 @@ public partial class App : Application
                 MainWindow = new MainWindow();
                 Program.Trace("mainwindow created");
             }
-            MainWindow.SetStartupState(Services.AppBootstrapper.IsStarting);
+            MainWindow.UpdateStartupState();
             ApplyTheme(Services.AppServices.Config.Verge.ThemeMode);
             MainWindow.Activate();
+            Services.LightweightManager.OnWindowShown();
             Program.Trace("mainwindow activated");
         }
         catch (Exception ex)

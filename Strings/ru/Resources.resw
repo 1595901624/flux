@@ -373,7 +373,7 @@
     <value>Облегчённый режим</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>При закрытии освобождает UI, оставляя трей и ядро</value>
+    <value>После закрытия окна интерфейс освобождается через заданное время. Прокси продолжает работать. 0 отключает автоматическое освобождение.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>минут</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Запуск ядра…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Ожидание после закрытия</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>минут</value>
   </data>
 </root>

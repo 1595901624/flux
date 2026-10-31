@@ -90,7 +90,7 @@ public static class AppBootstrapper
         finally
         {
             IsStarting = false;
-            App.MainWindow?.SetStartupState(false);
+            App.MainWindow?.UpdateStartupState();
             Program.Trace("bootstrapper complete");
         }
     }

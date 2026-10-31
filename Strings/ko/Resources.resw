@@ -373,7 +373,7 @@
     <value>경량 모드</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>닫으면 UI 해제, 트레이/코어 유지</value>
+    <value>창을 닫고 설정한 시간이 지나면 UI를 해제합니다. 프록시는 계속 실행됩니다. 0은 자동 해제를 끕니다.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>분</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>코어 시작 중…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>창을 닫은 후 대기</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>분</value>
   </data>
 </root>

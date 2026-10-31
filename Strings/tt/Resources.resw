@@ -373,7 +373,7 @@
     <value>Җиңел режим</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>Ябыргач интерфейсны азат итәр; трей һәм йөзәк кала</value>
+    <value>Тәрәзәне япкач, билгеләнгән вакыттан соң интерфейс бушатыла. Прокси эшләвен дәвам итә. 0 автоматик бушатуны сүндерә.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>минут</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Үзәк эшләтелә…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Япканнан соң көтү</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>минут</value>
   </data>
 </root>

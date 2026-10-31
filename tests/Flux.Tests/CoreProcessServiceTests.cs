@@ -8,6 +8,49 @@ namespace Flux.Tests;
 public sealed class CoreProcessServiceTests
 {
     [Fact]
+    public async Task RestartKeepsBusyStateThroughStopAndClearsItOnStartupFailure()
+    {
+        using var core = new CoreProcessService();
+        var states = new List<bool>();
+        core.RestartStateChanged += () => states.Add(core.IsRestarting);
+        core.CoreStopped += () => Assert.True(core.IsRestarting);
+
+        // 测试依赖不允许启动真实内核；即使启动失败，界面也必须能够解除锁定。
+        await Assert.ThrowsAsync<NotSupportedException>(() => core.RestartAsync());
+
+        Assert.False(core.IsRestarting);
+        Assert.Equal(new[] { true, false }, states);
+    }
+
+    [Fact]
+    public async Task OverlappingRestartsDoNotClearBusyStatePrematurely()
+    {
+        using var core = new CoreProcessService();
+        var lifecycle = (SemaphoreSlim)typeof(CoreProcessService).GetField("_lifecycleLock",
+            BindingFlags.Instance | BindingFlags.NonPublic)!.GetValue(core)!;
+        var states = new List<bool>();
+        core.RestartStateChanged += () => states.Add(core.IsRestarting);
+        await lifecycle.WaitAsync();
+        Task first;
+        Task second;
+        try
+        {
+            first = core.RestartAsync();
+            second = core.RestartAsync();
+            Assert.True(core.IsRestarting);
+            Assert.False(first.IsCompleted);
+            Assert.False(second.IsCompleted);
+            Assert.Equal(new[] { true }, states);
+        }
+        finally { lifecycle.Release(); }
+
+        await Assert.ThrowsAsync<NotSupportedException>(() => first);
+        await Assert.ThrowsAsync<NotSupportedException>(() => second);
+        Assert.False(core.IsRestarting);
+        Assert.Equal(new[] { true, false }, states);
+    }
+
+    [Fact]
     public async Task ControllerDeadlineCancelsAnUnresponsiveRequest()
     {
         using var http = new HttpClient(new UnresponsiveHandler()) { Timeout = TimeSpan.FromSeconds(15) };

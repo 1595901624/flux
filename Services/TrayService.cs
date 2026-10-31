@@ -14,6 +14,7 @@ public class TrayService
     private System.Drawing.Icon? _icon;
     private DispatcherQueue? _dispatcher;
     private ConfigService? _subscribedConfig;
+    private int _exitStarted;
 
     public void Initialize()
     {
@@ -37,6 +38,7 @@ public class TrayService
             Program.Trace("tray: menu rebuilt");
             BindConfiguration(AppServices.Config);
             AppServices.Subscription.ProfilesChanged += RebuildMenuOnUiThread;
+            LightweightManager.StateChanged += RefreshLightweightState;
         }
         catch (Exception ex)
         {
@@ -80,6 +82,13 @@ public class TrayService
 
     private void RebuildMenuOnUiThread() => _dispatcher?.TryEnqueue(RebuildMenu);
 
+    private void RefreshLightweightState()
+    {
+        // 自动进入轻量模式本就在 UI 线程，立即更新勾选，避免首次打开菜单仍用旧状态。
+        if (_dispatcher?.HasThreadAccess == true) RebuildMenu(skipProxyRefresh: true);
+        else _dispatcher?.TryEnqueue(() => RebuildMenu(skipProxyRefresh: true));
+    }
+
     public void RebuildMenu() => RebuildMenu(skipProxyRefresh: false);
 
     private void RebuildMenu(bool skipProxyRefresh)
@@ -107,16 +116,10 @@ public class TrayService
                         { Checked = verge.EnableSystemProxy },
                     new PopupMenuItem(L10n.T("Tray_TunMode"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
                         { Checked = verge.EnableTunMode },
-                    new PopupMenuItem(L10n.T("Tray_Lightweight"), (_, _) => _dispatcher?.TryEnqueue(() =>
-                    {
-                        if (LightweightManager.IsLightweight) LightweightManager.Exit();
-                        else LightweightManager.Enter();
-                    }))
-                        { Checked = LightweightManager.IsLightweight, Enabled = true },
                     new PopupMenuSeparator(),
                     new PopupMenuItem(L10n.T("Tray_RestartCore"), (_, _) => _dispatcher?.TryEnqueue(async () =>
                         await AppServices.Core.RestartAsync())),
-                    new PopupMenuItem(L10n.T("Tray_Exit"), (_, _) => _dispatcher?.TryEnqueue(ExitApp)),
+                    new PopupMenuItem(L10n.T("Tray_Exit"), (_, _) => ExitApp()),
                 }
             };
             _tray.ContextMenu = menu;
@@ -334,9 +337,11 @@ public class TrayService
 
     public void ExitApp()
     {
+        if (Interlocked.Exchange(ref _exitStarted, 1) != 0) return;
         _ = Task.Run(async () =>
         {
-            try { await AppServices.ShutdownAsync().WaitAsync(TimeSpan.FromSeconds(8)); }
+            // 清理的同步部分也可能阻塞；独立调度后计时，确保超时仍能退出。
+            try { await Task.Run(AppServices.ShutdownAsync).WaitAsync(TimeSpan.FromSeconds(8)); }
             catch (Exception ex) { LogService.App(L10n.F("Tray_ExitCleanupIncomplete", ex.Message), "warn"); }
             finally { Environment.Exit(0); }
         });

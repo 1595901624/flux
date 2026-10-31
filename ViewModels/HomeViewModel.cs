@@ -219,7 +219,7 @@ public partial class HomeViewModel : ObservableObject
             ? L10n.T("VM_SubNoProfile")
             : current.Type == "remote" ? L10n.T("VM_SubRemoteHint") : L10n.T("VM_SubLocalHint");
 
-        if (AppBootstrapper.IsStarting)
+        if (AppBootstrapper.IsStarting || AppServices.Core.IsRestarting)
         {
             CoreStatusText = L10n.T("Msg_StartingCore");
             return;

@@ -373,7 +373,7 @@
     <value>حالت سبک</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>با بستن، رابط آزاد می‌شود؛ تری و هسته باقی می‌مانند</value>
+    <value>پس از بستن پنجره و گذشت زمان تعیین‌شده، رابط آزاد می‌شود. پروکسی به کار ادامه می‌دهد. 0 آزادسازی خودکار را غیرفعال می‌کند.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>دقیقه</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>در حال راه‌اندازی هسته…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>زمان انتظار پس از بستن</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>دقیقه</value>
   </data>
 </root>

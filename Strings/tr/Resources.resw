@@ -373,7 +373,7 @@
     <value>Hafif mod</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>Kapatınca arayüzü serbest bırakır; tepsi ve çekirdek kalır</value>
+    <value>Pencere kapatıldıktan sonra belirtilen süre beklenip arayüz serbest bırakılır. Proxy çalışmaya devam eder. 0, otomatik serbest bırakmayı kapatır.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>dakika</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Çekirdek başlatılıyor…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Kapattıktan sonra bekle</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>dakika</value>
   </data>
 </root>

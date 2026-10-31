@@ -31,6 +31,11 @@ public class CoreProcessService : IDisposable
     private IntPtr _jobHandle = IntPtr.Zero;
     private readonly SemaphoreSlim _lifecycleLock = new(1, 1);
     private readonly SemaphoreSlim _applyLock = new(1, 1);
+    private int _restartOperations;
+
+    public bool IsRestarting => Volatile.Read(ref _restartOperations) > 0;
+    /// <summary>重启开始或结束（含失败）；可能从后台线程触发。</summary>
+    public event Action? RestartStateChanged;
 
     /// <summary>内核启动成功且 External Controller 就绪。</summary>
     public event Action? CoreStarted;
@@ -128,8 +133,18 @@ public class CoreProcessService : IDisposable
 
     private async Task RestartAsync(bool usePreparedRuntime)
     {
-        await StopAsync();
-        await StartAsync(usePreparedRuntime);
+        var first = Interlocked.Increment(ref _restartOperations) == 1;
+        try
+        {
+            if (first) RestartStateChanged?.Invoke();
+            await StopAsync();
+            await StartAsync(usePreparedRuntime);
+        }
+        finally
+        {
+            if (Interlocked.Decrement(ref _restartOperations) == 0)
+                RestartStateChanged?.Invoke();
+        }
     }
 
     private void StartSidecar(string configPath, string configDir)

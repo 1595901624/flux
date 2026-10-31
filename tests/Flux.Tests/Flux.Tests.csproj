@@ -32,5 +32,6 @@
     <Compile Include="..\..\Services\MihomoStreamService.cs" Link="MihomoStreamService.cs" />
     <Compile Include="..\..\Services\ConfigService.Settings.cs" Link="ConfigService.Settings.cs" />
     <Compile Include="..\..\Services\HotkeyService.cs" Link="HotkeyService.cs" />
+    <Compile Include="..\..\Services\LightweightManager.cs" Link="LightweightManager.cs" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,3 @@
-using Microsoft.UI.Dispatching;
-
 namespace Flux.Services;
 
 /// <summary>
@@ -8,6 +6,8 @@ namespace Flux.Services;
 /// </summary>
 public static class LightweightManager
 {
+    // 内存收益尚未验证，暂时隐藏入口并暂停自动进入；保留实现用于后续验证。
+    public static bool AutoEntryAvailable => false;
     private static CancellationTokenSource? _autoCts;
 
     /// <summary>当前是否处于轻量模式（主窗口已销毁）。</summary>
@@ -20,20 +20,27 @@ public static class LightweightManager
     public static event Action? StateChanged;
 
     /// <summary>进入轻量模式：真实关闭主窗口。</summary>
-    public static void Enter()
+    public static void Enter() => Enter(autoToken: null);
+
+    private static void Enter(CancellationToken? autoToken)
     {
         if (IsLightweight) return;
         RunOnUiThread?.Invoke(() =>
         {
             if (IsLightweight) return;
-            IsLightweight = true;
+            // 定时任务可能已投递到 UI 队列，但用户随后重新打开了窗口。
+            if (autoToken is { } token && (token.IsCancellationRequested ||
+                App.MainWindow?.AppWindow.IsVisible == true || !AppServices.Config.Verge.EnableLightweightMode)) return;
             var window = App.MainWindow;
-            App.MainWindow = null;
             if (window is not null)
             {
                 App.AllowWindowClose = true;
-                window.Close();
+                try { window.Close(); }
+                finally { App.AllowWindowClose = false; }
+                if (ReferenceEquals(App.MainWindow, window)) App.MainWindow = null;
             }
+            CancelAutoTimer();
+            IsLightweight = true;
             LogService.App(L10n.T("Lightweight_Entered"));
             StateChanged?.Invoke();
         });
@@ -45,11 +52,8 @@ public static class LightweightManager
         if (!IsLightweight) return;
         RunOnUiThread?.Invoke(() =>
         {
-            IsLightweight = false;
-            CancelAutoTimer();
             App.ShowMainWindow();
             LogService.App(L10n.T("Lightweight_Exited"));
-            StateChanged?.Invoke();
         });
     }
 
@@ -67,10 +71,11 @@ public static class LightweightManager
     /// <summary>主窗口被隐藏（关闭到托盘）时调用：按设置启动自动进入定时器。</summary>
     public static void OnWindowHidden()
     {
+        CancelAutoTimer();
+        if (!AutoEntryAvailable) return;
         var verge = AppServices.Config.Verge;
         if (!verge.EnableLightweightMode || verge.AutoLightweightMinutes <= 0) return;
 
-        CancelAutoTimer();
         _autoCts = new CancellationTokenSource();
         var token = _autoCts.Token;
         var minutes = verge.AutoLightweightMinutes;
@@ -80,7 +85,7 @@ public static class LightweightManager
             {
                 await Task.Delay(TimeSpan.FromMinutes(minutes), token);
                 LogService.App(L10n.F("Boot_LightweightAuto", minutes));
-                Enter();
+                Enter(token);
             }
             catch (OperationCanceledException) { }
             catch (Exception ex)
@@ -93,6 +98,7 @@ public static class LightweightManager
     private static void CancelAutoTimer()
     {
         _autoCts?.Cancel();
+        _autoCts?.Dispose();
         _autoCts = null;
     }
 }

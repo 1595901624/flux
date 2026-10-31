@@ -373,7 +373,7 @@
     <value>軽量モード</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>閉じるとUIを解放しトレイとコアのみ</value>
+    <value>ウィンドウを閉じてから指定時間後に UI を解放します。プロキシは動作を続けます。0 で自動解放を無効にします。</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>分</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>コアを起動中…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>閉じてからの待ち時間</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>分</value>
   </data>
 </root>

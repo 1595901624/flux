@@ -373,7 +373,7 @@
     <value>輕量模式</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>關閉視窗後釋放主介面，僅保留托盤與核心</value>
+    <value>關閉視窗後，等待設定時間再釋放主介面，代理繼續運作。0 表示不自動釋放。</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>分鐘</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>正在啟動核心</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>關閉視窗後等待</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>分鐘</value>
   </data>
 </root>

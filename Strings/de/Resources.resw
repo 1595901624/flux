@@ -373,7 +373,7 @@
     <value>Leichtmodus</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>Beim Schließen UI freigeben; Tray und Kern bleiben</value>
+    <value>Nach dem Schließen wird die Oberfläche nach der Wartezeit freigegeben. Der Proxy läuft weiter. 0 deaktiviert die automatische Freigabe.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>Minuten</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>Kern wird gestartet…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>Wartezeit nach Schließen</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>Minuten</value>
   </data>
 </root>

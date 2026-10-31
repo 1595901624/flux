@@ -373,7 +373,7 @@
     <value>الوضع الخفيف</value>
   </data>
   <data name="Settings_CardLightweight.Description" xml:space="preserve">
-    <value>يحرر الواجهة عند الإغلاق؛ يبقي الصينية والنواة</value>
+    <value>بعد إغلاق النافذة، تُحرّر الواجهة بعد المدة المحددة. يستمر الوكيل في العمل. القيمة 0 تعطّل التحرير التلقائي.</value>
   </data>
   <data name="Settings_LightweightMinutes.PlaceholderText" xml:space="preserve">
     <value>دقائق</value>
@@ -1780,5 +1780,11 @@
   </data>
   <data name="Msg_StartingCore.Text" xml:space="preserve">
     <value>جارٍ بدء تشغيل النواة…</value>
+  </data>
+  <data name="Settings_LightweightDelayPrefix.Text" xml:space="preserve">
+    <value>الانتظار بعد الإغلاق</value>
+  </data>
+  <data name="Settings_LightweightDelayUnit.Text" xml:space="preserve">
+    <value>دقيقة</value>
   </data>
 </root>
