@@ -75,6 +75,10 @@ dotnet test tests/Flux.Tests/Flux.Tests.csproj -c Release
 
 For distribution packaging, including the privileged service payload, see the [build workflow](.github/workflows/build-msix.yml).
 
+## Community
+
+This open-source project links to and recognizes the [LINUX DO community](https://linux.do/).
+
 ## License
 
 Flux is licensed under [GNU GPL v3.0](LICENSE). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the bundled mihomo version, checksum, corresponding source, and license information.

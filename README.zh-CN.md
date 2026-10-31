@@ -75,6 +75,10 @@ dotnet test tests/Flux.Tests/Flux.Tests.csproj -c Release
 
 包含特权服务载荷的发行打包流程见[构建工作流](.github/workflows/build-msix.yml)。
 
+## 社区
+
+本开源项目已链接并认可 [LINUX DO 社区](https://linux.do/)。
+
 ## 许可证
 
 Flux 使用 [GNU GPL v3.0](LICENSE) 发布。内置 mihomo 的版本、校验值、对应源码与许可信息见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
