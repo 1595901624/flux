@@ -10,6 +10,20 @@ public sealed partial class SettingsPage : Page
 {
     private bool _loading = true;
     private bool _applyingAdvancedSettings;
+    private bool _changingLanguage;
+
+    internal double ScrollOffset => SettingsScroll.VerticalOffset;
+
+    internal void RestoreScrollOffset(double offset)
+    {
+        void Restore(object sender, RoutedEventArgs args)
+        {
+            Loaded -= Restore;
+            SettingsScroll.UpdateLayout();
+            SettingsScroll.ChangeView(null, offset, null, disableAnimation: true);
+        }
+        Loaded += Restore;
+    }
 
     public string AppVersion => L10n.F("Settings_AppDescription", GetAppVersion());
 
@@ -371,35 +385,38 @@ public sealed partial class SettingsPage : Page
         await ShowInfoAsync(L10n.T("Msg_HotkeySaved"), L10n.T("Msg_HotkeySavedBody"));
     }
 
-    private async void Language_Changed(object sender, SelectionChangedEventArgs e)
+    private void Language_Changed(object sender, SelectionChangedEventArgs e)
     {
-        if (_loading) return;
+        if (_loading || _changingLanguage) return;
         if (LanguageBox.SelectedItem is not ComboBoxItem { Tag: string lang }) return;
-        var settings = AppServices.Config.Settings;
-        if (!SaveSettings(v => v.Language = lang)) return;
-        try
+        var previousLanguage = AppServices.Config.Settings.Language;
+        if (previousLanguage == lang) return;
+        _changingLanguage = true;
+        // 等下拉框完成 SelectionChanged 和收起操作后再替换内容树。
+        if (!DispatcherQueue.TryEnqueue(Microsoft.UI.Dispatching.DispatcherQueuePriority.Low, async () =>
         {
-            Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
-                lang == "system" ? "" : lang;
-            L10n.Reset();
-            App.ApplyLanguageDirection();
-            AppServices.Tray.RebuildMenu();
-        }
-        catch { }
-        var dialog = new LocalizedContentDialog
-        {
-            XamlRoot = XamlRoot,
-            Title = L10n.T("Msg_LangChanged"),
-            Content = L10n.T("Msg_LangChangedBody"),
-            PrimaryButtonText = L10n.T("Msg_RestartNow"),
-            CloseButtonText = L10n.T("Msg_RestartLater"),
-            DefaultButton = ContentDialogButton.Primary,
-        };
-        if (await dialog.ShowAsync() == ContentDialogResult.Primary)
-        {
-            AppServices.ShutdownAsync().Wait(3000);
-            Microsoft.Windows.AppLifecycle.AppInstance.Restart("");
-        }
+            try
+            {
+                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = lang == "system" ? "" : lang;
+                L10n.Reset();
+                SaveSettings(v => v.Language = lang);
+                App.ReloadContentForLanguage();
+                AppServices.Tray.RebuildMenu();
+            }
+            catch (Exception ex)
+            {
+                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
+                    string.IsNullOrEmpty(previousLanguage) || previousLanguage == "system" ? "" : previousLanguage;
+                L10n.Reset();
+                SaveSettings(v => v.Language = previousLanguage);
+                _loading = true;
+                try { SelectByTag(LanguageBox, previousLanguage is null or "" ? "system" : previousLanguage); }
+                finally { _loading = false; }
+                LogService.App(ex.ToString(), "error");
+                await ShowInfoAsync(L10n.T("Msg_ApplyFailedTitle"), ex.Message);
+            }
+            finally { _changingLanguage = false; }
+        })) _changingLanguage = false;
     }
 
     private void Lightweight_Toggled(object sender, RoutedEventArgs e)

@@ -340,7 +340,7 @@
     <value>Bahasa</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Mulai ulang untuk menerapkan</value>
+    <value>Langsung diterapkan tanpa memulai ulang aplikasi</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Tema</value>

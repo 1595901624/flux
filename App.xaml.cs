@@ -88,6 +88,9 @@ public partial class App : Application
             root.FlowDirection = Services.LanguageLayout.Current;
     }
 
+    /// <summary>刷新窗口内容；保留原生窗口、标题栏及后台服务。</summary>
+    public static void ReloadContentForLanguage() => MainWindow?.ReloadContentForLanguage();
+
     /// <summary>应用主题模式（system | light | dark）。</summary>
     public static void ApplyTheme(string themeMode)
     {

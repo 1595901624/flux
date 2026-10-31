@@ -340,7 +340,7 @@
     <value>اللغة</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>أعد التشغيل للتطبيق الكامل</value>
+    <value>يُطبّق فورًا دون إعادة تشغيل التطبيق</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>السمة</value>

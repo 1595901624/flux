@@ -340,7 +340,7 @@
     <value>Язык</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Для полного применения перезапустите</value>
+    <value>Применяется сразу без перезапуска приложения</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Тема</value>

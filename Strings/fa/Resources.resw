@@ -340,7 +340,7 @@
     <value>زبان</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>برای اعمال کامل ری‌استارت کنید</value>
+    <value>بلافاصله و بدون راه‌اندازی مجدد برنامه اعمال می‌شود</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>پوسته</value>

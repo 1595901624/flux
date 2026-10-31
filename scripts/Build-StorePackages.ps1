@@ -1,5 +1,5 @@
 # 生成 Microsoft Store 提交包，不安装应用或修改证书存储。
-param([string]$OutputDirectory = 'artifacts/store/0.7.0')
+param([string]$OutputDirectory = 'artifacts/store/0.7.1')
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $repoRoot

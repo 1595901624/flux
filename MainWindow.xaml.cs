@@ -1,34 +1,25 @@
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Shapes;
 using System.Runtime.InteropServices;
 using Flux.Services;
 using Flux.Utils;
 using Flux.Views;
-using Windows.UI;
 
 namespace Flux;
 
 public sealed partial class MainWindow : Window
 {
     private readonly EndSessionHook? _endSessionHook;
-    private bool _starting;
+    private MainShell _shell;
+    private bool _closed;
 
     [DllImport("user32.dll")]
     private static extern uint GetDpiForWindow(IntPtr hwnd);
 
-    private const int SampleCount = 80;
-    private readonly Queue<double> _upSamples = new();
-    private readonly Queue<double> _downSamples = new();
-    private Microsoft.UI.Dispatching.DispatcherQueueTimer? _graphTimer;
-
     public MainWindow()
     {
         InitializeComponent();
-        ((FrameworkElement)Content).FlowDirection = LanguageLayout.Current;
         ((FrameworkElement)Content).Loaded += (_, _) => Program.Trace("mainwindow content loaded");
-
         Title = "Flux";
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(AppTitleBar);
@@ -36,138 +27,80 @@ public sealed partial class MainWindow : Window
         {
             Kind = Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt
         };
+        _shell = new MainShell();
+        ShellHost.Content = _shell;
 
-        NavView.SelectedItem = NavView.MenuItems[0];
-        if (ContentFrame.Content is null) ContentFrame.Navigate(typeof(HomePage));
-
-        // 侧边栏收起时隐藏左下角流量图
-        TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed;
-        NavView.RegisterPropertyChangedCallback(NavigationView.IsPaneOpenProperty, (_, _) =>
-            TrafficFooter.Visibility = NavView.IsPaneOpen ? Visibility.Visible : Visibility.Collapsed);
-
-        // 关闭窗口 = 隐藏到托盘（托盘菜单“退出”或轻量模式才真正关闭）
+        // 关闭窗口 = 隐藏到托盘；仅轻量模式或退出时真正关闭。
         AppWindow.Closing += (_, e) =>
         {
             if (App.AllowWindowClose)
             {
                 App.AllowWindowClose = false;
-                return; // 轻量模式：允许真实关闭，Closed 中释放引用
+                return;
             }
             e.Cancel = true;
             AppWindow.Hide();
-            Services.LightweightManager.OnWindowHidden();
+            LightweightManager.OnWindowHidden();
         };
         Closed += (_, _) =>
         {
-            _graphTimer?.Stop();
-            if (_graphTimer is not null) _graphTimer.Tick -= OnGraphTick;
-            _graphTimer = null;
-            AppServices.Streams.Traffic -= OnTraffic;
+            _closed = true;
             AppServices.Core.RestartStateChanged -= OnCoreRestartStateChanged;
             _endSessionHook?.Dispose();
-            // 主动卸载页面以触发 Unloaded，解除页面的数据流订阅与轮询。
-            ContentFrame.Content = null;
-            ContentFrame.BackStack.Clear();
-            ContentFrame.ForwardStack.Clear();
-            ContentFrame.CacheSize = 0;
+            ShellHost.Content = null;
+            _shell.Dispose();
             SystemBackdrop = null;
             Content = null;
             if (ReferenceEquals(App.MainWindow, this)) App.MainWindow = null;
         };
 
-        // 默认窗口 1080x720 逻辑像素（AppWindow.Resize 使用物理像素，需按 DPI 换算）
         var scale = GetDpiForWindow(WinRT.Interop.WindowNative.GetWindowHandle(this)) / 96.0;
         if (scale <= 0) scale = 1.0;
         AppWindow.Resize(new Windows.Graphics.SizeInt32(
             (int)(1080 * scale), (int)(720 * scale)));
         AppWindow.SetIcon(System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "app.ico"));
-
-        // 关机/注销时 Windows 直接结束进程，不走 AppWindow.Closing；
-        // 在 WM_ENDSESSION 里同步恢复系统代理（内核由 Job Object 随进程终止一并回收）
         _endSessionHook = new EndSessionHook(WinRT.Interop.WindowNative.GetWindowHandle(this));
-
-        // 实时流量订阅
-        AppServices.Streams.Traffic += OnTraffic;
         AppServices.Core.RestartStateChanged += OnCoreRestartStateChanged;
-
-        _graphTimer = DispatcherQueue.CreateTimer();
-        _graphTimer.Interval = TimeSpan.FromSeconds(1);
-        _graphTimer.Tick += OnGraphTick;
-        _graphTimer.Start();
     }
 
-    private void OnGraphTick(Microsoft.UI.Dispatching.DispatcherQueueTimer sender, object args) => RedrawGraph();
+    /// <summary>保留原生窗口和标题栏，仅替换语言相关的内容树。</summary>
+    internal void ReloadContentForLanguage()
+    {
+        if (_closed) return;
+        var previous = _shell;
+        var replacement = new MainShell(previous.CaptureState());
+        try
+        {
+            ShellHost.Content = replacement;
+            _shell = replacement;
+            UpdateStartupState();
+        }
+        catch
+        {
+            _shell = previous;
+            ShellHost.Content = previous;
+            replacement.Dispose();
+            throw;
+        }
+        previous.Dispose();
+    }
+
+    public void NavigateTo(string tag) => _shell.NavigateTo(tag);
 
     public void UpdateStartupState()
     {
+        if (_closed) return;
         var starting = AppBootstrapper.IsStarting || AppServices.Core.IsRestarting;
-        var wasStarting = _starting;
-        _starting = starting;
-        NavView.IsEnabled = !starting;
+        _shell.UpdateStartupState(starting);
         AppTitleSub.Text = starting ? L10n.T("Msg_StartingCore") : "";
         StartupProgress.IsActive = starting;
         StartupProgress.Visibility = starting ? Visibility.Visible : Visibility.Collapsed;
-        if (wasStarting && !starting && ContentFrame.Content is HomePage home) _ = home.Vm.RefreshAsync();
     }
 
     private void OnCoreRestartStateChanged()
     {
         if (DispatcherQueue.HasThreadAccess) UpdateStartupState();
         else DispatcherQueue.TryEnqueue(UpdateStartupState);
-    }
-
-    private void OnTraffic(double up, double down) =>
-        DispatcherQueue.TryEnqueue(() =>
-        {
-            UpText.Text = "↑ " + Format.Bytes(up) + "/s";
-            DownText.Text = "↓ " + Format.Bytes(down) + "/s";
-            PushSample(_upSamples, up);
-            PushSample(_downSamples, down);
-        });
-
-    private static void PushSample(Queue<double> queue, double value)
-    {
-        queue.Enqueue(value);
-        while (queue.Count > SampleCount) queue.Dequeue();
-    }
-
-    private void RedrawGraph()
-    {
-        var w = GraphHost.ActualWidth;
-        var h = GraphHost.ActualHeight;
-        if (w < 10 || h < 10) return;
-
-        DrawSeries(_upSamples, UpLine, UpPolygon, w, h);
-        DrawSeries(_downSamples, DownLine, DownPolygon, w, h);
-    }
-
-    private static void DrawSeries(Queue<double> samples, Polyline line, Polygon area, double w, double h)
-
-    {
-        if (samples.Count < 2)
-        {
-            line.Points = [];
-            area.Points = [];
-            return;
-        }
-        var arr = samples.ToArray();
-        var max = Math.Max(1024, arr.Max());
-
-        var points = new List<Windows.Foundation.Point>(arr.Length);
-        for (var i = 0; i < arr.Length; i++)
-        {
-            var x = w * i / (SampleCount - 1);
-            var y = h - Math.Min(1.0, arr[i] / max) * (h - 2) - 1;
-            points.Add(new Windows.Foundation.Point(x, y));
-        }
-
-        line.Points = [.. points];
-        var areaPoints = new List<Windows.Foundation.Point>(points)
-        {
-            new(w, h),
-            new(points[0].X, h),
-        };
-        area.Points = [.. areaPoints];
     }
 
     /// <summary>
@@ -213,36 +146,4 @@ public sealed partial class MainWindow : Window
         public void Dispose() => SetWindowLongPtrW(_hwnd, GWL_WNDPROC, _oldProc);
     }
 
-    public void NavigateTo(string tag)    {
-        foreach (NavigationViewItem item in NavView.MenuItems)
-        {
-            if (item.Tag as string == tag)
-            {
-                NavView.SelectedItem = item;
-                return;
-            }
-        }
-    }
-
-    private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-    {
-        if (args.SelectedItem is not NavigationViewItem item) return;
-        var tag = item.Tag as string;
-        Type? page = tag switch
-        {
-            "home" => typeof(HomePage),
-            "proxies" => typeof(ProxiesPage),
-            "profiles" => typeof(ProfilesPage),
-            "connections" => typeof(ConnectionsPage),
-            "rules" => typeof(RulesPage),
-            "logs" => typeof(LogsPage),
-            "unlock" => typeof(UnlockPage),
-            "settings" => typeof(SettingsPage),
-            _ => null
-        };
-        if (page is not null && (ContentFrame.Content?.GetType() != page))
-        {
-            ContentFrame.Navigate(page);
-        }
-    }
 }

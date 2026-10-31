@@ -340,7 +340,7 @@
     <value>Sprache</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Neustart für volle Wirkung</value>
+    <value>Wird sofort ohne Neustart der App übernommen</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Design</value>

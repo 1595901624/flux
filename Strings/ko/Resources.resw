@@ -340,7 +340,7 @@
     <value>언어 / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>완전 적용하려면 재시작 필요</value>
+    <value>앱을 다시 시작하지 않고 즉시 적용됩니다</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>테마</value>

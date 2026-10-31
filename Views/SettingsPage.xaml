@@ -8,7 +8,7 @@
     xmlns:sc="using:CommunityToolkit.WinUI.Controls"
     mc:Ignorable="d">
 
-    <ScrollViewer Padding="28,16,28,20"
+    <ScrollViewer x:Name="SettingsScroll" Padding="28,16,28,20"
                   HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Spacing="16">
 
@@ -102,7 +102,7 @@
             <TextBlock x:Uid="Settings_SectionApp" Text="应用" FontSize="16" FontWeight="SemiBold" Opacity="0.8" Margin="0,8,0,0" />
             <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <sc:SettingsCard x:Uid="Settings_CardLanguage" Header="语言 / Language" Description="切换后需要重启应用生效">
+                <sc:SettingsCard x:Uid="Settings_CardLanguage" Header="语言 / Language" Description="切换后立即生效，无需重启应用">
                     <ComboBox x:Name="LanguageBox" Width="150" SelectionChanged="Language_Changed">
                         <ComboBoxItem x:Uid="Settings_ThemeSystem" Tag="system" Content="跟随系统" />
                         <ComboBoxItem Tag="zh-CN" Content="简体中文" />

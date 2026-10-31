@@ -340,7 +340,7 @@
     <value>语言 / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>切换后需要重启应用生效</value>
+    <value>切换后立即生效，无需重启应用</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>主题模式</value>

@@ -23,69 +23,7 @@
             </StackPanel>
         </Grid>
 
-        <NavigationView
-            x:Name="NavView"
-            Grid.Row="1"
-            PaneDisplayMode="Left"
-            IsBackButtonVisible="Collapsed"
-            IsSettingsVisible="False"
-            IsTitleBarAutoPaddingEnabled="False"
-            OpenPaneLength="200"
-            SelectionChanged="NavView_SelectionChanged">
-
-            <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="Nav_Home" Tag="home" Content="首页">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE80F;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Proxies" Tag="proxies" Content="代理">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE8CB;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Profiles" Tag="profiles" Content="订阅">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE8F1;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Connections" Tag="connections" Content="连接">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE71B;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Rules" Tag="rules" Content="规则">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE71E;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Logs" Tag="logs" Content="日志">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE9D9;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Unlock" Tag="unlock" Content="解锁测试">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE7F4;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Uid="Nav_Settings" Tag="settings" Content="设置">
-                    <NavigationViewItem.Icon><FontIcon Glyph="&#xE713;" /></NavigationViewItem.Icon>
-                </NavigationViewItem>
-            </NavigationView.MenuItems>
-
-            <NavigationView.PaneFooter>
-                <Grid x:Name="TrafficFooter" Height="88" Margin="12,0,12,12" FlowDirection="LeftToRight">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid ColumnSpacing="8" Margin="4,0,4,6">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock x:Name="UpText" Text="↑ —" FontSize="11" Foreground="{Binding Stroke, ElementName=UpLine}" FontFamily="Consolas" />
-                        <TextBlock x:Name="DownText" Text="↓ —" Grid.Column="1" HorizontalAlignment="Right" FontSize="11" Foreground="{Binding Stroke, ElementName=DownLine}" FontFamily="Consolas" />
-                    </Grid>
-                    <Border Grid.Row="1" CornerRadius="6" Background="{ThemeResource ControlFillColorDefaultBrush}" Padding="2">
-                        <Grid x:Name="GraphHost">
-                            <Polygon x:Name="DownPolygon" Fill="#55E06C75" />
-                            <Polyline x:Name="DownLine" Stroke="#E06C75" StrokeThickness="1.5" StrokeLineJoin="Round" />
-                            <Polygon x:Name="UpPolygon" Fill="#5558A6FF" />
-                            <Polyline x:Name="UpLine" Stroke="#58A6FF" StrokeThickness="1.5" StrokeLineJoin="Round" />
-                        </Grid>
-                    </Border>
-                </Grid>
-            </NavigationView.PaneFooter>
-
-            <Frame x:Name="ContentFrame" />
-        </NavigationView>
+        <ContentControl x:Name="ShellHost" Grid.Row="1"
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
     </Grid>
 </Window>

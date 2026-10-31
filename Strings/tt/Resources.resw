@@ -340,7 +340,7 @@
     <value>Тел</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Тулы куллану өчен яңадан башлагыз</value>
+    <value>Кушымтаны яңадан башламыйча ук кулланыла</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Тема</value>

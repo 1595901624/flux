@@ -340,7 +340,7 @@
     <value>Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Restart the app to apply fully</value>
+    <value>Applies immediately without restarting the app</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Theme mode</value>

@@ -340,7 +340,7 @@
     <value>Idioma</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Reinicia para aplicarlo por completo</value>
+    <value>Se aplica al instante sin reiniciar la aplicación</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Tema</value>

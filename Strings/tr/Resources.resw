@@ -340,7 +340,7 @@
     <value>Dil</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>Tam etkinleşmesi için yeniden başlatın</value>
+    <value>Uygulama yeniden başlatılmadan hemen uygulanır</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>Tema</value>

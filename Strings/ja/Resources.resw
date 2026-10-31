@@ -340,7 +340,7 @@
     <value>言語 / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
-    <value>適用には再起動が必要</value>
+    <value>アプリを再起動せずにすぐに適用されます</value>
   </data>
   <data name="Settings_CardTheme.Header" xml:space="preserve">
     <value>テーマ</value>
