@@ -1,0 +1,84 @@
+README.md
+  74900f7d25919519 3,5-23,27-33,35,37,39-42,44,46,48,50,52,54-56,58-63,66,70-71,74,78
+README.zh-CN.md
+  74900f7d25919519 5,7-21,23,27-33,37,39-42,44,46,48,50-54,56-63,66,70-71,74,78
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "71381aae983460efc833a7e7a6479074e7277476",
+  "prompts": {
+    "74900f7d25919519": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a190a1-c0bc-70c3-9b7c-4f2612ca722d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 109,
+      "total_deletions": 55,
+      "accepted_lines": 112,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 109,
+    "git_diff_deleted_lines": 55,
+    "ai_additions": 102,
+    "ai_accepted": 102,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 102,
+    "BYRC": 0,
+    "per_file": {
+      "README.md": {
+        "BYMC": [],
+        "BYAC": [
+          "3",
+          "5-23",
+          "27-33",
+          "35",
+          "37",
+          "39-42",
+          "44",
+          "46",
+          "48",
+          "50",
+          "52",
+          "54-56",
+          "58-63",
+          "66",
+          "70-71",
+          "74",
+          "78"
+        ],
+        "BYRC": []
+      },
+      "README.zh-CN.md": {
+        "BYMC": [],
+        "BYAC": [
+          "5",
+          "7-21",
+          "23",
+          "27-33",
+          "37",
+          "39-42",
+          "44",
+          "46",
+          "48",
+          "50-54",
+          "56-63",
+          "66",
+          "70-71",
+          "74",
+          "78"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793428178,
+  "requirement_id": ""
+}
