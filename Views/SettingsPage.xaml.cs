@@ -2,12 +2,14 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Flux.Services;
 using Flux.Utils;
+using Flux.Core.Config;
 
 namespace Flux.Views;
 
 public sealed partial class SettingsPage : Page
 {
     private bool _loading = true;
+    private bool _applyingAdvancedSettings;
 
     public string AppVersion => L10n.F("Settings_AppDescription", GetAppVersion());
 
@@ -77,7 +79,7 @@ public sealed partial class SettingsPage : Page
             // TUN / DNS / 外部控制器 初始值（来自基础配置）
             var tunStack = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "stack");
             SelectTag(TunStackBox, string.IsNullOrEmpty(tunStack) ? "gvisor" : tunStack);
-            TunDnsHijackBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "tun", "dns-hijack") is { } hijack && hijack.Length > 0 ? hijack : "any:53";
+            TunDnsHijackBox.Text = SettingsConfigEditor.ReadDnsHijack(AppServices.Config.ClashBase);
             var dnsMode = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "enhanced-mode");
             SelectTag(DnsModeBox, string.IsNullOrEmpty(dnsMode) ? "fake-ip" : dnsMode);
             DnsFakeIpRangeBox.Text = Flux.Core.Config.YamlOps.GetScalar(AppServices.Config.ClashBase, "dns", "fake-ip-range") ?? "";
@@ -360,7 +362,7 @@ public sealed partial class SettingsPage : Page
         if (conflicts.Count > 0)
         {
             // 冲突：拒绝保存并显示冲突组合
-            await ShowInfoAsync(L10n.T("Msg_HotkeyRejected"), string.Join(Environment.NewLine, conflicts.Select(L10n.T)));
+            await ShowInfoAsync(L10n.T("Msg_HotkeyRejected"), string.Join(Environment.NewLine, conflicts));
             return;
         }
 
@@ -409,8 +411,23 @@ public sealed partial class SettingsPage : Page
 
     private void ApplyLightweightMinutes()
     {
-        if (!int.TryParse(LightweightMinutesBox.Text, out var minutes) || minutes < 0) minutes = 0;
+        if (_loading) return;
+        if (!int.TryParse(LightweightMinutesBox.Text, out var minutes) || minutes < 0 ||
+            TimeSpan.FromMinutes(minutes).TotalMilliseconds > uint.MaxValue - 1d)
+        {
+            LightweightMinutesBox.Text = AppServices.Config.Verge.AutoLightweightMinutes.ToString();
+            return;
+        }
         SaveVerge(v => v.AutoLightweightMinutes = minutes);
+    }
+
+    private void LightweightMinutes_LostFocus(object sender, RoutedEventArgs e) => ApplyLightweightMinutes();
+
+    private void LightweightMinutes_KeyDown(object sender, Microsoft.UI.Xaml.Input.KeyRoutedEventArgs e)
+    {
+        if (e.Key != Windows.System.VirtualKey.Enter) return;
+        ApplyLightweightMinutes();
+        e.Handled = true;
     }
 
     private static void SelectTag(ComboBox box, string tag)
@@ -424,25 +441,43 @@ public sealed partial class SettingsPage : Page
         var stack = TunStackBox.SelectedItem is ComboBoxItem si ? (string)si.Tag : "gvisor";
         var hijack = TunDnsHijackBox.Text.Trim();
         if (hijack.Length == 0) hijack = "any:53";
-        AppServices.Config.PatchClashBase("tun.stack", stack);
-        AppServices.Config.PatchClashBase("tun.dns-hijack", hijack);
-        if (await AppServices.Core.ApplyConfigAsync())
-            await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T("Msg_TunAdvancedBody"));
-        else
-            await ShowApplyFailureAsync();
+        await ApplyAdvancedSettingsAsync("tun", tun => SettingsConfigEditor.EditTun(tun, stack, hijack),
+            "Msg_TunAdvancedBody");
     }
 
     private async void ApplyDns_Click(object sender, RoutedEventArgs e)
     {
         var mode = DnsModeBox.SelectedItem is ComboBoxItem mi ? (string)mi.Tag : "fake-ip";
         var fakeRange = DnsFakeIpRangeBox.Text.Trim();
-        AppServices.Config.PatchClashBase("dns.enhanced-mode", mode);
-        if (fakeRange.Length > 0)
-            AppServices.Config.PatchClashBase("dns.fake-ip-range", fakeRange);
-        if (await AppServices.Core.ApplyConfigAsync())
-            await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T("Msg_DnsAppliedBody"));
-        else
-            await ShowApplyFailureAsync();
+        await ApplyAdvancedSettingsAsync("dns", dns => SettingsConfigEditor.EditDns(dns, mode, fakeRange),
+            "Msg_DnsAppliedBody");
+    }
+
+    private async Task ApplyAdvancedSettingsAsync(string section,
+        Action<YamlDotNet.RepresentationModel.YamlMappingNode> edit, string successMessage)
+    {
+        if (_applyingAdvancedSettings) return;
+        _applyingAdvancedSettings = true;
+        try
+        {
+            var config = AppServices.Config;
+            var applied = await SettingsConfigEditor.ApplySectionAsync(config.ClashBase, section, edit,
+                () => { config.SaveClashBase(); config.InvalidateRuntime(); },
+                AppServices.Core.ApplyConfigAsync);
+            if (applied)
+                await ShowInfoAsync(L10n.T("Msg_Applied"), L10n.T(successMessage));
+            else
+            {
+                await LoadFromConfigAsync();
+                await ShowApplyFailureAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            await LoadFromConfigAsync();
+            await ShowInfoAsync(L10n.T("Msg_ApplyFailedTitle"), ex.Message);
+        }
+        finally { _applyingAdvancedSettings = false; }
     }
 
     private async void ApplyController_Click(object sender, RoutedEventArgs e)
@@ -723,7 +758,7 @@ public sealed partial class SettingsPage : Page
         verge.WebDavUrl = urlBox.Text.Trim();
         verge.WebDavUsername = userBox.Text.Trim();
         verge.WebDavDir = string.IsNullOrWhiteSpace(dirBox.Text) ? "flux-backups" : dirBox.Text.Trim();
-        verge.WebDavPasswordEncrypted = Flux.Core.Utils.DataProtector.Protect(passBox.Password);
+        verge.UpdateWebDavPassword(passBox.Password);
         AppServices.Config.SaveVerge();
         await ShowInfoAsync(L10n.T("Msg_WebDavSaved"), L10n.T("Msg_WebDavSavedBody"));
     }

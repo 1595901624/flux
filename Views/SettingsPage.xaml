@@ -136,7 +136,8 @@
                 <sc:SettingsCard x:Uid="Settings_CardLightweight" Header="轻量模式" Description="关闭窗口后释放主界面，仅保留托盘与内核">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <ToggleSwitch x:Uid="Common_Toggle" x:Name="LightweightSwitch" Toggled="Lightweight_Toggled" />
-                        <TextBox FlowDirection="LeftToRight" x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="90" PlaceholderText="分钟" />
+                        <TextBox FlowDirection="LeftToRight" x:Uid="Settings_LightweightMinutes" x:Name="LightweightMinutesBox" Width="90" PlaceholderText="分钟"
+                                 LostFocus="LightweightMinutes_LostFocus" KeyDown="LightweightMinutes_KeyDown" />
                     </StackPanel>
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardHotkeyWindow" Header="全局热键 · 显示 / 隐藏窗口" Description="如 Ctrl+Shift+F1；留空禁用">

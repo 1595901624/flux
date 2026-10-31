@@ -93,6 +93,13 @@ public class VergeConfig
     [YamlMember(Alias = "webdav-password-encrypted")]
     public string WebDavPasswordEncrypted { get; set; } = "";
 
+    /// <summary>编辑服务器时，空密码表示沿用已保存的凭据。</summary>
+    public void UpdateWebDavPassword(string password)
+    {
+        if (password.Length > 0)
+            WebDavPasswordEncrypted = Flux.Core.Utils.DataProtector.Protect(password);
+    }
+
     /// <summary>连接页可见列及顺序（id 列表：host/network/download/upload/rule/chains/process/time）。</summary>
     [YamlMember(Alias = "connections-columns")]
     public List<string> ConnectionsColumns { get; set; } = new();

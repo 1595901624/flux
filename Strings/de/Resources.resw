@@ -1101,7 +1101,7 @@
     <value>Benutzername</value>
   </data>
   <data name="Msg_WebDavPassword.Text" xml:space="preserve">
-    <value>Kennwort (verschlüsselt gespeichert)</value>
+    <value>Passwort (leer lassen zum Beibehalten)</value>
   </data>
   <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
     <value>Öffnet die GitHub-Releaseseite</value>

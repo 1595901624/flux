@@ -1101,7 +1101,7 @@
     <value>사용자 이름</value>
   </data>
   <data name="Msg_WebDavPassword.Text" xml:space="preserve">
-    <value>비밀번호(저장 시 암호화)</value>
+    <value>비밀번호 (비워 두면 기존 값 유지)</value>
   </data>
   <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
     <value>GitHub 릴리스 페이지를 엽니다</value>

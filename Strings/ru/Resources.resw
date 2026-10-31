@@ -1101,7 +1101,7 @@
     <value>Имя пользователя</value>
   </data>
   <data name="Msg_WebDavPassword.Text" xml:space="preserve">
-    <value>Пароль (шифруется при сохранении)</value>
+    <value>Пароль (пусто — сохранить текущий)</value>
   </data>
   <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
     <value>Открывает страницу релизов GitHub</value>

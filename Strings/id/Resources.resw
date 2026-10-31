@@ -1101,7 +1101,7 @@
     <value>Nama pengguna</value>
   </data>
   <data name="Msg_WebDavPassword.Text" xml:space="preserve">
-    <value>Kata sandi (terenkripsi saat disimpan)</value>
+    <value>Kata sandi (kosongkan untuk mempertahankan)</value>
   </data>
   <data name="Msg_UpdateHintShort.Text" xml:space="preserve">
     <value>Membuka halaman rilis GitHub</value>
