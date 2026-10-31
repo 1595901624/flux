@@ -6,6 +6,8 @@ A lightweight Windows proxy client powered by [mihomo](https://github.com/MetaCu
 
 [Downloads](https://github.com/1595901624/flux/releases) · [Report an issue](https://github.com/1595901624/flux/issues) · [License](LICENSE)
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/store/detail/9NT71ZHK49Q7?cid=DevShareMCLPCS)
+
 ## Screenshots
 
 ### Home
