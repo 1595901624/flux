@@ -1,6 +1,6 @@
 # Flux
 
-[English](README.md) | 简体中文
+[English](README.md) | 简体中文 | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Русский](README.ru.md) | [Türkçe](README.tr.md) | [Bahasa Indonesia](README.id.md) | [فارسی](README.fa.md) | [العربية](README.ar.md) | [Татарча](README.tt.md)
 
 Flux 是一款基于 [mihomo](https://github.com/MetaCubeX/mihomo) 内核的轻量级 Windows 代理客户端，使用 WinUI 3 构建，采用 Fluent 设计。
 
