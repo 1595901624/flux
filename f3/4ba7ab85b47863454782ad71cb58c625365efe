@@ -1,0 +1,54 @@
+README.md
+  8fc9b852150e231e 78-81
+README.zh-CN.md
+  8fc9b852150e231e 78-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "f34ba7ab85b47863454782ad71cb58c625365efe",
+  "prompts": {
+    "8fc9b852150e231e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19289-df57-74b1-b939-4b3ab424796f",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 0,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 8,
+    "git_diff_deleted_lines": 0,
+    "ai_additions": 8,
+    "ai_accepted": 8,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 8,
+    "BYRC": 0,
+    "per_file": {
+      "README.md": {
+        "BYMC": [],
+        "BYAC": [
+          "78-81"
+        ],
+        "BYRC": []
+      },
+      "README.zh-CN.md": {
+        "BYMC": [],
+        "BYAC": [
+          "78-81"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793459957,
+  "requirement_id": ""
+}
