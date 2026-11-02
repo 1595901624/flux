@@ -1,0 +1,134 @@
+Views/SettingsPage.xaml
+  9d99844063cd305e 130
+tests/Flux.Tests/LocalizationReswTests.cs
+  9d99844063cd305e 30,33-50
+Flux.Core/Localization/LanguagePreference.cs
+  9d99844063cd305e 13-14
+tests/Flux.Tests/LanguagePreferenceTests.cs
+  9d99844063cd305e 21,25-29
+scripts/Verify-Distributions.ps1
+  9d99844063cd305e 48-56
+tests/Flux.Tests/LanguageDirectionTests.cs
+  9d99844063cd305e 24
+Package.appxmanifest
+  9d99844063cd305e 37
+scripts/gen_i18n.py
+  9d99844063cd305e 184
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "85c97dc0cda268f1517ba31dfe198bea17414971",
+  "prompts": {
+    "9d99844063cd305e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19c35-fe9f-73d1-bd25-860c6777fb98",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 42,
+      "total_deletions": 8,
+      "accepted_lines": 42,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 1879,
+    "git_diff_deleted_lines": 1825,
+    "ai_additions": 40,
+    "ai_accepted": 40,
+    "BYMC": 1837,
+    "mixed_additions": 0,
+    "BYAC": 40,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [
+          "183-189",
+          "191-201"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Flux.Core/Localization/LanguagePreference.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "13-14"
+        ],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [],
+        "BYAC": [
+          "37"
+        ],
+        "BYRC": []
+      },
+      "Strings/tt-Cyrl/Resources.resw": {
+        "BYMC": [
+          "1-1814"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "130"
+        ],
+        "BYRC": []
+      },
+      "Views/SettingsPage.xaml.cs": {
+        "BYMC": [
+          "6",
+          "88-89",
+          "412-413"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "scripts/Verify-Distributions.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "48-56"
+        ],
+        "BYRC": []
+      },
+      "scripts/gen_i18n.py": {
+        "BYMC": [],
+        "BYAC": [
+          "184"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LanguageDirectionTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "24"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LanguagePreferenceTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "21",
+          "25-29"
+        ],
+        "BYRC": []
+      },
+      "tests/Flux.Tests/LocalizationReswTests.cs": {
+        "BYMC": [],
+        "BYAC": [
+          "30",
+          "33-50"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793622675,
+  "requirement_id": ""
+}
