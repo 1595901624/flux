@@ -136,7 +136,7 @@
     <value>Хост/кагыйдә/процесс эзләү</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Барысын да ябу</value>
+    <value>Барлык тоташуларны өзү</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Ябылган</value>
@@ -1605,7 +1605,7 @@
     <value>Максат файлында папка юк</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Ябылган</value>
+    <value>Тәмамланган тоташуларны күрсәтү</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Хост/кагыйдә/процесс эзләү</value>

@@ -136,7 +136,7 @@
     <value>Поиск: хост/правило/процесс</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Закрыть все</value>
+    <value>Разорвать все соединения</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Закрытые</value>
@@ -1605,7 +1605,7 @@
     <value>У целевого файла нет каталога</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Закрытые</value>
+    <value>Показать завершённые соединения</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Поиск: хост/правило/процесс</value>

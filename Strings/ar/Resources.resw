@@ -136,7 +136,7 @@
     <value>بحث عن المضيف/القاعدة/العملية</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>إغلاق الكل</value>
+    <value>قطع جميع الاتصالات</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>مغلق</value>
@@ -1605,7 +1605,7 @@
     <value>الملف الهدف بلا مجلد</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>مغلق</value>
+    <value>عرض الاتصالات المنتهية</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>بحث عن المضيف/القاعدة/العملية</value>

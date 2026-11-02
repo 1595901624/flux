@@ -136,7 +136,7 @@
     <value>Ana makine/kural/süreç ara</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Tümünü kapat</value>
+    <value>Tüm bağlantıları kes</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Kapalı</value>
@@ -1605,7 +1605,7 @@
     <value>Hedef dosyanın klasörü yok</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Kapalı</value>
+    <value>Sonlanan bağlantıları göster</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Ana makine/kural/süreç ara</value>

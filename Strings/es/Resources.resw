@@ -136,7 +136,7 @@
     <value>Buscar host/regla/proceso</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Cerrar todo</value>
+    <value>Desconectar todas las conexiones</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Cerradas</value>
@@ -1605,7 +1605,7 @@
     <value>El archivo de destino no tiene directorio</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Cerradas</value>
+    <value>Mostrar conexiones finalizadas</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Buscar host/regla/proceso</value>

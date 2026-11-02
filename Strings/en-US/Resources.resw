@@ -136,7 +136,7 @@
     <value>Search host / rule / process</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Close all</value>
+    <value>Disconnect all connections</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Closed</value>
@@ -1605,7 +1605,7 @@
     <value>Target file has no directory</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Closed</value>
+    <value>Show closed connections</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Search host / rule / process</value>

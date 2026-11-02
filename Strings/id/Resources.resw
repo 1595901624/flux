@@ -136,7 +136,7 @@
     <value>Cari host/aturan/proses</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Tutup semua</value>
+    <value>Putuskan semua koneksi</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Tertutup</value>
@@ -1605,7 +1605,7 @@
     <value>File target tidak punya direktori</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Tertutup</value>
+    <value>Tampilkan koneksi yang berakhir</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Cari host/aturan/proses</value>

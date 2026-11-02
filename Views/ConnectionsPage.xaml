@@ -48,7 +48,7 @@
             </Button>
             <ToggleButton x:Uid="Connections_ClosedToggle"
                 x:Name="ClosedToggle"
-                Content="已关闭"
+                Content="查看已结束连接"
                 VerticalAlignment="Center"
                 Checked="ClosedToggle_Changed" Unchecked="ClosedToggle_Changed" />
             <Button
@@ -57,7 +57,7 @@
                 Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE74D;" FontSize="14" />
-                    <TextBlock x:Uid="Connections_CloseAll" Text="关闭全部" />
+                    <TextBlock x:Uid="Connections_CloseAll" Text="断开全部连接" />
                 </StackPanel>
             </Button>
         </views:WrappingPanel>

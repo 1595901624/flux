@@ -136,7 +136,7 @@
     <value>ホスト/ルール/プロセス検索</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>すべて閉じる</value>
+    <value>すべての接続を切断</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>閉じ済み</value>
@@ -1605,7 +1605,7 @@
     <value>対象ファイルにディレクトリがない</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>閉じ済み</value>
+    <value>終了した接続を表示</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>ホスト/ルール/プロセス検索</value>

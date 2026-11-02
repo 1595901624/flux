@@ -136,7 +136,7 @@
     <value>搜尋主機 / 規則 / 進程</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>關閉全部</value>
+    <value>中斷全部連線</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>已關閉</value>
@@ -1605,7 +1605,7 @@
     <value>目標檔案缺少目錄</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>已關閉</value>
+    <value>檢視已結束連線</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>搜尋主機 / 規則 / 進程</value>

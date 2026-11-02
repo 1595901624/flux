@@ -136,7 +136,7 @@
     <value>Host/Regel/Prozess suchen</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>Alle schließen</value>
+    <value>Alle Verbindungen trennen</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>Geschlossen</value>
@@ -1605,7 +1605,7 @@
     <value>Zieldatei ohne Verzeichnis</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>Geschlossen</value>
+    <value>Beendete Verbindungen anzeigen</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>Host/Regel/Prozess suchen</value>

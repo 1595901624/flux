@@ -136,7 +136,7 @@
     <value>호스트/규칙/프로세스 검색</value>
   </data>
   <data name="Connections_CloseAll.Text" xml:space="preserve">
-    <value>모두 닫기</value>
+    <value>모든 연결 끊기</value>
   </data>
   <data name="Connections_Closed.Text" xml:space="preserve">
     <value>닫힘</value>
@@ -1605,7 +1605,7 @@
     <value>대상 파일에 디렉터리 없음</value>
   </data>
   <data name="Connections_ClosedToggle.Content" xml:space="preserve">
-    <value>닫힘</value>
+    <value>종료된 연결 보기</value>
   </data>
   <data name="Connections_SearchBox.PlaceholderText" xml:space="preserve">
     <value>호스트/규칙/프로세스 검색</value>
