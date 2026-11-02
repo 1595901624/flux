@@ -6,7 +6,7 @@ on:
       version:
         description: '版本号（例如 0.1.0）'
         required: true
-        default: '0.7.1'
+        default: '0.7.2'
       create_release:
         description: '构建完成后发布便携 ZIP'
         type: boolean
@@ -118,6 +118,31 @@ jobs:
             }
             & dotnet @publishArguments
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+
+      - name: Verify generated MSIX manifests
+        shell: pwsh
+        run: |
+          [xml]$sourceManifest = Get-Content -LiteralPath 'Package.appxmanifest'
+          $expectedLanguages = @($sourceManifest.Package.Resources.Resource | ForEach-Object Language | Sort-Object)
+          foreach ($rid in 'win-x86', 'win-x64', 'win-arm64') {
+            $packages = @(Get-ChildItem -LiteralPath "msix\$rid" -Filter '*.msix' -File -Recurse)
+            if ($packages.Count -ne 1) { throw "$rid 必须生成唯一 MSIX 包" }
+            $zip = [IO.Compression.ZipFile]::OpenRead($packages[0].FullName)
+            try {
+              $reader = [IO.StreamReader]::new($zip.GetEntry('AppxManifest.xml').Open())
+              try { [xml]$manifest = $reader.ReadToEnd() } finally { $reader.Dispose() }
+              $languages = @($manifest.Package.Resources.Resource | ForEach-Object Language | Sort-Object)
+              if ($languages -contains 'tt' -or $languages -notcontains 'tt-Cyrl') {
+                throw "$rid 包含无效或缺失的鞑靼语资源标签：$($languages -join ', ')"
+              }
+              if (Compare-Object $expectedLanguages $languages) { throw "$rid 包语言与源清单不一致" }
+              if ($manifest.Package.Identity.Version -ne '${{ steps.version.outputs.version }}.0') {
+                throw "$rid 包版本与发布版本不一致"
+              }
+              Write-Host "Verified $($packages[0].Name): $($languages -join ', ')"
+            }
+            finally { $zip.Dispose() }
           }
 
       - name: Package signed sideload ZIP
