@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Hafif mod</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>PowerShell ortam değişkenlerini kopyala</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>CMD ortam değişkenlerini kopyala</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>Ortam değişkenleri kopyalanamadı: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>Çekirdeği yeniden başlat</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>Sütun ayarları</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Tablo</value>
+    <value>Ayrıntılı görünüm</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>Liste</value>
+    <value>Basitleştirilmiş görünüm</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>En az bir sütun görünür kalmalı</value>

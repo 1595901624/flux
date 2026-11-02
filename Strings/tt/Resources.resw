@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Җиңел режим</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>PowerShell мохит үзгәрешлеләрен күчерү</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>CMD мохит үзгәрешлеләрен күчерү</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>Мохит үзгәрешлеләрен күчереп булмады: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>Йөзәкне яңадан башлау</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>Багана көйләүләре</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Таблица</value>
+    <value>Тәфсилле күренеш</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>Исемлек</value>
+    <value>Гадиләштерелгән күренеш</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>Кимдә бер багана күренмәле</value>

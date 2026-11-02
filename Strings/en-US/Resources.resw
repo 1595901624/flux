@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Lightweight mode</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>Copy PowerShell environment variables</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>Copy CMD environment variables</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>Failed to copy environment variables: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>Restart core</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>Column settings</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Table</value>
+    <value>Detailed view</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>List</value>
+    <value>Simplified view</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>At least one column must stay visible.</value>

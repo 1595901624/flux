@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Leichtmodus</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>PowerShell-Umgebungsvariablen kopieren</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>CMD-Umgebungsvariablen kopieren</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>Umgebungsvariablen konnten nicht kopiert werden: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>Kern neu starten</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>Spalten-Einstellungen</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Tabelle</value>
+    <value>Detailansicht</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>Liste</value>
+    <value>Vereinfachte Ansicht</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>Mindestens eine Spalte sichtbar lassen</value>

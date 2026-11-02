@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>Облегчённый режим</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>Копировать переменные среды PowerShell</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>Копировать переменные среды CMD</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>Не удалось скопировать переменные среды: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>Перезапустить ядро</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>Настройки столбцов</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>Таблица</value>
+    <value>Подробный вид</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>Список</value>
+    <value>Упрощённый вид</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>Минимум один столбец должен быть видим</value>

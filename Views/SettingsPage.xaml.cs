@@ -555,24 +555,7 @@ public sealed partial class SettingsPage : Page
     /// <summary>复制用于 CMD 或 PowerShell 当前会话的代理环境变量命令。</summary>
     private async Task CopyEnvAsync(string format)
     {
-        var port = AppServices.Config.MixedPort;
-        var text = format switch
-        {
-            "powershell" => $"""
-                $env:HTTP_PROXY = 'http://127.0.0.1:{port}'
-                $env:HTTPS_PROXY = 'http://127.0.0.1:{port}'
-                $env:ALL_PROXY = 'socks5://127.0.0.1:{port}'
-                """,
-            _ => $"""
-                set HTTP_PROXY=http://127.0.0.1:{port}
-                set HTTPS_PROXY=http://127.0.0.1:{port}
-                set ALL_PROXY=socks5://127.0.0.1:{port}
-                """,
-        };
-
-        var pack = new Windows.ApplicationModel.DataTransfer.DataPackage();
-        pack.SetText(text);
-        Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(pack);
+        ProxyEnvironmentService.Copy(format == "powershell");
 
         var dialog = new LocalizedContentDialog
         {

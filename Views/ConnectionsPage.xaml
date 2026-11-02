@@ -36,7 +36,7 @@
                     Click="LayoutToggle_Click" Style="{StaticResource SubtleButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="6">
                     <FontIcon Glyph="&#xE8FD;" FontSize="14" />
-                    <TextBlock x:Uid="Msg_LayoutTable" Text="表格" />
+                    <TextBlock x:Name="LayoutLabel" x:Uid="Msg_LayoutTable" Text="详细视图" />
                 </StackPanel>
             </Button>
             <Button VerticalAlignment="Center" Click="ColumnSettings_Click"

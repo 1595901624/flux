@@ -49,13 +49,11 @@ public sealed partial class ConnectionsPage : Page
         {
             var settings = AppServices.Config.Settings;
             var layout = settings.ConnectionsLayout == "list" ? "list" : "table";
+            LayoutLabel.Text = layout == "list" ? L10n.T("Msg_LayoutList") : L10n.T("Msg_LayoutTable");
 
             var ordered = settings.ConnectionsColumns.Count > 0
                 ? settings.ConnectionsColumns.Where(id => AllColumns.Any(c => c.Id == id)).ToList()
                 : AllColumns.Select(c => c.Id).ToList();
-            foreach (var c in AllColumns)
-                if (!ordered.Contains(c.Id)) ordered.Add(c.Id);
-
             var visibleIds = layout == "list"
                 ? ListColumns.ToList()
                 : ordered;
@@ -177,7 +175,15 @@ public sealed partial class ConnectionsPage : Page
         foreach (var c in AllColumns)
             if (!ordered.Contains(c.Id)) ordered.Add(c.Id);
 
-        var panel = new StackPanel { Spacing = 6, MinWidth = 360 };
+        // WinUI 的滚动条覆盖在内容上，为展开后的滚动条预留空间，避免遮住排序按钮。
+        var panel = new StackPanel
+        {
+            Spacing = 6,
+            MinWidth = 360,
+            Margin = LanguageLayout.Current == FlowDirection.RightToLeft
+                ? new Thickness(24, 0, 0, 0)
+                : new Thickness(0, 0, 24, 0),
+        };
         var checkboxes = new Dictionary<string, CheckBox>();
         foreach (var id in ordered)
         {
@@ -213,7 +219,14 @@ public sealed partial class ConnectionsPage : Page
         {
             XamlRoot = XamlRoot,
             Title = L10n.T("Msg_ColumnSettings"),
-            Content = new ScrollViewer { MaxHeight = 420, Content = panel },
+            Content = new ScrollViewer
+            {
+                MaxHeight = 420,
+                HorizontalScrollMode = ScrollMode.Disabled,
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+                Content = panel,
+            },
             PrimaryButtonText = L10n.T("Common_Save"),
             CloseButtonText = L10n.T("Common_Cancel"),
             DefaultButton = ContentDialogButton.Primary,
@@ -241,6 +254,8 @@ public sealed partial class ConnectionsPage : Page
         }
 
         settings.ConnectionsColumns = result;
+        // 自定义列应用于详细视图，保存后立即展示所选列及其顺序。
+        settings.ConnectionsLayout = "table";
         AppServices.Config.SaveSettings();
         RebuildColumns();
         ApplyFilter();
@@ -260,7 +275,6 @@ public sealed partial class ConnectionsPage : Page
         var settings = AppServices.Config.Settings;
         settings.ConnectionsLayout = settings.ConnectionsLayout == "list" ? "table" : "list";
         AppServices.Config.SaveSettings();
-        LayoutButton.Content = settings.ConnectionsLayout == "list" ? L10n.T("Msg_LayoutList") : L10n.T("Msg_LayoutTable");
         RebuildColumns();
         ApplyFilter();
     }

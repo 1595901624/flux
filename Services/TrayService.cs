@@ -117,6 +117,9 @@ public class TrayService
                     new PopupMenuItem(L10n.T("Tray_TunMode"), (_, _) => _dispatcher?.TryEnqueue(async () => await ToggleTunAsync()))
                         { Checked = settings.EnableTunMode },
                     new PopupMenuSeparator(),
+                    new PopupMenuItem(L10n.T("Tray_CopyEnvPowerShell"), (_, _) => _dispatcher?.TryEnqueue(() => CopyEnvironment(true))),
+                    new PopupMenuItem(L10n.T("Tray_CopyEnvCmd"), (_, _) => _dispatcher?.TryEnqueue(() => CopyEnvironment(false))),
+                    new PopupMenuSeparator(),
                     new PopupMenuItem(L10n.T("Tray_RestartCore"), (_, _) => _dispatcher?.TryEnqueue(async () =>
                         await AppServices.Core.RestartAsync())),
                     new PopupMenuItem(L10n.T("Tray_Exit"), (_, _) => ExitApp()),
@@ -281,6 +284,21 @@ public class TrayService
     }
 
     // ---------- 动作 ----------
+
+    private void CopyEnvironment(bool powerShell)
+    {
+        try
+        {
+            ProxyEnvironmentService.Copy(powerShell);
+            ShowNotification(L10n.F("Msg_CopiedBody", powerShell ? "PowerShell" : "CMD"));
+        }
+        catch (Exception ex)
+        {
+            var message = L10n.F("Tray_CopyEnvFailed", ex.Message);
+            LogService.App(message, "warn");
+            ShowNotification(message);
+        }
+    }
 
     private async Task ToggleSystemProxyAsync()
     {

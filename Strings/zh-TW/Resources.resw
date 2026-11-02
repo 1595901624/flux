@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>輕量模式</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>複製 PowerShell 環境變數</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>複製 CMD 環境變數</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>複製環境變數失敗：{0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>重啟核心</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>欄位設定</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>表格</value>
+    <value>詳細檢視</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>清單</value>
+    <value>精簡檢視</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>至少保留一欄可見。</value>

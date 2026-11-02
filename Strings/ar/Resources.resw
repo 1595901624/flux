@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>الوضع الخفيف</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>نسخ متغيرات بيئة PowerShell</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>نسخ متغيرات بيئة CMD</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>تعذر نسخ متغيرات البيئة: {0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>إعادة تشغيل النواة</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>إعدادات الأعمدة</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>جدول</value>
+    <value>عرض تفصيلي</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>قائمة</value>
+    <value>عرض مبسط</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>يجب أن يبقى عمود واحد ظاهرًا على الأقل</value>

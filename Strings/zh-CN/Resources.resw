@@ -875,6 +875,15 @@
   <data name="Tray_Lightweight.Text" xml:space="preserve">
     <value>轻量模式</value>
   </data>
+  <data name="Tray_CopyEnvPowerShell.Text" xml:space="preserve">
+    <value>复制 PowerShell 环境变量</value>
+  </data>
+  <data name="Tray_CopyEnvCmd.Text" xml:space="preserve">
+    <value>复制 CMD 环境变量</value>
+  </data>
+  <data name="Tray_CopyEnvFailed.Text" xml:space="preserve">
+    <value>复制环境变量失败：{0}</value>
+  </data>
   <data name="Tray_RestartCore.Text" xml:space="preserve">
     <value>重启内核</value>
   </data>
@@ -1077,10 +1086,10 @@
     <value>列设置</value>
   </data>
   <data name="Msg_LayoutTable.Text" xml:space="preserve">
-    <value>表格</value>
+    <value>详细视图</value>
   </data>
   <data name="Msg_LayoutList.Text" xml:space="preserve">
-    <value>列表</value>
+    <value>精简视图</value>
   </data>
   <data name="Msg_NoVisibleColumns.Text" xml:space="preserve">
     <value>至少保留一列可见。</value>
