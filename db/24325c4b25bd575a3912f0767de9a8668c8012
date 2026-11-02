@@ -1,0 +1,51 @@
+Views/SettingsPage.xaml
+  94c96b0517b04e8a 11-20,28,45,52,107,113,212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "db24325c4b25bd575a3912f0767de9a8668c8012",
+  "prompts": {
+    "94c96b0517b04e8a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a199f1-2e64-7d62-ba02-ad7471ee8899",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 16,
+      "total_deletions": 6,
+      "accepted_lines": 16,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 16,
+    "git_diff_deleted_lines": 6,
+    "ai_additions": 16,
+    "ai_accepted": 16,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 16,
+    "BYRC": 0,
+    "per_file": {
+      "Views/SettingsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "11-20",
+          "28",
+          "45",
+          "52",
+          "107",
+          "113",
+          "212"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793615018,
+  "requirement_id": ""
+}
