@@ -8,6 +8,16 @@
     xmlns:sc="using:CommunityToolkit.WinUI.Controls"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <!-- 分组只保留一个外框，行之间由单条底边分隔。 -->
+        <Style TargetType="sc:SettingsCard">
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{ThemeResource CardStrokeColorDefaultBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+        </Style>
+    </Page.Resources>
+
     <ScrollViewer x:Name="SettingsScroll" Padding="28,16,28,20"
                   HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Spacing="16">
@@ -15,7 +25,7 @@
             <TextBlock x:Uid="Settings_Title" Text="设置" FontSize="26" FontWeight="SemiBold" />
 
             <TextBlock x:Uid="Settings_SectionSystem" Text="系统设置" FontSize="16" FontWeight="SemiBold" Opacity="0.8" Margin="0,8,0,0" />
-            <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
+            <StackPanel Spacing="0" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <sc:SettingsCard x:Uid="Settings_CardAutoLaunch" Header="开机自启动" Description="登录 Windows 时自动启动 Flux">
                     <ToggleSwitch x:Uid="Common_Toggle" x:Name="AutoLaunchSwitch" Toggled="AutoLaunch_Toggled" />
@@ -32,14 +42,14 @@
                 <sc:SettingsCard x:Uid="Settings_CardProxyGuard" Header="代理守护" Description="定期检查并恢复被其他程序修改的系统代理">
                     <ToggleSwitch x:Uid="Common_Toggle" x:Name="ProxyGuardSwitch" Toggled="ProxyGuard_Toggled" />
                 </sc:SettingsCard>
-                <sc:SettingsCard x:Uid="Settings_CardBypass" Header="代理绕过列表" Description="不经过代理的地址（分号分隔）">
+                <sc:SettingsCard x:Uid="Settings_CardBypass" Header="代理绕过列表" Description="不经过代理的地址（分号分隔）" BorderThickness="0">
                     <TextBox FlowDirection="LeftToRight" x:Name="BypassBox" MinWidth="260" MaxWidth="520" HorizontalAlignment="Right"
                              LostFocus="Bypass_LostFocus" />
                 </sc:SettingsCard>
             </StackPanel>
 
             <TextBlock x:Uid="Settings_SectionClash" Text="Clash 设置" FontSize="16" FontWeight="SemiBold" Opacity="0.8" Margin="0,8,0,0" />
-            <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
+            <StackPanel Spacing="0" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <sc:SettingsCard x:Uid="Settings_CardMixedPort" Header="混合代理端口" Description="HTTP/SOCKS5 混合监听端口（1024-65535）">
                     <NumberBox FlowDirection="LeftToRight" x:Name="MixedPortBox" Width="140" Minimum="1024" Maximum="65535" SpinButtonPlacementMode="Hidden"
@@ -94,13 +104,13 @@
                         <Button x:Uid="Common_Apply" Content="应用" Click="ApplyController_Click" />
                     </StackPanel>
                 </sc:SettingsCard>
-                <sc:SettingsCard x:Uid="Settings_CardAutoCloseConn" Header="断开连接于模式切换" Description="切换代理模式时关闭全部现有连接">
+                <sc:SettingsCard x:Uid="Settings_CardAutoCloseConn" Header="断开连接于模式切换" Description="切换代理模式时关闭全部现有连接" BorderThickness="0">
                     <ToggleSwitch x:Uid="Common_Toggle" x:Name="AutoCloseConnSwitch" Toggled="AutoCloseConn_Toggled" />
                 </sc:SettingsCard>
             </StackPanel>
 
             <TextBlock x:Uid="Settings_SectionApp" Text="应用" FontSize="16" FontWeight="SemiBold" Opacity="0.8" Margin="0,8,0,0" />
-            <StackPanel Spacing="2" CornerRadius="6" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
+            <StackPanel Spacing="0" CornerRadius="8" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="1"
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <sc:SettingsCard x:Uid="Settings_CardLanguage" Header="语言 / Language" Description="切换后立即生效，无需重启应用">
                     <ComboBox x:Name="LanguageBox" Width="150" SelectionChanged="Language_Changed">
@@ -199,7 +209,7 @@
                 <sc:SettingsCard x:Uid="Settings_CardGitHub" Header="GitHub" Description="查看 Flux 的源代码和最新动态">
                     <Button x:Uid="Settings_OpenGitHub" Content="打开 GitHub" Click="OpenGitHub_Click" />
                 </sc:SettingsCard>
-                <sc:SettingsCard x:Uid="Settings_CardAbout" Header="关于 Flux" Description="{x:Bind AppVersion, Mode=OneTime}">
+                <sc:SettingsCard x:Uid="Settings_CardAbout" Header="关于 Flux" Description="{x:Bind AppVersion, Mode=OneTime}" BorderThickness="0">
                     <Button x:Uid="Settings_ExitApp" Content="退出应用" Click="ExitApp_Click" />
                 </sc:SettingsCard>
             </StackPanel>
