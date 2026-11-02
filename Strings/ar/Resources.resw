@@ -1299,7 +1299,7 @@
     <value>افتح مجلد السجلات</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>الحالي</value>
+    <value>قيد الاستخدام</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>تحديث الملف</value>

@@ -1299,7 +1299,7 @@
     <value>Открыть папку логов</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>Текущая</value>
+    <value>Используется</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>Обновить подписку</value>

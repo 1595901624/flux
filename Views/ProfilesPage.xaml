@@ -101,56 +101,69 @@
                                 <MenuFlyoutItem x:Uid="Profiles_MenuDelete" Tag="Profiles_MenuDelete" Text="删除" Click="MenuDelete_Click" />
                             </MenuFlyout>
                         </Border.ContextFlyout>
-                        <Grid RowSpacing="5">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
+                        <Grid>
+                            <!-- 生效状态独立于鼠标悬停和键盘焦点，颜色随主题更新。 -->
+                            <Border Margin="-14" CornerRadius="7" IsHitTestVisible="False"
+                                    Background="{ThemeResource AccentFillColorDefaultBrush}" Opacity="0.08"
+                                    Visibility="{x:Bind CurrentVisibility, Mode=OneWay}" />
+                            <Border Margin="-15" CornerRadius="8" IsHitTestVisible="False"
+                                    BorderBrush="{ThemeResource AccentFillColorDefaultBrush}" BorderThickness="2"
+                                    Visibility="{x:Bind CurrentVisibility, Mode=OneWay}" />
+                            <Grid RowSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
 
-                            <!-- 名称 + 当前徽标 + 操作 -->
-                            <Grid Grid.Row="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                <!-- 名称 + 当前徽标 + 操作 -->
+                                <Grid Grid.Row="0" ColumnSpacing="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
                                     <TextBlock Text="{x:Bind DisplayName}" FontWeight="SemiBold" FontSize="14"
-                                               TextTrimming="CharacterEllipsis" MaxWidth="200" />
-                                    <Border Background="{ThemeResource AccentFillColorSecondaryBrush}" CornerRadius="4"
+                                               TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                                    <Border Grid.Column="1" Background="{ThemeResource AccentFillColorDefaultBrush}" CornerRadius="4"
                                             Padding="6,2" VerticalAlignment="Center"
-                                            Visibility="{x:Bind CurrentVisibility}">
-                                        <TextBlock x:Uid="Profiles_CurrentBadge" Text="当前" FontSize="10" Foreground="White" />
+                                            Visibility="{x:Bind CurrentVisibility, Mode=OneWay}">
+                                        <StackPanel Orientation="Horizontal" Spacing="4">
+                                            <FontIcon Glyph="&#xE73E;" FontSize="10"
+                                                      Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}" />
+                                            <TextBlock x:Uid="Profiles_CurrentBadge" Text="使用中" FontSize="10"
+                                                       Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}" />
+                                        </StackPanel>
                                     </Border>
+                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="2">
+                                        <Button x:Uid="Profiles_TipUpdate" Click="MenuUpdate_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
+                                                ToolTipService.ToolTip="更新订阅">
+                                            <FontIcon Glyph="&#xE72C;" FontSize="13" />
+                                        </Button>
+                                        <Button x:Uid="Profiles_TipDelete" Click="MenuDelete_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
+                                                ToolTipService.ToolTip="删除订阅">
+                                            <FontIcon Glyph="&#xE74D;" FontSize="13" Foreground="IndianRed" />
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+
+                                <TextBlock Grid.Row="1" FontSize="11" Opacity="0.55" TextTrimming="CharacterEllipsis">
+                                    <Run Text="{x:Bind Host}" /><Run Text=" · " /><Run Text="{x:Bind TypeText}" />
+                                </TextBlock>
+
+                                <TextBlock Grid.Row="2" FontSize="11" Opacity="0.55" Text="{x:Bind UpdatedText}" />
+
+                                <!-- 用量 -->
+                                <StackPanel Grid.Row="3" Spacing="4" Visibility="{x:Bind UsageVisibility}" VerticalAlignment="Center">
+                                    <ProgressBar Value="{x:Bind UsageRatio}" Maximum="1" />
+                                    <TextBlock FontSize="11" Opacity="0.55" Text="{x:Bind UsageText}" />
                                 </StackPanel>
-                                <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2">
-                                    <Button x:Uid="Profiles_TipUpdate" Click="MenuUpdate_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
-                                            ToolTipService.ToolTip="更新订阅">
-                                        <FontIcon Glyph="&#xE72C;" FontSize="13" />
-                                    </Button>
-                                    <Button x:Uid="Profiles_TipDelete" Click="MenuDelete_Click" Style="{StaticResource SubtleButtonStyle}" Padding="5"
-                                            ToolTipService.ToolTip="删除订阅">
-                                        <FontIcon Glyph="&#xE74D;" FontSize="13" Foreground="IndianRed" />
-                                    </Button>
-                                </StackPanel>
+
+                                <TextBlock Grid.Row="4" FontSize="11" Opacity="0.55" Text="{x:Bind ExpireText}" />
                             </Grid>
-
-                            <TextBlock Grid.Row="1" FontSize="11" Opacity="0.55" TextTrimming="CharacterEllipsis">
-                                <Run Text="{x:Bind Host}" /><Run Text=" · " /><Run Text="{x:Bind TypeText}" />
-                            </TextBlock>
-
-                            <TextBlock Grid.Row="2" FontSize="11" Opacity="0.55" Text="{x:Bind UpdatedText}" />
-
-                            <!-- 用量 -->
-                            <StackPanel Grid.Row="3" Spacing="4" Visibility="{x:Bind UsageVisibility}" VerticalAlignment="Center">
-                                <ProgressBar Value="{x:Bind UsageRatio}" Maximum="1" />
-                                <TextBlock FontSize="11" Opacity="0.55" Text="{x:Bind UsageText}" />
-                            </StackPanel>
-
-                            <TextBlock Grid.Row="4" FontSize="11" Opacity="0.55" Text="{x:Bind ExpireText}" />
                         </Grid>
                     </Border>
                 </DataTemplate>

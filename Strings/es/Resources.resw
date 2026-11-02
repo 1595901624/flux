@@ -1299,7 +1299,7 @@
     <value>Abrir carpeta de logs</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>Actual</value>
+    <value>En uso</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>Actualizar perfil</value>

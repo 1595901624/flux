@@ -1299,7 +1299,7 @@
     <value>로그 폴더 열기</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>현재</value>
+    <value>사용 중</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>구독 업데이트</value>

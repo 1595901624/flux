@@ -1299,7 +1299,7 @@
     <value>ログフォルダを開く</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>現在</value>
+    <value>使用中</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>購読を更新</value>

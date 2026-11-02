@@ -1299,7 +1299,7 @@
     <value>Kayıt klasörünü aç</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>Mevcut</value>
+    <value>Kullanımda</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>Profili güncelle</value>

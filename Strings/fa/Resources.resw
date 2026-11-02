@@ -1299,7 +1299,7 @@
     <value>باز کردن پوشه گزارش‌ها</value>
   </data>
   <data name="Profiles_CurrentBadge.Text" xml:space="preserve">
-    <value>فعلی</value>
+    <value>در حال استفاده</value>
   </data>
   <data name="Profiles_TipUpdate.ToolTipService.ToolTip" xml:space="preserve">
     <value>به‌روزرسانی اشتراک</value>
