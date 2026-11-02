@@ -1,0 +1,144 @@
+Views/ProfilesPage.xaml
+  94c96b0517b04e8a 104-120,122-128,130-131,133-139,141-151,153-155,157,159-163,165-166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "8a45cb33da2dc3fd9f79cde51a9d9ea9061e8b4b",
+  "prompts": {
+    "94c96b0517b04e8a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a199f1-2e64-7d62-ba02-ad7471ee8899",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 211,
+      "total_deletions": 198,
+      "accepted_lines": 173,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 68,
+    "git_diff_deleted_lines": 55,
+    "ai_additions": 55,
+    "ai_accepted": 55,
+    "BYMC": 13,
+    "mixed_additions": 0,
+    "BYAC": 55,
+    "BYRC": 0,
+    "per_file": {
+      "Strings/ar/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [
+          "1302"
+        ],
+        "BYAC": [],
+        "BYRC": []
+      },
+      "Views/ProfilesPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "104-120",
+          "122-128",
+          "130-131",
+          "133-139",
+          "141-151",
+          "153-155",
+          "157",
+          "159-163",
+          "165-166"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793599350,
+  "requirement_id": ""
+}
