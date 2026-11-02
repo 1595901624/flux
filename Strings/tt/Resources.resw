@@ -337,7 +337,7 @@
     <value>Алмашканда барлык тоташуларны өзү</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>Тел</value>
+    <value>Тел / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>Кушымтаны яңадан башламыйча ук кулланыла</value>

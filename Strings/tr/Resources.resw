@@ -337,7 +337,7 @@
     <value>Geçişte mevcut tüm bağlantıları kapat</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>Dil</value>
+    <value>Dil / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>Uygulama yeniden başlatılmadan hemen uygulanır</value>

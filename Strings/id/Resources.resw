@@ -337,7 +337,7 @@
     <value>Tutup semua koneksi saat berganti</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>Bahasa</value>
+    <value>Bahasa / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>Langsung diterapkan tanpa memulai ulang aplikasi</value>

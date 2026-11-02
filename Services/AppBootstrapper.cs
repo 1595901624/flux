@@ -32,9 +32,7 @@ public static class AppBootstrapper
             var lang = AppServices.Config.Settings.Language;
             try
             {
-                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
-                    string.IsNullOrEmpty(lang) || lang == "system" ? "" : lang;
-                L10n.Reset();
+                ApplicationLanguage.Apply(lang);
             }
             catch (Exception ex) { LogService.App(L10n.F("Boot_LanguageFailed", ex.Message), "warn"); }
 

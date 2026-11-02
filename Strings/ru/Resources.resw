@@ -337,7 +337,7 @@
     <value>Закрывать все соединения при переключении</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>Язык</value>
+    <value>Язык / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>Применяется сразу без перезапуска приложения</value>

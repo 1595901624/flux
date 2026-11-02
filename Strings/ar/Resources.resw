@@ -337,7 +337,7 @@
     <value>أغلق كل الاتصالات عند التبديل</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>اللغة</value>
+    <value>اللغة / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>يُطبّق فورًا دون إعادة تشغيل التطبيق</value>

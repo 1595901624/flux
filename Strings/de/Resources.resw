@@ -337,7 +337,7 @@
     <value>Beim Wechsel alle Verbindungen schließen</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>Sprache</value>
+    <value>Sprache / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>Wird sofort ohne Neustart der App übernommen</value>

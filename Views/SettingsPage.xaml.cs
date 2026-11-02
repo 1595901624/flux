@@ -397,17 +397,14 @@ public sealed partial class SettingsPage : Page
         {
             try
             {
-                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = lang == "system" ? "" : lang;
-                L10n.Reset();
+                ApplicationLanguage.Apply(lang);
                 SaveSettings(v => v.Language = lang);
                 App.ReloadContentForLanguage();
                 AppServices.Tray.RebuildMenu();
             }
             catch (Exception ex)
             {
-                Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
-                    string.IsNullOrEmpty(previousLanguage) || previousLanguage == "system" ? "" : previousLanguage;
-                L10n.Reset();
+                ApplicationLanguage.Apply(previousLanguage);
                 SaveSettings(v => v.Language = previousLanguage);
                 _loading = true;
                 try { SelectByTag(LanguageBox, previousLanguage is null or "" ? "system" : previousLanguage); }

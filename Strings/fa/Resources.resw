@@ -337,7 +337,7 @@
     <value>بستن همه اتصال‌ها هنگام تغییر</value>
   </data>
   <data name="Settings_CardLanguage.Header" xml:space="preserve">
-    <value>زبان</value>
+    <value>زبان / Language</value>
   </data>
   <data name="Settings_CardLanguage.Description" xml:space="preserve">
     <value>بلافاصله و بدون راه‌اندازی مجدد برنامه اعمال می‌شود</value>
