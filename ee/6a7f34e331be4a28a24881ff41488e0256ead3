@@ -1,0 +1,97 @@
+Package.appxmanifest
+  9d99844063cd305e 12
+Flux.csproj
+  9d99844063cd305e 13
+scripts/Verify-Distributions.ps1
+  9d99844063cd305e 9
+.github/workflows/build-msix.yml
+  9d99844063cd305e 9,123-145
+scripts/Build-StorePackages.ps1
+  9d99844063cd305e 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "ee6a7f34e331be4a28a24881ff41488e0256ead3",
+  "prompts": {
+    "1029cfca37f2fbd1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a191f0-cf04-7ff0-bc8b-cf35ae52908d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 2,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    },
+    "35b7ee3e220740eb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a090fb-0e3c-7582-a276-aed73e53af5f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 18,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    },
+    "36986a823251521a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07afc-6ba3-7fc3-a9c0-e65ccba4eadf",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 31,
+      "total_deletions": 33,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    },
+    "9d99844063cd305e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19c35-fe9f-73d1-bd25-860c6777fb98",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 30,
+      "total_deletions": 5,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    },
+    "abc5290e24183532": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19158-986e-7592-8e01-f6da4eaf527a",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 2,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    },
+    "e22ab6f40555912d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a3a-03ca-7760-9729-c5fb8b27c9e8",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 73,
+      "total_deletions": 18,
+      "accepted_lines": 69,
+      "overriden_lines": 0
+    }
+  },
+  "requirement_id": ""
+}
