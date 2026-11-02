@@ -18,8 +18,15 @@ public sealed class LanguagePreferenceTests
     [InlineData("en-US")]
     [InlineData("zh-TW")]
     [InlineData("ar")]
+    [InlineData("tt-Cyrl")]
     public void ExplicitLanguageOverridesSystemPreference(string selection)
         => Assert.Equal(selection, LanguagePreference.ResolveOverride(selection, ["zh-CN"]));
+
+    [Theory]
+    [InlineData("tt")]
+    [InlineData("TT")]
+    public void LegacyTatarPreferenceUsesCyrillicResources(string selection)
+        => Assert.Equal("tt-Cyrl", LanguagePreference.ResolveOverride(selection, ["en-US"]));
 
     [Fact]
     public void ReturningToSystemUsesTheLatestSystemPreference()

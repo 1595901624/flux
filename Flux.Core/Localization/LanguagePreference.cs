@@ -10,6 +10,8 @@ public static class LanguagePreference
 
     public static string ResolveOverride(string? selectedLanguage, IEnumerable<string>? systemLanguages)
     {
+        // 兼容旧版本保存的 tt；Windows 包资源要求明确使用西里尔文字标签。
+        if (string.Equals(selectedLanguage, "tt", StringComparison.OrdinalIgnoreCase)) return "tt-Cyrl";
         if (!FollowsSystem(selectedLanguage)) return selectedLanguage!;
 
         var preferred = systemLanguages?.FirstOrDefault(language => !string.IsNullOrWhiteSpace(language));

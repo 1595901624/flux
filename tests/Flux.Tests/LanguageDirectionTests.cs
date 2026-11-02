@@ -21,6 +21,7 @@ public sealed class LanguageDirectionTests
     [InlineData("tr", false)]
     [InlineData("id", false)]
     [InlineData("tt", false)]
+    [InlineData("tt-Cyrl", false)]
     public void SelectedLanguageDeterminesDirection(string language, bool rtl)
         => Assert.Equal(rtl, LanguageDirection.IsRightToLeft(language, "ar"));
 

@@ -127,7 +127,7 @@
                         <ComboBoxItem Tag="id" Content="Indonesia" />
                         <ComboBoxItem Tag="fa" Content="فارسی" />
                         <ComboBoxItem Tag="ar" Content="العربية" />
-                        <ComboBoxItem Tag="tt" Content="Татарча" />
+                        <ComboBoxItem Tag="tt-Cyrl" Content="Татарча" />
                     </ComboBox>
                 </sc:SettingsCard>
                 <sc:SettingsCard x:Uid="Settings_CardTheme" Header="主题模式">

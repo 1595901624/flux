@@ -34,7 +34,7 @@
     <Resource Language="id" />
     <Resource Language="fa" />
     <Resource Language="ar" />
-    <Resource Language="tt" />
+    <Resource Language="tt-Cyrl" />
   </Resources>
 
   <Applications>

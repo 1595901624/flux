@@ -45,10 +45,15 @@ function Test-PackageContent {
             $stream.Dispose(); $ms.Dispose()
             # PRI 内语言标记可能是 ASCII 或 UTF-16LE；转十六进制后搜索两种形态（避免编码空值问题）
             $hex = [System.BitConverter]::ToString($bytes).Replace('-', '')
-            foreach ($lang in 'zh-CN', 'en-US', 'ja', 'ar', 'tt') {
-                $asciiHex = [System.BitConverter]::ToString([System.Text.Encoding]::ASCII.GetBytes($lang)).Replace('-', '')
-                $utf16Hex = [System.BitConverter]::ToString([System.Text.Encoding]::Unicode.GetBytes($lang)).Replace('-', '')
-                if (-not ($hex.Contains($asciiHex) -or $hex.Contains($utf16Hex))) {
+            foreach ($lang in 'zh-CN', 'en-US', 'ja', 'ar', 'tt-Cyrl') {
+                # MakePRI 会把语言标签规范化为大写；同时兼容保留原始大小写的产物。
+                $found = $false
+                foreach ($tag in @($lang, $lang.ToUpperInvariant(), $lang.ToLowerInvariant())) {
+                    $asciiHex = [System.BitConverter]::ToString([System.Text.Encoding]::ASCII.GetBytes($tag)).Replace('-', '')
+                    $utf16Hex = [System.BitConverter]::ToString([System.Text.Encoding]::Unicode.GetBytes($tag)).Replace('-', '')
+                    if ($hex.Contains($asciiHex) -or $hex.Contains($utf16Hex)) { $found = $true; break }
+                }
+                if (-not $found) {
                     $problems += "resources.pri 缺少语言标记 $lang"
                 }
             }

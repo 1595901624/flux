@@ -27,8 +27,27 @@ public class LocalizationReswTests
 
     public static TheoryData<string> Languages => new()
     {
-        "zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt",
+        "zh-CN", "en-US", "zh-TW", "ja", "ko", "de", "es", "ru", "tr", "id", "fa", "ar", "tt-Cyrl",
     };
+
+    [Fact]
+    public void ManifestLanguagesMatchResourceDirectories()
+    {
+        var stringsDir = FindStringsDir();
+        Assert.NotNull(stringsDir);
+        var manifest = XDocument.Load(Path.Combine(Path.GetDirectoryName(stringsDir)!, "Package.appxmanifest"));
+        var ns = manifest.Root!.Name.Namespace;
+        var declared = manifest.Root.Element(ns + "Resources")!.Elements(ns + "Resource")
+            .Select(resource => resource.Attribute("Language")!.Value)
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var directories = Directory.GetDirectories(stringsDir)
+            .Select(path => Path.GetFileName(path))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        Assert.True(declared.SetEquals(directories), "Manifest languages must match resource directories");
+        Assert.Contains("tt-Cyrl", declared);
+        Assert.DoesNotContain("tt", declared);
+    }
 
     [Fact]
     public void Resw_全部语言_键集一致()

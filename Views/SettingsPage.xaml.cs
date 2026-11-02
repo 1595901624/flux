@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml.Controls;
 using Flux.Services;
 using Flux.Utils;
 using Flux.Core.Config;
+using Flux.Core.Localization;
 
 namespace Flux.Views;
 
@@ -84,7 +85,8 @@ public sealed partial class SettingsPage : Page
             HotkeyTunBox.Text = settings.Hotkeys.GetValueOrDefault("toggle_tun", "");
             HotkeyReactivateBox.Text = settings.Hotkeys.GetValueOrDefault("reactivate_profile", "");
             LightweightSwitch.IsOn = settings.EnableLightweightMode;
-            var savedLang = settings.Language is null or "" or "system" ? "system" : settings.Language;
+            var savedLang = LanguagePreference.FollowsSystem(settings.Language)
+                ? "system" : LanguagePreference.ResolveOverride(settings.Language, null);
             foreach (var item in LanguageBox.Items.OfType<ComboBoxItem>())
                 if ((string)item.Tag == savedLang) { LanguageBox.SelectedItem = item; break; }
             if (LanguageBox.SelectedItem is null) LanguageBox.SelectedIndex = 0;
@@ -407,7 +409,8 @@ public sealed partial class SettingsPage : Page
                 ApplicationLanguage.Apply(previousLanguage);
                 SaveSettings(v => v.Language = previousLanguage);
                 _loading = true;
-                try { SelectByTag(LanguageBox, previousLanguage is null or "" ? "system" : previousLanguage); }
+                try { SelectByTag(LanguageBox, LanguagePreference.FollowsSystem(previousLanguage)
+                    ? "system" : LanguagePreference.ResolveOverride(previousLanguage, null)); }
                 finally { _loading = false; }
                 LogService.App(ex.ToString(), "error");
                 await ShowInfoAsync(L10n.T("Msg_ApplyFailedTitle"), ex.Message);

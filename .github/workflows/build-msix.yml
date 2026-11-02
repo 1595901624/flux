@@ -180,8 +180,25 @@ jobs:
           tag_name: v${{ steps.version.outputs.version }}
           name: Flux v${{ steps.version.outputs.version }}
           body: |
+            ## English
+
+            Download the signed MSIX package for your Windows architecture (x86, x64, or ARM64), or download the sideload ZIP.
+            The sideload ZIP includes a certificate and `Install-FluxSideload.ps1`. Extract the ZIP and run the script as administrator to install the package that matches your system architecture.
+
+            ## 简体中文
+
             下载与 Windows 架构匹配的已签名 MSIX 安装包（x86、x64 或 ARM64），或下载侧载 ZIP。
-            侧载 ZIP 内含证书和 `Install-FluxSideload.ps1`；以管理员身份运行该脚本即可安装匹配当前系统架构的包。
+            侧载 ZIP 内含证书和 `Install-FluxSideload.ps1`；解压后，以管理员身份运行该脚本即可安装匹配当前系统架构的包。
+
+            ## 日本語
+
+            Windows のアーキテクチャ（x86、x64、ARM64）に対応する署名済み MSIX パッケージ、またはサイドロード用 ZIP をダウンロードしてください。
+            サイドロード用 ZIP には証明書と `Install-FluxSideload.ps1` が含まれています。ZIP を展開し、スクリプトを管理者として実行すると、システムのアーキテクチャに対応するパッケージをインストールできます。
+
+            ## 한국어
+
+            Windows 아키텍처(x86, x64 또는 ARM64)에 맞는 서명된 MSIX 패키지 또는 사이드로드용 ZIP을 다운로드하세요.
+            사이드로드용 ZIP에는 인증서와 `Install-FluxSideload.ps1`이 포함되어 있습니다. ZIP의 압축을 푼 뒤 스크립트를 관리자 권한으로 실행하면 시스템 아키텍처에 맞는 패키지가 설치됩니다.
           files: |
             msix/**/*.msix
             artifacts/Flux-sideload-*.zip
