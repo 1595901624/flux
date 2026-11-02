@@ -1,0 +1,176 @@
+Strings/tr/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/ko/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/ja/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/ru/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/zh-TW/Resources.resw
+  94c96b0517b04e8a 139,1608
+Views/ConnectionsPage.xaml
+  94c96b0517b04e8a 51,60
+Strings/ar/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/de/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/en-US/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/es/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/zh-CN/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/tt/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/fa/Resources.resw
+  94c96b0517b04e8a 139,1608
+Strings/id/Resources.resw
+  94c96b0517b04e8a 139,1608
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "96077be4479c552ce065de4358477b17c7acdc0a",
+  "prompts": {
+    "94c96b0517b04e8a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a199f1-2e64-7d62-ba02-ad7471ee8899",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 23659,
+      "total_deletions": 23659,
+      "accepted_lines": 23659,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 28,
+    "git_diff_deleted_lines": 28,
+    "ai_additions": 28,
+    "ai_accepted": 28,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 28,
+    "BYRC": 0,
+    "per_file": {
+      "Strings/ar/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/de/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/en-US/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/es/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/fa/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/id/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/ja/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/ko/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/ru/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/tr/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/tt/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/zh-CN/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Strings/zh-TW/Resources.resw": {
+        "BYMC": [],
+        "BYAC": [
+          "139",
+          "1608"
+        ],
+        "BYRC": []
+      },
+      "Views/ConnectionsPage.xaml": {
+        "BYMC": [],
+        "BYAC": [
+          "51",
+          "60"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793599055,
+  "requirement_id": ""
+}
