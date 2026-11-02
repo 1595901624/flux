@@ -1,0 +1,82 @@
+Flux.csproj
+  9d99844063cd305e 13
+Package.appxmanifest
+  9d99844063cd305e 12
+.github/workflows/build-msix.yml
+  9d99844063cd305e 9,123-145
+scripts/Verify-Distributions.ps1
+  9d99844063cd305e 9
+scripts/Build-StorePackages.ps1
+  9d99844063cd305e 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.0",
+  "base_commit_sha": "aee5730402f12fa8effdf8577eb163fe1143f212",
+  "prompts": {
+    "9d99844063cd305e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a19c35-fe9f-73d1-bd25-860c6777fb98",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "luhaoyu <haoyu3@163.com>",
+      "messages": [],
+      "total_additions": 30,
+      "total_deletions": 5,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    }
+  },
+  "commit_stats": {
+    "git_diff_added_lines": 30,
+    "git_diff_deleted_lines": 5,
+    "ai_additions": 28,
+    "ai_accepted": 28,
+    "BYMC": 0,
+    "mixed_additions": 0,
+    "BYAC": 28,
+    "BYRC": 0,
+    "per_file": {
+      ".github/workflows/build-msix.yml": {
+        "BYMC": [],
+        "BYAC": [
+          "9",
+          "123-145"
+        ],
+        "BYRC": []
+      },
+      "Flux.csproj": {
+        "BYMC": [],
+        "BYAC": [
+          "13"
+        ],
+        "BYRC": []
+      },
+      "Package.appxmanifest": {
+        "BYMC": [],
+        "BYAC": [
+          "12"
+        ],
+        "BYRC": []
+      },
+      "scripts/Build-StorePackages.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "2"
+        ],
+        "BYRC": []
+      },
+      "scripts/Verify-Distributions.ps1": {
+        "BYMC": [],
+        "BYAC": [
+          "9"
+        ],
+        "BYRC": []
+      }
+    }
+  },
+  "ipa_account": "luhaoyu",
+  "commit_timestamp": 1793623965,
+  "requirement_id": ""
+}
